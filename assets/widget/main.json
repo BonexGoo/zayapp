@@ -16,9 +16,14 @@
 				"title" : "APP1",
 				"script" : "app1.zay",
 				"dom" : "app1"
+			},
+			{
+				"title" : "CAFE",
+				"script" : "cafe.zay",
+				"dom" : "cafe"
 			}
 		],
-		"focus" : 0
+		"focus" : 1
 	},
 	"vk" :
 	{
