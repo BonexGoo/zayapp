@@ -24,8 +24,8 @@ bool PlatformInit()
     Platform::Utility::GetScreenRect(ScreenRect, ScreenID);
     const sint32 ScreenWidth = ScreenRect.r - ScreenRect.l;
     const sint32 ScreenHeight = ScreenRect.b - ScreenRect.t;
-    const sint32 WindowWidth = WindowInfo("w").GetInt(1400);
-    const sint32 WindowHeight = WindowInfo("h").GetInt(1000);
+    const sint32 WindowWidth = WindowInfo("w").GetInt(1600);
+    const sint32 WindowHeight = WindowInfo("h").GetInt(980);
     const sint32 WindowX = Math::Clamp(WindowInfo("x").GetInt((ScreenWidth - WindowWidth) / 2), 0, ScreenWidth - WindowWidth);
     const sint32 WindowY = Math::Clamp(WindowInfo("y").GetInt((ScreenHeight - WindowHeight) / 2), 0, ScreenHeight - WindowHeight);
     Platform::SetWindowRect(ScreenRect.l + WindowX, ScreenRect.t + WindowY, WindowWidth, WindowHeight);

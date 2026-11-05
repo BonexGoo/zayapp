@@ -44,32 +44,32 @@
 				{
 					"Highlight0":"''@'d.packlog.highlight_0.text'"
 				},
-				"setloghighlight('#f53244', Highlight0)",
+				"setloghighlight('#fb5c7b', Highlight0)",
 				"if(Highlight1 !=''@'d.packlog.highlight_1.text')",
 				{
 					"Highlight1":"''@'d.packlog.highlight_1.text'"
 				},
-				"setloghighlight('#ff9114', Highlight1)",
+				"setloghighlight('#ffb54e', Highlight1)",
 				"if(Highlight2 !=''@'d.packlog.highlight_2.text')",
 				{
 					"Highlight2":"''@'d.packlog.highlight_2.text'"
 				},
-				"setloghighlight('#eb2dbe', Highlight2)",
+				"setloghighlight('#dc71f0', Highlight2)",
 				"if(Highlight3 !=''@'d.packlog.highlight_3.text')",
 				{
 					"Highlight3":"''@'d.packlog.highlight_3.text'"
 				},
-				"setloghighlight('#14ae48', Highlight3)",
+				"setloghighlight('#2bd69d', Highlight3)",
 				"if(Highlight4 !=''@'d.packlog.highlight_4.text')",
 				{
 					"Highlight4":"''@'d.packlog.highlight_4.text'"
 				},
-				"setloghighlight('#19aedd', Highlight4)",
+				"setloghighlight('#35cce9', Highlight4)",
 				"if(Highlight5 !=''@'d.packlog.highlight_5.text')",
 				{
 					"Highlight5":"''@'d.packlog.highlight_5.text'"
 				},
-				"setloghighlight('#7739e0', Highlight5)"
+				"setloghighlight('#a17cf0', Highlight5)"
 			],
 			"compname":"code",
 			"expanded":"1",
@@ -85,9 +85,9 @@
 					"compvalues":
 					[
 						[
-							"244",
-							"248",
-							"252",
+							"10",
+							"19",
+							"33",
 							"255"
 						]
 					],
@@ -134,9 +134,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -185,9 +185,9 @@
 							"compvalues":
 							[
 								[
-									"190",
-									"205",
-									"224",
+									"43",
+									"65",
+									"88",
 									"255"
 								]
 							],
@@ -236,9 +236,9 @@
 							"compvalues":
 							[
 								[
-									"18",
-									"57",
-									"112",
+									"230",
+									"246",
+									"255",
 									"255"
 								]
 							],
@@ -272,7 +272,7 @@
 											"compvalues":
 											[
 												[
-													"'Packet Logger'",
+													"'Network Logger'",
 													"centermiddle"
 												]
 											],
@@ -313,9 +313,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -362,9 +362,9 @@
 									"compvalues":
 									[
 										[
-											"24",
-											"57",
-											"106",
+											"211",
+											"237",
+											"252",
 											"255"
 										]
 									],
@@ -518,9 +518,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -680,9 +680,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -842,9 +842,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -1004,9 +1004,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -1166,9 +1166,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -1328,9 +1328,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],
@@ -1413,9 +1413,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -1462,9 +1462,9 @@
 									"compvalues":
 									[
 										[
-											"190",
-											"205",
-											"224",
+											"43",
+											"65",
+											"88",
 											"255"
 										]
 									],
@@ -1513,9 +1513,9 @@
 									"compvalues":
 									[
 										[
-											"24",
-											"57",
-											"106",
+											"211",
+											"237",
+											"252",
 											"255"
 										]
 									],
@@ -1590,9 +1590,9 @@
 									"compvalues":
 									[
 										[
-											"74",
-											"102",
-											"145",
+											"139",
+											"172",
+											"197",
 											"255"
 										]
 									],
@@ -1853,9 +1853,9 @@
 																	"compvalues":
 																	[
 																		[
-																			"41",
-																			"112",
-																			"237",
+																			"49",
+																			"208",
+																			"232",
 																			"255"
 																		]
 																	],
@@ -1944,9 +1944,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -1993,9 +1993,9 @@
 									"compvalues":
 									[
 										[
-											"24",
-											"57",
-											"106",
+											"211",
+											"237",
+											"252",
 											"255"
 										]
 									],
@@ -2029,7 +2029,7 @@
 													"compvalues":
 													[
 														[
-															"'LIVE PACKET LOG'",
+															"'LIVE NETWORK TRAFFIC'",
 															"leftmiddle"
 														]
 													],
@@ -2273,9 +2273,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -2322,9 +2322,9 @@
 									"compvalues":
 									[
 										[
-											"190",
-											"205",
-											"224",
+											"43",
+											"65",
+											"88",
 											"255"
 										]
 									],
@@ -2373,9 +2373,9 @@
 									"compvalues":
 									[
 										[
-											"190",
-											"205",
-											"224",
+											"43",
+											"65",
+											"88",
 											"255"
 										]
 									],
@@ -2424,9 +2424,9 @@
 									"compvalues":
 									[
 										[
-											"24",
-											"57",
-											"106",
+											"211",
+											"237",
+											"252",
 											"255"
 										]
 									],
@@ -2501,9 +2501,9 @@
 									"compvalues":
 									[
 										[
-											"74",
-											"102",
-											"145",
+											"139",
+											"172",
+											"197",
 											"255"
 										]
 									],
@@ -2642,9 +2642,9 @@
 											"compvalues":
 											[
 												[
-													"24",
-													"57",
-													"106",
+													"211",
+													"237",
+													"252",
 													"255"
 												]
 											],
@@ -2786,9 +2786,9 @@
 											"compvalues":
 											[
 												[
-													"24",
-													"57",
-													"106",
+													"211",
+													"237",
+													"252",
 													"255"
 												]
 											],
@@ -2868,9 +2868,9 @@
 							"compvalues":
 							[
 								[
-									"248",
-									"251",
-									"254",
+									"17",
+									"30",
+									"49",
 									"255"
 								]
 							],
@@ -2917,9 +2917,9 @@
 									"compvalues":
 									[
 										[
-											"190",
-											"205",
-											"224",
+											"43",
+											"65",
+											"88",
 											"255"
 										]
 									],
@@ -2968,9 +2968,9 @@
 									"compvalues":
 									[
 										[
-											"24",
-											"57",
-											"106",
+											"211",
+											"237",
+											"252",
 											"255"
 										]
 									],
@@ -3004,7 +3004,7 @@
 													"compvalues":
 													[
 														[
-															"'PACKET INPUT'",
+															"'TRANSMIT PAYLOAD'",
 															"leftmiddle"
 														]
 													],
@@ -3045,9 +3045,9 @@
 									"compvalues":
 									[
 										[
-											"74",
-											"102",
-											"145",
+											"139",
+											"172",
+											"197",
 											"255"
 										]
 									],
@@ -3081,7 +3081,7 @@
 													"compvalues":
 													[
 														[
-															"'Enter packet data to transmit'",
+															"'Enter data to transmit'",
 															"leftmiddle"
 														]
 													],
@@ -3161,9 +3161,9 @@
 											"compvalues":
 											[
 												[
-													"15",
-													"35",
-													"65",
+													"237",
+													"248",
+													"255",
 													"255"
 												]
 											],

@@ -7984,7 +7984,7 @@
 									"compvalues":
 									[
 										[
-											"r.icon_check",
+											"r.icon_done",
 											"true",
 											"inner"
 										]
@@ -12771,7 +12771,7 @@
 											"compvalues":
 											[
 												[
-													"r.icon_check",
+													"r.icon_done",
 													"true",
 													"inner"
 												]
@@ -13287,8 +13287,8 @@
 	],
 	"posx":"1",
 	"posy":"-150",
-	"savecount":"24",
-	"savetime":"2026-11-03/12:09:52",
+	"savecount":"25",
+	"savetime":"2026-11-05/18:11:23",
 	"ui":
 	[
 		{
@@ -13305,8 +13305,8 @@
 			],
 			"compname":"code",
 			"expanded":"1",
-			"posx":"541",
-			"posy":"-150",
+			"posx":"540",
+			"posy":"-151",
 			"stable":"0",
 			"ui":
 			[
@@ -13321,7 +13321,7 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"1278",
+					"posx":"1277",
 					"posy":"-150",
 					"stable":"0",
 					"ui":
@@ -13331,27 +13331,27 @@
 							"compid":"3678",
 							"compname":"fill",
 							"expanded":"1",
-							"posx":"1598",
+							"posx":"1597",
 							"posy":"-150",
 							"stable":"0"
 						}
 					]
 				},
 				{
-					"addw":"116",
+					"addw":"211",
 					"compid":"3690",
 					"compname":"xywh",
 					"compvalues":
 					[
 						[
-							"(pW - 1600)/2",
-							"(pH - 980)/2",
+							"(pW - 1600)/2 [divide] 1",
+							"(pH - 980)/2 [divide] 1",
 							"1600",
 							"980"
 						]
 					],
 					"expanded":"1",
-					"posx":"1278",
+					"posx":"1277",
 					"posy":"33",
 					"stable":"0",
 					"ui":
@@ -13367,7 +13367,7 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"33",
 							"stable":"0",
 							"ui":
@@ -13377,7 +13377,7 @@
 									"compid":"3680",
 									"compname":"fill",
 									"expanded":"1",
-									"posx":"2034",
+									"posx":"2128",
 									"posy":"33",
 									"stable":"0"
 								}
@@ -13388,7 +13388,7 @@
 							"compid":"3682",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"216",
 							"uiname":"cafe_sidebar"
 						},
@@ -13397,7 +13397,7 @@
 							"compid":"3683",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"342",
 							"uiname":"cafe_header"
 						},
@@ -13406,7 +13406,7 @@
 							"compid":"3684",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"468",
 							"uiname":"cafe_hero"
 						},
@@ -13415,7 +13415,7 @@
 							"compid":"3685",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"594",
 							"uiname":"cafe_catalog"
 						},
@@ -13424,7 +13424,7 @@
 							"compid":"3686",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"720",
 							"uiname":"cafe_cart"
 						},
@@ -13433,7 +13433,7 @@
 							"compid":"3687",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"846",
 							"uiname":"cafe_options"
 						},
@@ -13442,7 +13442,7 @@
 							"compid":"3688",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"972",
 							"uiname":"cafe_checkout"
 						},
@@ -13451,7 +13451,7 @@
 							"compid":"3689",
 							"compname":"jump",
 							"expanded":"1",
-							"posx":"1714",
+							"posx":"1808",
 							"posy":"1098",
 							"uiname":"cafe_success"
 						}

@@ -10,7 +10,7 @@
 ZAY_DECLARE_VIEW_CLASS("ZayAppView", ZayAppData)
 
 String gLastLocale;
-sint32 gMinWindowWidth {420};
+sint32 gMinWindowWidth {600};
 sint32 gMinWindowHeight {600};
 
 ZAY_VIEW_API OnCommand(CommandType type, id_share in, id_cloned_share* out)
