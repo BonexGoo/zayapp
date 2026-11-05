@@ -1,0 +1,14 @@
+{
+	"atlas" :
+	[
+		{"path" : "qhome_atlas.png"}
+	],
+	"fonts" :
+	[
+		{"path" : "font/Roboto-SemiBold.ttf"},
+		{"path" : "font/Roboto-Bold.ttf"},
+		{"path" : "font/Roboto-Light.ttf"},
+		{"path" : "font/Roboto-Medium.ttf"},
+		{"path" : "font/Roboto-Regular.ttf"}
+	]
+}

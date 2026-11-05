@@ -9,8 +9,8 @@
 			"compid":"104",
 			"compname":"gate",
 			"expanded":"1",
-			"posx":"-4567",
-			"posy":"471",
+			"posx":"-5111",
+			"posy":"959",
 			"ui":
 			[
 				{
@@ -48,8 +48,8 @@
 					],
 					"compname":"code",
 					"expanded":"1",
-					"posx":"-4247",
-					"posy":"471",
+					"posx":"-4791",
+					"posy":"959",
 					"stable":"0",
 					"ui":
 					[
@@ -64,8 +64,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"-3518",
-							"posy":"471",
+							"posx":"-4063",
+							"posy":"959",
 							"stable":"0",
 							"ui":
 							[
@@ -73,8 +73,8 @@
 									"addw":"0",
 									"compname":"if(PopupVK == 0)",
 									"expanded":"1",
-									"posx":"-3198",
-									"posy":"471"
+									"posx":"-3743",
+									"posy":"959"
 								},
 								{
 									"addw":"209",
@@ -97,8 +97,8 @@
 											"PopupVK":"1"
 										}
 									],
-									"posx":"-3198",
-									"posy":"597",
+									"posx":"-3743",
+									"posy":"1085",
 									"stable":"0",
 									"ui":
 									[
@@ -113,8 +113,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"-2669",
-											"posy":"597",
+											"posx":"-3214",
+											"posy":"1085",
 											"stable":"0",
 											"ui":
 											[
@@ -134,8 +134,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"-2349",
-													"posy":"597",
+													"posx":"-2894",
+													"posy":"1085",
 													"stable":"0"
 												},
 												{
@@ -149,8 +149,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"-2349",
-													"posy":"852",
+													"posx":"-2894",
+													"posy":"1340",
 													"stable":"0",
 													"ui":
 													[
@@ -166,8 +166,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-2029",
-															"posy":"852",
+															"posx":"-2574",
+															"posy":"1340",
 															"stable":"0"
 														}
 													]
@@ -181,8 +181,8 @@
 									"addw":"0",
 									"compname":"else",
 									"expanded":"1",
-									"posx":"-3198",
-									"posy":"1035"
+									"posx":"-3743",
+									"posy":"1523"
 								},
 								{
 									"addw":"182",
@@ -199,8 +199,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"-3198",
-									"posy":"1125",
+									"posx":"-3743",
+									"posy":"1613",
 									"stable":"0",
 									"ui":
 									[
@@ -209,8 +209,8 @@
 											"compid":"106",
 											"compname":"loop",
 											"expanded":"1",
-											"posx":"-2696",
-											"posy":"1125",
+											"posx":"-3241",
+											"posy":"1613",
 											"ui":
 											[
 												{
@@ -218,8 +218,8 @@
 													"compid":"107",
 													"compname":"loop",
 													"expanded":"1",
-													"posx":"-2376",
-													"posy":"1125",
+													"posx":"-2921",
+													"posy":"1613",
 													"ui":
 													[
 														{
@@ -236,8 +236,8 @@
 															],
 															"compname":"code",
 															"expanded":"1",
-															"posx":"-2056",
-															"posy":"1125",
+															"posx":"-2601",
+															"posy":"1613",
 															"stable":"0",
 															"ui":
 															[
@@ -264,8 +264,8 @@
 																			"VKShift":"0"
 																		}
 																	],
-																	"posx":"-1314",
-																	"posy":"1125",
+																	"posx":"-1859",
+																	"posy":"1613",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -280,8 +280,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-858",
-																			"posy":"1125",
+																			"posx":"-1403",
+																			"posy":"1613",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -301,8 +301,8 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"-538",
-																					"posy":"1125",
+																					"posx":"-1083",
+																					"posy":"1613",
 																					"stable":"0"
 																				},
 																				{
@@ -318,8 +318,8 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"-538",
-																					"posy":"1380",
+																					"posx":"-1083",
+																					"posy":"1868",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -334,8 +334,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"-218",
-																							"posy":"1380",
+																							"posx":"-763",
+																							"posy":"1868",
 																							"stable":"0"
 																						}
 																					]
@@ -369,8 +369,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"-2696",
-											"posy":"1563",
+											"posx":"-3241",
+											"posy":"2051",
 											"stable":"0",
 											"ui":
 											[
@@ -393,8 +393,8 @@
 													[
 														"keypad(16777219, '')"
 													],
-													"posx":"-2376",
-													"posy":"1563",
+													"posx":"-2921",
+													"posy":"2051",
 													"stable":"0",
 													"ui":
 													[
@@ -409,8 +409,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"1563",
+															"posx":"-2455",
+															"posy":"2051",
 															"stable":"0",
 															"ui":
 															[
@@ -430,8 +430,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"1563",
+																	"posx":"-2135",
+																	"posy":"2051",
 																	"stable":"0"
 																},
 																{
@@ -445,8 +445,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"1818",
+																	"posx":"-2135",
+																	"posy":"2306",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -462,8 +462,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"1818",
+																			"posx":"-1815",
+																			"posy":"2306",
 																			"stable":"0"
 																		}
 																	]
@@ -491,8 +491,8 @@
 													[
 														"keypad(16777220, '')"
 													],
-													"posx":"-2376",
-													"posy":"2001",
+													"posx":"-2921",
+													"posy":"2489",
 													"stable":"0",
 													"ui":
 													[
@@ -507,8 +507,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"2001",
+															"posx":"-2455",
+															"posy":"2489",
 															"stable":"0",
 															"ui":
 															[
@@ -528,8 +528,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"2001",
+																	"posx":"-2135",
+																	"posy":"2489",
 																	"stable":"0"
 																},
 																{
@@ -543,8 +543,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"2256",
+																	"posx":"-2135",
+																	"posy":"2744",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -560,8 +560,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"2256",
+																			"posx":"-1815",
+																			"posy":"2744",
 																			"stable":"0"
 																		}
 																	]
@@ -591,8 +591,8 @@
 															"VKShift":"1 - VKShift"
 														}
 													],
-													"posx":"-2376",
-													"posy":"2439",
+													"posx":"-2921",
+													"posy":"2927",
 													"stable":"0",
 													"ui":
 													[
@@ -607,8 +607,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"2439",
+															"posx":"-2455",
+															"posy":"2927",
 															"stable":"0",
 															"ui":
 															[
@@ -628,8 +628,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"2439",
+																	"posx":"-2135",
+																	"posy":"2927",
 																	"stable":"0"
 																},
 																{
@@ -643,8 +643,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"2694",
+																	"posx":"-2135",
+																	"posy":"3182",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -671,8 +671,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"2694",
+																			"posx":"-1815",
+																			"posy":"3182",
 																			"stable":"0"
 																		}
 																	]
@@ -705,8 +705,8 @@
 															"VKShift":"0"
 														}
 													],
-													"posx":"-2376",
-													"posy":"2997",
+													"posx":"-2921",
+													"posy":"3485",
 													"stable":"0",
 													"ui":
 													[
@@ -721,8 +721,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"2997",
+															"posx":"-2455",
+															"posy":"3485",
 															"stable":"0",
 															"ui":
 															[
@@ -742,8 +742,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"2997",
+																	"posx":"-2135",
+																	"posy":"3485",
 																	"stable":"0"
 																},
 																{
@@ -757,8 +757,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"3252",
+																	"posx":"-2135",
+																	"posy":"3740",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -780,8 +780,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"3252",
+																			"posx":"-1815",
+																			"posy":"3740",
 																			"stable":"0"
 																		}
 																	]
@@ -810,8 +810,8 @@
 													[
 														"ascii(32)"
 													],
-													"posx":"-2376",
-													"posy":"3507",
+													"posx":"-2921",
+													"posy":"3995",
 													"stable":"0",
 													"ui":
 													[
@@ -826,8 +826,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"3507",
+															"posx":"-2455",
+															"posy":"3995",
 															"stable":"0",
 															"ui":
 															[
@@ -847,8 +847,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"3507",
+																	"posx":"-2135",
+																	"posy":"3995",
 																	"stable":"0"
 																}
 															]
@@ -880,8 +880,8 @@
 															"VKShift":"0"
 														}
 													],
-													"posx":"-2376",
-													"posy":"3762",
+													"posx":"-2921",
+													"posy":"4250",
 													"stable":"0",
 													"ui":
 													[
@@ -896,8 +896,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"3762",
+															"posx":"-2455",
+															"posy":"4250",
 															"stable":"0",
 															"ui":
 															[
@@ -917,8 +917,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"3762",
+																	"posx":"-2135",
+																	"posy":"4250",
 																	"stable":"0"
 																},
 																{
@@ -932,8 +932,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"4017",
+																	"posx":"-2135",
+																	"posy":"4505",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -955,8 +955,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"4017",
+																			"posx":"-1815",
+																			"posy":"4505",
 																			"stable":"0"
 																		}
 																	]
@@ -992,8 +992,8 @@
 															"VKShift":"0"
 														}
 													],
-													"posx":"-2376",
-													"posy":"4272",
+													"posx":"-2921",
+													"posy":"4760",
 													"stable":"0",
 													"ui":
 													[
@@ -1008,8 +1008,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"-1910",
-															"posy":"4272",
+															"posx":"-2455",
+															"posy":"4760",
 															"stable":"0",
 															"ui":
 															[
@@ -1029,8 +1029,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"4272",
+																	"posx":"-2135",
+																	"posy":"4760",
 																	"stable":"0"
 																},
 																{
@@ -1044,8 +1044,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"-1590",
-																	"posy":"4527",
+																	"posx":"-2135",
+																	"posy":"5015",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -1061,8 +1061,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"-1270",
-																			"posy":"4527",
+																			"posx":"-1815",
+																			"posy":"5015",
 																			"stable":"0"
 																		}
 																	]
@@ -1088,8 +1088,8 @@
 			"compid":"209",
 			"compname":"gate",
 			"expanded":"1",
-			"posx":"33",
-			"posy":"-926",
+			"posx":"89",
+			"posy":"-989",
 			"ui":
 			[
 				{
@@ -1104,8 +1104,8 @@
 					],
 					"compname":"code",
 					"expanded":"1",
-					"posx":"430",
-					"posy":"-924",
+					"posx":"486",
+					"posy":"-987",
 					"stable":"0"
 				}
 			],
@@ -1136,13 +1136,13 @@
 			"VKShift":"0"
 		},
 		{
-			"PopupDockAni":"0"
+			"PopupDockAni":"1"
 		}
 	],
 	"posx":"-312",
 	"posy":"-591",
-	"savecount":"104",
-	"savetime":"2026-11-03/02:14:28",
+	"savecount":"161",
+	"savetime":"2026-11-06/01:40:22",
 	"ui":
 	[
 		{
@@ -1163,6 +1163,87 @@
 			"ui":
 			[
 				{
+					"addw":"107",
+					"compname":"if((-1 @ 'd.data.body.focus') == -1)",
+					"expanded":"1",
+					"posx":"406",
+					"posy":"-591"
+				},
+				{
+					"addw":"0",
+					"compid":"824",
+					"compname":"color",
+					"compvalues":
+					[
+						[
+							"255",
+							"255",
+							"255"
+						]
+					],
+					"expanded":"1",
+					"posx":"406",
+					"posy":"-465",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"825",
+							"compname":"fill",
+							"expanded":"1",
+							"posx":"726",
+							"posy":"-465",
+							"stable":"0"
+						}
+					]
+				},
+				{
+					"addw":"76",
+					"compid":"827",
+					"compname":"ltrb",
+					"compvalues":
+					[
+						[
+							"120 + 10",
+							"110 + 10",
+							"pW - 10",
+							"pH - 10"
+						]
+					],
+					"expanded":"1",
+					"posx":"406",
+					"posy":"-282",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"829",
+							"compname":"stretch",
+							"compvalues":
+							[
+								[
+									"r.help.guide",
+									"true",
+									"inner"
+								]
+							],
+							"expanded":"1",
+							"posx":"802",
+							"posy":"-282",
+							"stable":"0"
+						}
+					]
+				},
+				{
+					"addw":"0",
+					"compname":"else",
+					"expanded":"1",
+					"posx":"406",
+					"posy":"-66"
+				},
+				{
 					"addw":"626",
 					"compid":"703",
 					"compname":"user_content",
@@ -1176,40 +1257,15 @@
 					],
 					"expanded":"1",
 					"posx":"406",
-					"posy":"-591",
+					"posy":"24",
 					"stable":"0"
 				},
 				{
 					"addw":"0",
-					"comment":"#잠깐 테스트용",
-					"compid":"812",
-					"compname":"color",
-					"compvalues":
-					[
-						"if(0)",
-						[
-							"0",
-							"255",
-							"0",
-							"160"
-						]
-					],
+					"compname":"endif",
 					"expanded":"1",
 					"posx":"406",
-					"posy":"-375",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"813",
-							"compname":"fill",
-							"expanded":"1",
-							"posx":"726",
-							"posy":"-375",
-							"stable":"0"
-						}
-					]
+					"posy":"240"
 				},
 				{
 					"addw":"0",
@@ -1217,7 +1273,7 @@
 					"compname":"jump",
 					"expanded":"1",
 					"posx":"406",
-					"posy":"-168",
+					"posy":"330",
 					"uiname":"vk"
 				},
 				{
@@ -1225,7 +1281,7 @@
 					"compname":"if(0 < PopupDockAni)",
 					"expanded":"1",
 					"posx":"406",
-					"posy":"-42"
+					"posy":"456"
 				},
 				{
 					"addw":"180",
@@ -1233,6 +1289,7 @@
 					"compname":"inner",
 					"compvalues":
 					[
+						"if((-1 @'d.data.body.focus') != -1)",
 						[
 							"0"
 						]
@@ -1246,7 +1303,7 @@
 						"update(0.3)"
 					],
 					"posx":"406",
-					"posy":"84",
+					"posy":"582",
 					"stable":"0",
 					"ui":
 					[
@@ -1265,7 +1322,7 @@
 							],
 							"expanded":"1",
 							"posx":"906",
-							"posy":"84",
+							"posy":"582",
 							"stable":"0",
 							"ui":
 							[
@@ -1275,7 +1332,7 @@
 									"compname":"fill",
 									"expanded":"1",
 									"posx":"1226",
-									"posy":"84",
+									"posy":"582",
 									"stable":"0"
 								}
 							]
@@ -1284,37 +1341,43 @@
 					"uiname":"ui_dock_bg"
 				},
 				{
-					"addw":"139",
+					"addw":"358",
 					"compid":"815",
 					"compinputs":
 					[
 						{
 							"lefttop":"1 - PopupDockAni [pow] 2.5"
+						},
+						{
+							"osscale":"100 @'d.program.osscale'"
+						},
+						{
+							"framesec":"1000 [divide] (1000 @'d.program.time.render')"
 						}
 					],
 					"compname":"code",
 					"expanded":"1",
 					"posx":"406",
-					"posy":"348",
+					"posy":"870",
 					"stable":"0",
 					"ui":
 					[
 						{
-							"addw":"94",
+							"addw":"308",
 							"compid":"708",
 							"compname":"ltrb",
 							"compvalues":
 							[
 								[
-									"lefttop * -120",
-									"lefttop * -110",
+									"(lefttop * -120 + 0.5) [divide] 1",
+									"(lefttop * -110 + 0.5) [divide] 1",
 									"pW",
 									"pH"
 								]
 							],
 							"expanded":"1",
-							"posx":"865",
-							"posy":"348",
+							"posx":"1084",
+							"posy":"870",
 							"stable":"0",
 							"ui":
 							[
@@ -1332,8 +1395,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"1279",
-									"posy":"348",
+									"posx":"1712",
+									"posy":"870",
 									"stable":"0",
 									"ui":
 									[
@@ -1348,8 +1411,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"348",
+											"posx":"2032",
+											"posy":"870",
 											"stable":"0"
 										},
 										{
@@ -1364,8 +1427,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"531",
+											"posx":"2032",
+											"posy":"1053",
 											"stable":"0",
 											"ui":
 											[
@@ -1380,8 +1443,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"531",
+													"posx":"2352",
+													"posy":"1053",
 													"stable":"0",
 													"ui":
 													[
@@ -1397,8 +1460,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"531",
+															"posx":"2672",
+															"posy":"1053",
 															"stable":"0"
 														}
 													]
@@ -1414,15 +1477,15 @@
 									"compvalues":
 									[
 										[
-											"118 + 32 - 3",
+											"118 + 32",
 											"0",
 											"pW",
 											"110"
 										]
 									],
 									"expanded":"1",
-									"posx":"1279",
-									"posy":"747",
+									"posx":"1712",
+									"posy":"1269",
 									"stable":"0",
 									"ui":
 									[
@@ -1437,20 +1500,20 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"747",
+											"posx":"2032",
+											"posy":"1269",
 											"stable":"0"
 										},
 										{
-											"addw":"0",
+											"addw":"39",
 											"compid":"711",
 											"compname":"ltrb",
 											"compvalues":
 											[
 												[
-													"pW-258",
+													"pW-258+20",
 													"19",
-													"pW-205",
+													"pW-205+20",
 													"87"
 												]
 											],
@@ -1459,8 +1522,8 @@
 											[
 												"minimize()"
 											],
-											"posx":"1599",
-											"posy":"930",
+											"posx":"2032",
+											"posy":"1452",
 											"stable":"0",
 											"ui":
 											[
@@ -1475,8 +1538,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"930",
+													"posx":"2391",
+													"posy":"1452",
 													"stable":"0",
 													"ui":
 													[
@@ -1503,8 +1566,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"930",
+															"posx":"2711",
+															"posy":"1452",
 															"stable":"0"
 														}
 													]
@@ -1513,15 +1576,15 @@
 											"uiname":"ui_min"
 										},
 										{
-											"addw":"0",
+											"addw":"36",
 											"compid":"714",
 											"compname":"ltrb",
 											"compvalues":
 											[
 												[
-													"pW-190",
+													"pW-190+20",
 													"19",
-													"pW-137",
+													"pW-137+20",
 													"87"
 												]
 											],
@@ -1530,8 +1593,8 @@
 											[
 												"maximize()"
 											],
-											"posx":"1599",
-											"posy":"1233",
+											"posx":"2032",
+											"posy":"1755",
 											"stable":"0",
 											"ui":
 											[
@@ -1546,8 +1609,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"1233",
+													"posx":"2388",
+													"posy":"1755",
 													"stable":"0",
 													"ui":
 													[
@@ -1574,8 +1637,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"1233",
+															"posx":"2708",
+															"posy":"1755",
 															"stable":"0"
 														}
 													]
@@ -1584,15 +1647,15 @@
 											"uiname":"ui_max"
 										},
 										{
-											"addw":"0",
+											"addw":"31",
 											"compid":"717",
 											"compname":"ltrb",
 											"compvalues":
 											[
 												[
-													"pW-123",
+													"pW-123+20",
 													"19",
-													"pW-70",
+													"pW-70+20",
 													"87"
 												]
 											],
@@ -1601,8 +1664,8 @@
 											[
 												"exit()"
 											],
-											"posx":"1599",
-											"posy":"1536",
+											"posx":"2032",
+											"posy":"2058",
 											"stable":"0",
 											"ui":
 											[
@@ -1617,8 +1680,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"1536",
+													"posx":"2383",
+													"posy":"2058",
 													"stable":"0",
 													"ui":
 													[
@@ -1645,8 +1708,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"1536",
+															"posx":"2703",
+															"posy":"2058",
 															"stable":"0"
 														}
 													]
@@ -1668,8 +1731,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"1839",
+											"posx":"2032",
+											"posy":"2361",
 											"stable":"0",
 											"ui":
 											[
@@ -1687,8 +1750,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"1839",
+													"posx":"2352",
+													"posy":"2361",
 													"stable":"0",
 													"ui":
 													[
@@ -1704,8 +1767,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"1839",
+															"posx":"2672",
+															"posy":"2361",
 															"stable":"0",
 															"ui":
 															[
@@ -1721,16 +1784,15 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"1839",
+																	"posx":"2992",
+																	"posy":"2361",
 																	"stable":"0"
 																}
 															]
 														}
 													]
 												}
-											],
-											"uiname":"title_app"
+											]
 										},
 										{
 											"addw":"0",
@@ -1746,8 +1808,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"2055",
+											"posx":"2032",
+											"posy":"2577",
 											"stable":"0",
 											"ui":
 											[
@@ -1765,8 +1827,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"2055",
+													"posx":"2352",
+													"posy":"2577",
 													"stable":"0",
 													"ui":
 													[
@@ -1782,33 +1844,38 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"2055",
+															"posx":"2672",
+															"posy":"2577",
 															"stable":"0",
 															"ui":
 															[
 																{
-																	"addw":"72",
+																	"addw":"325",
 																	"compid":"727",
 																	"compname":"text",
 																	"compvalues":
 																	[
+																		"if((-1 @'d.data.body.focus') != -1)",
 																		[
-																			"'[UniversalWidget]'",
+																			"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
+																			"leftmiddle"
+																		],
+																		"else",
+																		[
+																			"'[HOME]'",
 																			"leftmiddle"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"2055",
+																	"posx":"2992",
+																	"posy":"2577",
 																	"stable":"0"
 																}
 															]
 														}
 													]
 												}
-											],
-											"uiname":"title_subtitle"
+											]
 										},
 										{
 											"addw":"0",
@@ -1817,15 +1884,15 @@
 											"compvalues":
 											[
 												[
-													"pW-409",
+													"pW-459",
 													"29",
 													"pW-284",
 													"83"
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"2271",
+											"posx":"2032",
+											"posy":"2832",
 											"stable":"0",
 											"ui":
 											[
@@ -1843,8 +1910,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"2271",
+													"posx":"2352",
+													"posy":"2832",
 													"stable":"0",
 													"ui":
 													[
@@ -1860,33 +1927,32 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"2271",
+															"posx":"2672",
+															"posy":"2832",
 															"stable":"0",
 															"ui":
 															[
 																{
-																	"addw":"0",
+																	"addw":"144",
 																	"compid":"731",
 																	"compname":"text",
 																	"compvalues":
 																	[
 																		[
-																			"'50F / 100%'",
-																			"centermiddle"
+																			"framesec +'F / '+ osscale +'%'",
+																			"rightmiddle"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"2271",
+																	"posx":"2992",
+																	"posy":"2832",
 																	"stable":"0"
 																}
 															]
 														}
 													]
 												}
-											],
-											"uiname":"title_status"
+											]
 										},
 										{
 											"addw":"0",
@@ -1895,15 +1961,15 @@
 											"compvalues":
 											[
 												[
-													"pW-270",
+													"pW-250",
 													"31",
-													"pW-269",
+													"pW-249",
 													"80"
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"2487",
+											"posx":"2032",
+											"posy":"3048",
 											"stable":"0",
 											"ui":
 											[
@@ -1921,8 +1987,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"2487",
+													"posx":"2352",
+													"posy":"3048",
 													"stable":"0",
 													"ui":
 													[
@@ -1931,33 +1997,32 @@
 															"compid":"734",
 															"compname":"fill",
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"2487",
+															"posx":"2672",
+															"posy":"3048",
 															"stable":"0"
 														}
 													]
 												}
-											],
-											"uiname":"titlebar_divider"
+											]
 										}
 									]
 								},
 								{
-									"addw":"0",
+									"addw":"43",
 									"compid":"735",
 									"compname":"ltrb",
 									"compvalues":
 									[
 										[
 											"0",
-											"110 + 28 - 3",
-											"118",
+											"110 + 28",
+											"118 - 2",
 											"pH"
 										]
 									],
 									"expanded":"1",
-									"posx":"1279",
-									"posy":"2703",
+									"posx":"1712",
+									"posy":"3264",
 									"stable":"0",
 									"ui":
 									[
@@ -1972,12 +2037,12 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"2703",
+											"posx":"2075",
+											"posy":"3264",
 											"stable":"0"
 										},
 										{
-											"addw":"0",
+											"addw":"237",
 											"compid":"737",
 											"compname":"ltrb",
 											"compvalues":
@@ -1990,11 +2055,22 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"2886",
+											"onclick":
+											[
+												"setvalue('d.data.body.focus', -1)"
+											],
+											"posx":"2075",
+											"posy":"3447",
 											"stable":"0",
 											"ui":
 											[
+												{
+													"addw":"159",
+													"compname":"if(if((-1 @ 'd.data.body.focus') == -1))",
+													"expanded":"1",
+													"posx":"2632",
+													"posy":"3447"
+												},
 												{
 													"addw":"0",
 													"compid":"738",
@@ -2015,9 +2091,47 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"2886",
+													"posx":"2632",
+													"posy":"3573",
 													"stable":"0"
+												},
+												{
+													"addw":"0",
+													"compname":"else",
+													"expanded":"1",
+													"posx":"2632",
+													"posy":"3876"
+												},
+												{
+													"addw":"94",
+													"compid":"823",
+													"compname":"ninepatch",
+													"compvalues":
+													[
+														"ifpressed(btn_home)",
+														[
+															"r.side_normal_p"
+														],
+														"eliffocused(btn_home)",
+														[
+															"r.side_normal_h"
+														],
+														"else",
+														[
+															"r.side_idle"
+														]
+													],
+													"expanded":"1",
+													"posx":"2632",
+													"posy":"3966",
+													"stable":"0"
+												},
+												{
+													"addw":"0",
+													"compname":"endif",
+													"expanded":"1",
+													"posx":"2632",
+													"posy":"4269"
 												},
 												{
 													"addw":"0",
@@ -2033,8 +2147,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"3189",
+													"posx":"2632",
+													"posy":"4359",
 													"stable":"0",
 													"ui":
 													[
@@ -2049,8 +2163,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"3189",
+															"posx":"2952",
+															"posy":"4359",
 															"stable":"0",
 															"ui":
 															[
@@ -2066,8 +2180,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"3189",
+																	"posx":"3272",
+																	"posy":"4359",
 																	"stable":"0"
 																}
 															]
@@ -2089,8 +2203,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"3405",
+													"posx":"2632",
+													"posy":"4575",
 													"stable":"0",
 													"ui":
 													[
@@ -2108,8 +2222,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"3405",
+															"posx":"2952",
+															"posy":"4575",
 															"stable":"0",
 															"ui":
 															[
@@ -2125,8 +2239,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"3405",
+																	"posx":"3272",
+																	"posy":"4575",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -2142,8 +2256,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"2879",
-																			"posy":"3405",
+																			"posx":"3592",
+																			"posy":"4575",
 																			"stable":"0"
 																		}
 																	]
@@ -2167,8 +2281,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"3621",
+													"posx":"2632",
+													"posy":"4791",
 													"stable":"0",
 													"ui":
 													[
@@ -2186,8 +2300,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"3621",
+															"posx":"2952",
+															"posy":"4791",
 															"stable":"0",
 															"ui":
 															[
@@ -2196,8 +2310,8 @@
 																	"compid":"748",
 																	"compname":"fill",
 																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"3621",
+																	"posx":"3272",
+																	"posy":"4791",
 																	"stable":"0"
 																}
 															]
@@ -2208,1182 +2322,618 @@
 											"uiname":"btn_home"
 										},
 										{
-											"addw":"0",
-											"compid":"749",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"133",
-													"112",
-													"245"
-												]
-											],
+											"addw":"88",
+											"compid":"820",
+											"compname":"loop",
 											"expanded":"1",
-											"posx":"1599",
-											"posy":"3837",
-											"stable":"0",
+											"posx":"2075",
+											"posy":"5007",
 											"ui":
 											[
 												{
-													"addw":"0",
-													"compid":"816",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_widget)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_widget)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_idle"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"3837",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"750",
+													"addw":"240",
+													"compid":"749",
 													"compname":"ltrb",
 													"compvalues":
 													[
 														[
-															"13",
-															"12",
-															"pW-13",
-															"72"
+															"6",
+															"133 + 113 * iV",
+															"112",
+															"245 + 113 * iV"
 														]
 													],
 													"expanded":"1",
-													"posx":"1919",
-													"posy":"4140",
+													"onclick":
+													[
+														"setvalue('d.data.body.focus', iV)",
+														{
+															"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+														},
+														"update(0.3)"
+													],
+													"posx":"2483",
+													"posy":"5007",
 													"stable":"0",
 													"ui":
 													[
 														{
-															"addw":"0",
-															"compid":"751",
-															"compname":"zoom",
+															"addw":"144",
+															"compname":"if(if((-1 @ 'd.data.body.focus') == iV))",
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"5007"
+														},
+														{
+															"addw":"116",
+															"compid":"822",
+															"compname":"ninepatch",
 															"compvalues":
 															[
+																"ifpressed('btn_widget_'+ iV)",
 																[
-																	"0.51"
+																	"r.side_selected_p"
+																],
+																"eliffocused('btn_widget_'+ iV)",
+																[
+																	"r.side_selected_h"
+																],
+																"else",
+																[
+																	"r.side_selected"
 																]
 															],
 															"expanded":"1",
-															"posx":"2239",
-															"posy":"4140",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"752",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_widget",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"4140",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_widget_label",
-													"compid":"753",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"4",
-															"70",
-															"pW-4",
-															"102"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"4356",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"754",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"231",
-																	"235",
-																	"241",
-																	"255"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"4356",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"755",
-																	"compname":"font",
-																	"compvalues":
-																	[
-																		[
-																			"1.72",
-																			"'NanumSquare Bold'"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"4356",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"756",
-																			"compname":"text",
-																			"compvalues":
-																			[
-																				[
-																					"'위젯'",
-																					"centermiddle"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"2879",
-																			"posy":"4356",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_widget_divider",
-													"compid":"757",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"8",
-															"pH-1",
-															"pW-8",
-															"pH"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"4572",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"758",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"96",
-																	"112",
-																	"125",
-																	"92"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"4572",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"759",
-																	"compname":"fill",
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"4572",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_widget"
-										},
-										{
-											"addw":"0",
-											"compid":"760",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"247",
-													"112",
-													"359"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"4788",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"817",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_content)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_content)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_idle"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"4788",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"761",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"72"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"5091",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"762",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.51"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"5091",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"763",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_content",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"5091",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_content_label",
-													"compid":"764",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"4",
-															"70",
-															"pW-4",
-															"102"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"5307",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"765",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"231",
-																	"235",
-																	"241",
-																	"255"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"5307",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"766",
-																	"compname":"font",
-																	"compvalues":
-																	[
-																		[
-																			"1.72",
-																			"'NanumSquare Bold'"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"5307",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"767",
-																			"compname":"text",
-																			"compvalues":
-																			[
-																				[
-																					"'콘텐츠'",
-																					"centermiddle"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"2879",
-																			"posy":"5307",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_content_divider",
-													"compid":"768",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"8",
-															"pH-1",
-															"pW-8",
-															"pH"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"5523",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"769",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"96",
-																	"112",
-																	"125",
-																	"92"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"5523",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"770",
-																	"compname":"fill",
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"5523",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_content"
-										},
-										{
-											"addw":"0",
-											"compid":"771",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"361",
-													"112",
-													"473"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"5739",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"818",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_preview)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_preview)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_idle"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"5739",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"772",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"72"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"6042",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"773",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.51"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"6042",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"774",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_preview",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"6042",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_preview_label",
-													"compid":"775",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"4",
-															"70",
-															"pW-4",
-															"102"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"6258",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"776",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"231",
-																	"235",
-																	"241",
-																	"255"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"6258",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"777",
-																	"compname":"font",
-																	"compvalues":
-																	[
-																		[
-																			"1.72",
-																			"'NanumSquare Bold'"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"6258",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"778",
-																			"compname":"text",
-																			"compvalues":
-																			[
-																				[
-																					"'미리보기'",
-																					"centermiddle"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"2879",
-																			"posy":"6258",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_preview_divider",
-													"compid":"779",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"8",
-															"pH-1",
-															"pW-8",
-															"pH"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"6474",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"780",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"96",
-																	"112",
-																	"125",
-																	"92"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"6474",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"781",
-																	"compname":"fill",
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"6474",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_preview"
-										},
-										{
-											"addw":"0",
-											"compid":"782",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"475",
-													"112",
-													"587"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"6690",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"819",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_system)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_system)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_idle"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"6690",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"783",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"72"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"6993",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"784",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.51"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"6993",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"785",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_system",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"6993",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_system_label",
-													"compid":"786",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"4",
-															"70",
-															"pW-4",
-															"102"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"7209",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"787",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"231",
-																	"235",
-																	"241",
-																	"255"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"7209",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"788",
-																	"compname":"font",
-																	"compvalues":
-																	[
-																		[
-																			"1.72",
-																			"'NanumSquare Bold'"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"7209",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"789",
-																			"compname":"text",
-																			"compvalues":
-																			[
-																				[
-																					"'설정'",
-																					"centermiddle"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"2879",
-																			"posy":"7209",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_system_divider",
-													"compid":"790",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"8",
-															"pH-1",
-															"pW-8",
-															"pH"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"7425",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"791",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"96",
-																	"112",
-																	"125",
-																	"92"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"7425",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"792",
-																	"compname":"fill",
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"7425",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_system"
-										},
-										{
-											"addw":"0",
-											"compid":"793",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"pH+25",
-													"112",
-													"pH+137"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"7641",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"794",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_globe)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_globe)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_normal"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"7641",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"795",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"pH-12"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"7944",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"796",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.48"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"7944",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"797",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_globe",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"7944",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_globe"
-										},
-										{
-											"addw":"0",
-											"compid":"798",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"pH+95",
-													"112",
-													"pH+207"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"8160",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"799",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_keyboard)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_keyboard)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_normal"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"8160",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compid":"800",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"pH-12"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"8463",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"801",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.45"
-																]
-															],
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"8463",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"802",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_keyboard",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2559",
-																	"posy":"8463",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											],
-											"uiname":"btn_keyboard"
-										},
-										{
-											"addw":"0",
-											"compid":"803",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"29",
-													"625",
-													"91",
-													"627"
-												]
-											],
-											"expanded":"1",
-											"posx":"1599",
-											"posy":"8679",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"804",
-													"compname":"color",
-													"compvalues":
-													[
-														[
-															"161",
-															"180",
-															"195",
-															"155"
-														]
-													],
-													"expanded":"1",
-													"posx":"1919",
-													"posy":"8679",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"805",
-															"compname":"fill",
-															"expanded":"1",
-															"posx":"2239",
-															"posy":"8679",
+															"posx":"3043",
+															"posy":"5133",
 															"stable":"0"
+														},
+														{
+															"addw":"0",
+															"compname":"else",
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"5436"
+														},
+														{
+															"addw":"94",
+															"compid":"816",
+															"compname":"ninepatch",
+															"compvalues":
+															[
+																"ifpressed('btn_widget_'+ iV)",
+																[
+																	"r.side_normal_p"
+																],
+																"eliffocused('btn_widget_'+ iV)",
+																[
+																	"r.side_normal_h"
+																],
+																"else",
+																[
+																	"r.side_idle"
+																]
+															],
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"5526",
+															"stable":"0"
+														},
+														{
+															"addw":"0",
+															"compname":"endif",
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"5829"
+														},
+														{
+															"addw":"268",
+															"compid":"821",
+															"compinputs":
+															[
+																{
+																	"domname":"'x'@'d.data.body.enum.'+ iV +'.dom'"
+																},
+																{
+																	"titlename":"'-'@'d.data.body.enum.'+ iV +'.title'"
+																}
+															],
+															"compname":"code",
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"5919",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"750",
+																	"compname":"ltrb",
+																	"compvalues":
+																	[
+																		[
+																			"13",
+																			"12",
+																			"pW-13",
+																			"72"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3631",
+																	"posy":"5919",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"751",
+																			"compname":"zoom",
+																			"compvalues":
+																			[
+																				[
+																					"0.51"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3951",
+																			"posy":"5919",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"69",
+																					"compid":"752",
+																					"compname":"icon",
+																					"compvalues":
+																					[
+																						[
+																							"'r.icon.'+ domname",
+																							"centermiddle"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4271",
+																					"posy":"5919",
+																					"stable":"0"
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"addw":"0",
+																	"compid":"753",
+																	"compname":"ltrb",
+																	"compvalues":
+																	[
+																		[
+																			"4",
+																			"70",
+																			"pW-4",
+																			"102"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3631",
+																	"posy":"6135",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"754",
+																			"compname":"color",
+																			"compvalues":
+																			[
+																				[
+																					"231",
+																					"235",
+																					"241",
+																					"255"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3951",
+																			"posy":"6135",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"755",
+																					"compname":"font",
+																					"compvalues":
+																					[
+																						[
+																							"1.72",
+																							"'NanumSquare Bold'"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4271",
+																					"posy":"6135",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"756",
+																							"compname":"text",
+																							"compvalues":
+																							[
+																								[
+																									"titlename",
+																									"centermiddle"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4591",
+																							"posy":"6135",
+																							"stable":"0"
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"compid":"757",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"8",
+																	"pH-1",
+																	"pW-8",
+																	"pH"
+																]
+															],
+															"expanded":"1",
+															"posx":"3043",
+															"posy":"6351",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"758",
+																	"compname":"color",
+																	"compvalues":
+																	[
+																		[
+																			"96",
+																			"112",
+																			"125",
+																			"92"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3363",
+																	"posy":"6351",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"759",
+																			"compname":"fill",
+																			"expanded":"1",
+																			"posx":"3683",
+																			"posy":"6351",
+																			"stable":"0"
+																		}
+																	]
+																}
+															]
+														}
+													],
+													"uiname":"'btn_widget_' + iV"
+												}
+											],
+											"uiloop":"d.data.body.enum.count",
+											"uiname":"i"
+										},
+										{
+											"addw":"327",
+											"compid":"826",
+											"compinputs":
+											[
+												{
+													"addy":"((0 @'d.data.body.enum.count') - 3) * 113 - 5"
+												}
+											],
+											"compname":"code",
+											"expanded":"1",
+											"posx":"2075",
+											"posy":"6567",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"64",
+													"compid":"782",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"6",
+															"475 + addy",
+															"112",
+															"587 + addy"
+														]
+													],
+													"expanded":"1",
+													"posx":"2722",
+													"posy":"6567",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"819",
+															"compname":"ninepatch",
+															"compvalues":
+															[
+																"ifpressed(btn_system)",
+																[
+																	"r.side_normal_p"
+																],
+																"eliffocused(btn_system)",
+																[
+																	"r.side_normal_h"
+																],
+																"else",
+																[
+																	"r.side_idle"
+																]
+															],
+															"expanded":"1",
+															"posx":"3106",
+															"posy":"6567",
+															"stable":"0"
+														},
+														{
+															"addw":"0",
+															"compid":"783",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"13",
+																	"12",
+																	"pW-13",
+																	"72"
+																]
+															],
+															"expanded":"1",
+															"posx":"3106",
+															"posy":"6870",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"784",
+																	"compname":"zoom",
+																	"compvalues":
+																	[
+																		[
+																			"0.51"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3426",
+																	"posy":"6870",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"785",
+																			"compname":"icon",
+																			"compvalues":
+																			[
+																				[
+																					"r.icon_system",
+																					"centermiddle"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3746",
+																			"posy":"6870",
+																			"stable":"0"
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"compid":"786",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"4",
+																	"70",
+																	"pW-4",
+																	"102"
+																]
+															],
+															"expanded":"1",
+															"posx":"3106",
+															"posy":"7086",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"787",
+																	"compname":"color",
+																	"compvalues":
+																	[
+																		[
+																			"231",
+																			"235",
+																			"241",
+																			"255"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3426",
+																	"posy":"7086",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"788",
+																			"compname":"font",
+																			"compvalues":
+																			[
+																				[
+																					"1.72",
+																					"'NanumSquare Bold'"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3746",
+																			"posy":"7086",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"789",
+																					"compname":"text",
+																					"compvalues":
+																					[
+																						[
+																							"'설정'",
+																							"centermiddle"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4066",
+																					"posy":"7086",
+																					"stable":"0"
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"compid":"790",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"8",
+																	"pH-1",
+																	"pW-8",
+																	"pH"
+																]
+															],
+															"expanded":"1",
+															"posx":"3106",
+															"posy":"7302",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"791",
+																	"compname":"color",
+																	"compvalues":
+																	[
+																		[
+																			"96",
+																			"112",
+																			"125",
+																			"92"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3426",
+																	"posy":"7302",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"792",
+																			"compname":"fill",
+																			"expanded":"1",
+																			"posx":"3746",
+																			"posy":"7302",
+																			"stable":"0"
+																		}
+																	]
+																}
+															]
+														}
+													],
+													"uiname":"btn_system"
+												},
+												{
+													"addw":"50",
+													"compid":"803",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"29",
+															"625 + addy",
+															"91",
+															"627 + addy"
+														]
+													],
+													"expanded":"1",
+													"posx":"2722",
+													"posy":"7518",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"804",
+															"compname":"color",
+															"compvalues":
+															[
+																[
+																	"161",
+																	"180",
+																	"195",
+																	"155"
+																]
+															],
+															"expanded":"1",
+															"posx":"3092",
+															"posy":"7518",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"805",
+																	"compname":"fill",
+																	"expanded":"1",
+																	"posx":"3412",
+																	"posy":"7518",
+																	"stable":"0"
+																}
+															]
 														}
 													]
 												}
-											],
-											"uiname":"sidebar_lower_rule"
+											]
 										}
 									]
 								}

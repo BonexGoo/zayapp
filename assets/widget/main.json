@@ -13,17 +13,22 @@
 		"enum" :
 		[
 			{
-				"title" : "APP1",
-				"script" : "app1.zay",
-				"dom" : "app1"
-			},
-			{
-				"title" : "CAFE",
+				"title" : "키오스크",
 				"script" : "cafe.zay",
 				"dom" : "cafe"
+			},
+			{
+				"title" : "스마트홈",
+				"script" : "qhome.zay",
+				"dom" : "qhome"
+			},
+			{
+				"title" : "통신점검",
+				"script" : "netsys.zay",
+				"dom" : "netsys"
 			}
 		],
-		"focus" : 1
+		"focus" : -1
 	},
 	"vk" :
 	{
