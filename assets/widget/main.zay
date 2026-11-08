@@ -1141,8 +1141,8 @@
 	],
 	"posx":"-312",
 	"posy":"-591",
-	"savecount":"164",
-	"savetime":"2026-11-06/14:35:24",
+	"savecount":"165",
+	"savetime":"2026-11-08/01:31:44",
 	"ui":
 	[
 		{
@@ -2331,7 +2331,7 @@
 											"ui":
 											[
 												{
-													"addw":"240",
+													"addw":"282",
 													"compid":"749",
 													"compname":"ltrb",
 													"compvalues":
@@ -2346,6 +2346,9 @@
 													"expanded":"1",
 													"onclick":
 													[
+														"if(iV == 1)",
+														"readyapng('apng/qhome_curtain.apng')",
+														"endif",
 														"setvalue('d.data.body.focus', iV)",
 														{
 															"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
@@ -2361,7 +2364,7 @@
 															"addw":"144",
 															"compname":"if(if((-1 @ 'd.data.body.focus') == iV))",
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5007"
 														},
 														{
@@ -2384,7 +2387,7 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5133",
 															"stable":"0"
 														},
@@ -2392,7 +2395,7 @@
 															"addw":"0",
 															"compname":"else",
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5436"
 														},
 														{
@@ -2415,7 +2418,7 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5526",
 															"stable":"0"
 														},
@@ -2423,7 +2426,7 @@
 															"addw":"0",
 															"compname":"endif",
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5829"
 														},
 														{
@@ -2440,7 +2443,7 @@
 															],
 															"compname":"code",
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"5919",
 															"stable":"0",
 															"ui":
@@ -2459,7 +2462,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3631",
+																	"posx":"3673",
 																	"posy":"5919",
 																	"stable":"0",
 																	"ui":
@@ -2475,7 +2478,7 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3951",
+																			"posx":"3993",
 																			"posy":"5919",
 																			"stable":"0",
 																			"ui":
@@ -2492,7 +2495,7 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4271",
+																					"posx":"4313",
 																					"posy":"5919",
 																					"stable":"0"
 																				}
@@ -2514,7 +2517,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3631",
+																	"posx":"3673",
 																	"posy":"6135",
 																	"stable":"0",
 																	"ui":
@@ -2533,7 +2536,7 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3951",
+																			"posx":"3993",
 																			"posy":"6135",
 																			"stable":"0",
 																			"ui":
@@ -2550,7 +2553,7 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4271",
+																					"posx":"4313",
 																					"posy":"6135",
 																					"stable":"0",
 																					"ui":
@@ -2567,7 +2570,7 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4591",
+																							"posx":"4633",
 																							"posy":"6135",
 																							"stable":"0"
 																						}
@@ -2593,7 +2596,7 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"3043",
+															"posx":"3085",
 															"posy":"6351",
 															"stable":"0",
 															"ui":
@@ -2612,7 +2615,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3363",
+																	"posx":"3405",
 																	"posy":"6351",
 																	"stable":"0",
 																	"ui":
@@ -2622,7 +2625,7 @@
 																			"compid":"759",
 																			"compname":"fill",
 																			"expanded":"1",
-																			"posx":"3683",
+																			"posx":"3725",
 																			"posy":"6351",
 																			"stable":"0"
 																		}

@@ -5921,7 +5921,7 @@
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"-288",
+					"posy":"-289",
 					"stable":"0",
 					"ui":
 					[
@@ -5937,7 +5937,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"-288",
+							"posy":"-289",
 							"stable":"0"
 						}
 					]
@@ -5957,7 +5957,7 @@
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"-72",
+					"posy":"-73",
 					"stable":"0",
 					"ui":
 					[
@@ -5975,7 +5975,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"-72",
+							"posy":"-73",
 							"stable":"0"
 						}
 					]
@@ -5995,7 +5995,7 @@
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"144",
+					"posy":"143",
 					"stable":"0",
 					"ui":
 					[
@@ -6011,7 +6011,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"144",
+							"posy":"143",
 							"stable":"0",
 							"ui":
 							[
@@ -6028,7 +6028,7 @@
 									],
 									"expanded":"1",
 									"posx":"3091",
-									"posy":"144",
+									"posy":"143",
 									"stable":"0",
 									"ui":
 									[
@@ -6045,7 +6045,7 @@
 											],
 											"expanded":"1",
 											"posx":"3411",
-											"posy":"144",
+											"posy":"143",
 											"stable":"0"
 										}
 									]
@@ -6069,7 +6069,7 @@
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"360",
+					"posy":"359",
 					"stable":"0",
 					"ui":
 					[
@@ -6085,7 +6085,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"360",
+							"posy":"359",
 							"stable":"0",
 							"ui":
 							[
@@ -6102,7 +6102,7 @@
 									],
 									"expanded":"1",
 									"posx":"3091",
-									"posy":"360",
+									"posy":"359",
 									"stable":"0",
 									"ui":
 									[
@@ -6119,7 +6119,7 @@
 											],
 											"expanded":"1",
 											"posx":"3411",
-											"posy":"360",
+											"posy":"359",
 											"stable":"0"
 										}
 									]
@@ -6149,7 +6149,7 @@
 						}
 					],
 					"posx":"2451",
-					"posy":"576",
+					"posy":"575",
 					"stable":"0",
 					"ui":
 					[
@@ -6174,7 +6174,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"576",
+							"posy":"575",
 							"stable":"0"
 						}
 					],
@@ -6195,7 +6195,7 @@
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"831",
+					"posy":"830",
 					"stable":"0",
 					"ui":
 					[
@@ -6211,7 +6211,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"831",
+							"posy":"830",
 							"stable":"0"
 						}
 					]
@@ -6225,31 +6225,31 @@
 						[
 							"27",
 							"111",
-							"265",
+							"262",
 							"107"
 						]
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"1047",
+					"posy":"1046",
 					"stable":"0",
 					"ui":
 					[
 						{
-							"addw":"0",
-							"compid":"5434",
-							"compname":"stretch",
+							"addw":"254",
+							"compid":"5791",
+							"compname":"user_content",
 							"compvalues":
 							[
 								[
-									"r.qhome_blinds_photo",
-									"true",
-									"inner"
+									"'apng'",
+									"'apng/qhome_curtain.apng'",
+									"2 * blind_pct / 100 [min] 1.99"
 								]
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"1047",
+							"posy":"1046",
 							"stable":"0"
 						}
 					]
@@ -6262,19 +6262,19 @@
 					[
 						[
 							"29",
-							"224",
-							"229",
+							"230",
+							"258",
 							"15"
 						]
 					],
 					"expanded":"1",
 					"posx":"2451",
-					"posy":"1263",
+					"posy":"1262",
 					"stable":"0",
 					"ui":
 					[
 						{
-							"addw":"0",
+							"addw":"82",
 							"compid":"5436",
 							"compname":"stretch",
 							"compvalues":
@@ -6287,7 +6287,7 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"1263",
+							"posy":"1262",
 							"stable":"0"
 						},
 						{
@@ -6297,7 +6297,7 @@
 							"compvalues":
 							[
 								[
-									"(pW - 31) * blind_pct / 100",
+									"10 + (pW - 31 - 20) * blind_pct / 100",
 									"(pH - 31) / 2",
 									"31",
 									"31"
@@ -6305,12 +6305,12 @@
 							],
 							"expanded":"1",
 							"posx":"2771",
-							"posy":"1446",
+							"posy":"1445",
 							"stable":"0",
 							"ui":
 							[
 								{
-									"addw":"0",
+									"addw":"56",
 									"compid":"5438",
 									"compname":"stretch",
 									"compvalues":
@@ -6323,156 +6323,8 @@
 									],
 									"expanded":"1",
 									"posx":"3354",
-									"posy":"1446",
+									"posy":"1445",
 									"stable":"0"
-								}
-							]
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compid":"5443",
-					"compname":"xywh",
-					"compvalues":
-					[
-						[
-							"245",
-							"219",
-							"40",
-							"28"
-						]
-					],
-					"expanded":"1",
-					"posx":"2451",
-					"posy":"1695",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"5442",
-							"compname":"hexcolor",
-							"compvalues":
-							[
-								[
-									"#344842"
-								]
-							],
-							"expanded":"1",
-							"posx":"2771",
-							"posy":"1695",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"5441",
-									"compname":"font",
-									"compvalues":
-									[
-										[
-											"1.45",
-											"'Roboto.Medium'"
-										]
-									],
-									"expanded":"1",
-									"posx":"3091",
-									"posy":"1695",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"48",
-											"compid":"5440",
-											"compname":"text",
-											"compvalues":
-											[
-												[
-													"blind_pct [divide] 1",
-													"rightmiddle"
-												]
-											],
-											"expanded":"1",
-											"posx":"3411",
-											"posy":"1695",
-											"stable":"0"
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compid":"5447",
-					"compname":"xywh",
-					"compvalues":
-					[
-						[
-							"285",
-							"219",
-							"18",
-							"28"
-						]
-					],
-					"expanded":"1",
-					"posx":"2451",
-					"posy":"1911",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"5446",
-							"compname":"hexcolor",
-							"compvalues":
-							[
-								[
-									"#344842"
-								]
-							],
-							"expanded":"1",
-							"posx":"2771",
-							"posy":"1911",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"5445",
-									"compname":"font",
-									"compvalues":
-									[
-										[
-											"1.1",
-											"'Roboto.Regular'"
-										]
-									],
-									"expanded":"1",
-									"posx":"3091",
-									"posy":"1911",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"5444",
-											"compname":"text",
-											"compvalues":
-											[
-												[
-													"'%'",
-													"leftmiddle"
-												]
-											],
-											"expanded":"1",
-											"posx":"3411",
-											"posy":"1911",
-											"stable":"0"
-										}
-									]
 								}
 							]
 						}
@@ -6498,12 +6350,15 @@
 							"blinds_on":"1"
 						},
 						{
-							"blind_pct":"blind_pct ~ 100 : 0.65"
+							"anitime":"3 * blind_pct / 100"
 						},
-						"update(0.65)"
+						{
+							"blind_pct":"blind_pct ~ 0 : anitime"
+						},
+						"update(anitime)"
 					],
 					"posx":"2451",
-					"posy":"2127",
+					"posy":"1661",
 					"stable":"0",
 					"ui":
 					[
@@ -6519,7 +6374,7 @@
 							],
 							"expanded":"1",
 							"posx":"2996",
-							"posy":"2127",
+							"posy":"1661",
 							"stable":"0"
 						},
 						{
@@ -6537,7 +6392,7 @@
 							],
 							"expanded":"1",
 							"posx":"2996",
-							"posy":"2310",
+							"posy":"1844",
 							"stable":"0",
 							"ui":
 							[
@@ -6555,7 +6410,7 @@
 									],
 									"expanded":"1",
 									"posx":"3316",
-									"posy":"2310",
+									"posy":"1844",
 									"stable":"0"
 								}
 							]
@@ -6575,7 +6430,7 @@
 							],
 							"expanded":"1",
 							"posx":"2996",
-							"posy":"2526",
+							"posy":"2060",
 							"stable":"0",
 							"ui":
 							[
@@ -6591,7 +6446,7 @@
 									],
 									"expanded":"1",
 									"posx":"3316",
-									"posy":"2526",
+									"posy":"2060",
 									"stable":"0",
 									"ui":
 									[
@@ -6608,7 +6463,7 @@
 											],
 											"expanded":"1",
 											"posx":"3636",
-											"posy":"2526",
+											"posy":"2060",
 											"stable":"0",
 											"ui":
 											[
@@ -6625,7 +6480,7 @@
 													],
 													"expanded":"1",
 													"posx":"3956",
-													"posy":"2526",
+													"posy":"2060",
 													"stable":"0"
 												}
 											]
@@ -6658,7 +6513,7 @@
 						"update(0.1)"
 					],
 					"posx":"2451",
-					"posy":"2742",
+					"posy":"2276",
 					"stable":"0",
 					"ui":
 					[
@@ -6674,7 +6529,7 @@
 							],
 							"expanded":"1",
 							"posx":"2942",
-							"posy":"2742",
+							"posy":"2276",
 							"stable":"0"
 						},
 						{
@@ -6692,7 +6547,7 @@
 							],
 							"expanded":"1",
 							"posx":"2942",
-							"posy":"2925",
+							"posy":"2459",
 							"stable":"0",
 							"ui":
 							[
@@ -6710,7 +6565,7 @@
 									],
 									"expanded":"1",
 									"posx":"3262",
-									"posy":"2925",
+									"posy":"2459",
 									"stable":"0"
 								}
 							]
@@ -6730,7 +6585,7 @@
 							],
 							"expanded":"1",
 							"posx":"2942",
-							"posy":"3141",
+							"posy":"2675",
 							"stable":"0",
 							"ui":
 							[
@@ -6746,7 +6601,7 @@
 									],
 									"expanded":"1",
 									"posx":"3262",
-									"posy":"3141",
+									"posy":"2675",
 									"stable":"0",
 									"ui":
 									[
@@ -6763,7 +6618,7 @@
 											],
 											"expanded":"1",
 											"posx":"3582",
-											"posy":"3141",
+											"posy":"2675",
 											"stable":"0",
 											"ui":
 											[
@@ -6780,7 +6635,7 @@
 													],
 													"expanded":"1",
 													"posx":"3902",
-													"posy":"3141",
+													"posy":"2675",
 													"stable":"0"
 												}
 											]
@@ -6811,12 +6666,15 @@
 							"blinds_on":"1"
 						},
 						{
-							"blind_pct":"blind_pct ~ 0 : 0.65"
+							"anitime":"3 * (1 - blind_pct / 100)"
 						},
-						"update(0.65)"
+						{
+							"blind_pct":"blind_pct ~ 100 : anitime"
+						},
+						"update(anitime)"
 					],
 					"posx":"2451",
-					"posy":"3357",
+					"posy":"2891",
 					"stable":"0",
 					"ui":
 					[
@@ -6832,7 +6690,7 @@
 							],
 							"expanded":"1",
 							"posx":"2924",
-							"posy":"3357",
+							"posy":"2891",
 							"stable":"0"
 						},
 						{
@@ -6850,7 +6708,7 @@
 							],
 							"expanded":"1",
 							"posx":"2924",
-							"posy":"3540",
+							"posy":"3074",
 							"stable":"0",
 							"ui":
 							[
@@ -6868,7 +6726,7 @@
 									],
 									"expanded":"1",
 									"posx":"3244",
-									"posy":"3540",
+									"posy":"3074",
 									"stable":"0"
 								}
 							]
@@ -6888,7 +6746,7 @@
 							],
 							"expanded":"1",
 							"posx":"2924",
-							"posy":"3756",
+							"posy":"3290",
 							"stable":"0",
 							"ui":
 							[
@@ -6904,7 +6762,7 @@
 									],
 									"expanded":"1",
 									"posx":"3244",
-									"posy":"3756",
+									"posy":"3290",
 									"stable":"0",
 									"ui":
 									[
@@ -6921,7 +6779,7 @@
 											],
 											"expanded":"1",
 											"posx":"3564",
-											"posy":"3756",
+											"posy":"3290",
 											"stable":"0",
 											"ui":
 											[
@@ -6938,7 +6796,7 @@
 													],
 													"expanded":"1",
 													"posx":"3884",
-													"posy":"3756",
+													"posy":"3290",
 													"stable":"0"
 												}
 											]
@@ -12515,8 +12373,8 @@
 	],
 	"posx":"1",
 	"posy":"-150",
-	"savecount":"32",
-	"savetime":"2026-11-05/18:12:36",
+	"savecount":"62",
+	"savetime":"2026-11-08/03:38:53",
 	"ui":
 	[
 		{
