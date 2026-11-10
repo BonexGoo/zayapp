@@ -28,6 +28,11 @@
 				"dom" : "hcar"
 			},
 			{
+				"title" : "MCare",
+				"script" : "mcare.zay",
+				"dom" : "mcare"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"

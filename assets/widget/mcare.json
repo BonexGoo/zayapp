@@ -1,0 +1,626 @@
+﻿{
+	"atlas":
+	[
+		{
+			"path":"mcare_atlas.png"
+		}
+	],
+	"fonts":
+	[
+		{
+			"path":"font/NanumSquareB.ttf"
+		},
+		{
+			"path":"font/Roboto-Regular.ttf"
+		},
+		{
+			"path":"font/Roboto-Bold.ttf"
+		},
+		{
+			"path":"font/mcare_jp.otf"
+		}
+	],
+	"name":"MCare",
+	"version":"1.1.0",
+	"motion":
+	{
+		"fast":0.18,
+		"normal":0.24,
+		"slow":0.34
+	},
+	"sound_gain":
+	{
+		"tap":0.55,
+		"page":0.65,
+		"select":0.6,
+		"toggle_on":0.65,
+		"toggle_off":0.65,
+		"confirm":0.7,
+		"alert":1.0,
+		"reset":0.65
+	},
+	"language":0,
+	"locales":
+	[
+		{
+			"code":"ko",
+			"label":"한국어",
+			"font":"NanumSquare Bold"
+		},
+		{
+			"code":"en",
+			"label":"English",
+			"font":"Roboto.Regular"
+		},
+		{
+			"code":"ja",
+			"label":"日本語",
+			"font":"Noto Sans CJK JP"
+		}
+	],
+	"messages":
+	{
+		"monitor":
+		[
+			"모니터",
+			"Monitor",
+			"モニター"
+		],
+		"records":
+		[
+			"기록",
+			"Trends",
+			"履歴"
+		],
+		"settings":
+		[
+			"설정",
+			"Settings",
+			"設定"
+		],
+		"demo_badge":
+		[
+			"DEMO · 가상 데이터",
+			"DEMO · Simulated",
+			"DEMO · 模擬データ"
+		],
+		"patient_list":
+		[
+			"환자 목록",
+			"Patients",
+			"患者一覧"
+		],
+		"receiving":
+		[
+			"수신 중",
+			"Live",
+			"受信中"
+		],
+		"hr_alert":
+		[
+			"심박수 알림",
+			"HR alert",
+			"心拍アラート"
+		],
+		"alert_one":
+		[
+			"알림 1",
+			"1 alert",
+			"警告 1"
+		],
+		"offline":
+		[
+			"연결 끊김",
+			"Offline",
+			"切断"
+		],
+		"monitoring_four":
+		[
+			"4명 모니터링 중",
+			"4 patients monitored",
+			"4名をモニタリング"
+		],
+		"simulation_running":
+		[
+			"시뮬레이션 실행 중",
+			"Simulation running",
+			"デモ実行中"
+		],
+		"simulation_paused":
+		[
+			"시뮬레이션 일시정지",
+			"Simulation paused",
+			"デモ一時停止"
+		],
+		"pause":
+		[
+			"일시정지",
+			"Pause",
+			"一時停止"
+		],
+		"resume":
+		[
+			"다시 재생",
+			"Resume",
+			"再開"
+		],
+		"session_prefix":
+		[
+			"세션 ",
+			"Session ",
+			"セッション "
+		],
+		"simulation_time_prefix":
+		[
+			"시뮬레이션 시간  ",
+			"Session time  ",
+			"経過時間  "
+		],
+		"view_records":
+		[
+			"기록 보기",
+			"View trends",
+			"履歴を見る"
+		],
+		"return_live":
+		[
+			"실시간으로",
+			"Back to live",
+			"ライブに戻る"
+		],
+		"waiting_sensor":
+		[
+			"센서 연결을 기다리는 중",
+			"Waiting for a sensor",
+			"センサー接続待ち"
+		],
+		"heart_rate":
+		[
+			"심박수",
+			"Heart rate",
+			"心拍数"
+		],
+		"oxygen":
+		[
+			"산소포화도",
+			"Oxygen level",
+			"酸素飽和度"
+		],
+		"resp_rate":
+		[
+			"호흡수",
+			"Resp. rate",
+			"呼吸数"
+		],
+		"blood_pressure":
+		[
+			"비침습 혈압",
+			"Blood pressure",
+			"非観血血圧"
+		],
+		"temperature":
+		[
+			"체온",
+			"Temperature",
+			"体温"
+		],
+		"nibp_hint":
+		[
+			"가상 측정 · 비침습",
+			"Simulated · NIBP",
+			"模擬測定・非観血"
+		],
+		"temp_hint":
+		[
+			"가상 측정 · 체온 센서",
+			"Simulated · Temperature",
+			"模擬測定・体温"
+		],
+		"recent_alert":
+		[
+			"최근 알림",
+			"Latest alert",
+			"最新アラート"
+		],
+		"no_new_alert":
+		[
+			"새로운 알림 없음",
+			"No new alerts",
+			"新しいアラートなし"
+		],
+		"confirm":
+		[
+			"확인",
+			"Confirm",
+			"確認"
+		],
+		"alert_select_hint":
+		[
+			"알림을 확인하면 해당 환자로 이동합니다",
+			"Confirm to view this patient",
+			"確認すると対象の患者を表示します"
+		],
+		"history_hint":
+		[
+			"2초 간격 · 실제 세션 기록",
+			"2 s samples · Session data",
+			"2秒間隔・セッション記録"
+		],
+		"seconds_short":
+		[
+			"초",
+			"s",
+			"秒"
+		],
+		"elapsed_prefix":
+		[
+			"경과 ",
+			"Elapsed ",
+			"経過 "
+		],
+		"latest":
+		[
+			"최근",
+			"Latest",
+			"最新"
+		],
+		"event_log":
+		[
+			"이벤트 기록",
+			"Event log",
+			"イベント履歴"
+		],
+		"time":
+		[
+			"시각",
+			"Time",
+			"時刻"
+		],
+		"event":
+		[
+			"이벤트",
+			"Event",
+			"イベント"
+		],
+		"status":
+		[
+			"상태",
+			"Status",
+			"状態"
+		],
+		"no_events":
+		[
+			"아직 기록된 이벤트가 없습니다",
+			"No events recorded yet",
+			"まだイベントはありません"
+		],
+		"state_changed":
+		[
+			"상태 변경",
+			"Changed",
+			"状態変更"
+		],
+		"alert_raised":
+		[
+			"알림 발생",
+			"Alert",
+			"アラート"
+		],
+		"acknowledged":
+		[
+			"확인됨",
+			"Acknowledged",
+			"確認済み"
+		],
+		"settings_subtitle":
+		[
+			"화면 표시와 데모 시나리오를 조정합니다",
+			"Adjust the display and demo scenarios",
+			"画面表示とデモの動作を調整します"
+		],
+		"display_settings":
+		[
+			"표시 설정",
+			"Display",
+			"表示設定"
+		],
+		"brightness":
+		[
+			"화면 밝기",
+			"Brightness",
+			"画面の明るさ"
+		],
+		"wave_speed":
+		[
+			"파형 속도",
+			"Wave speed",
+			"波形の速度"
+		],
+		"slow":
+		[
+			"느리게",
+			"Slow",
+			"遅い"
+		],
+		"normal":
+		[
+			"기본",
+			"Normal",
+			"標準"
+		],
+		"fast":
+		[
+			"빠르게",
+			"Fast",
+			"速い"
+		],
+		"show_grid":
+		[
+			"격자 표시",
+			"Show grid",
+			"グリッド表示"
+		],
+		"alert_sound":
+		[
+			"알림 소리",
+			"Alert sound",
+			"通知音"
+		],
+		"alert_volume":
+		[
+			"알림 음량",
+			"Volume",
+			"音量"
+		],
+		"demo_scenarios":
+		[
+			"데모 시나리오",
+			"Demo scenarios",
+			"デモシナリオ"
+		],
+		"target_patient":
+		[
+			"적용 대상",
+			"Patient",
+			"対象患者"
+		],
+		"choose_patient_hint":
+		[
+			"왼쪽 환자 목록에서 적용 대상을 선택하세요",
+			"Choose a patient from the list",
+			"左の一覧から対象患者を選択してください"
+		],
+		"scenario_normal":
+		[
+			"기본 흐름",
+			"Normal rhythm",
+			"通常の変化"
+		],
+		"scenario_normal_hint":
+		[
+			"완만한 수치 변화",
+			"Gentle changes in vital signs",
+			"バイタル値が穏やかに変化"
+		],
+		"scenario_hr":
+		[
+			"심박수 변화",
+			"Heart-rate rise",
+			"心拍数の上昇"
+		],
+		"scenario_hr_hint":
+		[
+			"수치 상승과 알림 확인",
+			"Rising heart rate and an alert",
+			"数値の上昇と通知を確認"
+		],
+		"scenario_disconnect":
+		[
+			"센서 연결 끊김",
+			"Sensor offline",
+			"センサー切断"
+		],
+		"scenario_disconnect_hint":
+		[
+			"수신 중단 상태 확인",
+			"Preview a lost sensor signal",
+			"受信停止の状態を確認"
+		],
+		"apply_scenario":
+		[
+			"시나리오 적용",
+			"Apply scenario",
+			"シナリオを適用"
+		],
+		"selected_patient_hint":
+		[
+			"선택 환자에만 적용됩니다",
+			"Applies to the selected patient",
+			"選択した患者にのみ適用します"
+		],
+		"reset_demo":
+		[
+			"데모 초기화",
+			"Reset demo",
+			"デモをリセット"
+		],
+		"language":
+		[
+			"언어",
+			"Language",
+			"言語"
+		],
+		"language_ko":
+		[
+			"한국어",
+			"한국어",
+			"한국어"
+		],
+		"language_en":
+		[
+			"English",
+			"English",
+			"English"
+		],
+		"language_ja":
+		[
+			"日本語",
+			"日本語",
+			"日本語"
+		],
+		"interface_settings":
+		[
+			"인터페이스 설정",
+			"Interface",
+			"インターフェース"
+		],
+		"sound":
+		[
+			"사운드",
+			"Sound",
+			"サウンド"
+		],
+		"interaction_effects":
+		[
+			"상호작용 효과",
+			"Interaction effects",
+			"操作エフェクト"
+		],
+		"live_monitoring":
+		[
+			"실시간 모니터링",
+			"Live monitoring",
+			"リアルタイム監視"
+		],
+		"selected":
+		[
+			"선택됨",
+			"Selected",
+			"選択中"
+		],
+		"live":
+		[
+			"실시간",
+			"Live",
+			"ライブ"
+		],
+		"monitoring":
+		[
+			"모니터링",
+			"Monitoring",
+			"モニタリング"
+		],
+		"preview_sound":
+		[
+			"사운드 미리 듣기",
+			"Preview sound",
+			"サウンドを試聴"
+		],
+		"language_display":
+		[
+			"언어 및 표시",
+			"Language & display",
+			"言語と表示"
+		],
+		"calm_feedback":
+		[
+			"차분한 인터페이스 피드백",
+			"Subtle interaction feedback",
+			"控えめな操作フィードバック"
+		],
+		"all_alert_sounds":
+		[
+			"전체 알림 소리",
+			"All alert sounds",
+			"すべての通知音"
+		],
+		"selected_patient":
+		[
+			"선택 환자",
+			"Selected patient",
+			"選択中の患者"
+		]
+	},
+	"events":
+	[
+		[
+			"아직 알림이 없습니다",
+			"No alerts yet",
+			"まだ通知はありません"
+		],
+		[
+			"심박수 알림",
+			"High heart rate",
+			"心拍数アラート"
+		],
+		[
+			"심박수 알림 발생",
+			"Heart-rate alert raised",
+			"心拍数アラート発生"
+		],
+		[
+			"심박수 알림 해제",
+			"Heart-rate alert cleared",
+			"心拍数アラート解除"
+		],
+		[
+			"기본 시나리오 적용",
+			"Normal scenario applied",
+			"通常シナリオを適用"
+		],
+		[
+			"심박수 변화 시작",
+			"Heart-rate rise started",
+			"心拍数の上昇を開始"
+		],
+		[
+			"센서 연결 끊김",
+			"Sensor disconnected",
+			"センサー接続が切断"
+		],
+		[
+			"알림 확인",
+			"Alert acknowledged",
+			"アラートを確認"
+		]
+	],
+	"patients":
+	[
+		{
+			"name":
+			[
+				"가상 환자 A",
+				"Demo patient A",
+				"模擬患者 A"
+			],
+			"bed":"BED 01"
+		},
+		{
+			"name":
+			[
+				"가상 환자 B",
+				"Demo patient B",
+				"模擬患者 B"
+			],
+			"bed":"BED 02"
+		},
+		{
+			"name":
+			[
+				"가상 환자 C",
+				"Demo patient C",
+				"模擬患者 C"
+			],
+			"bed":"BED 03"
+		},
+		{
+			"name":
+			[
+				"가상 환자 D",
+				"Demo patient D",
+				"模擬患者 D"
+			],
+			"bed":"BED 04"
+		}
+	]
+}
