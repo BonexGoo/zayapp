@@ -13,19 +13,24 @@
 		"enum" :
 		[
 			{
-				"title" : "키오스크",
-				"script" : "cafe.zay",
-				"dom" : "cafe"
+				"title" : "TCafe",
+				"script" : "tcafe.zay",
+				"dom" : "tcafe"
 			},
 			{
-				"title" : "스마트홈",
+				"title" : "QHome",
 				"script" : "qhome.zay",
 				"dom" : "qhome"
 			},
 			{
-				"title" : "통신점검",
-				"script" : "netsys.zay",
-				"dom" : "netsys"
+				"title" : "HCar",
+				"script" : "hcar.zay",
+				"dom" : "hcar"
+			},
+			{
+				"title" : "NetLog",
+				"script" : "netlog.zay",
+				"dom" : "netlog"
 			}
 		],
 		"focus" : -1

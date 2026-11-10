@@ -1,0 +1,1143 @@
+﻿{
+	"atlas": [
+		{
+			"path": "hcar_atlas.png"
+		}
+	],
+	"fonts": [
+		{
+			"path": "font/Roboto-SemiBold.ttf"
+		},
+		{
+			"path": "font/Roboto-Bold.ttf"
+		},
+		{
+			"path": "font/Roboto-Light.ttf"
+		},
+		{
+			"path": "font/Roboto-Medium.ttf"
+		},
+		{
+			"path": "font/Roboto-Regular.ttf"
+		}
+	],
+	"languages": [
+		{
+			"id": 0,
+			"label": "Kor",
+			"locale": "ko-KR"
+		},
+		{
+			"id": 1,
+			"label": "Eng",
+			"locale": "en-US"
+		},
+		{
+			"id": 2,
+			"label": "Jpn",
+			"locale": "ja-JP"
+		}
+	],
+	"local": {
+		"hc_text_5013": [
+			"11월 9일 월요일",
+			"Mon, Nov 9",
+			"11月9日（月）"
+		],
+		"hc_text_6884": [
+			"꺼짐",
+			"OFF",
+			"オフ"
+		],
+		"hc_text_6888": [
+			"꺼짐",
+			"OFF",
+			"オフ"
+		],
+		"hc_text_5073_case_0": [
+			"센트럴파크",
+			"Central Park",
+			"セントラルパーク"
+		],
+		"hc_text_5073_case_1": [
+			"공항 터미널",
+			"Airport Terminal",
+			"空港ターミナル"
+		],
+		"hc_text_5073_case_2": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_5073_case_3": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_5083": [
+			"분",
+			" min",
+			"分"
+		],
+		"hc_text_5201": [
+			"자동",
+			"AUTO",
+			"自動"
+		],
+		"hc_text_5317": [
+			"목적지·경로·지도 배율·음성 안내를 설정합니다.",
+			"Offline route simulation - destination, route, zoom and voice controls",
+			"目的地・ルート・地図の倍率・音声案内を設定します。"
+		],
+		"hc_text_5335_case_0": [
+			"센트럴파크",
+			"Central Park",
+			"セントラルパーク"
+		],
+		"hc_text_5335_case_1": [
+			"공항 터미널",
+			"Airport Terminal",
+			"空港ターミナル"
+		],
+		"hc_text_5335_case_2": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_5335_case_3": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_5339": [
+			"경로 예시 · 실시간 안내 아님",
+			"Illustrative route - not live guidance",
+			"ルート表示例・実案内なし"
+		],
+		"hc_text_5356": [
+			"현재 위치",
+			"RECENTER",
+			"現在地"
+		],
+		"hc_text_5361": [
+			"경로 진행 ",
+			"",
+			"ルート進行 "
+		],
+		"hc_text_5361_part_1": [
+			"%",
+			"% of route",
+			"%"
+		],
+		"hc_text_5369": [
+			"목적지",
+			"DESTINATION",
+			"目的地"
+		],
+		"hc_text_5373_case_0": [
+			"센트럴파크",
+			"Central Park",
+			"セントラルパーク"
+		],
+		"hc_text_5373_case_1": [
+			"공항 터미널",
+			"Airport Terminal",
+			"空港ターミナル"
+		],
+		"hc_text_5373_case_2": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_5373_case_3": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_5381": [
+			"분",
+			" min",
+			"分"
+		],
+		"hc_text_5385_case_0": [
+			"경로 시뮬레이션 실행 중",
+			"GUIDANCE SIMULATION RUNNING",
+			"ルートシミュレーション実行中"
+		],
+		"hc_text_5385_case_1": [
+			"안내 준비 완료",
+			"READY TO START",
+			"案内開始の準備完了"
+		],
+		"hc_text_5396_case_0": [
+			"안내 중지",
+			"STOP GUIDANCE",
+			"案内を終了"
+		],
+		"hc_text_5396_case_1": [
+			"안내 시작",
+			"START GUIDANCE",
+			"案内を開始"
+		],
+		"hc_text_5402": [
+			"목적지 선택",
+			"CHOOSE DESTINATION",
+			"目的地を選択"
+		],
+		"hc_text_5408": [
+			"음성 안내",
+			"VOICE",
+			"音声案内"
+		],
+		"hc_text_5414": [
+			"장소 저장",
+			"SAVE PLACE",
+			"地点を保存"
+		],
+		"hc_text_5420": [
+			"빠른 길",
+			"FAST",
+			"最速"
+		],
+		"hc_text_5426": [
+			"절약",
+			"ECO",
+			"エコ"
+		],
+		"hc_text_5432": [
+			"경관 우선",
+			"SCENIC",
+			"景観優先"
+		],
+		"hc_text_5437": [
+			"외부 지도 API 및 GPS는 연결되어 있지 않습니다.",
+			"No external map API or GPS connection",
+			"外部地図API・GPSには接続していません。"
+		],
+		"hc_text_5446": [
+			"재생 UI 시뮬레이션 · 실제 음악 서비스는 연결되어 있지 않습니다.",
+			"Local playback UI simulation - no audio streaming or external music service",
+			"再生UIのシミュレーションです。音楽サービスには接続していません。"
+		],
+		"hc_text_5528": [
+			"음량",
+			"VOLUME",
+			"音量"
+		],
+		"hc_text_5533": [
+			"출력 음량: ",
+			"Output level: ",
+			"出力音量："
+		],
+		"hc_text_5538": [
+			"재생 목록",
+			"PLAYLIST",
+			"プレイリスト"
+		],
+		"hc_text_5543": [
+			"음악 보관함 / 3곡",
+			"MUSIC LIBRARY / 3 TRACKS",
+			"ライブラリ / 3曲"
+		],
+		"hc_text_5582": [
+			"Bluetooth·통화 상태를 시뮬레이션합니다. 실제 전화는 걸리지 않습니다.",
+			"Bluetooth and calling controls are simulated locally; no actual call is placed",
+			"Bluetoothと通話状態のシミュレーションです。実際には発信されません。"
+		],
+		"hc_text_5596": [
+			"최근 통화·즐겨찾기",
+			"RECENT & FAVORITES",
+			"履歴・お気に入り"
+		],
+		"hc_text_5600_case_0": [
+			"ZAY 휴대폰 연결됨",
+			"ZAY PHONE CONNECTED",
+			"ZAY Phone 接続済み"
+		],
+		"hc_text_5600_case_1": [
+			"연결된 휴대폰 없음",
+			"NO PHONE CONNECTED",
+			"電話が接続されていません"
+		],
+		"hc_text_5607": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_5612": [
+			"즐겨찾기 / 연락처",
+			"FAVORITE / Contact",
+			"お気に入り / 連絡先"
+		],
+		"hc_text_5619": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_5624": [
+			"최근 통화 / 연락처",
+			"RECENT / Contact",
+			"履歴 / 連絡先"
+		],
+		"hc_text_5631": [
+			"Zay 고객지원",
+			"Zay Support",
+			"Zay サポート"
+		],
+		"hc_text_5636": [
+			"최근 통화 / 연락처",
+			"RECENT / Contact",
+			"履歴 / 連絡先"
+		],
+		"hc_text_5641": [
+			"Bluetooth 관리",
+			"MANAGE BLUETOOTH",
+			"Bluetooth 設定"
+		],
+		"hc_text_5646": [
+			"전화번호를 입력하세요",
+			"Enter a number",
+			"電話番号を入力"
+		],
+		"hc_text_5650_case_0": [
+			"키패드",
+			"KEYPAD",
+			"キーパッド"
+		],
+		"hc_text_5727": [
+			"지우기",
+			"CLEAR",
+			"クリア"
+		],
+		"hc_text_5733": [
+			"전화 걸기",
+			"CALL",
+			"発信"
+		],
+		"hc_text_6879": [
+			"통화 중",
+			"ACTIVE CALL",
+			"通話中"
+		],
+		"hc_text_5743": [
+			"차량 제어·충전 기능은 실제 차량에 연결되어 있지 않습니다.",
+			"Vehicle controls and charging are not connected to a real car.",
+			"車両操作・充電機能は実車に接続していません。"
+		],
+		"hc_text_5759": [
+			"도어·창문",
+			"ACCESS & WINDOWS",
+			"ドア・ウィンドウ"
+		],
+		"hc_text_5765_case_0": [
+			"모든 도어 잠김",
+			"ALL DOORS LOCKED",
+			"全ドア施錠済み"
+		],
+		"hc_text_5765_case_1": [
+			"도어 잠금 해제됨",
+			"DOORS UNLOCKED",
+			"ドア解錠済み"
+		],
+		"hc_text_5770": [
+			"도어 잠금",
+			"DOOR LOCK",
+			"ドアロック"
+		],
+		"hc_text_5776": [
+			"트렁크",
+			"TRUNK",
+			"トランク"
+		],
+		"hc_text_5782": [
+			"창문",
+			"WINDOWS",
+			"ウィンドウ"
+		],
+		"hc_text_5787": [
+			"창문: ",
+			"Windows: ",
+			"ウィンドウ："
+		],
+		"hc_text_5787_part_1": [
+			"% 열림",
+			"% open",
+			"% 開放"
+		],
+		"hc_text_5791": [
+			"주행·조명",
+			"DRIVING & LIGHTING",
+			"走行・照明"
+		],
+		"hc_text_5795": [
+			"주행 모드",
+			"Drive mode",
+			"走行モード"
+		],
+		"hc_text_5800": [
+			"절약",
+			"ECO",
+			"エコ"
+		],
+		"hc_text_5806": [
+			"편안함",
+			"COMFORT",
+			"快適"
+		],
+		"hc_text_5812": [
+			"스포츠",
+			"SPORT",
+			"スポーツ"
+		],
+		"hc_text_5817": [
+			"외부 조명",
+			"Exterior lighting",
+			"エクステリアライト"
+		],
+		"hc_text_5822": [
+			"자동",
+			"AUTO",
+			"自動"
+		],
+		"hc_text_5828": [
+			"켜짐",
+			"ON",
+			"オン"
+		],
+		"hc_text_5834": [
+			"꺼짐",
+			"OFF",
+			"オフ"
+		],
+		"hc_text_5839": [
+			"실내 조명 색상",
+			"Cabin light color",
+			"室内照明の色"
+		],
+		"hc_text_5844": [
+			"청록",
+			"CYAN",
+			"シアン"
+		],
+		"hc_text_5850": [
+			"보라",
+			"PURPLE",
+			"パープル"
+		],
+		"hc_text_5856": [
+			"금색",
+			"GOLD",
+			"ゴールド"
+		],
+		"hc_text_5862": [
+			"타이어·차량 상태",
+			"TIRE & VEHICLE STATUS",
+			"タイヤ・車両状態"
+		],
+		"hc_text_5867": [
+			"배터리·충전",
+			"BATTERY & CHARGING",
+			"バッテリー・充電"
+		],
+		"hc_text_5875": [
+			"예상 주행 거리: ",
+			"Estimated range: ",
+			"推定航続距離："
+		],
+		"hc_text_5885": [
+			"충전 한도: ",
+			"Charge limit: ",
+			"充電上限："
+		],
+		"hc_text_5926": [
+			"충전 시작 / 중지",
+			"START / STOP CHARGING",
+			"充電開始 / 停止"
+		],
+		"hc_text_5931_case_0": [
+			"충전 중 · 시뮬레이션",
+			"CHARGING - LOCAL SIMULATION",
+			"充電中・シミュレーション"
+		],
+		"hc_text_5931_case_1": [
+			"충전 플러그 연결됨",
+			"PLUG CONNECTED",
+			"充電プラグ接続済み"
+		],
+		"hc_text_5935": [
+			"충전기 및 차량 통신은 연결되어 있지 않습니다.",
+			"No charger or vehicle bus is connected",
+			"充電器・車載ネットワークは未接続です。"
+		],
+		"hc_text_5944": [
+			"실행 중에는 설정이 유지됩니다. 다시 시작하면 기본값으로 돌아갑니다.",
+			"Settings are kept while this widget is running; restart restores defaults",
+			"設定は実行中のみ保持されます。再起動で初期値に戻ります。"
+		],
+		"hc_text_5960": [
+			"연결",
+			"CONNECTIONS",
+			"接続"
+		],
+		"hc_text_5965": [
+			"블루투스",
+			"BLUETOOTH",
+			"Bluetooth"
+		],
+		"hc_text_5971": [
+			"와이파이",
+			"WI-FI",
+			"Wi-Fi"
+		],
+		"hc_text_5977": [
+			"휴대폰 연결 / 해제",
+			"PAIR / UNPAIR PHONE",
+			"電話の接続 / 解除"
+		],
+		"hc_text_5983": [
+			"연결 상세",
+			"CONNECTION DETAILS",
+			"接続の詳細"
+		],
+		"hc_text_5988": [
+			"화면·동작 효과",
+			"DISPLAY & MOTION",
+			"画面・動作効果"
+		],
+		"hc_text_5992": [
+			"밝기: ",
+			"Brightness: ",
+			"明るさ："
+		],
+		"hc_text_6033": [
+			"애니메이션",
+			"ANIMATIONS",
+			"アニメーション"
+		],
+		"hc_text_6038": [
+			"메뉴·슬라이더·팝업의 움직임을 설정합니다.",
+			"Changes menu, slider and popup motion",
+			"メニュー・スライダー等の動作設定です。"
+		],
+		"hc_text_6043": [
+			"밝기 초기화",
+			"RESTORE BRIGHTNESS",
+			"明るさを戻す"
+		],
+		"hc_text_6048": [
+			"환경 설정",
+			"PREFERENCES",
+			"環境設定"
+		],
+		"hc_text_6053": [
+			"효과음",
+			"UI SOUND",
+			"操作音"
+		],
+		"hc_text_6059": [
+			"알림",
+			"NOTIFICATIONS",
+			"通知"
+		],
+		"hc_text_6065": [
+			"HCar 정보",
+			"ABOUT HCar",
+			"HCar について"
+		],
+		"hc_text_6071": [
+			"설정 초기화",
+			"RESET SETTINGS",
+			"設定をリセット"
+		],
+		"hc_text_6081": [
+			"각 항목을 누르면 해당 화면이나 제어 패널이 열립니다.",
+			"Every tile below opens its own view or a live control sheet",
+			"各項目を押すと対応する画面や操作パネルが開きます。"
+		],
+		"hc_text_6337": [
+			"Climate 설정",
+			"Climate controls",
+			"Climate 設定"
+		],
+		"hc_text_6341": [
+			"하단 공조 바에도 반영됩니다. 실제 공조 장치에는 연결되어 있지 않습니다.",
+			"Changes also update the persistent climate bar. No HVAC hardware is connected.",
+			"下部の空調バーにも反映されます。実際の空調装置には接続していません。"
+		],
+		"hc_text_6331": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6158": [
+			"운전석",
+			"DRIVER",
+			"運転席"
+		],
+		"hc_text_6189": [
+			"시트 열선",
+			"SEAT HEAT",
+			"シートヒーター"
+		],
+		"hc_text_6194": [
+			"열선 단계: ",
+			"Heat level: ",
+			"ヒーター強度："
+		],
+		"hc_text_6200": [
+			"동승석",
+			"PASSENGER",
+			"助手席"
+		],
+		"hc_text_6231": [
+			"시트 열선",
+			"SEAT HEAT",
+			"シートヒーター"
+		],
+		"hc_text_6236": [
+			"열선 단계: ",
+			"Heat level: ",
+			"ヒーター強度："
+		],
+		"hc_text_6240": [
+			"풍량",
+			"AIRFLOW",
+			"風量"
+		],
+		"hc_text_6244": [
+			"풍량 ",
+			"FAN ",
+			"風量 "
+		],
+		"hc_text_6297": [
+			"동기화",
+			"SYNC",
+			"連動"
+		],
+		"hc_text_6303": [
+			"자동",
+			"AUTO",
+			"自動"
+		],
+		"hc_text_6308": [
+			"동기화를 켜면 운전석·동승석 온도가 함께 바뀝니다.",
+			"SYNC links driver and passenger temperatures",
+			"連動を有効にすると運転席と助手席の温度が同期します。"
+		],
+		"hc_text_6319": [
+			"앞유리 성에 제거",
+			"FRONT DEFROST",
+			"フロント曇り取り"
+		],
+		"hc_text_6325": [
+			"내기순환",
+			"RECIRCULATION",
+			"内気循環"
+		],
+		"hc_text_6407": [
+			"목적지",
+			"Destinations",
+			"目的地"
+		],
+		"hc_text_6411": [
+			"경로 시뮬레이션용 장소입니다. 선택하면 기존 경로 안내가 중지됩니다.",
+			"Sample places for the route simulation. Choosing a place stops the previous route.",
+			"ルート表示用のサンプル地点です。選択すると現在の案内は停止します。"
+		],
+		"hc_text_6401": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6355": [
+			"센트럴파크",
+			"Central Park",
+			"セントラルパーク"
+		],
+		"hc_text_6360": [
+			"12.8 km / 약 22분",
+			"12.8 km / about 22 min",
+			"12.8 km / 約22分"
+		],
+		"hc_text_6367": [
+			"공항 터미널",
+			"Airport Terminal",
+			"空港ターミナル"
+		],
+		"hc_text_6372": [
+			"28.6 km / 약 37분",
+			"28.6 km / about 37 min",
+			"28.6 km / 約37分"
+		],
+		"hc_text_6379": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_6384": [
+			"6.4 km / 약 11분",
+			"6.4 km / about 11 min",
+			"6.4 km / 約11分"
+		],
+		"hc_text_6391": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_6396": [
+			"9.2 km / 약 16분",
+			"9.2 km / about 16 min",
+			"9.2 km / 約16分"
+		],
+		"hc_text_6461": [
+			"Phone 통화",
+			"Phone call",
+			"Phone 通話"
+		],
+		"hc_text_6465": [
+			"실제 통신 없이 화면의 통화 상태만 제어합니다.",
+			"This panel controls local call state only.",
+			"実際の通信は行わず、画面上の通話状態のみを操作します。"
+		],
+		"hc_text_6455": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6424_case_0": [
+			"집",
+			"Home",
+			"自宅"
+		],
+		"hc_text_6424_case_1": [
+			"회사",
+			"Office",
+			"オフィス"
+		],
+		"hc_text_6424_case_2": [
+			"Zay 고객지원",
+			"Zay Support",
+			"Zay サポート"
+		],
+		"hc_text_6428": [
+			"통화 화면 · 전화망 미연결",
+			"CALL - no phone network",
+			"通話画面・電話網未接続"
+		],
+		"hc_text_6432": [
+			"초",
+			" seconds",
+			"秒"
+		],
+		"hc_text_6437": [
+			"음소거",
+			"MUTE",
+			"ミュート"
+		],
+		"hc_text_6443": [
+			"스피커",
+			"SPEAKER",
+			"スピーカー"
+		],
+		"hc_text_6449": [
+			"통화 종료",
+			"END CALL",
+			"通話を終了"
+		],
+		"hc_text_6515": [
+			"Bluetooth 연결",
+			"Bluetooth pairing",
+			"Bluetooth ペアリング"
+		],
+		"hc_text_6519": [
+			"실제 Bluetooth 검색·연결 요청은 전송하지 않습니다.",
+			"No physical Bluetooth scan or pairing request is sent.",
+			"実際のBluetooth検索・ペアリング要求は送信されません。"
+		],
+		"hc_text_6509": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6477": [
+			"Bluetooth 켜기",
+			"BLUETOOTH POWER",
+			"Bluetooth 電源"
+		],
+		"hc_text_6482": [
+			"연결 가능한 장치",
+			"AVAILABLE DEVICES",
+			"利用可能なデバイス"
+		],
+		"hc_text_6489": [
+			"ZAY 휴대폰",
+			"ZAY Phone",
+			"ZAY Phone"
+		],
+		"hc_text_6497": [
+			"게스트 휴대폰",
+			"Guest Phone",
+			"ゲストの電話"
+		],
+		"hc_text_6503": [
+			"연결 해제",
+			"DISCONNECT",
+			"接続を解除"
+		],
+		"hc_text_6557_case_0": [
+			"안내를 중지할까요?",
+			"Stop guidance?",
+			"案内を終了しますか？"
+		],
+		"hc_text_6557_case_1": [
+			"트렁크를 열까요?",
+			"Open the trunk?",
+			"トランクを開きますか？"
+		],
+		"hc_text_6557_case_2": [
+			"설정을 초기화할까요?",
+			"Reset settings?",
+			"設定をリセットしますか？"
+		],
+		"hc_text_6561": [
+			"실행할 내용을 확인해 주세요.",
+			"Please confirm your action.",
+			"操作内容を確認してください。"
+		],
+		"hc_text_6551": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6530_case_0": [
+			"재생·공조·차량·네트워크 설정을 초기화할까요?",
+			"Reset playback, climate, car and network settings?",
+			"再生・空調・車両・ネットワーク設定をリセットしますか？"
+		],
+		"hc_text_6530_case_1": [
+			"현재 경로 시뮬레이션이 중지됩니다.",
+			"The local route simulation will be stopped.",
+			"現在のルートシミュレーションを停止します。"
+		],
+		"hc_text_6530_case_2": [
+			"실제 차량이 아닌 앱 내부의 상태만 바뀝니다.",
+			"This changes the local vehicle state only.",
+			"実車ではなくアプリ内の車両状態のみを変更します。"
+		],
+		"hc_text_6530_case_3": [
+			"재생·차량·공조·연결 설정이 기본값으로 돌아갑니다.",
+			"Playback, vehicle, climate and connection settings will return to their defaults.",
+			"再生・車両・空調・接続設定が初期値に戻ります。"
+		],
+		"hc_text_6546": [
+			"현재 실행 중인 상태에만 적용됩니다.",
+			"This affects this session only.",
+			"今回の実行中の状態にのみ適用されます。"
+		],
+		"hc_text_6535": [
+			"취소",
+			"CANCEL",
+			"キャンセル"
+		],
+		"hc_text_6541": [
+			"확인",
+			"CONFIRM",
+			"確認"
+		],
+		"hc_text_6605": [
+			"연결 상태",
+			"Connections",
+			"接続状況"
+		],
+		"hc_text_6609": [
+			"연결 표시는 앱 내부 설정이며 운영체제의 실제 상태가 아닙니다.",
+			"Connection indicators reflect local settings, not operating-system status.",
+			"接続表示はアプリ内の設定です。OSの実際の状態ではありません。"
+		],
+		"hc_text_6599": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6575": [
+			"블루투스",
+			"BLUETOOTH",
+			"Bluetooth"
+		],
+		"hc_text_6583": [
+			"와이파이",
+			"WI-FI",
+			"Wi-Fi"
+		],
+		"hc_text_6588": [
+			"이동통신: 연결 시뮬레이션 / 모뎀 없음",
+			"Cellular: simulated connection / no modem",
+			"モバイル通信：接続シミュレーション／モデムなし"
+		],
+		"hc_text_6593": [
+			"Phone 설정 열기",
+			"OPEN PHONE SETTINGS",
+			"Phone 設定を開く"
+		],
+		"hc_text_6645": [
+			"재생 목록",
+			"Playlist",
+			"プレイリスト"
+		],
+		"hc_text_6649": [
+			"곡을 선택하면 진행바가 다시 시작됩니다. 실제 음악 재생은 연결되지 않았습니다.",
+			"Selecting a track restarts the timeline. Music audio is not connected.",
+			"曲を選ぶと再生位置がリセットされます。音楽再生は接続されていません。"
+		],
+		"hc_text_6639": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6723": [
+			"Vehicle 상태",
+			"Vehicle status",
+			"Vehicle 状態"
+		],
+		"hc_text_6727": [
+			"타이어 정보는 예시입니다. 실제 차량 센서에는 연결되어 있지 않습니다.",
+			"Illustrative tire data. This UI is not connected to vehicle sensors.",
+			"タイヤ情報はサンプルです。実際の車両センサーには接続していません。"
+		],
+		"hc_text_6717": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6660": [
+			"타이어 공기압 · 예시",
+			"TIRE PRESSURES - SAMPLE VALUES",
+			"タイヤ空気圧・サンプル"
+		],
+		"hc_text_6666": [
+			"앞 왼쪽",
+			"FRONT LEFT",
+			"左前"
+		],
+		"hc_text_6676": [
+			"앞 오른쪽",
+			"FRONT RIGHT",
+			"右前"
+		],
+		"hc_text_6686": [
+			"뒤 왼쪽",
+			"REAR LEFT",
+			"左後"
+		],
+		"hc_text_6696": [
+			"뒤 오른쪽",
+			"REAR RIGHT",
+			"右後"
+		],
+		"hc_text_6705": [
+			"새로고침",
+			"REFRESH SAMPLE",
+			"更新"
+		],
+		"hc_text_6711": [
+			"Vehicle 제어",
+			"VEHICLE CONTROLS",
+			"Vehicle 操作"
+		],
+		"hc_text_6783": [
+			"음량",
+			"Volume",
+			"音量"
+		],
+		"hc_text_6787": [
+			"플레이어 음량 설정입니다. 효과음과는 별개입니다.",
+			"Player volume is a local setting. UI effects use a separate sound setting.",
+			"プレーヤー音量を設定。操作音とは別です。"
+		],
+		"hc_text_6777": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6765": [
+			"음소거",
+			"MUTE",
+			"ミュート"
+		],
+		"hc_text_6831": [
+			"HCar 정보",
+			"About HCar",
+			"HCar について"
+		],
+		"hc_text_6835": [
+			"화면 전환·애니메이션·효과음·3개 언어를 지원합니다.",
+			"Screen transitions, animations, UI sounds and three languages.",
+			"画面切替・アニメーション・操作音・3言語に対応しています。"
+		],
+		"hc_text_6825": [
+			"닫기",
+			"CLOSE",
+			"閉じる"
+		],
+		"hc_text_6798": [
+			"HCar",
+			"HCar",
+			"HCar"
+		],
+		"hc_text_6802": [
+			"7개 화면 / 10개 패널 / 상태 공유",
+			"7 pages / 10 sheets / shared interactive state",
+			"7画面 / 10パネル / 状態を共有"
+		],
+		"hc_text_6806": [
+			"내비게이션·통화·음악·차량 제어는 앱 내부에서 동작합니다.",
+			"Navigation, calls, music and vehicle control run locally.",
+			"ナビ・通話・音楽・車両操作はアプリ内で動作します。"
+		],
+		"hc_text_6810": [
+			"GPS·음악 스트리밍·Bluetooth·차량 서비스는 연결되어 있지 않습니다.",
+			"No GPS, music streaming, Bluetooth or vehicle service is connected.",
+			"GPS・音楽配信・Bluetooth・車両サービスには接続していません。"
+		],
+		"hc_text_6814": [
+			"상단 시간과 날씨는 예시 데이터입니다.",
+			"Time and weather in the header are sample data.",
+			"上部の時刻・天気はサンプルデータです。"
+		],
+		"hc_text_6819": [
+			"Home으로",
+			"RETURN HOME",
+			"Home に戻る"
+		],
+		"hc_text_6873_case_0": [
+			"경로 안내가 완료되었습니다",
+			"Route complete",
+			"ルート案内が完了しました"
+		],
+		"hc_text_6873_case_1": [
+			"충전 목표에 도달했습니다",
+			"Charging target reached",
+			"充電目標に達しました"
+		],
+		"hc_text_6873_case_2": [
+			"차량 위치를 지도 중앙에 표시합니다",
+			"Map centered on the vehicle",
+			"車両を地図の中心に表示しました"
+		],
+		"hc_text_6873_case_3": [
+			"지도를 중앙으로 이동했습니다",
+			"Map centered",
+			"地図を中央に戻しました"
+		],
+		"hc_text_6873_case_4": [
+			"경로 시뮬레이션 시작 · 실시간 GPS 없음",
+			"Route simulation started - no live GPS",
+			"ルートシミュレーション開始・実際のGPSは未接続"
+		],
+		"hc_text_6873_case_5": [
+			"빠른 경로를 선택했습니다",
+			"FAST route selected",
+			"最速ルートを選択しました"
+		],
+		"hc_text_6873_case_6": [
+			"절약 경로를 선택했습니다",
+			"ECO route selected",
+			"エコルートを選択しました"
+		],
+		"hc_text_6873_case_7": [
+			"경치 좋은 경로를 선택했습니다",
+			"SCENIC route selected",
+			"景観優先ルートを選択しました"
+		],
+		"hc_text_6873_case_8": [
+			"최대 16자까지 입력할 수 있습니다",
+			"Maximum 16 characters",
+			"入力は16文字までです"
+		],
+		"hc_text_6873_case_9": [
+			"먼저 전화번호를 입력해 주세요",
+			"Enter a number first",
+			"先に電話番号を入力してください"
+		],
+		"hc_text_6873_case_10": [
+			"트렁크가 닫혔습니다",
+			"Trunk closed",
+			"トランクを閉じました"
+		],
+		"hc_text_6873_case_11": [
+			"절약 모드를 선택했습니다",
+			"ECO mode selected",
+			"エコモードを選択しました"
+		],
+		"hc_text_6873_case_12": [
+			"편안함 모드를 선택했습니다",
+			"COMFORT mode selected",
+			"快適モードを選択しました"
+		],
+		"hc_text_6873_case_13": [
+			"스포츠 모드를 선택했습니다",
+			"SPORT mode selected",
+			"スポーツモードを選択しました"
+		],
+		"hc_text_6873_case_14": [
+			"조명 설정을 변경했습니다",
+			"Light setting changed",
+			"照明設定を変更しました"
+		],
+		"hc_text_6873_case_15": [
+			"배터리가 이미 설정한 충전 한도에 도달했습니다",
+			"Battery is already at the selected limit",
+			"バッテリーは設定した充電上限に達しています"
+		],
+		"hc_text_6873_case_16": [
+			"오른쪽에서 충전을 설정할 수 있습니다",
+			"Charging controls are on the right",
+			"右側で充電を設定できます"
+		],
+		"hc_text_6873_case_17": [
+			"목적지를 선택했습니다",
+			"Destination selected",
+			"目的地を選択しました"
+		],
+		"hc_text_6873_case_18": [
+			"통화가 종료되었습니다",
+			"Call ended",
+			"通話を終了しました"
+		],
+		"hc_text_6873_case_19": [
+			"ZAY 휴대폰이 연결되었습니다",
+			"ZAY Phone paired",
+			"ZAY Phone を接続しました"
+		],
+		"hc_text_6873_case_20": [
+			"게스트 휴대폰이 연결되었습니다",
+			"Guest Phone paired",
+			"ゲストの電話を接続しました"
+		],
+		"hc_text_6873_case_21": [
+			"휴대폰 연결을 해제했습니다",
+			"Phone disconnected",
+			"電話の接続を解除しました"
+		],
+		"hc_text_6873_case_22": [
+			"경로 안내를 중지했습니다",
+			"Guidance stopped",
+			"ルート案内を終了しました"
+		],
+		"hc_text_6873_case_23": [
+			"설정을 초기화했습니다",
+			"Settings restored",
+			"設定をリセットしました"
+		],
+		"hc_text_6873_case_24": [
+			"트렁크가 열렸습니다",
+			"Trunk open",
+			"トランクを開きました"
+		],
+		"hc_text_6873_case_25": [
+			"타이어 공기압에 변화가 없습니다",
+			"Tire pressure values are unchanged",
+			"タイヤ空気圧に変化はありません"
+		]
+	}
+}
