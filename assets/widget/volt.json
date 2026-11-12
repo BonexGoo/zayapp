@@ -1,0 +1,864 @@
+﻿{
+	"atlas":
+	[
+		{
+			"path":"volt_atlas.png"
+		}
+	],
+	"fonts":
+	[
+		{
+			"path":"font/NanumSquareB.ttf"
+		},
+		{
+			"path":"font/Roboto-Bold.ttf"
+		},
+		{
+			"path":"font/Roboto-Regular.ttf"
+		},
+		{
+			"path":"font/volt_jp.otf"
+		}
+	],
+	"name":"VOLT",
+	"version":"1.1.2",
+	"start_soc":37,
+	"capacity_kwh":80,
+	"rate":350,
+	"power_kw":72,
+	"admin_pin":1234,
+	"demo_seconds_per_percent":1,
+	"text":
+	{
+		"label_0":"03번 충전기  |  DC 급속충전",
+		"label_1":"잠깐의 충전,",
+		"label_2":"더 멀리 가는 여정.",
+		"label_3":"차와 당신을 위한 새로운 에너지",
+		"label_4":"VOLT CHARGING",
+		"label_5":"충전 시작하기",
+		"label_6":"관리자",
+		"label_7":"충전을 준비해 주세요",
+		"label_8":"커넥터 연결 완료",
+		"label_9":"목표 충전율",
+		"label_10":"80%",
+		"label_11":"80%",
+		"label_12":"90%",
+		"label_13":"90%",
+		"label_14":"100%",
+		"label_15":"100%",
+		"label_16":"←  이전",
+		"label_17":"결제 방법 선택  →",
+		"label_18":"결제 방법을 선택해 주세요",
+		"label_19":"신용·체크카드",
+		"label_20":"신용·체크카드",
+		"label_21":"회원카드",
+		"label_22":"회원카드",
+		"label_23":"QR 결제",
+		"label_24":"QR 결제",
+		"label_25":"결제 방법을 선택한 후 충전을 시작해 주세요.",
+		"label_26":"←  이전",
+		"label_27":"충전 시작  →",
+		"label_28":"충전 중",
+		"label_29":"충전량",
+		"label_30":"충전 속도",
+		"label_31":"현재 요금",
+		"label_32":"충전 종료",
+		"label_33":"커넥터를 분리하지 마세요.",
+		"label_34":"충전이 완료되었습니다",
+		"label_35":"충전이 종료되었습니다",
+		"label_36":"충전량",
+		"label_37":"이용 시간",
+		"label_38":"총 요금",
+		"label_39":"커넥터를 충전기에 돌려놓아 주세요.",
+		"label_40":"영수증 보기",
+		"label_41":"완료",
+		"label_42":"관리자 인증",
+		"label_43":"관리자 비밀번호를 입력해 주세요.",
+		"label_44":"1",
+		"label_45":"2",
+		"label_46":"3",
+		"label_47":"4",
+		"label_48":"5",
+		"label_49":"6",
+		"label_50":"7",
+		"label_51":"8",
+		"label_52":"9",
+		"label_53":"삭제",
+		"label_54":"0",
+		"label_55":"취소",
+		"label_56":"확인",
+		"label_57":"비밀번호를 다시 확인해 주세요.",
+		"label_58":"충전 화면으로 돌아가기",
+		"label_59":"충전 내역",
+		"label_60":"관리자 모드",
+		"label_61":"로그아웃",
+		"label_62":"일시",
+		"label_63":"충전량",
+		"label_64":"이용 시간",
+		"label_65":"요금",
+		"label_66":"상태",
+		"label_67":"03번 충전기 · 이용 내역",
+		"label_68":"충전 화면으로",
+		"label_69":"VOLT 충전 영수증",
+		"label_70":"닫기"
+	},
+	"history_summary":"오늘 12건 · 총 충전량 246.80 kWh · 총 매출 86,380원",
+	"history":
+	[
+		{
+			"time":"11.11 10:42",
+			"energy":"34.40 kWh",
+			"duration":"29분",
+			"fee":"12,040원",
+			"state":"완료",
+			"minutes":29,
+			"fee_number":"12,040"
+		},
+		{
+			"time":"11.11 09:38",
+			"energy":"24.80 kWh",
+			"duration":"22분",
+			"fee":"8,680원",
+			"state":"완료",
+			"minutes":22,
+			"fee_number":"8,680"
+		},
+		{
+			"time":"11.11 08:52",
+			"energy":"18.60 kWh",
+			"duration":"18분",
+			"fee":"6,510원",
+			"state":"완료",
+			"minutes":18,
+			"fee_number":"6,510"
+		},
+		{
+			"time":"11.11 08:15",
+			"energy":"30.00 kWh",
+			"duration":"26분",
+			"fee":"10,500원",
+			"state":"완료",
+			"minutes":26,
+			"fee_number":"10,500"
+		},
+		{
+			"time":"11.11 07:31",
+			"energy":"12.00 kWh",
+			"duration":"13분",
+			"fee":"4,200원",
+			"state":"완료",
+			"minutes":13,
+			"fee_number":"4,200"
+		},
+		{
+			"time":"11.11 07:00",
+			"energy":"22.40 kWh",
+			"duration":"19분",
+			"fee":"7,840원",
+			"state":"완료",
+			"minutes":19,
+			"fee_number":"7,840"
+		},
+		{
+			"time":"11.11 06:30",
+			"energy":"19.20 kWh",
+			"duration":"16분",
+			"fee":"6,720원",
+			"state":"완료",
+			"minutes":16,
+			"fee_number":"6,720"
+		},
+		{
+			"time":"11.11 06:00",
+			"energy":"17.60 kWh",
+			"duration":"15분",
+			"fee":"6,160원",
+			"state":"완료",
+			"minutes":15,
+			"fee_number":"6,160"
+		},
+		{
+			"time":"11.11 05:30",
+			"energy":"16.00 kWh",
+			"duration":"14분",
+			"fee":"5,600원",
+			"state":"완료",
+			"minutes":14,
+			"fee_number":"5,600"
+		},
+		{
+			"time":"11.11 05:00",
+			"energy":"20.80 kWh",
+			"duration":"18분",
+			"fee":"7,280원",
+			"state":"완료",
+			"minutes":18,
+			"fee_number":"7,280"
+		},
+		{
+			"time":"11.11 04:30",
+			"energy":"18.40 kWh",
+			"duration":"16분",
+			"fee":"6,440원",
+			"state":"완료",
+			"minutes":16,
+			"fee_number":"6,440"
+		},
+		{
+			"time":"11.11 04:00",
+			"energy":"12.60 kWh",
+			"duration":"11분",
+			"fee":"4,410원",
+			"state":"완료",
+			"minutes":11,
+			"fee_number":"4,410"
+		}
+	],
+	"motion":
+	{
+		"page":0.24,
+		"press":0.14,
+		"selection":0.24,
+		"energy":2.2,
+		"receipt":0.22
+	},
+	"sound_gain":
+	{
+		"tap":0.36,
+		"select":0.48,
+		"page":0.42,
+		"connect":0.55,
+		"start":0.58,
+		"complete":0.6,
+		"error":0.42,
+		"toggle":0.4
+	},
+	"receipt":
+	{
+		"approved_at":"—",
+		"approval_number":"—",
+		"merchant_name":"VOLT",
+		"business_number":"—",
+		"merchant_number":"—",
+		"representative":"—",
+		"address_line1":"—",
+		"address_line2":"",
+		"telephone":"—",
+		"vat_rate":0.1
+	},
+	"locale":
+	{
+		"station":
+		[
+			"03번 충전기 · DC 급속충전",
+			"Charger 03 · DC fast charging",
+			"充電器 03 · DC急速充電"
+		],
+		"available":
+		[
+			"충전 가능",
+			"Ready to charge",
+			"充電できます"
+		],
+		"hero1":
+		[
+			"잠깐의 충전,",
+			"A moment to charge.",
+			"ひと息の充電で、"
+		],
+		"hero2":
+		[
+			"더 멀리 가는 여정.",
+			"A journey further.",
+			"もっと遠くへ。"
+		],
+		"hero_sub":
+		[
+			"차와 당신을 위한 새로운 에너지",
+			"Fresh energy for you and your journey.",
+			"クルマとあなたに、新しいエネルギー。"
+		],
+		"start":
+		[
+			"충전 시작하기",
+			"Start charging",
+			"充電をはじめる"
+		],
+		"admin":
+		[
+			"관리자",
+			"Admin",
+			"管理者"
+		],
+		"ready_title":
+		[
+			"충전을 준비해 주세요",
+			"Get ready to charge",
+			"充電の準備をしてください"
+		],
+		"ready_sub":
+		[
+			"커넥터 연결을 확인하고 목표 충전율을 선택하세요.",
+			"Check the connector, then choose your charge target.",
+			"コネクターを確認し、目標充電率を選んでください。"
+		],
+		"connected":
+		[
+			"커넥터 연결 완료",
+			"Connector connected",
+			"コネクター接続済み"
+		],
+		"target":
+		[
+			"목표 충전율",
+			"Charge target",
+			"目標充電率"
+		],
+		"auto_stop":
+		[
+			"목표에 도달하면 자동으로 종료됩니다.",
+			"Charging stops automatically at your target.",
+			"目標に達すると自動で終了します。"
+		],
+		"current_battery":
+		[
+			"현재 배터리",
+			"Current battery",
+			"現在のバッテリー"
+		],
+		"rate":
+		[
+			"충전 단가",
+			"Charging rate",
+			"充電単価"
+		],
+		"back":
+		[
+			"이전",
+			"Back",
+			"戻る"
+		],
+		"choose_payment":
+		[
+			"결제 방법 선택",
+			"Choose payment",
+			"お支払い方法へ"
+		],
+		"pay_title":
+		[
+			"어떻게 결제하시겠어요?",
+			"How would you like to pay?",
+			"お支払い方法を選んでください"
+		],
+		"pay_sub":
+		[
+			"결제 방법을 선택한 후 충전을 시작하세요.",
+			"Choose a payment method to continue.",
+			"お支払い方法を選び、充電を開始してください。"
+		],
+		"bank":
+		[
+			"신용·체크카드",
+			"Credit / debit card",
+			"クレジットカード"
+		],
+		"member":
+		[
+			"VOLT 회원카드",
+			"VOLT membership",
+			"VOLT会員カード"
+		],
+		"qr":
+		[
+			"QR 결제",
+			"QR payment",
+			"QRコード決済"
+		],
+		"bank_desc":
+		[
+			"카드를 단말기에 태그해 주세요.",
+			"Tap your card on the terminal.",
+			"端末にカードをかざしてください。"
+		],
+		"member_desc":
+		[
+			"회원카드로 간편하게 이용하세요.",
+			"Charge with your membership card.",
+			"会員カードでかんたんに充電。"
+		],
+		"qr_desc":
+		[
+			"휴대폰으로 QR코드를 스캔하세요.",
+			"Scan the QR code with your phone.",
+			"スマートフォンでQRコードを読み取ります。"
+		],
+		"selected":
+		[
+			"선택됨",
+			"Selected",
+			"選択中"
+		],
+		"charge_now":
+		[
+			"충전 시작",
+			"Start charge",
+			"充電開始"
+		],
+		"charging":
+		[
+			"충전 중",
+			"Charging",
+			"充電中"
+		],
+		"charge_sub":
+		[
+			"에너지가 채워지고 있어요.",
+			"Your next journey is charging.",
+			"次の旅へ、エネルギーを充電中。"
+		],
+		"energy":
+		[
+			"충전량",
+			"Energy delivered",
+			"充電量"
+		],
+		"power":
+		[
+			"충전 속도",
+			"Charging power",
+			"充電出力"
+		],
+		"fee":
+		[
+			"현재 요금",
+			"Current cost",
+			"現在の料金"
+		],
+		"stop":
+		[
+			"충전 종료",
+			"Stop charging",
+			"充電を終了"
+		],
+		"keep_connected":
+		[
+			"충전 중에는 커넥터를 분리하지 마세요.",
+			"Keep the connector plugged in while charging.",
+			"充電中はコネクターを抜かないでください。"
+		],
+		"remaining":
+		[
+			"남은 시간 약 ",
+			"About ",
+			"残り約 "
+		],
+		"minute":
+		[
+			"분",
+			" min",
+			"分"
+		],
+		"won":
+		[
+			"원",
+			" KRW",
+			"ウォン"
+		],
+		"complete":
+		[
+			"충전이 완료되었습니다",
+			"You are ready to go",
+			"充電が完了しました"
+		],
+		"complete_sub":
+		[
+			"새로운 에너지로, 다음 여정을 시작하세요.",
+			"Fresh energy for the road ahead.",
+			"新しいエネルギーで、次の旅へ。"
+		],
+		"final_battery":
+		[
+			"최종 배터리",
+			"Final battery level",
+			"最終バッテリー残量"
+		],
+		"elapsed":
+		[
+			"이용 시간",
+			"Charging time",
+			"利用時間"
+		],
+		"total":
+		[
+			"총 요금",
+			"Total cost",
+			"合計料金"
+		],
+		"return_connector":
+		[
+			"커넥터를 충전기에 돌려놓아 주세요.",
+			"Please return the connector to the charger.",
+			"コネクターを充電器に戻してください。"
+		],
+		"receipt":
+		[
+			"영수증 보기",
+			"View receipt",
+			"領収書を見る"
+		],
+		"finish":
+		[
+			"완료",
+			"Done",
+			"完了"
+		],
+		"auth":
+		[
+			"관리자 인증",
+			"Administrator access",
+			"管理者認証"
+		],
+		"auth_sub":
+		[
+			"관리자 비밀번호 4자리를 입력해 주세요.",
+			"Enter your four-digit administrator PIN.",
+			"管理者用の4桁の暗証番号を入力してください。"
+		],
+		"delete":
+		[
+			"삭제",
+			"Delete",
+			"削除"
+		],
+		"cancel":
+		[
+			"취소",
+			"Cancel",
+			"取消"
+		],
+		"confirm":
+		[
+			"확인",
+			"Confirm",
+			"確認"
+		],
+		"pin_error":
+		[
+			"비밀번호를 다시 확인해 주세요.",
+			"Please check your PIN and try again.",
+			"暗証番号を確認してください。"
+		],
+		"return_home":
+		[
+			"충전 화면으로 돌아가기",
+			"Return to charging",
+			"充電画面に戻る"
+		],
+		"history":
+		[
+			"충전 내역",
+			"Charging history",
+			"充電履歴"
+		],
+		"admin_mode":
+		[
+			"관리자 모드",
+			"Administrator",
+			"管理者モード"
+		],
+		"logout":
+		[
+			"로그아웃",
+			"Log out",
+			"ログアウト"
+		],
+		"date":
+		[
+			"일시",
+			"Date / time",
+			"日時"
+		],
+		"amount":
+		[
+			"요금",
+			"Amount",
+			"料金"
+		],
+		"status":
+		[
+			"상태",
+			"Status",
+			"状態"
+		],
+		"today":
+		[
+			"오늘 이용 건수",
+			"Sessions today",
+			"本日の利用件数"
+		],
+		"today_energy":
+		[
+			"오늘 총 충전량",
+			"Energy today",
+			"本日の充電量"
+		],
+		"today_revenue":
+		[
+			"오늘 총 요금",
+			"Total today",
+			"本日の合計料金"
+		],
+		"hist_footer":
+		[
+			"03번 충전기 · 이용 내역",
+			"Charger 03 · Session history",
+			"充電器03 · 利用履歴"
+		],
+		"receipt_title":
+		[
+			"전기차충전",
+			"EV charging",
+			"電気自動車充電"
+		],
+		"receipt_brand":
+		[
+			"VOLT 충전 영수증",
+			"VOLT charging receipt",
+			"VOLT 充電領収書"
+		],
+		"approved_at":
+		[
+			"승인일시",
+			"Approval date",
+			"承認日時"
+		],
+		"approval_number":
+		[
+			"승인번호",
+			"Approval no.",
+			"承認番号"
+		],
+		"transaction":
+		[
+			"거래유형",
+			"Transaction",
+			"取引区分"
+		],
+		"usage":
+		[
+			"충전 이용",
+			"Charging session",
+			"充電利用"
+		],
+		"payment_method":
+		[
+			"결제수단",
+			"Payment method",
+			"お支払い方法"
+		],
+		"subtotal":
+		[
+			"공급가액",
+			"Subtotal",
+			"税抜金額"
+		],
+		"vat":
+		[
+			"부가세",
+			"VAT",
+			"付加価値税"
+		],
+		"service":
+		[
+			"봉사료",
+			"Service charge",
+			"サービス料"
+		],
+		"merchant":
+		[
+			"가맹점명",
+			"Merchant",
+			"加盟店名"
+		],
+		"business_no":
+		[
+			"사업자번호",
+			"Business no.",
+			"事業者番号"
+		],
+		"merchant_no":
+		[
+			"가맹점번호",
+			"Merchant no.",
+			"加盟店番号"
+		],
+		"owner":
+		[
+			"대표자명",
+			"Representative",
+			"代表者名"
+		],
+		"address":
+		[
+			"주소",
+			"Address",
+			"住所"
+		],
+		"phone":
+		[
+			"전화번호",
+			"Telephone",
+			"電話番号"
+		],
+		"receipt_note":
+		[
+			"이용해 주셔서 감사합니다.",
+			"Thank you for charging with VOLT.",
+			"ご利用ありがとうございました。"
+		],
+		"close":
+		[
+			"닫기",
+			"Close",
+			"閉じる"
+		],
+		"step1":
+		[
+			"준비",
+			"Prepare",
+			"準備"
+		],
+		"step2":
+		[
+			"결제",
+			"Payment",
+			"お支払い"
+		],
+		"step3":
+		[
+			"충전",
+			"Charging",
+			"充電"
+		],
+		"step4":
+		[
+			"완료",
+			"Done",
+			"完了"
+		],
+		"target_80":
+		[
+			"80%",
+			"80%",
+			"80%"
+		],
+		"target_90":
+		[
+			"90%",
+			"90%",
+			"90%"
+		],
+		"target_100":
+		[
+			"100%",
+			"100%",
+			"100%"
+		],
+		"digit_0":
+		[
+			"1",
+			"1",
+			"1"
+		],
+		"digit_1":
+		[
+			"2",
+			"2",
+			"2"
+		],
+		"digit_2":
+		[
+			"3",
+			"3",
+			"3"
+		],
+		"digit_3":
+		[
+			"4",
+			"4",
+			"4"
+		],
+		"digit_4":
+		[
+			"5",
+			"5",
+			"5"
+		],
+		"digit_5":
+		[
+			"6",
+			"6",
+			"6"
+		],
+		"digit_6":
+		[
+			"7",
+			"7",
+			"7"
+		],
+		"digit_7":
+		[
+			"8",
+			"8",
+			"8"
+		],
+		"digit_8":
+		[
+			"9",
+			"9",
+			"9"
+		],
+		"digit_9":
+		[
+			"삭제",
+			"Delete",
+			"削除"
+		],
+		"digit_10":
+		[
+			"0",
+			"0",
+			"0"
+		],
+		"digit_11":
+		[
+			"취소",
+			"Cancel",
+			"取消"
+		]
+	},
+	"language_fonts":
+	[
+		"NanumSquare Bold",
+		"Roboto.Regular",
+		"Noto Sans CJK JP"
+	],
+	"receipt_payment":
+	[
+		[
+			"신용·체크카드",
+			"Credit / debit card",
+			"クレジットカード"
+		],
+		[
+			"VOLT 회원카드",
+			"VOLT membership",
+			"VOLT会員カード"
+		],
+		[
+			"QR 결제",
+			"QR payment",
+			"QRコード決済"
+		]
+	]
+}

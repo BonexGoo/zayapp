@@ -33,6 +33,11 @@
 				"dom" : "mcare"
 			},
 			{
+				"title" : "Volt",
+				"script" : "volt.zay",
+				"dom" : "volt"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"

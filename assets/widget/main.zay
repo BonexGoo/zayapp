@@ -1141,8 +1141,8 @@
 	],
 	"posx":"-312",
 	"posy":"-591",
-	"savecount":"165",
-	"savetime":"2026-11-08/01:31:44",
+	"savecount":"181",
+	"savetime":"2026-11-12/23:50:16",
 	"ui":
 	[
 		{
@@ -2214,10 +2214,32 @@
 															"compname":"color",
 															"compvalues":
 															[
+																"ifpressed(btn_home)",
 																[
-																	"231",
-																	"235",
-																	"241",
+																	"215",
+																	"239",
+																	"245",
+																	"255"
+																],
+																"elif((-1 @ 'd.data.body.focus') == -1)",
+																[
+																	"229",
+																	"250",
+																	"255",
+																	"255"
+																],
+																"eliffocused(btn_home)",
+																[
+																	"245",
+																	"252",
+																	"255",
+																	"255"
+																],
+																"else",
+																[
+																	"219",
+																	"232",
+																	"240",
 																	"255"
 																]
 															],
@@ -2292,11 +2314,33 @@
 															"compname":"color",
 															"compvalues":
 															[
+																"ifpressed(btn_home)",
 																[
-																	"96",
-																	"112",
-																	"125",
-																	"92"
+																	"132",
+																	"157",
+																	"174",
+																	"0"
+																],
+																"elif((-1 @ 'd.data.body.focus') == -1)",
+																[
+																	"132",
+																	"157",
+																	"174",
+																	"0"
+																],
+																"eliffocused(btn_home)",
+																[
+																	"132",
+																	"157",
+																	"174",
+																	"0"
+																],
+																"else",
+																[
+																	"132",
+																	"157",
+																	"174",
+																	"40"
 																]
 															],
 															"expanded":"1",
@@ -2322,135 +2366,636 @@
 											"uiname":"btn_home"
 										},
 										{
-											"addw":"88",
-											"compid":"820",
-											"compname":"loop",
+											"addw":"395",
+											"comment":"main_sidebar_layout",
+											"compid":"836",
+											"compinputs":
+											[
+												{
+													"main_apps_height":"113 * ((0 @ 'd.data.body.enum.count') [max] 0)"
+												},
+												{
+													"main_apps_view_height":"main_apps_height [min] ((pH - 257) [max] 0)"
+												},
+												{
+													"main_settings_top":"(135 + main_apps_view_height) [min] ((pH - 118) [max] 0)"
+												},
+												{
+													"main_apps_scrollbar":"8 * (main_apps_view_height < main_apps_height)"
+												}
+											],
+											"compname":"code",
 											"expanded":"1",
 											"posx":"2075",
 											"posy":"5007",
+											"stable":"0",
 											"ui":
 											[
 												{
-													"addw":"282",
-													"compid":"749",
+													"addw":"57",
+													"compname":"if(0 < main_apps_view_height)",
+													"expanded":"1",
+													"posx":"2790",
+													"posy":"5007"
+												},
+												{
+													"addw":"137",
+													"comment":"main_apps_viewport",
+													"compid":"835",
 													"compname":"ltrb",
 													"compvalues":
 													[
 														[
 															"6",
-															"133 + 113 * iV",
+															"133",
 															"112",
-															"245 + 113 * iV"
+															"133 + main_apps_view_height",
+															"true"
 														]
 													],
 													"expanded":"1",
-													"onclick":
-													[
-														"if(iV == 1)",
-														"readyapng('apng/qhome_curtain.apng')",
-														"endif",
-														"setvalue('d.data.body.focus', iV)",
-														{
-															"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
-														},
-														"update(0.3)"
-													],
-													"posx":"2483",
-													"posy":"5007",
+													"posx":"2790",
+													"posy":"5133",
 													"stable":"0",
 													"ui":
 													[
 														{
-															"addw":"144",
-															"compname":"if(if((-1 @ 'd.data.body.focus') == iV))",
-															"expanded":"1",
-															"posx":"3085",
-															"posy":"5007"
-														},
-														{
-															"addw":"116",
-															"compid":"822",
-															"compname":"ninepatch",
+															"addw":"426",
+															"comment":"main_apps_scroll",
+															"compid":"834",
+															"compname":"scroll_view",
 															"compvalues":
 															[
-																"ifpressed('btn_widget_'+ iV)",
 																[
-																	"r.side_selected_p"
-																],
-																"eliffocused('btn_widget_'+ iV)",
-																[
-																	"r.side_selected_h"
-																],
-																"else",
-																[
-																	"r.side_selected"
+																	"'main_apps'",
+																	"113",
+																	"0 @'d.data.body.enum.count'",
+																	"vertical",
+																	"1",
+																	"main_apps_scrollbar",
+																	"0",
+																	"12",
+																	"0",
+																	"113"
 																]
 															],
 															"expanded":"1",
-															"posx":"3085",
-															"posy":"5133",
-															"stable":"0"
-														},
-														{
-															"addw":"0",
-															"compname":"else",
-															"expanded":"1",
-															"posx":"3085",
-															"posy":"5436"
-														},
-														{
-															"addw":"94",
-															"compid":"816",
-															"compname":"ninepatch",
-															"compvalues":
-															[
-																"ifpressed('btn_widget_'+ iV)",
-																[
-																	"r.side_normal_p"
-																],
-																"eliffocused('btn_widget_'+ iV)",
-																[
-																	"r.side_normal_h"
-																],
-																"else",
-																[
-																	"r.side_idle"
-																]
-															],
-															"expanded":"1",
-															"posx":"3085",
-															"posy":"5526",
-															"stable":"0"
-														},
-														{
-															"addw":"0",
-															"compname":"endif",
-															"expanded":"1",
-															"posx":"3085",
-															"posy":"5829"
-														},
-														{
-															"addw":"268",
-															"compid":"821",
-															"compinputs":
+															"insiders":
 															[
 																{
-																	"domname":"'x'@'d.data.body.enum.'+ iV +'.dom'"
+																	"ballposx":"80",
+																	"ballposy":"21",
+																	"name":"scrollbg",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"837",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"4",
+																					"0",
+																					"pW",
+																					"pH"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3993",
+																			"posy":"5133",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"831",
+																					"compname":"color",
+																					"compvalues":
+																					[
+																						[
+																							"68",
+																							"91",
+																							"106",
+																							"125"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4313",
+																					"posy":"5133",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"830",
+																							"compname":"fill",
+																							"expanded":"1",
+																							"posx":"4633",
+																							"posy":"5133",
+																							"stable":"0"
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
 																},
 																{
-																	"titlename":"'-'@'d.data.body.enum.'+ iV +'.title'"
+																	"ballposx":"86",
+																	"ballposy":"46",
+																	"name":"scrollbar",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"838",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"4",
+																					"0",
+																					"pW",
+																					"pH"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3993",
+																			"posy":"5349",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"833",
+																					"compname":"color",
+																					"compvalues":
+																					[
+																						[
+																							"151",
+																							"183",
+																							"203",
+																							"210"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4313",
+																					"posy":"5349",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"832",
+																							"compname":"fill",
+																							"expanded":"1",
+																							"posx":"4633",
+																							"posy":"5349",
+																							"stable":"0"
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"ballposx":"74",
+																	"ballposy":"71",
+																	"name":"content",
+																	"ui":
+																	[
+																		{
+																			"addw":"282",
+																			"compid":"749",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"0",
+																					"0",
+																					"pW",
+																					"112"
+																				]
+																			],
+																			"expanded":"1",
+																			"onclick":
+																			[
+																				"if(pV == 1)",
+																				"readyapng('apng/qhome_curtain.apng')",
+																				"endif",
+																				"setvalue('d.data.body.focus', pV)",
+																				{
+																					"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+																				},
+																				"update(0.3)"
+																			],
+																			"posx":"3993",
+																			"posy":"5565",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"144",
+																					"compname":"if(if((-1 @ 'd.data.body.focus') == pV))",
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"5565"
+																				},
+																				{
+																					"addw":"116",
+																					"compid":"822",
+																					"compname":"ninepatch",
+																					"compvalues":
+																					[
+																						"ifpressed('main_apps_btn_widget_'+ pV)",
+																						[
+																							"r.side_selected_p"
+																						],
+																						"eliffocused('main_apps_btn_widget_'+ pV)",
+																						[
+																							"r.side_selected_h"
+																						],
+																						"else",
+																						[
+																							"r.side_selected"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"5691",
+																					"stable":"0"
+																				},
+																				{
+																					"addw":"0",
+																					"compname":"else",
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"5994"
+																				},
+																				{
+																					"addw":"94",
+																					"compid":"816",
+																					"compname":"ninepatch",
+																					"compvalues":
+																					[
+																						"ifpressed('main_apps_btn_widget_'+ pV)",
+																						[
+																							"r.side_normal_p"
+																						],
+																						"eliffocused('main_apps_btn_widget_'+ pV)",
+																						[
+																							"r.side_normal_h"
+																						],
+																						"else",
+																						[
+																							"r.side_idle"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"6084",
+																					"stable":"0"
+																				},
+																				{
+																					"addw":"0",
+																					"compname":"endif",
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"6387"
+																				},
+																				{
+																					"addw":"268",
+																					"compid":"821",
+																					"compinputs":
+																					[
+																						{
+																							"domname":"'x'@'d.data.body.enum.'+ pV +'.dom'"
+																						},
+																						{
+																							"titlename":"'-'@'d.data.body.enum.'+ pV +'.title'"
+																						}
+																					],
+																					"compname":"code",
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"6477",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"750",
+																							"compname":"ltrb",
+																							"compvalues":
+																							[
+																								[
+																									"13",
+																									"12",
+																									"pW-13",
+																									"72"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5183",
+																							"posy":"6477",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"751",
+																									"compname":"zoom",
+																									"compvalues":
+																									[
+																										[
+																											"0.51"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5503",
+																									"posy":"6477",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"69",
+																											"compid":"752",
+																											"compname":"icon",
+																											"compvalues":
+																											[
+																												[
+																													"'r.icon.'+ domname",
+																													"centermiddle"
+																												]
+																											],
+																											"expanded":"1",
+																											"posx":"5823",
+																											"posy":"6477",
+																											"stable":"0"
+																										}
+																									]
+																								}
+																							]
+																						},
+																						{
+																							"addw":"0",
+																							"compid":"753",
+																							"compname":"ltrb",
+																							"compvalues":
+																							[
+																								[
+																									"4",
+																									"70",
+																									"pW-4",
+																									"102"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5183",
+																							"posy":"6693",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"754",
+																									"compname":"color",
+																									"compvalues":
+																									[
+																										"ifpressed('main_apps_btn_widget_'+ pV)",
+																										[
+																											"215",
+																											"239",
+																											"245",
+																											"255"
+																										],
+																										"elif((-1 @ 'd.data.body.focus') == pV)",
+																										[
+																											"229",
+																											"250",
+																											"255",
+																											"255"
+																										],
+																										"eliffocused('main_apps_btn_widget_'+ pV)",
+																										[
+																											"245",
+																											"252",
+																											"255",
+																											"255"
+																										],
+																										"else",
+																										[
+																											"219",
+																											"232",
+																											"240",
+																											"255"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5503",
+																									"posy":"6693",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"0",
+																											"compid":"755",
+																											"compname":"font",
+																											"compvalues":
+																											[
+																												[
+																													"1.72",
+																													"'NanumSquare Bold'"
+																												]
+																											],
+																											"expanded":"1",
+																											"posx":"5823",
+																											"posy":"6693",
+																											"stable":"0",
+																											"ui":
+																											[
+																												{
+																													"addw":"0",
+																													"compid":"756",
+																													"compname":"text",
+																													"compvalues":
+																													[
+																														[
+																															"titlename",
+																															"centermiddle"
+																														]
+																													],
+																													"expanded":"1",
+																													"posx":"6143",
+																													"posy":"6693",
+																													"stable":"0"
+																												}
+																											]
+																										}
+																									]
+																								}
+																							]
+																						}
+																					]
+																				},
+																				{
+																					"addw":"113",
+																					"compid":"757",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						"if(pV + 1 < 0 @'d.data.body.enum.count')",
+																						[
+																							"8",
+																							"pH-1",
+																							"pW-8",
+																							"pH"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4595",
+																					"posy":"6909",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"758",
+																							"compname":"color",
+																							"compvalues":
+																							[
+																								"ifpressed('main_apps_btn_widget_'+ pV)",
+																								[
+																									"132",
+																									"157",
+																									"174",
+																									"0"
+																								],
+																								"elif((-1 @ 'd.data.body.focus') == pV)",
+																								[
+																									"132",
+																									"157",
+																									"174",
+																									"0"
+																								],
+																								"eliffocused('main_apps_btn_widget_'+ pV)",
+																								[
+																									"132",
+																									"157",
+																									"174",
+																									"0"
+																								],
+																								"else",
+																								[
+																									"132",
+																									"157",
+																									"174",
+																									"40"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5028",
+																							"posy":"6909",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"759",
+																									"compname":"fill",
+																									"expanded":"1",
+																									"posx":"5348",
+																									"posy":"6909",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				}
+																			],
+																			"uiname":"'main_apps_btn_widget_' + pV"
+																		}
+																	]
 																}
 															],
-															"compname":"code",
+															"posx":"3247",
+															"posy":"5133",
+															"stable":"0"
+														}
+													]
+												},
+												{
+													"addw":"0",
+													"compname":"endif",
+													"expanded":"1",
+													"posx":"2790",
+													"posy":"7149"
+												},
+												{
+													"addw":"123",
+													"comment":"main_settings_position",
+													"compid":"826",
+													"compinputs":
+													[
+														{
+															"addy":"main_settings_top - 475"
+														}
+													],
+													"compname":"code",
+													"expanded":"1",
+													"posx":"2790",
+													"posy":"7239",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"39",
+															"compid":"782",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"6",
+																	"475 + addy",
+																	"112",
+																	"587 + addy"
+																]
+															],
 															"expanded":"1",
-															"posx":"3085",
-															"posy":"5919",
+															"posx":"3233",
+															"posy":"7239",
 															"stable":"0",
 															"ui":
 															[
 																{
 																	"addw":"0",
-																	"compid":"750",
+																	"compid":"819",
+																	"compname":"ninepatch",
+																	"compvalues":
+																	[
+																		"ifpressed(btn_system)",
+																		[
+																			"r.side_normal_p"
+																		],
+																		"eliffocused(btn_system)",
+																		[
+																			"r.side_normal_h"
+																		],
+																		"else",
+																		[
+																			"r.side_idle"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3592",
+																	"posy":"7239",
+																	"stable":"0"
+																},
+																{
+																	"addw":"0",
+																	"compid":"783",
 																	"compname":"ltrb",
 																	"compvalues":
 																	[
@@ -2462,14 +3007,14 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3673",
-																	"posy":"5919",
+																	"posx":"3592",
+																	"posy":"7542",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"0",
-																			"compid":"751",
+																			"compid":"784",
 																			"compname":"zoom",
 																			"compvalues":
 																			[
@@ -2478,25 +3023,25 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3993",
-																			"posy":"5919",
+																			"posx":"3912",
+																			"posy":"7542",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
-																					"addw":"69",
-																					"compid":"752",
+																					"addw":"0",
+																					"compid":"785",
 																					"compname":"icon",
 																					"compvalues":
 																					[
 																						[
-																							"'r.icon.'+ domname",
+																							"r.icon_system",
 																							"centermiddle"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4313",
-																					"posy":"5919",
+																					"posx":"4232",
+																					"posy":"7542",
 																					"stable":"0"
 																				}
 																			]
@@ -2505,7 +3050,7 @@
 																},
 																{
 																	"addw":"0",
-																	"compid":"753",
+																	"compid":"786",
 																	"compname":"ltrb",
 																	"compvalues":
 																	[
@@ -2517,33 +3062,48 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3673",
-																	"posy":"6135",
+																	"posx":"3592",
+																	"posy":"7758",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"0",
-																			"compid":"754",
+																			"compid":"787",
 																			"compname":"color",
 																			"compvalues":
 																			[
+																				"ifpressed(btn_system)",
 																				[
-																					"231",
-																					"235",
-																					"241",
+																					"215",
+																					"239",
+																					"245",
+																					"255"
+																				],
+																				"eliffocused(btn_system)",
+																				[
+																					"245",
+																					"252",
+																					"255",
+																					"255"
+																				],
+																				"else",
+																				[
+																					"219",
+																					"232",
+																					"240",
 																					"255"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3993",
-																			"posy":"6135",
+																			"posx":"3912",
+																			"posy":"7758",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"755",
+																					"compid":"788",
 																					"compname":"font",
 																					"compvalues":
 																					[
@@ -2553,25 +3113,25 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4313",
-																					"posy":"6135",
+																					"posx":"4232",
+																					"posy":"7758",
 																					"stable":"0",
 																					"ui":
 																					[
 																						{
 																							"addw":"0",
-																							"compid":"756",
+																							"compid":"789",
 																							"compname":"text",
 																							"compvalues":
 																							[
 																								[
-																									"titlename",
+																									"'설정'",
 																									"centermiddle"
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4633",
-																							"posy":"6135",
+																							"posx":"4552",
+																							"posy":"7758",
 																							"stable":"0"
 																						}
 																					]
@@ -2579,360 +3139,61 @@
 																			]
 																		}
 																	]
-																}
-															]
-														},
-														{
-															"addw":"0",
-															"compid":"757",
-															"compname":"ltrb",
-															"compvalues":
-															[
-																[
-																	"8",
-																	"pH-1",
-																	"pW-8",
-																	"pH"
-																]
-															],
-															"expanded":"1",
-															"posx":"3085",
-															"posy":"6351",
-															"stable":"0",
-															"ui":
-															[
+																},
 																{
 																	"addw":"0",
-																	"compid":"758",
-																	"compname":"color",
+																	"comment":"btn_home_divider",
+																	"compid":"839",
+																	"compname":"ltrb",
 																	"compvalues":
 																	[
 																		[
-																			"96",
-																			"112",
-																			"125",
-																			"92"
+																			"8",
+																			"0",
+																			"pW-8",
+																			"1"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3405",
-																	"posy":"6351",
+																	"posx":"3592",
+																	"posy":"7974",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"0",
-																			"compid":"759",
-																			"compname":"fill",
-																			"expanded":"1",
-																			"posx":"3725",
-																			"posy":"6351",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													],
-													"uiname":"'btn_widget_' + iV"
-												}
-											],
-											"uiloop":"d.data.body.enum.count",
-											"uiname":"i"
-										},
-										{
-											"addw":"327",
-											"compid":"826",
-											"compinputs":
-											[
-												{
-													"addy":"((0 @'d.data.body.enum.count') - 3) * 113 - 5"
-												}
-											],
-											"compname":"code",
-											"expanded":"1",
-											"posx":"2075",
-											"posy":"6567",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"64",
-													"compid":"782",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"6",
-															"475 + addy",
-															"112",
-															"587 + addy"
-														]
-													],
-													"expanded":"1",
-													"posx":"2722",
-													"posy":"6567",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"819",
-															"compname":"ninepatch",
-															"compvalues":
-															[
-																"ifpressed(btn_system)",
-																[
-																	"r.side_normal_p"
-																],
-																"eliffocused(btn_system)",
-																[
-																	"r.side_normal_h"
-																],
-																"else",
-																[
-																	"r.side_idle"
-																]
-															],
-															"expanded":"1",
-															"posx":"3106",
-															"posy":"6567",
-															"stable":"0"
-														},
-														{
-															"addw":"0",
-															"compid":"783",
-															"compname":"ltrb",
-															"compvalues":
-															[
-																[
-																	"13",
-																	"12",
-																	"pW-13",
-																	"72"
-																]
-															],
-															"expanded":"1",
-															"posx":"3106",
-															"posy":"6870",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"784",
-																	"compname":"zoom",
-																	"compvalues":
-																	[
-																		[
-																			"0.51"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3426",
-																	"posy":"6870",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"785",
-																			"compname":"icon",
+																			"compid":"840",
+																			"compname":"color",
 																			"compvalues":
 																			[
 																				[
-																					"r.icon_system",
-																					"centermiddle"
+																					"132",
+																					"157",
+																					"174",
+																					"50"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3746",
-																			"posy":"6870",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														},
-														{
-															"addw":"0",
-															"compid":"786",
-															"compname":"ltrb",
-															"compvalues":
-															[
-																[
-																	"4",
-																	"70",
-																	"pW-4",
-																	"102"
-																]
-															],
-															"expanded":"1",
-															"posx":"3106",
-															"posy":"7086",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"787",
-																	"compname":"color",
-																	"compvalues":
-																	[
-																		[
-																			"231",
-																			"235",
-																			"241",
-																			"255"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3426",
-																	"posy":"7086",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"788",
-																			"compname":"font",
-																			"compvalues":
-																			[
-																				[
-																					"1.72",
-																					"'NanumSquare Bold'"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3746",
-																			"posy":"7086",
+																			"posx":"3912",
+																			"posy":"7974",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"789",
-																					"compname":"text",
-																					"compvalues":
-																					[
-																						[
-																							"'설정'",
-																							"centermiddle"
-																						]
-																					],
+																					"compid":"841",
+																					"compname":"fill",
 																					"expanded":"1",
-																					"posx":"4066",
-																					"posy":"7086",
+																					"posx":"4232",
+																					"posy":"7974",
 																					"stable":"0"
 																				}
 																			]
 																		}
 																	]
 																}
-															]
-														},
-														{
-															"addw":"0",
-															"compid":"790",
-															"compname":"ltrb",
-															"compvalues":
-															[
-																[
-																	"8",
-																	"pH-1",
-																	"pW-8",
-																	"pH"
-																]
 															],
-															"expanded":"1",
-															"posx":"3106",
-															"posy":"7302",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"791",
-																	"compname":"color",
-																	"compvalues":
-																	[
-																		[
-																			"96",
-																			"112",
-																			"125",
-																			"92"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3426",
-																	"posy":"7302",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"792",
-																			"compname":"fill",
-																			"expanded":"1",
-																			"posx":"3746",
-																			"posy":"7302",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													],
-													"uiname":"btn_system"
-												},
-												{
-													"addw":"50",
-													"compid":"803",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"29",
-															"625 + addy",
-															"91",
-															"627 + addy"
-														]
-													],
-													"expanded":"1",
-													"posx":"2722",
-													"posy":"7518",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"804",
-															"compname":"color",
-															"compvalues":
-															[
-																[
-																	"161",
-																	"180",
-																	"195",
-																	"155"
-																]
-															],
-															"expanded":"1",
-															"posx":"3092",
-															"posy":"7518",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"805",
-																	"compname":"fill",
-																	"expanded":"1",
-																	"posx":"3412",
-																	"posy":"7518",
-																	"stable":"0"
-																}
-															]
+															"uiname":"btn_system"
 														}
 													]
 												}
