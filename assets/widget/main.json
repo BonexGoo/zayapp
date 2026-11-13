@@ -38,6 +38,11 @@
 				"dom" : "volt"
 			},
 			{
+				"title" : "SCube",
+				"script" : "scube.zay",
+				"dom" : "scube"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"
