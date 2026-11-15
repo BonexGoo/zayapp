@@ -17,9 +17,10 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
     <title>ZAYAPP</title>
     <style>
             /* Make the html body cover the entire (visual) viewport with no scroll bars. */
-      html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; }
+      html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; background: #000; color: #fff; }
       /* Prefer dynamic viewport units when available; fallback to 100vh. */
       #screen {
+        background: #000;
         width: 100%;
         height: 100vh;
         height: 100dvh;
@@ -29,6 +30,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         box-sizing: border-box;
       }
       #qtspinner {
+        background: #000;
         width: 100%;
         height: 100vh;
         height: 100dvh;
