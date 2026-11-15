@@ -1869,8 +1869,7 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
         {
             auto APngAssetName = params.Param(0).ToText();
             if(!mAPngs.Access(APngAssetName))
-                mAPngs(APngAssetName) = Platform::Animate::OpenForAPngFile(
-                    Platform::File::RootForAssets() + APngAssetName);
+                mAPngs(APngAssetName) = Platform::Animate::OpenForAPngFile(String("assets:/") + APngAssetName);
         }
     }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
 
@@ -3679,7 +3678,7 @@ bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
 bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
 {
     if(!mAPngs.Access(assetname))
-        mAPngs(assetname) = Platform::Animate::OpenForAPngFile(Platform::File::RootForAssets() + assetname);
+        mAPngs(assetname) = Platform::Animate::OpenForAPngFile(String("assets:/") + assetname);
     if(auto CurAPng = mAPngs.Access(assetname))
     {
         Platform::Animate::Seek(*CurAPng, sec, true);
