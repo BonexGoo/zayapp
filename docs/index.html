@@ -1,0 +1,97 @@
+<!--
+Copyright (C) 2024 The Qt Company Ltd.
+SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
+-->
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!--Set visual viewport size for mobile devices to the device size,
+        witch results in a scale of 1 and a 1:1 mapping between CSS pixels
+        and Qt device independent pixels. -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover, user-scalable=0"/>
+
+    <title>ZAYAPP</title>
+    <style>
+            /* Make the html body cover the entire (visual) viewport with no scroll bars. */
+      html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; }
+      /* Prefer dynamic viewport units when available; fallback to 100vh. */
+      #screen {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        position: fixed;
+        inset: 0;
+        padding-bottom: env(safe-area-inset-bottom);
+        box-sizing: border-box;
+      }
+      #qtspinner {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        position: fixed;
+        inset: 0;
+        padding-bottom: env(safe-area-inset-bottom);
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body onload="init()" style="padding:0; margin:0; overflow:hidden;">
+    <figure style="margin:0; display:flex; align-items:center; justify-content:center; z-index:9999;" id="qtspinner">
+      <center style="margin:0; line-height:150%; text-align:center;">
+        <img src="logo_zayapp.svg" width="300" height="300" style="display:block; margin:0 auto;"></img>
+        <strong>ZAYAPP</strong>
+        <div id="qtstatus"></div>
+        <noscript>JavaScript is disabled. Please enable JavaScript to use this application.</noscript>
+      </center>
+    </figure>
+    <div id="screen"></div>
+
+    <script type="text/javascript">
+        async function init()
+        {
+            const spinner = document.querySelector('#qtspinner');
+            const screen = document.querySelector('#screen');
+            const status = document.querySelector('#qtstatus');
+
+            const showUi = (ui) => {
+                [spinner, screen].forEach(element => element.style.display = 'none');
+                if (ui === spinner) spinner.style.display = 'flex';
+                ui.style.display = 'flex';
+            }
+
+            try {
+                showUi(spinner);
+                status.innerHTML = 'Loading...';
+
+                const instance = await qtLoad({
+                    qt: {
+                        onLoaded: () => showUi(screen),
+                        onExit: exitData =>
+                        {
+                            status.innerHTML = 'Application exit';
+                            status.innerHTML +=
+                                exitData.code !== undefined ? ` with code ${exitData.code}` : '';
+                            status.innerHTML +=
+                                exitData.text !== undefined ? ` (${exitData.text})` : '';
+                            showUi(spinner);
+                        },
+                        entryFunction: window.zayapp_entry,
+                        containerElements: [screen],
+                        
+                    }
+                });
+            } catch (e) {
+                console.error(e);
+                console.error(e.stack);
+            }
+        }
+    </script>
+    <script src="zayapp.js"></script>
+    <script type="text/javascript" src="qtloader.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ZayApp icon</title>
+  <desc id="desc">Four luminous connected color nodes surrounding a silver play symbol on a glossy dark rounded square.</desc>
+  <defs>
+    <!-- The graphic is composed entirely of vector paths, gradients, and SVG filters. -->
+    <radialGradient id="tile" cx="48%" cy="36%" r="77%">
+      <stop offset="0" stop-color="#151B25"/>
+      <stop offset=".54" stop-color="#070B11"/>
+      <stop offset="1" stop-color="#010306"/>
+    </radialGradient>
+    <linearGradient id="tileRim" x1="0" y1="0" x2="0.93" y2="1">
+      <stop offset="0" stop-color="#B6C4D3" stop-opacity=".92"/>
+      <stop offset=".17" stop-color="#4D6578" stop-opacity=".65"/>
+      <stop offset=".48" stop-color="#101923" stop-opacity=".2"/>
+      <stop offset=".76" stop-color="#253040" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#A2AFBC" stop-opacity=".56"/>
+    </linearGradient>
+    <linearGradient id="topRim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EDF5FF" stop-opacity=".90"/>
+      <stop offset=".24" stop-color="#A7BBCB" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#030710" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="chromeH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#233647"/>
+      <stop offset=".08" stop-color="#8DA9B8"/>
+      <stop offset=".16" stop-color="#F7FFFF"/>
+      <stop offset=".33" stop-color="#96B4C5"/>
+      <stop offset=".49" stop-color="#DCEAF5"/>
+      <stop offset=".58" stop-color="#FFFFFF"/>
+      <stop offset=".83" stop-color="#A5B8CE"/>
+      <stop offset=".94" stop-color="#2C4359"/>
+      <stop offset="1" stop-color="#071824"/>
+    </linearGradient>
+    <linearGradient id="chromeV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#071C2A"/>
+      <stop offset=".08" stop-color="#50758D"/>
+      <stop offset=".21" stop-color="#DFF6FF"/>
+      <stop offset=".36" stop-color="#8CACC0"/>
+      <stop offset=".55" stop-color="#FFFFFF"/>
+      <stop offset=".80" stop-color="#B5C9D9"/>
+      <stop offset=".94" stop-color="#4B6F8C"/>
+      <stop offset="1" stop-color="#0E2435"/>
+    </linearGradient>
+    <linearGradient id="cyanSphere" x1=".17" y1=".05" x2=".84" y2=".99">
+      <stop offset="0" stop-color="#D8FFFF"/>
+      <stop offset=".14" stop-color="#45FFFF"/>
+      <stop offset=".50" stop-color="#04DEDB"/>
+      <stop offset=".85" stop-color="#00B5C5"/>
+      <stop offset="1" stop-color="#017C9C"/>
+    </linearGradient>
+    <linearGradient id="goldSphere" x1=".16" y1=".06" x2=".85" y2="1">
+      <stop offset="0" stop-color="#FFFFC9"/>
+      <stop offset=".17" stop-color="#FFFF29"/>
+      <stop offset=".52" stop-color="#FFC400"/>
+      <stop offset=".85" stop-color="#FF9200"/>
+      <stop offset="1" stop-color="#AE4C00"/>
+    </linearGradient>
+    <linearGradient id="pinkSphere" x1=".16" y1=".05" x2=".85" y2="1">
+      <stop offset="0" stop-color="#FFCAF1"/>
+      <stop offset=".2" stop-color="#FF60D0"/>
+      <stop offset=".55" stop-color="#FF0994"/>
+      <stop offset=".88" stop-color="#D00063"/>
+      <stop offset="1" stop-color="#8E0A59"/>
+    </linearGradient>
+    <linearGradient id="blueSphere" x1=".15" y1=".05" x2=".86" y2="1">
+      <stop offset="0" stop-color="#C4FFFF"/>
+      <stop offset=".18" stop-color="#40E9FF"/>
+      <stop offset=".52" stop-color="#008FFC"/>
+      <stop offset=".83" stop-color="#0058E6"/>
+      <stop offset="1" stop-color="#001C99"/>
+    </linearGradient>
+    <linearGradient id="cyanRing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A6FFFF"/><stop offset=".4" stop-color="#09F9EE"/><stop offset="1" stop-color="#02869F"/></linearGradient>
+    <linearGradient id="goldRing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFF96"/><stop offset=".4" stop-color="#FFD800"/><stop offset="1" stop-color="#D65A00"/></linearGradient>
+    <linearGradient id="pinkRing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFC2E9"/><stop offset=".4" stop-color="#FF0A91"/><stop offset="1" stop-color="#C00053"/></linearGradient>
+    <linearGradient id="blueRing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#95FAFF"/><stop offset=".4" stop-color="#0D9DFF"/><stop offset="1" stop-color="#0031A7"/></linearGradient>
+    <linearGradient id="triangleRim" x1="0" y1="0" x2=".95" y2="1">
+      <stop stop-color="#FEFFFF"/><stop offset=".3" stop-color="#88BFD5"/><stop offset=".65" stop-color="#3B647D"/><stop offset="1" stop-color="#B0DBE8"/>
+    </linearGradient>
+    <linearGradient id="triangleBody" x1=".12" y1=".04" x2=".91" y2="1">
+      <stop stop-color="#FFFFFF"/><stop offset=".38" stop-color="#F3F8FF"/><stop offset=".72" stop-color="#E6EEF7"/><stop offset="1" stop-color="#AEBED1"/>
+    </linearGradient>
+    <filter id="tileShadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="glowSoft" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="13"/></filter>
+    <filter id="glowTight" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="barShadow" x="-25%" y="-25%" width="150%" height="150%"><feGaussianBlur stdDeviation="5"/></filter>
+    <filter id="playShadow" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+    <clipPath id="tileClip"><rect x="14" y="14" width="484" height="484" rx="98"/></clipPath>
+  </defs>
+
+  <!-- black, softly illuminated app tile -->
+  <rect x="14" y="14" width="484" height="484" rx="98" fill="url(#tile)" stroke="url(#tileRim)" stroke-width="3"/>
+  <g clip-path="url(#tileClip)">
+    <path d="M25 104 C32 51 68 23 123 19 C207 12 317 12 398 18 C448 22 480 53 490 97" fill="none" stroke="url(#topRim)" stroke-width="5" stroke-linecap="round" opacity=".76"/>
+    <path d="M27 105 C38 54 68 30 129 25" fill="none" stroke="#F1FCFF" stroke-width="2" stroke-linecap="round" opacity=".38"/>
+    <ellipse cx="240" cy="0" rx="180" ry="75" fill="#8BA5B9" opacity=".07" filter="url(#glowSoft)"/>
+  </g>
+
+  <!-- rectangular connecting frame, sculpted as mirrored chrome -->
+  <g opacity=".7" filter="url(#barShadow)">
+    <rect x="124" y="111" width="262" height="49" rx="16" fill="#A8E3F0"/>
+    <rect x="124" y="331" width="262" height="49" rx="16" fill="#A8D6FF"/>
+    <rect x="113" y="121" width="49" height="257" rx="16" fill="#83C6E6"/>
+    <rect x="350" y="121" width="49" height="257" rx="16" fill="#88CAFF"/>
+  </g>
+  <rect x="123" y="112" width="266" height="46" rx="12" fill="url(#chromeH)"/>
+  <rect x="123" y="332" width="266" height="46" rx="12" fill="url(#chromeH)"/>
+  <rect x="114" y="126" width="45" height="249" rx="12" fill="url(#chromeV)"/>
+  <rect x="353" y="126" width="45" height="249" rx="12" fill="url(#chromeV)"/>
+  <!-- subtle white specular trims, masked naturally by color hubs -->
+  <path d="M168 119 H342" stroke="#FFFFFF" stroke-opacity=".76" stroke-width="2.7" stroke-linecap="round"/>
+  <path d="M168 338 H342" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M121 165 V328" stroke="#F7FFFF" stroke-opacity=".44" stroke-width="2.3" stroke-linecap="round"/>
+  <path d="M360 165 V328" stroke="#F7FFFF" stroke-opacity=".39" stroke-width="2.3" stroke-linecap="round"/>
+
+  <!-- central raised beveled play button -->
+  <path d="M225 188 C213 181 198 188 198 207 L203 288 C204 307 216 315 232 306 L307 261 C322 252 322 240 307 231 Z" fill="#000000" opacity=".68" filter="url(#playShadow)" transform="translate(0 6)"/>
+  <path d="M226 186 C211 177 196 186 195 205 L200 289 C200 308 212 315 231 306 L308 262 C324 252 324 239 307 229 Z" fill="url(#triangleRim)" stroke="#B5E1EE" stroke-width="2.2"/>
+  <path d="M227 197 C219 192 207 196 207 209 L211 285 C211 295 219 301 229 295 L301 255 C310 250 310 245 300 239 Z" fill="url(#triangleBody)" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1.5"/>
+  <path d="M215 208 C215 202 219 199 226 202" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".83"/>
+
+  <!-- Four luminous round connectors: outer glow, colored rim, glossy lens -->
+  <g>
+    <!-- turquoise -->
+    <circle cx="139" cy="132" r="53" fill="#00FFEB" opacity=".72" filter="url(#glowSoft)"/>
+    <circle cx="139" cy="132" r="50" fill="none" stroke="#11FBE9" stroke-width="8" opacity=".78" filter="url(#glowTight)"/>
+    <circle cx="139" cy="132" r="48" fill="#044756" stroke="url(#cyanRing)" stroke-width="8"/>
+    <circle cx="139" cy="132" r="40" fill="url(#cyanSphere)" stroke="#66FFFF" stroke-opacity=".52" stroke-width="1.4"/>
+    <path d="M111 115 C118 100 131 95 145 97" fill="none" stroke="#F4FFFF" stroke-opacity=".84" stroke-width="5.1" stroke-linecap="round"/>
+    <!-- gold -->
+    <circle cx="373" cy="132" r="53" fill="#FFA900" opacity=".72" filter="url(#glowSoft)"/>
+    <circle cx="373" cy="132" r="50" fill="none" stroke="#FFE018" stroke-width="8" opacity=".7" filter="url(#glowTight)"/>
+    <circle cx="373" cy="132" r="48" fill="#713A00" stroke="url(#goldRing)" stroke-width="8"/>
+    <circle cx="373" cy="132" r="40" fill="url(#goldSphere)" stroke="#FFFFA6" stroke-opacity=".65" stroke-width="1.4"/>
+    <path d="M346 115 C352 101 367 95 380 98" fill="none" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="5.1" stroke-linecap="round"/>
+    <!-- pink -->
+    <circle cx="139" cy="356" r="53" fill="#FF007A" opacity=".74" filter="url(#glowSoft)"/>
+    <circle cx="139" cy="356" r="50" fill="none" stroke="#FF1E9D" stroke-width="8" opacity=".73" filter="url(#glowTight)"/>
+    <circle cx="139" cy="356" r="48" fill="#65133D" stroke="url(#pinkRing)" stroke-width="8"/>
+    <circle cx="139" cy="356" r="40" fill="url(#pinkSphere)" stroke="#FFC0EC" stroke-opacity=".58" stroke-width="1.4"/>
+    <path d="M112 339 C117 326 131 320 144 323" fill="none" stroke="#FFF2FC" stroke-opacity=".8" stroke-width="5.1" stroke-linecap="round"/>
+    <!-- blue -->
+    <circle cx="373" cy="356" r="53" fill="#007AFF" opacity=".73" filter="url(#glowSoft)"/>
+    <circle cx="373" cy="356" r="50" fill="none" stroke="#128BFF" stroke-width="8" opacity=".74" filter="url(#glowTight)"/>
+    <circle cx="373" cy="356" r="48" fill="#033F88" stroke="url(#blueRing)" stroke-width="8"/>
+    <circle cx="373" cy="356" r="40" fill="url(#blueSphere)" stroke="#93EDFF" stroke-opacity=".57" stroke-width="1.4"/>
+    <path d="M346 339 C352 325 365 322 379 323" fill="none" stroke="#EFFFFF" stroke-opacity=".77" stroke-width="5.1" stroke-linecap="round"/>
+  </g>
+</svg>
