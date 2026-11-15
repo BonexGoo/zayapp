@@ -74,6 +74,8 @@ public:
 };
 typedef Map<Project> Projects;
 
+class ZayAppNativeState; // Native TryWorld paths and Y-depth ordering
+
 class ZayAppData : public ZayObject
 {
 public:
@@ -127,6 +129,7 @@ public:
     void SendWidgetLog(chars projcode, chars text);
 
 public:
+    ZayAppNativeState* mNativeState {nullptr};
     ZayWidget mMainWidget;
     Map<ZayWidget> mSubWidgets; // [widgetname]
     uint64 mUpdateMsec {0};
