@@ -1147,22 +1147,18 @@
 	[
 		{
 			"addw":"200",
-			"comment":"main_zoom_osscale / 150_250",
+			"comment":"main_zoom_osscale / 200",
 			"compid":"842",
 			"compname":"zoom",
 			"compvalues":
 			[
-				"if((100 @'d.program.osscale') < 150)",
+				"if((100 @'d.program.osscale') < 200)",
 				[
 					"1.0"
 				],
-				"elif((100 @'d.program.osscale') < 250)",
-				[
-					"0.5"
-				],
 				"else",
 				[
-					"0.25"
+					"0.5"
 				]
 			],
 			"expanded":"1",
@@ -1972,7 +1968,7 @@
 																	"compname":"font",
 																	"compvalues":
 																	[
-																		"if(osscale < 150)",
+																		"if(osscale < 200)",
 																		[
 																			"1.75",
 																			"'NanumSquare Bold'"
@@ -1995,19 +1991,14 @@
 																			"compname":"text",
 																			"compvalues":
 																			[
-																				"if(osscale < 150)",
+																				"if(osscale < 200)",
 																				[
 																					"framesec +'F / '+ osscale +'%'",
 																					"rightmiddle"
 																				],
-																				"elif(osscale < 250)",
-																				[
-																					"framesec +'F / '+ osscale +'% (Zoom_50%)'",
-																					"rightmiddle"
-																				],
 																				"else",
 																				[
-																					"framesec +'F / '+ osscale +'% (Zoom_25%)'",
+																					"framesec +'F / '+ osscale +'% (Zoom_50%)'",
 																					"rightmiddle"
 																				]
 																			],
