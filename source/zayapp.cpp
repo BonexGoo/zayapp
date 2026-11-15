@@ -1869,7 +1869,7 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
         {
             auto APngAssetName = params.Param(0).ToText();
             if(!mAPngs.Access(APngAssetName))
-                mAPngs(APngAssetName) = Platform::Animate::OpenForAPngFile(String("assets:/") + APngAssetName);
+                mAPngs(APngAssetName) = Platform::Animate::OpenForAPngAssets(APngAssetName);
         }
     }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
 
@@ -3678,7 +3678,7 @@ bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
 bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
 {
     if(!mAPngs.Access(assetname))
-        mAPngs(assetname) = Platform::Animate::OpenForAPngFile(String("assets:/") + assetname);
+        mAPngs(assetname) = Platform::Animate::OpenForAPngAssets(assetname);
     if(auto CurAPng = mAPngs.Access(assetname))
     {
         Platform::Animate::Seek(*CurAPng, sec, true);
@@ -4135,6 +4135,8 @@ bool ZayAppData::RenderUC_ZoomArea(ZayPanel& panel, chars domname)
         ZAY_GESTURE_VNTXY(v, n, t, x, y, this, DomName)
         {
             auto& State = mNativeState->zooms[(chars) DomName];
+            // Gesture coordinates are in view pixels; camera DOM uses local panel units.
+            const float InputZoom = v->zoom(n);
             if(t == GT_Pressed)
             {
                 State.Press(x, y, ZayWidgetDOM::GetValue(DomName + ".x").ToFloat(),
@@ -4145,8 +4147,8 @@ bool ZayAppData::RenderUC_ZoomArea(ZayPanel& panel, chars domname)
             {
                 if(State.Drag(x,y))
                 {
-                    ZayWidgetDOM::SetValue(DomName + ".x", String::FromFloat(State.zoomX + x - State.pressX));
-                    ZayWidgetDOM::SetValue(DomName + ".y", String::FromFloat(State.zoomY + y - State.pressY));
+                    ZayWidgetDOM::SetValue(DomName + ".x", String::FromFloat(State.zoomX + (x - State.pressX) / InputZoom));
+                    ZayWidgetDOM::SetValue(DomName + ".y", String::FromFloat(State.zoomY + (y - State.pressY) / InputZoom));
                     v->invalidate();
                 }
             }
@@ -4155,8 +4157,8 @@ bool ZayAppData::RenderUC_ZoomArea(ZayPanel& panel, chars domname)
                 if(State.Release(x,y,t == GT_InReleased))
                 {
                     const auto Area = v->rect(n);
-                    ZayWidgetDOM::SetValue(DomName + ".click.x", String::FromInteger(x - Area.l));
-                    ZayWidgetDOM::SetValue(DomName + ".click.y", String::FromInteger(y - Area.t));
+                    ZayWidgetDOM::SetValue(DomName + ".click.x", String::FromFloat((x - Area.l) / InputZoom));
+                    ZayWidgetDOM::SetValue(DomName + ".click.y", String::FromFloat((y - Area.t) / InputZoom));
                     ZayWidgetDOM::SetValue(DomName + ".click.seq", String::FromInteger(
                         ZayWidgetDOM::GetValue(DomName + ".click.seq").ToInteger() + 1));
                     v->invalidate();
@@ -4167,8 +4169,8 @@ bool ZayAppData::RenderUC_ZoomArea(ZayPanel& panel, chars domname)
                 State.pressed=false;
                 const float Speed = 0.05;
                 const auto CurRect = v->rect(n);
-                const float CursorX = x - (CurRect.l + CurRect.r) / 2;
-                const float CursorY = y - (CurRect.t + CurRect.b) / 2;
+                const float CursorX = (x - (CurRect.l + CurRect.r) / 2) / InputZoom;
+                const float CursorY = (y - (CurRect.t + CurRect.b) / 2) / InputZoom;
                 const float CurZoomX = ZayWidgetDOM::GetValue(DomName + ".x").ToFloat();
                 const float CurZoomY = ZayWidgetDOM::GetValue(DomName + ".y").ToFloat();
                 const sint32 OldZoomW = ZayWidgetDOM::GetValue(DomName + ".w").ToInteger();

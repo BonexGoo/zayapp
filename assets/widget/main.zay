@@ -1139,653 +1139,358 @@
 			"PopupDockAni":"1"
 		}
 	],
-	"posx":"-312",
+	"posx":"-832",
 	"posy":"-591",
 	"savecount":"181",
 	"savetime":"2026-11-12/23:50:16",
 	"ui":
 	[
 		{
-			"addw":"3",
-			"compid":"701",
-			"compname":"font",
+			"addw":"200",
+			"comment":"main_zoom_osscale / 150_250",
+			"compid":"842",
+			"compname":"zoom",
 			"compvalues":
 			[
+				"if((100 @'d.program.osscale') < 150)",
 				[
-					"1.0",
-					"'NanumSquare Bold'"
+					"1.0"
+				],
+				"elif((100 @'d.program.osscale') < 250)",
+				[
+					"0.5"
+				],
+				"else",
+				[
+					"0.25"
 				]
 			],
 			"expanded":"1",
-			"posx":"83",
+			"posx":"-437",
 			"posy":"-591",
 			"stable":"0",
 			"ui":
 			[
 				{
-					"addw":"107",
-					"compname":"if((-1 @ 'd.data.body.focus') == -1)",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"-591"
-				},
-				{
-					"addw":"0",
-					"compid":"824",
-					"compname":"color",
+					"addw":"3",
+					"compid":"701",
+					"compname":"font",
 					"compvalues":
 					[
 						[
-							"255",
-							"255",
-							"255"
+							"1.0",
+							"'NanumSquare Bold'"
 						]
 					],
 					"expanded":"1",
-					"posx":"406",
-					"posy":"-465",
+					"posx":"83",
+					"posy":"-591",
 					"stable":"0",
 					"ui":
 					[
 						{
-							"addw":"0",
-							"compid":"825",
-							"compname":"fill",
+							"addw":"107",
+							"compname":"if((-1 @ 'd.data.body.focus') == -1)",
 							"expanded":"1",
-							"posx":"726",
-							"posy":"-465",
-							"stable":"0"
-						}
-					]
-				},
-				{
-					"addw":"76",
-					"compid":"827",
-					"compname":"ltrb",
-					"compvalues":
-					[
-						[
-							"120 + 10",
-							"110 + 10",
-							"pW - 10",
-							"pH - 10"
-						]
-					],
-					"expanded":"1",
-					"posx":"406",
-					"posy":"-282",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"829",
-							"compname":"stretch",
-							"compvalues":
-							[
-								[
-									"r.help.guide",
-									"true",
-									"inner"
-								]
-							],
-							"expanded":"1",
-							"posx":"802",
-							"posy":"-282",
-							"stable":"0"
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compname":"else",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"-66"
-				},
-				{
-					"addw":"626",
-					"compid":"703",
-					"compname":"user_content",
-					"compvalues":
-					[
-						[
-							"'subwidget'",
-							"'x'@'d.data.body.enum.'+ d.data.body.focus +'.script'",
-							"'x'@'d.data.body.enum.'+ d.data.body.focus +'.dom'"
-						]
-					],
-					"expanded":"1",
-					"posx":"406",
-					"posy":"24",
-					"stable":"0"
-				},
-				{
-					"addw":"0",
-					"compname":"endif",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"240"
-				},
-				{
-					"addw":"0",
-					"compid":"704",
-					"compname":"jump",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"330",
-					"uiname":"vk"
-				},
-				{
-					"addw":"0",
-					"compname":"if(0 < PopupDockAni)",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"456"
-				},
-				{
-					"addw":"180",
-					"compid":"705",
-					"compname":"inner",
-					"compvalues":
-					[
-						"if((-1 @'d.data.body.focus') != -1)",
-						[
-							"0"
-						]
-					],
-					"expanded":"1",
-					"ontouch":
-					[
-						{
-							"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+							"posx":"406",
+							"posy":"-591"
 						},
-						"update(0.3)"
-					],
-					"posx":"406",
-					"posy":"582",
-					"stable":"0",
-					"ui":
-					[
 						{
 							"addw":"0",
-							"compid":"706",
+							"compid":"824",
 							"compname":"color",
 							"compvalues":
 							[
 								[
-									"0",
-									"0",
-									"0",
-									"20"
+									"255",
+									"255",
+									"255"
 								]
 							],
 							"expanded":"1",
-							"posx":"906",
+							"posx":"406",
+							"posy":"-465",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"825",
+									"compname":"fill",
+									"expanded":"1",
+									"posx":"726",
+									"posy":"-465",
+									"stable":"0"
+								}
+							]
+						},
+						{
+							"addw":"76",
+							"compid":"827",
+							"compname":"ltrb",
+							"compvalues":
+							[
+								[
+									"120 + 10",
+									"110 + 10",
+									"pW - 10",
+									"pH - 10"
+								]
+							],
+							"expanded":"1",
+							"posx":"406",
+							"posy":"-282",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"829",
+									"compname":"stretch",
+									"compvalues":
+									[
+										[
+											"r.help.guide",
+											"true",
+											"inner"
+										]
+									],
+									"expanded":"1",
+									"posx":"802",
+									"posy":"-282",
+									"stable":"0"
+								}
+							]
+						},
+						{
+							"addw":"0",
+							"compname":"else",
+							"expanded":"1",
+							"posx":"406",
+							"posy":"-66"
+						},
+						{
+							"addw":"626",
+							"compid":"703",
+							"compname":"user_content",
+							"compvalues":
+							[
+								[
+									"'subwidget'",
+									"'x'@'d.data.body.enum.'+ d.data.body.focus +'.script'",
+									"'x'@'d.data.body.enum.'+ d.data.body.focus +'.dom'"
+								]
+							],
+							"expanded":"1",
+							"posx":"406",
+							"posy":"24",
+							"stable":"0"
+						},
+						{
+							"addw":"0",
+							"compname":"endif",
+							"expanded":"1",
+							"posx":"406",
+							"posy":"240"
+						},
+						{
+							"addw":"0",
+							"compid":"704",
+							"compname":"jump",
+							"expanded":"1",
+							"posx":"406",
+							"posy":"330",
+							"uiname":"vk"
+						},
+						{
+							"addw":"0",
+							"compname":"if(0 < PopupDockAni)",
+							"expanded":"1",
+							"posx":"406",
+							"posy":"456"
+						},
+						{
+							"addw":"180",
+							"compid":"705",
+							"compname":"inner",
+							"compvalues":
+							[
+								"if((-1 @'d.data.body.focus') != -1)",
+								[
+									"0"
+								]
+							],
+							"expanded":"1",
+							"ontouch":
+							[
+								{
+									"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+								},
+								"update(0.3)"
+							],
+							"posx":"406",
 							"posy":"582",
 							"stable":"0",
 							"ui":
 							[
 								{
 									"addw":"0",
-									"compid":"707",
-									"compname":"fill",
-									"expanded":"1",
-									"posx":"1226",
-									"posy":"582",
-									"stable":"0"
-								}
-							]
-						}
-					],
-					"uiname":"ui_dock_bg"
-				},
-				{
-					"addw":"358",
-					"compid":"815",
-					"compinputs":
-					[
-						{
-							"lefttop":"1 - PopupDockAni [pow] 2.5"
-						},
-						{
-							"osscale":"100 @'d.program.osscale'"
-						},
-						{
-							"framesec":"1000 [divide] (1000 @'d.program.time.render')"
-						}
-					],
-					"compname":"code",
-					"expanded":"1",
-					"posx":"406",
-					"posy":"870",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"308",
-							"compid":"708",
-							"compname":"ltrb",
-							"compvalues":
-							[
-								[
-									"(lefttop * -120 + 0.5) [divide] 1",
-									"(lefttop * -110 + 0.5) [divide] 1",
-									"pW",
-									"pH"
-								]
-							],
-							"expanded":"1",
-							"posx":"1084",
-							"posy":"870",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"806",
-									"compname":"ltrb",
+									"compid":"706",
+									"compname":"color",
 									"compvalues":
 									[
 										[
 											"0",
 											"0",
-											"118",
-											"110"
+											"0",
+											"20"
 										]
 									],
 									"expanded":"1",
-									"posx":"1712",
+									"posx":"906",
+									"posy":"582",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"707",
+											"compname":"fill",
+											"expanded":"1",
+											"posx":"1226",
+											"posy":"582",
+											"stable":"0"
+										}
+									]
+								}
+							],
+							"uiname":"ui_dock_bg"
+						},
+						{
+							"addw":"358",
+							"compid":"815",
+							"compinputs":
+							[
+								{
+									"lefttop":"1 - PopupDockAni [pow] 2.5"
+								},
+								{
+									"osscale":"100 @'d.program.osscale'"
+								},
+								{
+									"framesec":"1000 [divide] (1000 @'d.program.time.render')"
+								},
+								{
+									"main_is_wasm":"('' @'d.program.osname') == 'WASM'"
+								}
+							],
+							"compname":"code",
+							"expanded":"1",
+							"posx":"406",
+							"posy":"870",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"308",
+									"compid":"708",
+									"compname":"ltrb",
+									"compvalues":
+									[
+										[
+											"(lefttop * -120 + 0.5) [divide] 1",
+											"(lefttop * -110 + 0.5) [divide] 1",
+											"pW",
+											"pH"
+										]
+									],
+									"expanded":"1",
+									"posx":"1084",
 									"posy":"870",
 									"stable":"0",
 									"ui":
 									[
 										{
 											"addw":"0",
-											"compid":"807",
-											"compname":"ninepatch",
+											"compid":"806",
+											"compname":"ltrb",
 											"compvalues":
 											[
 												[
-													"r.frame_l"
+													"0",
+													"0",
+													"118",
+													"110"
 												]
 											],
 											"expanded":"1",
-											"posx":"2032",
+											"posx":"1712",
 											"posy":"870",
-											"stable":"0"
-										},
-										{
-											"addw":"0",
-											"compid":"814",
-											"compname":"move",
-											"compvalues":
-											[
-												[
-													"5",
-													"5"
-												]
-											],
-											"expanded":"1",
-											"posx":"2032",
-											"posy":"1053",
 											"stable":"0",
 											"ui":
 											[
 												{
 													"addw":"0",
-													"compid":"811",
-													"compname":"zoom",
+													"compid":"807",
+													"compname":"ninepatch",
 													"compvalues":
 													[
 														[
-															"0.5"
+															"r.frame_l"
 														]
 													],
 													"expanded":"1",
-													"posx":"2352",
+													"posx":"2032",
+													"posy":"870",
+													"stable":"0"
+												},
+												{
+													"addw":"0",
+													"compid":"814",
+													"compname":"move",
+													"compvalues":
+													[
+														[
+															"5",
+															"5"
+														]
+													],
+													"expanded":"1",
+													"posx":"2032",
 													"posy":"1053",
 													"stable":"0",
 													"ui":
 													[
 														{
 															"addw":"0",
-															"compid":"810",
-															"compname":"icon",
+															"compid":"811",
+															"compname":"zoom",
 															"compvalues":
 															[
 																[
-																	"r.app_symbol",
-																	"centermiddle"
+																	"0.5"
 																]
 															],
 															"expanded":"1",
-															"posx":"2672",
+															"posx":"2352",
 															"posy":"1053",
-															"stable":"0"
-														}
-													]
-												}
-											]
-										}
-									]
-								},
-								{
-									"addw":"0",
-									"compid":"709",
-									"compname":"ltrb",
-									"compvalues":
-									[
-										[
-											"118 + 32",
-											"0",
-											"pW",
-											"109"
-										]
-									],
-									"expanded":"1",
-									"posx":"1712",
-									"posy":"1269",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"710",
-											"compname":"ninepatch",
-											"compvalues":
-											[
-												[
-													"r.titlebar"
-												]
-											],
-											"expanded":"1",
-											"posx":"2032",
-											"posy":"1269",
-											"stable":"0"
-										},
-										{
-											"addw":"39",
-											"compid":"711",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"pW-258+20",
-													"19",
-													"pW-205+20",
-													"87"
-												]
-											],
-											"expanded":"1",
-											"onclick":
-											[
-												"minimize()"
-											],
-											"posx":"2032",
-											"posy":"1452",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"712",
-													"compname":"zoom",
-													"compvalues":
-													[
-														[
-															"0.69"
-														]
-													],
-													"expanded":"1",
-													"posx":"2391",
-													"posy":"1452",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"713",
-															"compname":"icon",
-															"compvalues":
-															[
-																"ifpressed(ui_min)",
-																[
-																	"r.win_min_p",
-																	"centermiddle"
-																],
-																"eliffocused(ui_min)",
-																[
-																	"r.win_min_h",
-																	"centermiddle"
-																],
-																"else",
-																[
-																	"r.win_min",
-																	"centermiddle"
-																]
-															],
-															"expanded":"1",
-															"posx":"2711",
-															"posy":"1452",
-															"stable":"0"
-														}
-													]
-												}
-											],
-											"uiname":"ui_min"
-										},
-										{
-											"addw":"36",
-											"compid":"714",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"pW-190+20",
-													"19",
-													"pW-137+20",
-													"87"
-												]
-											],
-											"expanded":"1",
-											"onclick":
-											[
-												"maximize()"
-											],
-											"posx":"2032",
-											"posy":"1755",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"715",
-													"compname":"zoom",
-													"compvalues":
-													[
-														[
-															"0.69"
-														]
-													],
-													"expanded":"1",
-													"posx":"2388",
-													"posy":"1755",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"716",
-															"compname":"icon",
-															"compvalues":
-															[
-																"ifpressed(ui_max)",
-																[
-																	"r.win_max_p",
-																	"centermiddle"
-																],
-																"eliffocused(ui_max)",
-																[
-																	"r.win_max_h",
-																	"centermiddle"
-																],
-																"else",
-																[
-																	"r.win_max",
-																	"centermiddle"
-																]
-															],
-															"expanded":"1",
-															"posx":"2708",
-															"posy":"1755",
-															"stable":"0"
-														}
-													]
-												}
-											],
-											"uiname":"ui_max"
-										},
-										{
-											"addw":"31",
-											"compid":"717",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"pW-123+20",
-													"19",
-													"pW-70+20",
-													"87"
-												]
-											],
-											"expanded":"1",
-											"onclick":
-											[
-												"exit()"
-											],
-											"posx":"2032",
-											"posy":"2058",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"718",
-													"compname":"zoom",
-													"compvalues":
-													[
-														[
-															"0.69"
-														]
-													],
-													"expanded":"1",
-													"posx":"2383",
-													"posy":"2058",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"719",
-															"compname":"icon",
-															"compvalues":
-															[
-																"ifpressed(ui_close)",
-																[
-																	"r.win_close_p",
-																	"centermiddle"
-																],
-																"eliffocused(ui_close)",
-																[
-																	"r.win_close_h",
-																	"centermiddle"
-																],
-																"else",
-																[
-																	"r.win_close",
-																	"centermiddle"
-																]
-															],
-															"expanded":"1",
-															"posx":"2703",
-															"posy":"2058",
-															"stable":"0"
-														}
-													]
-												}
-											],
-											"uiname":"ui_close"
-										},
-										{
-											"addw":"0",
-											"compid":"720",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"34",
-													"16",
-													"330",
-													"64"
-												]
-											],
-											"expanded":"1",
-											"posx":"2032",
-											"posy":"2361",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"721",
-													"compname":"color",
-													"compvalues":
-													[
-														[
-															"240",
-															"244",
-															"250",
-															"255"
-														]
-													],
-													"expanded":"1",
-													"posx":"2352",
-													"posy":"2361",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"722",
-															"compname":"font",
-															"compvalues":
-															[
-																[
-																	"3.00",
-																	"'NanumSquare Bold'"
-																]
-															],
-															"expanded":"1",
-															"posx":"2672",
-															"posy":"2361",
 															"stable":"0",
 															"ui":
 															[
 																{
 																	"addw":"0",
-																	"compid":"723",
-																	"compname":"text",
+																	"compid":"810",
+																	"compname":"icon",
 																	"compvalues":
 																	[
 																		[
-																			"'ZAYAPP'",
-																			"leftmiddle"
+																			"r.app_symbol",
+																			"centermiddle"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2992",
-																	"posy":"2361",
+																	"posx":"2672",
+																	"posy":"1053",
 																	"stable":"0"
 																}
 															]
@@ -1796,490 +1501,334 @@
 										},
 										{
 											"addw":"0",
-											"compid":"724",
+											"compid":"709",
 											"compname":"ltrb",
 											"compvalues":
 											[
 												[
-													"34",
-													"65",
-													"350",
-													"91"
+													"118 + 32",
+													"0",
+													"pW",
+													"109"
 												]
 											],
 											"expanded":"1",
-											"posx":"2032",
-											"posy":"2577",
+											"posx":"1712",
+											"posy":"1269",
 											"stable":"0",
 											"ui":
 											[
 												{
 													"addw":"0",
-													"compid":"725",
-													"compname":"color",
+													"compid":"710",
+													"compname":"ninepatch",
 													"compvalues":
 													[
 														[
-															"177",
-															"193",
-															"210",
-															"255"
+															"r.titlebar"
 														]
 													],
 													"expanded":"1",
-													"posx":"2352",
+													"posx":"2032",
+													"posy":"1269",
+													"stable":"0"
+												},
+												{
+													"addw":"0",
+													"compname":"if(main_is_wasm == 0)",
+													"expanded":"1",
+													"posx":"2032",
+													"posy":"1452"
+												},
+												{
+													"addw":"39",
+													"compid":"711",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"pW-258+20",
+															"19",
+															"pW-205+20",
+															"87"
+														]
+													],
+													"expanded":"1",
+													"onclick":
+													[
+														"minimize()"
+													],
+													"posx":"2032",
+													"posy":"1578",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"712",
+															"compname":"zoom",
+															"compvalues":
+															[
+																[
+																	"0.69"
+																]
+															],
+															"expanded":"1",
+															"posx":"2391",
+															"posy":"1578",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"713",
+																	"compname":"icon",
+																	"compvalues":
+																	[
+																		"ifpressed(ui_min)",
+																		[
+																			"r.win_min_p",
+																			"centermiddle"
+																		],
+																		"eliffocused(ui_min)",
+																		[
+																			"r.win_min_h",
+																			"centermiddle"
+																		],
+																		"else",
+																		[
+																			"r.win_min",
+																			"centermiddle"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2711",
+																	"posy":"1578",
+																	"stable":"0"
+																}
+															]
+														}
+													],
+													"uiname":"ui_min"
+												},
+												{
+													"addw":"36",
+													"compid":"714",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"pW-190+20",
+															"19",
+															"pW-137+20",
+															"87"
+														]
+													],
+													"expanded":"1",
+													"onclick":
+													[
+														"maximize()"
+													],
+													"posx":"2032",
+													"posy":"1881",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"715",
+															"compname":"zoom",
+															"compvalues":
+															[
+																[
+																	"0.69"
+																]
+															],
+															"expanded":"1",
+															"posx":"2388",
+															"posy":"1881",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"716",
+																	"compname":"icon",
+																	"compvalues":
+																	[
+																		"ifpressed(ui_max)",
+																		[
+																			"r.win_max_p",
+																			"centermiddle"
+																		],
+																		"eliffocused(ui_max)",
+																		[
+																			"r.win_max_h",
+																			"centermiddle"
+																		],
+																		"else",
+																		[
+																			"r.win_max",
+																			"centermiddle"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2708",
+																	"posy":"1881",
+																	"stable":"0"
+																}
+															]
+														}
+													],
+													"uiname":"ui_max"
+												},
+												{
+													"addw":"31",
+													"compid":"717",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"pW-123+20",
+															"19",
+															"pW-70+20",
+															"87"
+														]
+													],
+													"expanded":"1",
+													"onclick":
+													[
+														"exit()"
+													],
+													"posx":"2032",
+													"posy":"2184",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"718",
+															"compname":"zoom",
+															"compvalues":
+															[
+																[
+																	"0.69"
+																]
+															],
+															"expanded":"1",
+															"posx":"2383",
+															"posy":"2184",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"719",
+																	"compname":"icon",
+																	"compvalues":
+																	[
+																		"ifpressed(ui_close)",
+																		[
+																			"r.win_close_p",
+																			"centermiddle"
+																		],
+																		"eliffocused(ui_close)",
+																		[
+																			"r.win_close_h",
+																			"centermiddle"
+																		],
+																		"else",
+																		[
+																			"r.win_close",
+																			"centermiddle"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2703",
+																	"posy":"2184",
+																	"stable":"0"
+																}
+															]
+														}
+													],
+													"uiname":"ui_close"
+												},
+												{
+													"addw":"0",
+													"compname":"endif",
+													"expanded":"1",
+													"posx":"2032",
+													"posy":"2487"
+												},
+												{
+													"addw":"0",
+													"compid":"720",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"34",
+															"16",
+															"330",
+															"64"
+														]
+													],
+													"expanded":"1",
+													"posx":"2032",
 													"posy":"2577",
 													"stable":"0",
 													"ui":
 													[
 														{
 															"addw":"0",
-															"compid":"726",
-															"compname":"font",
+															"compid":"721",
+															"compname":"color",
 															"compvalues":
 															[
 																[
-																	"1.45",
-																	"'NanumSquare Bold'"
+																	"240",
+																	"244",
+																	"250",
+																	"255"
 																]
 															],
 															"expanded":"1",
-															"posx":"2672",
+															"posx":"2352",
 															"posy":"2577",
 															"stable":"0",
 															"ui":
 															[
 																{
-																	"addw":"325",
-																	"compid":"727",
-																	"compname":"text",
-																	"compvalues":
-																	[
-																		"if((-1 @'d.data.body.focus') != -1)",
-																		[
-																			"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
-																			"leftmiddle"
-																		],
-																		"else",
-																		[
-																			"'[HOME]'",
-																			"leftmiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2992",
-																	"posy":"2577",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											]
-										},
-										{
-											"addw":"0",
-											"compid":"728",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"pW-459",
-													"29",
-													"pW-284",
-													"83"
-												]
-											],
-											"expanded":"1",
-											"posx":"2032",
-											"posy":"2832",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"729",
-													"compname":"color",
-													"compvalues":
-													[
-														[
-															"38",
-															"223",
-															"244",
-															"255"
-														]
-													],
-													"expanded":"1",
-													"posx":"2352",
-													"posy":"2832",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"730",
-															"compname":"font",
-															"compvalues":
-															[
-																[
-																	"1.75",
-																	"'NanumSquare Bold'"
-																]
-															],
-															"expanded":"1",
-															"posx":"2672",
-															"posy":"2832",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"144",
-																	"compid":"731",
-																	"compname":"text",
-																	"compvalues":
-																	[
-																		[
-																			"framesec +'F / '+ osscale +'%'",
-																			"rightmiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2992",
-																	"posy":"2832",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											]
-										},
-										{
-											"addw":"0",
-											"compid":"732",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"pW-250",
-													"31",
-													"pW-249",
-													"80"
-												]
-											],
-											"expanded":"1",
-											"posx":"2032",
-											"posy":"3048",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"733",
-													"compname":"color",
-													"compvalues":
-													[
-														[
-															"99",
-															"115",
-															"132",
-															"190"
-														]
-													],
-													"expanded":"1",
-													"posx":"2352",
-													"posy":"3048",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"734",
-															"compname":"fill",
-															"expanded":"1",
-															"posx":"2672",
-															"posy":"3048",
-															"stable":"0"
-														}
-													]
-												}
-											]
-										}
-									]
-								},
-								{
-									"addw":"43",
-									"compid":"735",
-									"compname":"ltrb",
-									"compvalues":
-									[
-										[
-											"0",
-											"110 + 28",
-											"115",
-											"pH"
-										]
-									],
-									"expanded":"1",
-									"posx":"1712",
-									"posy":"3264",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"736",
-											"compname":"ninepatch",
-											"compvalues":
-											[
-												[
-													"r.sidebar"
-												]
-											],
-											"expanded":"1",
-											"posx":"2075",
-											"posy":"3264",
-											"stable":"0"
-										},
-										{
-											"addw":"237",
-											"compid":"737",
-											"compname":"ltrb",
-											"compvalues":
-											[
-												[
-													"6",
-													"19",
-													"112",
-													"131"
-												]
-											],
-											"expanded":"1",
-											"onclick":
-											[
-												"setvalue('d.data.body.focus', -1)"
-											],
-											"posx":"2075",
-											"posy":"3447",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"159",
-													"compname":"if(if((-1 @ 'd.data.body.focus') == -1))",
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"3447"
-												},
-												{
-													"addw":"0",
-													"compid":"738",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_home)",
-														[
-															"r.side_selected_p"
-														],
-														"eliffocused(btn_home)",
-														[
-															"r.side_selected_h"
-														],
-														"else",
-														[
-															"r.side_selected"
-														]
-													],
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"3573",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compname":"else",
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"3876"
-												},
-												{
-													"addw":"94",
-													"compid":"823",
-													"compname":"ninepatch",
-													"compvalues":
-													[
-														"ifpressed(btn_home)",
-														[
-															"r.side_normal_p"
-														],
-														"eliffocused(btn_home)",
-														[
-															"r.side_normal_h"
-														],
-														"else",
-														[
-															"r.side_idle"
-														]
-													],
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"3966",
-													"stable":"0"
-												},
-												{
-													"addw":"0",
-													"compname":"endif",
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"4269"
-												},
-												{
-													"addw":"0",
-													"compid":"739",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"13",
-															"12",
-															"pW-13",
-															"72"
-														]
-													],
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"4359",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"740",
-															"compname":"zoom",
-															"compvalues":
-															[
-																[
-																	"0.50"
-																]
-															],
-															"expanded":"1",
-															"posx":"2952",
-															"posy":"4359",
-															"stable":"0",
-															"ui":
-															[
-																{
 																	"addw":"0",
-																	"compid":"741",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"r.icon_home",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3272",
-																	"posy":"4359",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"comment":"btn_home_label",
-													"compid":"742",
-													"compname":"ltrb",
-													"compvalues":
-													[
-														[
-															"4",
-															"70",
-															"pW-4",
-															"102"
-														]
-													],
-													"expanded":"1",
-													"posx":"2632",
-													"posy":"4575",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"743",
-															"compname":"color",
-															"compvalues":
-															[
-																"ifpressed(btn_home)",
-																[
-																	"215",
-																	"239",
-																	"245",
-																	"255"
-																],
-																"elif((-1 @ 'd.data.body.focus') == -1)",
-																[
-																	"229",
-																	"250",
-																	"255",
-																	"255"
-																],
-																"eliffocused(btn_home)",
-																[
-																	"245",
-																	"252",
-																	"255",
-																	"255"
-																],
-																"else",
-																[
-																	"219",
-																	"232",
-																	"240",
-																	"255"
-																]
-															],
-															"expanded":"1",
-															"posx":"2952",
-															"posy":"4575",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"744",
+																	"compid":"722",
 																	"compname":"font",
 																	"compvalues":
 																	[
 																		[
-																			"1.72",
+																			"3.00",
 																			"'NanumSquare Bold'"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3272",
-																	"posy":"4575",
+																	"posx":"2672",
+																	"posy":"2577",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"0",
-																			"compid":"745",
+																			"compid":"723",
 																			"compname":"text",
 																			"compvalues":
 																			[
 																				[
-																					"'홈'",
-																					"centermiddle"
+																					"'ZAYAPP'",
+																					"leftmiddle"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3592",
-																			"posy":"4575",
+																			"posx":"2992",
+																			"posy":"2577",
 																			"stable":"0"
 																		}
 																	]
@@ -2290,639 +1839,244 @@
 												},
 												{
 													"addw":"0",
-													"comment":"btn_home_divider",
-													"compid":"746",
+													"compid":"724",
 													"compname":"ltrb",
 													"compvalues":
 													[
 														[
-															"8",
-															"pH-1",
-															"pW-8",
-															"pH"
+															"34",
+															"65",
+															"350",
+															"91"
 														]
 													],
 													"expanded":"1",
-													"posx":"2632",
-													"posy":"4791",
+													"posx":"2032",
+													"posy":"2793",
 													"stable":"0",
 													"ui":
 													[
 														{
 															"addw":"0",
-															"compid":"747",
+															"compid":"725",
 															"compname":"color",
 															"compvalues":
 															[
-																"ifpressed(btn_home)",
 																[
-																	"132",
-																	"157",
-																	"174",
-																	"0"
-																],
-																"elif((-1 @ 'd.data.body.focus') == -1)",
-																[
-																	"132",
-																	"157",
-																	"174",
-																	"0"
-																],
-																"eliffocused(btn_home)",
-																[
-																	"132",
-																	"157",
-																	"174",
-																	"0"
-																],
-																"else",
-																[
-																	"132",
-																	"157",
-																	"174",
-																	"40"
+																	"177",
+																	"193",
+																	"210",
+																	"255"
 																]
 															],
 															"expanded":"1",
-															"posx":"2952",
-															"posy":"4791",
+															"posx":"2352",
+															"posy":"2793",
 															"stable":"0",
 															"ui":
 															[
 																{
 																	"addw":"0",
-																	"compid":"748",
-																	"compname":"fill",
+																	"compid":"726",
+																	"compname":"font",
+																	"compvalues":
+																	[
+																		[
+																			"1.45",
+																			"'NanumSquare Bold'"
+																		]
+																	],
 																	"expanded":"1",
-																	"posx":"3272",
-																	"posy":"4791",
-																	"stable":"0"
+																	"posx":"2672",
+																	"posy":"2793",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"325",
+																			"compid":"727",
+																			"compname":"text",
+																			"compvalues":
+																			[
+																				"if((-1 @'d.data.body.focus') != -1)",
+																				[
+																					"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
+																					"leftmiddle"
+																				],
+																				"else",
+																				[
+																					"'[HOME]'",
+																					"leftmiddle"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"2992",
+																			"posy":"2793",
+																			"stable":"0"
+																		}
+																	]
 																}
 															]
 														}
 													]
-												}
-											],
-											"uiname":"btn_home"
-										},
-										{
-											"addw":"395",
-											"comment":"main_sidebar_layout",
-											"compid":"836",
-											"compinputs":
-											[
-												{
-													"main_apps_height":"113 * ((0 @ 'd.data.body.enum.count') [max] 0)"
 												},
 												{
-													"main_apps_view_height":"main_apps_height [min] ((pH - 257) [max] 0)"
-												},
-												{
-													"main_settings_top":"(135 + main_apps_view_height) [min] ((pH - 118) [max] 0)"
-												},
-												{
-													"main_apps_scrollbar":"8 * (main_apps_view_height < main_apps_height)"
-												}
-											],
-											"compname":"code",
-											"expanded":"1",
-											"posx":"2075",
-											"posy":"5007",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"57",
-													"compname":"if(0 < main_apps_view_height)",
-													"expanded":"1",
-													"posx":"2790",
-													"posy":"5007"
-												},
-												{
-													"addw":"137",
-													"comment":"main_apps_viewport",
-													"compid":"835",
+													"addw":"0",
+													"compid":"728",
 													"compname":"ltrb",
 													"compvalues":
 													[
+														"if(main_is_wasm)",
 														[
-															"6",
-															"133",
-															"112",
-															"133 + main_apps_view_height",
-															"true"
+															"pW-432",
+															"29",
+															"pW-32",
+															"83"
+														],
+														"else",
+														[
+															"(pW-684) [max] 374",
+															"29",
+															"pW-284",
+															"83"
 														]
 													],
 													"expanded":"1",
-													"posx":"2790",
-													"posy":"5133",
+													"posx":"2032",
+													"posy":"3048",
 													"stable":"0",
 													"ui":
 													[
 														{
-															"addw":"426",
-															"comment":"main_apps_scroll",
-															"compid":"834",
-															"compname":"scroll_view",
+															"addw":"0",
+															"compid":"729",
+															"compname":"color",
 															"compvalues":
 															[
 																[
-																	"'main_apps'",
-																	"113",
-																	"0 @'d.data.body.enum.count'",
-																	"vertical",
-																	"1",
-																	"main_apps_scrollbar",
-																	"0",
-																	"12",
-																	"0",
-																	"113"
+																	"38",
+																	"223",
+																	"244",
+																	"255"
 																]
 															],
 															"expanded":"1",
-															"insiders":
+															"posx":"2352",
+															"posy":"3048",
+															"stable":"0",
+															"ui":
 															[
 																{
-																	"ballposx":"80",
-																	"ballposy":"21",
-																	"name":"scrollbg",
+																	"addw":"0",
+																	"compid":"730",
+																	"compname":"font",
+																	"compvalues":
+																	[
+																		"if(osscale < 150)",
+																		[
+																			"1.75",
+																			"'NanumSquare Bold'"
+																		],
+																		"else",
+																		[
+																			"1.75 [min] (pW / 220)",
+																			"'NanumSquare Bold'"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2672",
+																	"posy":"3048",
+																	"stable":"0",
 																	"ui":
 																	[
 																		{
-																			"addw":"0",
-																			"compid":"837",
-																			"compname":"ltrb",
+																			"addw":"144",
+																			"compid":"731",
+																			"compname":"text",
 																			"compvalues":
 																			[
+																				"if(osscale < 150)",
 																				[
-																					"4",
-																					"0",
-																					"pW",
-																					"pH"
+																					"framesec +'F / '+ osscale +'%'",
+																					"rightmiddle"
+																				],
+																				"elif(osscale < 250)",
+																				[
+																					"framesec +'F / '+ osscale +'% (Zoom_50%)'",
+																					"rightmiddle"
+																				],
+																				"else",
+																				[
+																					"framesec +'F / '+ osscale +'% (Zoom_25%)'",
+																					"rightmiddle"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3993",
-																			"posy":"5133",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"831",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						[
-																							"68",
-																							"91",
-																							"106",
-																							"125"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4313",
-																					"posy":"5133",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"830",
-																							"compname":"fill",
-																							"expanded":"1",
-																							"posx":"4633",
-																							"posy":"5133",
-																							"stable":"0"
-																						}
-																					]
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"ballposx":"86",
-																	"ballposy":"46",
-																	"name":"scrollbar",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"838",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				[
-																					"4",
-																					"0",
-																					"pW",
-																					"pH"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3993",
-																			"posy":"5349",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"833",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						[
-																							"151",
-																							"183",
-																							"203",
-																							"210"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4313",
-																					"posy":"5349",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"832",
-																							"compname":"fill",
-																							"expanded":"1",
-																							"posx":"4633",
-																							"posy":"5349",
-																							"stable":"0"
-																						}
-																					]
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"ballposx":"74",
-																	"ballposy":"71",
-																	"name":"content",
-																	"ui":
-																	[
-																		{
-																			"addw":"282",
-																			"compid":"749",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				[
-																					"0",
-																					"0",
-																					"pW",
-																					"112"
-																				]
-																			],
-																			"expanded":"1",
-																			"onclick":
-																			[
-																				"if(pV == 1)",
-																				"readyapng('apng/qhome_curtain.apng')",
-																				"endif",
-																				"setvalue('d.data.body.focus', pV)",
-																				{
-																					"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
-																				},
-																				"update(0.3)"
-																			],
-																			"posx":"3993",
-																			"posy":"5565",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"144",
-																					"compname":"if(if((-1 @ 'd.data.body.focus') == pV))",
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"5565"
-																				},
-																				{
-																					"addw":"116",
-																					"compid":"822",
-																					"compname":"ninepatch",
-																					"compvalues":
-																					[
-																						"ifpressed('main_apps_btn_widget_'+ pV)",
-																						[
-																							"r.side_selected_p"
-																						],
-																						"eliffocused('main_apps_btn_widget_'+ pV)",
-																						[
-																							"r.side_selected_h"
-																						],
-																						"else",
-																						[
-																							"r.side_selected"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"5691",
-																					"stable":"0"
-																				},
-																				{
-																					"addw":"0",
-																					"compname":"else",
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"5994"
-																				},
-																				{
-																					"addw":"94",
-																					"compid":"816",
-																					"compname":"ninepatch",
-																					"compvalues":
-																					[
-																						"ifpressed('main_apps_btn_widget_'+ pV)",
-																						[
-																							"r.side_normal_p"
-																						],
-																						"eliffocused('main_apps_btn_widget_'+ pV)",
-																						[
-																							"r.side_normal_h"
-																						],
-																						"else",
-																						[
-																							"r.side_idle"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"6084",
-																					"stable":"0"
-																				},
-																				{
-																					"addw":"0",
-																					"compname":"endif",
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"6387"
-																				},
-																				{
-																					"addw":"268",
-																					"compid":"821",
-																					"compinputs":
-																					[
-																						{
-																							"domname":"'x'@'d.data.body.enum.'+ pV +'.dom'"
-																						},
-																						{
-																							"titlename":"'-'@'d.data.body.enum.'+ pV +'.title'"
-																						}
-																					],
-																					"compname":"code",
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"6477",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"750",
-																							"compname":"ltrb",
-																							"compvalues":
-																							[
-																								[
-																									"13",
-																									"12",
-																									"pW-13",
-																									"72"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"5183",
-																							"posy":"6477",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"751",
-																									"compname":"zoom",
-																									"compvalues":
-																									[
-																										[
-																											"0.51"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"5503",
-																									"posy":"6477",
-																									"stable":"0",
-																									"ui":
-																									[
-																										{
-																											"addw":"69",
-																											"compid":"752",
-																											"compname":"icon",
-																											"compvalues":
-																											[
-																												[
-																													"'r.icon.'+ domname",
-																													"centermiddle"
-																												]
-																											],
-																											"expanded":"1",
-																											"posx":"5823",
-																											"posy":"6477",
-																											"stable":"0"
-																										}
-																									]
-																								}
-																							]
-																						},
-																						{
-																							"addw":"0",
-																							"compid":"753",
-																							"compname":"ltrb",
-																							"compvalues":
-																							[
-																								[
-																									"4",
-																									"70",
-																									"pW-4",
-																									"102"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"5183",
-																							"posy":"6693",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"754",
-																									"compname":"color",
-																									"compvalues":
-																									[
-																										"ifpressed('main_apps_btn_widget_'+ pV)",
-																										[
-																											"215",
-																											"239",
-																											"245",
-																											"255"
-																										],
-																										"elif((-1 @ 'd.data.body.focus') == pV)",
-																										[
-																											"229",
-																											"250",
-																											"255",
-																											"255"
-																										],
-																										"eliffocused('main_apps_btn_widget_'+ pV)",
-																										[
-																											"245",
-																											"252",
-																											"255",
-																											"255"
-																										],
-																										"else",
-																										[
-																											"219",
-																											"232",
-																											"240",
-																											"255"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"5503",
-																									"posy":"6693",
-																									"stable":"0",
-																									"ui":
-																									[
-																										{
-																											"addw":"0",
-																											"compid":"755",
-																											"compname":"font",
-																											"compvalues":
-																											[
-																												[
-																													"1.72",
-																													"'NanumSquare Bold'"
-																												]
-																											],
-																											"expanded":"1",
-																											"posx":"5823",
-																											"posy":"6693",
-																											"stable":"0",
-																											"ui":
-																											[
-																												{
-																													"addw":"0",
-																													"compid":"756",
-																													"compname":"text",
-																													"compvalues":
-																													[
-																														[
-																															"titlename",
-																															"centermiddle"
-																														]
-																													],
-																													"expanded":"1",
-																													"posx":"6143",
-																													"posy":"6693",
-																													"stable":"0"
-																												}
-																											]
-																										}
-																									]
-																								}
-																							]
-																						}
-																					]
-																				},
-																				{
-																					"addw":"113",
-																					"compid":"757",
-																					"compname":"ltrb",
-																					"compvalues":
-																					[
-																						"if(pV + 1 < 0 @'d.data.body.enum.count')",
-																						[
-																							"8",
-																							"pH-1",
-																							"pW-8",
-																							"pH"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4595",
-																					"posy":"6909",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"758",
-																							"compname":"color",
-																							"compvalues":
-																							[
-																								"ifpressed('main_apps_btn_widget_'+ pV)",
-																								[
-																									"132",
-																									"157",
-																									"174",
-																									"0"
-																								],
-																								"elif((-1 @ 'd.data.body.focus') == pV)",
-																								[
-																									"132",
-																									"157",
-																									"174",
-																									"0"
-																								],
-																								"eliffocused('main_apps_btn_widget_'+ pV)",
-																								[
-																									"132",
-																									"157",
-																									"174",
-																									"0"
-																								],
-																								"else",
-																								[
-																									"132",
-																									"157",
-																									"174",
-																									"40"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"5028",
-																							"posy":"6909",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"759",
-																									"compname":"fill",
-																									"expanded":"1",
-																									"posx":"5348",
-																									"posy":"6909",
-																									"stable":"0"
-																								}
-																							]
-																						}
-																					]
-																				}
-																			],
-																			"uiname":"'main_apps_btn_widget_' + pV"
+																			"posx":"2992",
+																			"posy":"3048",
+																			"stable":"0"
 																		}
 																	]
 																}
+															]
+														}
+													]
+												},
+												{
+													"addw":"0",
+													"compname":"if(main_is_wasm == 0)",
+													"expanded":"1",
+													"posx":"2032",
+													"posy":"3264"
+												},
+												{
+													"addw":"0",
+													"compid":"732",
+													"compname":"ltrb",
+													"compvalues":
+													[
+														[
+															"pW-250",
+															"31",
+															"pW-249",
+															"80"
+														]
+													],
+													"expanded":"1",
+													"posx":"2032",
+													"posy":"3390",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"733",
+															"compname":"color",
+															"compvalues":
+															[
+																[
+																	"99",
+																	"115",
+																	"132",
+																	"190"
+																]
 															],
-															"posx":"3247",
-															"posy":"5133",
-															"stable":"0"
+															"expanded":"1",
+															"posx":"2352",
+															"posy":"3390",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"734",
+																	"compname":"fill",
+																	"expanded":"1",
+																	"posx":"2672",
+																	"posy":"3390",
+																	"stable":"0"
+																}
+															]
 														}
 													]
 												},
@@ -2930,270 +2084,1200 @@
 													"addw":"0",
 													"compname":"endif",
 													"expanded":"1",
-													"posx":"2790",
-													"posy":"7149"
+													"posx":"2032",
+													"posy":"3606"
+												}
+											]
+										},
+										{
+											"addw":"43",
+											"compid":"735",
+											"compname":"ltrb",
+											"compvalues":
+											[
+												[
+													"0",
+													"110 + 28",
+													"115",
+													"pH"
+												]
+											],
+											"expanded":"1",
+											"posx":"1712",
+											"posy":"3696",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"736",
+													"compname":"ninepatch",
+													"compvalues":
+													[
+														[
+															"r.sidebar"
+														]
+													],
+													"expanded":"1",
+													"posx":"2075",
+													"posy":"3696",
+													"stable":"0"
 												},
 												{
-													"addw":"123",
-													"comment":"main_settings_position",
-													"compid":"826",
-													"compinputs":
+													"addw":"237",
+													"compid":"737",
+													"compname":"ltrb",
+													"compvalues":
 													[
-														{
-															"addy":"main_settings_top - 475"
-														}
+														[
+															"6",
+															"19",
+															"112",
+															"131"
+														]
 													],
-													"compname":"code",
 													"expanded":"1",
-													"posx":"2790",
-													"posy":"7239",
+													"onclick":
+													[
+														"setvalue('d.data.body.focus', -1)"
+													],
+													"posx":"2075",
+													"posy":"3879",
 													"stable":"0",
 													"ui":
 													[
 														{
-															"addw":"39",
-															"compid":"782",
+															"addw":"159",
+															"compname":"if(if((-1 @ 'd.data.body.focus') == -1))",
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"3879"
+														},
+														{
+															"addw":"0",
+															"compid":"738",
+															"compname":"ninepatch",
+															"compvalues":
+															[
+																"ifpressed(btn_home)",
+																[
+																	"r.side_selected_p"
+																],
+																"eliffocused(btn_home)",
+																[
+																	"r.side_selected_h"
+																],
+																"else",
+																[
+																	"r.side_selected"
+																]
+															],
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"4005",
+															"stable":"0"
+														},
+														{
+															"addw":"0",
+															"compname":"else",
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"4308"
+														},
+														{
+															"addw":"94",
+															"compid":"823",
+															"compname":"ninepatch",
+															"compvalues":
+															[
+																"ifpressed(btn_home)",
+																[
+																	"r.side_normal_p"
+																],
+																"eliffocused(btn_home)",
+																[
+																	"r.side_normal_h"
+																],
+																"else",
+																[
+																	"r.side_idle"
+																]
+															],
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"4398",
+															"stable":"0"
+														},
+														{
+															"addw":"0",
+															"compname":"endif",
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"4701"
+														},
+														{
+															"addw":"0",
+															"compid":"739",
 															"compname":"ltrb",
 															"compvalues":
 															[
 																[
-																	"6",
-																	"475 + addy",
-																	"112",
-																	"587 + addy"
+																	"13",
+																	"12",
+																	"pW-13",
+																	"72"
 																]
 															],
 															"expanded":"1",
-															"posx":"3233",
-															"posy":"7239",
+															"posx":"2632",
+															"posy":"4791",
 															"stable":"0",
 															"ui":
 															[
 																{
 																	"addw":"0",
-																	"compid":"819",
-																	"compname":"ninepatch",
-																	"compvalues":
-																	[
-																		"ifpressed(btn_system)",
-																		[
-																			"r.side_normal_p"
-																		],
-																		"eliffocused(btn_system)",
-																		[
-																			"r.side_normal_h"
-																		],
-																		"else",
-																		[
-																			"r.side_idle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3592",
-																	"posy":"7239",
-																	"stable":"0"
-																},
-																{
-																	"addw":"0",
-																	"compid":"783",
-																	"compname":"ltrb",
+																	"compid":"740",
+																	"compname":"zoom",
 																	"compvalues":
 																	[
 																		[
-																			"13",
-																			"12",
-																			"pW-13",
-																			"72"
+																			"0.50"
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"3592",
-																	"posy":"7542",
+																	"posx":"2952",
+																	"posy":"4791",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"0",
-																			"compid":"784",
-																			"compname":"zoom",
+																			"compid":"741",
+																			"compname":"icon",
 																			"compvalues":
 																			[
 																				[
-																					"0.51"
+																					"r.icon_home",
+																					"centermiddle"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3912",
-																			"posy":"7542",
+																			"posx":"3272",
+																			"posy":"4791",
+																			"stable":"0"
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"comment":"btn_home_label",
+															"compid":"742",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"4",
+																	"70",
+																	"pW-4",
+																	"102"
+																]
+															],
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"5007",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"743",
+																	"compname":"color",
+																	"compvalues":
+																	[
+																		"ifpressed(btn_home)",
+																		[
+																			"215",
+																			"239",
+																			"245",
+																			"255"
+																		],
+																		"elif((-1 @ 'd.data.body.focus') == -1)",
+																		[
+																			"229",
+																			"250",
+																			"255",
+																			"255"
+																		],
+																		"eliffocused(btn_home)",
+																		[
+																			"245",
+																			"252",
+																			"255",
+																			"255"
+																		],
+																		"else",
+																		[
+																			"219",
+																			"232",
+																			"240",
+																			"255"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2952",
+																	"posy":"5007",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"744",
+																			"compname":"font",
+																			"compvalues":
+																			[
+																				[
+																					"1.72",
+																					"'NanumSquare Bold'"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3272",
+																			"posy":"5007",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"785",
-																					"compname":"icon",
+																					"compid":"745",
+																					"compname":"text",
 																					"compvalues":
 																					[
 																						[
-																							"r.icon_system",
+																							"'홈'",
 																							"centermiddle"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4232",
-																					"posy":"7542",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"addw":"0",
-																	"compid":"786",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"4",
-																			"70",
-																			"pW-4",
-																			"102"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3592",
-																	"posy":"7758",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"787",
-																			"compname":"color",
-																			"compvalues":
-																			[
-																				"ifpressed(btn_system)",
-																				[
-																					"215",
-																					"239",
-																					"245",
-																					"255"
-																				],
-																				"eliffocused(btn_system)",
-																				[
-																					"245",
-																					"252",
-																					"255",
-																					"255"
-																				],
-																				"else",
-																				[
-																					"219",
-																					"232",
-																					"240",
-																					"255"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3912",
-																			"posy":"7758",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"788",
-																					"compname":"font",
-																					"compvalues":
-																					[
-																						[
-																							"1.72",
-																							"'NanumSquare Bold'"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4232",
-																					"posy":"7758",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"789",
-																							"compname":"text",
-																							"compvalues":
-																							[
-																								[
-																									"'설정'",
-																									"centermiddle"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4552",
-																							"posy":"7758",
-																							"stable":"0"
-																						}
-																					]
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"addw":"0",
-																	"comment":"btn_home_divider",
-																	"compid":"839",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"8",
-																			"0",
-																			"pW-8",
-																			"1"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"3592",
-																	"posy":"7974",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"840",
-																			"compname":"color",
-																			"compvalues":
-																			[
-																				[
-																					"132",
-																					"157",
-																					"174",
-																					"50"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3912",
-																			"posy":"7974",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"841",
-																					"compname":"fill",
-																					"expanded":"1",
-																					"posx":"4232",
-																					"posy":"7974",
+																					"posx":"3592",
+																					"posy":"5007",
 																					"stable":"0"
 																				}
 																			]
 																		}
 																	]
 																}
+															]
+														},
+														{
+															"addw":"0",
+															"comment":"btn_home_divider",
+															"compid":"746",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"8",
+																	"pH-1",
+																	"pW-8",
+																	"pH"
+																]
 															],
-															"uiname":"btn_system"
+															"expanded":"1",
+															"posx":"2632",
+															"posy":"5223",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compid":"747",
+																	"compname":"color",
+																	"compvalues":
+																	[
+																		"ifpressed(btn_home)",
+																		[
+																			"132",
+																			"157",
+																			"174",
+																			"0"
+																		],
+																		"elif((-1 @ 'd.data.body.focus') == -1)",
+																		[
+																			"132",
+																			"157",
+																			"174",
+																			"0"
+																		],
+																		"eliffocused(btn_home)",
+																		[
+																			"132",
+																			"157",
+																			"174",
+																			"0"
+																		],
+																		"else",
+																		[
+																			"132",
+																			"157",
+																			"174",
+																			"40"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"2952",
+																	"posy":"5223",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"748",
+																			"compname":"fill",
+																			"expanded":"1",
+																			"posx":"3272",
+																			"posy":"5223",
+																			"stable":"0"
+																		}
+																	]
+																}
+															]
+														}
+													],
+													"uiname":"btn_home"
+												},
+												{
+													"addw":"395",
+													"comment":"main_sidebar_layout",
+													"compid":"836",
+													"compinputs":
+													[
+														{
+															"main_apps_height":"113 * ((0 @ 'd.data.body.enum.count') [max] 0)"
+														},
+														{
+															"main_apps_view_height":"main_apps_height [min] ((pH - 257) [max] 0)"
+														},
+														{
+															"main_settings_top":"(135 + main_apps_view_height) [min] ((pH - 118) [max] 0)"
+														},
+														{
+															"main_apps_scrollbar":"8 * (main_apps_view_height < main_apps_height)"
+														}
+													],
+													"compname":"code",
+													"expanded":"1",
+													"posx":"2075",
+													"posy":"5439",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"57",
+															"compname":"if(0 < main_apps_view_height)",
+															"expanded":"1",
+															"posx":"2790",
+															"posy":"5439"
+														},
+														{
+															"addw":"137",
+															"comment":"main_apps_viewport",
+															"compid":"835",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"6",
+																	"133",
+																	"112",
+																	"133 + main_apps_view_height",
+																	"true"
+																]
+															],
+															"expanded":"1",
+															"posx":"2790",
+															"posy":"5565",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"426",
+																	"comment":"main_apps_scroll",
+																	"compid":"834",
+																	"compname":"scroll_view",
+																	"compvalues":
+																	[
+																		[
+																			"'main_apps'",
+																			"113",
+																			"0 @'d.data.body.enum.count'",
+																			"vertical",
+																			"1",
+																			"main_apps_scrollbar",
+																			"0",
+																			"12",
+																			"0",
+																			"113"
+																		]
+																	],
+																	"expanded":"1",
+																	"insiders":
+																	[
+																		{
+																			"ballposx":"80",
+																			"ballposy":"21",
+																			"name":"scrollbg",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"837",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						[
+																							"4",
+																							"0",
+																							"pW",
+																							"pH"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"3993",
+																					"posy":"5565",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"831",
+																							"compname":"color",
+																							"compvalues":
+																							[
+																								[
+																									"68",
+																									"91",
+																									"106",
+																									"125"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4313",
+																							"posy":"5565",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"830",
+																									"compname":"fill",
+																									"expanded":"1",
+																									"posx":"4633",
+																									"posy":"5565",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"ballposx":"86",
+																			"ballposy":"46",
+																			"name":"scrollbar",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"838",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						[
+																							"4",
+																							"0",
+																							"pW",
+																							"pH"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"3993",
+																					"posy":"5781",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"833",
+																							"compname":"color",
+																							"compvalues":
+																							[
+																								[
+																									"151",
+																									"183",
+																									"203",
+																									"210"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4313",
+																							"posy":"5781",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"832",
+																									"compname":"fill",
+																									"expanded":"1",
+																									"posx":"4633",
+																									"posy":"5781",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"ballposx":"74",
+																			"ballposy":"71",
+																			"name":"content",
+																			"ui":
+																			[
+																				{
+																					"addw":"282",
+																					"compid":"749",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						[
+																							"0",
+																							"0",
+																							"pW",
+																							"112"
+																						]
+																					],
+																					"expanded":"1",
+																					"onclick":
+																					[
+																						"if(pV == 1)",
+																						"readyapng('apng/qhome_curtain.apng')",
+																						"endif",
+																						"setvalue('d.data.body.focus', pV)",
+																						{
+																							"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+																						},
+																						"update(0.3)"
+																					],
+																					"posx":"3993",
+																					"posy":"5997",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"144",
+																							"compname":"if(if((-1 @ 'd.data.body.focus') == pV))",
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"5997"
+																						},
+																						{
+																							"addw":"116",
+																							"compid":"822",
+																							"compname":"ninepatch",
+																							"compvalues":
+																							[
+																								"ifpressed('main_apps_btn_widget_'+ pV)",
+																								[
+																									"r.side_selected_p"
+																								],
+																								"eliffocused('main_apps_btn_widget_'+ pV)",
+																								[
+																									"r.side_selected_h"
+																								],
+																								"else",
+																								[
+																									"r.side_selected"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"6123",
+																							"stable":"0"
+																						},
+																						{
+																							"addw":"0",
+																							"compname":"else",
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"6426"
+																						},
+																						{
+																							"addw":"94",
+																							"compid":"816",
+																							"compname":"ninepatch",
+																							"compvalues":
+																							[
+																								"ifpressed('main_apps_btn_widget_'+ pV)",
+																								[
+																									"r.side_normal_p"
+																								],
+																								"eliffocused('main_apps_btn_widget_'+ pV)",
+																								[
+																									"r.side_normal_h"
+																								],
+																								"else",
+																								[
+																									"r.side_idle"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"6516",
+																							"stable":"0"
+																						},
+																						{
+																							"addw":"0",
+																							"compname":"endif",
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"6819"
+																						},
+																						{
+																							"addw":"268",
+																							"compid":"821",
+																							"compinputs":
+																							[
+																								{
+																									"domname":"'x'@'d.data.body.enum.'+ pV +'.dom'"
+																								},
+																								{
+																									"titlename":"'-'@'d.data.body.enum.'+ pV +'.title'"
+																								}
+																							],
+																							"compname":"code",
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"6909",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"750",
+																									"compname":"ltrb",
+																									"compvalues":
+																									[
+																										[
+																											"13",
+																											"12",
+																											"pW-13",
+																											"72"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5183",
+																									"posy":"6909",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"0",
+																											"compid":"751",
+																											"compname":"zoom",
+																											"compvalues":
+																											[
+																												[
+																													"0.51"
+																												]
+																											],
+																											"expanded":"1",
+																											"posx":"5503",
+																											"posy":"6909",
+																											"stable":"0",
+																											"ui":
+																											[
+																												{
+																													"addw":"69",
+																													"compid":"752",
+																													"compname":"icon",
+																													"compvalues":
+																													[
+																														[
+																															"'r.icon.'+ domname",
+																															"centermiddle"
+																														]
+																													],
+																													"expanded":"1",
+																													"posx":"5823",
+																													"posy":"6909",
+																													"stable":"0"
+																												}
+																											]
+																										}
+																									]
+																								},
+																								{
+																									"addw":"0",
+																									"compid":"753",
+																									"compname":"ltrb",
+																									"compvalues":
+																									[
+																										[
+																											"4",
+																											"70",
+																											"pW-4",
+																											"102"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5183",
+																									"posy":"7125",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"0",
+																											"compid":"754",
+																											"compname":"color",
+																											"compvalues":
+																											[
+																												"ifpressed('main_apps_btn_widget_'+ pV)",
+																												[
+																													"215",
+																													"239",
+																													"245",
+																													"255"
+																												],
+																												"elif((-1 @ 'd.data.body.focus') == pV)",
+																												[
+																													"229",
+																													"250",
+																													"255",
+																													"255"
+																												],
+																												"eliffocused('main_apps_btn_widget_'+ pV)",
+																												[
+																													"245",
+																													"252",
+																													"255",
+																													"255"
+																												],
+																												"else",
+																												[
+																													"219",
+																													"232",
+																													"240",
+																													"255"
+																												]
+																											],
+																											"expanded":"1",
+																											"posx":"5503",
+																											"posy":"7125",
+																											"stable":"0",
+																											"ui":
+																											[
+																												{
+																													"addw":"0",
+																													"compid":"755",
+																													"compname":"font",
+																													"compvalues":
+																													[
+																														[
+																															"1.72",
+																															"'NanumSquare Bold'"
+																														]
+																													],
+																													"expanded":"1",
+																													"posx":"5823",
+																													"posy":"7125",
+																													"stable":"0",
+																													"ui":
+																													[
+																														{
+																															"addw":"0",
+																															"compid":"756",
+																															"compname":"text",
+																															"compvalues":
+																															[
+																																[
+																																	"titlename",
+																																	"centermiddle"
+																																]
+																															],
+																															"expanded":"1",
+																															"posx":"6143",
+																															"posy":"7125",
+																															"stable":"0"
+																														}
+																													]
+																												}
+																											]
+																										}
+																									]
+																								}
+																							]
+																						},
+																						{
+																							"addw":"113",
+																							"compid":"757",
+																							"compname":"ltrb",
+																							"compvalues":
+																							[
+																								"if(pV + 1 < 0 @'d.data.body.enum.count')",
+																								[
+																									"8",
+																									"pH-1",
+																									"pW-8",
+																									"pH"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4595",
+																							"posy":"7341",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"758",
+																									"compname":"color",
+																									"compvalues":
+																									[
+																										"ifpressed('main_apps_btn_widget_'+ pV)",
+																										[
+																											"132",
+																											"157",
+																											"174",
+																											"0"
+																										],
+																										"elif((-1 @ 'd.data.body.focus') == pV)",
+																										[
+																											"132",
+																											"157",
+																											"174",
+																											"0"
+																										],
+																										"eliffocused('main_apps_btn_widget_'+ pV)",
+																										[
+																											"132",
+																											"157",
+																											"174",
+																											"0"
+																										],
+																										"else",
+																										[
+																											"132",
+																											"157",
+																											"174",
+																											"40"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5028",
+																									"posy":"7341",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"0",
+																											"compid":"759",
+																											"compname":"fill",
+																											"expanded":"1",
+																											"posx":"5348",
+																											"posy":"7341",
+																											"stable":"0"
+																										}
+																									]
+																								}
+																							]
+																						}
+																					],
+																					"uiname":"'main_apps_btn_widget_' + pV"
+																				}
+																			]
+																		}
+																	],
+																	"posx":"3247",
+																	"posy":"5565",
+																	"stable":"0"
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"compname":"endif",
+															"expanded":"1",
+															"posx":"2790",
+															"posy":"7581"
+														},
+														{
+															"addw":"123",
+															"comment":"main_settings_position",
+															"compid":"826",
+															"compinputs":
+															[
+																{
+																	"addy":"main_settings_top - 475"
+																}
+															],
+															"compname":"code",
+															"expanded":"1",
+															"posx":"2790",
+															"posy":"7671",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"39",
+																	"compid":"782",
+																	"compname":"ltrb",
+																	"compvalues":
+																	[
+																		[
+																			"6",
+																			"475 + addy",
+																			"112",
+																			"587 + addy"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3233",
+																	"posy":"7671",
+																	"stable":"0",
+																	"ui":
+																	[
+																		{
+																			"addw":"0",
+																			"compid":"819",
+																			"compname":"ninepatch",
+																			"compvalues":
+																			[
+																				"ifpressed(btn_system)",
+																				[
+																					"r.side_normal_p"
+																				],
+																				"eliffocused(btn_system)",
+																				[
+																					"r.side_normal_h"
+																				],
+																				"else",
+																				[
+																					"r.side_idle"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3592",
+																			"posy":"7671",
+																			"stable":"0"
+																		},
+																		{
+																			"addw":"0",
+																			"compid":"783",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"13",
+																					"12",
+																					"pW-13",
+																					"72"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3592",
+																			"posy":"7974",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"784",
+																					"compname":"zoom",
+																					"compvalues":
+																					[
+																						[
+																							"0.51"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"3912",
+																					"posy":"7974",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"785",
+																							"compname":"icon",
+																							"compvalues":
+																							[
+																								[
+																									"r.icon_system",
+																									"centermiddle"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4232",
+																							"posy":"7974",
+																							"stable":"0"
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"addw":"0",
+																			"compid":"786",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"4",
+																					"70",
+																					"pW-4",
+																					"102"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3592",
+																			"posy":"8190",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"787",
+																					"compname":"color",
+																					"compvalues":
+																					[
+																						"ifpressed(btn_system)",
+																						[
+																							"215",
+																							"239",
+																							"245",
+																							"255"
+																						],
+																						"eliffocused(btn_system)",
+																						[
+																							"245",
+																							"252",
+																							"255",
+																							"255"
+																						],
+																						"else",
+																						[
+																							"219",
+																							"232",
+																							"240",
+																							"255"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"3912",
+																					"posy":"8190",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"788",
+																							"compname":"font",
+																							"compvalues":
+																							[
+																								[
+																									"1.72",
+																									"'NanumSquare Bold'"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"4232",
+																							"posy":"8190",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"789",
+																									"compname":"text",
+																									"compvalues":
+																									[
+																										[
+																											"'설정'",
+																											"centermiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"4552",
+																									"posy":"8190",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"addw":"0",
+																			"comment":"btn_home_divider",
+																			"compid":"839",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				[
+																					"8",
+																					"0",
+																					"pW-8",
+																					"1"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3592",
+																			"posy":"8406",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"840",
+																					"compname":"color",
+																					"compvalues":
+																					[
+																						[
+																							"132",
+																							"157",
+																							"174",
+																							"50"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"3912",
+																					"posy":"8406",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"841",
+																							"compname":"fill",
+																							"expanded":"1",
+																							"posx":"4232",
+																							"posy":"8406",
+																							"stable":"0"
+																						}
+																					]
+																				}
+																			]
+																		}
+																	],
+																	"uiname":"btn_system"
+																}
+															]
 														}
 													]
 												}
