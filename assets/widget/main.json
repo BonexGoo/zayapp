@@ -43,6 +43,11 @@
 				"dom" : "scube"
 			},
 			{
+				"title" : "Robo",
+				"script" : "robo.zay",
+				"dom" : "robo"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"
