@@ -1110,6 +1110,33 @@
 				}
 			],
 			"uiname":"bg_longpressed"
+		},
+		{
+			"addw":"0",
+			"compid":"843",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"89",
+			"posy":"-1340",
+			"ui":
+			[
+				{
+					"addw":"202",
+					"compid":"844",
+					"compinputs":
+					[
+						{
+							"PopupDockAni":"0"
+						}
+					],
+					"compname":"code",
+					"expanded":"1",
+					"posx":"486",
+					"posy":"-1340",
+					"stable":"0"
+				}
+			],
+			"uiname":"hide_dock"
 		}
 	],
 	"oncreate":

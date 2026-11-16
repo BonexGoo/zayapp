@@ -13,6 +13,10 @@
 #include <cmath>
 #include <utility>
 
+#if BOSS_WASM
+    #include <emscripten.h>
+#endif
+
 // BEGIN ZAYAPP_NATIVE_NAVIGATION
 // All calls run on the widget/UI thread (TryWorld has shared scratch state).
 class ZayAppNativeState
@@ -1096,9 +1100,35 @@ ZayAppData::ZayAppData()
     // 메인위젯 구성
     CollectModifiedDoms("main", "");
     UpdateModifiedDoms();
+    #if BOSS_WASM
+        // URL의 app과 main.json의 dom이 일치하는 앱 선택
+        bool StartupAppSelected = false;
+        const sint32 StartupAppCount = ZayWidgetDOM::GetValue("data.body.enum.count").ToInteger();
+        for(sint32 i = 0; i < StartupAppCount; ++i)
+        {
+            const String DomName = ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.dom", i)).ToText();
+            const bool IsRequestedApp = MAIN_THREAD_EM_ASM_INT({
+                if(typeof window === 'undefined')
+                    return 0;
+                const app = new URLSearchParams(window.location.search).get('app');
+                return (app !== null && app !== '' && app === UTF8ToString($0))? 1 : 0;
+            }, (chars) DomName) != 0;
+            if(IsRequestedApp)
+            {
+                ZayWidgetDOM::SetValue("data.body.focus", String::FromInteger(i));
+                StartupAppSelected = true;
+                break;
+            }
+        }
+    #endif
     InitWidget(&mMainWidget, "main");
     mMainWidget.Reload("widget/main.zay");
     mMainWidget.UpdateAtlas(R::PrintUpdatedAtlas(true));
+    #if BOSS_WASM
+        // OnCreate 이후 게이트를 호출해 도크를 즉시 숨김
+        if(StartupAppSelected)
+            mMainWidget.JumpCallDirectly("hide_dock", "url_app", nullptr);
+    #endif
 
     // 채널 셋팅
     mChannel.SetGetter([this](chars ch, chars key)->const SolverValue
