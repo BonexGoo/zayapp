@@ -1,5 +1,5 @@
 ﻿{
-	"addw":"75",
+	"addw":"259",
 	"createtime":"2026-05-18/15:05:47",
 	"expanded":"1",
 	"extends":
@@ -2240,8 +2240,8 @@
 			"compid":"935",
 			"compname":"gate",
 			"expanded":"1",
-			"posx":"10644",
-			"posy":"5128",
+			"posx":"11672",
+			"posy":"4647",
 			"ui":
 			[
 				{
@@ -2255,8 +2255,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"5128",
+					"posx":"11992",
+					"posy":"4647",
 					"stable":"0"
 				},
 				{
@@ -2273,8 +2273,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"5311",
+					"posx":"11992",
+					"posy":"4830",
 					"stable":"0",
 					"ui":
 					[
@@ -2298,8 +2298,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"5311",
+							"posx":"12412",
+							"posy":"4830",
 							"stable":"0"
 						},
 						{
@@ -2316,8 +2316,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"5614",
+							"posx":"12412",
+							"posy":"5133",
 							"stable":"0",
 							"ui":
 							[
@@ -2334,8 +2334,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11804",
-									"posy":"5614",
+									"posx":"12832",
+									"posy":"5133",
 									"stable":"0"
 								}
 							]
@@ -2354,8 +2354,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"5830",
+							"posx":"12412",
+							"posy":"5349",
 							"stable":"0",
 							"ui":
 							[
@@ -2370,8 +2370,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11804",
-									"posy":"5830",
+									"posx":"12832",
+									"posy":"5349",
 									"stable":"0",
 									"ui":
 									[
@@ -2387,8 +2387,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12124",
-											"posy":"5830",
+											"posx":"13152",
+											"posy":"5349",
 											"stable":"0",
 											"ui":
 											[
@@ -2429,15 +2429,15 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"12764",
-																	"posy":"5830",
+																	"posx":"13792",
+																	"posy":"5349",
 																	"stable":"0"
 																}
 															]
 														}
 													],
-													"posx":"12444",
-													"posy":"5830",
+													"posx":"13472",
+													"posy":"5349",
 													"stable":"0"
 												}
 											]
@@ -2467,8 +2467,8 @@
 								"setcomment('d.data.glue_filter', '')",
 								"update(0.15)"
 							],
-							"posx":"11384",
-							"posy":"6046",
+							"posx":"12412",
+							"posy":"5565",
 							"stable":"0",
 							"ui":
 							[
@@ -2485,8 +2485,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11804",
-									"posy":"6046",
+									"posx":"12832",
+									"posy":"5565",
 									"stable":"0"
 								}
 							],
@@ -2508,8 +2508,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"6358",
+					"posx":"11992",
+					"posy":"5877",
 					"stable":"0",
 					"ui":
 					[
@@ -2524,8 +2524,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"6358",
+							"posx":"12412",
+							"posy":"5877",
 							"stable":"0",
 							"ui":
 							[
@@ -2541,8 +2541,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11704",
-									"posy":"6358",
+									"posx":"12732",
+									"posy":"5877",
 									"stable":"0",
 									"ui":
 									[
@@ -2559,8 +2559,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12024",
-											"posy":"6358",
+											"posx":"13052",
+											"posy":"5877",
 											"stable":"0"
 										}
 									]
@@ -2583,8 +2583,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"6574",
+					"posx":"11992",
+					"posy":"6093",
 					"stable":"0",
 					"ui":
 					[
@@ -2599,8 +2599,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"6574",
+							"posx":"12412",
+							"posy":"6093",
 							"stable":"0",
 							"ui":
 							[
@@ -2616,8 +2616,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11704",
-									"posy":"6574",
+									"posx":"12732",
+									"posy":"6093",
 									"stable":"0",
 									"ui":
 									[
@@ -2634,8 +2634,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12024",
-											"posy":"6574",
+											"posx":"13052",
+											"posy":"6093",
 											"stable":"0"
 										}
 									]
@@ -2659,8 +2659,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"6790",
+					"posx":"11992",
+					"posy":"6309",
 					"stable":"0",
 					"ui":
 					[
@@ -2676,8 +2676,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"6790",
+							"posx":"12412",
+							"posy":"6309",
 							"stable":"0",
 							"ui":
 							[
@@ -2720,8 +2720,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"12124",
-													"posy":"6790",
+													"posx":"13152",
+													"posy":"6309",
 													"stable":"0",
 													"ui":
 													[
@@ -2736,8 +2736,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"12444",
-															"posy":"6790",
+															"posx":"13472",
+															"posy":"6309",
 															"stable":"0"
 														}
 													]
@@ -2761,8 +2761,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"12124",
-													"posy":"7006",
+													"posx":"13152",
+													"posy":"6525",
 													"stable":"0",
 													"ui":
 													[
@@ -2786,8 +2786,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"12444",
-															"posy":"7006",
+															"posx":"13472",
+															"posy":"6525",
 															"stable":"0"
 														}
 													]
@@ -2812,8 +2812,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"12124",
-													"posy":"7309",
+													"posx":"13152",
+													"posy":"6828",
 													"stable":"0",
 													"ui":
 													[
@@ -2822,8 +2822,8 @@
 															"compid":"923",
 															"compname":"jump",
 															"expanded":"1",
-															"posx":"12444",
-															"posy":"7309",
+															"posx":"13472",
+															"posy":"6828",
 															"uiname":"main_glue_list_row"
 														}
 													]
@@ -2831,8 +2831,8 @@
 											]
 										}
 									],
-									"posx":"11704",
-									"posy":"6790",
+									"posx":"12732",
+									"posy":"6309",
 									"stable":"0"
 								}
 							]
@@ -2841,8 +2841,8 @@
 							"addw":"0",
 							"compname":"if((((0 @ 'd.data.finded_glues.count') + (1) - 1 - (((0 @ 'd.data.finded_glues.count') + (1) - 1) % (1))) / (1) * (82) + 2 * (4)) > pH)",
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"7525"
+							"posx":"12412",
+							"posy":"7044"
 						},
 						{
 							"addw":"0",
@@ -2855,8 +2855,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"7651",
+							"posx":"12412",
+							"posy":"7170",
 							"stable":"0",
 							"ui":
 							[
@@ -2874,8 +2874,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11704",
-									"posy":"7651",
+									"posx":"12732",
+									"posy":"7170",
 									"stable":"0",
 									"ui":
 									[
@@ -2890,8 +2890,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12024",
-											"posy":"7651",
+											"posx":"13052",
+											"posy":"7170",
 											"stable":"0",
 											"ui":
 											[
@@ -2900,8 +2900,8 @@
 													"compid":"2156",
 													"compname":"fill",
 													"expanded":"1",
-													"posx":"12344",
-													"posy":"7651",
+													"posx":"13372",
+													"posy":"7170",
 													"stable":"0"
 												}
 											]
@@ -2922,8 +2922,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11704",
-									"posy":"7867",
+									"posx":"12732",
+									"posy":"7386",
 									"stable":"0",
 									"ui":
 									[
@@ -2938,8 +2938,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12024",
-											"posy":"7867",
+											"posx":"13052",
+											"posy":"7386",
 											"stable":"0",
 											"ui":
 											[
@@ -2948,8 +2948,8 @@
 													"compid":"2159",
 													"compname":"fill",
 													"expanded":"1",
-													"posx":"12344",
-													"posy":"7867",
+													"posx":"13372",
+													"posy":"7386",
 													"stable":"0"
 												}
 											]
@@ -2962,8 +2962,8 @@
 							"addw":"0",
 							"compname":"endif",
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"8083"
+							"posx":"12412",
+							"posy":"7602"
 						}
 					]
 				},
@@ -2971,8 +2971,8 @@
 					"addw":"0",
 					"compname":"if((0 @ 'd.data.finded_glues.count') == 0)",
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"8173"
+					"posx":"11992",
+					"posy":"7692"
 				},
 				{
 					"addw":"100",
@@ -2988,8 +2988,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"8299",
+					"posx":"11992",
+					"posy":"7818",
 					"stable":"0",
 					"ui":
 					[
@@ -3004,8 +3004,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"11384",
-							"posy":"8299",
+							"posx":"12412",
+							"posy":"7818",
 							"stable":"0",
 							"ui":
 							[
@@ -3021,8 +3021,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11704",
-									"posy":"8299",
+									"posx":"12732",
+									"posy":"7818",
 									"stable":"0",
 									"ui":
 									[
@@ -3039,8 +3039,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"12024",
-											"posy":"8299",
+											"posx":"13052",
+											"posy":"7818",
 											"stable":"0"
 										}
 									]
@@ -3053,8 +3053,8 @@
 					"addw":"0",
 					"compname":"endif",
 					"expanded":"1",
-					"posx":"10964",
-					"posy":"8515"
+					"posx":"11992",
+					"posy":"8034"
 				}
 			],
 			"uiname":"main_glue_list_view"
@@ -3387,8 +3387,8 @@
 			"compid":"972",
 			"compname":"gate",
 			"expanded":"1",
-			"posx":"10000",
-			"posy":"9492",
+			"posx":"10836",
+			"posy":"9465",
 			"ui":
 			[
 				{
@@ -3402,8 +3402,8 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"10320",
-					"posy":"9492",
+					"posx":"11156",
+					"posy":"9465",
 					"stable":"0"
 				},
 				{
@@ -3438,8 +3438,8 @@
 					],
 					"compname":"code",
 					"expanded":"1",
-					"posx":"10320",
-					"posy":"9675",
+					"posx":"11156",
+					"posy":"9648",
 					"stable":"0",
 					"ui":
 					[
@@ -3447,8 +3447,8 @@
 							"addw":"0",
 							"compname":"if(('' @ (mg_record + '.name')) != '')",
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"9675"
+							"posx":"11726",
+							"posy":"9648"
 						},
 						{
 							"addw":"100",
@@ -3465,8 +3465,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"9801",
+							"posx":"11726",
+							"posy":"9774",
 							"stable":"0",
 							"ui":
 							[
@@ -3482,8 +3482,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"9801",
+									"posx":"12146",
+									"posy":"9774",
 									"stable":"0",
 									"ui":
 									[
@@ -3526,8 +3526,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"12050",
-															"posy":"9801",
+															"posx":"12886",
+															"posy":"9774",
 															"stable":"0",
 															"ui":
 															[
@@ -3542,8 +3542,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"12370",
-																	"posy":"9801",
+																	"posx":"13206",
+																	"posy":"9774",
 																	"stable":"0"
 																}
 															]
@@ -3567,8 +3567,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"12050",
-															"posy":"10017",
+															"posx":"12886",
+															"posy":"9990",
 															"stable":"0",
 															"ui":
 															[
@@ -3592,8 +3592,8 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"12370",
-																	"posy":"10017",
+																	"posx":"13206",
+																	"posy":"9990",
 																	"stable":"0"
 																}
 															]
@@ -3618,8 +3618,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"12050",
-															"posy":"10320",
+															"posx":"12886",
+															"posy":"10293",
 															"stable":"0",
 															"ui":
 															[
@@ -3628,8 +3628,8 @@
 																	"compid":"953",
 																	"compname":"jump",
 																	"expanded":"1",
-																	"posx":"12370",
-																	"posy":"10320",
+																	"posx":"13206",
+																	"posy":"10293",
 																	"uiname":"main_glue_detail_content"
 																}
 															]
@@ -3637,8 +3637,8 @@
 													]
 												}
 											],
-											"posx":"11630",
-											"posy":"9801",
+											"posx":"12466",
+											"posy":"9774",
 											"stable":"0"
 										}
 									]
@@ -3647,8 +3647,8 @@
 									"addw":"0",
 									"compname":"if((((1) + (1) - 1 - (((1) + (1) - 1) % (1))) / (1) * (mg_detail_content_h) + 2 * (0)) > pH)",
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"10536"
+									"posx":"12146",
+									"posy":"10509"
 								},
 								{
 									"addw":"0",
@@ -3661,8 +3661,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"10662",
+									"posx":"12146",
+									"posy":"10635",
 									"stable":"0",
 									"ui":
 									[
@@ -3680,8 +3680,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"11630",
-											"posy":"10662",
+											"posx":"12466",
+											"posy":"10635",
 											"stable":"0",
 											"ui":
 											[
@@ -3696,8 +3696,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"11950",
-													"posy":"10662",
+													"posx":"12786",
+													"posy":"10635",
 													"stable":"0",
 													"ui":
 													[
@@ -3706,8 +3706,8 @@
 															"compid":"2163",
 															"compname":"fill",
 															"expanded":"1",
-															"posx":"12270",
-															"posy":"10662",
+															"posx":"13106",
+															"posy":"10635",
 															"stable":"0"
 														}
 													]
@@ -3728,8 +3728,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"11630",
-											"posy":"10878",
+											"posx":"12466",
+											"posy":"10851",
 											"stable":"0",
 											"ui":
 											[
@@ -3744,8 +3744,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"11950",
-													"posy":"10878",
+													"posx":"12786",
+													"posy":"10851",
 													"stable":"0",
 													"ui":
 													[
@@ -3754,8 +3754,8 @@
 															"compid":"2166",
 															"compname":"fill",
 															"expanded":"1",
-															"posx":"12270",
-															"posy":"10878",
+															"posx":"13106",
+															"posy":"10851",
 															"stable":"0"
 														}
 													]
@@ -3768,8 +3768,8 @@
 									"addw":"0",
 									"compname":"endif",
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"11094"
+									"posx":"12146",
+									"posy":"11067"
 								}
 							]
 						},
@@ -3777,8 +3777,8 @@
 							"addw":"0",
 							"compname":"else",
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"11184"
+							"posx":"11726",
+							"posy":"11157"
 						},
 						{
 							"addw":"100",
@@ -3794,8 +3794,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"11274",
+							"posx":"11726",
+							"posy":"11247",
 							"stable":"0",
 							"ui":
 							[
@@ -3812,8 +3812,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"11274",
+									"posx":"12146",
+									"posy":"11247",
 									"stable":"0"
 								}
 							]
@@ -3832,8 +3832,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"11490",
+							"posx":"11726",
+							"posy":"11463",
 							"stable":"0",
 							"ui":
 							[
@@ -3848,8 +3848,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"11490",
+									"posx":"12146",
+									"posy":"11463",
 									"stable":"0",
 									"ui":
 									[
@@ -3865,8 +3865,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"11630",
-											"posy":"11490",
+											"posx":"12466",
+											"posy":"11463",
 											"stable":"0",
 											"ui":
 											[
@@ -3883,8 +3883,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"11950",
-													"posy":"11490",
+													"posx":"12786",
+													"posy":"11463",
 													"stable":"0"
 												}
 											]
@@ -3907,8 +3907,8 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"11706",
+							"posx":"11726",
+							"posy":"11679",
 							"stable":"0",
 							"ui":
 							[
@@ -3923,8 +3923,8 @@
 										]
 									],
 									"expanded":"1",
-									"posx":"11310",
-									"posy":"11706",
+									"posx":"12146",
+									"posy":"11679",
 									"stable":"0",
 									"ui":
 									[
@@ -3940,8 +3940,8 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"11630",
-											"posy":"11706",
+											"posx":"12466",
+											"posy":"11679",
 											"stable":"0",
 											"ui":
 											[
@@ -3958,8 +3958,8 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"11950",
-													"posy":"11706",
+													"posx":"12786",
+													"posy":"11679",
 													"stable":"0"
 												}
 											]
@@ -3972,8 +3972,8 @@
 							"addw":"0",
 							"compname":"endif",
 							"expanded":"1",
-							"posx":"10890",
-							"posy":"11922"
+							"posx":"11726",
+							"posy":"11895"
 						}
 					]
 				}
@@ -5030,8 +5030,8 @@
 																	"insiders":
 																	[
 																		{
-																			"ballposx":"0",
-																			"ballposy":"0",
+																			"ballposx":"80",
+																			"ballposy":"21",
 																			"name":"scrollbg",
 																			"ui":
 																			[
@@ -5071,8 +5071,8 @@
 																			]
 																		},
 																		{
-																			"ballposx":"0",
-																			"ballposy":"0",
+																			"ballposx":"86",
+																			"ballposy":"46",
 																			"name":"scrollbar",
 																			"ui":
 																			[
@@ -5121,8 +5121,8 @@
 																			]
 																		},
 																		{
-																			"ballposx":"0",
-																			"ballposy":"0",
+																			"ballposx":"74",
+																			"ballposy":"71",
 																			"name":"content",
 																			"ui":
 																			[
@@ -10645,7 +10645,7 @@
 							"ms_w":"(720 [min] (pW-24)) [multiply] 1"
 						},
 						{
-							"ms_h":"(804 [min] (pH-24)) [multiply] 1"
+							"ms_h":"(752 [min] (pH-24)) [multiply] 1"
 						}
 					],
 					"compname":"code",
@@ -10707,7 +10707,7 @@
 											"ms_compact":"pW < 560"
 										},
 										{
-											"ms_content_h":"704 + 32 * ms_compact"
+											"ms_content_h":"524 + 32 * ms_compact"
 										},
 										{
 											"ms_body_h":"(pH-184) [multiply] 1"
@@ -11643,43 +11643,13 @@
 				},
 				{
 					"addw":"0",
-					"compid":"2107",
-					"compname":"xywh",
-					"compvalues":
-					[
-						[
-							"0",
-							"(148 + 32 * ms_compact) [multiply] 1",
-							"(pW) [multiply] 1",
-							"168"
-						]
-					],
-					"expanded":"1",
-					"posx":"34820",
-					"posy":"-384",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"2106",
-							"compname":"jump",
-							"expanded":"1",
-							"posx":"35140",
-							"posy":"-384",
-							"uiname":"main_settings_language"
-						}
-					]
-				},
-				{
-					"addw":"0",
 					"compid":"2109",
 					"compname":"xywh",
 					"compvalues":
 					[
 						[
 							"0",
-							"(328 + 32 * ms_compact) [multiply] 1",
+							"(148 + 32 * ms_compact) [multiply] 1",
 							"(pW) [multiply] 1",
 							"172"
 						]
@@ -11709,7 +11679,7 @@
 					[
 						[
 							"0",
-							"(512 + 32 * ms_compact) [multiply] 1",
+							"(332 + 32 * ms_compact) [multiply] 1",
 							"(pW) [multiply] 1",
 							"192"
 						]
@@ -12070,454 +12040,6 @@
 				}
 			],
 			"uiname":"main_settings_keypad"
-		},
-		{
-			"addw":"0",
-			"compid":"2039",
-			"compname":"gate",
-			"expanded":"1",
-			"posx":"28000",
-			"posy":"12900",
-			"ui":
-			[
-				{
-					"addw":"0",
-					"compid":"2018",
-					"compname":"ninepatch",
-					"compvalues":
-					[
-						[
-							"r.main_settings_section"
-						]
-					],
-					"expanded":"1",
-					"posx":"28540",
-					"posy":"12900",
-					"stable":"0"
-				},
-				{
-					"addw":"0",
-					"compid":"2022",
-					"compname":"xywh",
-					"compvalues":
-					[
-						"if(ms_compact)",
-						[
-							"20",
-							"12",
-							"(pW-40) [multiply] 1",
-							"32"
-						],
-						"else",
-						[
-							"20",
-							"12",
-							"(pW-150) [multiply] 1",
-							"32"
-						]
-					],
-					"expanded":"1",
-					"posx":"28540",
-					"posy":"13120",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"2021",
-							"compname":"hexcolor",
-							"compvalues":
-							[
-								[
-									"#143854"
-								]
-							],
-							"expanded":"1",
-							"posx":"29080",
-							"posy":"13120",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"2020",
-									"compname":"font",
-									"compvalues":
-									[
-										[
-											"1.6",
-											"MainUIFont"
-										]
-									],
-									"expanded":"1",
-									"posx":"29620",
-									"posy":"13120",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"2019",
-											"compname":"text",
-											"compvalues":
-											[
-												[
-													"'' @ (MainSettings + '.language_title')",
-													"leftmiddle",
-													"right"
-												]
-											],
-											"expanded":"1",
-											"posx":"30160",
-											"posy":"13120",
-											"stable":"0"
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compid":"2026",
-					"compname":"xywh",
-					"compvalues":
-					[
-						"if(ms_compact)",
-						[
-							"0",
-							"0",
-							"0",
-							"0"
-						],
-						"else",
-						[
-							"(pW-124) [multiply] 1",
-							"14",
-							"104",
-							"28"
-						]
-					],
-					"expanded":"1",
-					"posx":"28540",
-					"posy":"13490",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"2025",
-							"compname":"hexcolor",
-							"compvalues":
-							[
-								[
-									"#4e697d"
-								]
-							],
-							"expanded":"1",
-							"posx":"29080",
-							"posy":"13490",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"2024",
-									"compname":"font",
-									"compvalues":
-									[
-										[
-											"1.4",
-											"MainUIFont"
-										]
-									],
-									"expanded":"1",
-									"posx":"29620",
-									"posy":"13490",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"2023",
-											"compname":"text",
-											"compvalues":
-											[
-												[
-													"'' @ (MainSettings + '.live')",
-													"rightmiddle",
-													"right"
-												]
-											],
-											"expanded":"1",
-											"posx":"30160",
-											"posy":"13490",
-											"stable":"0"
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compid":"2030",
-					"compname":"xywh",
-					"compvalues":
-					[
-						[
-							"20",
-							"48",
-							"(pW-40) [multiply] 1",
-							"48"
-						]
-					],
-					"expanded":"1",
-					"posx":"28540",
-					"posy":"13860",
-					"stable":"0",
-					"ui":
-					[
-						{
-							"addw":"0",
-							"compid":"2029",
-							"compname":"hexcolor",
-							"compvalues":
-							[
-								[
-									"#4e697d"
-								]
-							],
-							"expanded":"1",
-							"posx":"29080",
-							"posy":"13860",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"2028",
-									"compname":"font",
-									"compvalues":
-									[
-										[
-											"1.4",
-											"MainUIFont"
-										]
-									],
-									"expanded":"1",
-									"posx":"29620",
-									"posy":"13860",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"2027",
-											"compname":"text_box",
-											"compvalues":
-											[
-												"if(ms_compact)",
-												[
-													"'' @ (MainSettings + '.language_desc_compact')",
-													"4",
-													"lefttop"
-												],
-												"else",
-												[
-													"'' @ (MainSettings + '.language_desc')",
-													"4",
-													"lefttop"
-												]
-											],
-											"expanded":"1",
-											"posx":"30160",
-											"posy":"13860",
-											"stable":"0"
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"addw":"0",
-					"compid":"2031",
-					"compname":"loop",
-					"expanded":"1",
-					"posx":"28540",
-					"posy":"14230",
-					"ui":
-					[
-						{
-							"addw":"230",
-							"compid":"2032",
-							"compinputs":
-							[
-								{
-									"ms_lang_code":"'' @ ((MainSettings + '.language_choices.') + mslangV + '.code')"
-								},
-								{
-									"ms_lang_label":"'' @ ((MainSettings + '.language_choices.') + mslangV + '.label')"
-								},
-								{
-									"ms_lang_w":"(pW-56)/3"
-								}
-							],
-							"compname":"code",
-							"expanded":"1",
-							"posx":"29080",
-							"posy":"14230",
-							"stable":"0",
-							"ui":
-							[
-								{
-									"addw":"0",
-									"compid":"2038",
-									"compname":"ltrb",
-									"compvalues":
-									[
-										[
-											"(20 + ((pW-40+8)*mslangV)/3) [multiply] 1",
-											"108",
-											"(20 + ((pW-40+8)*(mslangV+1))/3 - 8) [multiply] 1",
-											"148"
-										]
-									],
-									"expanded":"1",
-									"onclick":
-									[
-										"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-										"setvalue('d.data.settings.language', ms_lang_code)",
-										"update(0.1)"
-									],
-									"posx":"29620",
-									"posy":"14230",
-									"stable":"0",
-									"ui":
-									[
-										{
-											"addw":"0",
-											"compid":"2033",
-											"compname":"ninepatch",
-											"compvalues":
-											[
-												"ifpressed('main_settings_scroll_language_' + mslangV)",
-												[
-													"r.main_settings_choice_p"
-												],
-												"eliffocused('main_settings_scroll_language_' + mslangV)",
-												[
-													"r.main_settings_choice_h"
-												],
-												"elif(('ko' @ 'd.data.settings.language') == ms_lang_code)",
-												[
-													"r.main_settings_choice_s"
-												],
-												"else",
-												[
-													"r.main_settings_choice_n"
-												]
-											],
-											"expanded":"1",
-											"posx":"30160",
-											"posy":"14230",
-											"stable":"0"
-										},
-										{
-											"addw":"0",
-											"compid":"2037",
-											"compname":"xywh",
-											"compvalues":
-											[
-												[
-													"4",
-													"0",
-													"(pW-8) [multiply] 1",
-													"(pH) [multiply] 1"
-												]
-											],
-											"expanded":"1",
-											"posx":"30160",
-											"posy":"14660",
-											"stable":"0",
-											"ui":
-											[
-												{
-													"addw":"0",
-													"compid":"2036",
-													"compname":"hexcolor",
-													"compvalues":
-													[
-														[
-															"#ffffff"
-														]
-													],
-													"expanded":"1",
-													"posx":"30700",
-													"posy":"14660",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"2035",
-															"compname":"font",
-															"compvalues":
-															[
-																"if(pW < 66)",
-																[
-																	"1.20",
-																	"MainUIFont"
-																],
-																"else",
-																[
-																	"1.45",
-																	"MainUIFont"
-																]
-															],
-															"expanded":"1",
-															"posx":"31240",
-															"posy":"14660",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"2034",
-																	"compname":"icon",
-																	"compvalues":
-																	[
-																		[
-																			"'r.main_settings_lang_' + ms_lang_code",
-																			"centermiddle"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"31780",
-																	"posy":"14660",
-																	"stable":"0"
-																}
-															]
-														}
-													]
-												}
-											]
-										}
-									],
-									"uiname":"'main_settings_scroll_language_' + mslangV"
-								}
-							]
-						}
-					],
-					"uiloop":"0 @ (MainSettings + '.language_choices.count')",
-					"uiname":"mslang"
-				}
-			],
-			"uiname":"main_settings_language"
 		},
 		{
 			"addw":"0",
@@ -13896,17 +13418,17 @@
 	],
 	"posx":"-832",
 	"posy":"-591",
-	"savecount":"182",
-	"savetime":"2026-11-17/15:17:28",
+	"savecount":"236",
+	"savetime":"2026-11-18/00:16:25",
 	"ui":
 	[
 		{
-			"addw":"0",
+			"addw":"447",
 			"compid":"2216",
 			"compinputs":
 			[
 				{
-					"MainLanguage":"'ko' @ 'd.data.settings.language'"
+					"MainLanguage":"'en' @ 'd.data.settings.language'"
 				},
 				{
 					"MainUIFont":"'NanumSquare Bold' @ ('d.data.i18n.' + MainLanguage + '.font')"
@@ -13923,13 +13445,13 @@
 			],
 			"compname":"code",
 			"expanded":"1",
-			"posx":"-437",
+			"posx":"-253",
 			"posy":"-591",
 			"stable":"0",
 			"ui":
 			[
 				{
-					"addw":"200",
+					"addw":"72",
 					"compid":"842",
 					"compname":"zoom",
 					"compvalues":
@@ -13944,7 +13466,7 @@
 						]
 					],
 					"expanded":"1",
-					"posx":"-117",
+					"posx":"514",
 					"posy":"-591",
 					"stable":"0",
 					"ui":
@@ -13961,13 +13483,13 @@
 								]
 							],
 							"expanded":"1",
-							"posx":"403",
+							"posx":"906",
 							"posy":"-591",
 							"stable":"0",
 							"ui":
 							[
 								{
-									"addw":"230",
+									"addw":"610",
 									"compid":"2000",
 									"compinputs":
 									[
@@ -13989,7 +13511,7 @@
 									],
 									"compname":"code",
 									"expanded":"1",
-									"posx":"726",
+									"posx":"1229",
 									"posy":"-591",
 									"stable":"0",
 									"ui":
@@ -13998,7 +13520,7 @@
 											"addw":"107",
 											"compname":"if((-1 @ 'd.data.body.focus') == -1)",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"-591"
 										},
 										{
@@ -14014,7 +13536,7 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"-465",
 											"stable":"0",
 											"ui":
@@ -14024,7 +13546,7 @@
 													"compid":"825",
 													"compname":"fill",
 													"expanded":"1",
-													"posx":"1596",
+													"posx":"2479",
 													"posy":"-465",
 													"stable":"0"
 												}
@@ -14044,7 +13566,7 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"-282",
 											"stable":"0",
 											"ui":
@@ -14054,7 +13576,7 @@
 													"compid":"829",
 													"compname":"jump",
 													"expanded":"1",
-													"posx":"1672",
+													"posx":"2555",
 													"posy":"-282",
 													"uiname":"main_home"
 												}
@@ -14064,7 +13586,7 @@
 											"addw":"0",
 											"compname":"else",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"-66"
 										},
 										{
@@ -14080,7 +13602,7 @@
 												]
 											],
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"24",
 											"stable":"0"
 										},
@@ -14088,14 +13610,14 @@
 											"addw":"0",
 											"compname":"endif",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"240"
 										},
 										{
-											"addw":"0",
+											"addw":"546",
 											"compname":"if(((0 @ 'd.data.settings.virtual_keypad_disabled') == 0) [and] ((0 @ 'd.data.settings.popup_open') == 0))",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"330"
 										},
 										{
@@ -14103,7 +13625,7 @@
 											"compid":"704",
 											"compname":"jump",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"456",
 											"uiname":"vk"
 										},
@@ -14111,14 +13633,14 @@
 											"addw":"0",
 											"compname":"endif",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"582"
 										},
 										{
 											"addw":"0",
 											"compname":"if(0 < PopupDockAni)",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"672"
 										},
 										{
@@ -14140,7 +13662,7 @@
 												},
 												"update(0.3)"
 											],
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"798",
 											"stable":"0",
 											"ui":
@@ -14159,7 +13681,7 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1776",
+													"posx":"2659",
 													"posy":"798",
 													"stable":"0",
 													"ui":
@@ -14169,7 +13691,7 @@
 															"compid":"707",
 															"compname":"fill",
 															"expanded":"1",
-															"posx":"2096",
+															"posx":"2979",
 															"posy":"798",
 															"stable":"0"
 														}
@@ -14198,13 +13720,13 @@
 											],
 											"compname":"code",
 											"expanded":"1",
-											"posx":"1276",
+											"posx":"2159",
 											"posy":"1086",
 											"stable":"0",
 											"ui":
 											[
 												{
-													"addw":"308",
+													"addw":"405",
 													"compid":"708",
 													"compname":"ltrb",
 													"compvalues":
@@ -14217,7 +13739,7 @@
 														]
 													],
 													"expanded":"1",
-													"posx":"1954",
+													"posx":"2837",
 													"posy":"1086",
 													"stable":"0",
 													"ui":
@@ -14236,7 +13758,7 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2582",
+															"posx":"3562",
 															"posy":"1086",
 															"stable":"0",
 															"ui":
@@ -14252,7 +13774,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2902",
+																	"posx":"3882",
 																	"posy":"1086",
 																	"stable":"0"
 																},
@@ -14270,7 +13792,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2902",
+																	"posx":"3882",
 																	"posy":"1269",
 																	"stable":"0",
 																	"ui":
@@ -14286,7 +13808,7 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3222",
+																			"posx":"4202",
 																			"posy":"1269",
 																			"stable":"0",
 																			"ui":
@@ -14303,7 +13825,7 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3542",
+																					"posx":"4522",
 																					"posy":"1269",
 																					"stable":"0"
 																				}
@@ -14327,13 +13849,13 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2582",
+															"posx":"3562",
 															"posy":"1485",
 															"stable":"0",
 															"ui":
 															[
 																{
-																	"addw":"0",
+																	"addw":"108",
 																	"compid":"2340",
 																	"compname":"ltrb",
 																	"compvalues":
@@ -14346,7 +13868,7 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2902",
+																	"posx":"3882",
 																	"posy":"1485",
 																	"stable":"0",
 																	"ui":
@@ -14362,560 +13884,707 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3222",
+																			"posx":"4310",
 																			"posy":"1485",
 																			"stable":"0"
 																		}
 																	]
 																},
 																{
-																	"addw":"0",
-																	"compname":"if(main_is_wasm == 0)",
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"1701"
-																},
-																{
-																	"addw":"39",
-																	"compid":"711",
-																	"compname":"ltrb",
-																	"compvalues":
+																	"addw":"122",
+																	"compid":"2354",
+																	"compinputs":
 																	[
-																		[
-																			"pW-258+20",
-																			"19",
-																			"pW-205+20",
-																			"87"
-																		]
+																		{
+																			"mini_title_mode":"pW < 1150"
+																		}
 																	],
+																	"compname":"code",
 																	"expanded":"1",
-																	"onclick":
-																	[
-																		"minimize()"
-																	],
-																	"posx":"2902",
-																	"posy":"1827",
+																	"posx":"3882",
+																	"posy":"1701",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
-																			"addw":"0",
-																			"compid":"712",
-																			"compname":"zoom",
+																			"addw":"124",
+																			"compid":"2353",
+																			"compname":"move",
 																			"compvalues":
 																			[
+																				"if(main_is_wasm == 0 [and] mini_title_mode)",
 																				[
-																					"0.69"
+																					"0",
+																					"-10"
+																				],
+																				"elif(main_is_wasm == 0)",
+																				[
+																					"0",
+																					"0"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3261",
-																			"posy":"1827",
+																			"posx":"4324",
+																			"posy":"1701",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"713",
-																					"compname":"icon",
+																					"compid":"732",
+																					"compname":"ltrb",
 																					"compvalues":
 																					[
-																						"ifpressed(ui_min)",
 																						[
-																							"r.win_min_p",
-																							"centermiddle"
-																						],
-																						"eliffocused(ui_min)",
-																						[
-																							"r.win_min_h",
-																							"centermiddle"
-																						],
-																						"else",
-																						[
-																							"r.win_min",
-																							"centermiddle"
+																							"pW-255",
+																							"31",
+																							"pW-254",
+																							"80"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3581",
-																					"posy":"1827",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	],
-																	"uiname":"ui_min"
-																},
-																{
-																	"addw":"36",
-																	"compid":"714",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"pW-190+20",
-																			"19",
-																			"pW-137+20",
-																			"87"
-																		]
-																	],
-																	"expanded":"1",
-																	"onclick":
-																	[
-																		"maximize()"
-																	],
-																	"posx":"2902",
-																	"posy":"2130",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"715",
-																			"compname":"zoom",
-																			"compvalues":
-																			[
-																				[
-																					"0.69"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3258",
-																			"posy":"2130",
-																			"stable":"0",
-																			"ui":
-																			[
+																					"posx":"4768",
+																					"posy":"1701",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"733",
+																							"compname":"color",
+																							"compvalues":
+																							[
+																								[
+																									"99",
+																									"115",
+																									"132",
+																									"190"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5088",
+																							"posy":"1701",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"734",
+																									"compname":"fill",
+																									"expanded":"1",
+																									"posx":"5408",
+																									"posy":"1701",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				},
 																				{
-																					"addw":"0",
-																					"compid":"716",
-																					"compname":"icon",
+																					"addw":"39",
+																					"compid":"711",
+																					"compname":"ltrb",
 																					"compvalues":
 																					[
-																						"ifpressed(ui_max)",
 																						[
-																							"r.win_max_p",
-																							"centermiddle"
-																						],
-																						"eliffocused(ui_max)",
-																						[
-																							"r.win_max_h",
-																							"centermiddle"
-																						],
-																						"else",
-																						[
-																							"r.win_max",
-																							"centermiddle"
+																							"pW-258+20",
+																							"19",
+																							"pW-205+20",
+																							"87"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3578",
-																					"posy":"2130",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	],
-																	"uiname":"ui_max"
-																},
-																{
-																	"addw":"31",
-																	"compid":"717",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"pW-123+20",
-																			"19",
-																			"pW-70+20",
-																			"87"
-																		]
-																	],
-																	"expanded":"1",
-																	"onclick":
-																	[
-																		"exit()"
-																	],
-																	"posx":"2902",
-																	"posy":"2433",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"718",
-																			"compname":"zoom",
-																			"compvalues":
-																			[
-																				[
-																					"0.69"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3253",
-																			"posy":"2433",
-																			"stable":"0",
-																			"ui":
-																			[
+																					"onclick":
+																					[
+																						"minimize()"
+																					],
+																					"posx":"4768",
+																					"posy":"1917",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"712",
+																							"compname":"zoom",
+																							"compvalues":
+																							[
+																								[
+																									"0.69"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5127",
+																							"posy":"1917",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"713",
+																									"compname":"icon",
+																									"compvalues":
+																									[
+																										"ifpressed(ui_min)",
+																										[
+																											"r.win_min_p",
+																											"centermiddle"
+																										],
+																										"eliffocused(ui_min)",
+																										[
+																											"r.win_min_h",
+																											"centermiddle"
+																										],
+																										"else",
+																										[
+																											"r.win_min",
+																											"centermiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5447",
+																									"posy":"1917",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					],
+																					"uiname":"ui_min"
+																				},
 																				{
-																					"addw":"0",
-																					"compid":"719",
-																					"compname":"icon",
+																					"addw":"36",
+																					"compid":"714",
+																					"compname":"ltrb",
 																					"compvalues":
 																					[
-																						"ifpressed(ui_close)",
 																						[
-																							"r.win_close_p",
-																							"centermiddle"
-																						],
-																						"eliffocused(ui_close)",
-																						[
-																							"r.win_close_h",
-																							"centermiddle"
-																						],
-																						"else",
-																						[
-																							"r.win_close",
-																							"centermiddle"
+																							"pW-190+20",
+																							"19",
+																							"pW-137+20",
+																							"87"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3573",
-																					"posy":"2433",
-																					"stable":"0"
+																					"onclick":
+																					[
+																						"maximize()"
+																					],
+																					"posx":"4768",
+																					"posy":"2220",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"715",
+																							"compname":"zoom",
+																							"compvalues":
+																							[
+																								[
+																									"0.69"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5124",
+																							"posy":"2220",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"716",
+																									"compname":"icon",
+																									"compvalues":
+																									[
+																										"ifpressed(ui_max)",
+																										[
+																											"r.win_max_p",
+																											"centermiddle"
+																										],
+																										"eliffocused(ui_max)",
+																										[
+																											"r.win_max_h",
+																											"centermiddle"
+																										],
+																										"else",
+																										[
+																											"r.win_max",
+																											"centermiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5444",
+																									"posy":"2220",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					],
+																					"uiname":"ui_max"
+																				},
+																				{
+																					"addw":"31",
+																					"compid":"717",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						[
+																							"pW-123+20",
+																							"19",
+																							"pW-70+20",
+																							"87"
+																						]
+																					],
+																					"expanded":"1",
+																					"onclick":
+																					[
+																						"exit()"
+																					],
+																					"posx":"4768",
+																					"posy":"2523",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"718",
+																							"compname":"zoom",
+																							"compvalues":
+																							[
+																								[
+																									"0.69"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5119",
+																							"posy":"2523",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"719",
+																									"compname":"icon",
+																									"compvalues":
+																									[
+																										"ifpressed(ui_close)",
+																										[
+																											"r.win_close_p",
+																											"centermiddle"
+																										],
+																										"eliffocused(ui_close)",
+																										[
+																											"r.win_close_h",
+																											"centermiddle"
+																										],
+																										"else",
+																										[
+																											"r.win_close",
+																											"centermiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5439",
+																									"posy":"2523",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					],
+																					"uiname":"ui_close"
 																				}
 																			]
-																		}
-																	],
-																	"uiname":"ui_close"
-																},
-																{
-																	"addw":"0",
-																	"compname":"endif",
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"2736"
-																},
-																{
-																	"addw":"0",
-																	"compid":"720",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"34",
-																			"16",
-																			"330",
-																			"64"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"2826",
-																	"stable":"0",
-																	"ui":
-																	[
+																		},
 																		{
 																			"addw":"0",
-																			"compid":"721",
-																			"compname":"color",
+																			"compid":"720",
+																			"compname":"ltrb",
 																			"compvalues":
 																			[
 																				[
-																					"240",
-																					"244",
-																					"250",
-																					"255"
+																					"34",
+																					"16",
+																					"330",
+																					"64"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3222",
+																			"posx":"4324",
 																			"posy":"2826",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"722",
-																					"compname":"font",
+																					"compid":"721",
+																					"compname":"color",
 																					"compvalues":
 																					[
 																						[
-																							"3.00",
-																							"MainUIFont"
+																							"240",
+																							"244",
+																							"250",
+																							"255"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3542",
+																					"posx":"4644",
 																					"posy":"2826",
 																					"stable":"0",
 																					"ui":
 																					[
 																						{
 																							"addw":"0",
-																							"compid":"723",
-																							"compname":"text",
+																							"compid":"722",
+																							"compname":"font",
 																							"compvalues":
 																							[
 																								[
-																									"'ZAYAPP'",
-																									"leftmiddle"
+																									"3.00",
+																									"MainUIFont"
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"3862",
+																							"posx":"4964",
 																							"posy":"2826",
-																							"stable":"0"
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"723",
+																									"compname":"text",
+																									"compvalues":
+																									[
+																										[
+																											"'ZAYAPP'",
+																											"leftmiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5284",
+																									"posy":"2826",
+																									"stable":"0"
+																								}
+																							]
 																						}
 																					]
 																				}
 																			]
-																		}
-																	]
-																},
-																{
-																	"addw":"0",
-																	"compid":"724",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"34",
-																			"65",
-																			"350",
-																			"91"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"3042",
-																	"stable":"0",
-																	"ui":
-																	[
+																		},
 																		{
 																			"addw":"0",
-																			"compid":"725",
-																			"compname":"color",
+																			"compid":"724",
+																			"compname":"ltrb",
 																			"compvalues":
 																			[
 																				[
-																					"177",
-																					"193",
-																					"210",
-																					"255"
+																					"34",
+																					"65",
+																					"350",
+																					"91"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3222",
+																			"posx":"4324",
 																			"posy":"3042",
 																			"stable":"0",
 																			"ui":
 																			[
 																				{
 																					"addw":"0",
-																					"compid":"726",
-																					"compname":"font",
+																					"compid":"725",
+																					"compname":"color",
 																					"compvalues":
 																					[
 																						[
-																							"1.45",
-																							"MainUIFont"
+																							"177",
+																							"193",
+																							"210",
+																							"255"
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3542",
+																					"posx":"4644",
 																					"posy":"3042",
 																					"stable":"0",
 																					"ui":
 																					[
 																						{
-																							"addw":"325",
-																							"compid":"727",
-																							"compname":"text",
+																							"addw":"0",
+																							"compid":"726",
+																							"compname":"font",
 																							"compvalues":
 																							[
-																								"if((-1 @'d.data.body.focus') != -1)",
 																								[
-																									"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
-																									"leftmiddle"
-																								],
-																								"else",
-																								[
-																									"'[' + ('' @ (MainUI + '.home')) + ']'",
-																									"leftmiddle"
+																									"1.45",
+																									"MainUIFont"
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"3862",
+																							"posx":"4964",
 																							"posy":"3042",
-																							"stable":"0"
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"325",
+																									"compid":"727",
+																									"compname":"text",
+																									"compvalues":
+																									[
+																										"if((-1 @'d.data.body.focus') != -1)",
+																										[
+																											"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
+																											"leftmiddle"
+																										],
+																										"else",
+																										[
+																											"'[' + ('' @ (MainUI + '.home')) + ']'",
+																											"leftmiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5284",
+																									"posy":"3042",
+																									"stable":"0"
+																								}
+																							]
 																						}
 																					]
 																				}
 																			]
-																		}
-																	]
-																},
-																{
-																	"addw":"0",
-																	"compid":"728",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		"if(main_is_wasm)",
-																		[
-																			"pW-432",
-																			"29",
-																			"pW-32",
-																			"83"
-																		],
-																		"else",
-																		[
-																			"(pW-684) [max] 374",
-																			"29",
-																			"pW-284",
-																			"83"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"3297",
-																	"stable":"0",
-																	"ui":
-																	[
+																		},
 																		{
 																			"addw":"0",
-																			"compid":"729",
-																			"compname":"color",
-																			"compvalues":
-																			[
-																				[
-																					"38",
-																					"223",
-																					"244",
-																					"255"
-																				]
-																			],
+																			"compid":"2355",
+																			"compname":"loop",
 																			"expanded":"1",
-																			"posx":"3222",
+																			"posx":"4324",
 																			"posy":"3297",
-																			"stable":"0",
 																			"ui":
 																			[
 																				{
-																					"addw":"0",
-																					"compid":"730",
-																					"compname":"font",
-																					"compvalues":
+																					"addw":"474",
+																					"compid":"2356",
+																					"compinputs":
 																					[
-																						"if(osscale < 200)",
-																						[
-																							"1.75",
-																							"MainUIFont"
-																						],
-																						"else",
-																						[
-																							"1.75 [min] (pW / 220)",
-																							"MainUIFont"
-																						]
+																						{
+																							"ms_lang_code":"'' @ ((MainSettings + '.language_choices.') + mslangV + '.code')"
+																						}
 																					],
+																					"compname":"code",
 																					"expanded":"1",
-																					"posx":"3542",
+																					"posx":"4644",
 																					"posy":"3297",
 																					"stable":"0",
 																					"ui":
 																					[
 																						{
-																							"addw":"144",
-																							"compid":"731",
-																							"compname":"text",
+																							"addw":"566",
+																							"compid":"2357",
+																							"compname":"ltrb",
 																							"compvalues":
 																							[
-																								"if(osscale < 200)",
+																								"if(mini_title_mode)",
 																								[
-																									"framesec +'F / '+ osscale +'%'",
-																									"rightmiddle"
+																									"(pW - 390 + 170 + 72 * mslangV) [divide] 1",
+																									"78 - 3",
+																									"(pW - 322 + 170 + 72 * mslangV) [divide] 1",
+																									"105 - 3"
 																								],
 																								"else",
 																								[
-																									"framesec +'F / '+ osscale +'% (Zoom_50%)'",
-																									"rightmiddle"
+																									"(320 + 106 * mslangV) [divide] 1",
+																									"20",
+																									"(420 + 106 * mslangV) [divide] 1",
+																									"64"
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"3862",
+																							"onclick":
+																							[
+																								"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+																								"setvalue('d.data.settings.language', ms_lang_code)",
+																								"update(0.1)"
+																							],
+																							"posx":"5438",
 																							"posy":"3297",
-																							"stable":"0"
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"139",
+																									"compid":"2358",
+																									"compname":"ninepatch",
+																									"compvalues":
+																									[
+																										"if(MainLanguage == ms_lang_code)",
+																										[
+																											"r.main_title_lang_s"
+																										],
+																										"elifpressed('main_title_lang_'+ ms_lang_code)",
+																										[
+																											"r.main_title_lang_p"
+																										],
+																										"eliffocused('main_title_lang_'+ ms_lang_code)",
+																										[
+																											"r.main_title_lang_h"
+																										],
+																										"else",
+																										[
+																											"r.main_title_lang_n"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"6324",
+																									"posy":"3297",
+																									"stable":"0"
+																								},
+																								{
+																									"addw":"0",
+																									"compid":"2359",
+																									"compname":"xywh",
+																									"compvalues":
+																									[
+																										[
+																											"0",
+																											"0",
+																											"pW",
+																											"pH"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"6324",
+																									"posy":"3648",
+																									"stable":"0",
+																									"ui":
+																									[
+																										{
+																											"addw":"153",
+																											"compid":"2360",
+																											"compname":"icon",
+																											"compvalues":
+																											[
+																												[
+																													"'r.main_title_label_'+ ms_lang_code",
+																													"centermiddle"
+																												]
+																											],
+																											"expanded":"1",
+																											"posx":"6644",
+																											"posy":"3648",
+																											"stable":"0"
+																										}
+																									]
+																								}
+																							],
+																							"uiname":"'main_title_lang_' + ms_lang_code"
+																						}
+																					]
+																				}
+																			],
+																			"uiloop":"0 @ (MainSettings + '.language_choices.count')",
+																			"uiname":"mslang"
+																		},
+																		{
+																			"addw":"323",
+																			"compid":"728",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				"if(mini_title_mode)",
+																				[
+																					"(pW - 270 - 220) [divide] 1",
+																					"78 - 3",
+																					"(pW - 18 - 220) [divide] 1",
+																					"104 - 3"
+																				],
+																				"else",
+																				[
+																					"(pW - 550) [divide] 1",
+																					"29",
+																					"(pW - 284) [divide] 1",
+																					"83"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"4324",
+																			"posy":"3864",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"729",
+																					"compname":"color",
+																					"compvalues":
+																					[
+																						[
+																							"38",
+																							"223",
+																							"244",
+																							"255"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"4967",
+																					"posy":"3864",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"730",
+																							"compname":"font",
+																							"compvalues":
+																							[
+																								"if(pW < 1150)",
+																								[
+																									"1.45",
+																									"MainUIFont"
+																								],
+																								"else",
+																								[
+																									"1.75",
+																									"MainUIFont"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5287",
+																							"posy":"3864",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"216",
+																									"compid":"731",
+																									"compname":"text",
+																									"compvalues":
+																									[
+																										"if(osscale < 200)",
+																										[
+																											"framesec +'F / '+ osscale +'%'",
+																											"rightmiddle"
+																										],
+																										"else",
+																										[
+																											"framesec +'F / '+ osscale +'% (Zoom_50%)'",
+																											"rightmiddle"
+																										]
+																									],
+																									"expanded":"1",
+																									"posx":"5607",
+																									"posy":"3864",
+																									"stable":"0"
+																								}
+																							]
 																						}
 																					]
 																				}
 																			]
 																		}
 																	]
-																},
-																{
-																	"addw":"0",
-																	"compname":"if(main_is_wasm == 0)",
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"3585"
-																},
-																{
-																	"addw":"0",
-																	"compid":"732",
-																	"compname":"ltrb",
-																	"compvalues":
-																	[
-																		[
-																			"pW-250",
-																			"31",
-																			"pW-249",
-																			"80"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"3711",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"733",
-																			"compname":"color",
-																			"compvalues":
-																			[
-																				[
-																					"99",
-																					"115",
-																					"132",
-																					"190"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3222",
-																			"posy":"3711",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"734",
-																					"compname":"fill",
-																					"expanded":"1",
-																					"posx":"3542",
-																					"posy":"3711",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"addw":"0",
-																	"compname":"endif",
-																	"expanded":"1",
-																	"posx":"2902",
-																	"posy":"3927"
 																}
 															]
 														},
@@ -14933,8 +14602,8 @@
 																]
 															],
 															"expanded":"1",
-															"posx":"2582",
-															"posy":"4017",
+															"posx":"3562",
+															"posy":"4152",
 															"stable":"0",
 															"ui":
 															[
@@ -14949,12 +14618,12 @@
 																		]
 																	],
 																	"expanded":"1",
-																	"posx":"2945",
-																	"posy":"4017",
+																	"posx":"3925",
+																	"posy":"4152",
 																	"stable":"0"
 																},
 																{
-																	"addw":"237",
+																	"addw":"555",
 																	"compid":"737",
 																	"compname":"ltrb",
 																	"compvalues":
@@ -14972,8 +14641,8 @@
 																		"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
 																		"setvalue('d.data.body.focus', -1)"
 																	],
-																	"posx":"2945",
-																	"posy":"4200",
+																	"posx":"3925",
+																	"posy":"4335",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -14981,8 +14650,8 @@
 																			"addw":"159",
 																			"compname":"if((-1 @ 'd.data.body.focus') == -1)",
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"4200"
+																			"posx":"4800",
+																			"posy":"4335"
 																		},
 																		{
 																			"addw":"0",
@@ -15004,16 +14673,16 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"4326",
+																			"posx":"4800",
+																			"posy":"4461",
 																			"stable":"0"
 																		},
 																		{
 																			"addw":"0",
 																			"compname":"else",
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"4629"
+																			"posx":"4800",
+																			"posy":"4764"
 																		},
 																		{
 																			"addw":"94",
@@ -15035,16 +14704,16 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"4719",
+																			"posx":"4800",
+																			"posy":"4854",
 																			"stable":"0"
 																		},
 																		{
 																			"addw":"0",
 																			"compname":"endif",
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"5022"
+																			"posx":"4800",
+																			"posy":"5157"
 																		},
 																		{
 																			"addw":"0",
@@ -15060,8 +14729,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"5112",
+																			"posx":"4800",
+																			"posy":"5247",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15076,8 +14745,8 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3822",
-																					"posy":"5112",
+																					"posx":"5120",
+																					"posy":"5247",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15093,8 +14762,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4142",
-																							"posy":"5112",
+																							"posx":"5440",
+																							"posy":"5247",
 																							"stable":"0"
 																						}
 																					]
@@ -15115,8 +14784,8 @@
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"5328",
+																			"posx":"4800",
+																			"posy":"5463",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15156,8 +14825,8 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"3822",
-																					"posy":"5328",
+																					"posx":"5120",
+																					"posy":"5463",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15173,8 +14842,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4142",
-																							"posy":"5328",
+																							"posx":"5440",
+																							"posy":"5463",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -15191,84 +14860,11 @@
 																										]
 																									],
 																									"expanded":"1",
-																									"posx":"4462",
-																									"posy":"5328",
+																									"posx":"5760",
+																									"posy":"5463",
 																									"stable":"0"
 																								}
 																							]
-																						}
-																					]
-																				}
-																			]
-																		},
-																		{
-																			"addw":"0",
-																			"compid":"746",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				[
-																					"8",
-																					"pH-1",
-																					"pW-8",
-																					"pH"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"3502",
-																			"posy":"5679",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"747",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						"ifpressed(btn_home)",
-																						[
-																							"132",
-																							"157",
-																							"174",
-																							"0"
-																						],
-																						"elif((-1 @ 'd.data.body.focus') == -1)",
-																						[
-																							"132",
-																							"157",
-																							"174",
-																							"0"
-																						],
-																						"eliffocused(btn_home)",
-																						[
-																							"132",
-																							"157",
-																							"174",
-																							"0"
-																						],
-																						"else",
-																						[
-																							"132",
-																							"157",
-																							"174",
-																							"40"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"3822",
-																					"posy":"5679",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"748",
-																							"compname":"fill",
-																							"expanded":"1",
-																							"posx":"4142",
-																							"posy":"5679",
-																							"stable":"0"
 																						}
 																					]
 																				}
@@ -15278,7 +14874,7 @@
 																	"uiname":"btn_home"
 																},
 																{
-																	"addw":"395",
+																	"addw":"772",
 																	"comment":"main_sidebar_layout",
 																	"compid":"836",
 																	"compinputs":
@@ -15304,20 +14900,13 @@
 																	],
 																	"compname":"code",
 																	"expanded":"1",
-																	"posx":"2945",
-																	"posy":"6030",
+																	"posx":"3925",
+																	"posy":"5814",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
-																			"addw":"57",
-																			"compname":"if(0 < main_apps_view_height)",
-																			"expanded":"1",
-																			"posx":"3660",
-																			"posy":"6030"
-																		},
-																		{
-																			"addw":"137",
+																			"addw":"276",
 																			"compid":"835",
 																			"compname":"ltrb",
 																			"compvalues":
@@ -15326,16 +14915,72 @@
 																					"6",
 																					"133",
 																					"6 + 106*main_dock_cols + 20",
-																					"133 + main_apps_view_height",
-																					"true"
+																					"133 + main_apps_view_height"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"3660",
-																			"posy":"6156",
+																			"posx":"5017",
+																			"posy":"5814",
 																			"stable":"0",
 																			"ui":
 																			[
+																				{
+																					"addw":"0",
+																					"compid":"2348",
+																					"compname":"ltrb",
+																					"compvalues":
+																					[
+																						[
+																							"8",
+																							"-1",
+																							"pW - 28",
+																							"0"
+																						],
+																						[
+																							"8",
+																							"pH",
+																							"pW - 28",
+																							"pH + 1"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"5613",
+																					"posy":"5814",
+																					"stable":"0",
+																					"ui":
+																					[
+																						{
+																							"addw":"0",
+																							"compid":"2349",
+																							"compname":"color",
+																							"compvalues":
+																							[
+																								[
+																									"132",
+																									"157",
+																									"174",
+																									"40"
+																								]
+																							],
+																							"expanded":"1",
+																							"posx":"5933",
+																							"posy":"5814",
+																							"stable":"0",
+																							"ui":
+																							[
+																								{
+																									"addw":"0",
+																									"compid":"2350",
+																									"compname":"fill",
+																									"expanded":"1",
+																									"posx":"6253",
+																									"posy":"5814",
+																									"stable":"0"
+																								}
+																							]
+																						}
+																					]
+																				},
 																				{
 																					"addw":"0",
 																					"compid":"2329",
@@ -15348,13 +14993,13 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"4117",
-																					"posy":"6156",
+																					"posx":"5613",
+																					"posy":"6054",
 																					"stable":"0",
 																					"ui":
 																					[
 																						{
-																							"addw":"426",
+																							"addw":"334",
 																							"comment":"main_apps_scroll",
 																							"compid":"834",
 																							"compname":"scroll_view",
@@ -15363,13 +15008,13 @@
 																								[
 																									"'main_apps'",
 																									"113",
-																									"main_apps_rows",
+																									"main_apps_count",
 																									"vertical",
-																									"1",
+																									"main_dock_cols",
 																									"20",
 																									"0",
 																									"12",
-																									"0",
+																									"20",
 																									"113"
 																								]
 																							],
@@ -15377,17 +15022,17 @@
 																							"insiders":
 																							[
 																								{
-																									"ballposx":"80",
+																									"ballposx":"84",
 																									"ballposy":"21",
 																									"name":"scrollbg",
 																									"ui":
 																									[
 																										{
-																											"addw":"0",
+																											"addw":"170",
 																											"compname":"if(main_apps_view_height < main_apps_height)",
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"6156"
+																											"posx":"6587",
+																											"posy":"6054"
 																										},
 																										{
 																											"addw":"0",
@@ -15400,8 +15045,8 @@
 																												]
 																											],
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"6282",
+																											"posx":"6587",
+																											"posy":"6180",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -15416,8 +15061,8 @@
 																														]
 																													],
 																													"expanded":"1",
-																													"posx":"5503",
-																													"posy":"6282",
+																													"posx":"6907",
+																													"posy":"6180",
 																													"stable":"0"
 																												}
 																											]
@@ -15426,23 +15071,23 @@
 																											"addw":"0",
 																											"compname":"endif",
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"6498"
+																											"posx":"6587",
+																											"posy":"6396"
 																										}
 																									]
 																								},
 																								{
-																									"ballposx":"86",
+																									"ballposx":"91",
 																									"ballposy":"46",
 																									"name":"scrollbar",
 																									"ui":
 																									[
 																										{
-																											"addw":"0",
+																											"addw":"182",
 																											"compname":"if(main_apps_view_height < main_apps_height)",
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"6588"
+																											"posx":"6587",
+																											"posy":"6486"
 																										},
 																										{
 																											"addw":"0",
@@ -15455,13 +15100,13 @@
 																												]
 																											],
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"6714",
+																											"posx":"6587",
+																											"posy":"6612",
 																											"stable":"0",
 																											"ui":
 																											[
 																												{
-																													"addw":"0",
+																													"addw":"75",
 																													"compid":"2214",
 																													"compname":"ninepatch",
 																													"compvalues":
@@ -15480,8 +15125,8 @@
 																														]
 																													],
 																													"expanded":"1",
-																													"posx":"5503",
-																													"posy":"6714",
+																													"posx":"6907",
+																													"posy":"6612",
 																													"stable":"0"
 																												}
 																											]
@@ -15490,557 +15135,354 @@
 																											"addw":"0",
 																											"compname":"endif",
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"7017"
+																											"posx":"6587",
+																											"posy":"6915"
 																										}
 																									]
 																								},
 																								{
-																									"ballposx":"74",
+																									"ballposx":"78",
 																									"ballposy":"71",
 																									"name":"content",
 																									"ui":
 																									[
 																										{
 																											"addw":"0",
-																											"compid":"2218",
-																											"compname":"loop",
+																											"compid":"757",
+																											"compname":"ltrb",
+																											"compvalues":
+																											[
+																												[
+																													"8",
+																													"pH",
+																													"pW - 8",
+																													"pH + 1"
+																												]
+																											],
 																											"expanded":"1",
-																											"posx":"5183",
-																											"posy":"7107",
+																											"posx":"6587",
+																											"posy":"7005",
+																											"stable":"0",
 																											"ui":
 																											[
 																												{
 																													"addw":"0",
-																													"compid":"2217",
-																													"compinputs":
+																													"compid":"758",
+																													"compname":"color",
+																													"compvalues":
 																													[
-																														{
-																															"main_app_index":"pV*main_dock_cols+dockcolV"
-																														}
+																														[
+																															"132",
+																															"157",
+																															"174",
+																															"40"
+																														]
 																													],
-																													"compname":"code",
 																													"expanded":"1",
-																													"posx":"5503",
-																													"posy":"7107",
+																													"posx":"6907",
+																													"posy":"7005",
 																													"stable":"0",
 																													"ui":
 																													[
 																														{
 																															"addw":"0",
-																															"compname":"if(main_app_index < main_apps_count)",
+																															"compid":"759",
+																															"compname":"fill",
 																															"expanded":"1",
-																															"posx":"5823",
-																															"posy":"7107"
+																															"posx":"7227",
+																															"posy":"7005",
+																															"stable":"0"
+																														}
+																													]
+																												}
+																											]
+																										},
+																										{
+																											"addw":"568",
+																											"compid":"749",
+																											"compname":"ltrb",
+																											"compvalues":
+																											[
+																												[
+																													"0",
+																													"0",
+																													"pW",
+																													"pH",
+																													"true"
+																												]
+																											],
+																											"expanded":"1",
+																											"onclick":
+																											[
+																												"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+																												"setvalue('d.data.body.focus', pV)",
+																												{
+																													"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
+																												},
+																												"update(0.3)"
+																											],
+																											"posx":"6587",
+																											"posy":"7221",
+																											"stable":"0",
+																											"ui":
+																											[
+																												{
+																													"addw":"166",
+																													"compname":"if((-1 @ 'd.data.body.focus') == pV)",
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"7221"
+																												},
+																												{
+																													"addw":"98",
+																													"compid":"822",
+																													"compname":"ninepatch",
+																													"compvalues":
+																													[
+																														"ifpressed('main_apps_btn_widget_'+ pV)",
+																														[
+																															"r.side_selected_p"
+																														],
+																														"eliffocused('main_apps_btn_widget_'+ pV)",
+																														[
+																															"r.side_selected_h"
+																														],
+																														"else",
+																														[
+																															"r.side_selected"
+																														]
+																													],
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"7347",
+																													"stable":"0"
+																												},
+																												{
+																													"addw":"0",
+																													"compname":"else",
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"7650"
+																												},
+																												{
+																													"addw":"107",
+																													"compid":"816",
+																													"compname":"ninepatch",
+																													"compvalues":
+																													[
+																														"ifpressed('main_apps_btn_widget_'+ pV)",
+																														[
+																															"r.side_normal_p"
+																														],
+																														"eliffocused('main_apps_btn_widget_'+ pV)",
+																														[
+																															"r.side_normal_h"
+																														],
+																														"else",
+																														[
+																															"r.side_idle"
+																														]
+																													],
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"7740",
+																													"stable":"0"
+																												},
+																												{
+																													"addw":"0",
+																													"compname":"endif",
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"8043"
+																												},
+																												{
+																													"addw":"256",
+																													"compid":"821",
+																													"compinputs":
+																													[
+																														{
+																															"domname":"'x'@'d.data.body.enum.'+ pV +'.dom'"
 																														},
 																														{
-																															"addw":"282",
-																															"compid":"749",
+																															"titlename":"'-'@'d.data.body.enum.'+ pV +'.title'"
+																														}
+																													],
+																													"compname":"code",
+																													"expanded":"1",
+																													"posx":"7475",
+																													"posy":"8133",
+																													"stable":"0",
+																													"ui":
+																													[
+																														{
+																															"addw":"0",
+																															"compid":"750",
 																															"compname":"ltrb",
 																															"compvalues":
 																															[
 																																[
-																																	"106*dockcolV",
-																																	"0",
-																																	"106*(dockcolV+1)",
-																																	"112",
-																																	"true"
+																																	"13",
+																																	"12",
+																																	"pW-13",
+																																	"72"
 																																]
 																															],
 																															"expanded":"1",
-																															"onclick":
-																															[
-																																"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-																																"setvalue('d.data.body.focus', main_app_index)",
-																																{
-																																	"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
-																																},
-																																"update(0.3)"
-																															],
-																															"posx":"5823",
-																															"posy":"7233",
+																															"posx":"8051",
+																															"posy":"8133",
 																															"stable":"0",
 																															"ui":
 																															[
 																																{
-																																	"addw":"144",
-																																	"compname":"if((-1 @ 'd.data.body.focus') == main_app_index)",
-																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"7233"
-																																},
-																																{
-																																	"addw":"116",
-																																	"compid":"822",
-																																	"compname":"ninepatch",
+																																	"addw":"0",
+																																	"compid":"751",
+																																	"compname":"zoom",
 																																	"compvalues":
 																																	[
-																																		"ifpressed('main_apps_btn_widget_'+ main_app_index)",
 																																		[
-																																			"r.side_selected_p"
-																																		],
-																																		"eliffocused('main_apps_btn_widget_'+ main_app_index)",
-																																		[
-																																			"r.side_selected_h"
-																																		],
-																																		"else",
-																																		[
-																																			"r.side_selected"
+																																			"0.51"
 																																		]
 																																	],
 																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"7359",
-																																	"stable":"0"
-																																},
-																																{
-																																	"addw":"0",
-																																	"compname":"else",
-																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"7662"
-																																},
-																																{
-																																	"addw":"94",
-																																	"compid":"816",
-																																	"compname":"ninepatch",
-																																	"compvalues":
-																																	[
-																																		"ifpressed('main_apps_btn_widget_'+ main_app_index)",
-																																		[
-																																			"r.side_normal_p"
-																																		],
-																																		"eliffocused('main_apps_btn_widget_'+ main_app_index)",
-																																		[
-																																			"r.side_normal_h"
-																																		],
-																																		"else",
-																																		[
-																																			"r.side_idle"
-																																		]
-																																	],
-																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"7752",
-																																	"stable":"0"
-																																},
-																																{
-																																	"addw":"0",
-																																	"compname":"endif",
-																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"8055"
-																																},
-																																{
-																																	"addw":"268",
-																																	"compid":"821",
-																																	"compinputs":
-																																	[
-																																		{
-																																			"domname":"'x'@'d.data.body.enum.'+ main_app_index +'.dom'"
-																																		},
-																																		{
-																																			"titlename":"'-'@'d.data.body.enum.'+ main_app_index +'.title'"
-																																		}
-																																	],
-																																	"compname":"code",
-																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"8145",
+																																	"posx":"8371",
+																																	"posy":"8133",
 																																	"stable":"0",
 																																	"ui":
 																																	[
 																																		{
-																																			"addw":"0",
-																																			"compid":"750",
-																																			"compname":"ltrb",
+																																			"addw":"69",
+																																			"compid":"752",
+																																			"compname":"icon",
 																																			"compvalues":
 																																			[
 																																				[
-																																					"13",
-																																					"12",
-																																					"pW-13",
-																																					"72"
+																																					"'r.icon.'+ domname",
+																																					"centermiddle"
 																																				]
 																																			],
 																																			"expanded":"1",
-																																			"posx":"7013",
-																																			"posy":"8145",
-																																			"stable":"0",
-																																			"ui":
-																																			[
-																																				{
-																																					"addw":"0",
-																																					"compid":"751",
-																																					"compname":"zoom",
-																																					"compvalues":
-																																					[
-																																						[
-																																							"0.51"
-																																						]
-																																					],
-																																					"expanded":"1",
-																																					"posx":"7333",
-																																					"posy":"8145",
-																																					"stable":"0",
-																																					"ui":
-																																					[
-																																						{
-																																							"addw":"69",
-																																							"compid":"752",
-																																							"compname":"icon",
-																																							"compvalues":
-																																							[
-																																								[
-																																									"'r.icon.'+ domname",
-																																									"centermiddle"
-																																								]
-																																							],
-																																							"expanded":"1",
-																																							"posx":"7653",
-																																							"posy":"8145",
-																																							"stable":"0"
-																																						}
-																																					]
-																																				}
-																																			]
-																																		},
-																																		{
-																																			"addw":"0",
-																																			"compid":"753",
-																																			"compname":"ltrb",
-																																			"compvalues":
-																																			[
-																																				[
-																																					"4",
-																																					"70",
-																																					"pW-4",
-																																					"102"
-																																				]
-																																			],
-																																			"expanded":"1",
-																																			"posx":"7013",
-																																			"posy":"8361",
-																																			"stable":"0",
-																																			"ui":
-																																			[
-																																				{
-																																					"addw":"0",
-																																					"compid":"754",
-																																					"compname":"color",
-																																					"compvalues":
-																																					[
-																																						"ifpressed('main_apps_btn_widget_'+ main_app_index)",
-																																						[
-																																							"215",
-																																							"239",
-																																							"245",
-																																							"255"
-																																						],
-																																						"elif((-1 @ 'd.data.body.focus') == main_app_index)",
-																																						[
-																																							"229",
-																																							"250",
-																																							"255",
-																																							"255"
-																																						],
-																																						"eliffocused('main_apps_btn_widget_'+ main_app_index)",
-																																						[
-																																							"245",
-																																							"252",
-																																							"255",
-																																							"255"
-																																						],
-																																						"else",
-																																						[
-																																							"219",
-																																							"232",
-																																							"240",
-																																							"255"
-																																						]
-																																					],
-																																					"expanded":"1",
-																																					"posx":"7333",
-																																					"posy":"8361",
-																																					"stable":"0",
-																																					"ui":
-																																					[
-																																						{
-																																							"addw":"0",
-																																							"compid":"755",
-																																							"compname":"font",
-																																							"compvalues":
-																																							[
-																																								[
-																																									"1.72",
-																																									"MainUIFont"
-																																								]
-																																							],
-																																							"expanded":"1",
-																																							"posx":"7653",
-																																							"posy":"8361",
-																																							"stable":"0",
-																																							"ui":
-																																							[
-																																								{
-																																									"addw":"0",
-																																									"compid":"756",
-																																									"compname":"text",
-																																									"compvalues":
-																																									[
-																																										[
-																																											"titlename",
-																																											"centermiddle"
-																																										]
-																																									],
-																																									"expanded":"1",
-																																									"posx":"7973",
-																																									"posy":"8361",
-																																									"stable":"0"
-																																								}
-																																							]
-																																						}
-																																					]
-																																				}
-																																			]
+																																			"posx":"8691",
+																																			"posy":"8133",
+																																			"stable":"0"
 																																		}
 																																	]
-																																},
+																																}
+																															]
+																														},
+																														{
+																															"addw":"0",
+																															"compid":"753",
+																															"compname":"ltrb",
+																															"compvalues":
+																															[
+																																[
+																																	"4",
+																																	"70",
+																																	"pW-4",
+																																	"102"
+																																]
+																															],
+																															"expanded":"1",
+																															"posx":"8051",
+																															"posy":"8349",
+																															"stable":"0",
+																															"ui":
+																															[
 																																{
-																																	"addw":"113",
-																																	"compid":"757",
-																																	"compname":"ltrb",
+																																	"addw":"175",
+																																	"compid":"754",
+																																	"compname":"color",
 																																	"compvalues":
 																																	[
-																																		"if((main_dock_cols == 1) [and] (main_app_index + 1 < 0 @'d.data.body.enum.count'))",
+																																		"ifpressed('main_apps_btn_widget_'+ pV)",
 																																		[
-																																			"8",
-																																			"pH-1",
-																																			"pW-8",
-																																			"pH"
+																																			"215",
+																																			"239",
+																																			"245",
+																																			"255"
+																																		],
+																																		"elif((-1 @'d.data.body.focus') == pV)",
+																																		[
+																																			"229",
+																																			"250",
+																																			"255",
+																																			"255"
+																																		],
+																																		"eliffocused('main_apps_btn_widget_'+ pV)",
+																																		[
+																																			"245",
+																																			"252",
+																																			"255",
+																																			"255"
+																																		],
+																																		"else",
+																																		[
+																																			"219",
+																																			"232",
+																																			"240",
+																																			"255"
 																																		]
 																																	],
 																																	"expanded":"1",
-																																	"posx":"6425",
-																																	"posy":"8712",
+																																	"posx":"8371",
+																																	"posy":"8349",
 																																	"stable":"0",
 																																	"ui":
 																																	[
 																																		{
 																																			"addw":"0",
-																																			"compid":"758",
-																																			"compname":"color",
+																																			"compid":"755",
+																																			"compname":"font",
 																																			"compvalues":
 																																			[
-																																				"ifpressed('main_apps_btn_widget_'+ main_app_index)",
 																																				[
-																																					"132",
-																																					"157",
-																																					"174",
-																																					"0"
-																																				],
-																																				"elif((-1 @ 'd.data.body.focus') == main_app_index)",
-																																				[
-																																					"132",
-																																					"157",
-																																					"174",
-																																					"0"
-																																				],
-																																				"eliffocused('main_apps_btn_widget_'+ main_app_index)",
-																																				[
-																																					"132",
-																																					"157",
-																																					"174",
-																																					"0"
-																																				],
-																																				"else",
-																																				[
-																																					"132",
-																																					"157",
-																																					"174",
-																																					"40"
+																																					"1.72",
+																																					"MainUIFont"
 																																				]
 																																			],
 																																			"expanded":"1",
-																																			"posx":"6858",
-																																			"posy":"8712",
+																																			"posx":"8866",
+																																			"posy":"8349",
 																																			"stable":"0",
 																																			"ui":
 																																			[
 																																				{
 																																					"addw":"0",
-																																					"compid":"759",
-																																					"compname":"fill",
+																																					"compid":"756",
+																																					"compname":"text",
+																																					"compvalues":
+																																					[
+																																						[
+																																							"titlename",
+																																							"centermiddle"
+																																						]
+																																					],
 																																					"expanded":"1",
-																																					"posx":"7178",
-																																					"posy":"8712",
+																																					"posx":"9186",
+																																					"posy":"8349",
 																																					"stable":"0"
 																																				}
 																																			]
 																																		}
 																																	]
 																																}
-																															],
-																															"uiname":"'main_apps_btn_widget_' + main_app_index"
-																														},
-																														{
-																															"addw":"0",
-																															"compname":"endif",
-																															"expanded":"1",
-																															"posx":"5823",
-																															"posy":"9063"
+																															]
 																														}
 																													]
 																												}
 																											],
-																											"uiloop":"main_dock_cols",
-																											"uiname":"dockcol"
+																											"uiname":"'main_apps_btn_widget_' + pV"
 																										}
 																									]
 																								}
 																							],
-																							"posx":"4437",
-																							"posy":"6156",
+																							"posx":"5933",
+																							"posy":"6054",
 																							"stable":"0"
 																						}
 																					]
-																				},
-																				{
-																					"addw":"0",
-																					"compname":"if((((0 @'d.data.body.enum.count') + (main_dock_cols) - 1 - (((0 @'d.data.body.enum.count') + (main_dock_cols) - 1) % (main_dock_cols))) / (main_dock_cols) * (113) + 2 * (0)) > pH)",
-																					"expanded":"1",
-																					"posx":"4117",
-																					"posy":"9153"
-																				},
-																				{
-																					"addw":"0",
-																					"compid":"2211",
-																					"compname":"inner",
-																					"compvalues":
-																					[
-																						[
-																							"0"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4117",
-																					"posy":"9279",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"2207",
-																							"compname":"xywh",
-																							"compvalues":
-																							[
-																								[
-																									"0",
-																									"0",
-																									"((pW-24) [max] 0) [multiply] 1",
-																									"1"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4437",
-																							"posy":"9279",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"2206",
-																									"compname":"hexcolor",
-																									"compvalues":
-																									[
-																										[
-																											"#5a778a"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"4757",
-																									"posy":"9279",
-																									"stable":"0",
-																									"ui":
-																									[
-																										{
-																											"addw":"0",
-																											"compid":"2205",
-																											"compname":"fill",
-																											"expanded":"1",
-																											"posx":"5077",
-																											"posy":"9279",
-																											"stable":"0"
-																										}
-																									]
-																								}
-																							]
-																						},
-																						{
-																							"addw":"0",
-																							"compid":"2210",
-																							"compname":"xywh",
-																							"compvalues":
-																							[
-																								[
-																									"0",
-																									"pH-1",
-																									"((pW-24) [max] 0) [multiply] 1",
-																									"1"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4437",
-																							"posy":"9495",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"2209",
-																									"compname":"hexcolor",
-																									"compvalues":
-																									[
-																										[
-																											"#5a778a"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"4757",
-																									"posy":"9495",
-																									"stable":"0",
-																									"ui":
-																									[
-																										{
-																											"addw":"0",
-																											"compid":"2208",
-																											"compname":"fill",
-																											"expanded":"1",
-																											"posx":"5077",
-																											"posy":"9495",
-																											"stable":"0"
-																										}
-																									]
-																								}
-																							]
-																						}
-																					]
-																				},
-																				{
-																					"addw":"0",
-																					"compname":"endif",
-																					"expanded":"1",
-																					"posx":"4117",
-																					"posy":"9711"
 																				}
 																			]
-																		},
-																		{
-																			"addw":"0",
-																			"compname":"endif",
-																			"expanded":"1",
-																			"posx":"3660",
-																			"posy":"9801"
 																		},
 																		{
 																			"addw":"123",
@@ -16054,8 +15496,8 @@
 																			],
 																			"compname":"code",
 																			"expanded":"1",
-																			"posx":"3660",
-																			"posy":"9891",
+																			"posx":"5017",
+																			"posy":"8700",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -16083,8 +15525,8 @@
 																						"setvalue('d.data.settings.popup_open', 1)",
 																						"update(0.1)"
 																					],
-																					"posx":"4103",
-																					"posy":"9891",
+																					"posx":"5460",
+																					"posy":"8700",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -16108,8 +15550,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4462",
-																							"posy":"9891",
+																							"posx":"5819",
+																							"posy":"8700",
 																							"stable":"0"
 																						},
 																						{
@@ -16126,8 +15568,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4462",
-																							"posy":"10194",
+																							"posx":"5819",
+																							"posy":"9003",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -16142,8 +15584,8 @@
 																										]
 																									],
 																									"expanded":"1",
-																									"posx":"4782",
-																									"posy":"10194",
+																									"posx":"6139",
+																									"posy":"9003",
 																									"stable":"0",
 																									"ui":
 																									[
@@ -16159,8 +15601,8 @@
 																												]
 																											],
 																											"expanded":"1",
-																											"posx":"5102",
-																											"posy":"10194",
+																											"posx":"6459",
+																											"posy":"9003",
 																											"stable":"0"
 																										}
 																									]
@@ -16181,8 +15623,8 @@
 																								]
 																							],
 																							"expanded":"1",
-																							"posx":"4462",
-																							"posy":"10410",
+																							"posx":"5819",
+																							"posy":"9219",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -16215,8 +15657,8 @@
 																										]
 																									],
 																									"expanded":"1",
-																									"posx":"4782",
-																									"posy":"10410",
+																									"posx":"6139",
+																									"posy":"9219",
 																									"stable":"0",
 																									"ui":
 																									[
@@ -16232,8 +15674,8 @@
 																												]
 																											],
 																											"expanded":"1",
-																											"posx":"5102",
-																											"posy":"10410",
+																											"posx":"6459",
+																											"posy":"9219",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -16250,62 +15692,11 @@
 																														]
 																													],
 																													"expanded":"1",
-																													"posx":"5422",
-																													"posy":"10410",
+																													"posx":"6779",
+																													"posy":"9219",
 																													"stable":"0"
 																												}
 																											]
-																										}
-																									]
-																								}
-																							]
-																						},
-																						{
-																							"addw":"0",
-																							"compid":"839",
-																							"compname":"ltrb",
-																							"compvalues":
-																							[
-																								[
-																									"8",
-																									"0",
-																									"pW-8",
-																									"1"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4462",
-																							"posy":"10713",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"840",
-																									"compname":"color",
-																									"compvalues":
-																									[
-																										[
-																											"132",
-																											"157",
-																											"174",
-																											"50 * (main_dock_cols == 1)"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"4782",
-																									"posy":"10713",
-																									"stable":"0",
-																									"ui":
-																									[
-																										{
-																											"addw":"0",
-																											"compid":"841",
-																											"compname":"fill",
-																											"expanded":"1",
-																											"posx":"5102",
-																											"posy":"10713",
-																											"stable":"0"
 																										}
 																									]
 																								}
@@ -16328,31 +15719,31 @@
 											"addw":"0",
 											"compname":"endif",
 											"expanded":"1",
-											"posx":"1276",
-											"posy":"10929"
+											"posx":"2159",
+											"posy":"9522"
 										},
 										{
-											"addw":"0",
+											"addw":"100",
 											"compname":"if(0 @ 'd.data.settings.popup_open')",
 											"expanded":"1",
-											"posx":"1276",
-											"posy":"11019"
+											"posx":"2159",
+											"posy":"9612"
 										},
 										{
 											"addw":"0",
 											"compid":"2001",
 											"compname":"jump",
 											"expanded":"1",
-											"posx":"1276",
-											"posy":"11145",
+											"posx":"2159",
+											"posy":"9738",
 											"uiname":"main_settings_popup"
 										},
 										{
 											"addw":"0",
 											"compname":"endif",
 											"expanded":"1",
-											"posx":"1276",
-											"posy":"11271"
+											"posx":"2159",
+											"posy":"9864"
 										}
 									]
 								}

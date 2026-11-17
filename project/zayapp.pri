@@ -12,6 +12,14 @@ QT_PACKAGE_RPATH = no #ok #no
 QT -= bluetooth
 wasm{
     QT_WASM_INITIAL_MEMORY = 128MB
+    CONFIG(release, debug|release){
+        QMAKE_CFLAGS_RELEASE -= -O2
+        QMAKE_CFLAGS_RELEASE += -O3
+        QMAKE_CXXFLAGS_RELEASE -= -O2
+        QMAKE_CXXFLAGS_RELEASE += -O3
+        QMAKE_LFLAGS_RELEASE -= -O2
+        QMAKE_LFLAGS_RELEASE += -O3
+    }
     QMAKE_LFLAGS += -sASYNCIFY=1 -lidbfs.js
 }
 

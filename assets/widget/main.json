@@ -629,14 +629,14 @@
 	"settings": {
 		"popup_open": 0,
 		"virtual_keypad_disabled": 0,
-		"language": "ko",
+		"language": "en",
 		"sound_volume": 100,
 		"sound_volume.ani": 100,
 		"app_columns": 1
 	},
 	"settings_ui": {
 		"title": "설정",
-		"caption": "ZayApp의 입력 · 언어 · 사운드 · 앱 배치를 설정합니다.",
+		"caption": "ZayApp의 입력 · 사운드 · 앱 배치를 설정합니다.",
 		"keypad_title": "가상키패드 비활성화",
 		"keypad_desc": "입력창을 선택해도 가상키패드\n전개 버튼을 표시하지 않습니다.",
 		"keypad_enabled": "전개 버튼 표시",
@@ -645,12 +645,12 @@
 		"language_desc": "홈·설정에 즉시 적용하며 앱별 연동은 추후 적용합니다.",
 		"language_choices": [
 			{
-				"code": "ko",
-				"label": "한국어"
-			},
-			{
 				"code": "en",
 				"label": "영어"
+			},
+			{
+				"code": "ko",
+				"label": "한국어"
 			},
 			{
 				"code": "ja",
@@ -775,7 +775,7 @@
 			},
 			"settings": {
 				"title": "설정",
-				"caption": "ZayApp의 입력 · 언어 · 사운드 · 앱 배치를 설정합니다.",
+				"caption": "ZayApp의 입력 · 사운드 · 앱 배치를 설정합니다.",
 				"keypad_title": "가상키패드 비활성화",
 				"keypad_desc": "입력창을 선택해도 가상키패드\n전개 버튼을 표시하지 않습니다.",
 				"keypad_enabled": "전개 버튼 표시",
@@ -784,12 +784,12 @@
 				"language_desc": "홈·설정에 즉시 적용하며 앱별 연동은 추후 적용합니다.",
 				"language_choices": [
 					{
-						"code": "ko",
-						"label": "한국어"
-					},
-					{
 						"code": "en",
 						"label": "English"
+					},
+					{
+						"code": "ko",
+						"label": "한국어"
 					},
 					{
 						"code": "ja",
@@ -918,7 +918,7 @@
 			},
 			"settings": {
 				"title": "Settings",
-				"caption": "Configure ZayApp input, language, sound and app layout.",
+				"caption": "Configure ZayApp input, sound and app layout.",
 				"keypad_title": "Disable virtual keypad",
 				"keypad_desc": "Hide the keypad expand button\nwhen an editor is selected.",
 				"keypad_enabled": "Expand button visible",
@@ -927,12 +927,12 @@
 				"language_desc": "Applies to HOME and Settings now. Apps will follow later.",
 				"language_choices": [
 					{
-						"code": "ko",
-						"label": "한국어"
-					},
-					{
 						"code": "en",
 						"label": "English"
+					},
+					{
+						"code": "ko",
+						"label": "한국어"
 					},
 					{
 						"code": "ja",
@@ -1061,7 +1061,7 @@
 			},
 			"settings": {
 				"title": "設定",
-				"caption": "入力・言語・音量・アプリ配置を設定します。",
+				"caption": "入力・音量・アプリ配置を設定します。",
 				"keypad_title": "仮想キーパッドを無効化",
 				"keypad_desc": "入力欄を選択しても、キーパッドの\n展開ボタンを表示しません。",
 				"keypad_enabled": "展開ボタンを表示",
@@ -1070,12 +1070,12 @@
 				"language_desc": "HOMEと設定に適用。各アプリとの連動は後日対応。",
 				"language_choices": [
 					{
-						"code": "ko",
-						"label": "한국어"
-					},
-					{
 						"code": "en",
 						"label": "English"
+					},
+					{
+						"code": "ko",
+						"label": "한국어"
 					},
 					{
 						"code": "ja",
