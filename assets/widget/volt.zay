@@ -20795,8 +20795,6 @@
 					"compid":"10648",
 					"compinputs":
 					[
-						"readyapng('apng/volt_battery.apng')",
-						"readyapng('apng/volt_energy.apng')",
 						"update(0.3)",
 						{
 							"vq_page_anim":"0 ~ 1 : d.volt.data.motion.page"

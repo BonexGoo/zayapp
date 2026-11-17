@@ -1712,7 +1712,6 @@
 						{
 							"rb_voice_busy":"0"
 						},
-						"readyapng('apng/robo_motion.apng')",
 						"if(rb_status == 1)",
 						"jumpcall('rb_suspend', 0)",
 						"endif",

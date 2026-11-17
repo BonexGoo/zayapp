@@ -5711,10 +5711,6 @@
           "addw": "293",
           "compid": "20381",
           "compinputs": [
-            "readyapng('apng/sc_blu_se_walk.apng')",
-            "readyapng('apng/sc_blu_sw_walk.apng')",
-            "readyapng('apng/sc_blu_ne_walk.apng')",
-            "readyapng('apng/sc_blu_nw_walk.apng')",
             "update(0.4)",
             "jumpcall('sc_stop_bgm', 0)",
             "jumpcall('sc_stop_steps', 0)",
@@ -6503,10 +6499,6 @@
                 {
                   "sc_character": "0"
                 },
-                "readyapng('apng/sc_blu_se_walk.apng')",
-                "readyapng('apng/sc_blu_sw_walk.apng')",
-                "readyapng('apng/sc_blu_ne_walk.apng')",
-                "readyapng('apng/sc_blu_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",
@@ -6666,10 +6658,6 @@
                 {
                   "sc_character": "1"
                 },
-                "readyapng('apng/sc_lav_se_walk.apng')",
-                "readyapng('apng/sc_lav_sw_walk.apng')",
-                "readyapng('apng/sc_lav_ne_walk.apng')",
-                "readyapng('apng/sc_lav_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",
@@ -6829,10 +6817,6 @@
                 {
                   "sc_character": "2"
                 },
-                "readyapng('apng/sc_grn_se_walk.apng')",
-                "readyapng('apng/sc_grn_sw_walk.apng')",
-                "readyapng('apng/sc_grn_ne_walk.apng')",
-                "readyapng('apng/sc_grn_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",
@@ -6992,10 +6976,6 @@
                 {
                   "sc_character": "3"
                 },
-                "readyapng('apng/sc_pch_se_walk.apng')",
-                "readyapng('apng/sc_pch_sw_walk.apng')",
-                "readyapng('apng/sc_pch_ne_walk.apng')",
-                "readyapng('apng/sc_pch_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",
@@ -7155,10 +7135,6 @@
                 {
                   "sc_character": "4"
                 },
-                "readyapng('apng/sc_ylw_se_walk.apng')",
-                "readyapng('apng/sc_ylw_sw_walk.apng')",
-                "readyapng('apng/sc_ylw_ne_walk.apng')",
-                "readyapng('apng/sc_ylw_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",
@@ -7318,10 +7294,6 @@
                 {
                   "sc_character": "5"
                 },
-                "readyapng('apng/sc_bot_se_walk.apng')",
-                "readyapng('apng/sc_bot_sw_walk.apng')",
-                "readyapng('apng/sc_bot_ne_walk.apng')",
-                "readyapng('apng/sc_bot_nw_walk.apng')",
                 "if(sc_sound == 1)",
                 "playsound('sound/sc_select.mp3', d.scube.data.audio.gain.select)",
                 "endif",

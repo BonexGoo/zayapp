@@ -1860,8 +1860,7 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
                             Buffer::SizeOf(NewSoundData) * Buffer::CountOf(NewSoundData));
                         Buffer::Free(NewSoundData);
                     #elif BOSS_WASM
-                        auto SoundHost = ZayWidgetDOM::GetValue("data.soundhost").ToText();
-                        mSounds(SoundAssetName) = Platform::Sound::OpenForUrl(SoundHost + SoundAssetName, false);
+                        mSounds(SoundAssetName) = Platform::Sound::OpenForUrl(SoundAssetName, false);
                     #else
                         mSounds(SoundAssetName) = Platform::Sound::OpenForFile(
                             Platform::File::RootForAssets() + SoundAssetName, false);
@@ -1899,7 +1898,22 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
         {
             auto APngAssetName = params.Param(0).ToText();
             if(!mAPngs.Access(APngAssetName))
-                mAPngs(APngAssetName) = Platform::Animate::OpenForAPngAssets(APngAssetName);
+            {
+                #if BOSS_ANDROID | BOSS_IPHONE
+                    buffer NewAPngData = Asset::ToBuffer(APngAssetName);
+                    if(NewAPngData)
+                    {
+                        mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
+                            Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
+                        Buffer::Free(NewAPngData);
+                    }
+                #elif BOSS_WASM
+                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForUrl(APngAssetName);
+                #else
+                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForFile(
+                        Platform::File::RootForAssets() + APngAssetName);
+                #endif
+            }
         }
     }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
 
@@ -3708,7 +3722,22 @@ bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
 bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
 {
     if(!mAPngs.Access(assetname))
-        mAPngs(assetname) = Platform::Animate::OpenForAPngAssets(assetname);
+    {
+        #if BOSS_ANDROID | BOSS_IPHONE
+            buffer NewAPngData = Asset::ToBuffer(assetname);
+            if(NewAPngData)
+            {
+                mAPngs(assetname) = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
+                    Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
+                Buffer::Free(NewAPngData);
+            }
+        #elif BOSS_WASM
+            mAPngs(assetname) = Platform::Animate::OpenForAPngForUrl(assetname);
+        #else
+            mAPngs(assetname) = Platform::Animate::OpenForAPngForFile(
+                Platform::File::RootForAssets() + assetname);
+        #endif
+    }
     if(auto CurAPng = mAPngs.Access(assetname))
     {
         Platform::Animate::Seek(*CurAPng, sec, true);
