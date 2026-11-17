@@ -10,5 +10,327 @@
 		{"path" : "font/Roboto-Light.ttf"},
 		{"path" : "font/Roboto-Medium.ttf"},
 		{"path" : "font/Roboto-Regular.ttf"}
-	]
+	],
+	"shared_text": {
+		"t000": {
+			"ko": "스마트 라이프",
+			"en": "SMART LIVING",
+			"ja": "スマートライフ"
+		},
+		"t001": {
+			"ko": "홈 대시보드",
+			"en": "Home dashboard",
+			"ja": "ホーム"
+		},
+		"t002": {
+			"ko": "조명 제어",
+			"en": "Lighting",
+			"ja": "照明"
+		},
+		"t003": {
+			"ko": "냉난방 제어",
+			"en": "Climate",
+			"ja": "空調"
+		},
+		"t004": {
+			"ko": "커튼 / 블라인드",
+			"en": "Curtains / blinds",
+			"ja": "カーテン・ブラインド"
+		},
+		"t005": {
+			"ko": "보안 / CCTV",
+			"en": "Security / CCTV",
+			"ja": "防犯・カメラ"
+		},
+		"t006": {
+			"ko": "에너지 관리",
+			"en": "Energy",
+			"ja": "エネルギー"
+		},
+		"t007": {
+			"ko": "시나리오",
+			"en": "Scenes",
+			"ja": "シーン"
+		},
+		"t008": {
+			"ko": "설정",
+			"en": "Settings",
+			"ja": "設定"
+		},
+		"t009": {
+			"ko": "모든 기기 정상 작동",
+			"en": "All devices working normally",
+			"ja": "すべての機器が正常です"
+		},
+		"t010": {
+			"ko": "8개 기기 온라인",
+			"en": "8 devices online",
+			"ja": "8台の機器がオンライン"
+		},
+		"t011": {
+			"ko": "좋은 저녁이에요!",
+			"en": "Good evening!",
+			"ja": "こんばんは！"
+		},
+		"t012": {
+			"ko": "오늘도 스마트한 하루를 만들어보세요.",
+			"en": "Make every day a little smarter.",
+			"ja": "今日もスマートな一日を。"
+		},
+		"t013": {
+			"ko": "2026년 11월 4일 (수)",
+			"en": "Wed, November 4, 2026",
+			"ja": "2026年11月4日（水）"
+		},
+		"t014": {
+			"ko": "맑음",
+			"en": "Clear",
+			"ja": "晴れ"
+		},
+		"t015": {
+			"ko": "홈 모드",
+			"en": "Home",
+			"ja": "在宅"
+		},
+		"t016": {
+			"ko": "외출 모드",
+			"en": "Away",
+			"ja": "外出"
+		},
+		"t017": {
+			"ko": "취침 모드",
+			"en": "Sleep",
+			"ja": "就寝"
+		},
+		"t018": {
+			"ko": "영화 모드",
+			"en": "Cinema",
+			"ja": "映画"
+		},
+		"t019": {
+			"ko": "조명",
+			"en": "Lighting",
+			"ja": "照明"
+		},
+		"t020": {
+			"ko": "편안한 분위기를 만드세요.",
+			"en": "Set a comfortable mood.",
+			"ja": "心地よい明かりに。"
+		},
+		"t021": {
+			"ko": "거실",
+			"en": "Living room",
+			"ja": "リビング"
+		},
+		"t022": {
+			"ko": "주방",
+			"en": "Kitchen",
+			"ja": "キッチン"
+		},
+		"t023": {
+			"ko": "침실",
+			"en": "Bedroom",
+			"ja": "寝室"
+		},
+		"t024": {
+			"ko": "현관",
+			"en": "Entrance",
+			"ja": "玄関"
+		},
+		"t025": {
+			"ko": "욕실",
+			"en": "Bathroom",
+			"ja": "浴室"
+		},
+		"t026": {
+			"ko": "전체 켜기",
+			"en": "All on",
+			"ja": "すべて点灯"
+		},
+		"t027": {
+			"ko": "냉난방",
+			"en": "Climate",
+			"ja": "空調"
+		},
+		"t028": {
+			"ko": "최적의 실내 온도를 유지합니다.",
+			"en": "Keep the room comfortable.",
+			"ja": "快適な室温を保ちます。"
+		},
+		"t029": {
+			"ko": "냉방",
+			"en": "Cool",
+			"ja": "冷房"
+		},
+		"t030": {
+			"ko": "난방",
+			"en": "Heat",
+			"ja": "暖房"
+		},
+		"t031": {
+			"ko": "자동",
+			"en": "Auto",
+			"ja": "自動"
+		},
+		"t032": {
+			"ko": "제습",
+			"en": "Dry",
+			"ja": "除湿"
+		},
+		"t033": {
+			"ko": "원하는 만큼 열어보세요.",
+			"en": "Open them just the right amount.",
+			"ja": "お好みの開き具合に。"
+		},
+		"t034": {
+			"ko": "열기",
+			"en": "Open",
+			"ja": "開く"
+		},
+		"t035": {
+			"ko": "일시정지",
+			"en": "Pause",
+			"ja": "停止"
+		},
+		"t036": {
+			"ko": "닫기",
+			"en": "Close",
+			"ja": "閉じる"
+		},
+		"t037": {
+			"ko": "보안",
+			"en": "Security",
+			"ja": "防犯"
+		},
+		"t038": {
+			"ko": "우리 집을 안전하게 지켜줍니다.",
+			"en": "Keeping your home secure.",
+			"ja": "住まいを安全に守ります。"
+		},
+		"t039": {
+			"ko": "보안 시스템 작동 중",
+			"en": "Security system active",
+			"ja": "防犯システム作動中"
+		},
+		"t040": {
+			"ko": "모든 센서가 정상입니다.",
+			"en": "All sensors are normal.",
+			"ja": "すべてのセンサーが正常です。"
+		},
+		"t041": {
+			"ko": "현관문",
+			"en": "Front door",
+			"ja": "玄関ドア"
+		},
+		"t042": {
+			"ko": "창문",
+			"en": "Windows",
+			"ja": "窓"
+		},
+		"t043": {
+			"ko": "가스",
+			"en": "Gas",
+			"ja": "ガス"
+		},
+		"t044": {
+			"ko": "움직임",
+			"en": "Motion",
+			"ja": "人感"
+		},
+		"t045": {
+			"ko": "실시간 카메라",
+			"en": "Live cameras",
+			"ja": "ライブカメラ"
+		},
+		"t046": {
+			"ko": "전체보기 ›",
+			"en": "View all ›",
+			"ja": "すべて表示 ›"
+		},
+		"t047": {
+			"ko": "● 실시간",
+			"en": "● Live",
+			"ja": "● ライブ"
+		},
+		"t048": {
+			"ko": "마당",
+			"en": "Garden",
+			"ja": "庭"
+		},
+		"t049": {
+			"ko": "에너지 사용량",
+			"en": "Energy usage",
+			"ja": "使用電力量"
+		},
+		"t050": {
+			"ko": "더보기 ›",
+			"en": "More ›",
+			"ja": "詳細 ›"
+		},
+		"t051": {
+			"ko": "오늘 사용량",
+			"en": "Today",
+			"ja": "今日の使用量"
+		},
+		"t052": {
+			"ko": "어제 대비",
+			"en": "vs. yesterday",
+			"ja": "昨日比"
+		},
+		"t053": {
+			"ko": "가전",
+			"en": "Appliances",
+			"ja": "家電"
+		},
+		"t054": {
+			"ko": "기타",
+			"en": "Other",
+			"ja": "その他"
+		},
+		"t055": {
+			"ko": "즐겨찾는 기기",
+			"en": "Favorite devices",
+			"ja": "お気に入りの機器"
+		},
+		"t056": {
+			"ko": "편집 ›",
+			"en": "Edit ›",
+			"ja": "編集 ›"
+		},
+		"t057": {
+			"ko": "거실 조명",
+			"en": "Living room lights",
+			"ja": "リビング照明"
+		},
+		"t058": {
+			"ko": "에어컨",
+			"en": "Air conditioner",
+			"ja": "エアコン"
+		},
+		"t059": {
+			"ko": "공기청정기",
+			"en": "Air purifier",
+			"ja": "空気清浄機"
+		},
+		"t060": {
+			"ko": "거실 TV",
+			"en": "Living room TV",
+			"ja": "リビングTV"
+		},
+		"t061": {
+			"ko": "로봇청소기",
+			"en": "Robot vacuum",
+			"ja": "ロボット掃除機"
+		},
+		"t062": {
+			"ko": "충전 중",
+			"en": "Charging",
+			"ja": "充電中"
+		},
+		"t063": {
+			"ko": "가습기",
+			"en": "Humidifier",
+			"ja": "加湿器"
+		}
+	}
 }

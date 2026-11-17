@@ -5,6 +5,12 @@
 	"oncreate":
 	[
 		{
+			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+		},
+		{
+			"ui_lang":"('en' @ 'd.data.settings.language')"
+		},
+		{
 			"LogIndex":"0"
 		},
 		{
@@ -40,6 +46,12 @@
 			"compid":"1185",
 			"compinputs":
 			[
+				{
+					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+				},
+				{
+					"ui_lang":"('en' @ 'd.data.settings.language')"
+				},
 				"if(Highlight0 !=''@'d.packlog.highlight_0.text')",
 				{
 					"Highlight0":"''@'d.packlog.highlight_0.text'"
@@ -256,7 +268,7 @@
 									[
 										[
 											"2.55",
-											"Roboto.Bold"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -272,8 +284,9 @@
 											"compvalues":
 											[
 												[
-													"'Network Logger'",
-													"centermiddle"
+													"('Network Logger' @ ('d.netlog.data.shared_text.t000.' + ui_lang))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -382,7 +395,7 @@
 											[
 												[
 													"1.5",
-													"Roboto.Bold"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -398,8 +411,9 @@
 													"compvalues":
 													[
 														[
-															"'HIGHLIGHT'",
-															"leftmiddle"
+															"('HIGHLIGHT' @ ('d.netlog.data.shared_text.t001.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -538,7 +552,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -700,7 +714,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -862,7 +876,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -1024,7 +1038,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -1186,7 +1200,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -1348,7 +1362,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -1533,7 +1547,7 @@
 											[
 												[
 													"1.7",
-													"Roboto.Bold"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1549,8 +1563,9 @@
 													"compvalues":
 													[
 														[
-															"'CONNECTION'",
-															"leftmiddle"
+															"('CONNECTION' @ ('d.netlog.data.shared_text.t002.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1610,7 +1625,7 @@
 											[
 												[
 													"1.25",
-													"Roboto.Regular"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1626,8 +1641,9 @@
 													"compvalues":
 													[
 														[
-															"'Serial port'",
-															"leftmiddle"
+															"('Serial port' @ ('d.netlog.data.shared_text.t003.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1657,7 +1673,8 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"attachserialonce()"
+								"attachserialonce()",
+								"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 							],
 							"posx":"494",
 							"posy":"5394",
@@ -1766,7 +1783,8 @@
 																"if(1 == (-1@'d.channel.'+ pV +'.connected'))",
 																"closechannel((-1@'d.channel.'+ pV +'.ch'))",
 																"else",
-																"connectserial('x'@'d.channel.'+ pV +'.portname', 115200)"
+																"connectserial('x'@'d.channel.'+ pV +'.portname', 115200)",
+																"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 															],
 															"posx":"1454",
 															"posy":"5697",
@@ -1819,7 +1837,8 @@
 																"else",
 																{
 																	"ChFocus":"'x'@'d.channel.'+ pV +'.ch'"
-																}
+																},
+																"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 															],
 															"posx":"1454",
 															"posy":"6009",
@@ -1873,7 +1892,7 @@
 																			[
 																				[
 																					"1.45",
-																					"Roboto.Bold"
+																					"ui_font"
 																				]
 																			],
 																			"expanded":"1",
@@ -2013,7 +2032,7 @@
 											[
 												[
 													"1.7",
-													"Roboto.Bold"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2029,8 +2048,9 @@
 													"compvalues":
 													[
 														[
-															"'LIVE NETWORK TRAFFIC'",
-															"leftmiddle"
+															"('LIVE NETWORK TRAFFIC' @ ('d.netlog.data.shared_text.t004.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2444,7 +2464,7 @@
 											[
 												[
 													"1.65",
-													"Roboto.Bold"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2460,8 +2480,9 @@
 													"compvalues":
 													[
 														[
-															"'RECEIVE LOGS'",
-															"leftmiddle"
+															"('RECEIVE LOGS' @ ('d.netlog.data.shared_text.t005.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2521,7 +2542,7 @@
 											[
 												[
 													"1.2",
-													"Roboto.Regular"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2537,8 +2558,9 @@
 													"compvalues":
 													[
 														[
-															"'Unchecked: TX only'",
-															"leftmiddle"
+															"('Unchecked: TX only' @ ('d.netlog.data.shared_text.t006.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2568,7 +2590,8 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"setvalue('d.log.normal_hidden', 1 - (0 @'d.log.normal_hidden'))"
+								"setvalue('d.log.normal_hidden', 1 - (0 @'d.log.normal_hidden'))",
+								"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 							],
 							"posx":"494",
 							"posy":"8514",
@@ -2662,7 +2685,7 @@
 													[
 														[
 															"1.25",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -2678,8 +2701,9 @@
 															"compvalues":
 															[
 																[
-																	"'Raw RX'",
-																	"leftmiddle"
+																	"('Raw RX' @ ('d.netlog.data.shared_text.t007.' + ui_lang))",
+																	"leftmiddle",
+																	"right"
 																]
 															],
 															"expanded":"1",
@@ -2712,7 +2736,8 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"setvalue('d.log.read_hidden', 1 - (0 @'d.log.read_hidden'))"
+								"setvalue('d.log.read_hidden', 1 - (0 @'d.log.read_hidden'))",
+								"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 							],
 							"posx":"494",
 							"posy":"8985",
@@ -2806,7 +2831,7 @@
 													[
 														[
 															"1.15",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -2822,8 +2847,9 @@
 															"compvalues":
 															[
 																[
-																	"'VDS Parsed RX'",
-																	"leftmiddle"
+																	"('VDS Parsed RX' @ ('d.netlog.data.shared_text.t008.' + ui_lang))",
+																	"leftmiddle",
+																	"right"
 																]
 															],
 															"expanded":"1",
@@ -2988,7 +3014,7 @@
 											[
 												[
 													"1.65",
-													"Roboto.Bold"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3004,8 +3030,9 @@
 													"compvalues":
 													[
 														[
-															"'TRANSMIT PAYLOAD'",
-															"leftmiddle"
+															"('TRANSMIT PAYLOAD' @ ('d.netlog.data.shared_text.t009.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -3065,7 +3092,7 @@
 											[
 												[
 													"1.2",
-													"Roboto.Regular"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3081,8 +3108,9 @@
 													"compvalues":
 													[
 														[
-															"'Enter data to transmit'",
-															"leftmiddle"
+															"('Enter data to transmit' @ ('d.netlog.data.shared_text.t010.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -3181,7 +3209,7 @@
 													[
 														[
 															"2.0",
-															"Roboto.Regular"
+															"ui_font"
 														]
 													],
 													"expanded":"1",
@@ -3231,7 +3259,8 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"sendchannel(ChFocus)"
+								"sendchannel(ChFocus)",
+								"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 							],
 							"posx":"494",
 							"posy":"10758",

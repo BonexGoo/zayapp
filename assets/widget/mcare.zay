@@ -339,7 +339,7 @@
 													[
 														[
 															"(1.9) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -355,7 +355,7 @@
 															"compvalues":
 															[
 																[
-																	"('모니터' @ ('d.mcare.data.messages.monitor.' + (d.mcare.data.language [divide] 1)))",
+																	"('모니터' @ ('d.mcare.data.messages.monitor.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -386,7 +386,7 @@
 							"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif",
 						"update(0.4)"
 					]
@@ -568,7 +568,7 @@
 													[
 														[
 															"(1.9) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -584,7 +584,7 @@
 															"compvalues":
 															[
 																[
-																	"('기록' @ ('d.mcare.data.messages.records.' + (d.mcare.data.language [divide] 1)))",
+																	"('기록' @ ('d.mcare.data.messages.records.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -615,7 +615,7 @@
 							"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif",
 						"update(0.4)"
 					]
@@ -797,7 +797,7 @@
 													[
 														[
 															"(1.9) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -813,7 +813,7 @@
 															"compvalues":
 															[
 																[
-																	"('설정' @ ('d.mcare.data.messages.settings.' + (d.mcare.data.language [divide] 1)))",
+																	"('설정' @ ('d.mcare.data.messages.settings.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -844,7 +844,7 @@
 							"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif",
 						"update(0.4)"
 					]
@@ -978,7 +978,7 @@
 											[
 												[
 													"(1.55) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -994,7 +994,7 @@
 													"compvalues":
 													[
 														[
-															"('DEMO · 가상 데이터' @ ('d.mcare.data.messages.demo_badge.' + (d.mcare.data.language [divide] 1)))",
+															"('DEMO · 가상 데이터' @ ('d.mcare.data.messages.demo_badge.' + (mc_lang [divide] 1)))",
 															"centermiddle"
 														]
 													]
@@ -1177,7 +1177,7 @@
 									[
 										[
 											"(2.4) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -1193,7 +1193,7 @@
 											"compvalues":
 											[
 												[
-													"('환자 목록' @ ('d.mcare.data.messages.patient_list.' + (d.mcare.data.language [divide] 1)))",
+													"('환자 목록' @ ('d.mcare.data.messages.patient_list.' + (mc_lang [divide] 1)))",
 													"leftmiddle"
 												]
 											]
@@ -1285,7 +1285,7 @@
 											[
 												[
 													"(1.7) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -1611,7 +1611,7 @@
 													[
 														[
 															"(2.05) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -1627,7 +1627,7 @@
 															"compvalues":
 															[
 																[
-																	"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (d.mcare.data.language [divide] 1)))",
+																	"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (mc_lang [divide] 1)))",
 																	"leftmiddle"
 																]
 															]
@@ -1891,7 +1891,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -1907,7 +1907,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))",
+																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -2043,7 +2043,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -2059,7 +2059,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -2195,7 +2195,7 @@
 															[
 																[
 																	"(1.25) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -2211,7 +2211,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (d.mcare.data.language [divide] 1)))",
+																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -2244,7 +2244,7 @@
 							"mc_patient_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -2546,7 +2546,7 @@
 													[
 														[
 															"(2.05) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -2562,7 +2562,7 @@
 															"compvalues":
 															[
 																[
-																	"('가상 환자 B' @ ('d.mcare.data.patients.1.name.' + (d.mcare.data.language [divide] 1)))",
+																	"('가상 환자 B' @ ('d.mcare.data.patients.1.name.' + (mc_lang [divide] 1)))",
 																	"leftmiddle"
 																]
 															]
@@ -2826,7 +2826,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -2842,7 +2842,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))",
+																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -2978,7 +2978,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -2994,7 +2994,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -3130,7 +3130,7 @@
 															[
 																[
 																	"(1.25) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -3146,7 +3146,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (d.mcare.data.language [divide] 1)))",
+																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -3179,7 +3179,7 @@
 							"mc_patient_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -3481,7 +3481,7 @@
 													[
 														[
 															"(2.05) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -3497,7 +3497,7 @@
 															"compvalues":
 															[
 																[
-																	"('가상 환자 C' @ ('d.mcare.data.patients.2.name.' + (d.mcare.data.language [divide] 1)))",
+																	"('가상 환자 C' @ ('d.mcare.data.patients.2.name.' + (mc_lang [divide] 1)))",
 																	"leftmiddle"
 																]
 															]
@@ -3761,7 +3761,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -3777,7 +3777,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))",
+																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -3913,7 +3913,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -3929,7 +3929,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -4065,7 +4065,7 @@
 															[
 																[
 																	"(1.25) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -4081,7 +4081,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (d.mcare.data.language [divide] 1)))",
+																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -4114,7 +4114,7 @@
 							"mc_patient_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -4416,7 +4416,7 @@
 													[
 														[
 															"(2.05) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -4432,7 +4432,7 @@
 															"compvalues":
 															[
 																[
-																	"('가상 환자 D' @ ('d.mcare.data.patients.3.name.' + (d.mcare.data.language [divide] 1)))",
+																	"('가상 환자 D' @ ('d.mcare.data.patients.3.name.' + (mc_lang [divide] 1)))",
 																	"leftmiddle"
 																]
 															]
@@ -4696,7 +4696,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -4712,7 +4712,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))",
+																			"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -4848,7 +4848,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -4864,7 +4864,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 1' @ ('d.mcare.data.messages.alert_one.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -5000,7 +5000,7 @@
 															[
 																[
 																	"(1.25) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -5016,7 +5016,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (d.mcare.data.language [divide] 1)))",
+																			"('연결 끊김' @ ('d.mcare.data.messages.offline.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -5049,7 +5049,7 @@
 							"mc_patient_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -5137,7 +5137,7 @@
 									[
 										[
 											"(1.65) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -5153,7 +5153,7 @@
 											"compvalues":
 											[
 												[
-													"('4명 모니터링 중' @ ('d.mcare.data.messages.monitoring_four.' + (d.mcare.data.language [divide] 1)))",
+													"('4명 모니터링 중' @ ('d.mcare.data.messages.monitoring_four.' + (mc_lang [divide] 1)))",
 													"leftmiddle"
 												]
 											]
@@ -5224,7 +5224,7 @@
 									[
 										[
 											"(3.15) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -5392,7 +5392,7 @@
 											[
 												[
 													"(1.8) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -5488,7 +5488,7 @@
 											[
 												[
 													"(1.8) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -5682,7 +5682,7 @@
 													[
 														[
 															"(1.7) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -5698,7 +5698,7 @@
 															"compvalues":
 															[
 																[
-																	"('기록 보기' @ ('d.mcare.data.messages.view_records.' + (d.mcare.data.language [divide] 1)))",
+																	"('기록 보기' @ ('d.mcare.data.messages.view_records.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -5732,7 +5732,7 @@
 							"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif",
 						"update(0.4)"
 					]
@@ -5892,7 +5892,7 @@
 											[
 												[
 													"(1.6) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -5908,7 +5908,7 @@
 													"compvalues":
 													[
 														[
-															"('심박수' @ ('d.mcare.data.messages.heart_rate.' + (d.mcare.data.language [divide] 1)))",
+															"('심박수' @ ('d.mcare.data.messages.heart_rate.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -6213,7 +6213,7 @@
 															[
 																[
 																	"(1.5) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -6229,7 +6229,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (d.mcare.data.language [divide] 1)))",
+																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -6585,7 +6585,7 @@
 											[
 												[
 													"(1.6) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -6601,7 +6601,7 @@
 													"compvalues":
 													[
 														[
-															"('산소포화도' @ ('d.mcare.data.messages.oxygen.' + (d.mcare.data.language [divide] 1)))",
+															"('산소포화도' @ ('d.mcare.data.messages.oxygen.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -6906,7 +6906,7 @@
 															[
 																[
 																	"(1.5) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -6922,7 +6922,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (d.mcare.data.language [divide] 1)))",
+																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -7278,7 +7278,7 @@
 											[
 												[
 													"(1.6) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -7294,7 +7294,7 @@
 													"compvalues":
 													[
 														[
-															"('호흡수' @ ('d.mcare.data.messages.resp_rate.' + (d.mcare.data.language [divide] 1)))",
+															"('호흡수' @ ('d.mcare.data.messages.resp_rate.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -7599,7 +7599,7 @@
 															[
 																[
 																	"(1.5) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -7615,7 +7615,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (d.mcare.data.language [divide] 1)))",
+																			"('센서 연결을 기다리는 중' @ ('d.mcare.data.messages.waiting_sensor.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -7897,7 +7897,7 @@
 											[
 												[
 													"(1.95) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -7913,7 +7913,7 @@
 													"compvalues":
 													[
 														[
-															"('비침습 혈압' @ ('d.mcare.data.messages.blood_pressure.' + (d.mcare.data.language [divide] 1)))",
+															"('비침습 혈압' @ ('d.mcare.data.messages.blood_pressure.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -8193,7 +8193,7 @@
 											[
 												[
 													"(1.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8209,7 +8209,7 @@
 													"compvalues":
 													[
 														[
-															"('가상 측정 · 비침습' @ ('d.mcare.data.messages.nibp_hint.' + (d.mcare.data.language [divide] 1)))",
+															"('가상 측정 · 비침습' @ ('d.mcare.data.messages.nibp_hint.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -8303,7 +8303,7 @@
 											[
 												[
 													"(1.95) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8319,7 +8319,7 @@
 													"compvalues":
 													[
 														[
-															"('체온' @ ('d.mcare.data.messages.temperature.' + (d.mcare.data.language [divide] 1)))",
+															"('체온' @ ('d.mcare.data.messages.temperature.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -8525,7 +8525,7 @@
 											[
 												[
 													"(2.1) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8599,7 +8599,7 @@
 											[
 												[
 													"(1.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8615,7 +8615,7 @@
 													"compvalues":
 													[
 														[
-															"('가상 측정 · 체온 센서' @ ('d.mcare.data.messages.temp_hint.' + (d.mcare.data.language [divide] 1)))",
+															"('가상 측정 · 체온 센서' @ ('d.mcare.data.messages.temp_hint.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -8709,7 +8709,7 @@
 											[
 												[
 													"(1.95) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8725,7 +8725,7 @@
 													"compvalues":
 													[
 														[
-															"('최근 알림' @ ('d.mcare.data.messages.recent_alert.' + (d.mcare.data.language [divide] 1)))",
+															"('최근 알림' @ ('d.mcare.data.messages.recent_alert.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -8839,7 +8839,7 @@
 											[
 												[
 													"(1.75) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -8976,7 +8976,7 @@
 															[
 																[
 																	"(1.7) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -8992,7 +8992,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('확인' @ ('d.mcare.data.messages.confirm.' + (d.mcare.data.language [divide] 1)))",
+																			"('확인' @ ('d.mcare.data.messages.confirm.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -9021,7 +9021,7 @@
 									"mc_patient_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_confirm.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.confirm)",
+								"playsound('sound/mcare_confirm.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.confirm)",
 								"endif",
 								"update(0.4)"
 							]
@@ -9073,7 +9073,7 @@
 											[
 												[
 													"(1.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -9089,7 +9089,7 @@
 													"compvalues":
 													[
 														[
-															"('알림을 확인하면 해당 환자로 이동합니다' @ ('d.mcare.data.messages.alert_select_hint.' + (d.mcare.data.language [divide] 1)))",
+															"('알림을 확인하면 해당 환자로 이동합니다' @ ('d.mcare.data.messages.alert_select_hint.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -9162,7 +9162,7 @@
 									[
 										[
 											"(3.15) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -9330,7 +9330,7 @@
 											[
 												[
 													"(1.8) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -9426,7 +9426,7 @@
 											[
 												[
 													"(1.8) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -9620,7 +9620,7 @@
 													[
 														[
 															"(1.7) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -9636,7 +9636,7 @@
 															"compvalues":
 															[
 																[
-																	"('실시간으로' @ ('d.mcare.data.messages.return_live.' + (d.mcare.data.language [divide] 1)))",
+																	"('실시간으로' @ ('d.mcare.data.messages.return_live.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -9667,7 +9667,7 @@
 							"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif",
 						"update(0.4)"
 					]
@@ -9849,7 +9849,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -9865,7 +9865,7 @@
 															"compvalues":
 															[
 																[
-																	"('10' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																	"('10' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																	"centermiddle"
 																]
 															]
@@ -9893,7 +9893,7 @@
 							"mc_hist_range_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -10075,7 +10075,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -10091,7 +10091,7 @@
 															"compvalues":
 															[
 																[
-																	"('30' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																	"('30' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																	"centermiddle"
 																]
 															]
@@ -10119,7 +10119,7 @@
 							"mc_hist_range_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -10301,7 +10301,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -10317,7 +10317,7 @@
 															"compvalues":
 															[
 																[
-																	"('60' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																	"('60' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																	"centermiddle"
 																]
 															]
@@ -10345,7 +10345,7 @@
 							"mc_hist_range_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+						"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 						"endif",
 						"update(0.4)"
 					]
@@ -10397,7 +10397,7 @@
 									[
 										[
 											"(1.45) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -10413,7 +10413,7 @@
 											"compvalues":
 											[
 												[
-													"('2초 간격 · 실제 세션 기록' @ ('d.mcare.data.messages.history_hint.' + (d.mcare.data.language [divide] 1)))",
+													"('2초 간격 · 실제 세션 기록' @ ('d.mcare.data.messages.history_hint.' + (mc_lang [divide] 1)))",
 													"leftmiddle"
 												]
 											]
@@ -10471,7 +10471,7 @@
 									[
 										[
 											"(1.65) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -10579,7 +10579,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -10595,7 +10595,7 @@
 													"compvalues":
 													[
 														[
-															"('심박수' @ ('d.mcare.data.messages.heart_rate.' + (d.mcare.data.language [divide] 1)))",
+															"('심박수' @ ('d.mcare.data.messages.heart_rate.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -15589,7 +15589,7 @@
 											[
 												[
 													"(1.55) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -15699,7 +15699,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -15715,7 +15715,7 @@
 													"compvalues":
 													[
 														[
-															"('산소포화도' @ ('d.mcare.data.messages.oxygen.' + (d.mcare.data.language [divide] 1)))",
+															"('산소포화도' @ ('d.mcare.data.messages.oxygen.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -20709,7 +20709,7 @@
 											[
 												[
 													"(1.55) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -20819,7 +20819,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -20835,7 +20835,7 @@
 													"compvalues":
 													[
 														[
-															"('호흡수' @ ('d.mcare.data.messages.resp_rate.' + (d.mcare.data.language [divide] 1)))",
+															"('호흡수' @ ('d.mcare.data.messages.resp_rate.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -25829,7 +25829,7 @@
 											[
 												[
 													"(1.55) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -26055,7 +26055,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -26071,7 +26071,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-10' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-10' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -26096,7 +26096,7 @@
 									"mc_hist_cursor_0_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -26278,7 +26278,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -26294,7 +26294,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-8' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-8' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -26319,7 +26319,7 @@
 									"mc_hist_cursor_0_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -26501,7 +26501,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -26517,7 +26517,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-6' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-6' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -26542,7 +26542,7 @@
 									"mc_hist_cursor_0_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -26724,7 +26724,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -26740,7 +26740,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-4' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-4' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -26765,7 +26765,7 @@
 									"mc_hist_cursor_0_3_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -26947,7 +26947,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -26963,7 +26963,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-2' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-2' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -26988,7 +26988,7 @@
 									"mc_hist_cursor_0_4_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -27170,7 +27170,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -27186,7 +27186,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('최근' @ ('d.mcare.data.messages.latest.' + (d.mcare.data.language [divide] 1)))",
+																			"('최근' @ ('d.mcare.data.messages.latest.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -27211,7 +27211,7 @@
 									"mc_hist_cursor_0_5_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -27415,7 +27415,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -27431,7 +27431,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-30' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-30' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -27456,7 +27456,7 @@
 									"mc_hist_cursor_1_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -27638,7 +27638,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -27654,7 +27654,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-24' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-24' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -27679,7 +27679,7 @@
 									"mc_hist_cursor_1_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -27861,7 +27861,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -27877,7 +27877,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-18' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-18' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -27902,7 +27902,7 @@
 									"mc_hist_cursor_1_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -28084,7 +28084,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -28100,7 +28100,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-12' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-12' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -28125,7 +28125,7 @@
 									"mc_hist_cursor_1_3_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -28307,7 +28307,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -28323,7 +28323,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-6' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-6' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -28348,7 +28348,7 @@
 									"mc_hist_cursor_1_4_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -28530,7 +28530,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -28546,7 +28546,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('최근' @ ('d.mcare.data.messages.latest.' + (d.mcare.data.language [divide] 1)))",
+																			"('최근' @ ('d.mcare.data.messages.latest.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -28571,7 +28571,7 @@
 									"mc_hist_cursor_1_5_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -28775,7 +28775,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -28791,7 +28791,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-60' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-60' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -28816,7 +28816,7 @@
 									"mc_hist_cursor_2_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -28998,7 +28998,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -29014,7 +29014,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-48' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-48' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -29039,7 +29039,7 @@
 									"mc_hist_cursor_2_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -29221,7 +29221,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -29237,7 +29237,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-36' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-36' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -29262,7 +29262,7 @@
 									"mc_hist_cursor_2_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -29444,7 +29444,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -29460,7 +29460,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-24' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-24' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -29485,7 +29485,7 @@
 									"mc_hist_cursor_2_3_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -29667,7 +29667,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -29683,7 +29683,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('-12' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1))))",
+																			"('-12' + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1))))",
 																			"centermiddle"
 																		]
 																	]
@@ -29708,7 +29708,7 @@
 									"mc_hist_cursor_2_4_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -29890,7 +29890,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -29906,7 +29906,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('최근' @ ('d.mcare.data.messages.latest.' + (d.mcare.data.language [divide] 1)))",
+																			"('최근' @ ('d.mcare.data.messages.latest.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -29931,7 +29931,7 @@
 									"mc_hist_cursor_2_5_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -30019,7 +30019,7 @@
 											[
 												[
 													"(1.95) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -30035,7 +30035,7 @@
 													"compvalues":
 													[
 														[
-															"('이벤트 기록' @ ('d.mcare.data.messages.event_log.' + (d.mcare.data.language [divide] 1)))",
+															"('이벤트 기록' @ ('d.mcare.data.messages.event_log.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -30129,7 +30129,7 @@
 											[
 												[
 													"(1.35) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -30145,7 +30145,7 @@
 													"compvalues":
 													[
 														[
-															"('시각' @ ('d.mcare.data.messages.time.' + (d.mcare.data.language [divide] 1)))",
+															"('시각' @ ('d.mcare.data.messages.time.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -30203,7 +30203,7 @@
 											[
 												[
 													"(1.35) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -30219,7 +30219,7 @@
 													"compvalues":
 													[
 														[
-															"('이벤트' @ ('d.mcare.data.messages.event.' + (d.mcare.data.language [divide] 1)))",
+															"('이벤트' @ ('d.mcare.data.messages.event.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -30277,7 +30277,7 @@
 											[
 												[
 													"(1.35) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -30293,7 +30293,7 @@
 													"compvalues":
 													[
 														[
-															"('상태' @ ('d.mcare.data.messages.status.' + (d.mcare.data.language [divide] 1)))",
+															"('상태' @ ('d.mcare.data.messages.status.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -30371,7 +30371,7 @@
 													[
 														[
 															"(1.65) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -30387,7 +30387,7 @@
 															"compvalues":
 															[
 																[
-																	"('아직 기록된 이벤트가 없습니다' @ ('d.mcare.data.messages.no_events.' + (d.mcare.data.language [divide] 1)))",
+																	"('아직 기록된 이벤트가 없습니다' @ ('d.mcare.data.messages.no_events.' + (mc_lang [divide] 1)))",
 																	"leftmiddle"
 																]
 															]
@@ -30616,7 +30616,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -30710,7 +30710,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -30726,7 +30726,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (d.mcare.data.language [divide] 1)))",
+																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -30806,7 +30806,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -30822,7 +30822,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -30902,7 +30902,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -30918,7 +30918,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (d.mcare.data.language [divide] 1)))",
+																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -30943,7 +30943,7 @@
 									"mc_event_row_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -31164,7 +31164,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -31258,7 +31258,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -31274,7 +31274,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (d.mcare.data.language [divide] 1)))",
+																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -31354,7 +31354,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -31370,7 +31370,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -31450,7 +31450,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -31466,7 +31466,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (d.mcare.data.language [divide] 1)))",
+																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -31491,7 +31491,7 @@
 									"mc_event_row_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -31712,7 +31712,7 @@
 													[
 														[
 															"(1.55) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -31806,7 +31806,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -31822,7 +31822,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (d.mcare.data.language [divide] 1)))",
+																			"('상태 변경' @ ('d.mcare.data.messages.state_changed.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -31902,7 +31902,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -31918,7 +31918,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (d.mcare.data.language [divide] 1)))",
+																			"('알림 발생' @ ('d.mcare.data.messages.alert_raised.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -31998,7 +31998,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -32014,7 +32014,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (d.mcare.data.language [divide] 1)))",
+																			"('확인됨' @ ('d.mcare.data.messages.acknowledged.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -32039,7 +32039,7 @@
 									"mc_event_row_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -32106,7 +32106,7 @@
 									[
 										[
 											"(3.3) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -32122,7 +32122,7 @@
 											"compvalues":
 											[
 												[
-													"('설정' @ ('d.mcare.data.messages.settings.' + (d.mcare.data.language [divide] 1)))",
+													"('설정' @ ('d.mcare.data.messages.settings.' + (mc_lang [divide] 1)))",
 													"leftmiddle"
 												]
 											]
@@ -32180,7 +32180,7 @@
 									[
 										[
 											"(1.8) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -32196,7 +32196,7 @@
 											"compvalues":
 											[
 												[
-													"('화면 표시와 데모 시나리오를 조정합니다' @ ('d.mcare.data.messages.settings_subtitle.' + (d.mcare.data.language [divide] 1)))",
+													"('화면 표시와 데모 시나리오를 조정합니다' @ ('d.mcare.data.messages.settings_subtitle.' + (mc_lang [divide] 1)))",
 													"leftmiddle"
 												]
 											]
@@ -32344,7 +32344,7 @@
 											[
 												[
 													"(2.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -32360,7 +32360,7 @@
 													"compvalues":
 													[
 														[
-															"('인터페이스 설정' @ ('d.mcare.data.messages.interface_settings.' + (d.mcare.data.language [divide] 1)))",
+															"('인터페이스 설정' @ ('d.mcare.data.messages.interface_settings.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -32480,7 +32480,7 @@
 															[
 																[
 																	"(1.2) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -32496,7 +32496,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('사운드 미리 듣기' @ ('d.mcare.data.messages.preview_sound.' + (d.mcare.data.language [divide] 1)))",
+																			"('사운드 미리 듣기' @ ('d.mcare.data.messages.preview_sound.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -32517,7 +32517,7 @@
 									"mc_sound_preview_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_confirm.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.confirm)",
+								"playsound('sound/mcare_confirm.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.confirm)",
 								"endif",
 								"update(0.4)"
 							]
@@ -32605,7 +32605,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -32621,7 +32621,7 @@
 													"compvalues":
 													[
 														[
-															"('언어' @ ('d.mcare.data.messages.language.' + (d.mcare.data.language [divide] 1)))",
+															"('언어' @ ('d.mcare.data.messages.language.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -32680,7 +32680,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if(d.mcare.data.language == 0)",
+												"if(mc_lang == 0)",
 												[
 													"0",
 													"0",
@@ -32726,7 +32726,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if((d.mcare.data.language == 0) == 0)",
+												"if((mc_lang == 0) == 0)",
 												[
 													"0",
 													"0",
@@ -32825,7 +32825,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('한국어' @ ('d.mcare.data.messages.language_ko.' + (d.mcare.data.language [divide] 1)))",
+																			"('한국어' @ ('d.mcare.data.messages.language_ko.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -32842,7 +32842,7 @@
 							"uiname":"mc_lang_0",
 							"onclick":
 							[
-								"setvalue('d.mcare.data.language', 0)",
+								"setvalue('d.data.settings.language', 'ko')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -32850,7 +32850,7 @@
 									"mc_lang_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+								"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 								"endif",
 								"update(0.4)"
 							]
@@ -32903,7 +32903,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if(d.mcare.data.language == 1)",
+												"if(mc_lang == 1)",
 												[
 													"0",
 													"0",
@@ -32949,7 +32949,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if((d.mcare.data.language == 1) == 0)",
+												"if((mc_lang == 1) == 0)",
 												[
 													"0",
 													"0",
@@ -33048,7 +33048,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('English' @ ('d.mcare.data.messages.language_en.' + (d.mcare.data.language [divide] 1)))",
+																			"('English' @ ('d.mcare.data.messages.language_en.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -33065,7 +33065,7 @@
 							"uiname":"mc_lang_1",
 							"onclick":
 							[
-								"setvalue('d.mcare.data.language', 1)",
+								"setvalue('d.data.settings.language', 'en')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -33073,7 +33073,7 @@
 									"mc_lang_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+								"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33126,7 +33126,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if(d.mcare.data.language == 2)",
+												"if(mc_lang == 2)",
 												[
 													"0",
 													"0",
@@ -33172,7 +33172,7 @@
 											"stable":"0",
 											"compvalues":
 											[
-												"if((d.mcare.data.language == 2) == 0)",
+												"if((mc_lang == 2) == 0)",
 												[
 													"0",
 													"0",
@@ -33271,7 +33271,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('日本語' @ ('d.mcare.data.messages.language_ja.' + (d.mcare.data.language [divide] 1)))",
+																			"('日本語' @ ('d.mcare.data.messages.language_ja.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -33288,7 +33288,7 @@
 							"uiname":"mc_lang_2",
 							"onclick":
 							[
-								"setvalue('d.mcare.data.language', 2)",
+								"setvalue('d.data.settings.language', 'ja')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -33296,7 +33296,7 @@
 									"mc_lang_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+								"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33384,7 +33384,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -33400,7 +33400,7 @@
 													"compvalues":
 													[
 														[
-															"('화면 밝기' @ ('d.mcare.data.messages.brightness.' + (d.mcare.data.language [divide] 1)))",
+															"('화면 밝기' @ ('d.mcare.data.messages.brightness.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -33704,7 +33704,7 @@
 									"mc_brightness":"mc_brightness ~ 40 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33733,7 +33733,7 @@
 									"mc_brightness":"mc_brightness ~ 50 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33762,7 +33762,7 @@
 									"mc_brightness":"mc_brightness ~ 60 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33791,7 +33791,7 @@
 									"mc_brightness":"mc_brightness ~ 70 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33820,7 +33820,7 @@
 									"mc_brightness":"mc_brightness ~ 80 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33849,7 +33849,7 @@
 									"mc_brightness":"mc_brightness ~ 90 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33878,7 +33878,7 @@
 									"mc_brightness":"mc_brightness ~ 100 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -33966,7 +33966,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -33982,7 +33982,7 @@
 													"compvalues":
 													[
 														[
-															"('파형 속도' @ ('d.mcare.data.messages.wave_speed.' + (d.mcare.data.language [divide] 1)))",
+															"('파형 속도' @ ('d.mcare.data.messages.wave_speed.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -34170,7 +34170,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -34186,7 +34186,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('느리게' @ ('d.mcare.data.messages.slow.' + (d.mcare.data.language [divide] 1)))",
+																			"('느리게' @ ('d.mcare.data.messages.slow.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -34211,7 +34211,7 @@
 									"mc_speed_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -34393,7 +34393,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -34409,7 +34409,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('기본' @ ('d.mcare.data.messages.normal.' + (d.mcare.data.language [divide] 1)))",
+																			"('기본' @ ('d.mcare.data.messages.normal.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -34434,7 +34434,7 @@
 									"mc_speed_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -34616,7 +34616,7 @@
 															[
 																[
 																	"(1.55) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -34632,7 +34632,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('빠르게' @ ('d.mcare.data.messages.fast.' + (d.mcare.data.language [divide] 1)))",
+																			"('빠르게' @ ('d.mcare.data.messages.fast.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -34657,7 +34657,7 @@
 									"mc_speed_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -34745,7 +34745,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -34761,7 +34761,7 @@
 													"compvalues":
 													[
 														[
-															"('격자 표시' @ ('d.mcare.data.messages.show_grid.' + (d.mcare.data.language [divide] 1)))",
+															"('격자 표시' @ ('d.mcare.data.messages.show_grid.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -34939,10 +34939,10 @@
 							"onclick":
 							[
 								"if((mc_grid == 0) [and] (mc_sound == 1))",
-								"playsound('sound/mcare_toggle_on.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.toggle_on)",
+								"playsound('sound/mcare_toggle_on.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.toggle_on)",
 								"endif",
 								"if((mc_grid == 1) [and] (mc_sound == 1))",
-								"playsound('sound/mcare_toggle_off.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.toggle_off)",
+								"playsound('sound/mcare_toggle_off.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.toggle_off)",
 								"endif",
 								{
 									"mc_grid":"1 - mc_grid"
@@ -35036,7 +35036,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -35052,7 +35052,7 @@
 													"compvalues":
 													[
 														[
-															"('사운드' @ ('d.mcare.data.messages.sound.' + (d.mcare.data.language [divide] 1)))",
+															"('사운드' @ ('d.mcare.data.messages.sound.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -35230,7 +35230,7 @@
 							"onclick":
 							[
 								"if((mc_sound == 0) [and] 1)",
-								"playsound('sound/mcare_toggle_on.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.toggle_on)",
+								"playsound('sound/mcare_toggle_on.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.toggle_on)",
 								"endif",
 								"if((mc_sound == 1) [and] 1)",
 								"stopsound('sound/mcare_tap.mp3')",
@@ -35240,7 +35240,7 @@
 								"stopsound('sound/mcare_confirm.mp3')",
 								"stopsound('sound/mcare_alert.mp3')",
 								"stopsound('sound/mcare_reset.mp3')",
-								"playsound('sound/mcare_toggle_off.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.toggle_off)",
+								"playsound('sound/mcare_toggle_off.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.toggle_off)",
 								"endif",
 								{
 									"mc_sound":"1 - mc_sound"
@@ -35334,7 +35334,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -35350,7 +35350,7 @@
 													"compvalues":
 													[
 														[
-															"('알림 음량' @ ('d.mcare.data.messages.alert_volume.' + (d.mcare.data.language [divide] 1)))",
+															"('알림 음량' @ ('d.mcare.data.messages.alert_volume.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -35410,7 +35410,7 @@
 								[
 									"((211) * mc_scale) [divide] 1",
 									"((565) * mc_scale) [divide] 1",
-									"((274 * ((mc_volume - 0) / 100)) * mc_scale) [divide] 1",
+									"((274 * ((((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) - 0) / 100)) * mc_scale) [divide] 1",
 									"((8) * mc_scale) [divide] 1"
 								]
 							],
@@ -35444,7 +35444,7 @@
 							"compvalues":
 							[
 								[
-									"((211 + 274 * ((mc_volume - 0) / 100) - 12) * mc_scale) [divide] 1",
+									"((211 + 274 * ((((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) - 0) / 100) - 12) * mc_scale) [divide] 1",
 									"((553) * mc_scale) [divide] 1",
 									"((24) * mc_scale) [divide] 1",
 									"((32) * mc_scale) [divide] 1"
@@ -35667,7 +35667,7 @@
 													"compvalues":
 													[
 														[
-															"(mc_volume [divide] 1) + '%'",
+															"(((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) [divide] 1) + '%'",
 															"rightmiddle"
 														]
 													]
@@ -35698,11 +35698,11 @@
 							"uiname":"mc_volume_0",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 0 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((0) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35727,11 +35727,11 @@
 							"uiname":"mc_volume_1",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 10 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((10) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35756,11 +35756,11 @@
 							"uiname":"mc_volume_2",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 20 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((20) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35785,11 +35785,11 @@
 							"uiname":"mc_volume_3",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 30 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((30) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35814,11 +35814,11 @@
 							"uiname":"mc_volume_4",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 40 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((40) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35843,11 +35843,11 @@
 							"uiname":"mc_volume_5",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 50 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((50) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35872,11 +35872,11 @@
 							"uiname":"mc_volume_6",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 60 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((60) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35901,11 +35901,11 @@
 							"uiname":"mc_volume_7",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 70 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((70) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35930,11 +35930,11 @@
 							"uiname":"mc_volume_8",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 80 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((80) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35959,11 +35959,11 @@
 							"uiname":"mc_volume_9",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 90 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((90) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -35988,11 +35988,11 @@
 							"uiname":"mc_volume_10",
 							"onclick":
 							[
-								{
-									"mc_volume":"mc_volume ~ 100 : d.mcare.data.motion.normal"
-								},
+								"setvalue('d.data.settings.sound_volume', ((100) [max] 0) [min] 100)",
+								"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+								"mutesound(d.data.settings.sound_volume <= 0)",
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+								"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 								"endif",
 								"update(0.4)"
 							]
@@ -36136,7 +36136,7 @@
 											[
 												[
 													"(2.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -36152,7 +36152,7 @@
 													"compvalues":
 													[
 														[
-															"('데모 시나리오' @ ('d.mcare.data.messages.demo_scenarios.' + (d.mcare.data.language [divide] 1)))",
+															"('데모 시나리오' @ ('d.mcare.data.messages.demo_scenarios.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -36246,7 +36246,7 @@
 											[
 												[
 													"(1.8) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -36262,7 +36262,7 @@
 													"compvalues":
 													[
 														[
-															"('적용 대상' @ ('d.mcare.data.messages.target_patient.' + (d.mcare.data.language [divide] 1)))",
+															"('적용 대상' @ ('d.mcare.data.messages.target_patient.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -36354,7 +36354,7 @@
 													[
 														[
 															"(1.7) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -36430,7 +36430,7 @@
 											[
 												[
 													"(1.25) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -36446,7 +36446,7 @@
 													"compvalues":
 													[
 														[
-															"('왼쪽 환자 목록에서 적용 대상을 선택하세요' @ ('d.mcare.data.messages.choose_patient_hint.' + (d.mcare.data.language [divide] 1)))",
+															"('왼쪽 환자 목록에서 적용 대상을 선택하세요' @ ('d.mcare.data.messages.choose_patient_hint.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -36690,7 +36690,7 @@
 															[
 																[
 																	"(2.05) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -36706,7 +36706,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('기본 흐름' @ ('d.mcare.data.messages.scenario_normal.' + (d.mcare.data.language [divide] 1)))",
+																			"('기본 흐름' @ ('d.mcare.data.messages.scenario_normal.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -36764,7 +36764,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -36780,7 +36780,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('완만한 수치 변화' @ ('d.mcare.data.messages.scenario_normal_hint.' + (d.mcare.data.language [divide] 1)))",
+																			"('완만한 수치 변화' @ ('d.mcare.data.messages.scenario_normal_hint.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -36908,7 +36908,7 @@
 									"mc_scenario_0_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -37146,7 +37146,7 @@
 															[
 																[
 																	"(2.05) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -37162,7 +37162,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('심박수 변화' @ ('d.mcare.data.messages.scenario_hr.' + (d.mcare.data.language [divide] 1)))",
+																			"('심박수 변화' @ ('d.mcare.data.messages.scenario_hr.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -37220,7 +37220,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -37236,7 +37236,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수치 상승과 알림 확인' @ ('d.mcare.data.messages.scenario_hr_hint.' + (d.mcare.data.language [divide] 1)))",
+																			"('수치 상승과 알림 확인' @ ('d.mcare.data.messages.scenario_hr_hint.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -37364,7 +37364,7 @@
 									"mc_scenario_1_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -37602,7 +37602,7 @@
 															[
 																[
 																	"(2.05) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -37618,7 +37618,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('센서 연결 끊김' @ ('d.mcare.data.messages.scenario_disconnect.' + (d.mcare.data.language [divide] 1)))",
+																			"('센서 연결 끊김' @ ('d.mcare.data.messages.scenario_disconnect.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -37676,7 +37676,7 @@
 															[
 																[
 																	"(1.45) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -37692,7 +37692,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('수신 중단 상태 확인' @ ('d.mcare.data.messages.scenario_disconnect_hint.' + (d.mcare.data.language [divide] 1)))",
+																			"('수신 중단 상태 확인' @ ('d.mcare.data.messages.scenario_disconnect_hint.' + (mc_lang [divide] 1)))",
 																			"leftmiddle"
 																		]
 																	]
@@ -37820,7 +37820,7 @@
 									"mc_scenario_2_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_select.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.select)",
+								"playsound('sound/mcare_select.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.select)",
 								"endif",
 								"update(0.4)"
 							]
@@ -37934,7 +37934,7 @@
 															[
 																[
 																	"(2.05) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -37950,7 +37950,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('시나리오 적용' @ ('d.mcare.data.messages.apply_scenario.' + (d.mcare.data.language [divide] 1)))",
+																			"('시나리오 적용' @ ('d.mcare.data.messages.apply_scenario.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -37981,7 +37981,7 @@
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_confirm.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.confirm)",
+								"playsound('sound/mcare_confirm.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.confirm)",
 								"endif",
 								"update(0.4)"
 							]
@@ -38069,7 +38069,7 @@
 											[
 												[
 													"(1.15) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -38085,7 +38085,7 @@
 													"compvalues":
 													[
 														[
-															"('선택 환자에만 적용됩니다' @ ('d.mcare.data.messages.selected_patient_hint.' + (d.mcare.data.language [divide] 1)))",
+															"('선택 환자에만 적용됩니다' @ ('d.mcare.data.messages.selected_patient_hint.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -38261,7 +38261,7 @@
 															[
 																[
 																	"(1.35) * mc_scale",
-																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+																	"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 																]
 															],
 															"ui":
@@ -38277,7 +38277,7 @@
 																	"compvalues":
 																	[
 																		[
-																			"('데모 초기화' @ ('d.mcare.data.messages.reset_demo.' + (d.mcare.data.language [divide] 1)))",
+																			"('데모 초기화' @ ('d.mcare.data.messages.reset_demo.' + (mc_lang [divide] 1)))",
 																			"centermiddle"
 																		]
 																	]
@@ -38299,7 +38299,7 @@
 									"mc_reset_button_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 								},
 								"if(mc_sound == 1)",
-								"playsound('sound/mcare_reset.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.reset)",
+								"playsound('sound/mcare_reset.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.reset)",
 								"endif",
 								"update(0.4)"
 							]
@@ -38478,7 +38478,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -38494,7 +38494,7 @@
 													"compvalues":
 													[
 														[
-															"('시뮬레이션 실행 중' @ ('d.mcare.data.messages.simulation_running.' + (d.mcare.data.language [divide] 1)))",
+															"('시뮬레이션 실행 중' @ ('d.mcare.data.messages.simulation_running.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -38574,7 +38574,7 @@
 											[
 												[
 													"(1.9) * mc_scale",
-													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+													"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 												]
 											],
 											"ui":
@@ -38590,7 +38590,7 @@
 													"compvalues":
 													[
 														[
-															"('시뮬레이션 일시정지' @ ('d.mcare.data.messages.simulation_paused.' + (d.mcare.data.language [divide] 1)))",
+															"('시뮬레이션 일시정지' @ ('d.mcare.data.messages.simulation_paused.' + (mc_lang [divide] 1)))",
 															"leftmiddle"
 														]
 													]
@@ -38650,7 +38650,7 @@
 									[
 										[
 											"(1.5) * mc_scale",
-											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+											"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 										]
 									],
 									"ui":
@@ -38666,7 +38666,7 @@
 											"compvalues":
 											[
 												[
-													"('세션 ' @ ('d.mcare.data.messages.session_prefix.' + (d.mcare.data.language [divide] 1))) + mc_time",
+													"('세션 ' @ ('d.mcare.data.messages.session_prefix.' + (mc_lang [divide] 1))) + mc_time",
 													"rightmiddle"
 												]
 											]
@@ -38843,7 +38843,7 @@
 													[
 														[
 															"(1.7) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -38859,7 +38859,7 @@
 															"compvalues":
 															[
 																[
-																	"('일시정지' @ ('d.mcare.data.messages.pause.' + (d.mcare.data.language [divide] 1)))",
+																	"('일시정지' @ ('d.mcare.data.messages.pause.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -38884,7 +38884,7 @@
 							"mc_pause_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_tap.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.tap)",
+						"playsound('sound/mcare_tap.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.tap)",
 						"endif",
 						"update(0.4)"
 					]
@@ -39055,7 +39055,7 @@
 													[
 														[
 															"(1.7) * mc_scale",
-															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (d.mcare.data.language [divide] 1) + '.font'))"
+															"('NanumSquare Bold' @ ('d.mcare.data.locales.' + (mc_lang [divide] 1) + '.font'))"
 														]
 													],
 													"ui":
@@ -39071,7 +39071,7 @@
 															"compvalues":
 															[
 																[
-																	"('다시 재생' @ ('d.mcare.data.messages.resume.' + (d.mcare.data.language [divide] 1)))",
+																	"('다시 재생' @ ('d.mcare.data.messages.resume.' + (mc_lang [divide] 1)))",
 																	"centermiddle"
 																]
 															]
@@ -39096,7 +39096,7 @@
 							"mc_resume_pulse":"1 ~ 0 : d.mcare.data.motion.fast"
 						},
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_confirm.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.confirm)",
+						"playsound('sound/mcare_confirm.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.confirm)",
 						"endif",
 						"update(0.4)"
 					]
@@ -40382,7 +40382,7 @@
 					"compinputs":
 					[
 						"if((mc_alarm_raised == 1) [and] (mc_sound == 1))",
-						"playsound('sound/mcare_alert.mp3', mc_volume / 100)",
+						"playsound('sound/mcare_alert.mp3', ((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100)",
 						"endif"
 					]
 				},
@@ -56980,7 +56980,7 @@
 					"compinputs":
 					[
 						"if((mc_alarm_raised == 1) [and] (mc_sound == 1))",
-						"playsound('sound/mcare_alert.mp3', mc_volume / 100)",
+						"playsound('sound/mcare_alert.mp3', ((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100)",
 						"endif"
 					]
 				},
@@ -57396,7 +57396,7 @@
 						},
 						"update(0.45)",
 						"if(mc_sound == 1)",
-						"playsound('sound/mcare_page.mp3', (mc_volume / 100) * d.mcare.data.sound_gain.page)",
+						"playsound('sound/mcare_page.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100) * d.mcare.data.sound_gain.page)",
 						"endif"
 					]
 				}
@@ -57406,6 +57406,9 @@
 	],
 	"oncreate":
 	[
+		{
+			"mc_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+		},
 		{
 			"mc_page":"0"
 		},
@@ -57426,9 +57429,6 @@
 		},
 		{
 			"mc_sound":"1"
-		},
-		{
-			"mc_volume":"50"
 		},
 		{
 			"mc_scenario_pick":"0"
@@ -61150,7 +61150,7 @@
 			"mc_alarm_patient":"-1"
 		},
 		{
-			"mc_alarm_text":"('새로운 알림 없음' @ ('d.mcare.data.messages.no_new_alert.' + (d.mcare.data.language [divide] 1)))"
+			"mc_alarm_text":"('새로운 알림 없음' @ ('d.mcare.data.messages.no_new_alert.' + (mc_lang [divide] 1)))"
 		},
 		{
 			"mc_alarm_ack":"0"
@@ -61168,7 +61168,7 @@
 			"mc_p0_hr_label":"'' + (mc_p0_hr [divide] 1)"
 		},
 		{
-			"mc_name":"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (d.mcare.data.language [divide] 1)))"
+			"mc_name":"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (mc_lang [divide] 1)))"
 		},
 		{
 			"mc_bed":"d.mcare.data.patients.0.bed"
@@ -61252,19 +61252,19 @@
 			"mc_p3_hr_label":"'' + (mc_p3_hr [divide] 1)"
 		},
 		{
-			"mc_event_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+			"mc_event_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 		},
 		{
-			"mc_event0_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event0_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+			"mc_event0_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event0_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 		},
 		{
-			"mc_event1_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event1_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+			"mc_event1_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event1_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 		},
 		{
-			"mc_event2_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event2_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+			"mc_event2_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event2_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 		},
 		{
-			"mc_status":"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))"
+			"mc_status":"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))"
 		},
 		{
 			"mc_hr_text":"'' + (mc_hr [divide] 1)"
@@ -61509,13 +61509,16 @@
 			"compinputs":
 			[
 				{
+					"mc_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+				},
+				{
 					"mc_scale":"((pW / 1600) [min] (pH / 900)) [max] 0.01"
 				},
 				{
 					"mc_alarm_patient":"-1"
 				},
 				{
-					"mc_alarm_text":"('새로운 알림 없음' @ ('d.mcare.data.messages.no_new_alert.' + (d.mcare.data.language [divide] 1)))"
+					"mc_alarm_text":"('새로운 알림 없음' @ ('d.mcare.data.messages.no_new_alert.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_alarm_ack":"0"
@@ -61589,7 +61592,7 @@
 					"mc_alarm_ack":"mc_p0_ack"
 				},
 				{
-					"mc_alarm_text":"d.mcare.data.patients.0.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p0_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_alarm_text":"d.mcare.data.patients.0.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p0_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_alarm_time":"mc_p0_event_time"
@@ -61609,7 +61612,7 @@
 			[
 				"if(mc_patient == 0)",
 				{
-					"mc_name":"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (d.mcare.data.language [divide] 1)))"
+					"mc_name":"('가상 환자 A' @ ('d.mcare.data.patients.0.name.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_bed":"d.mcare.data.patients.0.bed"
@@ -61756,7 +61759,7 @@
 					"mc_alarm_ack":"mc_p1_ack"
 				},
 				{
-					"mc_alarm_text":"d.mcare.data.patients.1.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p1_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_alarm_text":"d.mcare.data.patients.1.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p1_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_alarm_time":"mc_p1_event_time"
@@ -61776,7 +61779,7 @@
 			[
 				"if(mc_patient == 1)",
 				{
-					"mc_name":"('가상 환자 B' @ ('d.mcare.data.patients.1.name.' + (d.mcare.data.language [divide] 1)))"
+					"mc_name":"('가상 환자 B' @ ('d.mcare.data.patients.1.name.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_bed":"d.mcare.data.patients.1.bed"
@@ -61923,7 +61926,7 @@
 					"mc_alarm_ack":"mc_p2_ack"
 				},
 				{
-					"mc_alarm_text":"d.mcare.data.patients.2.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p2_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_alarm_text":"d.mcare.data.patients.2.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p2_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_alarm_time":"mc_p2_event_time"
@@ -61943,7 +61946,7 @@
 			[
 				"if(mc_patient == 2)",
 				{
-					"mc_name":"('가상 환자 C' @ ('d.mcare.data.patients.2.name.' + (d.mcare.data.language [divide] 1)))"
+					"mc_name":"('가상 환자 C' @ ('d.mcare.data.patients.2.name.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_bed":"d.mcare.data.patients.2.bed"
@@ -62090,7 +62093,7 @@
 					"mc_alarm_ack":"mc_p3_ack"
 				},
 				{
-					"mc_alarm_text":"d.mcare.data.patients.3.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p3_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_alarm_text":"d.mcare.data.patients.3.bed + ' · ' + ('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_p3_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_alarm_time":"mc_p3_event_time"
@@ -62110,7 +62113,7 @@
 			[
 				"if(mc_patient == 3)",
 				{
-					"mc_name":"('가상 환자 D' @ ('d.mcare.data.patients.3.name.' + (d.mcare.data.language [divide] 1)))"
+					"mc_name":"('가상 환자 D' @ ('d.mcare.data.patients.3.name.' + (mc_lang [divide] 1)))"
 				},
 				{
 					"mc_bed":"d.mcare.data.patients.3.bed"
@@ -62198,19 +62201,19 @@
 			"compinputs":
 			[
 				{
-					"mc_event_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_event_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
-					"mc_event0_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event0_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_event0_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event0_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
-					"mc_event1_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event1_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_event1_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event1_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
-					"mc_event2_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event2_code [divide] 1) + '.' + (d.mcare.data.language [divide] 1)))"
+					"mc_event2_text":"('아직 알림이 없습니다' @ ('d.mcare.data.events.' + (mc_event2_code [divide] 1) + '.' + (mc_lang [divide] 1)))"
 				},
 				{
-					"mc_status":"('수신 중' @ ('d.mcare.data.messages.receiving.' + (d.mcare.data.language [divide] 1)))"
+					"mc_status":"('수신 중' @ ('d.mcare.data.messages.receiving.' + (mc_lang [divide] 1)))"
 				}
 			]
 		},
@@ -62226,7 +62229,7 @@
 			[
 				"if(mc_state == 1)",
 				{
-					"mc_status":"('심박수 알림' @ ('d.mcare.data.messages.hr_alert.' + (d.mcare.data.language [divide] 1)))"
+					"mc_status":"('심박수 알림' @ ('d.mcare.data.messages.hr_alert.' + (mc_lang [divide] 1)))"
 				},
 				"endif"
 			]
@@ -62243,7 +62246,7 @@
 			[
 				"if(mc_state == 2)",
 				{
-					"mc_status":"('센서 연결 끊김' @ ('d.mcare.data.messages.scenario_disconnect.' + (d.mcare.data.language [divide] 1)))"
+					"mc_status":"('센서 연결 끊김' @ ('d.mcare.data.messages.scenario_disconnect.' + (mc_lang [divide] 1)))"
 				},
 				"endif"
 			]
@@ -62260,7 +62263,7 @@
 			[
 				"if(mc_running == 0)",
 				{
-					"mc_status":"('일시정지' @ ('d.mcare.data.messages.pause.' + (d.mcare.data.language [divide] 1)))"
+					"mc_status":"('일시정지' @ ('d.mcare.data.messages.pause.' + (mc_lang [divide] 1)))"
 				},
 				"endif"
 			]
@@ -66121,7 +66124,7 @@
 			"compinputs":
 			[
 				{
-					"mc_hist_time":"('경과 ' @ ('d.mcare.data.messages.elapsed_prefix.' + (d.mcare.data.language [divide] 1))) + (mc_hist_seconds [divide] 1) + ('초' @ ('d.mcare.data.messages.seconds_short.' + (d.mcare.data.language [divide] 1)))"
+					"mc_hist_time":"('경과 ' @ ('d.mcare.data.messages.elapsed_prefix.' + (mc_lang [divide] 1))) + (mc_hist_seconds [divide] 1) + ('초' @ ('d.mcare.data.messages.seconds_short.' + (mc_lang [divide] 1)))"
 				}
 			]
 		},

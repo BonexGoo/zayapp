@@ -140,7 +140,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_audio == 1) [and] (rb_voice == 1) [and] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) == 1))",
-						"playsound(('' @ ('d.robo.data.voice.files.' + rb_lang + '.' + rb_voice_event)), (d.robo.data.volume / 100) * d.robo.data.voice.gain)",
+						"playsound(('' @ ('d.robo.data.voice.files.' + rb_lang + '.' + rb_voice_event)), (d.data.settings.sound_volume / 100) * d.robo.data.voice.gain)",
 						{
 							"rb_voice_busy":"1 ~ 0 : (3 @ ('d.robo.data.voice.duration.' + rb_lang + '.' + rb_voice_event))"
 						},
@@ -240,7 +240,7 @@
 						},
 						"jumpcall('rb_push_log', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] ((rb_voice != 1) [or] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) != 1)))",
-						"playsound('sound/robo_start.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.start)",
+						"playsound('sound/robo_start.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.start)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.35"
 						},
@@ -360,7 +360,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] (rb_did_action == 1) [and] ((rb_voice != 1) [or] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) != 1)))",
-						"playsound('sound/robo_pause.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.pause)",
+						"playsound('sound/robo_pause.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.pause)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.22999999999999998"
 						},
@@ -699,7 +699,7 @@
 						},
 						"jumpcall('rb_push_log', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] ((rb_voice != 1) [or] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) != 1)))",
-						"playsound('sound/robo_start.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.start)",
+						"playsound('sound/robo_start.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.start)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.35"
 						},
@@ -815,7 +815,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] (rb_did_action == 1) [and] ((rb_voice != 1) [or] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) != 1)))",
-						"playsound('sound/robo_stop.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.stop)",
+						"playsound('sound/robo_stop.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.stop)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.22999999999999998"
 						},
@@ -901,13 +901,13 @@
 							"rb_wait":"rb_duration ~ 0 : (rb_duration [max] 0.01)"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] (rb_step == 1) [and] (rb_voice_busy <= 0))",
-						"playsound('sound/robo_grip.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.grip)",
+						"playsound('sound/robo_grip.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.grip)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.27"
 						},
 						"endif",
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] (rb_step == 3) [and] (rb_voice_busy <= 0))",
-						"playsound('sound/robo_release.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.release)",
+						"playsound('sound/robo_release.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.release)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.22999999999999998"
 						},
@@ -999,7 +999,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] (rb_status == 4) [and] ((rb_voice != 1) [or] ((0 @ ('d.robo.data.voice.available.' + rb_lang)) != 1)))",
-						"playsound('sound/robo_complete.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.complete)",
+						"playsound('sound/robo_complete.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.complete)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.55"
 						},
@@ -1164,7 +1164,7 @@
 						},
 						"jumpcall('rb_push_log', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_start.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.start)",
+						"playsound('sound/robo_start.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.start)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.35"
 						},
@@ -1213,7 +1213,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_save.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.save)",
+						"playsound('sound/robo_save.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.save)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.3"
 						},
@@ -1275,7 +1275,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_save.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.save)",
+						"playsound('sound/robo_save.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.save)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.3"
 						},
@@ -1358,7 +1358,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -1403,7 +1403,7 @@
 						},
 						"endif",
 						"if((rb_sound == 0) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -1541,7 +1541,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -1571,7 +1571,7 @@
 					"stable":"0",
 					"compinputs":[
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -2355,7 +2355,7 @@
 						},
 						"setvalue('d.robo.data.scrub', ((0 + rb_seek) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -2558,7 +2558,7 @@
 						},
 						"setvalue('d.robo.data.scrub', ((0 + rb_seek) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -2763,7 +2763,7 @@
 						},
 						"setvalue('d.robo.data.scrub', ((0 + rb_seek) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -2968,7 +2968,7 @@
 						},
 						"setvalue('d.robo.data.scrub', ((0 + rb_seek) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -3173,7 +3173,7 @@
 						},
 						"setvalue('d.robo.data.scrub', ((0 + rb_seek) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -4664,8 +4664,9 @@
 						{
 							"rb_lang":"0"
 						},
+						"setvalue('d.data.settings.language', 'ko')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -4810,8 +4811,9 @@
 						{
 							"rb_lang":"1"
 						},
+						"setvalue('d.data.settings.language', 'en')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -4956,8 +4958,9 @@
 						{
 							"rb_lang":"2"
 						},
+						"setvalue('d.data.settings.language', 'ja')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -8428,7 +8431,7 @@
 						},
 						"endif",
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] ((rb_status != 1) [and] (rb_status != 2)))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -8592,7 +8595,7 @@
 						},
 						"endif",
 						"if((rb_sound == 1) [and] (rb_audio == 1) [and] ((rb_status != 1) [and] (rb_status != 2)))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -8752,7 +8755,7 @@
 						},
 						"jumpcall('rb_speed_changed', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -8912,7 +8915,7 @@
 						},
 						"jumpcall('rb_speed_changed', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -10654,7 +10657,7 @@
 						},
 						"setvalue('d.robo.data.scrub', 0)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -10783,7 +10786,7 @@
 						},
 						"setvalue('d.robo.data.scrub', 235)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -10912,7 +10915,7 @@
 						},
 						"setvalue('d.robo.data.scrub', 365)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -11041,7 +11044,7 @@
 						},
 						"setvalue('d.robo.data.scrub', 530)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -12922,7 +12925,7 @@
 						},
 						"setvalue('d.robo.data.scrub', (((0 @ ('d.robo.data.' + 'saved_poses.0.sec'))) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -13054,7 +13057,7 @@
 						},
 						"setvalue('d.robo.data.scrub', (((0 @ ('d.robo.data.' + 'saved_poses.1.sec'))) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -13186,7 +13189,7 @@
 						},
 						"setvalue('d.robo.data.scrub', (((0 @ ('d.robo.data.' + 'saved_poses.2.sec'))) * 100) [divide] 1)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -13360,7 +13363,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_save.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.save)",
+						"playsound('sound/robo_save.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.save)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.3"
 						},
@@ -14501,7 +14504,7 @@
 							"rb_edit_wait":"d.robo.data.sequence.0.wait_tenths"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -14944,7 +14947,7 @@
 							"rb_edit_wait":"d.robo.data.sequence.1.wait_tenths"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -15387,7 +15390,7 @@
 							"rb_edit_wait":"d.robo.data.sequence.2.wait_tenths"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -15830,7 +15833,7 @@
 							"rb_edit_wait":"d.robo.data.sequence.3.wait_tenths"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -16273,7 +16276,7 @@
 							"rb_edit_wait":"d.robo.data.sequence.4.wait_tenths"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -16891,7 +16894,7 @@
 							"rb_edit_speed":"((rb_edit_speed + (-25)) [max] 25) [min] 200"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -16981,7 +16984,7 @@
 							"rb_edit_speed":"((rb_edit_speed + (25)) [max] 25) [min] 200"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -17209,7 +17212,7 @@
 							"rb_edit_wait":"((rb_edit_wait + (-1)) [max] 0) [min] 30"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -17299,7 +17302,7 @@
 							"rb_edit_wait":"((rb_edit_wait + (1)) [max] 0) [min] 30"
 						},
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_tick.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.tick)",
+						"playsound('sound/robo_tick.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.tick)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.1"
 						},
@@ -18533,7 +18536,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -19793,8 +19796,9 @@
 						{
 							"rb_lang":"0"
 						},
+						"setvalue('d.data.settings.language', 'ko')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -19939,8 +19943,9 @@
 						{
 							"rb_lang":"1"
 						},
+						"setvalue('d.data.settings.language', 'en')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -20085,8 +20090,9 @@
 						{
 							"rb_lang":"2"
 						},
+						"setvalue('d.data.settings.language', 'ja')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.13"
 						},
@@ -21263,7 +21269,7 @@
 											"stable":"0",
 											"compvalues":[
 												[
-													"'' + (d.robo.data.volume) + '%'",
+													"'' + (d.data.settings.sound_volume) + '%'",
 													"rightmiddle",
 													"right"
 												]
@@ -21337,7 +21343,7 @@
 								[
 									"((12) * rb_scale) [divide] 1",
 									"((15) * rb_scale) [divide] 1",
-									"(((580) * ((d.robo.data.volume) - (0)) / ((100) - (0))) * rb_scale) [divide] 1",
+									"(((580) * ((d.data.settings.sound_volume) - (0)) / ((100) - (0))) * rb_scale) [divide] 1",
 									"((6) * rb_scale) [divide] 1"
 								]
 							],
@@ -21368,7 +21374,7 @@
 							"stable":"0",
 							"compvalues":[
 								[
-									"(((580) * ((d.robo.data.volume) - (0)) / ((100) - (0))) * rb_scale) [divide] 1",
+									"(((580) * ((d.data.settings.sound_volume) - (0)) / ((100) - (0))) * rb_scale) [divide] 1",
 									"((5) * rb_scale) [divide] 1",
 									"((24) * rb_scale) [divide] 1",
 									"((26) * rb_scale) [divide] 1"
@@ -21402,7 +21408,7 @@
 							"compvalues":[
 								[
 									"'slidevh'",
-									"'d.robo.data.volume'",
+									"'d.data.settings.sound_volume'",
 									"0",
 									"0",
 									"100",
@@ -21691,7 +21697,7 @@
 									"rb_animations":"1 - rb_animations"
 								},
 								"if((rb_sound == 1) [and] (rb_audio == 1))",
-								"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+								"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 								{
 									"rb_effect_busy":"1 ~ 0 : 0.13"
 								},
@@ -21839,7 +21845,7 @@
 									"rb_animations":"1 - rb_animations"
 								},
 								"if((rb_sound == 1) [and] (rb_audio == 1))",
-								"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+								"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 								{
 									"rb_effect_busy":"1 ~ 0 : 0.13"
 								},
@@ -21987,7 +21993,7 @@
 									"rb_labels":"1 - rb_labels"
 								},
 								"if((rb_sound == 1) [and] (rb_audio == 1))",
-								"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+								"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 								{
 									"rb_effect_busy":"1 ~ 0 : 0.13"
 								},
@@ -22135,7 +22141,7 @@
 									"rb_labels":"1 - rb_labels"
 								},
 								"if((rb_sound == 1) [and] (rb_audio == 1))",
-								"playsound('sound/robo_click.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.click)",
+								"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 								{
 									"rb_effect_busy":"1 ~ 0 : 0.13"
 								},
@@ -22304,7 +22310,9 @@
 						{
 							"rb_labels":"1"
 						},
-						"setvalue('d.robo.data.volume', 65)",
+						"setvalue('d.data.settings.sound_volume', ((65) [max] 0) [min] 100)",
+						"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+						"mutesound(d.data.settings.sound_volume <= 0)",
 						{
 							"rb_toast":"'defaults_restored'"
 						},
@@ -22313,7 +22321,7 @@
 						},
 						"update(2.8)",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
-						"playsound('sound/robo_save.mp3', (d.robo.data.volume / 100) * d.robo.data.sound_gain.save)",
+						"playsound('sound/robo_save.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.save)",
 						{
 							"rb_effect_busy":"1 ~ 0 : 0.3"
 						},
@@ -23568,7 +23576,7 @@
 			"rb_page":"0"
 		},
 		{
-			"rb_lang":"0"
+			"rb_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
 		},
 		{
 			"rb_status":"0"
@@ -23768,6 +23776,9 @@
 			"posy":"80",
 			"stable":"0",
 			"compinputs":[
+				{
+					"rb_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+				},
 				{
 					"rb_scale":"((pW / 1600) [min] (pH / 900)) [max] 0.01"
 				}

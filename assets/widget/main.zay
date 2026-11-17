@@ -12215,7 +12215,7 @@
 											"compvalues":
 											[
 												[
-													"'' @ (MainSettings + '.stored')",
+													"'' @ (MainSettings + '.live')",
 													"rightmiddle",
 													"right"
 												]
@@ -12415,6 +12415,7 @@
 					[
 						"setvalue('d.data.settings.sound_volume', ((100 @ 'd.data.settings.sound_volume') - 5) [max] 0)",
 						"setvalue('d.data.settings.sound_volume.ani', 100 @ 'd.data.settings.sound_volume')",
+						"mutesound(d.data.settings.sound_volume <= 0)",
 						"update(0.1)",
 						"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))"
 					],
@@ -12726,6 +12727,7 @@
 					[
 						"setvalue('d.data.settings.sound_volume', ((100 @ 'd.data.settings.sound_volume') + 5) [min] 100)",
 						"setvalue('d.data.settings.sound_volume.ani', 100 @ 'd.data.settings.sound_volume')",
+						"mutesound(d.data.settings.sound_volume <= 0)",
 						"update(0.1)",
 						"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))"
 					],
@@ -13356,6 +13358,9 @@
 	"oncreate":
 	[
 		{
+			"MainMuted":"-1"
+		},
+		{
 			"AppSize":"'x'"
 		},
 		{
@@ -13392,19 +13397,19 @@
 			"MainGlueRequestedName":"''"
 		},
 		{
-			"MainLanguage":"'ko'"
+			"MainLanguage":"'en'"
 		},
 		{
-			"MainUIFont":"'NanumSquare Bold'"
+			"MainUIFont":"'Roboto'"
 		},
 		{
-			"MainUI":"'d.data.i18n.ko.ui'"
+			"MainUI":"'d.data.i18n.en.ui'"
 		},
 		{
-			"MainGuide":"'d.data.i18n.ko.guide'"
+			"MainGuide":"'d.data.i18n.en.guide'"
 		},
 		{
-			"MainSettings":"'d.data.i18n.ko.settings'"
+			"MainSettings":"'d.data.i18n.en.settings'"
 		},
 		{
 			"MainGlueLastLanguage":"''"
@@ -13441,7 +13446,16 @@
 				},
 				{
 					"MainSettings":"'d.data.i18n.' + MainLanguage + '.settings'"
-				}
+				},
+				"if((d.data.settings.sound_volume > 0) [and] (d.data.settings.sound_volume != d.data.settings.sound_volume_saved))",
+				"setvalue('d.data.settings.sound_volume_saved', d.data.settings.sound_volume)",
+				"endif",
+				"if(MainMuted != (d.data.settings.sound_volume <= 0))",
+				{
+					"MainMuted":"d.data.settings.sound_volume <= 0"
+				},
+				"mutesound(MainMuted)",
+				"endif"
 			],
 			"compname":"code",
 			"expanded":"1",
@@ -14357,6 +14371,50 @@
 																		},
 																		{
 																			"addw":"0",
+																			"compid":"2361",
+																			"compname":"ltrb",
+																			"compvalues":
+																			[
+																				"if(mini_title_mode)",
+																				[
+																					"(pW - 220) [divide] 1",
+																					"75",
+																					"(pW - 8) [divide] 1",
+																					"102"
+																				],
+																				"else",
+																				[
+																					"320",
+																					"20",
+																					"632",
+																					"64"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"7800",
+																			"posy":"3190",
+																			"stable":"0",
+																			"ui":
+																			[
+																				{
+																					"addw":"0",
+																					"compid":"2362",
+																					"compname":"ninepatch",
+																					"compvalues":
+																					[
+																						[
+																							"r.main_title_lang_tray"
+																						]
+																					],
+																					"expanded":"1",
+																					"posx":"8700",
+																					"posy":"3190",
+																					"stable":"0"
+																				}
+																			]
+																		},
+																		{
+																			"addw":"0",
 																			"compid":"2355",
 																			"compname":"loop",
 																			"expanded":"1",
@@ -14419,13 +14477,13 @@
 																									"compname":"ninepatch",
 																									"compvalues":
 																									[
-																										"if(MainLanguage == ms_lang_code)",
-																										[
-																											"r.main_title_lang_s"
-																										],
-																										"elifpressed('main_title_lang_'+ ms_lang_code)",
+																										"ifpressed('main_title_lang_'+ ms_lang_code)",
 																										[
 																											"r.main_title_lang_p"
+																										],
+																										"elif(MainLanguage == ms_lang_code)",
+																										[
+																											"r.main_title_lang_s"
 																										],
 																										"eliffocused('main_title_lang_'+ ms_lang_code)",
 																										[
@@ -14444,14 +14502,20 @@
 																								{
 																									"addw":"0",
 																									"compid":"2359",
-																									"compname":"xywh",
+																									"compname":"hexcolor",
 																									"compvalues":
 																									[
+																										"ifpressed('main_title_lang_'+ ms_lang_code)",
 																										[
-																											"0",
-																											"0",
-																											"pW",
-																											"pH"
+																											"#183A4A"
+																										],
+																										"elif(MainLanguage == ms_lang_code)",
+																										[
+																											"#183A4A"
+																										],
+																										"else",
+																										[
+																											"#C4D3DC"
 																										]
 																									],
 																									"expanded":"1",
@@ -14466,6 +14530,22 @@
 																											"compname":"icon",
 																											"compvalues":
 																											[
+																												"if((mini_title_mode) [and] (MainLanguage == ms_lang_code))",
+																												[
+																													"'r.main_title_label_m_'+ ms_lang_code + '_s'",
+																													"centermiddle"
+																												],
+																												"elif(MainLanguage == ms_lang_code)",
+																												[
+																													"'r.main_title_label_'+ ms_lang_code + '_s'",
+																													"centermiddle"
+																												],
+																												"elif(mini_title_mode)",
+																												[
+																													"'r.main_title_label_m_'+ ms_lang_code",
+																													"centermiddle"
+																												],
+																												"else",
 																												[
 																													"'r.main_title_label_'+ ms_lang_code",
 																													"centermiddle"

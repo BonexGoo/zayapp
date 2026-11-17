@@ -130,7 +130,7 @@
 									[
 										[
 											"2.9",
-											"'Roboto.SemiBold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -204,7 +204,7 @@
 									[
 										[
 											"1.22",
-											"'Roboto.Medium'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -220,8 +220,9 @@
 											"compvalues":
 											[
 												[
-													"'SMART LIVING'",
-													"leftmiddle"
+													"('SMART LIVING' @ ('d.qhome.data.shared_text.t000.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -253,7 +254,8 @@
 					[
 						{
 							"page":"0"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-7896",
@@ -369,7 +371,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -385,8 +387,9 @@
 													"compvalues":
 													[
 														[
-															"'홈 대시보드'",
-															"leftmiddle"
+															"('홈 대시보드' @ ('d.qhome.data.shared_text.t001.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -421,7 +424,8 @@
 					[
 						{
 							"page":"1"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-7179",
@@ -537,7 +541,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -553,8 +557,9 @@
 													"compvalues":
 													[
 														[
-															"'조명 제어'",
-															"leftmiddle"
+															"('조명 제어' @ ('d.qhome.data.shared_text.t002.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -589,7 +594,8 @@
 					[
 						{
 							"page":"2"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-6462",
@@ -705,7 +711,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -721,8 +727,9 @@
 													"compvalues":
 													[
 														[
-															"'냉난방 제어'",
-															"leftmiddle"
+															"('냉난방 제어' @ ('d.qhome.data.shared_text.t003.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -757,7 +764,8 @@
 					[
 						{
 							"page":"3"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-5745",
@@ -873,7 +881,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -889,8 +897,9 @@
 													"compvalues":
 													[
 														[
-															"'커튼 / 블라인드'",
-															"leftmiddle"
+															"('커튼 / 블라인드' @ ('d.qhome.data.shared_text.t004.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -925,7 +934,8 @@
 					[
 						{
 							"page":"4"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-5028",
@@ -1041,7 +1051,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1057,8 +1067,9 @@
 													"compvalues":
 													[
 														[
-															"'보안 / CCTV'",
-															"leftmiddle"
+															"('보안 / CCTV' @ ('d.qhome.data.shared_text.t005.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1093,7 +1104,8 @@
 					[
 						{
 							"page":"5"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-4311",
@@ -1209,7 +1221,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1225,8 +1237,9 @@
 													"compvalues":
 													[
 														[
-															"'에너지 관리'",
-															"leftmiddle"
+															"('에너지 관리' @ ('d.qhome.data.shared_text.t006.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1261,7 +1274,8 @@
 					[
 						{
 							"page":"6"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-3594",
@@ -1377,7 +1391,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1393,8 +1407,9 @@
 													"compvalues":
 													[
 														[
-															"'시나리오'",
-															"leftmiddle"
+															"('시나리오' @ ('d.qhome.data.shared_text.t007.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1429,7 +1444,8 @@
 					[
 						{
 							"page":"7"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2770",
 					"posy":"-2877",
@@ -1545,7 +1561,7 @@
 											[
 												[
 													"1.58",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -1561,8 +1577,9 @@
 													"compvalues":
 													[
 														[
-															"'설정'",
-															"leftmiddle"
+															"('설정' @ ('d.qhome.data.shared_text.t008.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -1696,7 +1713,7 @@
 									[
 										[
 											"1.30",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -1712,8 +1729,9 @@
 											"compvalues":
 											[
 												[
-													"'모든 기기 정상 작동'",
-													"leftmiddle"
+													"('모든 기기 정상 작동' @ ('d.qhome.data.shared_text.t009.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -1770,7 +1788,7 @@
 									[
 										[
 											"1.18",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -1786,8 +1804,9 @@
 											"compvalues":
 											[
 												[
-													"'8개 기기 온라인'",
-													"leftmiddle"
+													"('8개 기기 온라인' @ ('d.qhome.data.shared_text.t010.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -1894,7 +1913,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -1910,8 +1929,9 @@
 											"compvalues":
 											[
 												[
-													"'좋은 저녁이에요!'",
-													"leftmiddle"
+													"('좋은 저녁이에요!' @ ('d.qhome.data.shared_text.t011.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -1968,7 +1988,7 @@
 									[
 										[
 											"1.65",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -1984,8 +2004,9 @@
 											"compvalues":
 											[
 												[
-													"'오늘도 스마트한 하루를 만들어보세요.'",
-													"leftmiddle"
+													"('오늘도 스마트한 하루를 만들어보세요.' @ ('d.qhome.data.shared_text.t012.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -2042,7 +2063,7 @@
 									[
 										[
 											"1.16",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -2058,8 +2079,9 @@
 											"compvalues":
 											[
 												[
-													"'2026년 11월 4일 (수)'",
-													"leftmiddle"
+													"('2026년 11월 4일 (수)' @ ('d.qhome.data.shared_text.t013.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -2116,7 +2138,7 @@
 									[
 										[
 											"3.7",
-											"'Roboto.Light'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -2228,7 +2250,7 @@
 									[
 										[
 											"2.0",
-											"'Roboto.Medium'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -2302,7 +2324,7 @@
 									[
 										[
 											"1.07",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -2318,8 +2340,9 @@
 											"compvalues":
 											[
 												[
-													"'맑음'",
-													"leftmiddle"
+													"('맑음' @ ('d.qhome.data.shared_text.t014.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -2351,7 +2374,8 @@
 					[
 						{
 							"scene":"0"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5075",
 					"posy":"1143",
@@ -2471,7 +2495,7 @@
 											[
 												[
 													"1.25",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2487,8 +2511,9 @@
 													"compvalues":
 													[
 														[
-															"'홈 모드'",
-															"centermiddle"
+															"('홈 모드' @ ('d.qhome.data.shared_text.t015.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2523,7 +2548,8 @@
 					[
 						{
 							"scene":"1"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5075",
 					"posy":"1908",
@@ -2643,7 +2669,7 @@
 											[
 												[
 													"1.25",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2659,8 +2685,9 @@
 													"compvalues":
 													[
 														[
-															"'외출 모드'",
-															"centermiddle"
+															"('외출 모드' @ ('d.qhome.data.shared_text.t016.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2695,7 +2722,8 @@
 					[
 						{
 							"scene":"2"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5075",
 					"posy":"2673",
@@ -2815,7 +2843,7 @@
 											[
 												[
 													"1.25",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -2831,8 +2859,9 @@
 													"compvalues":
 													[
 														[
-															"'취침 모드'",
-															"centermiddle"
+															"('취침 모드' @ ('d.qhome.data.shared_text.t017.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -2867,7 +2896,8 @@
 					[
 						{
 							"scene":"3"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5075",
 					"posy":"3438",
@@ -2987,7 +3017,7 @@
 											[
 												[
 													"1.25",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3003,8 +3033,9 @@
 													"compvalues":
 													[
 														[
-															"'영화 모드'",
-															"centermiddle"
+															"('영화 모드' @ ('d.qhome.data.shared_text.t018.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -3150,7 +3181,7 @@
 									[
 										[
 											"2.0",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -3166,8 +3197,9 @@
 											"compvalues":
 											[
 												[
-													"'조명'",
-													"leftmiddle"
+													"('조명' @ ('d.qhome.data.shared_text.t019.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -3224,7 +3256,7 @@
 									[
 										[
 											"1.14",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -3240,8 +3272,9 @@
 											"compvalues":
 											[
 												[
-													"'편안한 분위기를 만드세요.'",
-													"leftmiddle"
+													"('편안한 분위기를 만드세요.' @ ('d.qhome.data.shared_text.t020.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -3277,7 +3310,8 @@
 						{
 							"light_level":"light_level ~ (light_on * 70) : 0.35"
 						},
-						"update(0.35)"
+						"update(0.35)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-6541",
@@ -3428,7 +3462,7 @@
 									[
 										[
 											"3.1",
-											"'Roboto.SemiBold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -3502,7 +3536,7 @@
 									[
 										[
 											"2.6",
-											"'Roboto.Regular'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -3634,7 +3668,8 @@
 						{
 							"light_level":"light_level ~ 80 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-4990",
@@ -3709,7 +3744,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3725,8 +3760,9 @@
 													"compvalues":
 													[
 														[
-															"'거실'",
-															"centermiddle"
+															"('거실' @ ('d.qhome.data.shared_text.t021.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -3767,7 +3803,8 @@
 						{
 							"light_level":"light_level ~ 95 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-4480",
@@ -3842,7 +3879,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3858,8 +3895,9 @@
 													"compvalues":
 													[
 														[
-															"'주방'",
-															"centermiddle"
+															"('주방' @ ('d.qhome.data.shared_text.t022.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -3900,7 +3938,8 @@
 						{
 							"light_level":"light_level ~ 40 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-3970",
@@ -3975,7 +4014,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -3991,8 +4030,9 @@
 													"compvalues":
 													[
 														[
-															"'침실'",
-															"centermiddle"
+															"('침실' @ ('d.qhome.data.shared_text.t023.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -4033,7 +4073,8 @@
 						{
 							"light_level":"light_level ~ 65 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-3460",
@@ -4108,7 +4149,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -4124,8 +4165,9 @@
 													"compvalues":
 													[
 														[
-															"'현관'",
-															"centermiddle"
+															"('현관' @ ('d.qhome.data.shared_text.t024.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -4166,7 +4208,8 @@
 						{
 							"light_level":"light_level ~ 90 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-2950",
@@ -4241,7 +4284,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -4257,8 +4300,9 @@
 													"compvalues":
 													[
 														[
-															"'욕실'",
-															"centermiddle"
+															"('욕실' @ ('d.qhome.data.shared_text.t025.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -4296,7 +4340,8 @@
 						{
 							"light_level":"light_level ~ 100 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"5613",
 					"posy":"-2440",
@@ -4361,7 +4406,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -4377,8 +4422,9 @@
 													"compvalues":
 													[
 														[
-															"'전체 켜기'",
-															"centermiddle"
+															"('전체 켜기' @ ('d.qhome.data.shared_text.t026.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -4523,7 +4569,7 @@
 									[
 										[
 											"2.0",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -4539,8 +4585,9 @@
 											"compvalues":
 											[
 												[
-													"'냉난방'",
-													"leftmiddle"
+													"('냉난방' @ ('d.qhome.data.shared_text.t027.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -4597,7 +4644,7 @@
 									[
 										[
 											"1.10",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -4613,8 +4660,9 @@
 											"compvalues":
 											[
 												[
-													"'최적의 실내 온도를 유지합니다.'",
-													"leftmiddle"
+													"('최적의 실내 온도를 유지합니다.' @ ('d.qhome.data.shared_text.t028.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -4646,7 +4694,8 @@
 					[
 						{
 							"climate_on":"1 - climate_on"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-6722",
@@ -4759,7 +4808,7 @@
 									[
 										[
 											"3.1",
-											"'Roboto.SemiBold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -4833,7 +4882,7 @@
 									[
 										[
 											"2.1",
-											"'Roboto.Regular'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -4885,7 +4934,8 @@
 						{
 							"climate_temp":"climate_temp ~ ((climate_temp - 1 [max] 16) [divide] 1) : 0.2"
 						},
-						"update(0.2)"
+						"update(0.2)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-5819",
@@ -4950,7 +5000,7 @@
 											[
 												[
 													"2.0",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5004,7 +5054,8 @@
 						{
 							"climate_temp":"climate_temp ~ ((climate_temp + 1 [min] 30) [divide] 1) : 0.2"
 						},
-						"update(0.2)"
+						"update(0.2)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-5420",
@@ -5069,7 +5120,7 @@
 											[
 												[
 													"2.0",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5203,7 +5254,8 @@
 						{
 							"climate_temp":"climate_temp ~ 22 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-4622",
@@ -5323,7 +5375,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5339,8 +5391,9 @@
 													"compvalues":
 													[
 														[
-															"'냉방'",
-															"centermiddle"
+															"('냉방' @ ('d.qhome.data.shared_text.t029.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -5382,7 +5435,8 @@
 						{
 							"climate_temp":"climate_temp ~ 26 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-3857",
@@ -5502,7 +5556,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5518,8 +5572,9 @@
 													"compvalues":
 													[
 														[
-															"'난방'",
-															"centermiddle"
+															"('난방' @ ('d.qhome.data.shared_text.t030.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -5561,7 +5616,8 @@
 						{
 							"climate_temp":"climate_temp ~ 24 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-3092",
@@ -5681,7 +5737,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5697,8 +5753,9 @@
 													"compvalues":
 													[
 														[
-															"'자동'",
-															"centermiddle"
+															"('자동' @ ('d.qhome.data.shared_text.t031.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -5740,7 +5797,8 @@
 						{
 							"climate_temp":"climate_temp ~ 25 : 0.45"
 						},
-						"update(0.45)"
+						"update(0.45)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"352",
 					"posy":"-2327",
@@ -5860,7 +5918,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -5876,8 +5934,9 @@
 													"compvalues":
 													[
 														[
-															"'제습'",
-															"centermiddle"
+															"('제습' @ ('d.qhome.data.shared_text.t032.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -6023,7 +6082,7 @@
 									[
 										[
 											"1.65",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -6039,8 +6098,9 @@
 											"compvalues":
 											[
 												[
-													"'커튼 / 블라인드'",
-													"leftmiddle"
+													"('커튼 / 블라인드' @ ('d.qhome.data.shared_text.t004.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -6097,7 +6157,7 @@
 									[
 										[
 											"1.14",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -6113,8 +6173,9 @@
 											"compvalues":
 											[
 												[
-													"'원하는 만큼 열어보세요.'",
-													"leftmiddle"
+													"('원하는 만큼 열어보세요.' @ ('d.qhome.data.shared_text.t033.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -6146,7 +6207,8 @@
 					[
 						{
 							"blinds_on":"1 - blinds_on"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2451",
 					"posy":"575",
@@ -6355,7 +6417,8 @@
 						{
 							"blind_pct":"blind_pct ~ 0 : anitime"
 						},
-						"update(anitime)"
+						"update(anitime)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2451",
 					"posy":"1661",
@@ -6458,7 +6521,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -6474,8 +6537,9 @@
 													"compvalues":
 													[
 														[
-															"'열기'",
-															"centermiddle"
+															"('열기' @ ('d.qhome.data.shared_text.t034.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -6510,7 +6574,8 @@
 						{
 							"blind_pct":"blind_pct [divide] 1"
 						},
-						"update(0.1)"
+						"update(0.1)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2451",
 					"posy":"2276",
@@ -6613,7 +6678,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -6629,8 +6694,9 @@
 													"compvalues":
 													[
 														[
-															"'일시정지'",
-															"centermiddle"
+															"('일시정지' @ ('d.qhome.data.shared_text.t035.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -6671,7 +6737,8 @@
 						{
 							"blind_pct":"blind_pct ~ 100 : anitime"
 						},
-						"update(anitime)"
+						"update(anitime)",
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"2451",
 					"posy":"2891",
@@ -6774,7 +6841,7 @@
 											[
 												[
 													"1.20",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -6790,8 +6857,9 @@
 													"compvalues":
 													[
 														[
-															"'닫기'",
-															"centermiddle"
+															"('닫기' @ ('d.qhome.data.shared_text.t036.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -6936,7 +7004,7 @@
 									[
 										[
 											"2.0",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -6952,8 +7020,9 @@
 											"compvalues":
 											[
 												[
-													"'보안'",
-													"leftmiddle"
+													"('보안' @ ('d.qhome.data.shared_text.t037.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7010,7 +7079,7 @@
 									[
 										[
 											"1.10",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -7026,8 +7095,9 @@
 											"compvalues":
 											[
 												[
-													"'우리 집을 안전하게 지켜줍니다.'",
-													"leftmiddle"
+													"('우리 집을 안전하게 지켜줍니다.' @ ('d.qhome.data.shared_text.t038.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7059,7 +7129,8 @@
 					[
 						{
 							"security_on":"1 - security_on"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2808",
 					"posy":"-1997",
@@ -7210,7 +7281,7 @@
 									[
 										[
 											"1.48",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -7226,8 +7297,9 @@
 											"compvalues":
 											[
 												[
-													"'보안 시스템 작동 중'",
-													"leftmiddle"
+													"('보안 시스템 작동 중' @ ('d.qhome.data.shared_text.t039.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7284,7 +7356,7 @@
 									[
 										[
 											"1.12",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -7300,8 +7372,9 @@
 											"compvalues":
 											[
 												[
-													"'모든 센서가 정상입니다.'",
-													"leftmiddle"
+													"('모든 센서가 정상입니다.' @ ('d.qhome.data.shared_text.t040.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7333,7 +7406,8 @@
 					[
 						{
 							"security_sensor":"0"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2808",
 					"posy":"-878",
@@ -7436,7 +7510,7 @@
 											[
 												[
 													"1.12",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -7452,8 +7526,9 @@
 													"compvalues":
 													[
 														[
-															"'현관문'",
-															"centermiddle"
+															"('현관문' @ ('d.qhome.data.shared_text.t041.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -7487,7 +7562,8 @@
 					[
 						{
 							"security_sensor":"1"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2808",
 					"posy":"-263",
@@ -7590,7 +7666,7 @@
 											[
 												[
 													"1.12",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -7606,8 +7682,9 @@
 													"compvalues":
 													[
 														[
-															"'창문'",
-															"centermiddle"
+															"('창문' @ ('d.qhome.data.shared_text.t042.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -7641,7 +7718,8 @@
 					[
 						{
 							"security_sensor":"2"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2808",
 					"posy":"352",
@@ -7744,7 +7822,7 @@
 											[
 												[
 													"1.12",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -7760,8 +7838,9 @@
 													"compvalues":
 													[
 														[
-															"'가스'",
-															"centermiddle"
+															"('가스' @ ('d.qhome.data.shared_text.t043.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -7795,7 +7874,8 @@
 					[
 						{
 							"security_sensor":"3"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2808",
 					"posy":"967",
@@ -7898,7 +7978,7 @@
 											[
 												[
 													"1.12",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -7914,8 +7994,9 @@
 													"compvalues":
 													[
 														[
-															"'움직임'",
-															"centermiddle"
+															"('움직임' @ ('d.qhome.data.shared_text.t044.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8060,7 +8141,7 @@
 									[
 										[
 											"1.95",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -8076,8 +8157,9 @@
 											"compvalues":
 											[
 												[
-													"'실시간 카메라'",
-													"leftmiddle"
+													"('실시간 카메라' @ ('d.qhome.data.shared_text.t045.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -8134,7 +8216,7 @@
 									[
 										[
 											"1.18",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -8150,8 +8232,9 @@
 											"compvalues":
 											[
 												[
-													"'전체보기 ›'",
-													"rightmiddle"
+													"('전체보기 ›' @ ('d.qhome.data.shared_text.t046.' + ui_lang))",
+													"rightmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -8183,7 +8266,8 @@
 					[
 						{
 							"camera_focus":"0"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2405",
 					"posy":"4340",
@@ -8250,7 +8334,7 @@
 											[
 												[
 													"1.35",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8266,8 +8350,9 @@
 													"compvalues":
 													[
 														[
-															"'거실'",
-															"leftmiddle"
+															"('거실' @ ('d.qhome.data.shared_text.t021.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8324,7 +8409,7 @@
 											[
 												[
 													"1.1",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8340,8 +8425,9 @@
 													"compvalues":
 													[
 														[
-															"'● 실시간'",
-															"rightmiddle"
+															"('● 실시간' @ ('d.qhome.data.shared_text.t047.' + ui_lang))",
+															"rightmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8414,7 +8500,8 @@
 					[
 						{
 							"camera_focus":"1"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2405",
 					"posy":"5171",
@@ -8481,7 +8568,7 @@
 											[
 												[
 													"1.35",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8497,8 +8584,9 @@
 													"compvalues":
 													[
 														[
-															"'주방'",
-															"leftmiddle"
+															"('주방' @ ('d.qhome.data.shared_text.t022.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8555,7 +8643,7 @@
 											[
 												[
 													"1.1",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8571,8 +8659,9 @@
 													"compvalues":
 													[
 														[
-															"'● 실시간'",
-															"rightmiddle"
+															"('● 실시간' @ ('d.qhome.data.shared_text.t047.' + ui_lang))",
+															"rightmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8645,7 +8734,8 @@
 					[
 						{
 							"camera_focus":"2"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2405",
 					"posy":"6002",
@@ -8712,7 +8802,7 @@
 											[
 												[
 													"1.35",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8728,8 +8818,9 @@
 													"compvalues":
 													[
 														[
-															"'현관'",
-															"leftmiddle"
+															"('현관' @ ('d.qhome.data.shared_text.t024.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8786,7 +8877,7 @@
 											[
 												[
 													"1.1",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8802,8 +8893,9 @@
 													"compvalues":
 													[
 														[
-															"'● 실시간'",
-															"rightmiddle"
+															"('● 실시간' @ ('d.qhome.data.shared_text.t047.' + ui_lang))",
+															"rightmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -8876,7 +8968,8 @@
 					[
 						{
 							"camera_focus":"3"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"-2405",
 					"posy":"6833",
@@ -8943,7 +9036,7 @@
 											[
 												[
 													"1.35",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -8959,8 +9052,9 @@
 													"compvalues":
 													[
 														[
-															"'마당'",
-															"leftmiddle"
+															"('마당' @ ('d.qhome.data.shared_text.t048.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -9017,7 +9111,7 @@
 											[
 												[
 													"1.1",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -9033,8 +9127,9 @@
 													"compvalues":
 													[
 														[
-															"'● 실시간'",
-															"rightmiddle"
+															"('● 실시간' @ ('d.qhome.data.shared_text.t047.' + ui_lang))",
+															"rightmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -9218,7 +9313,7 @@
 									[
 										[
 											"1.83",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9234,8 +9329,9 @@
 											"compvalues":
 											[
 												[
-													"'에너지 사용량'",
-													"leftmiddle"
+													"('에너지 사용량' @ ('d.qhome.data.shared_text.t049.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -9292,7 +9388,7 @@
 									[
 										[
 											"1.25",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9308,8 +9404,9 @@
 											"compvalues":
 											[
 												[
-													"'더보기 ›'",
-													"rightmiddle"
+													"('더보기 ›' @ ('d.qhome.data.shared_text.t050.' + ui_lang))",
+													"rightmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -9402,7 +9499,7 @@
 									[
 										[
 											"1.22",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9418,8 +9515,9 @@
 											"compvalues":
 											[
 												[
-													"'오늘 사용량'",
-													"leftmiddle"
+													"('오늘 사용량' @ ('d.qhome.data.shared_text.t051.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -9476,7 +9574,7 @@
 									[
 										[
 											"2.8",
-											"'Roboto.SemiBold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9550,7 +9648,7 @@
 									[
 										[
 											"1.52",
-											"'Roboto.Medium'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9624,7 +9722,7 @@
 									[
 										[
 											"1.06",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -9640,8 +9738,9 @@
 											"compvalues":
 											[
 												[
-													"'어제 대비'",
-													"leftmiddle"
+													"('어제 대비' @ ('d.qhome.data.shared_text.t052.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -9770,7 +9869,7 @@
 											[
 												[
 													"1.14",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -9786,8 +9885,9 @@
 													"compvalues":
 													[
 														[
-															"'냉난방'",
-															"centermiddle"
+															"('냉난방' @ ('d.qhome.data.shared_text.t027.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -9844,7 +9944,7 @@
 											[
 												[
 													"1.55",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -9954,7 +10054,7 @@
 											[
 												[
 													"1.14",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -9970,8 +10070,9 @@
 													"compvalues":
 													[
 														[
-															"'조명'",
-															"centermiddle"
+															"('조명' @ ('d.qhome.data.shared_text.t019.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -10028,7 +10129,7 @@
 											[
 												[
 													"1.55",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10138,7 +10239,7 @@
 											[
 												[
 													"1.14",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10154,8 +10255,9 @@
 													"compvalues":
 													[
 														[
-															"'가전'",
-															"centermiddle"
+															"('가전' @ ('d.qhome.data.shared_text.t053.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -10212,7 +10314,7 @@
 											[
 												[
 													"1.55",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10322,7 +10424,7 @@
 											[
 												[
 													"1.14",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10338,8 +10440,9 @@
 													"compvalues":
 													[
 														[
-															"'기타'",
-															"centermiddle"
+															"('기타' @ ('d.qhome.data.shared_text.t054.' + ui_lang))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -10396,7 +10499,7 @@
 											[
 												[
 													"1.55",
-													"'Roboto.Medium'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10558,7 +10661,7 @@
 									[
 										[
 											"1.73",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -10574,8 +10677,9 @@
 											"compvalues":
 											[
 												[
-													"'즐겨찾는 기기'",
-													"leftmiddle"
+													"('즐겨찾는 기기' @ ('d.qhome.data.shared_text.t055.' + ui_lang))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -10632,7 +10736,7 @@
 									[
 										[
 											"1.15",
-											"'NanumSquare Bold'"
+											"ui_font"
 										]
 									],
 									"expanded":"1",
@@ -10648,8 +10752,9 @@
 											"compvalues":
 											[
 												[
-													"'편집 ›'",
-													"rightmiddle"
+													"('편집 ›' @ ('d.qhome.data.shared_text.t056.' + ui_lang))",
+													"rightmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -10681,7 +10786,8 @@
 					[
 						{
 							"fav_0":"1 - fav_0"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"6160",
@@ -10784,7 +10890,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10800,8 +10906,9 @@
 													"compvalues":
 													[
 														[
-															"'거실 조명'",
-															"leftmiddle"
+															"('거실 조명' @ ('d.qhome.data.shared_text.t057.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -10858,7 +10965,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -10955,7 +11062,8 @@
 					[
 						{
 							"fav_1":"1 - fav_1"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"7246",
@@ -11058,7 +11166,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11074,8 +11182,9 @@
 													"compvalues":
 													[
 														[
-															"'에어컨'",
-															"leftmiddle"
+															"('에어컨' @ ('d.qhome.data.shared_text.t058.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -11132,7 +11241,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11229,7 +11338,8 @@
 					[
 						{
 							"fav_2":"1 - fav_2"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"8332",
@@ -11332,7 +11442,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11348,8 +11458,9 @@
 													"compvalues":
 													[
 														[
-															"'공기청정기'",
-															"leftmiddle"
+															"('공기청정기' @ ('d.qhome.data.shared_text.t059.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -11406,7 +11517,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11422,8 +11533,9 @@
 													"compvalues":
 													[
 														[
-															"'자동'",
-															"leftmiddle"
+															"('자동' @ ('d.qhome.data.shared_text.t031.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -11503,7 +11615,8 @@
 					[
 						{
 							"fav_3":"1 - fav_3"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"9418",
@@ -11606,7 +11719,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11622,8 +11735,9 @@
 													"compvalues":
 													[
 														[
-															"'거실 TV'",
-															"leftmiddle"
+															"('거실 TV' @ ('d.qhome.data.shared_text.t060.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -11680,7 +11794,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11777,7 +11891,8 @@
 					[
 						{
 							"fav_4":"1 - fav_4"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"10504",
@@ -11880,7 +11995,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11896,8 +12011,9 @@
 													"compvalues":
 													[
 														[
-															"'로봇청소기'",
-															"leftmiddle"
+															"('로봇청소기' @ ('d.qhome.data.shared_text.t061.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -11954,7 +12070,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -11970,8 +12086,9 @@
 													"compvalues":
 													[
 														[
-															"'충전 중'",
-															"leftmiddle"
+															"('충전 중' @ ('d.qhome.data.shared_text.t062.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -12051,7 +12168,8 @@
 					[
 						{
 							"fav_5":"1 - fav_5"
-						}
+						},
+						"playsound('sound/zay_click.mp3', (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))"
 					],
 					"posx":"3356",
 					"posy":"11590",
@@ -12154,7 +12272,7 @@
 											[
 												[
 													"1.21",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -12170,8 +12288,9 @@
 													"compvalues":
 													[
 														[
-															"'가습기'",
-															"leftmiddle"
+															"('가습기' @ ('d.qhome.data.shared_text.t063.' + ui_lang))",
+															"leftmiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -12228,7 +12347,7 @@
 											[
 												[
 													"1.18",
-													"'NanumSquare Bold'"
+													"ui_font"
 												]
 											],
 											"expanded":"1",
@@ -12314,6 +12433,12 @@
 	"oncreate":
 	[
 		{
+			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+		},
+		{
+			"ui_lang":"('en' @ 'd.data.settings.language')"
+		},
+		{
 			"page":"0"
 		},
 		{
@@ -12382,6 +12507,12 @@
 			"compid":"5788",
 			"compinputs":
 			[
+				{
+					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+				},
+				{
+					"ui_lang":"('en' @ 'd.data.settings.language')"
+				},
 				{
 					"power_usage":"12.5"
 				}

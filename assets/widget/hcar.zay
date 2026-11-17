@@ -206,7 +206,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -222,8 +222,9 @@
 											"compvalues":
 											[
 												[
-													"'Home'",
-													"centermiddle"
+													"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -318,7 +319,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -334,8 +335,9 @@
 											"compvalues":
 											[
 												[
-													"'Navi'",
-													"centermiddle"
+													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -430,7 +432,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -446,8 +448,9 @@
 											"compvalues":
 											[
 												[
-													"'Media'",
-													"centermiddle"
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -542,7 +545,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -558,8 +561,9 @@
 											"compvalues":
 											[
 												[
-													"'Phone'",
-													"centermiddle"
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -654,7 +658,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -670,8 +674,9 @@
 											"compvalues":
 											[
 												[
-													"'Car'",
-													"centermiddle"
+													"('Car' @ ('d.hcar.data.shared_text.t004.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -766,7 +771,7 @@
 									[
 										[
 											"2.35",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -782,8 +787,9 @@
 											"compvalues":
 											[
 												[
-													"'Setup'",
-													"centermiddle"
+													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -830,7 +836,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -894,7 +900,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -958,7 +964,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -1022,7 +1028,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -1086,7 +1092,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -1150,7 +1156,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"3450",
@@ -1262,7 +1268,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1349,7 +1355,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1491,7 +1497,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1599,7 +1605,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1707,7 +1713,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1815,7 +1821,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1891,7 +1897,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -1967,7 +1973,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -2044,7 +2050,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -2133,7 +2139,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -2242,7 +2248,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"108",
@@ -2381,7 +2387,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2440,7 +2446,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2521,7 +2527,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2580,7 +2586,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2641,7 +2647,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2744,7 +2750,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2841,7 +2847,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2900,7 +2906,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -2997,7 +3003,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -3085,7 +3091,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -3170,7 +3176,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -3231,7 +3237,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2863",
@@ -3342,7 +3348,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -3421,7 +3427,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -3482,7 +3488,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -3579,7 +3585,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -3676,7 +3682,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -4586,9 +4592,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_shuffle != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -4757,7 +4763,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -4851,9 +4857,9 @@
 						"update(0.25)",
 						"if(zc_sound == 1)",
 						"if(media_play != 0)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -5036,7 +5042,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5110,9 +5116,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_repeat != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -5235,21 +5241,21 @@
 						"if(zc_sound == 1)",
 						"if(media_track == 0)",
 						"if(zc_fav_a != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"elif(media_track == 1)",
 						"if(zc_fav_b != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"else",
 						"if(zc_fav_c != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"endif"
@@ -5366,7 +5372,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5400,7 +5406,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5434,7 +5440,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5468,7 +5474,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5502,7 +5508,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5536,7 +5542,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5570,7 +5576,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5604,7 +5610,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5638,7 +5644,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5672,7 +5678,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5706,7 +5712,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5740,7 +5746,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5774,7 +5780,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5808,7 +5814,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5842,7 +5848,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5876,7 +5882,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5910,7 +5916,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5944,7 +5950,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -5978,7 +5984,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6012,7 +6018,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6046,7 +6052,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6080,7 +6086,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6114,7 +6120,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6148,7 +6154,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-246",
@@ -6201,7 +6207,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6331,7 +6337,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6363,7 +6369,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -6379,8 +6385,9 @@
 											"compvalues":
 											[
 												[
-													"'Navi'",
-													"centermiddle"
+													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -6428,7 +6435,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6558,7 +6565,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6590,7 +6597,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -6606,8 +6613,9 @@
 											"compvalues":
 											[
 												[
-													"'Media'",
-													"centermiddle"
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -6655,7 +6663,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6785,7 +6793,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -6817,7 +6825,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -6833,8 +6841,9 @@
 											"compvalues":
 											[
 												[
-													"'Phone'",
-													"centermiddle"
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -6882,7 +6891,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7012,7 +7021,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7044,7 +7053,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -7060,8 +7069,9 @@
 											"compvalues":
 											[
 												[
-													"'Vehicle'",
-													"centermiddle"
+													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7100,7 +7110,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7221,7 +7231,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7253,7 +7263,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -7269,8 +7279,9 @@
 											"compvalues":
 											[
 												[
-													"'Climate'",
-													"centermiddle"
+													"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7315,7 +7326,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7442,7 +7453,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2166",
@@ -7474,7 +7485,7 @@
 									[
 										[
 											"2.55",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -7490,8 +7501,9 @@
 											"compvalues":
 											[
 												[
-													"'Apps'",
-													"centermiddle"
+													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.data.settings.language')))",
+													"centermiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -7542,7 +7554,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -7612,7 +7624,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -7700,7 +7712,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -7788,7 +7800,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -7876,7 +7888,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -7972,7 +7984,7 @@
 						"endif",
 						"update((0.22 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -8088,7 +8100,7 @@
 						"endif",
 						"update((0.22 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -8204,7 +8216,7 @@
 						"endif",
 						"update((0.22 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -8320,7 +8332,7 @@
 						"endif",
 						"update((0.22 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"4646",
@@ -8464,9 +8476,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_ac != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -8597,9 +8609,9 @@
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
 						"if(zc_auto != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -8716,9 +8728,9 @@
 						"update(0.15)",
 						"if(zc_sound == 1)",
 						"if(zc_heat_left != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -8805,9 +8817,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_defrost != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -8919,9 +8931,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_recirc != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -9038,9 +9050,9 @@
 						"update(0.15)",
 						"if(zc_sound == 1)",
 						"if(zc_heat_right != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -9128,9 +9140,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_ac != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -9224,9 +9236,9 @@
 						"update(0.15)",
 						"if(zc_sound == 1)",
 						"if(zc_heat_left != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -9301,9 +9313,9 @@
 						"update(0.15)",
 						"if(zc_sound == 1)",
 						"if(zc_heat_right != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -9368,6 +9380,9 @@
 					"compid":"5267",
 					"compinputs":
 					[
+						{
+							"local_id":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+						},
 						"if((hc_toast_visible == 1) [and] ((zc_toast_anim <= 0.001) [or] (zc_notifications != 1) [or] (zc_toast == '')))",
 						{
 							"zc_toast_anim":"0"
@@ -9400,7 +9415,7 @@
 						"update(0.15)",
 						"endif",
 						"if((zc_nav_active == 1) [and] (zc_nav_progress >= 100) [and] (zc_sound == 1) [and] (zc_notifications == 1))",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if((zc_nav_active == 1) [and] (zc_nav_progress >= 100))",
 						{
@@ -9427,7 +9442,7 @@
 						"update(0.25)",
 						"endif",
 						"if((zc_charge_active == 1) [and] (zc_battery >= zc_charge_limit) [and] (zc_sound == 1) [and] (zc_notifications == 1))",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if((zc_charge_active == 1) [and] (zc_battery >= zc_charge_limit))",
 						{
@@ -9653,7 +9668,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -9836,7 +9851,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -10140,7 +10155,7 @@
 						},
 						"update(0.15)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -10281,7 +10296,7 @@
 						},
 						"update(0.15)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -10431,7 +10446,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -11195,9 +11210,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_nav_active == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_nav_active == 1)",
@@ -11385,7 +11400,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -11527,9 +11542,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_nav_voice != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -11677,9 +11692,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_nav_saved != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -11835,7 +11850,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -11990,7 +12005,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -12145,7 +12160,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"6813",
@@ -12399,7 +12414,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -12415,8 +12430,9 @@
 											"compvalues":
 											[
 												[
-													"'Media'",
-													"leftmiddle"
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -12537,7 +12553,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -12717,7 +12733,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -13026,21 +13042,21 @@
 						"if(zc_sound == 1)",
 						"if(media_track == 0)",
 						"if(zc_fav_a != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"elif(media_track == 1)",
 						"if(zc_fav_b != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"else",
 						"if(zc_fav_c != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"endif"
@@ -13996,7 +14012,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14030,7 +14046,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14064,7 +14080,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14098,7 +14114,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14132,7 +14148,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14166,7 +14182,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14200,7 +14216,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14234,7 +14250,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14268,7 +14284,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14302,7 +14318,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14336,7 +14352,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14370,7 +14386,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14404,7 +14420,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14438,7 +14454,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14472,7 +14488,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14506,7 +14522,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14540,7 +14556,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14574,7 +14590,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14608,7 +14624,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14642,7 +14658,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14676,7 +14692,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14710,7 +14726,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14744,7 +14760,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14778,7 +14794,7 @@
 						"endif",
 						"update(0.2)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -14808,9 +14824,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_shuffle != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -15000,7 +15016,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -15115,9 +15131,9 @@
 						"update(0.25)",
 						"if(zc_sound == 1)",
 						"if(media_play != 0)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -15300,7 +15316,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -15395,9 +15411,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_repeat != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -15532,7 +15548,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -15750,7 +15766,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16014,7 +16030,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16217,7 +16233,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16351,7 +16367,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16554,7 +16570,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16688,7 +16704,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -16891,7 +16907,7 @@
 						},
 						"update(0.25)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"7673",
@@ -17010,7 +17026,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -17026,8 +17042,9 @@
 											"compvalues":
 											[
 												[
-													"'Phone'",
-													"leftmiddle"
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -17148,7 +17165,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -17506,9 +17523,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -17723,9 +17740,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -17838,9 +17855,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -18055,9 +18072,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -18170,9 +18187,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -18387,9 +18404,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
@@ -18508,7 +18525,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -18813,7 +18830,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -18970,7 +18987,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19127,7 +19144,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19284,7 +19301,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19441,7 +19458,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19598,7 +19615,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19755,7 +19772,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -19912,7 +19929,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20069,7 +20086,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20226,7 +20243,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20383,7 +20400,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20540,7 +20557,7 @@
 						"update(2.7)",
 						"endif",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20684,7 +20701,7 @@
 						},
 						"update(0.1)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -20823,12 +20840,12 @@
 						"if(zc_sound == 1)",
 						"if(zc_dial != '')",
 						"if(zc_bt == 1 [and] zc_phone_connected == 1)",
-						"playsound('sound/hcar_confirm.mp3', 1.0)",
+						"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_dial != '')",
@@ -21022,7 +21039,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"12403",
@@ -21202,7 +21219,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -21218,8 +21235,9 @@
 											"compvalues":
 											[
 												[
-													"'Vehicle'",
-													"leftmiddle"
+													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -21340,7 +21358,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -21666,7 +21684,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -21810,9 +21828,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_locked != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -21956,9 +21974,9 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_trunk == 0)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_trunk == 0)",
@@ -22138,9 +22156,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_windows != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -22518,7 +22536,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -22673,7 +22691,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -22828,7 +22846,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -23058,9 +23076,9 @@
 						"update(2.7)",
 						"if(zc_sound == 1)",
 						"if(zc_lights != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -23217,9 +23235,9 @@
 						"update(2.7)",
 						"if(zc_sound == 1)",
 						"if(zc_lights != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -23376,9 +23394,9 @@
 						"update(2.7)",
 						"if(zc_sound == 1)",
 						"if(zc_lights != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -23599,7 +23617,7 @@
 						},
 						"update(0.15)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -23745,7 +23763,7 @@
 						},
 						"update(0.15)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -23891,7 +23909,7 @@
 						},
 						"update(0.15)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -24040,7 +24058,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -24604,7 +24622,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -24767,7 +24785,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -24930,7 +24948,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -25093,7 +25111,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -25256,7 +25274,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -25419,7 +25437,7 @@
 						"endif",
 						"update((0.32 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"13380",
@@ -25562,11 +25580,11 @@
 					[
 						"if(zc_sound == 1)",
 						"if(zc_charge_active == 1)",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"elif(zc_battery < zc_charge_limit)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_notice.mp3', 1.0)",
+						"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif",
 						"if(zc_charge_active == 1)",
@@ -25924,7 +25942,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -25940,8 +25958,9 @@
 											"compvalues":
 											[
 												[
-													"'Setup'",
-													"leftmiddle"
+													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -26062,7 +26081,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -26394,9 +26413,9 @@
 						"update(0.15)",
 						"if(zc_sound == 1)",
 						"if(zc_bt != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -26544,9 +26563,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_wifi != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -26696,7 +26715,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -26840,7 +26859,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27242,7 +27261,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27391,7 +27410,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27540,7 +27559,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27689,7 +27708,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27838,7 +27857,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -27985,9 +28004,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_animations != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -28211,7 +28230,7 @@
 						},
 						"update((0.27 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -28426,7 +28445,7 @@
 						},
 						"update(0.1)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
 						"stopsound('sound/hcar_tap.mp3')",
 						"stopsound('sound/hcar_toggle_on.mp3')",
@@ -28436,7 +28455,7 @@
 						"stopsound('sound/hcar_panel_close.mp3')",
 						"stopsound('sound/hcar_confirm.mp3')",
 						"stopsound('sound/hcar_notice.mp3')",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -28583,9 +28602,9 @@
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"if(zc_notifications != 0)",
-						"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"else",
-						"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+						"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					],
@@ -28735,7 +28754,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -28888,7 +28907,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"-1449",
@@ -29063,7 +29082,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -29079,8 +29098,9 @@
 											"compvalues":
 											[
 												[
-													"'Apps'",
-													"leftmiddle"
+													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.data.settings.language')))",
+													"leftmiddle",
+													"right"
 												]
 											],
 											"expanded":"1",
@@ -29201,7 +29221,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -29354,7 +29374,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -29478,7 +29498,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -29494,8 +29514,9 @@
 													"compvalues":
 													[
 														[
-															"'Home'",
-															"centermiddle"
+															"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -29545,7 +29566,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -29736,7 +29757,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -29860,7 +29881,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -29876,8 +29897,9 @@
 													"compvalues":
 													[
 														[
-															"'Media'",
-															"centermiddle"
+															"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -29927,7 +29949,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -30051,7 +30073,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -30067,8 +30089,9 @@
 													"compvalues":
 													[
 														[
-															"'Phone'",
-															"centermiddle"
+															"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -30118,7 +30141,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -30242,7 +30265,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -30258,8 +30281,9 @@
 													"compvalues":
 													[
 														[
-															"'Vehicle'",
-															"centermiddle"
+															"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -30300,7 +30324,7 @@
 						},
 						"update((0.33 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_panel_open.mp3', 1.0)",
+						"playsound('sound/hcar_panel_open.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -30424,7 +30448,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -30440,8 +30464,9 @@
 													"compvalues":
 													[
 														[
-															"'Climate'",
-															"centermiddle"
+															"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -30501,7 +30526,7 @@
 						},
 						"update(2.7)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -30692,7 +30717,7 @@
 						},
 						"update((0.3 * zc_animations + 0.01))",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 1.0)",
+						"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif"
 					],
 					"posx":"2773",
@@ -30816,7 +30841,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -30832,8 +30857,9 @@
 													"compvalues":
 													[
 														[
-															"'Setup'",
-															"centermiddle"
+															"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+															"centermiddle",
+															"right"
 														]
 													],
 													"expanded":"1",
@@ -30903,7 +30929,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"7360",
@@ -31172,7 +31198,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -31582,7 +31608,7 @@
 										"endif",
 										"update((0.22 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -31734,7 +31760,7 @@
 										"endif",
 										"update((0.22 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -31955,9 +31981,9 @@
 										"update(0.15)",
 										"if(zc_sound == 1)",
 										"if(zc_heat_left != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -32485,7 +32511,7 @@
 										"endif",
 										"update((0.22 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -32637,7 +32663,7 @@
 										"endif",
 										"update((0.22 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -32858,9 +32884,9 @@
 										"update(0.15)",
 										"if(zc_sound == 1)",
 										"if(zc_heat_right != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -33383,7 +33409,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -33535,7 +33561,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -33687,7 +33713,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -33839,7 +33865,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -33991,7 +34017,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -34143,7 +34169,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -34295,7 +34321,7 @@
 										},
 										"update((0.27 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7680",
@@ -34450,9 +34476,9 @@
 										"update((0.22 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
 										"if(zc_sync != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -34611,9 +34637,9 @@
 										"update((0.32 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
 										"if(zc_auto != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -34835,9 +34861,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_ac != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -34985,9 +35011,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_defrost != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -35135,9 +35161,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_recirc != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -35321,7 +35347,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"11196",
@@ -35590,7 +35616,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -35762,7 +35788,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -35985,7 +36011,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -36101,7 +36127,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -36324,7 +36350,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -36440,7 +36466,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -36663,7 +36689,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -36779,7 +36805,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -37002,7 +37028,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11516",
@@ -37124,7 +37150,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"-1306",
@@ -37393,7 +37419,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"-986",
@@ -37795,9 +37821,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_call_mute != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -37945,9 +37971,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_speaker != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -38110,7 +38136,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"-986",
@@ -38288,7 +38314,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"3416",
@@ -38557,7 +38583,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3736",
@@ -38707,9 +38733,9 @@
 										"update(0.15)",
 										"if(zc_sound == 1)",
 										"if(zc_bt != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -38949,7 +38975,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3736",
@@ -39147,7 +39173,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3736",
@@ -39342,7 +39368,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3736",
@@ -39520,7 +39546,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"7726",
@@ -39789,7 +39815,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"8046",
@@ -40078,7 +40104,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"8046",
@@ -40216,11 +40242,11 @@
 									[
 										"if(zc_sound == 1)",
 										"if(zc_confirm_kind == 1)",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"elif(zc_confirm_kind == 2)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"elif(zc_confirm_kind == 3)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif",
 										"if(zc_confirm_kind == 1)",
@@ -40332,15 +40358,9 @@
 										{
 											"zc_fav_c":"0"
 										},
-										{
-											"zc_volume":"65"
-										},
-										{
-											"zc_volume_target":"65"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', ((65) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										{
 											"zc_media_pulse":"1"
 										},
@@ -40676,7 +40696,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"11453",
@@ -40945,7 +40965,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11773",
@@ -41095,9 +41115,9 @@
 										"update(0.15)",
 										"if(zc_sound == 1)",
 										"if(zc_bt != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -41283,9 +41303,9 @@
 										"update(0.1)",
 										"if(zc_sound == 1)",
 										"if(zc_wifi != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_on.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"playsound('sound/hcar_toggle_off.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif",
 										"endif"
 									],
@@ -41560,7 +41580,7 @@
 										},
 										"update((0.3 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_page.mp3', 1.0)",
+										"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"11773",
@@ -41738,7 +41758,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"2919",
@@ -42007,7 +42027,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3239",
@@ -42201,7 +42221,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3239",
@@ -42400,7 +42420,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3239",
@@ -42599,7 +42619,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_confirm.mp3', 1.0)",
+										"playsound('sound/hcar_confirm.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"3239",
@@ -42782,7 +42802,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"-723",
@@ -43051,7 +43071,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"-403",
@@ -44008,7 +44028,7 @@
 										},
 										"update(2.7)",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_notice.mp3', 1.0)",
+										"playsound('sound/hcar_notice.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"-403",
@@ -44161,7 +44181,7 @@
 										},
 										"update((0.3 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_page.mp3', 1.0)",
+										"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"-403",
@@ -44339,7 +44359,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"11773",
@@ -44608,7 +44628,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -44787,7 +44807,7 @@
 															"compvalues":
 															[
 																[
-																	"'' + (zc_volume [divide] 1) + '%'",
+																	"'' + (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) [divide] 1) + '%'",
 																	"centermiddle"
 																]
 															],
@@ -44939,7 +44959,7 @@
 										[
 											"48",
 											"220",
-											"(384 * (zc_volume/100)) [divide] 1",
+											"(384 * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100)/100)) [divide] 1",
 											"8"
 										]
 									],
@@ -45065,7 +45085,7 @@
 									"compvalues":
 									[
 										[
-											"36 + ((384) * (zc_volume/100)) [divide] 1",
+											"36 + ((384) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100)/100)) [divide] 1",
 											"212",
 											"24",
 											"24"
@@ -45244,18 +45264,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(10 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((10 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45279,18 +45293,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(20 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((20 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45314,18 +45322,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(30 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((30 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45349,18 +45351,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(40 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((40 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45384,18 +45380,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(50 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((50 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45419,18 +45409,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(60 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((60 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45454,18 +45438,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(70 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((70 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45489,18 +45467,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(80 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((80 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45524,18 +45496,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(90 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((90 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45559,18 +45525,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(100 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((100 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45594,18 +45554,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(zc_volume_target - 10 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) - 10 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -45741,17 +45695,15 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_muted":"1 - zc_muted"
-										},
-										"update(0.1)",
-										"if(zc_sound == 1)",
-										"if(zc_muted != 0)",
-										"playsound('sound/hcar_toggle_on.mp3', 1.0)",
+										"if(((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) > 0)",
+										"setvalue('d.data.settings.sound_volume_saved', ((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100))",
+										"setvalue('d.data.settings.sound_volume', 0)",
 										"else",
-										"playsound('sound/hcar_toggle_off.mp3', 1.0)",
+										"setvalue('d.data.settings.sound_volume', ((100 @ 'd.data.settings.sound_volume_saved') [max] 1) [min] 100)",
 										"endif",
-										"endif"
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
+										"update(0.15)"
 									],
 									"posx":"12093",
 									"posy":"61797",
@@ -45764,7 +45716,7 @@
 											"compname":"ninepatch",
 											"compvalues":
 											[
-												"if(zc_muted == 1)",
+												"if((((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) <= 0) == 1)",
 												[
 													"r.zcar_control_active"
 												],
@@ -45891,18 +45843,12 @@
 									"expanded":"1",
 									"onclick":
 									[
-										{
-											"zc_volume_target":"(zc_volume_target + 10 [max] 0) [min] 100"
-										},
-										{
-											"zc_volume":"zc_volume ~ zc_volume_target : (0.18 * zc_animations + 0.01)"
-										},
-										{
-											"zc_muted":"0"
-										},
+										"setvalue('d.data.settings.sound_volume', (((((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) + 10 [max] 0) [min] 100) [max] 0) [min] 100)",
+										"setvalue('d.data.settings.sound_volume.ani', d.data.settings.sound_volume)",
+										"mutesound(d.data.settings.sound_volume <= 0)",
 										"update((0.2 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_tap.mp3', 1.0)",
+										"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"12093",
@@ -46080,7 +46026,7 @@
 								},
 								"update((0.24 * zc_animations + 0.01))",
 								"if(zc_sound == 1)",
-								"playsound('sound/hcar_panel_close.mp3', 1.0)",
+								"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"endif"
 							],
 							"posx":"7279",
@@ -46349,7 +46295,7 @@
 										},
 										"update((0.24 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_panel_close.mp3', 1.0)",
+										"playsound('sound/hcar_panel_close.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7599",
@@ -46872,7 +46818,7 @@
 										},
 										"update((0.3 * zc_animations + 0.01))",
 										"if(zc_sound == 1)",
-										"playsound('sound/hcar_page.mp3', 1.0)",
+										"playsound('sound/hcar_page.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 										"endif"
 									],
 									"posx":"7599",
@@ -47123,9 +47069,10 @@
 						{
 							"local_id":"0"
 						},
+						"setvalue('d.data.settings.language', 'ko')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					]
@@ -47243,9 +47190,10 @@
 						{
 							"local_id":"1"
 						},
+						"setvalue('d.data.settings.language', 'en')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					]
@@ -47363,9 +47311,10 @@
 						{
 							"local_id":"2"
 						},
+						"setvalue('d.data.settings.language', 'ja')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_tap.mp3', 1.0)",
+						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"endif"
 					]
@@ -47552,11 +47501,11 @@
 						"endif",
 						"if(local_id == 2)",
 						{
-							"hc_text_font":"hc_jp_font"
+							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
 						},
 						"else",
 						{
-							"hc_text_font":"'NanumSquare Bold'"
+							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
 						},
 						"endif"
 					]
@@ -47570,7 +47519,11 @@
 					"posy":"450",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47623,7 +47576,11 @@
 					"posy":"2908",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47729,7 +47686,7 @@
 					[
 						"if(selected_menu == 2)",
 						{
-							"hc_text_5533":"('x' @ 'd.hcar.data.local.hc_text_5533.' + local_id) + (zc_volume [divide] 1) + '%'"
+							"hc_text_5533":"('x' @ 'd.hcar.data.local.hc_text_5533.' + local_id) + (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) [divide] 1) + '%'"
 						},
 						"endif"
 					]
@@ -47835,7 +47792,11 @@
 					"posy":"30694",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47869,7 +47830,11 @@
 					"posy":"36260",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47917,7 +47882,11 @@
 					"posy":"43044",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47985,7 +47954,11 @@
 					"posy":"48946",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -47996,7 +47969,11 @@
 					"posy":"51288",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -48007,7 +47984,11 @@
 					"posy":"52454",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -48018,7 +47999,11 @@
 					"posy":"55678",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -48029,7 +48014,11 @@
 					"posy":"57138",
 					"stable":"0",
 					"compinputs":
-					[]
+					[
+       {
+         "hc_code_pass": "0"
+       }
+     ]
 				},
 				{
 					"addw":"0",
@@ -48204,7 +48193,7 @@
 							"hc_entry_anim":"0 ~ 1 : (0.26 * zc_animations + 0.01)"
 						},
 						"if(zc_sound == 1)",
-						"playsound('sound/hcar_page.mp3', 0.7)",
+						"playsound('sound/hcar_page.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"update(0.4)"
 					]
@@ -48323,15 +48312,6 @@
 			"zc_fav_c":"0"
 		},
 		{
-			"zc_volume":"65"
-		},
-		{
-			"zc_volume_target":"65"
-		},
-		{
-			"zc_muted":"0"
-		},
-		{
 			"zc_media_pulse":"1"
 		},
 		{
@@ -48446,10 +48426,10 @@
 			"zc_ambient":"0"
 		},
 		{
-			"local_id":"1"
+			"local_id":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
 		},
 		{
-			"hc_jp_font":"'Yu Gothic'"
+			"hc_jp_font":"'Noto Sans CJK JP'"
 		},
 		{
 			"hc_text_5073":"''"

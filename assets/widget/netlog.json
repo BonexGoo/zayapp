@@ -10,5 +10,62 @@
 		{"path" : "font/Roboto-Light.ttf"},
 		{"path" : "font/Roboto-Medium.ttf"},
 		{"path" : "font/Roboto-Regular.ttf"}
-	]
+	],
+	"shared_text": {
+		"t000": {
+			"ko": "네트워크 로거",
+			"en": "Network Logger",
+			"ja": "ネットワークログ"
+		},
+		"t001": {
+			"ko": "강조 표시",
+			"en": "HIGHLIGHT",
+			"ja": "ハイライト"
+		},
+		"t002": {
+			"ko": "연결",
+			"en": "CONNECTION",
+			"ja": "接続"
+		},
+		"t003": {
+			"ko": "시리얼 포트",
+			"en": "Serial port",
+			"ja": "シリアルポート"
+		},
+		"t004": {
+			"ko": "실시간 네트워크 통신",
+			"en": "LIVE NETWORK TRAFFIC",
+			"ja": "リアルタイム通信"
+		},
+		"t005": {
+			"ko": "수신 로그",
+			"en": "RECEIVE LOGS",
+			"ja": "受信ログ"
+		},
+		"t006": {
+			"ko": "해제 시 송신만 표시",
+			"en": "Unchecked: TX only",
+			"ja": "未選択：送信のみ"
+		},
+		"t007": {
+			"ko": "원시 수신 데이터",
+			"en": "Raw RX",
+			"ja": "生の受信データ"
+		},
+		"t008": {
+			"ko": "VDS 해석 수신 데이터",
+			"en": "VDS Parsed RX",
+			"ja": "VDS解析済み受信"
+		},
+		"t009": {
+			"ko": "송신 데이터",
+			"en": "TRANSMIT PAYLOAD",
+			"ja": "送信データ"
+		},
+		"t010": {
+			"ko": "송신할 데이터를 입력하세요",
+			"en": "Enter data to transmit",
+			"ja": "送信データを入力"
+		}
+	}
 }

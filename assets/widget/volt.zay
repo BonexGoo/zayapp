@@ -1789,7 +1789,7 @@
 					"onclick":
 					[
 						"if(vq_sound == 0)",
-						"playsound('sound/volt_toggle.mp3', d.volt.data.sound_gain.toggle)",
+						"playsound('sound/volt_toggle.mp3', (d.volt.data.sound_gain.toggle) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vq_sound == 1)",
 						"stopsound('sound/volt_tap.mp3')",
@@ -2094,11 +2094,12 @@
 					"onclick":
 					[
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vq_lang":"1"
 						},
+						"setvalue('d.data.settings.language', 'en')",
 						"update(0.2)"
 					]
 				},
@@ -2315,11 +2316,12 @@
 					"onclick":
 					[
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vq_lang":"0"
 						},
+						"setvalue('d.data.settings.language', 'ko')",
 						"update(0.2)"
 					]
 				},
@@ -2536,11 +2538,12 @@
 					"onclick":
 					[
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vq_lang":"2"
 						},
+						"setvalue('d.data.settings.language', 'ja')",
 						"update(0.2)"
 					]
 				},
@@ -4229,7 +4232,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_target":"80"
@@ -4575,7 +4578,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_target":"90"
@@ -4921,7 +4924,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_target":"100"
@@ -6349,7 +6352,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_payment":"0"
@@ -7108,7 +7111,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_payment":"1"
@@ -7867,7 +7870,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+						"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_payment":"2"
@@ -11799,7 +11802,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_receipt":"1"
@@ -12913,7 +12916,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -13121,7 +13124,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -13329,7 +13332,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -13537,7 +13540,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -13745,7 +13748,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -13953,7 +13956,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -14161,7 +14164,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -14369,7 +14372,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -14577,7 +14580,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -14785,7 +14788,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count > 0)",
 						{
@@ -14993,7 +14996,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if(vc_pin_count < 4)",
 						{
@@ -15421,7 +15424,7 @@
 						"update(0.2)",
 						"update(0.48)",
 						"if(((vc_pin_count != 4) [or] (vc_pin != d.volt.data.admin_pin)) [and] (vq_sound == 1))",
-						"playsound('sound/volt_error.mp3', d.volt.data.sound_gain.error)",
+						"playsound('sound/volt_error.mp3', (d.volt.data.sound_gain.error) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						"if((vc_pin_count != 4) [or] (vc_pin != d.volt.data.admin_pin))",
 						{
@@ -20768,7 +20771,7 @@
 							"vq_tap":"1 ~ 0 : 0.14"
 						},
 						"if(vq_sound == 1)",
-						"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+						"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"endif",
 						{
 							"vc_receipt":"0"
@@ -20919,7 +20922,7 @@
 			"vq_sound":"1"
 		},
 		{
-			"vq_lang":"0"
+			"vq_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
 		}
 	],
 	"posx":"0",
@@ -20960,6 +20963,9 @@
 			"compid":"10626",
 			"compinputs":
 			[
+				{
+					"vq_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+				},
 				{
 					"vc_scale":"((pW / 1600) [min] (pH / 900)) [max] 0.01"
 				},
@@ -21116,25 +21122,25 @@
 			"compinputs":
 			[
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] (vc_page == 1))",
-				"playsound('sound/volt_connect.mp3', d.volt.data.sound_gain.connect)",
+				"playsound('sound/volt_connect.mp3', (d.volt.data.sound_gain.connect) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] (vc_page == 2))",
-				"playsound('sound/volt_page.mp3', d.volt.data.sound_gain.page)",
+				"playsound('sound/volt_page.mp3', (d.volt.data.sound_gain.page) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] ((vc_page == 3) [and] (vq_last_page == 2)))",
-				"playsound('sound/volt_start.mp3', d.volt.data.sound_gain.start)",
+				"playsound('sound/volt_start.mp3', (d.volt.data.sound_gain.start) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] ((vc_page == 4) [and] (vq_last_page == 3)))",
-				"playsound('sound/volt_complete.mp3', d.volt.data.sound_gain.complete)",
+				"playsound('sound/volt_complete.mp3', (d.volt.data.sound_gain.complete) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] (vc_page == 5))",
-				"playsound('sound/volt_page.mp3', d.volt.data.sound_gain.page)",
+				"playsound('sound/volt_page.mp3', (d.volt.data.sound_gain.page) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] (vc_page == 6))",
-				"playsound('sound/volt_select.mp3', d.volt.data.sound_gain.select)",
+				"playsound('sound/volt_select.mp3', (d.volt.data.sound_gain.select) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif",
 				"if((vc_page != vq_last_page) [and] (vq_sound == 1) [and] ((vc_page == 0) [and] (vq_last_page >= 0)))",
-				"playsound('sound/volt_tap.mp3', d.volt.data.sound_gain.tap)",
+				"playsound('sound/volt_tap.mp3', (d.volt.data.sound_gain.tap) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 				"endif"
 			]
 		},
