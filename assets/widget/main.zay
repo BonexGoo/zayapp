@@ -10707,6 +10707,9 @@
 											"ms_compact":"pW < 560"
 										},
 										{
+											"ms_can_shortcut":"(((-1 @ 'd.data.body.focus') >= 0) [and] (d.data.body.focus < d.data.body.enum.count)) [and] ((d.program.osname == 'WINDOWS') [or] (d.program.osname == 'WASM'))"
+										},
+										{
 											"ms_content_h":"524 + 32 * ms_compact"
 										},
 										{
@@ -11028,13 +11031,12 @@
 											[
 												{
 													"addw":"0",
-													"compid":"2338",
-													"compname":"inner",
+													"compid":"2369",
+													"compname":"zoom",
 													"compvalues":
 													[
 														[
-															"0",
-															"true"
+															"(1.0 [min] (pH / ms_content_h)) [min] (pW / 350.0)"
 														]
 													],
 													"expanded":"1",
@@ -11045,287 +11047,14 @@
 													[
 														{
 															"addw":"0",
-															"compid":"2128",
-															"compname":"scroll_view",
-															"compvalues":
-															[
-																[
-																	"'main_settings_scroll'",
-																	"ms_content_h",
-																	"1",
-																	"vertical",
-																	"1",
-																	"20 * (ms_content_h > ms_body_h)",
-																	"0",
-																	"12",
-																	"0",
-																	"156"
-																]
-															],
+															"compid":"2127",
+															"compname":"jump",
 															"expanded":"1",
-															"insiders":
-															[
-																{
-																	"ballposx":"78",
-																	"ballposy":"21",
-																	"name":"scrollbg",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"2130",
-																			"compname":"inner",
-																			"compvalues":
-																			[
-																				[
-																					"1"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"31240",
-																			"posy":"1720",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"2129",
-																					"compname":"ninepatch",
-																					"compvalues":
-																					[
-																						[
-																							"r.main_ref_scroll_v_track"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"31780",
-																					"posy":"1720",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"ballposx":"78",
-																	"ballposy":"21",
-																	"name":"scrollbar",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"2132",
-																			"compname":"inner",
-																			"compvalues":
-																			[
-																				[
-																					"1"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"31240",
-																			"posy":"1990",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"2131",
-																					"compname":"ninepatch",
-																					"compvalues":
-																					[
-																						"ifpressed('scrollbar.main_settings_scroll')",
-																						[
-																							"r.main_ref_scroll_v_p"
-																						],
-																						"eliffocused('scrollbar.main_settings_scroll')",
-																						[
-																							"r.main_ref_scroll_v_h"
-																						],
-																						"else",
-																						[
-																							"r.main_ref_scroll_v_n"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"31780",
-																					"posy":"1990",
-																					"stable":"0"
-																				}
-																			]
-																		}
-																	]
-																},
-																{
-																	"ballposx":"78",
-																	"ballposy":"21",
-																	"name":"content",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"2133",
-																			"compname":"inner",
-																			"compvalues":
-																			[
-																				[
-																					"0",
-																					"true"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"31240",
-																			"posy":"2410",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"2127",
-																					"compname":"jump",
-																					"expanded":"1",
-																					"posx":"31780",
-																					"posy":"2410",
-																					"uiname":"main_settings_body"
-																				}
-																			]
-																		}
-																	]
-																}
-															],
-															"posx":"30700",
+															"posx":"30800",
 															"posy":"1720",
-															"stable":"0"
+															"uiname":"main_settings_body"
 														}
 													]
-												},
-												{
-													"addw":"0",
-													"compname":"if((((1) + (1) - 1 - (((1) + (1) - 1) % (1))) / (1) * (ms_content_h) + 2 * (0)) > pH)",
-													"expanded":"1",
-													"posx":"30700",
-													"posy":"2700"
-												},
-												{
-													"addw":"0",
-													"compid":"2204",
-													"compname":"inner",
-													"compvalues":
-													[
-														[
-															"0"
-														]
-													],
-													"expanded":"1",
-													"posx":"30700",
-													"posy":"2890",
-													"stable":"0",
-													"ui":
-													[
-														{
-															"addw":"0",
-															"compid":"2200",
-															"compname":"xywh",
-															"compvalues":
-															[
-																[
-																	"0",
-																	"0",
-																	"((pW-24) [max] 0) [multiply] 1",
-																	"1"
-																]
-															],
-															"expanded":"1",
-															"posx":"31240",
-															"posy":"2890",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"2199",
-																	"compname":"hexcolor",
-																	"compvalues":
-																	[
-																		[
-																			"#bdd2e2"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"31780",
-																	"posy":"2890",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"2198",
-																			"compname":"fill",
-																			"expanded":"1",
-																			"posx":"32320",
-																			"posy":"2890",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														},
-														{
-															"addw":"0",
-															"compid":"2203",
-															"compname":"xywh",
-															"compvalues":
-															[
-																[
-																	"0",
-																	"(pH-1) [multiply] 1",
-																	"((pW-24) [max] 0) [multiply] 1",
-																	"1"
-																]
-															],
-															"expanded":"1",
-															"posx":"31240",
-															"posy":"3180",
-															"stable":"0",
-															"ui":
-															[
-																{
-																	"addw":"0",
-																	"compid":"2202",
-																	"compname":"hexcolor",
-																	"compvalues":
-																	[
-																		[
-																			"#bdd2e2"
-																		]
-																	],
-																	"expanded":"1",
-																	"posx":"31780",
-																	"posy":"3180",
-																	"stable":"0",
-																	"ui":
-																	[
-																		{
-																			"addw":"0",
-																			"compid":"2201",
-																			"compname":"fill",
-																			"expanded":"1",
-																			"posx":"32320",
-																			"posy":"3180",
-																			"stable":"0"
-																		}
-																	]
-																}
-															]
-														}
-													]
-												},
-												{
-													"addw":"0",
-													"compname":"endif",
-													"expanded":"1",
-													"posx":"30700",
-													"posy":"3520"
 												}
 											]
 										},
@@ -11617,6 +11346,14 @@
 					"compname":"xywh",
 					"compvalues":
 					[
+						"if(ms_can_shortcut)",
+						[
+							"0",
+							"0",
+							"(pW-12) [divide] 2",
+							"136 + 32 * ms_compact"
+						],
+						"else",
 						[
 							"0",
 							"0",
@@ -11700,6 +11437,387 @@
 							"uiname":"main_settings_columns"
 						}
 					]
+				},
+				{
+					"addw":"0",
+					"compname":"if(ms_can_shortcut)",
+					"expanded":"1",
+					"posx":"34820",
+					"posy":"420"
+				},
+				{
+					"addw":"0",
+					"compid":"2370",
+					"compname":"xywh",
+					"compvalues":
+					[
+						[
+							"((pW-12) [divide] 2) + 12",
+							"0",
+							"pW - ((pW-12) [divide] 2) - 12",
+							"136 + 32 * ms_compact"
+						]
+					],
+					"expanded":"1",
+					"posx":"34820",
+					"posy":"650",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2372",
+							"compname":"ninepatch",
+							"compvalues":
+							[
+								[
+									"r.main_settings_section"
+								]
+							],
+							"expanded":"1",
+							"posx":"35300",
+							"posy":"650",
+							"stable":"0"
+						},
+						{
+							"addw":"0",
+							"compid":"2373",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"14",
+									"8",
+									"pW-28",
+									"30"
+								]
+							],
+							"expanded":"1",
+							"posx":"35300",
+							"posy":"795",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2374",
+									"compname":"hexcolor",
+									"compvalues":
+									[
+										[
+											"#143854"
+										]
+									],
+									"expanded":"1",
+									"posx":"35620",
+									"posy":"795",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2375",
+											"compname":"font",
+											"compvalues":
+											[
+												[
+													"1.60",
+													"MainUIFont"
+												]
+											],
+											"expanded":"1",
+											"posx":"35940",
+											"posy":"795",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2376",
+													"compname":"text",
+													"compvalues":
+													[
+														"if(d.program.osname == 'WASM')",
+														[
+															"'' @ (MainSettings + '.standalone_title')",
+															"leftmiddle",
+															"right"
+														],
+														"else",
+														[
+															"'' @ (MainSettings + '.shortcut_title')",
+															"leftmiddle",
+															"right"
+														]
+													],
+													"expanded":"1",
+													"posx":"36260",
+													"posy":"795",
+													"stable":"0"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"addw":"0",
+							"compid":"2377",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"14",
+									"40",
+									"pW-28",
+									"pH-94"
+								]
+							],
+							"expanded":"1",
+							"posx":"35300",
+							"posy":"970",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2378",
+									"compname":"hexcolor",
+									"compvalues":
+									[
+										[
+											"#4e697d"
+										]
+									],
+									"expanded":"1",
+									"posx":"35620",
+									"posy":"970",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2379",
+											"compname":"font",
+											"compvalues":
+											[
+												[
+													"1.4",
+													"MainUIFont"
+												]
+											],
+											"expanded":"1",
+											"posx":"35940",
+											"posy":"970",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2380",
+													"compname":"text_box",
+													"compvalues":
+													[
+														"if((d.program.osname == 'WASM') [and] ((0 @ 'd.program.shortcut_result') < 0))",
+														[
+															"'' @ (MainSettings + '.standalone_popup_help')",
+															"2",
+															"lefttop"
+														],
+														"elif(d.program.osname == 'WASM')",
+														[
+															"'' @ (MainSettings + '.standalone_desc')",
+															"2",
+															"lefttop"
+														],
+														"else",
+														[
+															"'' @ (MainSettings + '.shortcut_desc')",
+															"2",
+															"lefttop"
+														]
+													],
+													"expanded":"1",
+													"posx":"36260",
+													"posy":"970",
+													"stable":"0"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"addw":"0",
+							"compid":"2363",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"14",
+									"pH-48",
+									"pW-28",
+									"38"
+								]
+							],
+							"expanded":"1",
+							"onclick":
+							[
+								"if(d.program.osname == 'WASM')",
+								"openstandaloneapp('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'), 'window')",
+								"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"elif((0 @ 'd.program.shortcut_result') != 1)",
+								"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"createappshortcut('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'))",
+								"update(0.1)",
+								"endif"
+							],
+							"posx":"35300",
+							"posy":"1145",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2364",
+									"compname":"ninepatch",
+									"compvalues":
+									[
+										"ifpressed(main_settings_scroll_shortcut)",
+										[
+											"r.main_settings_choice_p"
+										],
+										"eliffocused(main_settings_scroll_shortcut)",
+										[
+											"r.main_settings_choice_h"
+										],
+										"elif(1)",
+										[
+											"r.main_settings_choice_s"
+										],
+										"else",
+										[
+											"r.main_settings_choice_n"
+										]
+									],
+									"expanded":"1",
+									"posx":"35840",
+									"posy":"1145",
+									"stable":"0"
+								},
+								{
+									"addw":"0",
+									"compid":"2365",
+									"compname":"xywh",
+									"compvalues":
+									[
+										[
+											"4",
+											"0",
+											"(pW-8) [multiply] 1",
+											"(pH) [multiply] 1"
+										]
+									],
+									"expanded":"1",
+									"posx":"35840",
+									"posy":"1575",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2366",
+											"compname":"hexcolor",
+											"compvalues":
+											[
+												[
+													"#18517a"
+												]
+											],
+											"expanded":"1",
+											"posx":"36380",
+											"posy":"1575",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2367",
+													"compname":"font",
+													"compvalues":
+													[
+														[
+															"1.4",
+															"MainUIFont"
+														]
+													],
+													"expanded":"1",
+													"posx":"36920",
+													"posy":"1575",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"0",
+															"compid":"2368",
+															"compname":"text",
+															"compvalues":
+															[
+																"if((0 @ 'd.program.shortcut_result') < 0)",
+																[
+																	"'' @ (MainSettings + '.shortcut_retry_short')",
+																	"centermiddle",
+																	"right"
+																],
+																"elif(d.program.osname == 'WASM')",
+																[
+																	"'' @ (MainSettings + '.standalone_open')",
+																	"centermiddle",
+																	"right"
+																],
+																"elif(((0 @ 'd.program.shortcut_result') == 1) [and] (pW < 215))",
+																[
+																	"'' @ (MainSettings + '.shortcut_done_short')",
+																	"centermiddle",
+																	"right"
+																],
+																"elif((0 @ 'd.program.shortcut_result') == 1)",
+																[
+																	"'' @ (MainSettings + '.shortcut_created')",
+																	"centermiddle",
+																	"right"
+																],
+																"else",
+																[
+																	"'' @ (MainSettings + '.shortcut_action')",
+																	"centermiddle",
+																	"right"
+																]
+															],
+															"expanded":"1",
+															"posx":"37460",
+															"posy":"1575",
+															"stable":"0"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							],
+							"uiname":"main_settings_scroll_shortcut"
+						}
+					]
+				},
+				{
+					"addw":"0",
+					"compname":"endif",
+					"expanded":"1",
+					"posx":"34820",
+					"posy":"1900"
 				}
 			],
 			"uiname":"main_settings_body"
@@ -11734,6 +11852,14 @@
 					"compname":"xywh",
 					"compvalues":
 					[
+						"if(ms_can_shortcut)",
+						[
+							"14",
+							"8",
+							"pW-28",
+							"30"
+						],
+						"else",
 						[
 							"20",
 							"14",
@@ -11786,6 +11912,13 @@
 											"compname":"text",
 											"compvalues":
 											[
+												"if(ms_can_shortcut [and] (pW < 210))",
+												[
+													"'' @ (MainSettings + '.keypad_short_title')",
+													"leftmiddle",
+													"right"
+												],
+												"else",
 												[
 													"'' @ (MainSettings + '.keypad_title')",
 													"leftmiddle",
@@ -11809,7 +11942,14 @@
 					"compname":"xywh",
 					"compvalues":
 					[
-						"if(ms_compact)",
+						"if(ms_can_shortcut)",
+						[
+							"14",
+							"40",
+							"pW-28",
+							"pH-94"
+						],
+						"elif(ms_compact)",
 						[
 							"20",
 							"49",
@@ -11869,6 +12009,13 @@
 											"compname":"text_box",
 											"compvalues":
 											[
+												"if(ms_can_shortcut)",
+												[
+													"'' @ (MainSettings + '.keypad_short_desc')",
+													"2",
+													"lefttop"
+												],
+												"else",
 												[
 													"'' @ (MainSettings + '.keypad_desc')",
 													"5",
@@ -11892,6 +12039,14 @@
 					"compname":"xywh",
 					"compvalues":
 					[
+						"if(ms_can_shortcut)",
+						[
+							"14",
+							"pH-49",
+							"82",
+							"39"
+						],
+						"else",
 						[
 							"(pW-108) [multiply] 1",
 							"(68 + 40 * ms_compact) [multiply] 1",
@@ -11944,7 +12099,7 @@
 				},
 				{
 					"addw":"0",
-					"compname":"if(ms_compact)",
+					"compname":"if(ms_compact [and] (ms_can_shortcut == 0))",
 					"expanded":"1",
 					"posx":"41320",
 					"posy":"423"
@@ -13382,7 +13537,7 @@
 			"VKShift":"0"
 		},
 		{
-			"PopupDockAni":"1"
+			"PopupDockAni":"1 - (0 @ 'd.program.standalone')"
 		},
 		{
 			"MainHomeTab":"0"
@@ -13652,7 +13807,7 @@
 										},
 										{
 											"addw":"0",
-											"compname":"if(0 < PopupDockAni)",
+											"compname":"if(((0 @ 'd.program.standalone') == 0) [and] (0 < PopupDockAni))",
 											"expanded":"1",
 											"posx":"2159",
 											"posy":"672"
@@ -15602,6 +15757,7 @@
 																						{
 																							"PopupVK":"0"
 																						},
+																						"setvalue('d.program.shortcut_result', 0)",
 																						"setvalue('d.data.settings.popup_open', 1)",
 																						"update(0.1)"
 																					],

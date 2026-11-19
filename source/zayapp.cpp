@@ -13,10 +13,6 @@
 #include <cmath>
 #include <utility>
 
-#if BOSS_WASM
-    #include <emscripten.h>
-#endif
-
 // BEGIN ZAYAPP_NATIVE_NAVIGATION
 // All calls run on the widget/UI thread (TryWorld has shared scratch state).
 class ZayAppNativeState
@@ -572,6 +568,44 @@ namespace
 // END ZAYAPP_NATIVE_DOM_HELPERS
 
 
+static sint32 FindAppIndex(const String& id)
+{
+    if(!id.Length()) return -1;
+    const sint32 count = ZayWidgetDOM::GetValue("data.body.enum.count").ToInteger();
+    for(sint32 i = 0; i < count; ++i)
+        if(id == ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.dom", i)).ToText()) return i;
+    return -1;
+}
+
+static String AppShortcutTitle(sint32 index, const String& id)
+{
+    const String title = ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.title", index)).ToText();
+    return title.Length()? title : id;
+}
+
+static String AppShortcutIcon(const String& id)
+{
+    return "image/icon/" + id + ".png";
+}
+
+static sint32 CreateAppShortcut(const String& id)
+{
+    const sint32 index = FindAppIndex(id);
+    if(index < 0) return -1;
+    const String title = AppShortcutTitle(index, id);
+    #if BOSS_WASM
+        const String language = ZayWidgetDOM::GetValue("data.settings.language").ToText();
+        const String prefix = "data.i18n." + language + ".settings.";
+        return Platform::Utility::ShowWebShortcutDialog("app", id, title,
+            ZayWidgetDOM::GetValue(prefix + "shortcut_web_help").ToText(),
+            ZayWidgetDOM::GetValue(prefix + "shortcut_open").ToText(),
+            ZayWidgetDOM::GetValue(prefix + "close").ToText())? 2 : -1;
+    #else
+        return Platform::Utility::CreateDesktopShortcut(title, "app", id, AppShortcutIcon(id))? 1 : -1;
+    #endif
+}
+
+
 ZAY_DECLARE_VIEW_CLASS("ZayAppView", ZayAppData)
 
 String gLastLocale;
@@ -1031,7 +1065,7 @@ ZAY_VIEW_API OnGesture(GestureType type, sint32 x, sint32 y)
         }
         else ReleaseMsec = CurReleaseMsec;
     }
-    else if(type == GT_LongPressed)
+    else if(type == GT_LongPressed && !ZayWidgetDOM::GetValue("program.standalone").ToInteger())
     {
         m->mMainWidget.JumpCall("bg_longpressed", "bg");
         m->invalidate();
@@ -1098,37 +1132,12 @@ ZayAppData::ZayAppData()
     });
 
     // 메인위젯 구성
+    ZayWidgetDOM::SetValue("program.standalone", "0");
     CollectModifiedDoms("main", "");
     UpdateModifiedDoms();
-    #if BOSS_WASM
-        // URL의 app과 main.json의 dom이 일치하는 앱 선택
-        bool StartupAppSelected = false;
-        const sint32 StartupAppCount = ZayWidgetDOM::GetValue("data.body.enum.count").ToInteger();
-        for(sint32 i = 0; i < StartupAppCount; ++i)
-        {
-            const String DomName = ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.dom", i)).ToText();
-            const bool IsRequestedApp = MAIN_THREAD_EM_ASM_INT({
-                if(typeof window === 'undefined')
-                    return 0;
-                const app = new URLSearchParams(window.location.search).get('app');
-                return (app !== null && app !== '' && app === UTF8ToString($0))? 1 : 0;
-            }, (chars) DomName) != 0;
-            if(IsRequestedApp)
-            {
-                ZayWidgetDOM::SetValue("data.body.focus", String::FromInteger(i));
-                StartupAppSelected = true;
-                break;
-            }
-        }
-    #endif
     InitWidget(&mMainWidget, "main");
     mMainWidget.Reload("widget/main.zay");
     mMainWidget.UpdateAtlas(R::PrintUpdatedAtlas(true));
-    #if BOSS_WASM
-        // OnCreate 이후 게이트를 호출해 도크를 즉시 숨김
-        if(StartupAppSelected)
-            mMainWidget.JumpCallDirectly("hide_dock", "url_app", nullptr);
-    #endif
 
     // 채널 셋팅
     mChannel.SetGetter([this](chars ch, chars key)->const SolverValue
@@ -1406,6 +1415,20 @@ bool ZayAppData::UpdateModifiedDoms()
             Context Data(ST_Json, SO_OnlyReference, DataJson, DataJson.Length());
             ZayWidgetDOM::RemoveVariables(CurDomJson->mHeaderName);
             ZayWidgetDOM::SetJson(Data, CurDomJson->mHeaderName);
+            if(CurDomJson->mAssetName == "main.json")
+            {
+                // Match against the new registry, including after an editor reload.
+                const String id = Platform::Utility::GetLaunchParameter("app");
+                const sint32 Index = FindAppIndex(id);
+                if(Index >= 0)
+                {
+                    ZayWidgetDOM::SetValue("data.body.focus", String::FromInteger(Index));
+                    #if BOSS_WASM
+                        Platform::Utility::SetWebAppIdentity(AppShortcutTitle(Index, id), AppShortcutIcon(id));
+                    #endif
+                }
+                ZayWidgetDOM::SetValue("program.standalone", (Index >= 0)? "1" : "0");
+            }
             CurDomJson->mUpdated = false;
             NeedRedraw = true;
 
@@ -1627,6 +1650,51 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
     }, "[ResName:'r.grab'][X:0][Y:0][Width:100][Height:100][Blur:5.0]#[UseRepaint:1]", "해당 윈도우영역을 리소스화");
 
     ////////////////////////////////////////////////////////////////////////////////
+    // createappshortcut
+    NewZayson.AddGlue("createappshortcut", ZAY_DECLARE_GLUE(params, this)
+    {
+        const sint32 result = (params.ParamCount() == 1)? CreateAppShortcut(params.Param(0).ToText()) : -1;
+        ZayWidgetDOM::SetValue("program.shortcut_result", String::FromInteger(result));
+        invalidate();
+    }, "[AppId:'robo']", "앱 단독 모드 바로가기 만들기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // openstandaloneapp
+    NewZayson.AddGlue("openstandaloneapp", ZAY_DECLARE_GLUE(params, this)
+    {
+        bool opened = false;
+        #if BOSS_WASM
+            if(params.ParamCount() == 1 || params.ParamCount() == 2)
+            {
+                const String id = params.Param(0).ToText();
+                const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
+                if(FindAppIndex(id) >= 0)
+                {
+                    const String page = Platform::Utility::GetThisWebPageUrl();
+                    if(page.Length())
+                        opened = Platform::Utility::OpenWebPageWithQuery(page + "?app=" + id.ToUrlString(), target);
+                }
+            }
+        #endif
+        ZayWidgetDOM::SetValue("program.shortcut_result", opened? "3" : "-1");
+        invalidate();
+    }, "[AppId:'robo']#[Target:'self']", "웹에서 앱을 단독 모드로 열기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // openwebpage
+    NewZayson.AddGlue("openwebpage", ZAY_DECLARE_GLUE(params, this)
+    {
+        bool opened = false;
+        if(params.ParamCount() == 1 || params.ParamCount() == 2)
+        {
+            const String url = params.Param(0).ToText();
+            const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
+            if(!String::CompareNoCase(url, "https://", 8) || !String::CompareNoCase(url, "http://", 7))
+                opened = Platform::Utility::OpenWebPageWithQuery(url, target);
+        }
+        if(params.CanReturn()) params.Return(opened? "1" : "0");
+    }, "[Url:'https://www.youtube.com/']#[Target:'self']", "웹 페이지 열기");
+
     // focustable
     NewZayson.AddGlue("focustable", ZAY_DECLARE_GLUE(params, this)
     {

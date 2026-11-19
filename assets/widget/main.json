@@ -538,6 +538,21 @@
 			"index": 76,
 			"name": "windowgrab",
 			"comment": "해당 윈도우영역을 리소스화"
+		},
+		{
+			"index": 77,
+			"name": "createappshortcut",
+			"comment": "지정한 앱의 단독 모드 바로가기 만들기"
+		},
+		{
+			"index": 78,
+			"name": "openstandaloneapp",
+			"comment": "웹에서 앱을 단독 모드로 열기"
+		},
+		{
+			"index": 79,
+			"name": "openwebpage",
+			"comment": "웹 페이지 열기"
 		}
 	],
 	"focused_glue": {
@@ -810,7 +825,23 @@
 				"compact_caption": "입력 · 사운드 · 앱 배치",
 				"language_desc_compact": "모든 앱과 같은 언어를 사용합니다.",
 				"volume_desc_compact": "모든 앱에 공통으로 적용합니다.",
-				"columns_desc_compact": "왼쪽 앱 목록의 열 수를 선택합니다."
+				"columns_desc_compact": "왼쪽 앱 목록의 열 수를 선택합니다.",
+				"shortcut_create": "현재 앱 단독 모드 바로가기 만들기",
+				"shortcut_created": "바탕 화면에 바로가기를 만들었습니다",
+				"shortcut_open": "단독 모드 주소 열기",
+				"shortcut_web_help": "아래 주소를 연 뒤 브라우저 메뉴에서 바로가기 만들기를 선택하세요. 휴대전화에서는 홈 화면에 추가하세요.",
+				"shortcut_retry": "생성 실패 · 다시 시도",
+				"keypad_short_title": "가상키패드 끄기",
+				"keypad_short_desc": "입력할 때 키패드 버튼을 숨깁니다.",
+				"standalone_title": "단독 모드",
+				"standalone_desc": "이 앱을 새 창에서 엽니다.",
+				"standalone_popup_help": "팝업을 허용한 뒤 다시 눌러 주세요.",
+				"standalone_open": "단독 모드로 열기",
+				"shortcut_title": "단독 모드 바로가기",
+				"shortcut_desc": "이 앱을 단독 모드로 실행합니다.",
+				"shortcut_action": "바로가기 만들기",
+				"shortcut_done_short": "바로가기 생성 완료",
+				"shortcut_retry_short": "다시 시도"
 			},
 			"font": "NanumSquare Bold"
 		},
@@ -953,7 +984,23 @@
 				"compact_caption": "Input · sound · layout",
 				"language_desc_compact": "Shared by all apps.",
 				"volume_desc_compact": "Controls sound volume in all apps.",
-				"columns_desc_compact": "Select columns in the app list."
+				"columns_desc_compact": "Select columns in the app list.",
+				"shortcut_create": "Create standalone shortcut for this app",
+				"shortcut_created": "Desktop shortcut created",
+				"shortcut_open": "Open standalone app",
+				"shortcut_web_help": "Open the app link below, then choose Create shortcut in the browser menu. On a phone, choose Add to Home Screen.",
+				"shortcut_retry": "Could not create shortcut · Retry",
+				"keypad_short_title": "Disable keypad",
+				"keypad_short_desc": "Hide the keypad button when editing.",
+				"standalone_title": "Standalone mode",
+				"standalone_desc": "Open this app in a new window.",
+				"standalone_popup_help": "Allow pop-ups, then try again.",
+				"standalone_open": "Open in standalone mode",
+				"shortcut_title": "App shortcut",
+				"shortcut_desc": "Launch this app in standalone mode.",
+				"shortcut_action": "Create shortcut",
+				"shortcut_done_short": "Shortcut created",
+				"shortcut_retry_short": "Retry"
 			},
 			"font": "Roboto"
 		},
@@ -1096,7 +1143,23 @@
 				"compact_caption": "入力・音量・アプリ配置",
 				"language_desc_compact": "すべてのアプリと共通の言語です。",
 				"volume_desc_compact": "すべてのアプリに共通で適用します。",
-				"columns_desc_compact": "左のアプリ一覧の列数を選びます。"
+				"columns_desc_compact": "左のアプリ一覧の列数を選びます。",
+				"shortcut_create": "現在のアプリの単独モード用ショートカットを作成",
+				"shortcut_created": "デスクトップにショートカットを作成しました",
+				"shortcut_open": "単独モードで開く",
+				"shortcut_web_help": "下のリンクを開き、ブラウザーのメニューでショートカットを作成してください。スマートフォンではホーム画面に追加してください。",
+				"shortcut_retry": "作成できませんでした · 再試行",
+				"keypad_short_title": "キーパッド無効",
+				"keypad_short_desc": "入力時にキーパッドボタンを隠します。",
+				"standalone_title": "単独モード",
+				"standalone_desc": "このアプリを新しいウィンドウで開きます。",
+				"standalone_popup_help": "ポップアップを許可して再試行してください。",
+				"standalone_open": "単独モードで開く",
+				"shortcut_title": "ショートカット",
+				"shortcut_desc": "このアプリを単独モードで開きます。",
+				"shortcut_action": "作成する",
+				"shortcut_done_short": "作成しました",
+				"shortcut_retry_short": "再試行"
 			},
 			"font": "Noto Sans CJK JP"
 		}
@@ -6381,6 +6444,183 @@
 				}
 			],
 			"param_height": 1008
+		},
+		{
+			"name": "createappshortcut",
+			"comment": {
+				"ko": "지정한 앱의 단독 모드 바로가기 만들기",
+				"en": "Create a standalone shortcut for an app",
+				"ja": "指定したアプリの単独モード用ショートカットを作成"
+			},
+			"param": [
+				{
+					"name": "AppId",
+					"comment": {
+						"ko": "main.json의 body.enum에 등록된 dom 값",
+						"en": "A dom ID registered in main.json body.enum",
+						"ja": "main.json の body.enum に登録された dom 値"
+					},
+					"optional": 0,
+					"enum": [],
+					"hint": {
+						"ko": "robo",
+						"en": "robo",
+						"ja": "robo"
+					},
+					"offset": 0,
+					"height": 144
+				}
+			],
+			"notes": {
+				"ko": "Windows는 바탕 화면에 zayapp.exe -app AppId 바로가기를 만듭니다. 웹에서는 ?app=AppId 링크를 열어 브라우저 메뉴로 등록합니다. d.program.shortcut_result 값은 1(생성), 2(웹 등록 안내 열림), -1(실패)입니다.",
+				"en": "Windows creates a desktop shortcut to zayapp.exe -app AppId. On the web, open the ?app=AppId link and use the browser shortcut menu. d.program.shortcut_result is 1 for created, 2 for web instructions shown, or -1 for failure.",
+				"ja": "Windows はデスクトップに zayapp.exe -app AppId のショートカットを作成します。Web は ?app=AppId を開き、ブラウザーのメニューで登録します。d.program.shortcut_result は 1 が作成、2 が Web の案内表示、-1 が失敗です。"
+			},
+			"source": "zayapp.cpp / InitWidget / AddGlue",
+			"examples": [
+				{
+					"title": {
+						"ko": "Robo 바로가기",
+						"en": "Robo shortcut",
+						"ja": "Robo ショートカット"
+					},
+					"code": "createappshortcut('robo')",
+					"width": 640
+				}
+			],
+			"param_height": 144
+		},
+		{
+			"name": "openstandaloneapp",
+			"comment": {
+				"ko": "웹에서 앱을 단독 모드로 열기",
+				"en": "Open an app in standalone mode on the web",
+				"ja": "Web でアプリを単独モードで開く"
+			},
+			"param": [
+				{
+					"name": "AppId",
+					"comment": {
+						"ko": "main.json의 body.enum에 등록된 dom 값",
+						"en": "A dom ID registered in main.json body.enum",
+						"ja": "main.json の body.enum に登録された dom 値"
+					},
+					"optional": 0,
+					"enum": [],
+					"hint": {
+						"ko": "robo",
+						"en": "robo",
+						"ja": "robo"
+					},
+					"offset": 0,
+					"height": 144
+				},
+				{
+					"name": "Target",
+					"comment": {
+						"ko": "열 위치. 생략하면 현재 페이지에서 엽니다.",
+						"en": "Where to open the app. Defaults to the current page.",
+						"ja": "開く場所。省略すると現在のページで開きます。"
+					},
+					"optional": 1,
+					"enum": [
+						"window",
+						"tab",
+						"self"
+					],
+					"hint": {
+						"ko": "self",
+						"en": "self",
+						"ja": "self"
+					},
+					"offset": 144,
+					"height": 196
+				}
+			],
+			"notes": {
+				"ko": "window는 새 창, tab은 새 탭, self는 현재 페이지에 ?app=AppId를 엽니다. 새 창과 새 탭은 사용자 클릭 시 요청합니다. d.program.shortcut_result는 성공 시 3, 팝업 차단 등 실패 시 -1입니다.",
+				"en": "Opens ?app=AppId in a new window (window), a new tab (tab), or the current page (self). Request windows and tabs on a user click. d.program.shortcut_result is 3 for success or -1 for failure, including blocked pop-ups.",
+				"ja": "window は新しいウィンドウ、tab は新しいタブ、self は現在のページで ?app=AppId を開きます。新しいウィンドウやタブはクリック時に要求します。d.program.shortcut_result は成功時に 3、ポップアップのブロックなどの失敗時に -1 です。"
+			},
+			"source": "zayapp.cpp / InitWidget / AddGlue",
+			"examples": [
+				{
+					"title": {
+						"ko": "Robo 단독 모드로 열기",
+						"en": "Open Robo in standalone mode",
+						"ja": "Robo を単独モードで開く"
+					},
+					"code": "openstandaloneapp('robo', 'window')",
+					"width": 640
+				}
+			],
+			"param_height": 340
+		},
+		{
+			"name": "openwebpage",
+			"comment": {
+				"ko": "웹 페이지 열기",
+				"en": "Open a web page",
+				"ja": "Web ページを開く"
+			},
+			"param": [
+				{
+					"name": "Url",
+					"comment": {
+						"ko": "열 HTTP 또는 HTTPS 주소",
+						"en": "HTTP or HTTPS URL to open",
+						"ja": "開く HTTP または HTTPS の URL"
+					},
+					"optional": 0,
+					"enum": [],
+					"hint": {
+						"ko": "https://www.youtube.com/",
+						"en": "https://www.youtube.com/",
+						"ja": "https://www.youtube.com/"
+					},
+					"offset": 0,
+					"height": 144
+				},
+				{
+					"name": "Target",
+					"comment": {
+						"ko": "웹에서 열 위치. PC에서는 기본 브라우저를 사용합니다.",
+						"en": "Where to open the page on the web. Desktop uses the default browser.",
+						"ja": "Web で開く場所。PC では既定のブラウザーで開きます。"
+					},
+					"optional": 1,
+					"enum": [
+						"window",
+						"tab",
+						"self"
+					],
+					"hint": {
+						"ko": "self",
+						"en": "self",
+						"ja": "self"
+					},
+					"offset": 144,
+					"height": 196
+				}
+			],
+			"notes": {
+				"ko": "웹에서 새 창이나 탭을 열 때는 클릭 이벤트에서 호출합니다. 열기 요청이 성공하면 1, 실패하면 0을 반환합니다.",
+				"en": "Request a new window or tab from a click handler. Returns 1 if the open request succeeds, otherwise 0.",
+				"ja": "新しいウィンドウやタブはクリック時に要求します。開く要求が成功すると 1、失敗すると 0 を返します。"
+			},
+			"source": "zayapp.cpp / InitWidget / AddGlue",
+			"examples": [
+				{
+					"title": {
+						"ko": "선택한 영상 열기",
+						"en": "Open a video",
+						"ja": "動画を開く"
+					},
+					"code": "openwebpage('https://www.youtube.com/watch?v=sCSi4sgKN0w', 'window')",
+					"width": 640
+				}
+			],
+			"param_height": 340
 		}
 	],
 	"glue_browser": {

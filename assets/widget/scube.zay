@@ -262,45 +262,6 @@
     },
     {
       "addw": "0",
-      "compid": "20019",
-      "compname": "gate",
-      "expanded": "1",
-      "posx": "74000",
-      "posy": "380",
-      "ui": [
-        {
-          "addw": "250",
-          "compid": "20017",
-          "compinputs": [
-            {
-              "sc_link": "'https://www.youtube.com/watch?v=' + sc_video_id"
-            }
-          ],
-          "compname": "code",
-          "expanded": "1",
-          "posx": "75160",
-          "posy": "495",
-          "stable": "0"
-        },
-        {
-          "addw": "543",
-          "compid": "20018",
-          "compinputs": [
-            {
-              "sc_open_ok": "gettext(('YouTube 영상 주소' @ ('d.scube.data.shared_text.t043.' + ui_lang)), ('주소를 복사해 브라우저에서 열 수 있습니다.' @ ('d.scube.data.shared_text.t044.' + ui_lang)) + ' ' + sc_link)"
-            }
-          ],
-          "compname": "code",
-          "expanded": "1",
-          "posx": "75160",
-          "posy": "685",
-          "stable": "0"
-        }
-      ],
-      "uiname": "sc_open_video"
-    },
-    {
-      "addw": "0",
       "compid": "20028",
       "compname": "gate",
       "expanded": "1",
@@ -3432,6 +3393,9 @@
           "expanded": "1",
           "onclick": [
             {
+              "sc_open_ok": "1"
+            },
+            {
               "sc_modal": "1"
             },
             "update(0.25)",
@@ -4269,6 +4233,13 @@
                           "compid": "20300",
                           "compname": "text",
                           "compvalues": [
+                            "if(sc_open_ok == 0)",
+                            [
+                              "('영상 페이지를 열지 못했습니다. 다시 눌러 주세요.' @ ('d.scube.data.shared_text.t044.' + ui_lang))",
+                              "leftmiddle",
+                              "right"
+                            ],
+                            "else",
                             [
                               "('송도큐브TV · ' @ ('d.scube.data.shared_text.t010.' + ui_lang)) + sc_video_place",
                               "leftmiddle",
@@ -4288,152 +4259,6 @@
             },
             {
               "addw": "250",
-              "compid": "20310",
-              "compname": "code",
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ],
-              "expanded": "1",
-              "posx": "31320",
-              "posy": "10066",
-              "stable": "0",
-              "ui": [
-                {
-                  "addw": "0",
-                  "compname": "if(d.scube.data.integration.youtube_bridge == 1)",
-                  "expanded": "1",
-                  "posx": "32480",
-                  "posy": "10181"
-                },
-                {
-                  "addw": "0",
-                  "compid": "20309",
-                  "compname": "xywh",
-                  "compvalues": [
-                    [
-                      "((432) * (sc_scale * sc_modal_fit)) [divide] 1",
-                      "((635) * (sc_scale * sc_modal_fit)) [divide] 1",
-                      "((344) * (sc_scale * sc_modal_fit)) [divide] 1",
-                      "((52) * (sc_scale * sc_modal_fit)) [divide] 1"
-                    ]
-                  ],
-                  "expanded": "1",
-                  "onclick": [
-                    "jumpcall('sc_open_video', 0)",
-                    "update(0.25)"
-                  ],
-                  "posx": "32480",
-                  "posy": "10371",
-                  "stable": "0",
-                  "ui": [
-                    {
-                      "addw": "0",
-                      "compid": "20304",
-                      "compname": "ninepatch",
-                      "compvalues": [
-                        "ifpressed(sc_modal_open_youtube)",
-                        [
-                          "r.sc_v2_primary_pressed"
-                        ],
-                        "eliffocused(sc_modal_open_youtube)",
-                        [
-                          "r.sc_v2_primary_focus"
-                        ],
-                        "else",
-                        [
-                          "r.sc_v2_primary_normal"
-                        ]
-                      ],
-                      "expanded": "1",
-                      "posx": "33640",
-                      "posy": "10486",
-                      "stable": "0"
-                    },
-                    {
-                      "addw": "0",
-                      "compid": "20308",
-                      "compname": "xywh",
-                      "compvalues": [
-                        [
-                          "((8) * (sc_scale * sc_modal_fit)) [divide] 1",
-                          "((0) * (sc_scale * sc_modal_fit)) [divide] 1",
-                          "((328) * (sc_scale * sc_modal_fit)) [divide] 1",
-                          "((52) * (sc_scale * sc_modal_fit)) [divide] 1",
-                          "true"
-                        ]
-                      ],
-                      "expanded": "1",
-                      "posx": "33640",
-                      "posy": "10780",
-                      "stable": "0",
-                      "ui": [
-                        {
-                          "addw": "0",
-                          "compid": "20307",
-                          "compname": "hexcolor",
-                          "compvalues": [
-                            [
-                              "#ffffff"
-                            ]
-                          ],
-                          "expanded": "1",
-                          "posx": "34800",
-                          "posy": "10895",
-                          "stable": "0",
-                          "ui": [
-                            {
-                              "addw": "0",
-                              "compid": "20306",
-                              "compname": "font",
-                              "compvalues": [
-                                [
-                                  "(17) * 0.075 * (sc_scale * sc_modal_fit)",
-                                  "ui_font"
-                                ]
-                              ],
-                              "expanded": "1",
-                              "posx": "35960",
-                              "posy": "11010",
-                              "stable": "0",
-                              "ui": [
-                                {
-                                  "addw": "0",
-                                  "compid": "20305",
-                                  "compname": "text",
-                                  "compvalues": [
-                                    [
-                                      "('YouTube에서 보기' @ ('d.scube.data.shared_text.t011.' + ui_lang))",
-                                      "centermiddle",
-                                      "right"
-                                    ]
-                                  ],
-                                  "expanded": "1",
-                                  "posx": "37120",
-                                  "posy": "11125",
-                                  "stable": "0"
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ],
-                  "uiname": "sc_modal_open_youtube"
-                },
-                {
-                  "addw": "0",
-                  "compname": "endif",
-                  "expanded": "1",
-                  "posx": "32480",
-                  "posy": "11323"
-                }
-              ]
-            },
-            {
-              "addw": "250",
               "compid": "20317",
               "compname": "code",
               "compinputs": [
@@ -4448,13 +4273,6 @@
               "ui": [
                 {
                   "addw": "0",
-                  "compname": "if(d.scube.data.integration.youtube_bridge != 1)",
-                  "expanded": "1",
-                  "posx": "32480",
-                  "posy": "11628"
-                },
-                {
-                  "addw": "0",
                   "compid": "20316",
                   "compname": "xywh",
                   "compvalues": [
@@ -4467,7 +4285,15 @@
                   ],
                   "expanded": "1",
                   "onclick": [
-                    "jumpcall('sc_open_video', 0)",
+                    "if(sc_video_id != '')",
+                    {
+                      "sc_open_ok": "openwebpage('https://www.youtube.com/watch?v=' + sc_video_id, 'window')"
+                    },
+                    "else",
+                    {
+                      "sc_open_ok": "0"
+                    },
+                    "endif",
                     "update(0.25)"
                   ],
                   "posx": "32480",
@@ -4550,7 +4376,7 @@
                                   "compname": "text",
                                   "compvalues": [
                                     [
-                                      "('영상 주소 보기' @ ('d.scube.data.shared_text.t012.' + ui_lang))",
+                                      "('영상 보기' @ ('d.scube.data.shared_text.t012.' + ui_lang))",
                                       "centermiddle",
                                       "right"
                                     ]
@@ -4568,13 +4394,6 @@
                     }
                   ],
                   "uiname": "sc_modal_video_link"
-                },
-                {
-                  "addw": "0",
-                  "compname": "endif",
-                  "expanded": "1",
-                  "posx": "32480",
-                  "posy": "12770"
                 }
               ]
             },
@@ -12263,10 +12082,7 @@
       "sc_q_token": "''"
     },
     {
-      "sc_link": "''"
-    },
-    {
-      "sc_open_ok": "0"
+      "sc_open_ok": "1"
     },
     {
       "sc_peer_count": "5"

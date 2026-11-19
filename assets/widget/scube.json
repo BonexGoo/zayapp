@@ -2537,7 +2537,6 @@
     "poll_seconds": 0.65
   },
   "integration": {
-    "youtube_bridge": 0,
     "navigation": "TryWorld native GLUE: twcreate/twpath/twstep"
   },
   "design": {
@@ -6220,15 +6219,10 @@
       "en": "Songdo Cube TV · ",
       "ja": "松島キューブTV · "
     },
-    "t011": {
-      "ko": "YouTube에서 보기",
-      "en": "Watch on YouTube",
-      "ja": "YouTubeで見る"
-    },
     "t012": {
-      "ko": "영상 주소 보기",
-      "en": "Show video URL",
-      "ja": "動画のURLを表示"
+      "ko": "영상 보기",
+      "en": "Show Video",
+      "ja": "動画を見る"
     },
     "t013": {
       "ko": "지도로 돌아가기",
@@ -6380,15 +6374,10 @@
       "en": "Music on",
       "ja": "BGMオン"
     },
-    "t043": {
-      "ko": "YouTube 영상 주소",
-      "en": "YouTube video URL",
-      "ja": "YouTubeの動画URL"
-    },
     "t044": {
-      "ko": "주소를 복사해 브라우저에서 열 수 있습니다.",
-      "en": "Copy this address to open it in your browser.",
-      "ja": "URLをコピーしてブラウザーで開けます。"
+      "ko": "영상 페이지를 열지 못했습니다. 다시 눌러 주세요.",
+      "en": "Could not open the video. Try again.",
+      "ja": "動画を開けませんでした。もう一度押してください。"
     },
     "t045": {
       "ko": "함께보기 서버",
