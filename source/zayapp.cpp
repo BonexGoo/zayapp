@@ -594,7 +594,7 @@ static sint32 CreateAppShortcut(const String& id)
     if(index < 0) return -1;
     const String title = AppShortcutTitle(index, id);
     #if BOSS_WASM
-        const String language = ZayWidgetDOM::GetValue("data.settings.language").ToText();
+        const String language = ZayWidgetDOM::GetValue("settings.language").ToText();
         const String prefix = "data.i18n." + language + ".settings.";
         return Platform::Utility::ShowWebShortcutDialog("app", id, title,
             ZayWidgetDOM::GetValue(prefix + "shortcut_web_help").ToText(),
@@ -1515,1771 +1515,21 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
 {
     auto& NewZayson = widget->Init(viewname, nullptr, [](chars name)->const Image* {return &((const Image&) R(name));});
 
-    ////////////////////////////////////////////////////////////////////////////////
-    // update
-    NewZayson.AddGlue("update", ZAY_DECLARE_GLUE(params, this) // 업데이트를 위한 글루함수를 추가
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Msec = sint32(params.Param(0).ToFloat() * 1000);
-            const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + Msec;
-            if(mUpdateMsec < NewUpdateMsec)
-                mUpdateMsec = NewUpdateMsec;
-        }
-    }, "[Msec]", "Msec동안 화면갱신유지");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // renderhint
-    NewZayson.AddGlue("renderhint", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Smooth = (params.Param(0).ToInteger() != 0);
-            auto Antialiasing = (params.Param(1).ToInteger() != 0);
-            Platform::Graphics::SetRenderHint(Smooth, Antialiasing);
-            ZayWidgetDOM::SetValue("program.smooth", (Smooth)? "1" : "0");
-            ZayWidgetDOM::SetValue("program.antialiasing", (Antialiasing)? "1" : "0");
-            invalidate();
-        }
-    }, "[Smooth][Antialiasing]", "랜더링품질 설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // sleep
-    NewZayson.AddGlue("sleep", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Msec = sint32(params.Param(0).ToFloat() * 1000);
-            Platform::Utility::Sleep(Msec, true, true, false);
-        }
-    }, "[Msec]", "Msec동안 슬립처리");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // print
-    NewZayson.AddGlue("print", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Title = params.Param(0).ToText();
-            auto Text = params.Param(1).ToText();
-            BOSS_TRACE("[%s] %s (%s)", (chars) Title, (chars) Text, params.UIName());
-        }
-    }, "[Title][Text]", "출력창에 로그남기기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setlocale
-    NewZayson.AddGlue("setlocale", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            gLastLocale = params.Param(0).ToText();
-            ZayWidgetDOM::SetValue("program.locale", '\'' + gLastLocale + '\'');
-        }
-    }, "[Locale:'ko-KR']", "언어코드를 설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // langturn
-    NewZayson.AddGlue("langturn", ZAY_DECLARE_GLUE(params, this)
-    {
-        mMainWidget.LangTurn();
-        invalidate();
-    }, nullptr, "현재 언어를 전환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // ascii
-    NewZayson.AddGlue("ascii", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto AsciiCode = params.Param(0).ToInteger();
-            char AsciiText[2] = {char(AsciiCode & 0xFF), '\0'};
-            Platform::SendKeyEvent(view(), 0, AsciiText, true);
-            Platform::SendKeyEvent(view(), 0, AsciiText, false);
-        }
-    }, "[AsciiCode:65]", "아스키를 입력");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // keypad
-    NewZayson.AddGlue("keypad", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto KeyCode = params.Param(0).ToInteger();
-            auto KeyText = params.Param(1).ToText();
-            Platform::SendKeyEvent(view(), KeyCode, KeyText, true);
-            Platform::SendKeyEvent(view(), KeyCode, KeyText, false);
-        }
-    }, "[KeyCode:65][KeyText:'A']", "키패드를 입력");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // clearcapture
-    NewZayson.AddGlue("clearcapture", ZAY_DECLARE_GLUE(params, this)
-    {
-        clearCapture();
-        invalidate();
-    }, nullptr, "Capture를 없애기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setcapture
-    NewZayson.AddGlue("setcapture", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto UIName = viewname + '.' + params.Param(0).ToText();
-            setCapture(UIName);
-            invalidate();
-        }
-    }, "[UIName:'ui_editbox']", "Capture를 설정하기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // windowgrap
-    NewZayson.AddGlue("windowgrab", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(6 <= params.ParamCount())
-        {
-            auto ResName = params.Param(0).ToText();
-            auto X = params.Param(1).ToInteger();
-            auto Y = params.Param(2).ToInteger();
-            auto Width = params.Param(3).ToInteger();
-            auto Height = params.Param(4).ToInteger();
-            auto Blur = params.Param(5).ToFloat();
-            auto UseRepaint = (6 < params.ParamCount())? (params.Param(6).ToInteger() != 0) : true;
-            if(ResName.Left(2) == "r.")
-                R::MakeGrapImage(ResName.Offset(2), X, Y, Width, Height, Blur, UseRepaint);
-        }
-    }, "[ResName:'r.grab'][X:0][Y:0][Width:100][Height:100][Blur:5.0]#[UseRepaint:1]", "해당 윈도우영역을 리소스화");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // createappshortcut
-    NewZayson.AddGlue("createappshortcut", ZAY_DECLARE_GLUE(params, this)
-    {
-        const sint32 result = (params.ParamCount() == 1)? CreateAppShortcut(params.Param(0).ToText()) : -1;
-        ZayWidgetDOM::SetValue("program.shortcut_result", String::FromInteger(result));
-        invalidate();
-    }, "[AppId:'robo']", "앱 단독 모드 바로가기 만들기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // openstandaloneapp
-    NewZayson.AddGlue("openstandaloneapp", ZAY_DECLARE_GLUE(params, this)
-    {
-        bool opened = false;
-        #if BOSS_WASM
-            if(params.ParamCount() == 1 || params.ParamCount() == 2)
-            {
-                const String id = params.Param(0).ToText();
-                const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
-                if(FindAppIndex(id) >= 0)
-                {
-                    const String page = Platform::Utility::GetThisWebPageUrl();
-                    if(page.Length())
-                        opened = Platform::Utility::OpenWebPageWithQuery(page + "?app=" + id.ToUrlString(), target);
-                }
-            }
-        #endif
-        ZayWidgetDOM::SetValue("program.shortcut_result", opened? "3" : "-1");
-        invalidate();
-    }, "[AppId:'robo']#[Target:'self']", "웹에서 앱을 단독 모드로 열기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // openwebpage
-    NewZayson.AddGlue("openwebpage", ZAY_DECLARE_GLUE(params, this)
-    {
-        bool opened = false;
-        if(params.ParamCount() == 1 || params.ParamCount() == 2)
-        {
-            const String url = params.Param(0).ToText();
-            const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
-            if(!String::CompareNoCase(url, "https://", 8) || !String::CompareNoCase(url, "http://", 7))
-                opened = Platform::Utility::OpenWebPageWithQuery(url, target);
-        }
-        if(params.CanReturn()) params.Return(opened? "1" : "0");
-    }, "[Url:'https://www.youtube.com/']#[Target:'self']", "웹 페이지 열기");
-
-    // focustable
-    NewZayson.AddGlue("focustable", ZAY_DECLARE_GLUE(params, this)
-    {
-        // loaded_file = focustable("table_new/Target_", "INNER", "Level", "EDGE")
-        // loaded_file = focustable("table_new/CoreX_", "PORE", "Face", "Z25")
-        // loaded_file = focustable("table_new/CoreX_", "ATAC", "Level", "Z25", "BI200")
-
-        mFocusedTable = nullptr;
-        String LoadedFile;
-        if(3 <= params.ParamCount())
-        {
-            const String FileTitle = params.Param(0).ToText();
-            const String Group = params.Param(1).ToText();
-            const String TableName = params.Param(2).ToText();
-            const String RequestedFile = FileTitle + Group + ".csv";
-            const String DefaultFile = FileTitle + "default.csv";
-
-            // Only default groups use the filename prefix to avoid collisions.
-            const std::string Prefix((chars) FileTitle);
-            const size_t Slash = Prefix.find_last_of("/\\");
-            const String DefaultGroup((Prefix.substr(
-                (Slash == std::string::npos)? 0 : Slash + 1) + "default").c_str());
-            const String RequestedGroup = (Group == "default")? DefaultGroup : Group;
-
-            const auto LoadTableFile = [&](const String& AssetName, const String& ParseGroup) -> bool
-            {
-                if(mLoadedTableFiles.Access(AssetName))
-                    return true;
-                if(auto CurAsset = Asset::OpenForRead(AssetName))
-                {
-                    Asset::Close(CurAsset);
-                    try
-                    {
-                        const String CsvText = String::FromAsset(AssetName);
-                        mDependencyTable.Parse(ParseGroup, CsvText);
-                        mLoadedTableFiles(AssetName) = true;
-                        return true;
-                    }
-                    catch(const std::exception& Error)
-                    {
-                        BOSS_TRACE("[focustable] %s: %s", (chars) AssetName, Error.what());
-                    }
-                }
-                return false;
-            };
-            const auto FindDependentTable = [&](const String& SearchGroup) -> const InnerTable*
-            {
-                if(params.ParamCount() == 3)
-                    return mDependencyTable.Table(SearchGroup, TableName);
-                for(sint32 i = 3; i < params.ParamCount(); ++i)
-                {
-                    const String Dependency = params.Param(i).ToText();
-                    if(auto Found = mDependencyTable.Table(SearchGroup, TableName, Dependency))
-                        return Found;
-                }
-                return nullptr;
-            };
-
-            if(LoadTableFile(RequestedFile, RequestedGroup))
-                mFocusedTable = FindDependentTable(RequestedGroup);
-            if(mFocusedTable)
-                LoadedFile = RequestedFile;
-            else if(LoadTableFile(DefaultFile, DefaultGroup))
-            {
-                mFocusedTable = FindDependentTable(DefaultGroup);
-                if(!mFocusedTable)
-                    mFocusedTable = mDependencyTable.Table(DefaultGroup, TableName);
-                if(mFocusedTable)
-                    LoadedFile = DefaultFile;
-            }
-        }
-        if(mFocusedTable)
-            LoadedFile += String::Format("<%d>", mFocusedTable->TableIndex());
-        if(params.CanReturn())
-            params.Return('\'' + LoadedFile + '\'');
-    }, "[FileTitle:'table_new/Target_'][Group:'INNER'][Table:'Level']#[Dependency1:'Z25'][Dependency2:'BI200']", "테이블 포커싱");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // gettablecell
-    NewZayson.AddGlue("gettablecell", ZAY_DECLARE_GLUE(params, this)
-    {
-        // cell0 = gettablecell("Forehead", "Level")
-        // cell1 = gettablecell("Forehead", "Interval")
-        // cell2 = gettablecell("Forehead", "MotorSpeed")
-
-        if(params.CanReturn())
-        {
-            String Result = "''";
-            if(params.ParamCount() == 2 && mFocusedTable)
-            {
-                const String Column = params.Param(0).ToText();
-                const String Row = params.Param(1).ToText();
-                if(auto Cell = mFocusedTable->Cell(Column, Row))
-                {
-                    sint32 OffsetCheck = 0;
-                    Parser::GetFloat<double>(*Cell, Cell->Length(), &OffsetCheck);
-                    if(0 < OffsetCheck && OffsetCheck == Cell->Length())
-                        Result = *Cell;
-                    else
-                    {
-                        String Text = *Cell;
-                        Text.Replace("\\", "\\\\");
-                        Text.Replace("'", "\\'");
-                        Text.Replace("\r", "\\r");
-                        Text.Replace("\n", "\\n");
-                        Result = '\'' + Text + '\'';
-                    }
-                }
-            }
-            params.Return(Result);
-        }
-    }, "[Column:'NoSelect'][Row:'Level']", "테이블셀 반환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // loadtable
-    NewZayson.AddGlue("loadtable", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1 && mFocusedTable)
-        {
-            const String DomNameD = params.Param(0).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                const String DomRoot = DomNameD.Offset(2);
-                for(sint32 y = 0, yend = 1 + mFocusedTable->RowCount(); y < yend; ++y)
-                {
-                    const String DomHead = DomRoot + String::Format(".%d", y);
-                    ZayWidgetDOM::RemoveVariables(DomHead + ".");
-                    for(sint32 x = 0, xend = 1 + mFocusedTable->ColumnCount(); x < xend; ++x)
-                    {
-                        String Header;
-                        const String* Cell = nullptr;
-                        if(y == 0)
-                        {
-                            if(x != 0) Header = mFocusedTable->ColumnName(x - 1);
-                            Cell = &Header;
-                        }
-                        else if(x == 0)
-                        {
-                            Header = mFocusedTable->RowName(y - 1);
-                            Cell = &Header;
-                        }
-                        else Cell = mFocusedTable->Cell(x - 1, y - 1);
-                        if(Cell)
-                        {
-                            sint32 OffsetCheck = 0;
-                            Parser::GetFloat<double>(*Cell, Cell->Length(), &OffsetCheck);
-                            String Value = *Cell;
-                            if(OffsetCheck <= 0 || OffsetCheck != Cell->Length())
-                            {
-                                Value.Replace("\\", "\\\\");
-                                Value.Replace("'", "\\'");
-                                Value.Replace("\r", "\\r");
-                                Value.Replace("\n", "\\n");
-                                Value = '\'' + Value + '\'';
-                            }
-                            ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", x), Value);
-                        }
-                    }
-                    ZayWidgetDOM::SetValue(DomHead + ".count", String::FromInteger(1 + mFocusedTable->ColumnCount()));
-                }
-                ZayWidgetDOM::SetValue(DomRoot + ".count", String::FromInteger(1 + mFocusedTable->RowCount()));
-            }
-        }
-    }, "[DomNameD:'d.value']", "포커싱된 테이블을 Dom으로 전개");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // wificonnect
-    NewZayson.AddGlue("wificonnect", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(1 <= params.ParamCount())
-        {
-            auto Ssid = params.Param(0).ToText();
-            auto Password = (1 < params.ParamCount())? params.Param(1).ToText() : String();
-            const bool Result = Platform::Socket::ConnectWifi(Ssid, Password);
-            if(params.CanReturn())
-                params.Return((Result)? "1" : "0");
-        }
-    }, "[Ssid:'abc']#[Password:'123']", "와이파이 연결");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // wifidisconnect
-    NewZayson.AddGlue("wifidisconnect", ZAY_DECLARE_GLUE(params, this)
-    {
-        Platform::Socket::DisconnectWifi();
-    }, nullptr, "와이파이 연결해제");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // bindsounddevice
-    NewZayson.AddGlue("bindsounddevice", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto DeviceIndex = params.Param(0).ToInteger();
-            UpdateSoundDeviceList(DeviceIndex);
-            for(sint32 i = 0, iend = mSounds.Count(); i < iend; ++i)
-                if(auto CurSound = mSounds.AccessByOrder(i))
-                    Platform::Sound::SetDevice(*CurSound, DeviceIndex);
-        }
-    }, "[DeviceIndex:0]", "사운드장치선택");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // mutesound
-    NewZayson.AddGlue("mutesound", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto MuteFlag = (params.Param(0).ToInteger() != 0);
-            mSoundMuted = MuteFlag;
-            if(mSoundMuted)
-            for(sint32 i = 0, iend = mSounds.Count(); i < iend; ++i)
-                if(auto CurSound = mSounds.AccessByOrder(i))
-                    Platform::Sound::Stop(*CurSound);
-        }
-    }, "[MuteFlag:1]", "사운드무음설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // playsound
-    NewZayson.AddGlue("playsound", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(1 <= params.ParamCount())
-        {
-            auto SoundAssetName = params.Param(0).ToText();
-            auto Volume = (1 < params.ParamCount())? params.Param(1).ToFloat() : 1.0;
-            if(!mSoundMuted)
-            {
-                if(!mSounds.Access(SoundAssetName))
-                {
-                    #if BOSS_ANDROID | BOSS_IPHONE
-                        buffer NewSoundData = Asset::ToBuffer(SoundAssetName);
-                        mSounds(SoundAssetName) = Platform::Sound::OpenForData((bytes) NewSoundData,
-                            Buffer::SizeOf(NewSoundData) * Buffer::CountOf(NewSoundData));
-                        Buffer::Free(NewSoundData);
-                    #elif BOSS_WASM
-                        mSounds(SoundAssetName) = Platform::Sound::OpenForUrl(SoundAssetName, false);
-                    #else
-                        mSounds(SoundAssetName) = Platform::Sound::OpenForFile(
-                            Platform::File::RootForAssets() + SoundAssetName, false);
-                    #endif
-                    if(mSoundDeviceFocus != -1)
-                        Platform::Sound::SetDevice(mSounds(SoundAssetName), mSoundDeviceFocus);
-                }
-                auto CurSoundID = mSounds(SoundAssetName);
-                if(Platform::Sound::NowPlaying(CurSoundID))
-                    Platform::Sound::Stop(CurSoundID);
-                Platform::Sound::SetVolume(CurSoundID, Volume);
-                Platform::Sound::Play(CurSoundID);
-            }
-        }
-    }, "[SoundAssetName:'sound/sound1.mp3']#[Volume:1.0]", "사운드시작");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // stopsound
-    NewZayson.AddGlue("stopsound", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto SoundAssetName = params.Param(0).ToText();
-            if(auto CurSoundID = mSounds.Access(SoundAssetName))
-            if(Platform::Sound::NowPlaying(*CurSoundID))
-                Platform::Sound::Stop(*CurSoundID);
-        }
-    }, "[SoundAssetName:'sound/sound1.mp3']", "사운드중지");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // readyapng
-    NewZayson.AddGlue("readyapng", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto APngAssetName = params.Param(0).ToText();
-            if(!mAPngs.Access(APngAssetName))
-            {
-                #if BOSS_ANDROID | BOSS_IPHONE
-                    buffer NewAPngData = Asset::ToBuffer(APngAssetName);
-                    if(NewAPngData)
-                    {
-                        mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
-                            Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
-                        Buffer::Free(NewAPngData);
-                    }
-                #elif BOSS_WASM
-                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForUrl(APngAssetName);
-                #else
-                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForFile(
-                        Platform::File::RootForAssets() + APngAssetName);
-                #endif
-            }
-        }
-    }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setvalue
-    NewZayson.AddGlue("setvalue", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto DomNameD = params.Param(0).ToText();
-            auto Value = params.Param(1).ToText(true);
-            if(DomNameD.Left(2) == "d.")
-                ZayWidgetDOM::SetValue(DomNameD.Offset(2), Value);
-        }
-    }, "[DomNameD:'d.aaa.bbb'][Value]", "DOM에 값을 설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // calcvalue
-    NewZayson.AddGlue("calcvalue", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto DomNameD = params.Param(0).ToText();
-            auto Value = params.Param(1).ToText(); // 스트링을 연산식으로 다시 평가
-            if(DomNameD.Left(2) == "d.")
-                ZayWidgetDOM::SetValue(DomNameD.Offset(2), Value);
-        }
-    }, "[DomNameD:'d.aaa.bbb'][Value]", "DOM에 값 또는 연산식을 설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // clearvalue
-    NewZayson.AddGlue("clearvalue", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto DomNameD = params.Param(0).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                ZayWidgetDOM::RemoveVariables(DomNameD.Offset(2));
-                invalidate();
-            }
-        }
-    }, "[DomNameD:'d.aaa.bbb']", "DomName이 포함된 모든 DOM을 제거");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // getcomment
-    NewZayson.AddGlue("getcomment", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto DomNameD = params.Param(0).ToText();
-            if(DomNameD.Left(2) == "d." && params.CanReturn())
-            {
-                auto Value = ZayWidgetDOM::GetComment(DomNameD.Offset(2));
-                params.Return(Value);
-            }
-        }
-    }, "[DomNameD:'d.aaa.bbb']", "Comment타입 DOM의 값을 반환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setcomment
-    NewZayson.AddGlue("setcomment", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto DomNameD = params.Param(0).ToText();
-            auto Value = params.Param(1).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                ZayWidgetDOM::SetComment(DomNameD.Offset(2), Value);
-                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".text", '\'' + Value + '\'');
-                clearCapture();
-                invalidate();
-            }
-        }
-    }, "[DomNameD:'d.aaa.bbb'][Value]", "Comment타입 DOM에 값을 설정");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setdom
-    NewZayson.AddGlue("setdom", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(2 <= params.ParamCount())
-        {
-            auto DomNameD = params.Param(0).ToText();
-            auto FilePath = params.Param(1).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                String DomHeader = DomNameD.Offset(2) + '.';
-                ZayWidgetDOM::RemoveVariables(DomHeader);
-                if(Platform::File::Exist(FilePath))
-                {
-                    const Context Json(ST_Json, SO_NeedCopy, String::FromFile(FilePath));
-                    ZayWidgetDOM::SetJson(Json, DomHeader);
-                }
-                else if(2 < params.ParamCount())
-                {
-                    auto AssetPath = params.Param(2).ToText();
-                    const Context Json(ST_Json, SO_NeedCopy, String::FromAsset(AssetPath));
-                    ZayWidgetDOM::SetJson(Json, DomHeader);
-                }
-                invalidate();
-            }
-        }
-    }, "[DomNameD:'d.aaa.bbb'][FilePath:'C:/aaa/bbb.json']", "DomName의 아래에 FilePath의 json을 로딩");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // gettext
-    NewZayson.AddGlue("gettext", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Title = params.Param(0).ToText();
-            auto Topic = params.Param(1).ToText();
-            SolverValue OldText;
-            if(params.CanReturn(&OldText))
-            {
-                String GetText = OldText.ToText();
-                if(Platform::Popup::TextDialog(GetText, Title, Topic))
-                {
-                    params.Return('\'' + GetText + '\'');
-                    invalidate();
-                }
-            }
-        }
-    }, "[Title:'타이틀명'][Topic:'토픽명']", "유저로부터 값을 하나 입력받아 지역변수로 Return처리");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // savetext
-    NewZayson.AddGlue("savetext", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(2 <= params.ParamCount())
-        {
-            auto FileName = params.Param(0).ToText();
-            auto Text = params.Param(1).ToText();
-            Text.Replace("\\n", "\r\n");
-            auto UniqueFlag = (2 < params.ParamCount())? (params.Param(2).ToInteger() != 0) : false;
-            auto ExtendPath = (3 < params.ParamCount())? params.Param(3).ToText() : String();
-
-            if(0 < ExtendPath.Length())
-            {
-                String FilePath = ExtendPath + FileName;
-                if(UniqueFlag)
-                {
-                    const sint32 DotPos = FileName.Find(0, ".");
-                    if(DotPos != -1)
-                    for(sint32 i = 1; i < 1000 && Platform::File::Exist(FilePath); ++i)
-                        FilePath = ExtendPath + FileName.Left(DotPos) + String::Format("_%03d", i) + FileName.Offset(DotPos);
-                }
-                if(auto NewFile = Platform::File::OpenForWrite(FilePath, true))
-                {
-                    Platform::File::Write(NewFile, (bytes)(chars) Text, Text.Length());
-                    Platform::File::Close(NewFile);
-                    ZayWidgetDOM::SetValue("savefile.log", "'[SAVED usb] " + FilePath + '\'');
-                }
-                else ZayWidgetDOM::SetValue("savefile.log", "'[NOT SAVE usb] " + FilePath + '\'');
-            }
-            else
-            {
-                String AssetName = FileName;
-                if(UniqueFlag)
-                {
-                    const sint32 DotPos = FileName.Find(0, ".");
-                    if(DotPos != -1)
-                    for(sint32 i = 1; i < 1000 && Asset::Exist(AssetName); ++i)
-                        AssetName = FileName.Left(DotPos) + String::Format("_%03d", i) + FileName.Offset(DotPos);
-                }
-                Text.ToAsset(AssetName, true);
-                ZayWidgetDOM::SetValue("savefile.log", "'[SAVED assets-rem] " + AssetName + '\'');
-            }
-        }
-    }, "[FileName:'파일명'][Text:'ABC']#[UniqueFlag:1][ExtendPath:'D:/']", "Text를 파일에 저장");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // savebase64
-    NewZayson.AddGlue("savebase64", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto FileName = params.Param(0).ToText();
-            auto JsonText = params.Param(1).ToText();
-            if(auto NewAsset = Asset::OpenForWrite(FileName, true))
-            {
-                const Context Json(ST_Json, SO_OnlyReference, JsonText);
-                String Base64 = Json("base64").GetText();
-                buffer ImageData = AddOn::Ssl::FromBASE64(Base64.Replace("\\/", "/"));
-                Asset::Write(NewAsset, (bytes) ImageData, Buffer::CountOf(ImageData));
-                Asset::Close(NewAsset);
-                Buffer::Free(ImageData);
-            }
-        }
-    }, "[FileName:'파일명'][JsonText:'{\"base64\":\"...\"}']", "JsonText속 base64항목을 디코딩해 파일로 저장");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // loadcsv
-    NewZayson.AddGlue("loadcsv", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(2 <= params.ParamCount())
-        {
-            auto FileName = params.Param(0).ToText();
-            auto DomNameD = params.Param(1).ToText();
-            auto ExtendPath = (2 < params.ParamCount())? params.Param(2).ToText() : String();
-            if(DomNameD.Left(2) == "d.")
-            {
-                String Csv;
-                if(0 < ExtendPath.Length())
-                {
-                    String FilePath = ExtendPath + FileName;
-                    Csv = String::FromFile(FilePath);
-                }
-                else
-                {
-                    const String AssetName = FileName;
-                    Csv = String::FromAsset(AssetName);
-                }
-
-                Csv.Replace("\r\n", "\n");
-                const Strings CsvLines = String::Split(Csv, '\n');
-                for(sint32 i = 0, iend = CsvLines.Count(); i < iend; ++i)
-                {
-                    const Strings CsvCells = String::Split(CsvLines[i], ',');
-                    const String DomHead = DomNameD.Offset(2) + String::Format(".%d", i);
-                    for(sint32 j = 0, jend = CsvCells.Count(); j < jend; ++j)
-                    {
-                        const String CurCell = CsvCells[j].Trim();
-                        sint32 OffsetCheck = 0;
-                        Parser::GetFloat<double>(CurCell, CurCell.Length(), &OffsetCheck);
-					    if(OffsetCheck == CurCell.Length() && 0 < OffsetCheck) // 실수 또는 정수
-					        ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", j), CurCell);
-                        else ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", j), '\'' + CurCell + '\'');
-                    }
-                    ZayWidgetDOM::SetValue(DomHead + ".count", String::FromInteger(CsvCells.Count()));
-                }
-                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".count", String::FromInteger(CsvLines.Count()));
-            }
-        }
-    }, "[FileName:'파일명'][DomNameD:'d.value']#[ExtendPath:'D:/']", "파일에서 Csv를 로딩");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // loadjson
-    NewZayson.AddGlue("loadjson", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto JsonText = params.Param(0).ToText();
-            auto DomNameD = params.Param(1).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                String DomHeader = DomNameD.Offset(2) + '.';
-                ZayWidgetDOM::RemoveVariables(DomHeader);
-                const Context Json(ST_Json, SO_OnlyReference, JsonText);
-                ZayWidgetDOM::SetJson(Json, DomHeader);
-            }
-        }
-    }, "[JsonText:'{a:b}'][DomNameD:'d.value']", "Json을 Dom으로 전개");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // geturltext
-    NewZayson.AddGlue("geturltext", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Text = params.Param(0).ToText();
-            if(params.CanReturn())
-                params.Return('\'' + Text.ToUrlString() + '\'');
-        }
-    }, "[Text:'abc']", "UrlText로 변환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // makeuid
-    NewZayson.AddGlue("makeuid", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 6)
-        {
-            auto Num1 = (params.Param(0).ToInteger() & 0xFFFF);
-            auto Num2 = (params.Param(1).ToInteger() & 0xFFFF);
-            auto Num3 = (params.Param(2).ToInteger() & 0xFFFF);
-            auto Num4 = (params.Param(3).ToInteger() & 0xFFFF);
-            auto Num5 = (params.Param(4).ToInteger() & 0xFFFF);
-            auto Num6 = (params.Param(5).ToInteger() & 0xFFFF);
-            if(params.CanReturn())
-                params.Return(String::Format("'%04X-%04X-%04X-%04X-%04X-%04X'", Num1, Num2, Num3, Num4, Num5, Num6));
-        }
-    }, "[Num1:0xFFFF][Num2:0xFFFF][Num3:0xFFFF][Num4:0xFFFF][Num5:0xFFFF][Num6:0xFFFF]", "UID로 변환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // maketimetag
-    NewZayson.AddGlue("maketimetag", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Format = params.Param(0).ToText();
-            String TimeTag;
-            if(id_clock NewClock = Platform::Clock::CreateAsCurrent())
-            {
-                sint32 Year = 0, Month = 0, Day = 0, Hour = 0, Min = 0, Sec = 0;
-                Platform::Clock::GetDetail(NewClock, nullptr, &Sec, &Min, &Hour, &Day, &Month, &Year);
-                if(Format == "YYYYMMDD_HHMMSS")
-                    TimeTag = String::Format("%04d%02d%02d_%02d%02d%02d", Year, Month, Day, Hour, Min, Sec);
-                else if(Format == "YYYY-MM-DD")
-                    TimeTag = String::Format("%04d-%02d-%02d", Year, Month, Day);
-                else if(Format == "HH:MM:SS")
-                    TimeTag = String::Format("%02d:%02d:%02d", Hour, Min, Sec);
-                Platform::Clock::Release(NewClock);
-            }
-            if(params.CanReturn())
-                params.Return('\'' + TimeTag + '\'');
-        }
-    }, "[Format:'YYYYMMDD_HHMMSS']", "현재시간의 TimeTag를 반환");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // movescrollv
-    NewZayson.AddGlue("movescrollv", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto UIName = params.Param(0).ToText();
-            auto ScrollTarget = params.Param(1).ToInteger();
-            const sint32 ScrollPos = scrollpos(UIName).y;
-            moveScroll(UIName, 0, ScrollPos, 0, ScrollTarget, 0.5, false);
-        }
-    }, "[UIName:'ui_scroll'][ScrollTarget:1000]", "수직스크롤바를 이동");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // slideonce
-    NewZayson.AddGlue("slideonce", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 4)
-        {
-            const String DomNameD = params.Param(0).ToText();
-            const sint32 Min = params.Param(1).ToInteger();
-            const sint32 Max = params.Param(2).ToInteger();
-            const sint32 Step = params.Param(3).ToInteger();
-            if(DomNameD.Left(2) == "d." && Min < Max && Step != 0)
-            {
-                const String DomName = DomNameD.Offset(2);
-                const float OldValue = ZayWidgetDOM::ExistVariable(DomName + ".ani")?
-                    ZayWidgetDOM::GetValue(DomName + ".ani").ToFloat() : ZayWidgetDOM::GetValue(DomName).ToFloat();
-                const sint32 AbsStep = Math::Abs(Step);
-                const sint32 NewValue = Min + sint32(Math::Round((OldValue - Min) / AbsStep)) * AbsStep + Step;
-                const sint32 ClampValue = Math::Clamp(NewValue, Min, Max);
-                ZayWidgetDOM::SetValue(DomName, String::FromInteger(ClampValue));
-                ZayWidgetDOM::SetValue(DomName + ".ani", String::Format("%f ~ %d : 0.1", OldValue, ClampValue));
-                const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 100;
-                if(mUpdateMsec < NewUpdateMsec)
-                    mUpdateMsec = NewUpdateMsec;
-                clearCapture();
-                invalidate(2);
-            }
-        }
-    }, "[DomNameD:'d.value'][Step:-10][Limit:1]", "슬라이드를 한번 이동");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // Native navigation and depth ordering. Names are scoped to this widget view.
-    if(!mNativeState) mNativeState=new ZayAppNativeState();
-    NewZayson.AddGlue("twcreate", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(2<=params.ParamCount() && params.ParamCount()<=5)
-        {
-            const String name=params.Param(0).ToText(), source=params.Param(1).ToText();
-            const String output=params.ParamCount()>4?params.Param(4).ToText():source+".build";
-            String base, result;
-            if(ZayNativeDom(output,result))
-            {
-                std::string error="invalid_arguments";
-                if(name.Length()>0 && name.Left(2)!="d." && ZayNativeDom(source,base))
-                {
-                    const double halfWidth=params.ParamCount()>2?params.Param(2).ToFloat():0;
-                    const double halfHeight=params.ParamCount()>3?params.Param(3).ToFloat():halfWidth;
-                    ZayAppNativeState::Geometry geometry;
-                    if(ZayNativeGeometry(base,halfWidth,halfHeight,geometry,error))
-                    {
-                        const ZayAppNativeState::Key key((chars)viewname,(chars)name);
-                        std::vector<ZayAppNativeState::Key> changed;
-                        ok=mNativeState->Create(key,geometry,error,changed);
-                        ZayNativeChangedRoutes(*mNativeState,changed);
-                        if(ok)
-                        {
-                            const auto& world=*mNativeState->worlds.at(key);
-                            ZayNativePutNumber(result+".vertices",world.map->Dots.Count());
-                            ZayNativePutNumber(result+".walls",double(world.walls.size()));
-                            ZayNativePutNumber(result+".half_width",halfWidth);
-                            ZayNativePutNumber(result+".half_height",halfHeight);
-                        }
-                    }
-                }
-                ZayNativeStatus(result,ok,ok?"ready":error.c_str());
-                invalidate();
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[World:'scube.small'][GeometryDomD:'d.scube.geometry']#[HalfWidth:8][HalfHeight:5][ResultDomD:'d.scube.build']", "체형별 트라이월드 맵 생성(허리 반폭/반높이)");
-
-    NewZayson.AddGlue("twpath", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(params.ParamCount()==6)
-        {
-            const String name=params.Param(0).ToText(), output=params.Param(5).ToText();
-            String base;
-            if(ZayNativeDom(output,base))
-            {
-                const ZayAppNativeState::Key worldKey((chars)viewname,(chars)name), routeKey((chars)viewname,(chars)output);
-                ok=mNativeState->FindPath(worldKey,routeKey,
-                    Point(params.Param(1).ToFloat(),params.Param(2).ToFloat()),
-                    Point(params.Param(3).ToFloat(),params.Param(4).ToFloat()));
-                ZayNativeRoute(base,*mNativeState->routes.at(routeKey));
-                invalidate();
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[World:'scube.small'][StartX:100][StartY:100][GoalX:500][GoalY:300][RouteDomD:'d.scube.route.me']", "캐릭터별 경로 생성 및 이전 경로 교체");
-
-    NewZayson.AddGlue("twstep", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(params.ParamCount()==3)
-        {
-            const String output=params.Param(0).ToText(); String base;
-            if(ZayNativeDom(output,base))
-            {
-                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
-                const auto found=mNativeState->routes.find(key);
-                if(found!=mNativeState->routes.end())
-                {
-                    ok=mNativeState->Step(key,params.Param(1).ToFloat(),params.Param(2).ToFloat());
-                    ZayNativeRoute(base,*found->second);
-                    if(!ok && found->second->ok)
-                    { ZayNativeStatus(base,false,"invalid_step"); ZayNativePutNumber(base+".moving",0); }
-                }
-                else
-                {
-                    ZayNativeStatus(base,false,"path_not_found");
-                    ZayNativePutNumber(base+".moving",0); ZayNativePutNumber(base+".arrived",0);
-                }
-                invalidate();
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[RouteDomD:'d.scube.route.me'][Speed:85][DeltaSeconds:0.016]", "경로 추종/충돌 검사 후 좌표와 방향 갱신(초 단위)");
-
-    NewZayson.AddGlue("twrelease", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(params.ParamCount()==1)
-        {
-            const String name=params.Param(0).ToText(); String base;
-            const ZayAppNativeState::Key key((chars)viewname,(chars)name);
-            if(ZayNativeDom(name,base))
-            {
-                ok=mNativeState->routes.erase(key)!=0;
-                ZayNativeStatus(base,false,"released");
-                ZayNativePutNumber(base+".moving",0); ZayNativePutNumber(base+".arrived",0);
-                ZayNativePutNumber(base+".blocked",0); ZayNativePutNumber(base+".point_count",0);
-            }
-            else
-            {
-                std::vector<ZayAppNativeState::Key> changed;
-                ok=mNativeState->ReleaseWorld(key,changed);
-                ZayNativeChangedRoutes(*mNativeState,changed);
-            }
-            if(ok) invalidate();
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[WorldOrRouteDomD:'scube.small']", "맵 또는 경로 해제(맵 해제 시 연결 경로 무효화)");
-
-    // FootY stays third for backward compatibility; optional FootX enables front-edge tests.
-    NewZayson.AddGlue("depthset", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        const int n=params.ParamCount();
-        if(n==3 || n==4 || n==8)
-        {
-            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
-            ZayAppNativeState::DepthEntry entry;
-            entry.id=(chars)literal; entry.literal=(chars)literal; entry.y=params.Param(2).ToFloat();
-            if(n>=4) { entry.hasX=true; entry.x=params.Param(3).ToFloat(); }
-            if(n==8)
-            {
-                entry.bounded=true; entry.l=params.Param(4).ToFloat(); entry.t=params.Param(5).ToFloat();
-                entry.r=params.Param(6).ToFloat(); entry.b=params.Param(7).ToFloat();
-            }
-            if(ZayNativeDom(output,base) && ZayAppNativeState::Depth::Valid(entry))
-            {
-                auto& depth=mNativeState->depths[{(chars)viewname,(chars)output}];
-                int first=-1,last=-1; ok=depth.Put(entry,first,last);
-                if(ok && first>=0) { ZayNativeDepth(base,depth,first,last); invalidate(); }
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[OrderDomD:'d.scube.depth'][ObjectID:0][FootY:350][FootX:300][Left:280][Top:250][Right:320][Bottom:355]", "개체 발밑 Y/X와 선택적 출력 사각형 갱신. 3/4/8개 인자 지원");
-
-    NewZayson.AddGlue("depthfront", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        const int n=params.ParamCount();
-        if(n==6 || n==10)
-        {
-            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
-            ZayAppNativeState::DepthEntry entry;
-            entry.id=(chars)literal; entry.literal=(chars)literal; entry.hasX=entry.front=true;
-            entry.x=params.Param(2).ToFloat(); entry.y=params.Param(3).ToFloat();
-            entry.leftSlope=params.Param(4).ToFloat(); entry.rightSlope=params.Param(5).ToFloat();
-            if(n==10)
-            {
-                entry.bounded=true; entry.l=params.Param(6).ToFloat(); entry.t=params.Param(7).ToFloat();
-                entry.r=params.Param(8).ToFloat(); entry.b=params.Param(9).ToFloat();
-            }
-            if(ZayNativeDom(output,base) && ZayAppNativeState::Depth::Valid(entry))
-            {
-                auto& depth=mNativeState->depths[{(chars)viewname,(chars)output}];
-                int first=-1,last=-1; ok=depth.Put(entry,first,last);
-                if(ok && first>=0) { ZayNativeDepth(base,depth,first,last); invalidate(); }
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[OrderDomD:'d.scube.depth'][ObjectID:0][CornerX:300][CornerY:350][LeftSlope:0.6][RightSlope:-1.1][Left:240][Top:200][Right:360][Bottom:355]", "건물의 앞 꼭짓점/좌우 바닥 경계선과 선택적 출력 사각형 등록. 6/10개 인자 지원");
-
-    NewZayson.AddGlue("depthremove", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(params.ParamCount()==2)
-        {
-            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
-            if(ZayNativeDom(output,base))
-            {
-                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
-                const auto found=mNativeState->depths.find(key);
-                int first=-1;
-                if(found!=mNativeState->depths.end() && found->second.Remove((chars)literal,first))
-                {
-                    const auto& depth=found->second; ok=true;
-                    ZayNativeDepth(base,depth,first,int(depth.order.size())-1);
-                    // Clear the vacated slot without prefix-deleting IDs 1, 10, 100, ...
-                    ZayWidgetDOM::SetValue(base+String::Format(".%d",int(depth.order.size())),"''");
-                    invalidate();
-                }
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[OrderDomD:'d.scube.depth'][ObjectID:0]", "개체를 깊이 정렬에서 제거");
-
-    NewZayson.AddGlue("depthclear", ZAY_DECLARE_GLUE(params, this, viewname)
-    {
-        bool ok=false;
-        if(params.ParamCount()==1)
-        {
-            const String output=params.Param(0).ToText(); String base;
-            if(ZayNativeDom(output,base))
-            {
-                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
-                auto found=mNativeState->depths.find(key);
-                if(found!=mNativeState->depths.end())
-                {
-                    for(size_t i=0; i<found->second.order.size(); ++i)
-                        ZayWidgetDOM::SetValue(base+String::Format(".%d",int(i)),"''");
-                    mNativeState->depths.erase(found);
-                }
-                ZayNativePutNumber(base+".count",0); ZayNativePutNumber(base+".revision",0);
-                ok=true; invalidate();
-            }
-        }
-        if(params.CanReturn()) params.Return(ok?"1":"0");
-    }, "[OrderDomD:'d.scube.depth']", "깊이 정렬 그룹 초기화");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // addgraph
-    NewZayson.AddGlue("addgraph", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 3)
-        {
-            auto GraphName = params.Param(0).ToText();
-            auto Value = params.Param(1).ToFloat();
-            auto MaxCount = params.Param(1).ToInteger();
-            // 그래프에 값추가
-            auto& CurGraph = mGraphs(GraphName);
-            if(0 < CurGraph.Count() - MaxCount)
-                CurGraph.SubtractionSection(0, CurGraph.Count() - MaxCount);
-            CurGraph.AtAdding() = Value;
-        }
-    }, "[GraphName:'temp'][Value:500][MaxCount:100]", "특정 그래프에 하나의 값을 추가");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // cleargraph
-    NewZayson.AddGlue("cleargraph", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto GraphName = params.Param(0).ToText();
-            mGraphs.Remove(GraphName);
-        }
-    }, "[GraphName:'temp']", "특정 그래프를 제거");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // setloghighlight
-    NewZayson.AddGlue("setloghighlight", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto ColorCode = params.Param(0).ToText();
-            auto MatchText = params.Param(1).ToText();
-            if(0 < MatchText.Length())
-                mLogHighlights(ColorCode) = MatchText;
-            else mLogHighlights.Remove(ColorCode);
-        }
-    }, "[ColorCode:'#ff00ff'][MatchText:'80 00']", "로그의 강조옵션");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // updateipaddress
-    NewZayson.AddGlue("updateipaddress", ZAY_DECLARE_GLUE(params, this)
-    {
-        UpdateIPAddress();
-    }, nullptr, "IP주소를 알기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // attachserialonce
-    NewZayson.AddGlue("attachserialonce", ZAY_DECLARE_GLUE(params, this)
-    {
-        Platform::Serial::AttachOnce();
-    }, nullptr, "시리얼포트 권한추가(WASM전용)");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // connectserial
-    NewZayson.AddGlue("connectserial", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(1 <= params.ParamCount())
-        {
-            auto Port = params.Param(0).ToText();
-            auto Baudrate = (1 < params.ParamCount())? params.Param(1).ToInteger() : -1;
-            if(mChannel.ConnectSerial(Port, Baudrate))
-                UpdateChannelList();
-            invalidate();
-        }
-    }, "[Port:'COM1']#[Baudrate:115200]", "시리얼포트 연결");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // closechannel
-    NewZayson.AddGlue("closechannel", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Ch = params.Param(0).ToText();
-            mChannel.Delete(Ch);
-            UpdateChannelList();
-            if(mProjects.Access(mLastVdsProjCode))
-                ZayWidgetDOM::RemoveVariables(mLastVdsProjCode + String::Format(".%s.", (chars) Ch));
-            invalidate();
-        }
-    }, "[Ch:'COM1']", "채널 닫기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // sendchannel
-    NewZayson.AddGlue("sendchannel", ZAY_DECLARE_GLUE(params, this)
-    {
-        clearCapture();
-        if(params.ParamCount() == 1)
-        {
-            auto Ch = params.Param(0).ToText();
-            uint08s NewPacket;
-            mEditText.WritePacket(NewPacket, [this](chars ch, chars key)->const SolverValue
-                {return ZayWidgetDOM::GetValue(String::Format("vds.%s", key));}, Ch);
-            if(0 < NewPacket.Count())
-            {
-                if(mChannel.Write(Ch, (bytes) &NewPacket[0], NewPacket.Count()))
-                    AddHexLog(Ch, "(send CMD)", &NewPacket[0], NewPacket.Count(), "#800080");
-                else AddHexLog(Ch, "(send-failed CMD)", &NewPacket[0], NewPacket.Count(), "#800000");
-            }
-            invalidate();
-        }
-    }, "[Ch:'COM1']", "채널로 패킷송신");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // adddevice
-    NewZayson.AddGlue("adddevice", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Ch = params.Param(0).ToText();
-            if(Ch != "x")
-            {
-                String FindedDeviceName;
-                for(sint32 i = 1; i < 1000; ++i)
-                {
-                    const String CurDeviceName = String::Format("%03d", i);
-                    if(auto CurCh = mDevices.Access(CurDeviceName))
-                    {
-                        if(*CurCh == Ch)
-                        {
-                            FindedDeviceName = CurDeviceName;
-                            break;
-                        }
-                    }
-                    else if(FindedDeviceName.Length() == 0)
-                        FindedDeviceName = CurDeviceName;
-                }
-                if(0 < FindedDeviceName.Length())
-                {
-                    mDevices(FindedDeviceName) = Ch;
-                    UpdateDeviceList();
-                }
-                invalidate();
-            }
-        }
-    }, "[Ch:'COM1']", "채널로 장치추가");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // subdevice
-    NewZayson.AddGlue("subdevice", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Ch = params.Param(0).ToText();
-            for(sint32 i = 1; i < 1000; ++i)
-            {
-                const String CurDeviceName = String::Format("%03d", i);
-                if(auto CurCh = mDevices.Access(CurDeviceName))
-                if(*CurCh == Ch)
-                {
-                    mDevices.Remove(CurDeviceName);
-                    UpdateDeviceList();
-                    break;
-                }
-            }
-            invalidate();
-        }
-    }, "[Ch:'COM1']", "채널로 장치제거");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // connectscope
-    NewZayson.AddGlue("connectscope", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto ScopeId = params.Param(0).ToText();
-            if(!mOscilloScope)
-                mOscilloScope = VisaApi::Create();
-            if(mOscilloScope)
-            {
-                if(mOscilloScope->IsOpen())
-                    mOscilloScope->Close();
-                mOscilloScope->SetResource(ScopeId);
-                ValidScope();
-            }
-        }
-    }, "[ScopeId:'USB0::0x18D1::0x0007::410001140::1::INSTR']", "스코프에 연결하기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // getscope
-    NewZayson.AddGlue("getscope", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(2 <= params.ParamCount())
-        {
-            // Measure = 'PKPK'     // Peak-to-Peak
-            // Measure = 'AMPL'     // Amplitude (보통 PKPK와 유사하지만 정의 다름)
-            // Measure = 'MAX'      // Maximum
-            // Measure = 'MIN'      // Minimum
-            // Measure = 'TOP'      // Top level
-            // Measure = 'BASE'     // Base level
-            // Measure = 'MEAN'     // Mean (DC average)
-            // Measure = 'RMS'      // RMS
-            auto Measure = params.Param(0).ToText();
-            auto DomNameD1 = params.Param(1).ToText();
-            auto DomNameD2 = (2 < params.ParamCount())? params.Param(2).ToText() : String();
-            auto DomNameD3 = (3 < params.ParamCount())? params.Param(3).ToText() : String();
-            auto DomNameD4 = (4 < params.ParamCount())? params.Param(4).ToText() : String();
-            if((DomNameD1.Length() == 0 || DomNameD1.Left(2) == "d.") &&
-                (DomNameD2.Length() == 0 || DomNameD2.Left(2) == "d.") &&
-                (DomNameD3.Length() == 0 || DomNameD3.Left(2) == "d.") &&
-                (DomNameD4.Length() == 0 || DomNameD4.Left(2) == "d."))
-            {
-                // 값 가져오기
-                if(ValidScope())
-                {
-                    const String DomNamesD[4] = {DomNameD1, DomNameD2, DomNameD3, DomNameD4};
-                    for(sint32 i = 0; i < 4; ++i)
-                    {
-                        if(0 < DomNamesD[i].Length())
-                        {
-                            std::string Value;
-                            mOscilloScope->Write((chars) String::Format(":MEASure:OPEN %s, CH%d", (chars) Measure, i + 1)); // 메뉴가 없다면 새로 생기게 됨
-                            mOscilloScope->Query((chars) String::Format(":MEASure:%s? CH%d", (chars) Measure, i + 1), Value); // 메뉴가 없을땐 "-"로 나옴
-                            const String ErrorCheck = String(Value.c_str()).Trim();
-                            sint32 ReadOffset = 0;
-                            Parser::GetFloat((chars) ErrorCheck, ErrorCheck.Length(), &ReadOffset);
-                            if(ReadOffset == ErrorCheck.Length())
-                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2), Value.c_str());
-                            else
-                            {
-                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2), "'x'");
-                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2) + "_error", '\'' + ErrorCheck + '\'');
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if(0 < DomNameD1.Length())
-                        ZayWidgetDOM::SetValue(DomNameD1.Offset(2), "'x'");
-                    if(0 < DomNameD2.Length())
-                        ZayWidgetDOM::SetValue(DomNameD2.Offset(2), "'x'");
-                    if(0 < DomNameD3.Length())
-                        ZayWidgetDOM::SetValue(DomNameD3.Offset(2), "'x'");
-                    if(0 < DomNameD4.Length())
-                        ZayWidgetDOM::SetValue(DomNameD4.Offset(2), "'x'");
-                }
-            }
-        }
-    }, "[Measure:'PKPK'][DomNameD1:'d.ch1_value']#[DomNameD2:'d.ch2_value'][DomNameD3:'d.ch3_value'][DomNameD4:'d.ch4_value']", "스코프의 현재값 얻기");
-
-    //jj260821_oscilloscope scale
-    NewZayson.AddGlue("setscopetimescale", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (ValidScope())
-        {
-            mOscilloScope->Write(
-                ":TIMebase:EXTent 2.000000e-6\n");
-        }
-    }, "", "스코프 시간축 2us/div 설정"); 
-    NewZayson.AddGlue("setscopetime500ms", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (ValidScope())
-        {
-            mOscilloScope->Write(
-                ":TIMebase:EXTent 5.000000e-1\n");
-        }
-    }, "", "스코프 시간축 500ms/div 설정");
-    NewZayson.AddGlue("setscopech1_50v", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (ValidScope())
-        {
-            mOscilloScope->Write(
-                ":CHANnel1:SCALe 50\n");
-        }
-    }, "", "CH1 전압 스케일 50V/div 설정");
-    NewZayson.AddGlue("setscopech2_50v", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (ValidScope())
-        {
-            mOscilloScope->Write(
-                ":CHANnel2:SCALe 50\n");
-        }
-    }, "", "CH2 전압 스케일 50V/div 설정");
-
-	//jj260825_inspection Tool HP Count
-    NewZayson.AddGlue("gethpcount", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (params.ParamCount() == 1)
-        {
-            const sint32 StartIndex = params.Param(0).ToInteger();
-            const String ItemPath = "inspection.apq.inspect_table.items";
-
-            const sint32 ItemCount =
-                ZayWidgetDOM::GetValue(ItemPath + ".count").ToInteger();
-
-            sint32 Count = 0;
-
-            if (0 <= StartIndex && StartIndex < ItemCount)
-            {
-                const String TargetHp = ZayWidgetDOM::GetValue(
-                    ItemPath + String::Format(".%d.hp", StartIndex)
-                ).ToText();
-
-                for (sint32 i = StartIndex; i < ItemCount; ++i)
-                {
-                    const String CurrentHp = ZayWidgetDOM::GetValue(
-                        ItemPath + String::Format(".%d.hp", i)
-                    ).ToText();
-
-                    if (CurrentHp != TargetHp)
-                        break;
-
-                    ++Count;
-                }
-            }
-
-            ZayWidgetDOM::SetValue(
-                "inspection.hp_count." + String::FromInteger(StartIndex),
-                String::FromInteger(Count)
-            );
-        }
-    }, "[StartIndex:0]", "현재 위치부터 연속된 HP 개수 계산");
-
-    //jj260826_inspection Tool Output Count
-    NewZayson.AddGlue("getoutputcount", ZAY_DECLARE_GLUE(params, this)
-    {
-        if (params.ParamCount() == 1)
-        {
-            const sint32 StartIndex = params.Param(0).ToInteger();
-            const String ItemPath = "inspection.apq.inspect_table.items";
-
-            const sint32 ItemCount =
-                ZayWidgetDOM::GetValue(ItemPath + ".count").ToInteger();
-
-            sint32 Count = 0;
-
-            if (0 <= StartIndex && StartIndex < ItemCount)
-            {
-                const String TargetOutput = ZayWidgetDOM::GetValue(
-                    ItemPath + String::Format(".%d.output", StartIndex)
-                ).ToText();
-
-                for (sint32 i = StartIndex; i < ItemCount; ++i)
-                {
-                    const String CurrentOutput = ZayWidgetDOM::GetValue(
-                        ItemPath + String::Format(".%d.output", i)
-                    ).ToText();
-
-                    if (CurrentOutput != TargetOutput)
-                        break;
-
-                    ++Count;
-                }
-            }
-
-            ZayWidgetDOM::SetValue(
-                "inspection.output_count." + String::FromInteger(StartIndex),
-                String::FromInteger(Count)
-            );
-        }
-
-    }, "[StartIndex:0]", "현재 위치부터 연속된 Output 개수 계산");
-
-    // restapi
-    NewZayson.AddGlue("restapi", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(3 <= params.ParamCount())
-        {
-            auto DomNameD = params.Param(0).ToText();
-            auto HostUrl = params.Param(1).ToText();
-            auto Params = params.Param(2).ToText();
-            auto CallBack = (3 < params.ParamCount())? params.Param(3).ToText() : String();
-            auto ResName = (4 < params.ParamCount())? params.Param(4).ToText() : String();
-            if(DomNameD.Left(2) == "d.")
-            {
-                auto Query = String::Format("%s?%s", (chars) HostUrl, (chars) Params);
-                BOSS_TRACE("##### RestAPI(%s >> %s) Request: %s", params.UIName(), (chars) DomNameD, (chars) Query);
-
-                struct Payload {ZayAppData* mSelf; String mDomNameD; String mCallBack;} *Data = new Payload({this, DomNameD, CallBack});
-                auto Method = [](payload data, chars text)->void
-                    {
-                        const Payload* Data = (const Payload*) data;
-                        const String ResultJson = text;
-                        const Context Json(ST_Json, SO_OnlyReference, ResultJson);
-                        ZayWidgetDOM::SetJson(Json, Data->mDomNameD.Offset(2) + '.');
-                        BOSS_TRACE("##### RestAPI(%s) Response: %s...", (chars) Data->mDomNameD, (chars) ResultJson.Left(40).ToUrlString());
-
-                        if(0 < Data->mCallBack.Length())
-                        if(auto CurWidgetName = Data->mSelf->mLastWidgetName.Access(Data->mSelf->mLastProjCode))
-                        if(auto CurSubWidget = Data->mSelf->mSubWidgets.Access(*CurWidgetName))
-                        {
-                            auto Success = CurSubWidget->JumpCallDirectly(Data->mCallBack, Data->mDomNameD);
-                            BOSS_TRACE("##### RestAPI(%s) JumpCall: %s (%s)", (chars) Data->mDomNameD, (chars) Data->mCallBack, (Success)? "success" : "failure");
-                        }
-                        delete Data;
-                        Platform::UpdateAllViews();
-                    };
-
-                if(ResName.Left(2) == "r.")
-                {
-                    auto RawHeader = (5 < params.ParamCount())? params.Param(5).ToText() : String();
-                    Platform::Utility::SendImageRequest(Query, R(ResName.Offset(2))->GetImage(), Method, Data, RawHeader);
-                }
-                else if(!ResName.Right(4).CompareNoCase(".csv"))
-                    Platform::Utility::SendCsvRequest(Query, String::FromAsset(ResName), Method, Data);
-                else Platform::Utility::SendRequest(Query, Method, Data);
-            }
-        }
-    }, "[DomNameD:'d.return'][HostUrl:'localhost/member/login'][Params:'id=aaaa&key=bbbb']#[CallBack:'gate1'][ResName:'r.grab']", "REST-API를 사용하여 결과를 DOM으로 받기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // installwpk
-    NewZayson.AddGlue("installwpk", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 3)
-        {
-            auto WpkPath = params.Param(0).ToText();
-            auto DomNameD = params.Param(1).ToText();
-            auto Exclusions = params.Param(2).ToText();
-            if(DomNameD.Left(2) == "d.")
-            {
-                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".status", "'run'");
-                RunInstallWpk(WpkPath, Exclusions);
-            }
-        }
-    }, "[WpkPath:'E:/hxz_1.wpk'][DomNameD:'d.install']#[Exclusions:'app_win|fw_main|fw_pixel']", "WPK파일로 재설치하기");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // installsector
-    NewZayson.AddGlue("installsector", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 3)
-        {
-            auto FileOffset = params.Param(0).ToInteger();
-            auto DataCount = params.Param(1).ToInteger();
-            auto DataUnit = Math::Clamp(params.Param(2).ToInteger(), 1, 8);
-            if(auto FilePath = ZayWidgetDOM::GetValue("program.tasking.install.path").ToText())
-            if(auto OldFile = Platform::File::OpenForRead(Platform::File::RootForAssetsRem() + "../" + FilePath))
-            {
-                Platform::File::Seek(OldFile, FileOffset);
-                uint32 SectorCrc = 0xFFFFFFFF;
-                for(sint32 i = 0; i < DataCount; ++i)
-                {
-                    uint64 DataPool = oxFFFFFFFFFFFFFFFF;
-                    Platform::File::Read(OldFile, (uint08*) &DataPool, DataUnit);
-                    ZayWidgetDOM::SetValue(String::Format("sector.%d", i), String::FromInteger(DataPool));
-                    SectorCrc = UpdateCrc((bytes) &DataPool, DataUnit, SectorCrc);
-                }
-                Platform::File::Close(OldFile);
-                ZayWidgetDOM::SetValue("sector.unit", String::FromInteger(DataUnit));
-                ZayWidgetDOM::SetValue("sector.count", String::FromInteger(DataCount));
-                if(params.CanReturn())
-                    params.Return(String::FromInteger(SectorCrc & 0xFFFF));
-            }
-        }
-    }, "[FileOffset:30][DataCount:100][DataUnit:2]", "WPK파일 재설치중 포커싱된 파일의 일부를 DOM에 전개");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // installstatus
-    NewZayson.AddGlue("installstatus", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Status = params.Param(0).ToText();
-            if(mInstallWpk)
-                Tasking::SendQuery(mInstallWpk, Status.ToBuffer());
-        }
-    }, "[Status:'BootLoaderEnd']", "WPK파일 재설치중 상태업데이트");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // sethotkey
-    NewZayson.AddGlue("sethotkey", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(2 <= params.ParamCount())
-        {
-            auto Key = params.Param(0).ToText();
-            auto Gate = params.Param(1).ToText();
-            auto NeedPress = (2 < params.ParamCount())? (params.Param(2).ToInteger() != 0) : false;
-            sint32 KeyCode = 0;
-            branch;
-            jump(!Key.CompareNoCase("ESC")) KeyCode = 27;
-            jump(!Key.CompareNoCase("ENTER")) KeyCode = 13;
-            jump(!Key.CompareNoCase("SPACE")) KeyCode = 32;
-            jump(!Key.CompareNoCase("BACKSPACE")) KeyCode = 8;
-            jump(!Key.CompareNoCase("TAB")) KeyCode = 9;
-            jump(!Key.CompareNoCase("INSERT")) KeyCode = 45;
-            jump(!Key.CompareNoCase("DELETE")) KeyCode = 46;
-            jump(!Key.CompareNoCase("HOME")) KeyCode = 36;
-            jump(!Key.CompareNoCase("END")) KeyCode = 35;
-            jump(!Key.CompareNoCase("PAGEUP")) KeyCode = 33;
-            jump(!Key.CompareNoCase("PAGEDOWN")) KeyCode = 34;
-            jump(!Key.CompareNoCase("LEFT")) KeyCode = 37;
-            jump(!Key.CompareNoCase("UP")) KeyCode = 38;
-            jump(!Key.CompareNoCase("RIGHT")) KeyCode = 39;
-            jump(!Key.CompareNoCase("DOWN")) KeyCode = 40;
-            if(KeyCode != 0)
-            if(auto CurProject = mProjects.Access(mLastProjCode))
-            {
-                auto& NewKey = CurProject->mHotKeys[KeyCode];
-                if(NeedPress) NewKey.mPressGate = Gate + "_press";
-                else NewKey.mPressGate.Empty();
-                NewKey.mReleaseGate = Gate;
-            }
-        }
-    }, "[Key:'Enter'][Gate:'aaa']#[NeedPress:0]", "핫키추가");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // clearhotkey
-    NewZayson.AddGlue("clearhotkey", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(auto CurProject = mProjects.Access(mLastProjCode))
-            CurProject->mHotKeys.Reset();
-    }, nullptr, "핫키초기화");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // pickeronce
-    NewZayson.AddGlue("pickeronce", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 6)
-        {
-            const String DomNameD = params.Param(0).ToText();
-            const sint32 Min = params.Param(1).ToInteger();
-            const sint32 Max = params.Param(2).ToInteger();
-            const sint32 Step = params.Param(3).ToInteger();
-            const sint32 Def = params.Param(4).ToInteger();
-            const bool IsRight = (params.Param(5).ToInteger() != 0);
-            if(DomNameD.Left(2) == "d." && Min < Max && 0 < Step)
-            {
-                const String DomName = DomNameD.Offset(2);
-                auto CurDom = String(DomName) + ".value";
-                auto AniDom = String(DomName) + ".ani";
-                const float AniValue = (ZayWidgetDOM::ExistVariable(AniDom))? ZayWidgetDOM::GetValue(AniDom).ToFloat() : Def;
-                const float NewValue = Math::Clamp((Math::Round(AniValue / Step) + ((IsRight)? 1 : -1)) * Step, Min, Max);
-                ZayWidgetDOM::SetValue(CurDom, String::FromInteger((sint32) Math::Round(NewValue)));
-                ZayWidgetDOM::SetValue(AniDom, String::Format("%f ~ %f : %f", AniValue, NewValue, 0.2));
-                const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 200;
-                if(mUpdateMsec < NewUpdateMsec)
-                    mUpdateMsec = NewUpdateMsec;
-                clearCapture();
-                invalidate(2);
-            }
-        }
-    }, "[DomNameD:'d.value'][Min:10][Max:100][Step:5][IsRight:0]", "픽커를 한번 이동");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdsentry
-    NewZayson.AddGlue("vdsentry", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(3 <= params.ParamCount())
-        {
-            auto Ch = params.Param(0).ToText();
-            auto QuestIdx = params.Param(1).ToInteger();
-            auto ScriptField = params.Param(2).ToText();
-            auto StepIdx = (3 < params.ParamCount())? params.Param(3).ToInteger() : -1;
-            if(auto CurProject = mProjects.Access(mLastVdsProjCode))
-            {
-                // 라스트퀘스트 확인
-                const String CacheLastQuestDom = mLastVdsProjCode + String::Format(".%s.cache.lastquest", (chars) Ch);
-                const sint32 OldQuestIdx = (ZayWidgetDOM::ExistVariable(CacheLastQuestDom))? ZayWidgetDOM::GetValue(CacheLastQuestDom).ToInteger() : -1;
-                const sint32 NewQuestIdx = (QuestIdx != -1)? QuestIdx : OldQuestIdx;
-                if(NewQuestIdx != -1)
-                {
-                    const String QuestCode = ZayWidgetDOM::GetValue(mLastVdsProjCode + String::Format(".data.quest.%d.code", NewQuestIdx)).ToText();
-                    if(ScriptField == "script_start")
-                    {
-                        CurProject->mChQuests(Ch)(QuestCode) = NewQuestIdx;
-                        // 라스트퀘스트 기억
-                        ZayWidgetDOM::SetValue(CacheLastQuestDom, String::FromInteger(NewQuestIdx));
-                        // 스텝포커스 저장 및 받아오기
-                        const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, NewQuestIdx);
-                        if(StepIdx == -1) StepIdx = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
-                        else ZayWidgetDOM::SetValue(CacheDom + ".focus", String::FromInteger(StepIdx));
-                        // 스텝별 스크립트가 있으면 쌓아둠
-                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, String::Format("step.%d.script", StepIdx)))
-                            invalidate();
-                        // 퀘스트진입 스크립트가 있으면 쌓아둠
-                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, "script_start"))
-                            invalidate();
-                    }
-                    else if(ScriptField == "script_stop")
-                    {
-                        CurProject->mChQuests(Ch).Remove(QuestCode);
-                        // 라스트퀘스트 제거
-                        if(QuestIdx == -1)
-                            ZayWidgetDOM::RemoveVariables(CacheLastQuestDom);
-                        // 퀘스트퇴장 스크립트가 있으면 쌓아둠
-                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, "script_stop"))
-                            invalidate();
-                    }
-                }
-            }
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdsentry의 파라미터 수량에러");
-    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][ScriptField:'스크립트필드명']#[StepIdx:'스텝Idx']", "퀘스트로 VDS스크립트를 시작/종료");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdsreset
-    NewZayson.AddGlue("vdsreset", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Ch = params.Param(0).ToText();
-            auto QuestIdx = params.Param(1).ToInteger();
-            if(mProjects.Access(mLastVdsProjCode))
-            {
-                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
-                ZayWidgetDOM::RemoveVariables(CacheDom + ".result.");
-            }
-            invalidate();
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdsreset의 파라미터 수량에러");
-    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx']", "VDS스크립트의 결과를 초기화");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdsstop
-    NewZayson.AddGlue("vdsstop", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 1)
-        {
-            auto Ch = params.Param(0).ToText();
-            if(StopEntry(mLastVdsProjCode, Ch))
-                invalidate();
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdsstop의 파라미터 수량에러");
-    }, "[Ch:'채널명']", "VDS스크립트의 통신을 중지");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdsseek
-    NewZayson.AddGlue("vdsseek", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 3)
-        {
-            auto Ch = params.Param(0).ToText();
-            auto QuestIdx = params.Param(1).ToInteger();
-            auto StepIdx = params.Param(2).ToInteger();
-            if(mProjects.Access(mLastVdsProjCode))
-            {
-                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
-                const sint32 StepFocus = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
-                const String CacheStepDom = CacheDom + ".result.step" + String::FromInteger(StepFocus);
-                ZayWidgetDOM::SetValue(CacheDom + ".next_step", String::FromInteger(StepIdx));
-                ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "0");
-                ZayWidgetDOM::SetValue(CacheStepDom, "0"); // 실패
-                ZayWidgetDOM::SetValue(CacheDom + ".result.errored", "1"); // 에러있음
-                invalidate();
-            }
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdsseek의 파라미터 수량에러");
-    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][StepIdx:'스텝Idx']", "VDS스크립트를 포커스이동");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdscheck
-    NewZayson.AddGlue("vdscheck", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 3)
-        {
-            auto Ch = params.Param(0).ToText();
-            auto QuestIdx = params.Param(1).ToInteger();
-            auto UserFlag = params.Param(2).ToText();
-            if(mProjects.Access(mLastVdsProjCode))
-            {
-                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
-                // 다음 스텝으로 넘어가는 중이 아닐때만
-                if(!ZayWidgetDOM::ExistVariable(CacheDom + ".next_step"))
-                {
-                    const sint32 StepFocus = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
-                    const String CacheStepDom = CacheDom + ".result.step" + String::FromInteger(StepFocus);
-                    sint32 GoNext = -1;
-                    if(UserFlag == "ok") GoNext = 1;
-                    else if(UserFlag == "skip") GoNext = 0;
-                    else if(UserFlag == "all")
-                    {
-                        for(sint32 i = 1; i <= 8; ++i)
-                            ZayWidgetDOM::SetValue(CacheStepDom + "_hp" + String::FromInteger(i), "1");
-                        GoNext = 1;
-                    }
-                    else if(UserFlag.Left(2) == "hp")
-                    {
-                        auto OldFlag = ZayWidgetDOM::GetValue(CacheStepDom + "_hp" + UserFlag.Offset(2)).ToInteger();
-                        ZayWidgetDOM::SetValue(CacheStepDom + "_hp" + UserFlag.Offset(2), (OldFlag != 0)? "0" : "1");
-                        sint32 SumFalg = 0;
-                        for(sint32 i = 1; i <= 8; ++i)
-                            SumFalg += (ZayWidgetDOM::GetValue(CacheStepDom + "_hp" + String::FromInteger(i)).ToInteger() != 0);
-                        if(SumFalg == 8)
-                            GoNext = 1;
-                    }
-                    // 다음 스텝으로 넘어감
-                    if(GoNext != -1)
-                    {
-                        const String StepDom = mLastVdsProjCode + String::Format(".data.quest.%d.step.%d", QuestIdx, StepFocus);
-                        const sint32 NextStep = ZayWidgetDOM::GetValue(StepDom + ".next_step").ToInteger();
-                        ZayWidgetDOM::SetValue(CacheDom + ".next_step", String::FromInteger(NextStep));
-                        if(GoNext == 1)
-                        {
-                            ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "1 ~ 0 : 0.5"); // 0.5초 기다림
-                            const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 500;
-                            if(mUpdateMsec < NewUpdateMsec)
-                                mUpdateMsec = NewUpdateMsec;
-                            ZayWidgetDOM::SetValue(CacheStepDom, "1"); // 성공
-                        }
-                        else
-                        {
-                            ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "0");
-                            ZayWidgetDOM::SetValue(CacheStepDom, "0"); // 실패
-                            ZayWidgetDOM::SetValue(CacheDom + ".result.errored", "1"); // 에러있음
-                        }
-                    }
-                }
-                invalidate();
-            }
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdscheck의 파라미터 수량에러");
-    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][UserFlag:ok|skip|seek_n]", "VDS스크립트에 사용자체크");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdssavestore
-    NewZayson.AddGlue("vdssavestore", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Ch = params.Param(0).ToText();
-            auto AssetPath = params.Param(1).ToText();
-            mChannel.SaveStore(Ch, AssetPath);
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdssavestore의 파라미터 수량에러");
-    }, "[Ch:'채널명'][AssetPath:'log/a.txt']", "VDS채널의 읽기버퍼 파일저장");
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // vdssetmonitor
-    NewZayson.AddGlue("vdssetmonitorfocus", ZAY_DECLARE_GLUE(params, this)
-    {
-        if(params.ParamCount() == 2)
-        {
-            auto Ch = params.Param(0).ToText();
-            auto MonitorFocus = params.Param(1).ToText();
-            mChannel.SetMonitorFocus(MonitorFocus);
-        }
-        else SendWidgetLog(mLastVdsProjCode, "vdssetmonitorfocus의 파라미터 수량에러");
-    }, "[Ch:'채널명'][MonitorFocus:'d.hxz.data.x00']", "VDS채널의 패킷모니터기능");
+    RegisterRenderingGlues(NewZayson);
+    RegisterRuntimeGlues(NewZayson);
+    RegisterInputGlues(NewZayson, viewname);
+    RegisterAppNavigationGlues(NewZayson);
+    RegisterTableGlues(NewZayson);
+    RegisterMediaGlues(NewZayson);
+    RegisterDomGlues(NewZayson);
+    RegisterFileGlues(NewZayson);
+    RegisterNetworkGlues(NewZayson);
+    RegisterNavigationAndDepthGlues(NewZayson, viewname);
+    RegisterGraphAndLogGlues(NewZayson);
+    RegisterDeviceChannelGlues(NewZayson);
+    RegisterInstrumentationGlues(NewZayson);
+    RegisterInstallationGlues(NewZayson);
+    RegisterVdsGlues(NewZayson);
 
     ////////////////////////////////////////////////////////////////////////////////
     // user_content
@@ -3529,6 +1779,1851 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
         }
         return panel._push_pass();
     });
+}
+
+void ZayAppData::RegisterRenderingGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // update
+    NewZayson.AddGlue("update", ZAY_DECLARE_GLUE(params, this) // 업데이트를 위한 글루함수를 추가
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Msec = sint32(params.Param(0).ToFloat() * 1000);
+            const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + Msec;
+            if(mUpdateMsec < NewUpdateMsec)
+                mUpdateMsec = NewUpdateMsec;
+        }
+    }, "[Msec]", "Msec동안 화면갱신유지");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // renderhint
+    NewZayson.AddGlue("renderhint", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Smooth = (params.Param(0).ToInteger() != 0);
+            auto Antialiasing = (params.Param(1).ToInteger() != 0);
+            Platform::Graphics::SetRenderHint(Smooth, Antialiasing);
+            ZayWidgetDOM::SetValue("program.smooth", (Smooth)? "1" : "0");
+            ZayWidgetDOM::SetValue("program.antialiasing", (Antialiasing)? "1" : "0");
+            invalidate();
+        }
+    }, "[Smooth][Antialiasing]", "랜더링품질 설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setrenderingtype: CPU/GPU 전환은 플랫폼이 다음 프레임 시작 시 반영합니다.
+    NewZayson.AddGlue("setrenderingtype", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            const String Type = params.Param(0).ToText();
+            if(!Type.CompareNoCase("CPU"))
+                Platform::Graphics::SetRenderingType(RT_CPU);
+            else if(!Type.CompareNoCase("GPU"))
+                Platform::Graphics::SetRenderingType(RT_GPU);
+        }
+    }, "[Type:'GPU']", "CPU 또는 GPU 렌더링을 다음 프레임에 적용");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // windowgrap
+    NewZayson.AddGlue("windowgrab", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(6 <= params.ParamCount())
+        {
+            auto ResName = params.Param(0).ToText();
+            auto X = params.Param(1).ToInteger();
+            auto Y = params.Param(2).ToInteger();
+            auto Width = params.Param(3).ToInteger();
+            auto Height = params.Param(4).ToInteger();
+            auto Blur = params.Param(5).ToFloat();
+            auto UseRepaint = (6 < params.ParamCount())? (params.Param(6).ToInteger() != 0) : true;
+            if(ResName.Left(2) == "r.")
+                R::MakeGrapImage(ResName.Offset(2), X, Y, Width, Height, Blur, UseRepaint);
+        }
+    }, "[ResName:'r.grab'][X:0][Y:0][Width:100][Height:100][Blur:5.0]#[UseRepaint:1]", "해당 윈도우영역을 리소스화");
+}
+
+void ZayAppData::RegisterRuntimeGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // sleep
+    NewZayson.AddGlue("sleep", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Msec = sint32(params.Param(0).ToFloat() * 1000);
+            Platform::Utility::Sleep(Msec, true, true, false);
+        }
+    }, "[Msec]", "Msec동안 슬립처리");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // print
+    NewZayson.AddGlue("print", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Title = params.Param(0).ToText();
+            auto Text = params.Param(1).ToText();
+            BOSS_TRACE("[%s] %s (%s)", (chars) Title, (chars) Text, params.UIName());
+        }
+    }, "[Title][Text]", "출력창에 로그남기기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setlocale
+    NewZayson.AddGlue("setlocale", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            gLastLocale = params.Param(0).ToText();
+            ZayWidgetDOM::SetValue("program.locale", '\'' + gLastLocale + '\'');
+        }
+    }, "[Locale:'ko-KR']", "언어코드를 설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // langturn
+    NewZayson.AddGlue("langturn", ZAY_DECLARE_GLUE(params, this)
+    {
+        mMainWidget.LangTurn();
+        invalidate();
+    }, nullptr, "현재 언어를 전환");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // makeuid
+    NewZayson.AddGlue("makeuid", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 6)
+        {
+            auto Num1 = (params.Param(0).ToInteger() & 0xFFFF);
+            auto Num2 = (params.Param(1).ToInteger() & 0xFFFF);
+            auto Num3 = (params.Param(2).ToInteger() & 0xFFFF);
+            auto Num4 = (params.Param(3).ToInteger() & 0xFFFF);
+            auto Num5 = (params.Param(4).ToInteger() & 0xFFFF);
+            auto Num6 = (params.Param(5).ToInteger() & 0xFFFF);
+            if(params.CanReturn())
+                params.Return(String::Format("'%04X-%04X-%04X-%04X-%04X-%04X'", Num1, Num2, Num3, Num4, Num5, Num6));
+        }
+    }, "[Num1:0xFFFF][Num2:0xFFFF][Num3:0xFFFF][Num4:0xFFFF][Num5:0xFFFF][Num6:0xFFFF]", "UID로 변환");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // maketimetag
+    NewZayson.AddGlue("maketimetag", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Format = params.Param(0).ToText();
+            String TimeTag;
+            if(id_clock NewClock = Platform::Clock::CreateAsCurrent())
+            {
+                sint32 Year = 0, Month = 0, Day = 0, Hour = 0, Min = 0, Sec = 0;
+                Platform::Clock::GetDetail(NewClock, nullptr, &Sec, &Min, &Hour, &Day, &Month, &Year);
+                if(Format == "YYYYMMDD_HHMMSS")
+                    TimeTag = String::Format("%04d%02d%02d_%02d%02d%02d", Year, Month, Day, Hour, Min, Sec);
+                else if(Format == "YYYY-MM-DD")
+                    TimeTag = String::Format("%04d-%02d-%02d", Year, Month, Day);
+                else if(Format == "HH:MM:SS")
+                    TimeTag = String::Format("%02d:%02d:%02d", Hour, Min, Sec);
+                Platform::Clock::Release(NewClock);
+            }
+            if(params.CanReturn())
+                params.Return('\'' + TimeTag + '\'');
+        }
+    }, "[Format:'YYYYMMDD_HHMMSS']", "현재시간의 TimeTag를 반환");
+}
+
+void ZayAppData::RegisterInputGlues(ZaySon& NewZayson, const String& viewname)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // ascii
+    NewZayson.AddGlue("ascii", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto AsciiCode = params.Param(0).ToInteger();
+            char AsciiText[2] = {char(AsciiCode & 0xFF), '\0'};
+            Platform::SendKeyEvent(view(), 0, AsciiText, true);
+            Platform::SendKeyEvent(view(), 0, AsciiText, false);
+        }
+    }, "[AsciiCode:65]", "아스키를 입력");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // keypad
+    NewZayson.AddGlue("keypad", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto KeyCode = params.Param(0).ToInteger();
+            auto KeyText = params.Param(1).ToText();
+            Platform::SendKeyEvent(view(), KeyCode, KeyText, true);
+            Platform::SendKeyEvent(view(), KeyCode, KeyText, false);
+        }
+    }, "[KeyCode:65][KeyText:'A']", "키패드를 입력");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // clearcapture
+    NewZayson.AddGlue("clearcapture", ZAY_DECLARE_GLUE(params, this)
+    {
+        clearCapture();
+        invalidate();
+    }, nullptr, "Capture를 없애기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setcapture
+    NewZayson.AddGlue("setcapture", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto UIName = viewname + '.' + params.Param(0).ToText();
+            setCapture(UIName);
+            invalidate();
+        }
+    }, "[UIName:'ui_editbox']", "Capture를 설정하기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // sethotkey
+    NewZayson.AddGlue("sethotkey", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(2 <= params.ParamCount())
+        {
+            auto Key = params.Param(0).ToText();
+            auto Gate = params.Param(1).ToText();
+            auto NeedPress = (2 < params.ParamCount())? (params.Param(2).ToInteger() != 0) : false;
+            sint32 KeyCode = 0;
+            branch;
+            jump(!Key.CompareNoCase("ESC")) KeyCode = 27;
+            jump(!Key.CompareNoCase("ENTER")) KeyCode = 13;
+            jump(!Key.CompareNoCase("SPACE")) KeyCode = 32;
+            jump(!Key.CompareNoCase("BACKSPACE")) KeyCode = 8;
+            jump(!Key.CompareNoCase("TAB")) KeyCode = 9;
+            jump(!Key.CompareNoCase("INSERT")) KeyCode = 45;
+            jump(!Key.CompareNoCase("DELETE")) KeyCode = 46;
+            jump(!Key.CompareNoCase("HOME")) KeyCode = 36;
+            jump(!Key.CompareNoCase("END")) KeyCode = 35;
+            jump(!Key.CompareNoCase("PAGEUP")) KeyCode = 33;
+            jump(!Key.CompareNoCase("PAGEDOWN")) KeyCode = 34;
+            jump(!Key.CompareNoCase("LEFT")) KeyCode = 37;
+            jump(!Key.CompareNoCase("UP")) KeyCode = 38;
+            jump(!Key.CompareNoCase("RIGHT")) KeyCode = 39;
+            jump(!Key.CompareNoCase("DOWN")) KeyCode = 40;
+            if(KeyCode != 0)
+            if(auto CurProject = mProjects.Access(mLastProjCode))
+            {
+                auto& NewKey = CurProject->mHotKeys[KeyCode];
+                if(NeedPress) NewKey.mPressGate = Gate + "_press";
+                else NewKey.mPressGate.Empty();
+                NewKey.mReleaseGate = Gate;
+            }
+        }
+    }, "[Key:'Enter'][Gate:'aaa']#[NeedPress:0]", "핫키추가");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // clearhotkey
+    NewZayson.AddGlue("clearhotkey", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(auto CurProject = mProjects.Access(mLastProjCode))
+            CurProject->mHotKeys.Reset();
+    }, nullptr, "핫키초기화");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // movescrollv
+    NewZayson.AddGlue("movescrollv", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto UIName = params.Param(0).ToText();
+            auto ScrollTarget = params.Param(1).ToInteger();
+            const sint32 ScrollPos = scrollpos(UIName).y;
+            moveScroll(UIName, 0, ScrollPos, 0, ScrollTarget, 0.5, false);
+        }
+    }, "[UIName:'ui_scroll'][ScrollTarget:1000]", "수직스크롤바를 이동");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // slideonce
+    NewZayson.AddGlue("slideonce", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 4)
+        {
+            const String DomNameD = params.Param(0).ToText();
+            const sint32 Min = params.Param(1).ToInteger();
+            const sint32 Max = params.Param(2).ToInteger();
+            const sint32 Step = params.Param(3).ToInteger();
+            if(DomNameD.Left(2) == "d." && Min < Max && Step != 0)
+            {
+                const String DomName = DomNameD.Offset(2);
+                const float OldValue = ZayWidgetDOM::ExistVariable(DomName + ".ani")?
+                    ZayWidgetDOM::GetValue(DomName + ".ani").ToFloat() : ZayWidgetDOM::GetValue(DomName).ToFloat();
+                const sint32 AbsStep = Math::Abs(Step);
+                const sint32 NewValue = Min + sint32(Math::Round((OldValue - Min) / AbsStep)) * AbsStep + Step;
+                const sint32 ClampValue = Math::Clamp(NewValue, Min, Max);
+                ZayWidgetDOM::SetValue(DomName, String::FromInteger(ClampValue));
+                ZayWidgetDOM::SetValue(DomName + ".ani", String::Format("%f ~ %d : 0.1", OldValue, ClampValue));
+                const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 100;
+                if(mUpdateMsec < NewUpdateMsec)
+                    mUpdateMsec = NewUpdateMsec;
+                clearCapture();
+                invalidate(2);
+            }
+        }
+    }, "[DomNameD:'d.value'][Step:-10][Limit:1]", "슬라이드를 한번 이동");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // pickeronce
+    NewZayson.AddGlue("pickeronce", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 6)
+        {
+            const String DomNameD = params.Param(0).ToText();
+            const sint32 Min = params.Param(1).ToInteger();
+            const sint32 Max = params.Param(2).ToInteger();
+            const sint32 Step = params.Param(3).ToInteger();
+            const sint32 Def = params.Param(4).ToInteger();
+            const bool IsRight = (params.Param(5).ToInteger() != 0);
+            if(DomNameD.Left(2) == "d." && Min < Max && 0 < Step)
+            {
+                const String DomName = DomNameD.Offset(2);
+                auto CurDom = String(DomName) + ".value";
+                auto AniDom = String(DomName) + ".ani";
+                const float AniValue = (ZayWidgetDOM::ExistVariable(AniDom))? ZayWidgetDOM::GetValue(AniDom).ToFloat() : Def;
+                const float NewValue = Math::Clamp((Math::Round(AniValue / Step) + ((IsRight)? 1 : -1)) * Step, Min, Max);
+                ZayWidgetDOM::SetValue(CurDom, String::FromInteger((sint32) Math::Round(NewValue)));
+                ZayWidgetDOM::SetValue(AniDom, String::Format("%f ~ %f : %f", AniValue, NewValue, 0.2));
+                const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 200;
+                if(mUpdateMsec < NewUpdateMsec)
+                    mUpdateMsec = NewUpdateMsec;
+                clearCapture();
+                invalidate(2);
+            }
+        }
+    }, "[DomNameD:'d.value'][Min:10][Max:100][Step:5][IsRight:0]", "픽커를 한번 이동");
+}
+
+void ZayAppData::RegisterAppNavigationGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // createappshortcut
+    NewZayson.AddGlue("createappshortcut", ZAY_DECLARE_GLUE(params, this)
+    {
+        const sint32 result = (params.ParamCount() == 1)? CreateAppShortcut(params.Param(0).ToText()) : -1;
+        ZayWidgetDOM::SetValue("program.shortcut_result", String::FromInteger(result));
+        invalidate();
+    }, "[AppId:'robo']", "앱 단독 모드 바로가기 만들기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // openstandaloneapp
+    NewZayson.AddGlue("openstandaloneapp", ZAY_DECLARE_GLUE(params, this)
+    {
+        bool opened = false;
+        #if BOSS_WASM
+            if(params.ParamCount() == 1 || params.ParamCount() == 2)
+            {
+                const String id = params.Param(0).ToText();
+                const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
+                if(FindAppIndex(id) >= 0)
+                {
+                    const String page = Platform::Utility::GetThisWebPageUrl();
+                    if(page.Length())
+                        opened = Platform::Utility::OpenWebPageWithQuery(page + "?app=" + id.ToUrlString(), target);
+                }
+            }
+        #endif
+        ZayWidgetDOM::SetValue("program.shortcut_result", opened? "3" : "-1");
+        invalidate();
+    }, "[AppId:'robo']#[Target:'self']", "웹에서 앱을 단독 모드로 열기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // openwebpage
+    NewZayson.AddGlue("openwebpage", ZAY_DECLARE_GLUE(params, this)
+    {
+        bool opened = false;
+        if(params.ParamCount() == 1 || params.ParamCount() == 2)
+        {
+            const String url = params.Param(0).ToText();
+            const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
+            if(!String::CompareNoCase(url, "https://", 8) || !String::CompareNoCase(url, "http://", 7))
+                opened = Platform::Utility::OpenWebPageWithQuery(url, target);
+        }
+        if(params.CanReturn()) params.Return(opened? "1" : "0");
+    }, "[Url:'https://www.youtube.com/']#[Target:'self']", "웹 페이지 열기");
+}
+
+void ZayAppData::RegisterTableGlues(ZaySon& NewZayson)
+{
+    // focustable
+    NewZayson.AddGlue("focustable", ZAY_DECLARE_GLUE(params, this)
+    {
+        // loaded_file = focustable("table_new/Target_", "INNER", "Level", "EDGE")
+        // loaded_file = focustable("table_new/CoreX_", "PORE", "Face", "Z25")
+        // loaded_file = focustable("table_new/CoreX_", "ATAC", "Level", "Z25", "BI200")
+
+        mFocusedTable = nullptr;
+        String LoadedFile;
+        if(3 <= params.ParamCount())
+        {
+            const String FileTitle = params.Param(0).ToText();
+            const String Group = params.Param(1).ToText();
+            const String TableName = params.Param(2).ToText();
+            const String RequestedFile = FileTitle + Group + ".csv";
+            const String DefaultFile = FileTitle + "default.csv";
+
+            // Only default groups use the filename prefix to avoid collisions.
+            const std::string Prefix((chars) FileTitle);
+            const size_t Slash = Prefix.find_last_of("/\\");
+            const String DefaultGroup((Prefix.substr(
+                (Slash == std::string::npos)? 0 : Slash + 1) + "default").c_str());
+            const String RequestedGroup = (Group == "default")? DefaultGroup : Group;
+
+            const auto LoadTableFile = [&](const String& AssetName, const String& ParseGroup) -> bool
+            {
+                if(mLoadedTableFiles.Access(AssetName))
+                    return true;
+                if(auto CurAsset = Asset::OpenForRead(AssetName))
+                {
+                    Asset::Close(CurAsset);
+                    try
+                    {
+                        const String CsvText = String::FromAsset(AssetName);
+                        mDependencyTable.Parse(ParseGroup, CsvText);
+                        mLoadedTableFiles(AssetName) = true;
+                        return true;
+                    }
+                    catch(const std::exception& Error)
+                    {
+                        BOSS_TRACE("[focustable] %s: %s", (chars) AssetName, Error.what());
+                    }
+                }
+                return false;
+            };
+            const auto FindDependentTable = [&](const String& SearchGroup) -> const InnerTable*
+            {
+                if(params.ParamCount() == 3)
+                    return mDependencyTable.Table(SearchGroup, TableName);
+                for(sint32 i = 3; i < params.ParamCount(); ++i)
+                {
+                    const String Dependency = params.Param(i).ToText();
+                    if(auto Found = mDependencyTable.Table(SearchGroup, TableName, Dependency))
+                        return Found;
+                }
+                return nullptr;
+            };
+
+            if(LoadTableFile(RequestedFile, RequestedGroup))
+                mFocusedTable = FindDependentTable(RequestedGroup);
+            if(mFocusedTable)
+                LoadedFile = RequestedFile;
+            else if(LoadTableFile(DefaultFile, DefaultGroup))
+            {
+                mFocusedTable = FindDependentTable(DefaultGroup);
+                if(!mFocusedTable)
+                    mFocusedTable = mDependencyTable.Table(DefaultGroup, TableName);
+                if(mFocusedTable)
+                    LoadedFile = DefaultFile;
+            }
+        }
+        if(mFocusedTable)
+            LoadedFile += String::Format("<%d>", mFocusedTable->TableIndex());
+        if(params.CanReturn())
+            params.Return('\'' + LoadedFile + '\'');
+    }, "[FileTitle:'table_new/Target_'][Group:'INNER'][Table:'Level']#[Dependency1:'Z25'][Dependency2:'BI200']", "테이블 포커싱");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // gettablecell
+    NewZayson.AddGlue("gettablecell", ZAY_DECLARE_GLUE(params, this)
+    {
+        // cell0 = gettablecell("Forehead", "Level")
+        // cell1 = gettablecell("Forehead", "Interval")
+        // cell2 = gettablecell("Forehead", "MotorSpeed")
+
+        if(params.CanReturn())
+        {
+            String Result = "''";
+            if(params.ParamCount() == 2 && mFocusedTable)
+            {
+                const String Column = params.Param(0).ToText();
+                const String Row = params.Param(1).ToText();
+                if(auto Cell = mFocusedTable->Cell(Column, Row))
+                {
+                    sint32 OffsetCheck = 0;
+                    Parser::GetFloat<double>(*Cell, Cell->Length(), &OffsetCheck);
+                    if(0 < OffsetCheck && OffsetCheck == Cell->Length())
+                        Result = *Cell;
+                    else
+                    {
+                        String Text = *Cell;
+                        Text.Replace("\\", "\\\\");
+                        Text.Replace("'", "\\'");
+                        Text.Replace("\r", "\\r");
+                        Text.Replace("\n", "\\n");
+                        Result = '\'' + Text + '\'';
+                    }
+                }
+            }
+            params.Return(Result);
+        }
+    }, "[Column:'NoSelect'][Row:'Level']", "테이블셀 반환");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // loadtable
+    NewZayson.AddGlue("loadtable", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1 && mFocusedTable)
+        {
+            const String DomNameD = params.Param(0).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                const String DomRoot = DomNameD.Offset(2);
+                for(sint32 y = 0, yend = 1 + mFocusedTable->RowCount(); y < yend; ++y)
+                {
+                    const String DomHead = DomRoot + String::Format(".%d", y);
+                    ZayWidgetDOM::RemoveVariables(DomHead + ".");
+                    for(sint32 x = 0, xend = 1 + mFocusedTable->ColumnCount(); x < xend; ++x)
+                    {
+                        String Header;
+                        const String* Cell = nullptr;
+                        if(y == 0)
+                        {
+                            if(x != 0) Header = mFocusedTable->ColumnName(x - 1);
+                            Cell = &Header;
+                        }
+                        else if(x == 0)
+                        {
+                            Header = mFocusedTable->RowName(y - 1);
+                            Cell = &Header;
+                        }
+                        else Cell = mFocusedTable->Cell(x - 1, y - 1);
+                        if(Cell)
+                        {
+                            sint32 OffsetCheck = 0;
+                            Parser::GetFloat<double>(*Cell, Cell->Length(), &OffsetCheck);
+                            String Value = *Cell;
+                            if(OffsetCheck <= 0 || OffsetCheck != Cell->Length())
+                            {
+                                Value.Replace("\\", "\\\\");
+                                Value.Replace("'", "\\'");
+                                Value.Replace("\r", "\\r");
+                                Value.Replace("\n", "\\n");
+                                Value = '\'' + Value + '\'';
+                            }
+                            ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", x), Value);
+                        }
+                    }
+                    ZayWidgetDOM::SetValue(DomHead + ".count", String::FromInteger(1 + mFocusedTable->ColumnCount()));
+                }
+                ZayWidgetDOM::SetValue(DomRoot + ".count", String::FromInteger(1 + mFocusedTable->RowCount()));
+            }
+        }
+    }, "[DomNameD:'d.value']", "포커싱된 테이블을 Dom으로 전개");
+}
+
+void ZayAppData::RegisterMediaGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // bindsounddevice
+    NewZayson.AddGlue("bindsounddevice", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto DeviceIndex = params.Param(0).ToInteger();
+            UpdateSoundDeviceList(DeviceIndex);
+            for(sint32 i = 0, iend = mSounds.Count(); i < iend; ++i)
+                if(auto CurSound = mSounds.AccessByOrder(i))
+                    Platform::Sound::SetDevice(*CurSound, DeviceIndex);
+        }
+    }, "[DeviceIndex:0]", "사운드장치선택");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // mutesound
+    NewZayson.AddGlue("mutesound", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto MuteFlag = (params.Param(0).ToInteger() != 0);
+            mSoundMuted = MuteFlag;
+            if(mSoundMuted)
+            for(sint32 i = 0, iend = mSounds.Count(); i < iend; ++i)
+                if(auto CurSound = mSounds.AccessByOrder(i))
+                    Platform::Sound::Stop(*CurSound);
+        }
+    }, "[MuteFlag:1]", "사운드무음설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // playsound
+    NewZayson.AddGlue("playsound", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(1 <= params.ParamCount())
+        {
+            auto SoundAssetName = params.Param(0).ToText();
+            auto Volume = (1 < params.ParamCount())? params.Param(1).ToFloat() : 1.0;
+            if(!mSoundMuted)
+            {
+                if(!mSounds.Access(SoundAssetName))
+                {
+                    #if BOSS_ANDROID | BOSS_IPHONE
+                        buffer NewSoundData = Asset::ToBuffer(SoundAssetName);
+                        mSounds(SoundAssetName) = Platform::Sound::OpenForData((bytes) NewSoundData,
+                            Buffer::SizeOf(NewSoundData) * Buffer::CountOf(NewSoundData));
+                        Buffer::Free(NewSoundData);
+                    #elif BOSS_WASM
+                        mSounds(SoundAssetName) = Platform::Sound::OpenForUrl(SoundAssetName, false);
+                    #else
+                        mSounds(SoundAssetName) = Platform::Sound::OpenForFile(
+                            Platform::File::RootForAssets() + SoundAssetName, false);
+                    #endif
+                    if(mSoundDeviceFocus != -1)
+                        Platform::Sound::SetDevice(mSounds(SoundAssetName), mSoundDeviceFocus);
+                }
+                auto CurSoundID = mSounds(SoundAssetName);
+                if(Platform::Sound::NowPlaying(CurSoundID))
+                    Platform::Sound::Stop(CurSoundID);
+                Platform::Sound::SetVolume(CurSoundID, Volume);
+                Platform::Sound::Play(CurSoundID);
+            }
+        }
+    }, "[SoundAssetName:'sound/sound1.mp3']#[Volume:1.0]", "사운드시작");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // stopsound
+    NewZayson.AddGlue("stopsound", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto SoundAssetName = params.Param(0).ToText();
+            if(auto CurSoundID = mSounds.Access(SoundAssetName))
+            if(Platform::Sound::NowPlaying(*CurSoundID))
+                Platform::Sound::Stop(*CurSoundID);
+        }
+    }, "[SoundAssetName:'sound/sound1.mp3']", "사운드중지");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // readyapng
+    NewZayson.AddGlue("readyapng", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto APngAssetName = params.Param(0).ToText();
+            if(!mAPngs.Access(APngAssetName))
+            {
+                #if BOSS_ANDROID | BOSS_IPHONE
+                    buffer NewAPngData = Asset::ToBuffer(APngAssetName);
+                    if(NewAPngData)
+                    {
+                        mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
+                            Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
+                        Buffer::Free(NewAPngData);
+                    }
+                #elif BOSS_WASM
+                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForUrl(APngAssetName);
+                #else
+                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForFile(
+                        Platform::File::RootForAssets() + APngAssetName);
+                #endif
+            }
+        }
+    }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
+}
+
+void ZayAppData::RegisterDomGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // setvalue
+    NewZayson.AddGlue("setvalue", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto DomNameD = params.Param(0).ToText();
+            auto Value = params.Param(1).ToText(true);
+            if(DomNameD.Left(2) == "d.")
+                ZayWidgetDOM::SetValue(DomNameD.Offset(2), Value);
+        }
+    }, "[DomNameD:'d.aaa.bbb'][Value]", "DOM에 값을 설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // calcvalue
+    NewZayson.AddGlue("calcvalue", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto DomNameD = params.Param(0).ToText();
+            auto Value = params.Param(1).ToText(); // 스트링을 연산식으로 다시 평가
+            if(DomNameD.Left(2) == "d.")
+                ZayWidgetDOM::SetValue(DomNameD.Offset(2), Value);
+        }
+    }, "[DomNameD:'d.aaa.bbb'][Value]", "DOM에 값 또는 연산식을 설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // clearvalue
+    NewZayson.AddGlue("clearvalue", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto DomNameD = params.Param(0).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                ZayWidgetDOM::RemoveVariables(DomNameD.Offset(2));
+                invalidate();
+            }
+        }
+    }, "[DomNameD:'d.aaa.bbb']", "DomName이 포함된 모든 DOM을 제거");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // getcomment
+    NewZayson.AddGlue("getcomment", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto DomNameD = params.Param(0).ToText();
+            if(DomNameD.Left(2) == "d." && params.CanReturn())
+            {
+                auto Value = ZayWidgetDOM::GetComment(DomNameD.Offset(2));
+                params.Return(Value);
+            }
+        }
+    }, "[DomNameD:'d.aaa.bbb']", "Comment타입 DOM의 값을 반환");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setcomment
+    NewZayson.AddGlue("setcomment", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto DomNameD = params.Param(0).ToText();
+            auto Value = params.Param(1).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                ZayWidgetDOM::SetComment(DomNameD.Offset(2), Value);
+                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".text", '\'' + Value + '\'');
+                clearCapture();
+                invalidate();
+            }
+        }
+    }, "[DomNameD:'d.aaa.bbb'][Value]", "Comment타입 DOM에 값을 설정");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setdom
+    NewZayson.AddGlue("setdom", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(2 <= params.ParamCount())
+        {
+            auto DomNameD = params.Param(0).ToText();
+            auto FilePath = params.Param(1).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                String DomHeader = DomNameD.Offset(2) + '.';
+                ZayWidgetDOM::RemoveVariables(DomHeader);
+                if(Platform::File::Exist(FilePath))
+                {
+                    const Context Json(ST_Json, SO_NeedCopy, String::FromFile(FilePath));
+                    ZayWidgetDOM::SetJson(Json, DomHeader);
+                }
+                else if(2 < params.ParamCount())
+                {
+                    auto AssetPath = params.Param(2).ToText();
+                    const Context Json(ST_Json, SO_NeedCopy, String::FromAsset(AssetPath));
+                    ZayWidgetDOM::SetJson(Json, DomHeader);
+                }
+                invalidate();
+            }
+        }
+    }, "[DomNameD:'d.aaa.bbb'][FilePath:'C:/aaa/bbb.json']", "DomName의 아래에 FilePath의 json을 로딩");
+}
+
+void ZayAppData::RegisterFileGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // gettext
+    NewZayson.AddGlue("gettext", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Title = params.Param(0).ToText();
+            auto Topic = params.Param(1).ToText();
+            SolverValue OldText;
+            if(params.CanReturn(&OldText))
+            {
+                String GetText = OldText.ToText();
+                if(Platform::Popup::TextDialog(GetText, Title, Topic))
+                {
+                    params.Return('\'' + GetText + '\'');
+                    invalidate();
+                }
+            }
+        }
+    }, "[Title:'타이틀명'][Topic:'토픽명']", "유저로부터 값을 하나 입력받아 지역변수로 Return처리");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // savetext
+    NewZayson.AddGlue("savetext", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(2 <= params.ParamCount())
+        {
+            auto FileName = params.Param(0).ToText();
+            auto Text = params.Param(1).ToText();
+            Text.Replace("\\n", "\r\n");
+            auto UniqueFlag = (2 < params.ParamCount())? (params.Param(2).ToInteger() != 0) : false;
+            auto ExtendPath = (3 < params.ParamCount())? params.Param(3).ToText() : String();
+
+            if(0 < ExtendPath.Length())
+            {
+                String FilePath = ExtendPath + FileName;
+                if(UniqueFlag)
+                {
+                    const sint32 DotPos = FileName.Find(0, ".");
+                    if(DotPos != -1)
+                    for(sint32 i = 1; i < 1000 && Platform::File::Exist(FilePath); ++i)
+                        FilePath = ExtendPath + FileName.Left(DotPos) + String::Format("_%03d", i) + FileName.Offset(DotPos);
+                }
+                if(auto NewFile = Platform::File::OpenForWrite(FilePath, true))
+                {
+                    Platform::File::Write(NewFile, (bytes)(chars) Text, Text.Length());
+                    Platform::File::Close(NewFile);
+                    ZayWidgetDOM::SetValue("savefile.log", "'[SAVED usb] " + FilePath + '\'');
+                }
+                else ZayWidgetDOM::SetValue("savefile.log", "'[NOT SAVE usb] " + FilePath + '\'');
+            }
+            else
+            {
+                String AssetName = FileName;
+                if(UniqueFlag)
+                {
+                    const sint32 DotPos = FileName.Find(0, ".");
+                    if(DotPos != -1)
+                    for(sint32 i = 1; i < 1000 && Asset::Exist(AssetName); ++i)
+                        AssetName = FileName.Left(DotPos) + String::Format("_%03d", i) + FileName.Offset(DotPos);
+                }
+                Text.ToAsset(AssetName, true);
+                ZayWidgetDOM::SetValue("savefile.log", "'[SAVED assets-rem] " + AssetName + '\'');
+            }
+        }
+    }, "[FileName:'파일명'][Text:'ABC']#[UniqueFlag:1][ExtendPath:'D:/']", "Text를 파일에 저장");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // savebase64
+    NewZayson.AddGlue("savebase64", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto FileName = params.Param(0).ToText();
+            auto JsonText = params.Param(1).ToText();
+            if(auto NewAsset = Asset::OpenForWrite(FileName, true))
+            {
+                const Context Json(ST_Json, SO_OnlyReference, JsonText);
+                String Base64 = Json("base64").GetText();
+                buffer ImageData = AddOn::Ssl::FromBASE64(Base64.Replace("\\/", "/"));
+                Asset::Write(NewAsset, (bytes) ImageData, Buffer::CountOf(ImageData));
+                Asset::Close(NewAsset);
+                Buffer::Free(ImageData);
+            }
+        }
+    }, "[FileName:'파일명'][JsonText:'{\"base64\":\"...\"}']", "JsonText속 base64항목을 디코딩해 파일로 저장");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // loadcsv
+    NewZayson.AddGlue("loadcsv", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(2 <= params.ParamCount())
+        {
+            auto FileName = params.Param(0).ToText();
+            auto DomNameD = params.Param(1).ToText();
+            auto ExtendPath = (2 < params.ParamCount())? params.Param(2).ToText() : String();
+            if(DomNameD.Left(2) == "d.")
+            {
+                String Csv;
+                if(0 < ExtendPath.Length())
+                {
+                    String FilePath = ExtendPath + FileName;
+                    Csv = String::FromFile(FilePath);
+                }
+                else
+                {
+                    const String AssetName = FileName;
+                    Csv = String::FromAsset(AssetName);
+                }
+
+                Csv.Replace("\r\n", "\n");
+                const Strings CsvLines = String::Split(Csv, '\n');
+                for(sint32 i = 0, iend = CsvLines.Count(); i < iend; ++i)
+                {
+                    const Strings CsvCells = String::Split(CsvLines[i], ',');
+                    const String DomHead = DomNameD.Offset(2) + String::Format(".%d", i);
+                    for(sint32 j = 0, jend = CsvCells.Count(); j < jend; ++j)
+                    {
+                        const String CurCell = CsvCells[j].Trim();
+                        sint32 OffsetCheck = 0;
+                        Parser::GetFloat<double>(CurCell, CurCell.Length(), &OffsetCheck);
+					    if(OffsetCheck == CurCell.Length() && 0 < OffsetCheck) // 실수 또는 정수
+					        ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", j), CurCell);
+                        else ZayWidgetDOM::SetValue(DomHead + String::Format(".%d", j), '\'' + CurCell + '\'');
+                    }
+                    ZayWidgetDOM::SetValue(DomHead + ".count", String::FromInteger(CsvCells.Count()));
+                }
+                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".count", String::FromInteger(CsvLines.Count()));
+            }
+        }
+    }, "[FileName:'파일명'][DomNameD:'d.value']#[ExtendPath:'D:/']", "파일에서 Csv를 로딩");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // savejson: 지정한 DOM의 현재 값을 assets-rem의 JSON 파일에 저장합니다.
+    NewZayson.AddGlue("savejson", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            const String AssetName = params.Param(0).ToText();
+            const String DomNameD = params.Param(1).ToText();
+            if(DomNameD.Left(2) == "d." && 2 < DomNameD.Length())
+            {
+                Context Json;
+                ZayWidgetDOM::GetJson(Json, DomNameD.Offset(2) + '.');
+                Json.SaveJson().ToAsset(AssetName, true);
+            }
+        }
+    }, "[AssetName:'widget/main_settings.json'][DomNameD:'d.settings']", "DOM을 JSON 에셋으로 저장");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // loadjson
+    NewZayson.AddGlue("loadjson", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto JsonText = params.Param(0).ToText();
+            auto DomNameD = params.Param(1).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                String DomHeader = DomNameD.Offset(2) + '.';
+                ZayWidgetDOM::RemoveVariables(DomHeader);
+                const Context Json(ST_Json, SO_OnlyReference, JsonText);
+                ZayWidgetDOM::SetJson(Json, DomHeader);
+            }
+        }
+    }, "[JsonText:'{a:b}'][DomNameD:'d.value']", "Json을 Dom으로 전개");
+}
+
+void ZayAppData::RegisterNetworkGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // wificonnect
+    NewZayson.AddGlue("wificonnect", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(1 <= params.ParamCount())
+        {
+            auto Ssid = params.Param(0).ToText();
+            auto Password = (1 < params.ParamCount())? params.Param(1).ToText() : String();
+            const bool Result = Platform::Socket::ConnectWifi(Ssid, Password);
+            if(params.CanReturn())
+                params.Return((Result)? "1" : "0");
+        }
+    }, "[Ssid:'abc']#[Password:'123']", "와이파이 연결");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // wifidisconnect
+    NewZayson.AddGlue("wifidisconnect", ZAY_DECLARE_GLUE(params, this)
+    {
+        Platform::Socket::DisconnectWifi();
+    }, nullptr, "와이파이 연결해제");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // updateipaddress
+    NewZayson.AddGlue("updateipaddress", ZAY_DECLARE_GLUE(params, this)
+    {
+        UpdateIPAddress();
+    }, nullptr, "IP주소를 알기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // geturltext
+    NewZayson.AddGlue("geturltext", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Text = params.Param(0).ToText();
+            if(params.CanReturn())
+                params.Return('\'' + Text.ToUrlString() + '\'');
+        }
+    }, "[Text:'abc']", "UrlText로 변환");
+
+    // restapi
+    NewZayson.AddGlue("restapi", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(3 <= params.ParamCount())
+        {
+            auto DomNameD = params.Param(0).ToText();
+            auto HostUrl = params.Param(1).ToText();
+            auto Params = params.Param(2).ToText();
+            auto CallBack = (3 < params.ParamCount())? params.Param(3).ToText() : String();
+            auto ResName = (4 < params.ParamCount())? params.Param(4).ToText() : String();
+            if(DomNameD.Left(2) == "d.")
+            {
+                auto Query = String::Format("%s?%s", (chars) HostUrl, (chars) Params);
+                BOSS_TRACE("##### RestAPI(%s >> %s) Request: %s", params.UIName(), (chars) DomNameD, (chars) Query);
+
+                struct Payload {ZayAppData* mSelf; String mDomNameD; String mCallBack;} *Data = new Payload({this, DomNameD, CallBack});
+                auto Method = [](payload data, chars text)->void
+                    {
+                        const Payload* Data = (const Payload*) data;
+                        const String ResultJson = text;
+                        const Context Json(ST_Json, SO_OnlyReference, ResultJson);
+                        ZayWidgetDOM::SetJson(Json, Data->mDomNameD.Offset(2) + '.');
+                        BOSS_TRACE("##### RestAPI(%s) Response: %s...", (chars) Data->mDomNameD, (chars) ResultJson.Left(40).ToUrlString());
+
+                        if(0 < Data->mCallBack.Length())
+                        if(auto CurWidgetName = Data->mSelf->mLastWidgetName.Access(Data->mSelf->mLastProjCode))
+                        if(auto CurSubWidget = Data->mSelf->mSubWidgets.Access(*CurWidgetName))
+                        {
+                            auto Success = CurSubWidget->JumpCallDirectly(Data->mCallBack, Data->mDomNameD);
+                            BOSS_TRACE("##### RestAPI(%s) JumpCall: %s (%s)", (chars) Data->mDomNameD, (chars) Data->mCallBack, (Success)? "success" : "failure");
+                        }
+                        delete Data;
+                        Platform::UpdateAllViews();
+                    };
+
+                if(ResName.Left(2) == "r.")
+                {
+                    auto RawHeader = (5 < params.ParamCount())? params.Param(5).ToText() : String();
+                    Platform::Utility::SendImageRequest(Query, R(ResName.Offset(2))->GetImage(), Method, Data, RawHeader);
+                }
+                else if(!ResName.Right(4).CompareNoCase(".csv"))
+                    Platform::Utility::SendCsvRequest(Query, String::FromAsset(ResName), Method, Data);
+                else Platform::Utility::SendRequest(Query, Method, Data);
+            }
+        }
+    }, "[DomNameD:'d.return'][HostUrl:'localhost/member/login'][Params:'id=aaaa&key=bbbb']#[CallBack:'gate1'][ResName:'r.grab']", "REST-API를 사용하여 결과를 DOM으로 받기");
+}
+
+void ZayAppData::RegisterNavigationAndDepthGlues(ZaySon& NewZayson, const String& viewname)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // Native navigation and depth ordering. Names are scoped to this widget view.
+    if(!mNativeState) mNativeState=new ZayAppNativeState();
+    NewZayson.AddGlue("twcreate", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(2<=params.ParamCount() && params.ParamCount()<=5)
+        {
+            const String name=params.Param(0).ToText(), source=params.Param(1).ToText();
+            const String output=params.ParamCount()>4?params.Param(4).ToText():source+".build";
+            String base, result;
+            if(ZayNativeDom(output,result))
+            {
+                std::string error="invalid_arguments";
+                if(name.Length()>0 && name.Left(2)!="d." && ZayNativeDom(source,base))
+                {
+                    const double halfWidth=params.ParamCount()>2?params.Param(2).ToFloat():0;
+                    const double halfHeight=params.ParamCount()>3?params.Param(3).ToFloat():halfWidth;
+                    ZayAppNativeState::Geometry geometry;
+                    if(ZayNativeGeometry(base,halfWidth,halfHeight,geometry,error))
+                    {
+                        const ZayAppNativeState::Key key((chars)viewname,(chars)name);
+                        std::vector<ZayAppNativeState::Key> changed;
+                        ok=mNativeState->Create(key,geometry,error,changed);
+                        ZayNativeChangedRoutes(*mNativeState,changed);
+                        if(ok)
+                        {
+                            const auto& world=*mNativeState->worlds.at(key);
+                            ZayNativePutNumber(result+".vertices",world.map->Dots.Count());
+                            ZayNativePutNumber(result+".walls",double(world.walls.size()));
+                            ZayNativePutNumber(result+".half_width",halfWidth);
+                            ZayNativePutNumber(result+".half_height",halfHeight);
+                        }
+                    }
+                }
+                ZayNativeStatus(result,ok,ok?"ready":error.c_str());
+                invalidate();
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[World:'scube.small'][GeometryDomD:'d.scube.geometry']#[HalfWidth:8][HalfHeight:5][ResultDomD:'d.scube.build']", "체형별 트라이월드 맵 생성(허리 반폭/반높이)");
+
+    NewZayson.AddGlue("twpath", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(params.ParamCount()==6)
+        {
+            const String name=params.Param(0).ToText(), output=params.Param(5).ToText();
+            String base;
+            if(ZayNativeDom(output,base))
+            {
+                const ZayAppNativeState::Key worldKey((chars)viewname,(chars)name), routeKey((chars)viewname,(chars)output);
+                ok=mNativeState->FindPath(worldKey,routeKey,
+                    Point(params.Param(1).ToFloat(),params.Param(2).ToFloat()),
+                    Point(params.Param(3).ToFloat(),params.Param(4).ToFloat()));
+                ZayNativeRoute(base,*mNativeState->routes.at(routeKey));
+                invalidate();
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[World:'scube.small'][StartX:100][StartY:100][GoalX:500][GoalY:300][RouteDomD:'d.scube.route.me']", "캐릭터별 경로 생성 및 이전 경로 교체");
+
+    NewZayson.AddGlue("twstep", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(params.ParamCount()==3)
+        {
+            const String output=params.Param(0).ToText(); String base;
+            if(ZayNativeDom(output,base))
+            {
+                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
+                const auto found=mNativeState->routes.find(key);
+                if(found!=mNativeState->routes.end())
+                {
+                    ok=mNativeState->Step(key,params.Param(1).ToFloat(),params.Param(2).ToFloat());
+                    ZayNativeRoute(base,*found->second);
+                    if(!ok && found->second->ok)
+                    { ZayNativeStatus(base,false,"invalid_step"); ZayNativePutNumber(base+".moving",0); }
+                }
+                else
+                {
+                    ZayNativeStatus(base,false,"path_not_found");
+                    ZayNativePutNumber(base+".moving",0); ZayNativePutNumber(base+".arrived",0);
+                }
+                invalidate();
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[RouteDomD:'d.scube.route.me'][Speed:85][DeltaSeconds:0.016]", "경로 추종/충돌 검사 후 좌표와 방향 갱신(초 단위)");
+
+    NewZayson.AddGlue("twrelease", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(params.ParamCount()==1)
+        {
+            const String name=params.Param(0).ToText(); String base;
+            const ZayAppNativeState::Key key((chars)viewname,(chars)name);
+            if(ZayNativeDom(name,base))
+            {
+                ok=mNativeState->routes.erase(key)!=0;
+                ZayNativeStatus(base,false,"released");
+                ZayNativePutNumber(base+".moving",0); ZayNativePutNumber(base+".arrived",0);
+                ZayNativePutNumber(base+".blocked",0); ZayNativePutNumber(base+".point_count",0);
+            }
+            else
+            {
+                std::vector<ZayAppNativeState::Key> changed;
+                ok=mNativeState->ReleaseWorld(key,changed);
+                ZayNativeChangedRoutes(*mNativeState,changed);
+            }
+            if(ok) invalidate();
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[WorldOrRouteDomD:'scube.small']", "맵 또는 경로 해제(맵 해제 시 연결 경로 무효화)");
+
+    // FootY stays third for backward compatibility; optional FootX enables front-edge tests.
+    NewZayson.AddGlue("depthset", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        const int n=params.ParamCount();
+        if(n==3 || n==4 || n==8)
+        {
+            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
+            ZayAppNativeState::DepthEntry entry;
+            entry.id=(chars)literal; entry.literal=(chars)literal; entry.y=params.Param(2).ToFloat();
+            if(n>=4) { entry.hasX=true; entry.x=params.Param(3).ToFloat(); }
+            if(n==8)
+            {
+                entry.bounded=true; entry.l=params.Param(4).ToFloat(); entry.t=params.Param(5).ToFloat();
+                entry.r=params.Param(6).ToFloat(); entry.b=params.Param(7).ToFloat();
+            }
+            if(ZayNativeDom(output,base) && ZayAppNativeState::Depth::Valid(entry))
+            {
+                auto& depth=mNativeState->depths[{(chars)viewname,(chars)output}];
+                int first=-1,last=-1; ok=depth.Put(entry,first,last);
+                if(ok && first>=0) { ZayNativeDepth(base,depth,first,last); invalidate(); }
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[OrderDomD:'d.scube.depth'][ObjectID:0][FootY:350][FootX:300][Left:280][Top:250][Right:320][Bottom:355]", "개체 발밑 Y/X와 선택적 출력 사각형 갱신. 3/4/8개 인자 지원");
+
+    NewZayson.AddGlue("depthfront", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        const int n=params.ParamCount();
+        if(n==6 || n==10)
+        {
+            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
+            ZayAppNativeState::DepthEntry entry;
+            entry.id=(chars)literal; entry.literal=(chars)literal; entry.hasX=entry.front=true;
+            entry.x=params.Param(2).ToFloat(); entry.y=params.Param(3).ToFloat();
+            entry.leftSlope=params.Param(4).ToFloat(); entry.rightSlope=params.Param(5).ToFloat();
+            if(n==10)
+            {
+                entry.bounded=true; entry.l=params.Param(6).ToFloat(); entry.t=params.Param(7).ToFloat();
+                entry.r=params.Param(8).ToFloat(); entry.b=params.Param(9).ToFloat();
+            }
+            if(ZayNativeDom(output,base) && ZayAppNativeState::Depth::Valid(entry))
+            {
+                auto& depth=mNativeState->depths[{(chars)viewname,(chars)output}];
+                int first=-1,last=-1; ok=depth.Put(entry,first,last);
+                if(ok && first>=0) { ZayNativeDepth(base,depth,first,last); invalidate(); }
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[OrderDomD:'d.scube.depth'][ObjectID:0][CornerX:300][CornerY:350][LeftSlope:0.6][RightSlope:-1.1][Left:240][Top:200][Right:360][Bottom:355]", "건물의 앞 꼭짓점/좌우 바닥 경계선과 선택적 출력 사각형 등록. 6/10개 인자 지원");
+
+    NewZayson.AddGlue("depthremove", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(params.ParamCount()==2)
+        {
+            const String output=params.Param(0).ToText(), literal=params.Param(1).ToText(true); String base;
+            if(ZayNativeDom(output,base))
+            {
+                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
+                const auto found=mNativeState->depths.find(key);
+                int first=-1;
+                if(found!=mNativeState->depths.end() && found->second.Remove((chars)literal,first))
+                {
+                    const auto& depth=found->second; ok=true;
+                    ZayNativeDepth(base,depth,first,int(depth.order.size())-1);
+                    // Clear the vacated slot without prefix-deleting IDs 1, 10, 100, ...
+                    ZayWidgetDOM::SetValue(base+String::Format(".%d",int(depth.order.size())),"''");
+                    invalidate();
+                }
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[OrderDomD:'d.scube.depth'][ObjectID:0]", "개체를 깊이 정렬에서 제거");
+
+    NewZayson.AddGlue("depthclear", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        bool ok=false;
+        if(params.ParamCount()==1)
+        {
+            const String output=params.Param(0).ToText(); String base;
+            if(ZayNativeDom(output,base))
+            {
+                const ZayAppNativeState::Key key((chars)viewname,(chars)output);
+                auto found=mNativeState->depths.find(key);
+                if(found!=mNativeState->depths.end())
+                {
+                    for(size_t i=0; i<found->second.order.size(); ++i)
+                        ZayWidgetDOM::SetValue(base+String::Format(".%d",int(i)),"''");
+                    mNativeState->depths.erase(found);
+                }
+                ZayNativePutNumber(base+".count",0); ZayNativePutNumber(base+".revision",0);
+                ok=true; invalidate();
+            }
+        }
+        if(params.CanReturn()) params.Return(ok?"1":"0");
+    }, "[OrderDomD:'d.scube.depth']", "깊이 정렬 그룹 초기화");
+}
+
+void ZayAppData::RegisterGraphAndLogGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // addgraph
+    NewZayson.AddGlue("addgraph", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 3)
+        {
+            auto GraphName = params.Param(0).ToText();
+            auto Value = params.Param(1).ToFloat();
+            auto MaxCount = params.Param(1).ToInteger();
+            // 그래프에 값추가
+            auto& CurGraph = mGraphs(GraphName);
+            if(0 < CurGraph.Count() - MaxCount)
+                CurGraph.SubtractionSection(0, CurGraph.Count() - MaxCount);
+            CurGraph.AtAdding() = Value;
+        }
+    }, "[GraphName:'temp'][Value:500][MaxCount:100]", "특정 그래프에 하나의 값을 추가");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // cleargraph
+    NewZayson.AddGlue("cleargraph", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto GraphName = params.Param(0).ToText();
+            mGraphs.Remove(GraphName);
+        }
+    }, "[GraphName:'temp']", "특정 그래프를 제거");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // setloghighlight
+    NewZayson.AddGlue("setloghighlight", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto ColorCode = params.Param(0).ToText();
+            auto MatchText = params.Param(1).ToText();
+            if(0 < MatchText.Length())
+                mLogHighlights(ColorCode) = MatchText;
+            else mLogHighlights.Remove(ColorCode);
+        }
+    }, "[ColorCode:'#ff00ff'][MatchText:'80 00']", "로그의 강조옵션");
+}
+
+void ZayAppData::RegisterDeviceChannelGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // attachserialonce
+    NewZayson.AddGlue("attachserialonce", ZAY_DECLARE_GLUE(params, this)
+    {
+        Platform::Serial::AttachOnce();
+    }, nullptr, "시리얼포트 권한추가(WASM전용)");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // connectserial
+    NewZayson.AddGlue("connectserial", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(1 <= params.ParamCount())
+        {
+            auto Port = params.Param(0).ToText();
+            auto Baudrate = (1 < params.ParamCount())? params.Param(1).ToInteger() : -1;
+            if(mChannel.ConnectSerial(Port, Baudrate))
+                UpdateChannelList();
+            invalidate();
+        }
+    }, "[Port:'COM1']#[Baudrate:115200]", "시리얼포트 연결");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // closechannel
+    NewZayson.AddGlue("closechannel", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Ch = params.Param(0).ToText();
+            mChannel.Delete(Ch);
+            UpdateChannelList();
+            if(mProjects.Access(mLastVdsProjCode))
+                ZayWidgetDOM::RemoveVariables(mLastVdsProjCode + String::Format(".%s.", (chars) Ch));
+            invalidate();
+        }
+    }, "[Ch:'COM1']", "채널 닫기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // sendchannel
+    NewZayson.AddGlue("sendchannel", ZAY_DECLARE_GLUE(params, this)
+    {
+        clearCapture();
+        if(params.ParamCount() == 1)
+        {
+            auto Ch = params.Param(0).ToText();
+            uint08s NewPacket;
+            mEditText.WritePacket(NewPacket, [this](chars ch, chars key)->const SolverValue
+                {return ZayWidgetDOM::GetValue(String::Format("vds.%s", key));}, Ch);
+            if(0 < NewPacket.Count())
+            {
+                if(mChannel.Write(Ch, (bytes) &NewPacket[0], NewPacket.Count()))
+                    AddHexLog(Ch, "(send CMD)", &NewPacket[0], NewPacket.Count(), "#800080");
+                else AddHexLog(Ch, "(send-failed CMD)", &NewPacket[0], NewPacket.Count(), "#800000");
+            }
+            invalidate();
+        }
+    }, "[Ch:'COM1']", "채널로 패킷송신");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // adddevice
+    NewZayson.AddGlue("adddevice", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Ch = params.Param(0).ToText();
+            if(Ch != "x")
+            {
+                String FindedDeviceName;
+                for(sint32 i = 1; i < 1000; ++i)
+                {
+                    const String CurDeviceName = String::Format("%03d", i);
+                    if(auto CurCh = mDevices.Access(CurDeviceName))
+                    {
+                        if(*CurCh == Ch)
+                        {
+                            FindedDeviceName = CurDeviceName;
+                            break;
+                        }
+                    }
+                    else if(FindedDeviceName.Length() == 0)
+                        FindedDeviceName = CurDeviceName;
+                }
+                if(0 < FindedDeviceName.Length())
+                {
+                    mDevices(FindedDeviceName) = Ch;
+                    UpdateDeviceList();
+                }
+                invalidate();
+            }
+        }
+    }, "[Ch:'COM1']", "채널로 장치추가");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // subdevice
+    NewZayson.AddGlue("subdevice", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Ch = params.Param(0).ToText();
+            for(sint32 i = 1; i < 1000; ++i)
+            {
+                const String CurDeviceName = String::Format("%03d", i);
+                if(auto CurCh = mDevices.Access(CurDeviceName))
+                if(*CurCh == Ch)
+                {
+                    mDevices.Remove(CurDeviceName);
+                    UpdateDeviceList();
+                    break;
+                }
+            }
+            invalidate();
+        }
+    }, "[Ch:'COM1']", "채널로 장치제거");
+}
+
+void ZayAppData::RegisterInstrumentationGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // connectscope
+    NewZayson.AddGlue("connectscope", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto ScopeId = params.Param(0).ToText();
+            if(!mOscilloScope)
+                mOscilloScope = VisaApi::Create();
+            if(mOscilloScope)
+            {
+                if(mOscilloScope->IsOpen())
+                    mOscilloScope->Close();
+                mOscilloScope->SetResource(ScopeId);
+                ValidScope();
+            }
+        }
+    }, "[ScopeId:'USB0::0x18D1::0x0007::410001140::1::INSTR']", "스코프에 연결하기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // getscope
+    NewZayson.AddGlue("getscope", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(2 <= params.ParamCount())
+        {
+            // Measure = 'PKPK'     // Peak-to-Peak
+            // Measure = 'AMPL'     // Amplitude (보통 PKPK와 유사하지만 정의 다름)
+            // Measure = 'MAX'      // Maximum
+            // Measure = 'MIN'      // Minimum
+            // Measure = 'TOP'      // Top level
+            // Measure = 'BASE'     // Base level
+            // Measure = 'MEAN'     // Mean (DC average)
+            // Measure = 'RMS'      // RMS
+            auto Measure = params.Param(0).ToText();
+            auto DomNameD1 = params.Param(1).ToText();
+            auto DomNameD2 = (2 < params.ParamCount())? params.Param(2).ToText() : String();
+            auto DomNameD3 = (3 < params.ParamCount())? params.Param(3).ToText() : String();
+            auto DomNameD4 = (4 < params.ParamCount())? params.Param(4).ToText() : String();
+            if((DomNameD1.Length() == 0 || DomNameD1.Left(2) == "d.") &&
+                (DomNameD2.Length() == 0 || DomNameD2.Left(2) == "d.") &&
+                (DomNameD3.Length() == 0 || DomNameD3.Left(2) == "d.") &&
+                (DomNameD4.Length() == 0 || DomNameD4.Left(2) == "d."))
+            {
+                // 값 가져오기
+                if(ValidScope())
+                {
+                    const String DomNamesD[4] = {DomNameD1, DomNameD2, DomNameD3, DomNameD4};
+                    for(sint32 i = 0; i < 4; ++i)
+                    {
+                        if(0 < DomNamesD[i].Length())
+                        {
+                            std::string Value;
+                            mOscilloScope->Write((chars) String::Format(":MEASure:OPEN %s, CH%d", (chars) Measure, i + 1)); // 메뉴가 없다면 새로 생기게 됨
+                            mOscilloScope->Query((chars) String::Format(":MEASure:%s? CH%d", (chars) Measure, i + 1), Value); // 메뉴가 없을땐 "-"로 나옴
+                            const String ErrorCheck = String(Value.c_str()).Trim();
+                            sint32 ReadOffset = 0;
+                            Parser::GetFloat((chars) ErrorCheck, ErrorCheck.Length(), &ReadOffset);
+                            if(ReadOffset == ErrorCheck.Length())
+                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2), Value.c_str());
+                            else
+                            {
+                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2), "'x'");
+                                ZayWidgetDOM::SetValue(DomNamesD[i].Offset(2) + "_error", '\'' + ErrorCheck + '\'');
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if(0 < DomNameD1.Length())
+                        ZayWidgetDOM::SetValue(DomNameD1.Offset(2), "'x'");
+                    if(0 < DomNameD2.Length())
+                        ZayWidgetDOM::SetValue(DomNameD2.Offset(2), "'x'");
+                    if(0 < DomNameD3.Length())
+                        ZayWidgetDOM::SetValue(DomNameD3.Offset(2), "'x'");
+                    if(0 < DomNameD4.Length())
+                        ZayWidgetDOM::SetValue(DomNameD4.Offset(2), "'x'");
+                }
+            }
+        }
+    }, "[Measure:'PKPK'][DomNameD1:'d.ch1_value']#[DomNameD2:'d.ch2_value'][DomNameD3:'d.ch3_value'][DomNameD4:'d.ch4_value']", "스코프의 현재값 얻기");
+
+    //jj260821_oscilloscope scale
+    NewZayson.AddGlue("setscopetimescale", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (ValidScope())
+        {
+            mOscilloScope->Write(
+                ":TIMebase:EXTent 2.000000e-6\n");
+        }
+    }, "", "스코프 시간축 2us/div 설정"); 
+
+    NewZayson.AddGlue("setscopetime500ms", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (ValidScope())
+        {
+            mOscilloScope->Write(
+                ":TIMebase:EXTent 5.000000e-1\n");
+        }
+    }, "", "스코프 시간축 500ms/div 설정");
+
+    NewZayson.AddGlue("setscopech1_50v", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (ValidScope())
+        {
+            mOscilloScope->Write(
+                ":CHANnel1:SCALe 50\n");
+        }
+    }, "", "CH1 전압 스케일 50V/div 설정");
+
+    NewZayson.AddGlue("setscopech2_50v", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (ValidScope())
+        {
+            mOscilloScope->Write(
+                ":CHANnel2:SCALe 50\n");
+        }
+    }, "", "CH2 전압 스케일 50V/div 설정");
+
+	//jj260825_inspection Tool HP Count
+    NewZayson.AddGlue("gethpcount", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (params.ParamCount() == 1)
+        {
+            const sint32 StartIndex = params.Param(0).ToInteger();
+            const String ItemPath = "inspection.apq.inspect_table.items";
+
+            const sint32 ItemCount =
+                ZayWidgetDOM::GetValue(ItemPath + ".count").ToInteger();
+
+            sint32 Count = 0;
+
+            if (0 <= StartIndex && StartIndex < ItemCount)
+            {
+                const String TargetHp = ZayWidgetDOM::GetValue(
+                    ItemPath + String::Format(".%d.hp", StartIndex)
+                ).ToText();
+
+                for (sint32 i = StartIndex; i < ItemCount; ++i)
+                {
+                    const String CurrentHp = ZayWidgetDOM::GetValue(
+                        ItemPath + String::Format(".%d.hp", i)
+                    ).ToText();
+
+                    if (CurrentHp != TargetHp)
+                        break;
+
+                    ++Count;
+                }
+            }
+
+            ZayWidgetDOM::SetValue(
+                "inspection.hp_count." + String::FromInteger(StartIndex),
+                String::FromInteger(Count)
+            );
+        }
+    }, "[StartIndex:0]", "현재 위치부터 연속된 HP 개수 계산");
+
+    //jj260826_inspection Tool Output Count
+    NewZayson.AddGlue("getoutputcount", ZAY_DECLARE_GLUE(params, this)
+    {
+        if (params.ParamCount() == 1)
+        {
+            const sint32 StartIndex = params.Param(0).ToInteger();
+            const String ItemPath = "inspection.apq.inspect_table.items";
+
+            const sint32 ItemCount =
+                ZayWidgetDOM::GetValue(ItemPath + ".count").ToInteger();
+
+            sint32 Count = 0;
+
+            if (0 <= StartIndex && StartIndex < ItemCount)
+            {
+                const String TargetOutput = ZayWidgetDOM::GetValue(
+                    ItemPath + String::Format(".%d.output", StartIndex)
+                ).ToText();
+
+                for (sint32 i = StartIndex; i < ItemCount; ++i)
+                {
+                    const String CurrentOutput = ZayWidgetDOM::GetValue(
+                        ItemPath + String::Format(".%d.output", i)
+                    ).ToText();
+
+                    if (CurrentOutput != TargetOutput)
+                        break;
+
+                    ++Count;
+                }
+            }
+
+            ZayWidgetDOM::SetValue(
+                "inspection.output_count." + String::FromInteger(StartIndex),
+                String::FromInteger(Count)
+            );
+        }
+
+    }, "[StartIndex:0]", "현재 위치부터 연속된 Output 개수 계산");
+}
+
+void ZayAppData::RegisterInstallationGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // installwpk
+    NewZayson.AddGlue("installwpk", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 3)
+        {
+            auto WpkPath = params.Param(0).ToText();
+            auto DomNameD = params.Param(1).ToText();
+            auto Exclusions = params.Param(2).ToText();
+            if(DomNameD.Left(2) == "d.")
+            {
+                ZayWidgetDOM::SetValue(DomNameD.Offset(2) + ".status", "'run'");
+                RunInstallWpk(WpkPath, Exclusions);
+            }
+        }
+    }, "[WpkPath:'E:/hxz_1.wpk'][DomNameD:'d.install']#[Exclusions:'app_win|fw_main|fw_pixel']", "WPK파일로 재설치하기");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // installsector
+    NewZayson.AddGlue("installsector", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 3)
+        {
+            auto FileOffset = params.Param(0).ToInteger();
+            auto DataCount = params.Param(1).ToInteger();
+            auto DataUnit = Math::Clamp(params.Param(2).ToInteger(), 1, 8);
+            if(auto FilePath = ZayWidgetDOM::GetValue("program.tasking.install.path").ToText())
+            if(auto OldFile = Platform::File::OpenForRead(Platform::File::RootForAssetsRem() + "../" + FilePath))
+            {
+                Platform::File::Seek(OldFile, FileOffset);
+                uint32 SectorCrc = 0xFFFFFFFF;
+                for(sint32 i = 0; i < DataCount; ++i)
+                {
+                    uint64 DataPool = oxFFFFFFFFFFFFFFFF;
+                    Platform::File::Read(OldFile, (uint08*) &DataPool, DataUnit);
+                    ZayWidgetDOM::SetValue(String::Format("sector.%d", i), String::FromInteger(DataPool));
+                    SectorCrc = UpdateCrc((bytes) &DataPool, DataUnit, SectorCrc);
+                }
+                Platform::File::Close(OldFile);
+                ZayWidgetDOM::SetValue("sector.unit", String::FromInteger(DataUnit));
+                ZayWidgetDOM::SetValue("sector.count", String::FromInteger(DataCount));
+                if(params.CanReturn())
+                    params.Return(String::FromInteger(SectorCrc & 0xFFFF));
+            }
+        }
+    }, "[FileOffset:30][DataCount:100][DataUnit:2]", "WPK파일 재설치중 포커싱된 파일의 일부를 DOM에 전개");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // installstatus
+    NewZayson.AddGlue("installstatus", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Status = params.Param(0).ToText();
+            if(mInstallWpk)
+                Tasking::SendQuery(mInstallWpk, Status.ToBuffer());
+        }
+    }, "[Status:'BootLoaderEnd']", "WPK파일 재설치중 상태업데이트");
+}
+
+void ZayAppData::RegisterVdsGlues(ZaySon& NewZayson)
+{
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdsentry
+    NewZayson.AddGlue("vdsentry", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(3 <= params.ParamCount())
+        {
+            auto Ch = params.Param(0).ToText();
+            auto QuestIdx = params.Param(1).ToInteger();
+            auto ScriptField = params.Param(2).ToText();
+            auto StepIdx = (3 < params.ParamCount())? params.Param(3).ToInteger() : -1;
+            if(auto CurProject = mProjects.Access(mLastVdsProjCode))
+            {
+                // 라스트퀘스트 확인
+                const String CacheLastQuestDom = mLastVdsProjCode + String::Format(".%s.cache.lastquest", (chars) Ch);
+                const sint32 OldQuestIdx = (ZayWidgetDOM::ExistVariable(CacheLastQuestDom))? ZayWidgetDOM::GetValue(CacheLastQuestDom).ToInteger() : -1;
+                const sint32 NewQuestIdx = (QuestIdx != -1)? QuestIdx : OldQuestIdx;
+                if(NewQuestIdx != -1)
+                {
+                    const String QuestCode = ZayWidgetDOM::GetValue(mLastVdsProjCode + String::Format(".data.quest.%d.code", NewQuestIdx)).ToText();
+                    if(ScriptField == "script_start")
+                    {
+                        CurProject->mChQuests(Ch)(QuestCode) = NewQuestIdx;
+                        // 라스트퀘스트 기억
+                        ZayWidgetDOM::SetValue(CacheLastQuestDom, String::FromInteger(NewQuestIdx));
+                        // 스텝포커스 저장 및 받아오기
+                        const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, NewQuestIdx);
+                        if(StepIdx == -1) StepIdx = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
+                        else ZayWidgetDOM::SetValue(CacheDom + ".focus", String::FromInteger(StepIdx));
+                        // 스텝별 스크립트가 있으면 쌓아둠
+                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, String::Format("step.%d.script", StepIdx)))
+                            invalidate();
+                        // 퀘스트진입 스크립트가 있으면 쌓아둠
+                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, "script_start"))
+                            invalidate();
+                    }
+                    else if(ScriptField == "script_stop")
+                    {
+                        CurProject->mChQuests(Ch).Remove(QuestCode);
+                        // 라스트퀘스트 제거
+                        if(QuestIdx == -1)
+                            ZayWidgetDOM::RemoveVariables(CacheLastQuestDom);
+                        // 퀘스트퇴장 스크립트가 있으면 쌓아둠
+                        if(RunEntry(mLastVdsProjCode, Ch, NewQuestIdx, "script_stop"))
+                            invalidate();
+                    }
+                }
+            }
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdsentry의 파라미터 수량에러");
+    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][ScriptField:'스크립트필드명']#[StepIdx:'스텝Idx']", "퀘스트로 VDS스크립트를 시작/종료");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdsreset
+    NewZayson.AddGlue("vdsreset", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Ch = params.Param(0).ToText();
+            auto QuestIdx = params.Param(1).ToInteger();
+            if(mProjects.Access(mLastVdsProjCode))
+            {
+                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
+                ZayWidgetDOM::RemoveVariables(CacheDom + ".result.");
+            }
+            invalidate();
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdsreset의 파라미터 수량에러");
+    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx']", "VDS스크립트의 결과를 초기화");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdsstop
+    NewZayson.AddGlue("vdsstop", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 1)
+        {
+            auto Ch = params.Param(0).ToText();
+            if(StopEntry(mLastVdsProjCode, Ch))
+                invalidate();
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdsstop의 파라미터 수량에러");
+    }, "[Ch:'채널명']", "VDS스크립트의 통신을 중지");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdsseek
+    NewZayson.AddGlue("vdsseek", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 3)
+        {
+            auto Ch = params.Param(0).ToText();
+            auto QuestIdx = params.Param(1).ToInteger();
+            auto StepIdx = params.Param(2).ToInteger();
+            if(mProjects.Access(mLastVdsProjCode))
+            {
+                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
+                const sint32 StepFocus = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
+                const String CacheStepDom = CacheDom + ".result.step" + String::FromInteger(StepFocus);
+                ZayWidgetDOM::SetValue(CacheDom + ".next_step", String::FromInteger(StepIdx));
+                ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "0");
+                ZayWidgetDOM::SetValue(CacheStepDom, "0"); // 실패
+                ZayWidgetDOM::SetValue(CacheDom + ".result.errored", "1"); // 에러있음
+                invalidate();
+            }
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdsseek의 파라미터 수량에러");
+    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][StepIdx:'스텝Idx']", "VDS스크립트를 포커스이동");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdscheck
+    NewZayson.AddGlue("vdscheck", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 3)
+        {
+            auto Ch = params.Param(0).ToText();
+            auto QuestIdx = params.Param(1).ToInteger();
+            auto UserFlag = params.Param(2).ToText();
+            if(mProjects.Access(mLastVdsProjCode))
+            {
+                const String CacheDom = mLastVdsProjCode + String::Format(".%s.cache.quest.%d", (chars) Ch, QuestIdx);
+                // 다음 스텝으로 넘어가는 중이 아닐때만
+                if(!ZayWidgetDOM::ExistVariable(CacheDom + ".next_step"))
+                {
+                    const sint32 StepFocus = ZayWidgetDOM::GetValue(CacheDom + ".focus").ToInteger();
+                    const String CacheStepDom = CacheDom + ".result.step" + String::FromInteger(StepFocus);
+                    sint32 GoNext = -1;
+                    if(UserFlag == "ok") GoNext = 1;
+                    else if(UserFlag == "skip") GoNext = 0;
+                    else if(UserFlag == "all")
+                    {
+                        for(sint32 i = 1; i <= 8; ++i)
+                            ZayWidgetDOM::SetValue(CacheStepDom + "_hp" + String::FromInteger(i), "1");
+                        GoNext = 1;
+                    }
+                    else if(UserFlag.Left(2) == "hp")
+                    {
+                        auto OldFlag = ZayWidgetDOM::GetValue(CacheStepDom + "_hp" + UserFlag.Offset(2)).ToInteger();
+                        ZayWidgetDOM::SetValue(CacheStepDom + "_hp" + UserFlag.Offset(2), (OldFlag != 0)? "0" : "1");
+                        sint32 SumFalg = 0;
+                        for(sint32 i = 1; i <= 8; ++i)
+                            SumFalg += (ZayWidgetDOM::GetValue(CacheStepDom + "_hp" + String::FromInteger(i)).ToInteger() != 0);
+                        if(SumFalg == 8)
+                            GoNext = 1;
+                    }
+                    // 다음 스텝으로 넘어감
+                    if(GoNext != -1)
+                    {
+                        const String StepDom = mLastVdsProjCode + String::Format(".data.quest.%d.step.%d", QuestIdx, StepFocus);
+                        const sint32 NextStep = ZayWidgetDOM::GetValue(StepDom + ".next_step").ToInteger();
+                        ZayWidgetDOM::SetValue(CacheDom + ".next_step", String::FromInteger(NextStep));
+                        if(GoNext == 1)
+                        {
+                            ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "1 ~ 0 : 0.5"); // 0.5초 기다림
+                            const uint64 NewUpdateMsec = Platform::Utility::CurrentTimeMsec() + 500;
+                            if(mUpdateMsec < NewUpdateMsec)
+                                mUpdateMsec = NewUpdateMsec;
+                            ZayWidgetDOM::SetValue(CacheStepDom, "1"); // 성공
+                        }
+                        else
+                        {
+                            ZayWidgetDOM::SetValue(CacheDom + ".next_wait", "0");
+                            ZayWidgetDOM::SetValue(CacheStepDom, "0"); // 실패
+                            ZayWidgetDOM::SetValue(CacheDom + ".result.errored", "1"); // 에러있음
+                        }
+                    }
+                }
+                invalidate();
+            }
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdscheck의 파라미터 수량에러");
+    }, "[Ch:'채널명'][QuestIdx:'퀘스트Idx'][UserFlag:ok|skip|seek_n]", "VDS스크립트에 사용자체크");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdssavestore
+    NewZayson.AddGlue("vdssavestore", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Ch = params.Param(0).ToText();
+            auto AssetPath = params.Param(1).ToText();
+            mChannel.SaveStore(Ch, AssetPath);
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdssavestore의 파라미터 수량에러");
+    }, "[Ch:'채널명'][AssetPath:'log/a.txt']", "VDS채널의 읽기버퍼 파일저장");
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // vdssetmonitor
+    NewZayson.AddGlue("vdssetmonitorfocus", ZAY_DECLARE_GLUE(params, this)
+    {
+        if(params.ParamCount() == 2)
+        {
+            auto Ch = params.Param(0).ToText();
+            auto MonitorFocus = params.Param(1).ToText();
+            mChannel.SetMonitorFocus(MonitorFocus);
+        }
+        else SendWidgetLog(mLastVdsProjCode, "vdssetmonitorfocus의 파라미터 수량에러");
+    }, "[Ch:'채널명'][MonitorFocus:'d.hxz.data.x00']", "VDS채널의 패킷모니터기능");
 }
 
 void ZayAppData::RenderWindowOutline(ZayPanel& panel)
@@ -4033,7 +4128,9 @@ bool ZayAppData::RenderUC_SlideVH(ZayPanel& panel, chars domname, sint32 min, si
                 }
                 else if(t == GT_InReleased || t == GT_OutReleased)
                 {
-                    if(auto CurWidgetName = mLastWidgetName.Access(mLastProjCode))
+                    if(gatename.Left(5) == "main:")
+                        mMainWidget.JumpCallDirectly(gatename.Offset(5), n, nullptr);
+                    else if(auto CurWidgetName = mLastWidgetName.Access(mLastProjCode))
                     if(auto CurSubWidget = mSubWidgets.Access(*CurWidgetName))
                         CurSubWidget->JumpCall(gatename, mLastProjCode);
                 }

@@ -6,6 +6,40 @@
 	[
 		{
 			"addw":"0",
+			"compid":"2401",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"89",
+			"posy":"-1690",
+			"ui":
+			[
+				{
+					"addw":"320",
+					"compid":"2402",
+					"compinputs":
+					[
+						"if(d.settings.sound_volume > 0)",
+						"setvalue('d.settings.sound_volume_saved', d.settings.sound_volume)",
+						"endif",
+						"setvalue('d.main_settings_save.rendering_type', d.settings.rendering_type)",
+						"setvalue('d.main_settings_save.virtual_keypad_disabled', d.settings.virtual_keypad_disabled)",
+						"setvalue('d.main_settings_save.language', d.settings.language)",
+						"setvalue('d.main_settings_save.sound_volume', d.settings.sound_volume)",
+						"setvalue('d.main_settings_save.app_columns', d.settings.app_columns)",
+						"setvalue('d.main_settings_save.sound_volume_saved', d.settings.sound_volume_saved)",
+						"savejson('widget/main_settings.json', 'd.main_settings_save')"
+					],
+					"compname":"code",
+					"expanded":"1",
+					"posx":"409",
+					"posy":"-1690",
+					"stable":"0"
+				}
+			],
+			"uiname":"save_setting"
+		},
+		{
+			"addw":"0",
 			"compid":"104",
 			"compname":"gate",
 			"expanded":"1",
@@ -93,7 +127,7 @@
 									"expanded":"1",
 									"onclick":
 									[
-										"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+										"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 										{
 											"PopupVK":"1"
 										}
@@ -392,7 +426,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"keypad(16777219, '')"
 													],
 													"posx":"-2921",
@@ -491,7 +525,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"keypad(16777220, '')"
 													],
 													"posx":"-2921",
@@ -590,7 +624,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"VKShift":"1 - VKShift"
 														}
@@ -702,7 +736,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"VKNum":"1 - VKNum"
 														},
@@ -813,7 +847,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"ascii(32)"
 													],
 													"posx":"-2921",
@@ -878,7 +912,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"langturn()",
 														{
 															"VKNum":"0"
@@ -989,7 +1023,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_close.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+														"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"PopupVK":"0"
 														},
@@ -1415,7 +1449,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								{
 									"MainHomeTab":"htV"
 								},
@@ -2463,7 +2497,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"setcomment('d.data.glue_filter', '')",
 								"update(0.15)"
 							],
@@ -3103,7 +3137,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"setvalue('d.data.glue_browser.focused_index', 0 @ ('d.data.finded_glues.' + pV + '.index'))",
 								{
 									"MainGlueRequestedName":"'' @ ('d.data.finded_glues.' + pV + '.name')"
@@ -10589,8 +10623,8 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_close.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-						"setvalue('d.data.settings.popup_open', 0)",
+						"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"setvalue('d.program.settings_popup_open', 0)",
 						"clearcapture()",
 						"update(0.1)"
 					],
@@ -10645,7 +10679,7 @@
 							"ms_w":"(720 [min] (pW-24)) [multiply] 1"
 						},
 						{
-							"ms_h":"(752 [min] (pH-24)) [multiply] 1"
+							"ms_h":"(828 [min] (pH-24)) [multiply] 1"
 						}
 					],
 					"compname":"code",
@@ -10710,7 +10744,7 @@
 											"ms_can_shortcut":"(((-1 @ 'd.data.body.focus') >= 0) [and] (d.data.body.focus < d.data.body.enum.count)) [and] ((d.program.osname == 'WINDOWS') [or] (d.program.osname == 'WASM'))"
 										},
 										{
-											"ms_content_h":"524 + 32 * ms_compact"
+											"ms_content_h":"600 + 32 * ms_compact"
 										},
 										{
 											"ms_body_h":"(pH-184) [multiply] 1"
@@ -10934,8 +10968,8 @@
 											"expanded":"1",
 											"onclick":
 											[
-												"playsound('sound/zay_close.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-												"setvalue('d.data.settings.popup_open', 0)",
+												"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+												"setvalue('d.program.settings_popup_open', 0)",
 												"clearcapture()",
 												"update(0.1)"
 											],
@@ -11205,8 +11239,8 @@
 											"expanded":"1",
 											"onclick":
 											[
-												"playsound('sound/zay_close.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-												"setvalue('d.data.settings.popup_open', 0)",
+												"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+												"setvalue('d.program.settings_popup_open', 0)",
 												"clearcapture()",
 												"update(0.1)"
 											],
@@ -11667,9 +11701,9 @@
 							[
 								"if(d.program.osname == 'WASM')",
 								"openstandaloneapp('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'), 'window')",
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"elif((0 @ 'd.program.shortcut_result') != 1)",
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"createappshortcut('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'))",
 								"update(0.1)",
 								"endif"
@@ -11818,6 +11852,36 @@
 					"expanded":"1",
 					"posx":"34820",
 					"posy":"1900"
+				},
+				{
+					"addw":"0",
+					"compid":"2381",
+					"compname":"xywh",
+					"compvalues":
+					[
+						[
+							"0",
+							"(536 + 32 * ms_compact) [multiply] 1",
+							"(pW) [multiply] 1",
+							"64"
+						]
+					],
+					"expanded":"1",
+					"posx":"34820",
+					"posy":"2240",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2382",
+							"compname":"jump",
+							"expanded":"1",
+							"posx":"35140",
+							"posy":"2240",
+							"uiname":"main_settings_rendering"
+						}
+					]
 				}
 			],
 			"uiname":"main_settings_body"
@@ -12057,8 +12121,9 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_toggle.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-						"setvalue('d.data.settings.virtual_keypad_disabled', 1 - (0 @ 'd.data.settings.virtual_keypad_disabled'))",
+						"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"setvalue('d.settings.virtual_keypad_disabled', 1 - (0 @ 'd.settings.virtual_keypad_disabled'))",
+						"jumpcall('save_setting', 0)",
 						{
 							"PopupVK":"0"
 						},
@@ -12076,7 +12141,7 @@
 							"compname":"stretch",
 							"compvalues":
 							[
-								"if((0 @ 'd.data.settings.virtual_keypad_disabled') == 1)",
+								"if((0 @ 'd.settings.virtual_keypad_disabled') == 1)",
 								[
 									"r.main_settings_toggle_on",
 									"true",
@@ -12162,7 +12227,7 @@
 											"compname":"text",
 											"compvalues":
 											[
-												"if(0 @ 'd.data.settings.virtual_keypad_disabled')",
+												"if(0 @ 'd.settings.virtual_keypad_disabled')",
 												[
 													"'' @ (MainSettings + '.keypad_disabled')",
 													"leftmiddle",
@@ -12535,7 +12600,7 @@
 											"compvalues":
 											[
 												[
-													"(100 @ 'd.data.settings.sound_volume') + '%'",
+													"(100 @ 'd.settings.sound_volume') + '%'",
 													"rightmiddle",
 													"right"
 												]
@@ -12568,11 +12633,12 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"setvalue('d.data.settings.sound_volume', ((100 @ 'd.data.settings.sound_volume') - 5) [max] 0)",
-						"setvalue('d.data.settings.sound_volume.ani', 100 @ 'd.data.settings.sound_volume')",
-						"mutesound(d.data.settings.sound_volume <= 0)",
+						"setvalue('d.settings.sound_volume', ((100 @ 'd.settings.sound_volume') - 5) [max] 0)",
+						"setvalue('d.settings.sound_volume.ani', 100 @ 'd.settings.sound_volume')",
+						"jumpcall('save_setting', 0)",
+						"mutesound(d.settings.sound_volume <= 0)",
 						"update(0.1)",
-						"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))"
+						"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
 					],
 					"posx":"37416",
 					"posy":"7254",
@@ -12753,7 +12819,7 @@
 								[
 									"12",
 									"23",
-									"((pW-24) * ((100 @ 'd.data.settings.sound_volume') / 100)) [multiply] 1",
+									"((pW-24) * ((100 @ 'd.settings.sound_volume') / 100)) [multiply] 1",
 									"8"
 								]
 							],
@@ -12787,7 +12853,7 @@
 							"compvalues":
 							[
 								[
-									"((pW-24) * ((100 @ 'd.data.settings.sound_volume') / 100)) [multiply] 1",
+									"((pW-24) * ((100 @ 'd.settings.sound_volume') / 100)) [multiply] 1",
 									"15",
 									"24",
 									"24"
@@ -12805,13 +12871,13 @@
 									"compname":"stretch",
 									"compvalues":
 									[
-										"ifpressed(ui_slidevh_data.settings.sound_volume)",
+										"ifpressed(ui_slidevh_settings.sound_volume)",
 										[
 											"r.main_settings_slider_knob_p",
 											"true",
 											"inner"
 										],
-										"eliffocused(ui_slidevh_data.settings.sound_volume)",
+										"eliffocused(ui_slidevh_settings.sound_volume)",
 										[
 											"r.main_settings_slider_knob_h",
 											"true",
@@ -12839,13 +12905,14 @@
 							[
 								[
 									"'slidevh'",
-									"'d.data.settings.sound_volume'",
+									"'d.settings.sound_volume'",
 									"0",
 									"0",
 									"100",
 									"1",
 									"0",
-									"12"
+									"12",
+									"'main:save_setting'"
 								]
 							],
 							"expanded":"1",
@@ -12880,11 +12947,12 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"setvalue('d.data.settings.sound_volume', ((100 @ 'd.data.settings.sound_volume') + 5) [min] 100)",
-						"setvalue('d.data.settings.sound_volume.ani', 100 @ 'd.data.settings.sound_volume')",
-						"mutesound(d.data.settings.sound_volume <= 0)",
+						"setvalue('d.settings.sound_volume', ((100 @ 'd.settings.sound_volume') + 5) [min] 100)",
+						"setvalue('d.settings.sound_volume.ani', 100 @ 'd.settings.sound_volume')",
+						"jumpcall('save_setting', 0)",
+						"mutesound(d.settings.sound_volume <= 0)",
 						"update(0.1)",
-						"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))"
+						"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
 					],
 					"posx":"37416",
 					"posy":"8724",
@@ -13309,8 +13377,9 @@
 									"expanded":"1",
 									"onclick":
 									[
-										"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-										"setvalue('d.data.settings.app_columns', mscolsV + 1)",
+										"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+										"setvalue('d.settings.app_columns', mscolsV + 1)",
+										"jumpcall('save_setting', 0)",
 										"movescrollv('main.main_apps', 0)",
 										"update(0.1)"
 									],
@@ -13333,7 +13402,7 @@
 												[
 													"r.main_settings_choice_h"
 												],
-												"elif((1 @ 'd.data.settings.app_columns') == mscolsV + 1)",
+												"elif((1 @ 'd.settings.app_columns') == mscolsV + 1)",
 												[
 													"r.main_settings_choice_s"
 												],
@@ -13508,10 +13577,379 @@
 				}
 			],
 			"uiname":"main_settings_columns"
+		},
+		{
+			"addw":"0",
+			"compid":"2383",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"41000",
+			"posy":"18000",
+			"ui":
+			[
+				{
+					"addw":"0",
+					"compid":"2384",
+					"compname":"ninepatch",
+					"compvalues":
+					[
+						[
+							"r.main_settings_section"
+						]
+					],
+					"expanded":"1",
+					"posx":"41320",
+					"posy":"18000",
+					"stable":"0"
+				},
+				{
+					"addw":"0",
+					"compid":"2385",
+					"compname":"xywh",
+					"compvalues":
+					[
+						[
+							"16",
+							"10",
+							"(pW-196) [multiply] 1",
+							"44"
+						]
+					],
+					"expanded":"1",
+					"posx":"41320",
+					"posy":"18220",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2386",
+							"compname":"hexcolor",
+							"compvalues":
+							[
+								[
+									"#143854"
+								]
+							],
+							"expanded":"1",
+							"posx":"41640",
+							"posy":"18220",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2387",
+									"compname":"font",
+									"compvalues":
+									[
+										[
+											"1.6",
+											"MainUIFont"
+										]
+									],
+									"expanded":"1",
+									"posx":"41960",
+									"posy":"18220",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2388",
+											"compname":"text",
+											"compvalues":
+											[
+												[
+													"'' @ (MainSettings + '.rendering_title')",
+													"leftmiddle",
+													"right"
+												]
+											],
+											"expanded":"1",
+											"posx":"42280",
+											"posy":"18220",
+											"stable":"0"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"addw":"0",
+					"compid":"2389",
+					"compname":"xywh",
+					"compvalues":
+					[
+						[
+							"(pW-168) [multiply] 1",
+							"10",
+							"72",
+							"44"
+						]
+					],
+					"expanded":"1",
+					"onclick":
+					[
+						"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"setvalue('d.settings.rendering_type', 'CPU')",
+						"jumpcall('save_setting', 0)",
+						"update(0.1)"
+					],
+					"posx":"41320",
+					"posy":"18520",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2390",
+							"compname":"ninepatch",
+							"compvalues":
+							[
+								"ifpressed(ms_rendering_cpu)",
+								[
+									"r.main_settings_choice_p"
+								],
+								"elif(('CPU' @ 'd.settings.rendering_type') == 'CPU')",
+								[
+									"r.main_settings_choice_s"
+								],
+								"eliffocused(ms_rendering_cpu)",
+								[
+									"r.main_settings_choice_h"
+								],
+								"else",
+								[
+									"r.main_settings_choice_n"
+								]
+							],
+							"expanded":"1",
+							"posx":"41860",
+							"posy":"18520",
+							"stable":"0"
+						},
+						{
+							"addw":"0",
+							"compid":"2391",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"4",
+									"0",
+									"(pW-8) [multiply] 1",
+									"(pH) [multiply] 1"
+								]
+							],
+							"expanded":"1",
+							"posx":"41860",
+							"posy":"18950",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2392",
+									"compname":"hexcolor",
+									"compvalues":
+									[
+										[
+											"#18517a"
+										]
+									],
+									"expanded":"1",
+									"posx":"42400",
+									"posy":"18950",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2393",
+											"compname":"font",
+											"compvalues":
+											[
+												[
+													"1.4",
+													"MainUIFont"
+												]
+											],
+											"expanded":"1",
+											"posx":"42940",
+											"posy":"18950",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2394",
+													"compname":"text",
+													"compvalues":
+													[
+														[
+															"'CPU'",
+															"centermiddle",
+															"right"
+														]
+													],
+													"expanded":"1",
+													"posx":"43480",
+													"posy":"18950",
+													"stable":"0"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"uiname":"ms_rendering_cpu"
+				},
+				{
+					"addw":"0",
+					"compid":"2395",
+					"compname":"xywh",
+					"compvalues":
+					[
+						[
+							"(pW-88) [multiply] 1",
+							"10",
+							"72",
+							"44"
+						]
+					],
+					"expanded":"1",
+					"onclick":
+					[
+						"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"setvalue('d.settings.rendering_type', 'GPU')",
+						"jumpcall('save_setting', 0)",
+						"update(0.1)"
+					],
+					"posx":"41320",
+					"posy":"19480",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2396",
+							"compname":"ninepatch",
+							"compvalues":
+							[
+								"ifpressed(ms_rendering_gpu)",
+								[
+									"r.main_settings_choice_p"
+								],
+								"elif(('CPU' @ 'd.settings.rendering_type') == 'GPU')",
+								[
+									"r.main_settings_choice_s"
+								],
+								"eliffocused(ms_rendering_gpu)",
+								[
+									"r.main_settings_choice_h"
+								],
+								"else",
+								[
+									"r.main_settings_choice_n"
+								]
+							],
+							"expanded":"1",
+							"posx":"41860",
+							"posy":"19480",
+							"stable":"0"
+						},
+						{
+							"addw":"0",
+							"compid":"2397",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"4",
+									"0",
+									"(pW-8) [multiply] 1",
+									"(pH) [multiply] 1"
+								]
+							],
+							"expanded":"1",
+							"posx":"41860",
+							"posy":"19910",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2398",
+									"compname":"hexcolor",
+									"compvalues":
+									[
+										[
+											"#18517a"
+										]
+									],
+									"expanded":"1",
+									"posx":"42400",
+									"posy":"19910",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2399",
+											"compname":"font",
+											"compvalues":
+											[
+												[
+													"1.4",
+													"MainUIFont"
+												]
+											],
+											"expanded":"1",
+											"posx":"42940",
+											"posy":"19910",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2400",
+													"compname":"text",
+													"compvalues":
+													[
+														[
+															"'GPU'",
+															"centermiddle",
+															"right"
+														]
+													],
+													"expanded":"1",
+													"posx":"43480",
+													"posy":"19910",
+													"stable":"0"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"uiname":"ms_rendering_gpu"
+				}
+			],
+			"uiname":"main_settings_rendering"
 		}
 	],
 	"oncreate":
 	[
+		{
+			"MainRenderingType":"''"
+		},
 		{
 			"MainMuted":"-1"
 		},
@@ -13588,7 +14026,7 @@
 			"compinputs":
 			[
 				{
-					"MainLanguage":"'en' @ 'd.data.settings.language'"
+					"MainLanguage":"'en' @ 'd.settings.language'"
 				},
 				{
 					"MainUIFont":"'NanumSquare Bold' @ ('d.data.i18n.' + MainLanguage + '.font')"
@@ -13602,12 +14040,18 @@
 				{
 					"MainSettings":"'d.data.i18n.' + MainLanguage + '.settings'"
 				},
-				"if((d.data.settings.sound_volume > 0) [and] (d.data.settings.sound_volume != d.data.settings.sound_volume_saved))",
-				"setvalue('d.data.settings.sound_volume_saved', d.data.settings.sound_volume)",
+				"if((d.settings.sound_volume > 0) [and] (d.settings.sound_volume != d.settings.sound_volume_saved))",
+				"setvalue('d.settings.sound_volume_saved', d.settings.sound_volume)",
 				"endif",
-				"if(MainMuted != (d.data.settings.sound_volume <= 0))",
+				"if(MainRenderingType != ('CPU' @ 'd.settings.rendering_type'))",
 				{
-					"MainMuted":"d.data.settings.sound_volume <= 0"
+					"MainRenderingType":"'CPU' @ 'd.settings.rendering_type'"
+				},
+				"setrenderingtype(MainRenderingType)",
+				"endif",
+				"if(MainMuted != (d.settings.sound_volume <= 0))",
+				{
+					"MainMuted":"d.settings.sound_volume <= 0"
 				},
 				"mutesound(MainMuted)",
 				"endif"
@@ -13663,7 +14107,7 @@
 									"compinputs":
 									[
 										{
-											"main_requested_cols":"(((1 @ 'd.data.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
+											"main_requested_cols":"(((1 @ 'd.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
 										},
 										{
 											"main_available_dock":"(pW - 420) [max] 138"
@@ -13784,7 +14228,7 @@
 										},
 										{
 											"addw":"546",
-											"compname":"if(((0 @ 'd.data.settings.virtual_keypad_disabled') == 0) [and] ((0 @ 'd.data.settings.popup_open') == 0))",
+											"compname":"if(((0 @ 'd.settings.virtual_keypad_disabled') == 0) [and] ((0 @ 'd.program.settings_popup_open') == 0))",
 											"expanded":"1",
 											"posx":"2159",
 											"posy":"330"
@@ -14617,8 +15061,9 @@
 																							"expanded":"1",
 																							"onclick":
 																							[
-																								"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
-																								"setvalue('d.data.settings.language', ms_lang_code)",
+																								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+																								"setvalue('d.settings.language', ms_lang_code)",
+																								"jumpcall('save_setting', 0)",
 																								"update(0.1)"
 																							],
 																							"posx":"5438",
@@ -14873,7 +15318,7 @@
 																	"expanded":"1",
 																	"onclick":
 																	[
-																		"playsound('sound/zay_click.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+																		"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																		"setvalue('d.data.body.focus', -1)"
 																	],
 																	"posx":"3925",
@@ -15449,7 +15894,7 @@
 																											"expanded":"1",
 																											"onclick":
 																											[
-																												"playsound('sound/zay_select.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+																												"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																												"setvalue('d.data.body.focus', pV)",
 																												{
 																													"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
@@ -15752,13 +16197,13 @@
 																					"expanded":"1",
 																					"onclick":
 																					[
-																						"playsound('sound/zay_open.mp3', ((100 @ 'd.data.settings.sound_volume') / 100.0))",
+																						"playsound('sound/zay_open.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																						"clearcapture()",
 																						{
 																							"PopupVK":"0"
 																						},
 																						"setvalue('d.program.shortcut_result', 0)",
-																						"setvalue('d.data.settings.popup_open', 1)",
+																						"setvalue('d.program.settings_popup_open', 1)",
 																						"update(0.1)"
 																					],
 																					"posx":"5460",
@@ -15960,7 +16405,7 @@
 										},
 										{
 											"addw":"100",
-											"compname":"if(0 @ 'd.data.settings.popup_open')",
+											"compname":"if(0 @ 'd.program.settings_popup_open')",
 											"expanded":"1",
 											"posx":"2159",
 											"posy":"9612"

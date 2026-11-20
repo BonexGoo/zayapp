@@ -646,15 +646,6 @@
 			[[" "],["：",58],["(",40],[")",41],["[",91],["]",93],["<",60],[">",62],["@",64],[" "]]
 		]		
 	},
-	"settings": {
-		"popup_open": 0,
-		"virtual_keypad_disabled": 0,
-		"language": "en",
-		"sound_volume": 100,
-		"sound_volume.ani": 100,
-		"app_columns": 1,
-		"sound_volume_saved": 100
-	},
 	"settings_ui": {
 		"title": "설정",
 		"caption": "ZayApp의 입력 · 사운드 · 앱 배치를 설정합니다.",
@@ -680,6 +671,7 @@
 		],
 		"volume_title": "사운드 볼륨",
 		"volume_desc": "모든 앱에 공통으로 적용합니다.",
+		"rendering_title": "렌더링 방식",
 		"columns_title": "앱 배치 다단",
 		"columns_desc": "왼쪽 앱 목록을 1~5열로 배치합니다.",
 		"columns_adaptive": "화면이 좁으면 표시 열 수를 조정합니다.",
@@ -819,6 +811,7 @@
 				],
 				"volume_title": "사운드 볼륨",
 				"volume_desc": "모든 앱에 공통으로 적용합니다.",
+				"rendering_title": "렌더링 방식",
 				"columns_title": "앱 배치 다단",
 				"columns_desc": "왼쪽 앱 목록을 1~5열로 배치합니다.",
 				"columns_adaptive": "화면이 좁으면 표시 열 수를 조정합니다.",
@@ -978,6 +971,7 @@
 				],
 				"volume_title": "Sound volume",
 				"volume_desc": "Controls sound volume in all apps.",
+				"rendering_title": "Rendering mode",
 				"columns_title": "App grid columns",
 				"columns_desc": "Arrange the left app list in 1–5 columns.",
 				"columns_adaptive": "Narrow screens limit the displayed column count.",
@@ -1137,6 +1131,7 @@
 				],
 				"volume_title": "サウンド音量",
 				"volume_desc": "すべてのアプリに共通で適用します。",
+				"rendering_title": "レンダリング方式",
 				"columns_title": "アプリの列数",
 				"columns_desc": "左側のアプリ一覧を1～5列で配置します。",
 				"columns_adaptive": "画面が狭い場合は表示列数を調整します。",

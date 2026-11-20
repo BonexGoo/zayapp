@@ -112,6 +112,23 @@ public:
     bool RenderUC_TouchCircle(ZayPanel& panel, sint32 x, sint32 y, sint32 width, sint32 height, chars domname, bool show, const Points& dots);
     bool RenderUC_ZoomArea(ZayPanel& panel, chars domname);
 
+private:
+    void RegisterRenderingGlues(ZaySon& NewZayson);
+    void RegisterRuntimeGlues(ZaySon& NewZayson);
+    void RegisterInputGlues(ZaySon& NewZayson, const String& viewname);
+    void RegisterAppNavigationGlues(ZaySon& NewZayson);
+    void RegisterTableGlues(ZaySon& NewZayson);
+    void RegisterMediaGlues(ZaySon& NewZayson);
+    void RegisterDomGlues(ZaySon& NewZayson);
+    void RegisterFileGlues(ZaySon& NewZayson);
+    void RegisterNetworkGlues(ZaySon& NewZayson);
+    void RegisterNavigationAndDepthGlues(ZaySon& NewZayson, const String& viewname);
+    void RegisterGraphAndLogGlues(ZaySon& NewZayson);
+    void RegisterDeviceChannelGlues(ZaySon& NewZayson);
+    void RegisterInstrumentationGlues(ZaySon& NewZayson);
+    void RegisterInstallationGlues(ZaySon& NewZayson);
+    void RegisterVdsGlues(ZaySon& NewZayson);
+
 public:
     void UpdateChannelList();
     void UpdateDeviceList();
