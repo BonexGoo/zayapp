@@ -54,6 +54,11 @@
 				"dom" : "robo"
 			},
 			{
+				"title" : "KErp",
+				"script" : "kerp.zay",
+				"dom" : "kerp"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"
