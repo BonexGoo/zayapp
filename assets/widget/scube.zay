@@ -1334,79 +1334,6 @@
           "uiname": "sc_video_pin_0"
         },
         {
-          "addw": "0",
-          "compid": "20966",
-          "compname": "code",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "2144",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "0",
-              "compid": "20964",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "2259",
-              "stable": "0",
-              "ui": [
-                "if(sc_pin_open_0 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20962",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "2374",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', 1000000, d.scube.data.videos.0.y, d.scube.data.videos.0.x, d.scube.data.videos.0.x - 80 / sc_map_s, d.scube.data.videos.0.y - 146 / sc_map_s, d.scube.data.videos.0.x + 80 / sc_map_s, d.scube.data.videos.0.y - 6 / sc_map_s)"
-                  ]
-                },
-                "elif(sc_pin_depth_open_0 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20963",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "2564",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthremove('d.scube.depth', 1000000)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            },
-            {
-              "addw": "500",
-              "compid": "20965",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "2754",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_pin_depth_open_0": "sc_pin_open_0"
-                }
-              ]
-            }
-          ],
-          "compinputs": [
-            {
-              "sc_code_pass": "0"
-            }
-          ]
-        },
-        {
           "addw": "350",
           "compid": "20733",
           "compname": "code",
@@ -1483,79 +1410,6 @@
           "stable": "0",
           "ui": [],
           "uiname": "sc_video_pin_1"
-        },
-        {
-          "addw": "0",
-          "compid": "20982",
-          "compname": "code",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "3596",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "0",
-              "compid": "20980",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "3711",
-              "stable": "0",
-              "ui": [
-                "if(sc_pin_open_1 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20978",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "3826",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', 1000001, d.scube.data.videos.1.y, d.scube.data.videos.1.x, d.scube.data.videos.1.x - 80 / sc_map_s, d.scube.data.videos.1.y - 146 / sc_map_s, d.scube.data.videos.1.x + 80 / sc_map_s, d.scube.data.videos.1.y - 6 / sc_map_s)"
-                  ]
-                },
-                "elif(sc_pin_depth_open_1 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20979",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "4016",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthremove('d.scube.depth', 1000001)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            },
-            {
-              "addw": "500",
-              "compid": "20981",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "4206",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_pin_depth_open_1": "sc_pin_open_1"
-                }
-              ]
-            }
-          ],
-          "compinputs": [
-            {
-              "sc_code_pass": "0"
-            }
-          ]
         },
         {
           "addw": "350",
@@ -1636,79 +1490,6 @@
           "uiname": "sc_video_pin_2"
         },
         {
-          "addw": "0",
-          "compid": "20998",
-          "compname": "code",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "5048",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "0",
-              "compid": "20996",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "5163",
-              "stable": "0",
-              "ui": [
-                "if(sc_pin_open_2 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20994",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "5278",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', 1000002, d.scube.data.videos.2.y, d.scube.data.videos.2.x, d.scube.data.videos.2.x - 80 / sc_map_s, d.scube.data.videos.2.y - 146 / sc_map_s, d.scube.data.videos.2.x + 80 / sc_map_s, d.scube.data.videos.2.y - 6 / sc_map_s)"
-                  ]
-                },
-                "elif(sc_pin_depth_open_2 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "20995",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "5468",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthremove('d.scube.depth', 1000002)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            },
-            {
-              "addw": "500",
-              "compid": "20997",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "5658",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_pin_depth_open_2": "sc_pin_open_2"
-                }
-              ]
-            }
-          ],
-          "compinputs": [
-            {
-              "sc_code_pass": "0"
-            }
-          ]
-        },
-        {
           "addw": "350",
           "compid": "20743",
           "compname": "code",
@@ -1787,79 +1568,6 @@
           "uiname": "sc_video_pin_3"
         },
         {
-          "addw": "0",
-          "compid": "21014",
-          "compname": "code",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "6500",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "0",
-              "compid": "21012",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "6615",
-              "stable": "0",
-              "ui": [
-                "if(sc_pin_open_3 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "21010",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "6730",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', 1000003, d.scube.data.videos.3.y, d.scube.data.videos.3.x, d.scube.data.videos.3.x - 80 / sc_map_s, d.scube.data.videos.3.y - 146 / sc_map_s, d.scube.data.videos.3.x + 80 / sc_map_s, d.scube.data.videos.3.y - 6 / sc_map_s)"
-                  ]
-                },
-                "elif(sc_pin_depth_open_3 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "21011",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "6920",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthremove('d.scube.depth', 1000003)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            },
-            {
-              "addw": "500",
-              "compid": "21013",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "7110",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_pin_depth_open_3": "sc_pin_open_3"
-                }
-              ]
-            }
-          ],
-          "compinputs": [
-            {
-              "sc_code_pass": "0"
-            }
-          ]
-        },
-        {
           "addw": "350",
           "compid": "20748",
           "compname": "code",
@@ -1936,79 +1644,6 @@
           "stable": "0",
           "ui": [],
           "uiname": "sc_video_pin_4"
-        },
-        {
-          "addw": "0",
-          "compid": "21030",
-          "compname": "code",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "7952",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "0",
-              "compid": "21028",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "8067",
-              "stable": "0",
-              "ui": [
-                "if(sc_pin_open_4 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "21026",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "8182",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', 1000004, d.scube.data.videos.4.y, d.scube.data.videos.4.x, d.scube.data.videos.4.x - 80 / sc_map_s, d.scube.data.videos.4.y - 146 / sc_map_s, d.scube.data.videos.4.x + 80 / sc_map_s, d.scube.data.videos.4.y - 6 / sc_map_s)"
-                  ]
-                },
-                "elif(sc_pin_depth_open_4 == 1)",
-                {
-                  "addw": "500",
-                  "compid": "21027",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "8372",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthremove('d.scube.depth', 1000004)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            },
-            {
-              "addw": "500",
-              "compid": "21029",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "8562",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_pin_depth_open_4": "sc_pin_open_4"
-                }
-              ]
-            }
-          ],
-          "compinputs": [
-            {
-              "sc_code_pass": "0"
-            }
-          ]
         }
       ],
       "uiname": "sc_video_pins"
@@ -2126,67 +1761,13 @@
               "ui": [
                 {
                   "addw": "0",
-                  "compid": "20126",
-                  "compname": "xywh",
-                  "compvalues": [
-                    [
-                      "((sc_map_x) * sc_scale) [divide] 1",
-                      "((sc_map_y) * sc_scale) [divide] 1",
-                      "((1672 * sc_map_s) * sc_scale) [divide] 1",
-                      "((941 * sc_map_s) * sc_scale) [divide] 1"
-                    ]
-                  ],
-                  "expanded": "1",
-                  "posx": "77480",
-                  "posy": "3863",
-                  "stable": "0",
-                  "ui": [
-                    {
-                      "addw": "0",
-                      "compid": "20125",
-                      "compname": "stretch",
-                      "compvalues": [
-                        [
-                          "r.sc_map_ground",
-                          "true",
-                          "strong"
-                        ]
-                      ],
-                      "expanded": "1",
-                      "posx": "78640",
-                      "posy": "3978",
-                      "stable": "0"
-                    }
-                  ]
-                },
-                {
-                  "addw": "0",
-                  "compid": "21038",
+                  "compid": "70133",
                   "compname": "jump",
                   "expanded": "1",
-                  "posx": "77480",
-                  "posy": "4200",
+                  "posx": "0",
+                  "posy": "0",
                   "stable": "0",
-                  "uiname": "sc_ground_pins"
-                },
-                {
-                  "addw": "0",
-                  "compid": "20676",
-                  "compname": "jump",
-                  "expanded": "1",
-                  "posx": "77480",
-                  "posy": "4373",
-                  "stable": "0",
-                  "uiname": "sc_prepare_actors"
-                },
-                {
-                  "addw": "0",
-                  "compid": "20129",
-                  "compname": "jump",
-                  "expanded": "1",
-                  "posx": "77480",
-                  "posy": "4546",
-                  "uiname": "sc_depth_scene"
+                  "uiname": "sc_world"
                 },
                 {
                   "addw": "0",
@@ -7533,7 +7114,6 @@
             {
               "sc_native_ready": "twcreate('scube.walk', 'd.scube.data.geometry', 3, 2, 'd.scube.build')"
             },
-            "depthclear('d.scube.depth')",
             {
               "sc_click_seen": "0 @ 'd.scube.data.camera.click.seq'"
             },
@@ -7541,89 +7121,6 @@
               "sc_last_tick": "0 + sc_clock"
             }
           ]
-        },
-        {
-          "addw": "0",
-          "compid": "20883",
-          "compname": "loop",
-          "expanded": "1",
-          "posx": "15160",
-          "posy": "10151",
-          "stable": "0",
-          "ui": [
-            {
-              "addw": "650",
-              "compid": "21040",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "10266",
-              "stable": "0",
-              "compinputs": [
-                {
-                  "sc_oi": "sc_static_initV"
-                },
-                {
-                  "sc_depth_base": "'d.scube.data.buildings.' + sc_static_initV + '.depth.'"
-                }
-              ]
-            },
-            {
-              "addw": "0",
-              "compid": "21041",
-              "compname": "jump",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "10457",
-              "stable": "0",
-              "uiname": "sc_get_object"
-            },
-            {
-              "addw": "0",
-              "compid": "21044",
-              "compname": "code",
-              "expanded": "1",
-              "posx": "16320",
-              "posy": "10630",
-              "stable": "0",
-              "ui": [
-                "if(0 @ (sc_depth_base + 'front'))",
-                {
-                  "addw": "650",
-                  "compid": "21042",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "10745",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthfront('d.scube.depth', sc_oi, sc_obj_x, sc_obj_y, 0 @ (sc_depth_base + 'left_slope'), 0 @ (sc_depth_base + 'right_slope'), sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
-                  ]
-                },
-                "else",
-                {
-                  "addw": "650",
-                  "compid": "21043",
-                  "compname": "code",
-                  "expanded": "1",
-                  "posx": "17480",
-                  "posy": "10935",
-                  "stable": "0",
-                  "compinputs": [
-                    "depthset('d.scube.depth', sc_oi, sc_obj_y, sc_obj_x, sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
-                  ]
-                },
-                "endif"
-              ],
-              "compinputs": [
-                {
-                  "sc_code_pass": "0"
-                }
-              ]
-            }
-          ],
-          "uiname": "sc_static_init",
-          "uiloop": "sc_static_count"
         },
         {
           "addw": "650",
@@ -11940,6 +11437,2572 @@
           ]
         }
       ]
+    },
+    {
+      "addw": "0",
+      "compid": "70000",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "220",
+      "stable": "0",
+      "uiname": "sc_ground",
+      "ui": [
+        {
+          "addw": "0",
+          "compid": "20126",
+          "compname": "xywh",
+          "compvalues": [
+            [
+              "((sc_map_x) * sc_scale) [divide] 1",
+              "((sc_map_y) * sc_scale) [divide] 1",
+              "((1672 * sc_map_s) * sc_scale) [divide] 1",
+              "((941 * sc_map_s) * sc_scale) [divide] 1"
+            ]
+          ],
+          "expanded": "1",
+          "posx": "77480",
+          "posy": "3863",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "20125",
+              "compname": "stretch",
+              "compvalues": [
+                [
+                  "r.sc_map_ground",
+                  "true",
+                  "strong"
+                ]
+              ],
+              "expanded": "1",
+              "posx": "78640",
+              "posy": "3978",
+              "stable": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70009",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "994",
+      "stable": "0",
+      "uiname": "sc_register_statics",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70001",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "1112",
+          "stable": "0",
+          "compinputs": [
+            "depthclear('d.scube.staticdepth')",
+            "depthclear('d.scube.actordepth')",
+            {
+              "sc_scene_built": "0"
+            },
+            {
+              "sc_depth_peer_count": "-1"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70007",
+          "compname": "loop",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "1230",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "430",
+              "compid": "70002",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "1348",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_oi": "sc_static_initV"
+                },
+                {
+                  "sc_depth_base": "'d.scube.data.buildings.' + sc_static_initV + '.depth.'"
+                }
+              ]
+            },
+            {
+              "addw": "0",
+              "compid": "70003",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "1466",
+              "stable": "0",
+              "uiname": "sc_get_object"
+            },
+            {
+              "addw": "430",
+              "compid": "70006",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "1584",
+              "stable": "0",
+              "ui": [
+                "if(0 @ (sc_depth_base + 'front'))",
+                {
+                  "addw": "430",
+                  "compid": "70004",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "1702",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthfront('d.scube.staticdepth', sc_oi, sc_obj_x, sc_obj_y, 0 @ (sc_depth_base + 'left_slope'), 0 @ (sc_depth_base + 'right_slope'), sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
+                  ]
+                },
+                "else",
+                {
+                  "addw": "430",
+                  "compid": "70005",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "1820",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.staticdepth', sc_oi, sc_obj_y, sc_obj_x, sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            }
+          ],
+          "uiname": "sc_static_init",
+          "uiloop": "sc_static_count"
+        },
+        {
+          "addw": "430",
+          "compid": "70008",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "1938",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_sort_count": "sc_static_count"
+            },
+            {
+              "sc_sort_epoch": "sc_scene_epoch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70010",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "2476",
+      "stable": "0",
+      "uiname": "sc_update_legacy_pins",
+      "ui": [
+        {
+          "addw": "0",
+          "compid": "20966",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "15160",
+          "posy": "2144",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "20964",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "2259",
+              "stable": "0",
+              "ui": [
+                "if(sc_pin_open_0 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20962",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "2374",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.depth', 1000000, d.scube.data.videos.0.y, d.scube.data.videos.0.x, d.scube.data.videos.0.x - 80 / sc_map_s, d.scube.data.videos.0.y - 146 / sc_map_s, d.scube.data.videos.0.x + 80 / sc_map_s, d.scube.data.videos.0.y - 6 / sc_map_s)"
+                  ]
+                },
+                "elif(sc_pin_depth_open_0 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20963",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "2564",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthremove('d.scube.depth', 1000000)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            },
+            {
+              "addw": "500",
+              "compid": "20965",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "2754",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_pin_depth_open_0": "sc_pin_open_0"
+                }
+              ]
+            }
+          ],
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "20982",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "15160",
+          "posy": "3596",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "20980",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "3711",
+              "stable": "0",
+              "ui": [
+                "if(sc_pin_open_1 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20978",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "3826",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.depth', 1000001, d.scube.data.videos.1.y, d.scube.data.videos.1.x, d.scube.data.videos.1.x - 80 / sc_map_s, d.scube.data.videos.1.y - 146 / sc_map_s, d.scube.data.videos.1.x + 80 / sc_map_s, d.scube.data.videos.1.y - 6 / sc_map_s)"
+                  ]
+                },
+                "elif(sc_pin_depth_open_1 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20979",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "4016",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthremove('d.scube.depth', 1000001)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            },
+            {
+              "addw": "500",
+              "compid": "20981",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "4206",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_pin_depth_open_1": "sc_pin_open_1"
+                }
+              ]
+            }
+          ],
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "20998",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "15160",
+          "posy": "5048",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "20996",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "5163",
+              "stable": "0",
+              "ui": [
+                "if(sc_pin_open_2 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20994",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "5278",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.depth', 1000002, d.scube.data.videos.2.y, d.scube.data.videos.2.x, d.scube.data.videos.2.x - 80 / sc_map_s, d.scube.data.videos.2.y - 146 / sc_map_s, d.scube.data.videos.2.x + 80 / sc_map_s, d.scube.data.videos.2.y - 6 / sc_map_s)"
+                  ]
+                },
+                "elif(sc_pin_depth_open_2 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "20995",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "5468",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthremove('d.scube.depth', 1000002)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            },
+            {
+              "addw": "500",
+              "compid": "20997",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "5658",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_pin_depth_open_2": "sc_pin_open_2"
+                }
+              ]
+            }
+          ],
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "21014",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "15160",
+          "posy": "6500",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "21012",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "6615",
+              "stable": "0",
+              "ui": [
+                "if(sc_pin_open_3 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "21010",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "6730",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.depth', 1000003, d.scube.data.videos.3.y, d.scube.data.videos.3.x, d.scube.data.videos.3.x - 80 / sc_map_s, d.scube.data.videos.3.y - 146 / sc_map_s, d.scube.data.videos.3.x + 80 / sc_map_s, d.scube.data.videos.3.y - 6 / sc_map_s)"
+                  ]
+                },
+                "elif(sc_pin_depth_open_3 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "21011",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "6920",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthremove('d.scube.depth', 1000003)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            },
+            {
+              "addw": "500",
+              "compid": "21013",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "7110",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_pin_depth_open_3": "sc_pin_open_3"
+                }
+              ]
+            }
+          ],
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "21030",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "15160",
+          "posy": "7952",
+          "stable": "0",
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "21028",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "8067",
+              "stable": "0",
+              "ui": [
+                "if(sc_pin_open_4 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "21026",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "8182",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthset('d.scube.depth', 1000004, d.scube.data.videos.4.y, d.scube.data.videos.4.x, d.scube.data.videos.4.x - 80 / sc_map_s, d.scube.data.videos.4.y - 146 / sc_map_s, d.scube.data.videos.4.x + 80 / sc_map_s, d.scube.data.videos.4.y - 6 / sc_map_s)"
+                  ]
+                },
+                "elif(sc_pin_depth_open_4 == 1)",
+                {
+                  "addw": "500",
+                  "compid": "21027",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "17480",
+                  "posy": "8372",
+                  "stable": "0",
+                  "compinputs": [
+                    "depthremove('d.scube.depth', 1000004)"
+                  ]
+                },
+                "endif"
+              ],
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ]
+            },
+            {
+              "addw": "500",
+              "compid": "21029",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "16320",
+              "posy": "8562",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_pin_depth_open_4": "sc_pin_open_4"
+                }
+              ]
+            }
+          ],
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70019",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "5964",
+      "stable": "0",
+      "uiname": "sc_legacy_world",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70013",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "6082",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_legacy_count != sc_static_count) [or] (sc_legacy_epoch != sc_scene_epoch))",
+            {
+              "addw": "430",
+              "compid": "70011",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "6200",
+              "stable": "0",
+              "compinputs": [
+                "depthclear('d.scube.depth')",
+                {
+                  "sc_old_peer_count": "-1"
+                },
+                {
+                  "sc_pin_depth_open_0": "0"
+                },
+                {
+                  "sc_pin_depth_open_1": "0"
+                },
+                {
+                  "sc_pin_depth_open_2": "0"
+                },
+                {
+                  "sc_pin_depth_open_3": "0"
+                },
+                {
+                  "sc_pin_depth_open_4": "0"
+                }
+              ]
+            },
+            {
+              "addw": "0",
+              "compid": "20883",
+              "compname": "loop",
+              "expanded": "1",
+              "posx": "15160",
+              "posy": "10151",
+              "stable": "0",
+              "ui": [
+                {
+                  "addw": "650",
+                  "compid": "21040",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "16320",
+                  "posy": "10266",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_oi": "sc_static_initV"
+                    },
+                    {
+                      "sc_depth_base": "'d.scube.data.buildings.' + sc_static_initV + '.depth.'"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "21041",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "16320",
+                  "posy": "10457",
+                  "stable": "0",
+                  "uiname": "sc_get_object"
+                },
+                {
+                  "addw": "0",
+                  "compid": "21044",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "16320",
+                  "posy": "10630",
+                  "stable": "0",
+                  "ui": [
+                    "if(0 @ (sc_depth_base + 'front'))",
+                    {
+                      "addw": "650",
+                      "compid": "21042",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "17480",
+                      "posy": "10745",
+                      "stable": "0",
+                      "compinputs": [
+                        "depthfront('d.scube.depth', sc_oi, sc_obj_x, sc_obj_y, 0 @ (sc_depth_base + 'left_slope'), 0 @ (sc_depth_base + 'right_slope'), sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
+                      ]
+                    },
+                    "else",
+                    {
+                      "addw": "650",
+                      "compid": "21043",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "17480",
+                      "posy": "10935",
+                      "stable": "0",
+                      "compinputs": [
+                        "depthset('d.scube.depth', sc_oi, sc_obj_y, sc_obj_x, sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
+                      ]
+                    },
+                    "endif"
+                  ],
+                  "compinputs": [
+                    {
+                      "sc_code_pass": "0"
+                    }
+                  ]
+                }
+              ],
+              "uiname": "sc_static_init",
+              "uiloop": "sc_static_count"
+            },
+            {
+              "addw": "430",
+              "compid": "70012",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "7026",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_legacy_count": "sc_static_count"
+                },
+                {
+                  "sc_legacy_epoch": "sc_scene_epoch"
+                }
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70014",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "7144",
+          "stable": "0",
+          "uiname": "sc_update_legacy_pins"
+        },
+        {
+          "addw": "0",
+          "compid": "70015",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "7262",
+          "stable": "0",
+          "uiname": "sc_ground"
+        },
+        {
+          "addw": "0",
+          "compid": "70016",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "7380",
+          "stable": "0",
+          "uiname": "sc_ground_pins"
+        },
+        {
+          "addw": "0",
+          "compid": "70017",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "7498",
+          "stable": "0",
+          "uiname": "sc_prepare_actors"
+        },
+        {
+          "addw": "0",
+          "compid": "70018",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "7616",
+          "stable": "0",
+          "uiname": "sc_depth_scene"
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70023",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "8154",
+      "stable": "0",
+      "uiname": "sc_add_depth_static",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70020",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "8272",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_static_base": "'d.scube.data.buildings.' + sc_oi + '.'"
+            },
+            {
+              "sc_static_l": "0 @ (sc_static_base + 'draw.l')"
+            },
+            {
+              "sc_static_t": "0 @ (sc_static_base + 'draw.t')"
+            },
+            {
+              "sc_static_w": "0 @ (sc_static_base + 'draw.w')"
+            },
+            {
+              "sc_static_h": "0 @ (sc_static_base + 'draw.h')"
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70022",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "8390",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_map_x + (sc_static_l + sc_static_w) * sc_map_s > -32) [and] (sc_map_x + sc_static_l * sc_map_s < sc_map_w + 32) [and] (sc_map_y + (sc_static_t + sc_static_h) * sc_map_s > -32) [and] (sc_map_y + sc_static_t * sc_map_s < sc_map_h + 32))",
+            {
+              "addw": "430",
+              "compid": "70021",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "8508",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + sc_static_l * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + sc_static_t * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((sc_static_w * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((sc_static_h * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', sc_build_order, 'r.' + ('' @ (sc_static_base + 'sprite')), sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            "endif"
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70038",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "9046",
+      "stable": "0",
+      "uiname": "sc_bake_world",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70029",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "9164",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_scene_ok": "resetdepthscene('sc_map')"
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70034",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "9282",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_scene_ok == 1)",
+            {
+              "addw": "430",
+              "compid": "70030",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9400",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((1672 * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((941 * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_map_ground', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70024",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9518",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + d.scube.data.videos.0.x * sc_map_s - 24) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + d.scube.data.videos.0.y * sc_map_s - 18) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((48) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((36) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_pin_star', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70025",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9636",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + d.scube.data.videos.1.x * sc_map_s - 24) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + d.scube.data.videos.1.y * sc_map_s - 18) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((48) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((36) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_pin_star', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70026",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9754",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + d.scube.data.videos.2.x * sc_map_s - 24) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + d.scube.data.videos.2.y * sc_map_s - 18) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((48) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((36) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_pin_star', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70027",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9872",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + d.scube.data.videos.3.x * sc_map_s - 24) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + d.scube.data.videos.3.y * sc_map_s - 18) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((48) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((36) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_pin_star', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70028",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "9990",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + d.scube.data.videos.4.x * sc_map_s - 24) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + d.scube.data.videos.4.y * sc_map_s - 18) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((48) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((36) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "adddepthsceneimage('sc_map', 0, 'r.sc_pin_star', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            {
+              "addw": "0",
+              "compid": "70033",
+              "compname": "loop",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "10108",
+              "stable": "0",
+              "uiname": "sc_build_item",
+              "uiloop": "d.scube.staticdepth.count",
+              "ui": [
+                {
+                  "addw": "430",
+                  "compid": "70031",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "10226",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_oi": "0 @ ('d.scube.staticdepth.' + sc_build_itemV)"
+                    },
+                    {
+                      "sc_build_order": "sc_build_itemV + 1"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70032",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "10344",
+                  "stable": "0",
+                  "uiname": "sc_add_depth_static"
+                }
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70035",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "10462",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_scene_built": "sc_scene_ok"
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70037",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "10580",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_scene_built == 1)",
+            {
+              "addw": "430",
+              "compid": "70036",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "10698",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_scene_last_x": "sc_map_x"
+                },
+                {
+                  "sc_scene_last_y": "sc_map_y"
+                },
+                {
+                  "sc_scene_last_s": "sc_map_s"
+                },
+                {
+                  "sc_scene_last_scale": "sc_scale"
+                },
+                {
+                  "sc_scene_last_w": "sc_map_w"
+                },
+                {
+                  "sc_scene_last_h": "sc_map_h"
+                },
+                {
+                  "sc_bake_serial": "sc_bake_serial + 1"
+                }
+              ]
+            },
+            "endif"
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70046",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "11236",
+      "stable": "0",
+      "uiname": "sc_prepare_depth_actors",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70040",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "11354",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_depth_peer_count != sc_peer_count)",
+            {
+              "addw": "430",
+              "compid": "70039",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "11472",
+              "stable": "0",
+              "compinputs": [
+                "depthclear('d.scube.actordepth')",
+                {
+                  "sc_depth_peer_count": "sc_peer_count"
+                }
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70045",
+          "compname": "loop",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "11590",
+          "stable": "0",
+          "uiname": "sc_live_actor",
+          "uiloop": "sc_peer_count + 1",
+          "ui": [
+            {
+              "addw": "430",
+              "compid": "70041",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "11708",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_oi": "sc_static_count + sc_live_actorV"
+                }
+              ]
+            },
+            {
+              "addw": "0",
+              "compid": "70042",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "11826",
+              "stable": "0",
+              "uiname": "sc_get_object"
+            },
+            {
+              "addw": "430",
+              "compid": "70043",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "11944",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_actor_after": "depthafterstatic('d.scube.staticdepth', sc_obj_y, sc_obj_x, sc_obj_x - sc_obj_ax * sc_obj_s, sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy, sc_obj_x + (sc_obj_w - sc_obj_ax) * sc_obj_s, sc_obj_y + (sc_obj_h - sc_obj_ay) * sc_obj_s * sc_obj_walk_sy)"
+                },
+                {
+                  "sc_actor_after": "sc_actor_after + 1"
+                },
+                "depthset('d.scube.actordepth', sc_oi, sc_actor_after * (d.scube.data.map.height + 2) + ((sc_obj_y [max] 0) [min] d.scube.data.map.height))",
+                "setvalue('d.scube.depthslots.' + sc_oi, sc_actor_after)"
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70044",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "12062",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + (sc_obj_x - 64 * sc_obj_s) * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + (sc_obj_y - 32 * sc_obj_s) * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((128 * sc_obj_s * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((64 * sc_obj_s * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "drawdepthscenesprite('sc_map', 0, 'r.sc_fx_shadow', sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70052",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "12600",
+      "stable": "0",
+      "uiname": "sc_draw_depth_actor",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70051",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "12718",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_obj_move == 1)",
+            {
+              "addw": "430",
+              "compid": "70047",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "12836",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_walk_path": "'apng/sc_' + sc_obj_char + '_' + sc_obj_dir + '_walk.apng'"
+                },
+                {
+                  "sc_walk_ready": "readyapng(sc_walk_path)"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70049",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "12954",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if(sc_walk_ready == 1)",
+                {
+                  "addw": "430",
+                  "compid": "70048",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "13072",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_depth_l": "((sc_map_x + (sc_obj_x - sc_obj_ax * sc_obj_s) * sc_map_s) * sc_scale) [divide] 1"
+                    },
+                    {
+                      "sc_depth_t": "((sc_map_y + (sc_obj_y - sc_obj_ay * sc_obj_s * sc_obj_walk_sy) * sc_map_s) * sc_scale) [divide] 1"
+                    },
+                    {
+                      "sc_depth_w": "((sc_obj_w * sc_obj_s * sc_map_s) * sc_scale) [divide] 1"
+                    },
+                    {
+                      "sc_depth_h": "((sc_obj_h * sc_obj_s * sc_obj_walk_sy * sc_map_s) * sc_scale) [divide] 1"
+                    },
+                    {
+                      "sc_piece_ok": "drawdepthscenesprite('sc_map', sc_actor_after, sc_walk_path, sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h, 1, sc_frame_time % d.scube.data.walk_animation.cycle_seconds)"
+                    },
+                    {
+                      "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                    }
+                  ]
+                },
+                "endif"
+              ]
+            },
+            "else",
+            {
+              "addw": "430",
+              "compid": "70050",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "13190",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_depth_l": "((sc_map_x + (sc_obj_x - sc_obj_ax * sc_obj_s) * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_t": "((sc_map_y + (sc_obj_y - sc_obj_ay * sc_obj_s) * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_w": "((sc_obj_w * sc_obj_s * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_depth_h": "((sc_obj_h * sc_obj_s * sc_map_s) * sc_scale) [divide] 1"
+                },
+                {
+                  "sc_piece_ok": "drawdepthscenesprite('sc_map', sc_actor_after, sc_obj_resource, sc_depth_l, sc_depth_t, sc_depth_l + sc_depth_w, sc_depth_t + sc_depth_h)"
+                },
+                {
+                  "sc_scene_ok": "sc_scene_ok * sc_piece_ok"
+                }
+              ]
+            },
+            "endif"
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70069",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "13728",
+      "stable": "0",
+      "uiname": "sc_depth_world",
+      "ui": [
+        {
+          "addw": "0",
+          "compid": "70053",
+          "compname": "user_content",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "13846",
+          "stable": "0",
+          "compvalues": [
+            [
+              "'depthviewport'",
+              "'sc_map'"
+            ]
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70054",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "13964",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_scene_epoch": "depthscenerevision()"
+            },
+            {
+              "sc_scene_dirty": "depthscenechanged('sc_map')"
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70056",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "14082",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_sort_count != sc_static_count) [or] (sc_sort_epoch != sc_scene_epoch))",
+            {
+              "addw": "0",
+              "compid": "70055",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "14200",
+              "stable": "0",
+              "uiname": "sc_register_statics"
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70058",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "14318",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_scene_built == 0) [or] (sc_scene_dirty == 1) [or] (sc_scene_last_x != sc_map_x) [or] (sc_scene_last_y != sc_map_y) [or] (sc_scene_last_s != sc_map_s) [or] (sc_scene_last_scale != sc_scale) [or] (sc_scene_last_w != sc_map_w) [or] (sc_scene_last_h != sc_map_h))",
+            {
+              "addw": "0",
+              "compid": "70057",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "14436",
+              "stable": "0",
+              "uiname": "sc_bake_world"
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70060",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "14554",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_scene_ok == 1)",
+            {
+              "addw": "430",
+              "compid": "70059",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "14672",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_scene_ok": "drawdepthscene('sc_map')"
+                }
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70066",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "14790",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_scene_ok == 1)",
+            {
+              "addw": "0",
+              "compid": "70061",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "14908",
+              "stable": "0",
+              "uiname": "sc_prepare_depth_actors"
+            },
+            {
+              "addw": "0",
+              "compid": "70065",
+              "compname": "loop",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "15026",
+              "stable": "0",
+              "uiname": "sc_depth_actor_draw",
+              "uiloop": "d.scube.actordepth.count",
+              "ui": [
+                {
+                  "addw": "430",
+                  "compid": "70062",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "15144",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_oi": "0 @ ('d.scube.actordepth.' + sc_depth_actor_drawV)"
+                    },
+                    {
+                      "sc_actor_after": "0 @ ('d.scube.depthslots.' + sc_oi)"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70063",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "15262",
+                  "stable": "0",
+                  "uiname": "sc_get_object"
+                },
+                {
+                  "addw": "0",
+                  "compid": "70064",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "15380",
+                  "stable": "0",
+                  "uiname": "sc_draw_depth_actor"
+                }
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70068",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "15498",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_scene_ok == 1) [and] (sc_selected >= 0))",
+            {
+              "addw": "0",
+              "compid": "70067",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "15616",
+              "stable": "0",
+              "uiname": "sc_depth_pin_card"
+            },
+            "endif"
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70083",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "16154",
+      "stable": "0",
+      "uiname": "sc_world",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70070",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "16272",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_scene_ok": "0"
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70078",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "16390",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if((sc_frame_time >= sc_scene_retry) [or] (sc_scene_retry - sc_frame_time > 1))",
+            {
+              "addw": "430",
+              "compid": "70072",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "16508",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if(sc_scene_created != 1)",
+                {
+                  "addw": "430",
+                  "compid": "70071",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "16626",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_scene_created": "createdepthscene('sc_map')"
+                    }
+                  ]
+                },
+                "endif"
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70075",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "16744",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if(sc_scene_created == 1)",
+                {
+                  "addw": "430",
+                  "compid": "70073",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "16862",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_scene_ok": "1"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70074",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "16980",
+                  "stable": "0",
+                  "uiname": "sc_depth_world"
+                },
+                "endif"
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70077",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "17098",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if(sc_scene_ok != 1)",
+                {
+                  "addw": "430",
+                  "compid": "70076",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "17216",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_scene_retry": "sc_frame_time + 1"
+                    },
+                    {
+                      "sc_scene_built": "0"
+                    },
+                    {
+                      "sc_scene_created": "0"
+                    }
+                  ]
+                },
+                "endif"
+              ]
+            },
+            "endif"
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70082",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "17334",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_code_pass": "0"
+            }
+          ],
+          "ui": [
+            "if(sc_scene_ok != 1)",
+            {
+              "addw": "0",
+              "compid": "70080",
+              "compname": "hexcolor",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "17452",
+              "stable": "0",
+              "compvalues": [
+                [
+                  "#000000"
+                ]
+              ],
+              "ui": [
+                {
+                  "addw": "0",
+                  "compid": "70079",
+                  "compname": "fill",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "17570",
+                  "stable": "0"
+                }
+              ]
+            },
+            {
+              "addw": "0",
+              "compid": "70081",
+              "compname": "jump",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "17688",
+              "stable": "0",
+              "uiname": "sc_legacy_world"
+            },
+            "endif"
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70090",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "18226",
+      "stable": "0",
+      "uiname": "sc_index_pin_region",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70084",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "18344",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_n": "0"
+            },
+            {
+              "sc_card_slot": "depthafterstatic('d.scube.staticdepth', sc_card_y, sc_card_x, sc_card_x - 80 / sc_map_s, sc_card_y - 146 / sc_map_s, sc_card_x + 80 / sc_map_s, sc_card_y - 6 / sc_map_s)"
+            },
+            {
+              "sc_card_slot": "sc_card_slot + 1"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70088",
+          "compname": "loop",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "18462",
+          "stable": "0",
+          "uiname": "sc_pin_static",
+          "uiloop": "d.scube.staticdepth.count",
+          "ui": [
+            {
+              "addw": "430",
+              "compid": "70085",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "18580",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_oi": "0 @ ('d.scube.staticdepth.' + sc_pin_staticV)"
+                },
+                {
+                  "sc_static_base": "'d.scube.data.buildings.' + sc_oi + '.'"
+                },
+                {
+                  "sc_static_l": "0 @ (sc_static_base + 'draw.l')"
+                },
+                {
+                  "sc_static_t": "0 @ (sc_static_base + 'draw.t')"
+                },
+                {
+                  "sc_static_w": "0 @ (sc_static_base + 'draw.w')"
+                },
+                {
+                  "sc_static_h": "0 @ (sc_static_base + 'draw.h')"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70087",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "18698",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if(((((sc_map_x + sc_static_l * sc_map_s) * sc_scale) [divide] 1) < sc_card_l + (((160) * sc_scale) [divide] 1) + 1) [and] ((((sc_map_y + sc_static_t * sc_map_s) * sc_scale) [divide] 1) < sc_card_t + (((140) * sc_scale) [divide] 1) + 1) [and] ((((sc_map_x + sc_static_l * sc_map_s) * sc_scale) [divide] 1) + (((sc_static_w * sc_map_s) * sc_scale) [divide] 1) > sc_card_l - 1) [and] ((((sc_map_y + sc_static_t * sc_map_s) * sc_scale) [divide] 1) + (((sc_static_h * sc_map_s) * sc_scale) [divide] 1) > sc_card_t - 1))",
+                {
+                  "addw": "430",
+                  "compid": "70086",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "18816",
+                  "stable": "0",
+                  "compinputs": [
+                    "setvalue('d.scube.carditems.' + sc_card_n + '.id', sc_oi)",
+                    "setvalue('d.scube.carditems.' + sc_card_n + '.slot', sc_pin_staticV + 1)",
+                    {
+                      "sc_card_n": "sc_card_n + 1"
+                    }
+                  ]
+                },
+                "endif"
+              ]
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70089",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "18934",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_selected": "sc_selected"
+            },
+            {
+              "sc_card_serial": "sc_bake_serial"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70098",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "19472",
+      "stable": "0",
+      "uiname": "sc_pin_static_span",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70091",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "19590",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_next": "sc_card_cursor"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70096",
+          "compname": "loop",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "19708",
+          "stable": "0",
+          "uiname": "sc_pin_span",
+          "uiloop": "sc_card_n - sc_card_cursor",
+          "ui": [
+            {
+              "addw": "430",
+              "compid": "70092",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "19826",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_card_idx": "sc_card_cursor + sc_pin_spanV"
+                }
+              ]
+            },
+            {
+              "addw": "430",
+              "compid": "70095",
+              "compname": "code",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "19944",
+              "stable": "0",
+              "compinputs": [
+                {
+                  "sc_code_pass": "0"
+                }
+              ],
+              "ui": [
+                "if((0 @ ('d.scube.carditems.' + sc_card_idx + '.slot')) <= sc_card_limit)",
+                {
+                  "addw": "430",
+                  "compid": "70093",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "20062",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_oi": "0 @ ('d.scube.carditems.' + sc_card_idx + '.id')"
+                    },
+                    {
+                      "sc_card_next": "sc_card_idx + 1"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70094",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "20180",
+                  "stable": "0",
+                  "uiname": "sc_draw_static"
+                },
+                "endif"
+              ]
+            }
+          ]
+        },
+        {
+          "addw": "430",
+          "compid": "70097",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "20298",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_cursor": "sc_card_next"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70104",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "20836",
+      "stable": "0",
+      "uiname": "sc_place_pin_card",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70099",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "20954",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_limit": "sc_card_slot"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70100",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "21072",
+          "stable": "0",
+          "uiname": "sc_pin_static_span"
+        },
+        {
+          "addw": "430",
+          "compid": "70101",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "21190",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_pin_i": "sc_selected"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70102",
+          "compname": "jump",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "21308",
+          "stable": "0",
+          "uiname": "sc_draw_pin_card"
+        },
+        {
+          "addw": "430",
+          "compid": "70103",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "21426",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_placed": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "addw": "0",
+      "compid": "70132",
+      "compname": "gate",
+      "expanded": "1",
+      "posx": "102000",
+      "posy": "21964",
+      "stable": "0",
+      "uiname": "sc_depth_pin_card",
+      "ui": [
+        {
+          "addw": "430",
+          "compid": "70129",
+          "compname": "code",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "22082",
+          "stable": "0",
+          "compinputs": [
+            {
+              "sc_card_x": "0 @ ('d.scube.data.videos.' + sc_selected + '.x')"
+            },
+            {
+              "sc_card_y": "0 @ ('d.scube.data.videos.' + sc_selected + '.y')"
+            },
+            {
+              "sc_card_l": "((sc_map_x + sc_card_x * sc_map_s - 80) * sc_scale) [divide] 1"
+            },
+            {
+              "sc_card_t": "((sc_map_y + sc_card_y * sc_map_s - 146) * sc_scale) [divide] 1"
+            }
+          ]
+        },
+        {
+          "addw": "0",
+          "compid": "70131",
+          "compname": "xywh",
+          "expanded": "1",
+          "posx": "103040",
+          "posy": "22200",
+          "stable": "0",
+          "compvalues": [
+            [
+              "sc_card_l",
+              "sc_card_t",
+              "((160) * sc_scale) [divide] 1",
+              "((140) * sc_scale) [divide] 1",
+              "true"
+            ]
+          ],
+          "ui": [
+            {
+              "addw": "0",
+              "compid": "70130",
+              "compname": "xywh",
+              "expanded": "1",
+              "posx": "104080",
+              "posy": "22318",
+              "stable": "0",
+              "compvalues": [
+                [
+                  "0 - sc_card_l",
+                  "0 - sc_card_t",
+                  "((sc_map_w) * sc_scale) [divide] 1",
+                  "((sc_map_h) * sc_scale) [divide] 1"
+                ]
+              ],
+              "ui": [
+                {
+                  "addw": "430",
+                  "compid": "70106",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "22436",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_code_pass": "0"
+                    }
+                  ],
+                  "ui": [
+                    "if((sc_card_selected != sc_selected) [or] (sc_card_serial != sc_bake_serial))",
+                    {
+                      "addw": "0",
+                      "compid": "70105",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "22554",
+                      "stable": "0",
+                      "uiname": "sc_index_pin_region"
+                    },
+                    "endif"
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70108",
+                  "compname": "hexcolor",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "22672",
+                  "stable": "0",
+                  "compvalues": [
+                    [
+                      "#000000"
+                    ]
+                  ],
+                  "ui": [
+                    {
+                      "addw": "0",
+                      "compid": "70107",
+                      "compname": "fill",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "22790",
+                      "stable": "0"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70109",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "22908",
+                  "stable": "0",
+                  "uiname": "sc_ground"
+                },
+                {
+                  "addw": "0",
+                  "compid": "70110",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "23026",
+                  "stable": "0",
+                  "uiname": "sc_ground_pins"
+                },
+                {
+                  "addw": "0",
+                  "compid": "70114",
+                  "compname": "loop",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "23144",
+                  "stable": "0",
+                  "uiname": "sc_pin_shadow",
+                  "uiloop": "sc_peer_count + 1",
+                  "ui": [
+                    {
+                      "addw": "430",
+                      "compid": "70111",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "23262",
+                      "stable": "0",
+                      "compinputs": [
+                        {
+                          "sc_oi": "sc_static_count + sc_pin_shadowV"
+                        }
+                      ]
+                    },
+                    {
+                      "addw": "0",
+                      "compid": "70112",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "23380",
+                      "stable": "0",
+                      "uiname": "sc_get_object"
+                    },
+                    {
+                      "addw": "0",
+                      "compid": "70113",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "23498",
+                      "stable": "0",
+                      "uiname": "sc_ground_shadow"
+                    }
+                  ]
+                },
+                {
+                  "addw": "430",
+                  "compid": "70115",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "23616",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_card_cursor": "0"
+                    },
+                    {
+                      "sc_card_placed": "0"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70124",
+                  "compname": "loop",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "23734",
+                  "stable": "0",
+                  "uiname": "sc_pin_actor",
+                  "uiloop": "d.scube.actordepth.count",
+                  "ui": [
+                    {
+                      "addw": "430",
+                      "compid": "70116",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "23852",
+                      "stable": "0",
+                      "compinputs": [
+                        {
+                          "sc_card_actor": "0 @ ('d.scube.actordepth.' + sc_pin_actorV)"
+                        },
+                        {
+                          "sc_oi": "sc_card_actor"
+                        },
+                        {
+                          "sc_card_actor_slot": "0 @ ('d.scube.depthslots.' + sc_card_actor)"
+                        }
+                      ]
+                    },
+                    {
+                      "addw": "0",
+                      "compid": "70117",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "23970",
+                      "stable": "0",
+                      "uiname": "sc_get_object"
+                    },
+                    {
+                      "addw": "430",
+                      "compid": "70119",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24088",
+                      "stable": "0",
+                      "compinputs": [
+                        {
+                          "sc_code_pass": "0"
+                        }
+                      ],
+                      "ui": [
+                        "if((sc_card_placed == 0) [and] ((sc_card_slot < sc_card_actor_slot) [or] ((sc_card_slot == sc_card_actor_slot) [and] (sc_card_y < sc_obj_y))))",
+                        {
+                          "addw": "0",
+                          "compid": "70118",
+                          "compname": "jump",
+                          "expanded": "1",
+                          "posx": "107200",
+                          "posy": "24206",
+                          "stable": "0",
+                          "uiname": "sc_place_pin_card"
+                        },
+                        "endif"
+                      ]
+                    },
+                    {
+                      "addw": "430",
+                      "compid": "70120",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24324",
+                      "stable": "0",
+                      "compinputs": [
+                        {
+                          "sc_card_limit": "sc_card_actor_slot"
+                        }
+                      ]
+                    },
+                    {
+                      "addw": "0",
+                      "compid": "70121",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24442",
+                      "stable": "0",
+                      "uiname": "sc_pin_static_span"
+                    },
+                    {
+                      "addw": "430",
+                      "compid": "70122",
+                      "compname": "code",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24560",
+                      "stable": "0",
+                      "compinputs": [
+                        {
+                          "sc_oi": "sc_card_actor"
+                        }
+                      ]
+                    },
+                    {
+                      "addw": "0",
+                      "compid": "70123",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24678",
+                      "stable": "0",
+                      "uiname": "sc_draw_object"
+                    }
+                  ]
+                },
+                {
+                  "addw": "430",
+                  "compid": "70126",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "24796",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_code_pass": "0"
+                    }
+                  ],
+                  "ui": [
+                    "if(sc_card_placed == 0)",
+                    {
+                      "addw": "0",
+                      "compid": "70125",
+                      "compname": "jump",
+                      "expanded": "1",
+                      "posx": "106160",
+                      "posy": "24914",
+                      "stable": "0",
+                      "uiname": "sc_place_pin_card"
+                    },
+                    "endif"
+                  ]
+                },
+                {
+                  "addw": "430",
+                  "compid": "70127",
+                  "compname": "code",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "25032",
+                  "stable": "0",
+                  "compinputs": [
+                    {
+                      "sc_card_limit": "d.scube.staticdepth.count"
+                    }
+                  ]
+                },
+                {
+                  "addw": "0",
+                  "compid": "70128",
+                  "compname": "jump",
+                  "expanded": "1",
+                  "posx": "105120",
+                  "posy": "25150",
+                  "stable": "0",
+                  "uiname": "sc_pin_static_span"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "oncreate": [
@@ -12524,6 +14587,132 @@
     },
     {
       "sc_step_delta_sq": "0"
+    },
+    {
+      "sc_scene_ok": "0"
+    },
+    {
+      "sc_piece_ok": "0"
+    },
+    {
+      "sc_scene_built": "0"
+    },
+    {
+      "sc_scene_created": "0"
+    },
+    {
+      "sc_scene_retry": "0"
+    },
+    {
+      "sc_scene_epoch": "0"
+    },
+    {
+      "sc_sort_epoch": "-1"
+    },
+    {
+      "sc_sort_count": "-1"
+    },
+    {
+      "sc_depth_peer_count": "-1"
+    },
+    {
+      "sc_legacy_count": "-1"
+    },
+    {
+      "sc_legacy_epoch": "-1"
+    },
+    {
+      "sc_actor_after": "0"
+    },
+    {
+      "sc_build_order": "0"
+    },
+    {
+      "sc_bake_serial": "0"
+    },
+    {
+      "sc_walk_path": "''"
+    },
+    {
+      "sc_walk_ready": "0"
+    },
+    {
+      "sc_scene_dirty": "0"
+    },
+    {
+      "sc_scene_last_x": "0"
+    },
+    {
+      "sc_scene_last_y": "0"
+    },
+    {
+      "sc_scene_last_s": "0"
+    },
+    {
+      "sc_scene_last_scale": "0"
+    },
+    {
+      "sc_scene_last_w": "0"
+    },
+    {
+      "sc_scene_last_h": "0"
+    },
+    {
+      "sc_depth_l": "0"
+    },
+    {
+      "sc_depth_t": "0"
+    },
+    {
+      "sc_depth_w": "0"
+    },
+    {
+      "sc_depth_h": "0"
+    },
+    {
+      "sc_card_selected": "-1"
+    },
+    {
+      "sc_card_serial": "-1"
+    },
+    {
+      "sc_card_slot": "0"
+    },
+    {
+      "sc_card_x": "0"
+    },
+    {
+      "sc_card_y": "0"
+    },
+    {
+      "sc_card_l": "0"
+    },
+    {
+      "sc_card_t": "0"
+    },
+    {
+      "sc_card_n": "0"
+    },
+    {
+      "sc_card_cursor": "0"
+    },
+    {
+      "sc_card_next": "0"
+    },
+    {
+      "sc_card_idx": "0"
+    },
+    {
+      "sc_card_limit": "0"
+    },
+    {
+      "sc_card_placed": "0"
+    },
+    {
+      "sc_card_actor": "0"
+    },
+    {
+      "sc_card_actor_slot": "0"
     }
   ],
   "posx": "2",
