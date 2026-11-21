@@ -11,7 +11,9 @@
 #include <memory>
 #include <algorithm>
 #include <cmath>
+#include <chrono>
 #include <utility>
+#include <limits>
 
 // BEGIN ZAYAPP_NATIVE_NAVIGATION
 // All calls run on the widget/UI thread (TryWorld has shared scratch state).
@@ -133,6 +135,32 @@ public:
             }
             return Less(a,b) ? -1 : 1;
         }
+        // Pick a cut in the cached back-to-front static order. Moving the cut past
+        // one item changes only that item's constraint. Prefer visible facade
+        // boundaries, then other overlapping sprites, then ordinary foot Y.
+        int AfterStatic(const DepthEntry& actor) const
+        {
+            int bestRank = -1, bestFront = 0, bestOverlap = 0, bestY = 0;
+            int front = 0, overlap = 0, footY = 0;
+            for(size_t rank = 0; rank < order.size(); ++rank)
+            {
+                const auto& item = order[rank];
+                const int relation = Relation(item, actor);
+                if(relation == -2) --front;
+                else if(relation == 2) ++front;
+                else overlap += relation;
+                footY += Less(item, actor) ? -1 : 1;
+                if(front < bestFront || (front == bestFront && (overlap < bestOverlap ||
+                    (overlap == bestOverlap && footY < bestY))))
+                {
+                    bestRank = int(rank);
+                    bestFront = front;
+                    bestOverlap = overlap;
+                    bestY = footY;
+                }
+            }
+            return bestRank;
+        }
         static bool Same(const DepthEntry& a, const DepthEntry& b)
         {
             return a.x==b.x && a.y==b.y && a.hasX==b.hasX && a.front==b.front &&
@@ -235,6 +263,68 @@ public:
     std::map<Key, std::unique_ptr<World>> worlds;
     std::map<Key, std::unique_ptr<Route>> routes;
     std::map<Key, Depth> depths;
+    // The marker supplies coordinates for GLUE, which has no panel parameter of its own.
+    struct SceneView
+    {
+        rect128 viewport {};
+        Point origin;
+        double scale = 0;
+        Color color = Color::ColoringDefault;
+        uint64 revision = 0;
+
+        bool Same(const SceneView& rhs) const
+        {
+            return viewport.l == rhs.viewport.l && viewport.t == rhs.viewport.t &&
+                viewport.r == rhs.viewport.r && viewport.b == rhs.viewport.b &&
+                origin.x == rhs.origin.x && origin.y == rhs.origin.y && scale == rhs.scale &&
+                color.argb == rhs.color.argb && revision == rhs.revision;
+        }
+    };
+    struct Scene
+    {
+        id_depthscene handle = nullptr;
+        SceneView built;
+        bool ready = false;
+        ~Scene() {Platform::Graphics::RemoveDepthScene(handle);}
+    };
+    using SceneKey = std::pair<const ZayWidget*, std::string>;
+    std::map<SceneKey, Scene> scenes;
+    SceneKey paintKey {};
+    SceneView paintView;
+    bool painting = false;
+    uint64 sceneRevision = 1;
+    bool sceneSmooth = true;
+
+    void MarkViewport(const ZayWidget* widget, const String& name, const ZayPanel& panel)
+    {
+        paintKey = {};
+        if(!painting || !name.Length() || panel.zoom().orientation != OR_Normal) return;
+        SceneView view;
+        view.scale = panel.zoom().scale * Platform::Graphics::GetDevicePixelRatio();
+        if(!(view.scale > 0) || !std::isfinite(view.scale)) return;
+        view.origin = panel.toview(0, 0);
+        const auto clip = panel.scissor();
+        // Keep the untrimmed origin for all sprites, even when the viewport is clipped on the left/top.
+        const double left = std::floor(std::max(view.origin.x, clip.l) * view.scale);
+        const double top = std::floor(std::max(view.origin.y, clip.t) * view.scale);
+        const double right = std::ceil(std::min(view.origin.x + panel.w(), clip.r) * view.scale);
+        const double bottom = std::ceil(std::min(view.origin.y + panel.h(), clip.b) * view.scale);
+        if(!(left < right && top < bottom && left >= std::numeric_limits<sint32>::min() &&
+            top >= std::numeric_limits<sint32>::min() && right <= std::numeric_limits<sint32>::max() &&
+            bottom <= std::numeric_limits<sint32>::max())) return;
+        view.viewport = {sint32(left), sint32(top), sint32(right), sint32(bottom)};
+        view.color = panel.color();
+        view.revision = sceneRevision;
+        paintView = view;
+        paintKey = {widget, (chars) name};
+    }
+    Scene* PaintScene(const ZayWidget* widget, const String& name)
+    {
+        if(!painting || paintKey.first != widget || paintKey.second != (chars) name) return nullptr;
+        const auto it = scenes.find(paintKey);
+        return it != scenes.end() ? &it->second : nullptr;
+    }
+
     struct ZoomState
     {
         int pressX=0, pressY=0;
@@ -1074,7 +1164,10 @@ ZAY_VIEW_API OnGesture(GestureType type, sint32 x, sint32 y)
 
 ZAY_VIEW_API OnRender(ZayPanel& panel)
 {
+    m->mNativeState->painting = true;
     m->mMainWidget.Render(panel);
+    m->mNativeState->painting = false;
+    m->mNativeState->paintKey = {};
     #if !BOSS_NEED_FULLSCREEN
         if(!m->IsFullScreen())
             m->RenderWindowOutline(panel);
@@ -1434,6 +1527,7 @@ bool ZayAppData::UpdateModifiedDoms()
 
             if(CurDomJson->mHeaderName.Right(5) == "data.") // 기본DOM
             {
+                if(mNativeState) ++mNativeState->sceneRevision;
                 if(auto AtlasCount = ZayWidgetDOM::GetValue(CurDomJson->mHeaderName + "atlas.count").ToInteger())
                 {
                     const String AtlasInfoJson = String::FromAsset("atlasinfo.json");
@@ -1516,6 +1610,7 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
     auto& NewZayson = widget->Init(viewname, nullptr, [](chars name)->const Image* {return &((const Image&) R(name));});
 
     RegisterRenderingGlues(NewZayson);
+    RegisterDepthSceneGlues(NewZayson, widget);
     RegisterRuntimeGlues(NewZayson);
     RegisterInputGlues(NewZayson, viewname);
     RegisterAppNavigationGlues(NewZayson);
@@ -1533,7 +1628,7 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
 
     ////////////////////////////////////////////////////////////////////////////////
     // user_content
-    NewZayson.AddComponent(ZayExtend::ComponentType::ContentWithParameter, "user_content", ZAY_DECLARE_COMPONENT(panel, params, this)
+    NewZayson.AddComponent(ZayExtend::ComponentType::ContentWithParameter, "user_content", ZAY_DECLARE_COMPONENT(panel, params, this, widget)
     {
         if(params.ParamCount() < 1)
             return panel._push_pass();
@@ -1541,6 +1636,14 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
         bool HasRender = false;
 
         branch;
+        jump(!Type.Compare("depthviewport"))
+        {
+            if(params.ParamCount() == 2)
+            {
+                mNativeState->MarkViewport(widget, params.Param(1).ToText(), panel);
+                HasRender = true;
+            }
+        }
         jump(!Type.Compare("subwidget"))
         {
             if(params.ParamCount() == 3)
@@ -1573,7 +1676,8 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
                         {
                             CurSubWidget = &mSubWidgets(CurWidgetName);
                             mLastWidgetName(ProjCode) = CurWidgetName;
-                            CollectModifiedDoms(CurWidgetName, ProjCode);
+                            // A sibling widget may have indexed this JSON as an extension. Rebind it before oncreate.
+                            CollectModifiedDoms(CurWidgetName, ProjCode, true);
                             UpdateModifiedDoms();
                             UpdateModifiedVds();
                             InitWidget(CurSubWidget, ProjCode);
@@ -1781,6 +1885,150 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
     });
 }
 
+void ZayAppData::RegisterDepthSceneGlues(ZaySon& zayson, const ZayWidget* widget)
+{
+    zayson.AddGlue("createdepthscene", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        bool ok = false;
+        if(p.ParamCount() == 1)
+        {
+            const String name = p.Param(0).ToText();
+            if(name.Length())
+            {
+                auto& scene = mNativeState->scenes[{widget, (chars) name}];
+                if(!scene.handle) scene.handle = Platform::Graphics::CreateDepthScene();
+                ok = (scene.handle != nullptr);
+            }
+        }
+        if(p.CanReturn()) p.Return(ok ? "1" : "0");
+    }, "[Scene:'map']", "위젯 전용 깊이 장면 생성 또는 재사용");
+
+    zayson.AddGlue("removedepthscene", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        const bool ok = p.ParamCount() == 1 &&
+            mNativeState->scenes.erase({widget, (chars) p.Param(0).ToText()}) != 0;
+        if(p.CanReturn()) p.Return(ok ? "1" : "0");
+    }, "[Scene:'map']", "깊이 장면과 정적 배경 해제");
+
+    zayson.AddGlue("depthscenerevision", ZAY_DECLARE_GLUE(p, this)
+    {
+        if(p.ParamCount() == 0 && p.CanReturn())
+            p.Return(String::FromInteger(sint64(mNativeState->sceneRevision)));
+    }, "", "정적 데이터 또는 렌더링 설정 변경 세대");
+
+    zayson.AddGlue("depthscenechanged", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        auto* scene = p.ParamCount() == 1 ? mNativeState->PaintScene(widget, p.Param(0).ToText()) : nullptr;
+        const bool rebuild = !scene || !scene->ready || !scene->built.Same(mNativeState->paintView);
+        if(p.CanReturn()) p.Return(rebuild ? "1" : "0");
+    }, "[Scene:'map']", "현재 뷰포트, 배율 또는 리소스 변경 여부");
+
+    zayson.AddGlue("resetdepthscene", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        auto* scene = p.ParamCount() == 1 ? mNativeState->PaintScene(widget, p.Param(0).ToText()) : nullptr;
+        if(scene)
+        {
+            scene->ready = Platform::Graphics::ResetDepthScene(scene->handle, mNativeState->paintView.viewport);
+            if(scene->ready) scene->built = mNativeState->paintView;
+        }
+        if(p.CanReturn()) p.Return(scene && scene->ready ? "1" : "0");
+    }, "[Scene:'map']", "현재 depthviewport 영역에서 정적 장면 등록 시작");
+
+    zayson.AddGlue("adddepthsceneimage", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        const bool ok = RenderDepthResource(widget, p, false);
+        if(p.CanReturn()) p.Return(ok ? "1" : "0");
+    }, "[Scene:'map'][Order:0][Image:r.name][L:0][T:0][R:100][B:100]#[Opacity:1][SrcL:0][SrcT:0][SrcR:100][SrcB:100]", "정적 이미지를 뒤에서 앞으로 등록. 선택 원본영역은 이미지 픽셀 좌표");
+
+    zayson.AddGlue("drawdepthscene", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        auto* scene = p.ParamCount() == 1 ? mNativeState->PaintScene(widget, p.Param(0).ToText()) : nullptr;
+        const bool ok = scene && scene->ready && scene->built.Same(mNativeState->paintView);
+        if(ok) Platform::Graphics::DrawDepthScene(scene->handle);
+        if(p.CanReturn()) p.Return(ok ? "1" : "0");
+    }, "[Scene:'map']", "뷰포트의 정적 배경을 한 번에 출력");
+
+    zayson.AddGlue("drawdepthscenesprite", ZAY_DECLARE_GLUE(p, this, widget)
+    {
+        const bool ok = RenderDepthResource(widget, p, true);
+        if(p.CanReturn()) p.Return(ok ? "1" : "0");
+    }, "[Scene:'map'][AfterStatic:-1][Image:r.name][L:0][T:0][R:100][B:100]#[Opacity:1][APngSec:0][SrcL:0][SrcT:0][SrcR:100][SrcB:100]",
+        "깊이 장면 위에 캐릭터 출력. 걷기 APNG는 파일명과 재생 초를 전달");
+}
+
+bool ZayAppData::RenderDepthResource(const ZayWidget* widget, const ZayExtend::Payload& p, bool sprite)
+{
+    const sint32 count = p.ParamCount();
+    const bool hasSource = (count == 12 || count == 13);
+    const sint32 prefix = count - (hasSource ? 4 : 0);
+    if(prefix < 7 || prefix > (sprite ? 9 : 8)) return false;
+    auto* scene = mNativeState->PaintScene(widget, p.Param(0).ToText());
+    const auto& view = mNativeState->paintView;
+    if(!scene || !scene->ready || !scene->built.Same(view)) return false;
+    // A failed static registration invalidates this build, so a partial background cannot be reused.
+    if(!sprite) scene->ready = false;
+    const sint32 order = p.Param(1).ToInteger();
+    const String name = p.Param(2).ToText();
+    double left = p.Param(3).ToFloat(), top = p.Param(4).ToFloat();
+    double width = p.Param(5).ToFloat() - left, height = p.Param(6).ToFloat() - top;
+    float opacity = count >= 8 ? p.Param(7).ToFloat() : 1.0f;
+    if(!std::isfinite(opacity) || !std::isfinite(left) || !std::isfinite(top) ||
+        !std::isfinite(width) || !std::isfinite(height) || width < 0 || height < 0) return false;
+    if(width == 0 || height == 0)
+    {
+        if(!sprite) scene->ready = true;
+        return true;
+    }
+
+    id_image_read image = nullptr;
+    if(name.Left(2) == "r." && prefix <= 8)
+    {
+        const R resource(name.Offset(2));
+        if(!resource.exist() || !resource->HasBitmap() || resource.w() <= 0 || resource.h() <= 0)
+            return false;
+        if(!hasSource)
+        {
+            const double kx = width / resource.w(), ky = height / resource.h();
+            // Same valid-rectangle origin and integer extent as ZayPanel::stretch(..., UISF_Strong).
+            left += std::trunc(-resource->L() * kx);
+            top += std::trunc(-resource->T() * ky);
+            width = std::trunc(resource->GetImageWidth() * kx);
+            height = std::trunc(resource->GetImageHeight() * ky);
+            if(width == 0 || height == 0)
+            {
+                if(!sprite) scene->ready = true;
+                return true;
+            }
+        }
+        image = resource->GetBuildImage(view.color);
+        opacity *= Math::Min(view.color.a, 128) / 128.0f;
+    }
+    else if(sprite && prefix == 9 && name.Right(5).CompareNoCase(".apng") == 0)
+    {
+        const double sec = p.Param(8).ToFloat();
+        if(!std::isfinite(sec)) return false;
+        if(auto animate = GetAPng(name))
+        {
+            Platform::Animate::Seek(animate, sec, true);
+            image = Platform::Animate::GetImage(animate);
+        }
+    }
+    if(!image) return false;
+    const double x = (view.origin.x + left) * view.scale - view.viewport.l;
+    const double y = (view.origin.y + top) * view.scale - view.viewport.t;
+    const rect128f dst = {float(x), float(y), float(x + width * view.scale), float(y + height * view.scale)};
+    rect128f src = {0, 0, float(Platform::Graphics::GetImageWidth(image)), float(Platform::Graphics::GetImageHeight(image))};
+    if(hasSource)
+        src = {float(p.Param(prefix).ToFloat()), float(p.Param(prefix + 1).ToFloat()),
+            float(p.Param(prefix + 2).ToFloat()), float(p.Param(prefix + 3).ToFloat())};
+    if(!std::isfinite(src.l) || !std::isfinite(src.t) || !std::isfinite(src.r) || !std::isfinite(src.b) ||
+        !std::isfinite(dst.l) || !std::isfinite(dst.t) || !std::isfinite(dst.r) || !std::isfinite(dst.b) ||
+        !(src.r > src.l && src.b > src.t && dst.r > dst.l && dst.b > dst.t)) return false;
+    if(sprite) Platform::Graphics::DrawDepthSceneSprite(scene->handle, order, image, src, dst, opacity);
+    else scene->ready = Platform::Graphics::AddDepthSceneImage(scene->handle, order, image, src, dst, opacity);
+    return scene->ready;
+}
+
 void ZayAppData::RegisterRenderingGlues(ZaySon& NewZayson)
 {
     ////////////////////////////////////////////////////////////////////////////////
@@ -1805,6 +2053,11 @@ void ZayAppData::RegisterRenderingGlues(ZaySon& NewZayson)
             auto Smooth = (params.Param(0).ToInteger() != 0);
             auto Antialiasing = (params.Param(1).ToInteger() != 0);
             Platform::Graphics::SetRenderHint(Smooth, Antialiasing);
+            if(mNativeState && mNativeState->sceneSmooth != Smooth)
+            {
+                mNativeState->sceneSmooth = Smooth;
+                ++mNativeState->sceneRevision;
+            }
             ZayWidgetDOM::SetValue("program.smooth", (Smooth)? "1" : "0");
             ZayWidgetDOM::SetValue("program.antialiasing", (Antialiasing)? "1" : "0");
             invalidate();
@@ -2397,28 +2650,12 @@ void ZayAppData::RegisterMediaGlues(ZaySon& NewZayson)
     // readyapng
     NewZayson.AddGlue("readyapng", ZAY_DECLARE_GLUE(params, this)
     {
+        id_animate handle = nullptr;
         if(params.ParamCount() == 1)
-        {
-            auto APngAssetName = params.Param(0).ToText();
-            if(!mAPngs.Access(APngAssetName))
-            {
-                #if BOSS_ANDROID | BOSS_IPHONE
-                    buffer NewAPngData = Asset::ToBuffer(APngAssetName);
-                    if(NewAPngData)
-                    {
-                        mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
-                            Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
-                        Buffer::Free(NewAPngData);
-                    }
-                #elif BOSS_WASM
-                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForUrl(APngAssetName);
-                #else
-                    mAPngs(APngAssetName) = Platform::Animate::OpenForAPngForFile(
-                        Platform::File::RootForAssets() + APngAssetName);
-                #endif
-            }
-        }
-    }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩");
+            handle = GetAPng(params.Param(0).ToText());
+        if(params.CanReturn())
+            params.Return(handle && Platform::Animate::GetFrameCount(handle) > 0 ? "1" : "0");
+    }, "[APngAssetName:'image/animation.apng']", "APNG 사전로딩. 재생 가능한 프레임이 준비되면 1");
 }
 
 void ZayAppData::RegisterDomGlues(ZaySon& NewZayson)
@@ -2955,6 +3192,27 @@ void ZayAppData::RegisterNavigationAndDepthGlues(ZaySon& NewZayson, const String
         if(params.CanReturn()) params.Return(ok?"1":"0");
     }, "[OrderDomD:'d.scube.depth'][ObjectID:0][CornerX:300][CornerY:350][LeftSlope:0.6][RightSlope:-1.1][Left:240][Top:200][Right:360][Bottom:355]", "건물의 앞 꼭짓점/좌우 바닥 경계선과 선택적 출력 사각형 등록. 6/10개 인자 지원");
 
+    NewZayson.AddGlue("depthafterstatic", ZAY_DECLARE_GLUE(params, this, viewname)
+    {
+        int rank = -1;
+        if(params.ParamCount() == 7)
+        {
+            const String name = params.Param(0).ToText();
+            const auto group = mNativeState->depths.find({(chars) viewname, (chars) name});
+            ZayAppNativeState::DepthEntry actor;
+            actor.hasX = actor.bounded = true;
+            actor.y = params.Param(1).ToFloat(); actor.x = params.Param(2).ToFloat();
+            actor.l = params.Param(3).ToFloat(); actor.t = params.Param(4).ToFloat();
+            actor.r = params.Param(5).ToFloat(); actor.b = params.Param(6).ToFloat();
+            if(group != mNativeState->depths.end() && ZayAppNativeState::Depth::Valid(actor))
+            {
+                actor.serial = group->second.serial; // Equal Y draws the actor in front of static entries.
+                rank = group->second.AfterStatic(actor);
+            }
+        }
+        if(params.CanReturn()) params.Return(String::FromInteger(rank));
+    }, "[StaticOrderDomD:'d.scene.static'][FootY:350][FootX:300][Left:280][Top:250][Right:320][Bottom:355]", "캐릭터 발 위치와 겹치는 건물의 전면 경계로 정적 장면 삽입 순번 계산(-1은 맨 뒤)");
+
     NewZayson.AddGlue("depthremove", ZAY_DECLARE_GLUE(params, this, viewname)
     {
         bool ok=false;
@@ -3166,6 +3424,18 @@ void ZayAppData::RegisterDeviceChannelGlues(ZaySon& NewZayson)
 
 void ZayAppData::RegisterInstrumentationGlues(ZaySon& NewZayson)
 {
+    // Monotonic microseconds. Integer ticks keep short render intervals precise in Zay.
+    NewZayson.AddGlue("renderclock", ZAY_DECLARE_GLUE(params)
+    {
+        if(params.ParamCount() == 0 && params.CanReturn())
+        {
+            using Clock = std::chrono::steady_clock;
+            static const auto Origin = Clock::now();
+            const auto Elapsed = std::chrono::duration_cast<std::chrono::microseconds>(Clock::now() - Origin);
+            params.Return(String::FromInteger(sint64(Elapsed.count())));
+        }
+    }, "", "Monotonic render clock (microseconds)");
+
     ////////////////////////////////////////////////////////////////////////////////
     // connectscope
     NewZayson.AddGlue("connectscope", ZAY_DECLARE_GLUE(params, this)
@@ -3882,7 +4152,7 @@ bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
     return true;
 }
 
-bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
+id_animate ZayAppData::GetAPng(chars assetname)
 {
     if(!mAPngs.Access(assetname))
     {
@@ -3901,11 +4171,17 @@ bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
                 Platform::File::RootForAssets() + assetname);
         #endif
     }
-    if(auto CurAPng = mAPngs.Access(assetname))
+    const auto handle = mAPngs.Access(assetname);
+    return handle ? *handle : nullptr;
+}
+
+bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
+{
+    if(auto animate = GetAPng(assetname))
     {
-        Platform::Animate::Seek(*CurAPng, sec, true);
+        Platform::Animate::Seek(animate, sec, true);
         auto Pos = panel.toview(0, 0);
-        Platform::Animate::Draw(*CurAPng, Pos.x, Pos.y, panel.w(), panel.h(), 0);
+        Platform::Animate::Draw(animate, Pos.x, Pos.y, panel.w(), panel.h(), 0);
     }
     return true;
 }

@@ -6481,5 +6481,23 @@
         "ja": "ウェストボートハウス"
       }
     }
-  ]
+  ],
+  "depth_scene": {
+    "revision": 1,
+    "ground": "r.sc_map_ground",
+    "star": "r.sc_pin_star",
+    "shadow": "r.sc_fx_shadow",
+    "edge": "r.sc_fx_map_edge"
+  },
+  "depth_benchmark": {
+    "zoom_percent": [
+      100,
+      80,
+      148
+    ],
+    "warmup_frames": 2,
+    "sample_ms": 3000,
+    "min_samples": 3,
+    "timeout_ms": 12000
+  }
 }

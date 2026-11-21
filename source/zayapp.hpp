@@ -114,6 +114,9 @@ public:
 
 private:
     void RegisterRenderingGlues(ZaySon& NewZayson);
+    void RegisterDepthSceneGlues(ZaySon& zayson, const ZayWidget* widget);
+    bool RenderDepthResource(const ZayWidget* widget, const ZayExtend::Payload& params, bool sprite);
+    id_animate GetAPng(chars assetname);
     void RegisterRuntimeGlues(ZaySon& NewZayson);
     void RegisterInputGlues(ZaySon& NewZayson, const String& viewname);
     void RegisterAppNavigationGlues(ZaySon& NewZayson);

@@ -45,7 +45,7 @@
 			},
 			{
 				"title" : "SCube",
-				"script" : "scube.zay",
+				"script" : "scube_test.zay",
 				"dom" : "scube"
 			},
 			{
