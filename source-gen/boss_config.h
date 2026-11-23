@@ -40,8 +40,9 @@
 #define BOSS_NEED_RELEASE_TRACE    1
 #define BOSS_NEED_NATIVE_OPENGL    0
 #define BOSS_NEED_CEF_WEBVIEW      0
-#define BOSS_NEED_EMBEDDED_ASSET   (BOSS_WASM | (BOSS_WINDOWS & !BOSS_NDEBUG))
+#define BOSS_NEED_EMBEDDED_ASSET   0
 #define BOSS_NEED_EMBEDDED_CACHE   (BOSS_WASM)
+#define BOSS_NEED_WEBFILES_ASSET   (BOSS_WASM)
 #define BOSS_NEED_BUILD_RESIZING   0
 #define BOSS_NEED_BUILD_COLORING   0
 #define BOSS_ASSET_IGNORES         {".json.pipe", ".json.old", ".json.f5", "etc", ".mp3", ".wav", ".apng"}
