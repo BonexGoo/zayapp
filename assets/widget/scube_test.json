@@ -6418,6 +6418,106 @@
       "ko": "길찾기 맵을 준비하지 못했습니다. 런타임 API를 확인해 주세요.",
       "en": "Navigation map is not ready. Check the runtime API.",
       "ja": "経路マップを準備できません。ランタイムAPIをご確認ください。"
+    },
+    "t060": {
+      "ko": "렌더링 비교 시작",
+      "en": "Compare rendering",
+      "ja": "描画性能を比較"
+    },
+    "t061": {
+      "ko": "출력 방식  ·  일반",
+      "en": "Output  ·  Normal",
+      "ja": "描画方式  ·  通常"
+    },
+    "t062": {
+      "ko": "출력 방식  ·  DepthScene",
+      "en": "Output  ·  DepthScene",
+      "ja": "描画方式  ·  DepthScene"
+    },
+    "t063": {
+      "ko": "측정 ",
+      "en": "Test ",
+      "ja": "測定 "
+    },
+    "t064": {
+      "ko": "회",
+      "en": " samples",
+      "ja": "回"
+    },
+    "t065": {
+      "ko": "송도큐브 렌더링  ·  ",
+      "en": "Songdo Cube rendering  ·  ",
+      "ja": "Songdo Cube 描画  ·  "
+    },
+    "t066": {
+      "ko": "장면 렌더 호출 평균 (ms)  ·  낮을수록 빠름",
+      "en": "Mean scene-render call (ms)  ·  lower is faster",
+      "ja": "シーン描画呼び出しの平均 (ms)  ·  小さいほど高速"
+    },
+    "t067": {
+      "ko": "배율",
+      "en": "Zoom",
+      "ja": "倍率"
+    },
+    "t068": {
+      "ko": "일반 (ms)",
+      "en": "Normal (ms)",
+      "ja": "通常 (ms)"
+    },
+    "t069": {
+      "ko": "최초 구축 (ms)",
+      "en": "First build (ms)",
+      "ja": "初回構築 (ms)"
+    },
+    "t070": {
+      "ko": "표본 일반/Depth",
+      "en": "Samples N/D",
+      "ja": "標本 通常/Depth"
+    },
+    "t071": {
+      "ko": "중단  ·  ",
+      "en": "Stopped  ·  ",
+      "ja": "中断  ·  "
+    },
+    "t072": {
+      "ko": "같은 카메라·캐릭터 자세  ·  초기 구축과 준비 프레임은 평균에서 제외",
+      "en": "Same camera / pose  ·  initial build and warm-up excluded",
+      "ja": "同じカメラ・キャラクター姿勢  ·  初回構築と準備フレームは平均から除外"
+    },
+    "t073": {
+      "ko": "다시 측정",
+      "en": "Run again",
+      "ja": "再測定"
+    },
+    "t074": {
+      "ko": "닫기",
+      "en": "Close",
+      "ja": "閉じる"
+    },
+    "t075": {
+      "ko": "DepthScene을 준비할 수 없어 일반 출력으로 전환합니다.",
+      "en": "Cannot prepare DepthScene. Switching to normal output.",
+      "ja": "DepthSceneを準備できないため通常描画に切り替えます。"
+    },
+    "t076": {
+      "ko": "일반",
+      "en": "Normal",
+      "ja": "通常"
+    },
+    "t077": {
+      "ko": "창 크기가 바뀌었습니다.",
+      "en": "Window size changed.",
+      "ja": "ウィンドウサイズが変わりました。"
+    },
+    "t078": {
+      "ko": "제한 시간 내에 이미지와 렌더링 표본을 준비하지 못했습니다.",
+      "en": "Timed out preparing images and render samples.",
+      "ja": "制限時間内に画像と描画標本を準備できませんでした。"
+    },
+    "t079": {
+      "ko": "DepthScene을 준비하거나 그릴 수 없습니다.",
+      "en": "Cannot prepare or draw DepthScene.",
+      "ja": "DepthSceneを準備または描画できません。"
     }
   },
   "video_labels": [

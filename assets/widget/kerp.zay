@@ -1505,7 +1505,7 @@
 					"compinputs":
 					[
 						{
-							"kp_lang":"'en' @ 'd.data.settings.language'"
+							"kp_lang":"'en' @ 'd.settings.language'"
 						},
 						{
 							"kp_font":"'Roboto' @ ('d.data.i18n.' + kp_lang + '.font')"
@@ -77751,7 +77751,7 @@
 							"uiname":"kp_button_399",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'en')",
+								"setvalue('d.settings.language', 'en')",
 								"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"update(0.25)"
 							]
@@ -77883,7 +77883,7 @@
 							"uiname":"kp_button_400",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'ko')",
+								"setvalue('d.settings.language', 'ko')",
 								"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"update(0.25)"
 							]
@@ -78015,7 +78015,7 @@
 							"uiname":"kp_button_401",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'ja')",
+								"setvalue('d.settings.language', 'ja')",
 								"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 								"update(0.25)"
 							]
@@ -82588,7 +82588,7 @@
 					"uiname":"kp_button_431",
 					"onclick":
 					[
-						"setvalue('d.data.settings.language', 'en')",
+						"setvalue('d.settings.language', 'en')",
 						"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"update(0.2)"
 					]
@@ -82720,7 +82720,7 @@
 					"uiname":"kp_button_432",
 					"onclick":
 					[
-						"setvalue('d.data.settings.language', 'ko')",
+						"setvalue('d.settings.language', 'ko')",
 						"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"update(0.2)"
 					]
@@ -82852,7 +82852,7 @@
 					"uiname":"kp_button_433",
 					"onclick":
 					[
-						"setvalue('d.data.settings.language', 'ja')",
+						"setvalue('d.settings.language', 'ja')",
 						"playsound('sound/kerp_click.mp3', (0.7) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
 						"update(0.2)"
 					]

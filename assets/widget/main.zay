@@ -13993,6 +13993,9 @@
 			"MainLanguage":"'en'"
 		},
 		{
+			"MainLastLanguage":"''"
+		},
+		{
 			"MainUIFont":"'Roboto'"
 		},
 		{
@@ -14027,6 +14030,12 @@
 			[
 				{
 					"MainLanguage":"'en' @ 'd.settings.language'"
+				},
+				"if((MainLastLanguage != '') [and] (MainLastLanguage != MainLanguage))",
+				"jumpcall('save_setting', 0)",
+				"endif",
+				{
+					"MainLastLanguage":"MainLanguage"
 				},
 				{
 					"MainUIFont":"'NanumSquare Bold' @ ('d.data.i18n.' + MainLanguage + '.font')"
@@ -15063,6 +15072,9 @@
 																							[
 																								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																								"setvalue('d.settings.language', ms_lang_code)",
+																								{
+																									"MainLastLanguage":"ms_lang_code"
+																								},
 																								"jumpcall('save_setting', 0)",
 																								"update(0.1)"
 																							],

@@ -14007,10 +14007,10 @@
   ],
   "oncreate": [
     {
-      "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+      "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
     },
     {
-      "ui_lang": "('en' @ 'd.data.settings.language')"
+      "ui_lang": "('en' @ 'd.settings.language')"
     },
     {
       "sc_static_count": "d.scube.data.buildings.count"
@@ -14750,10 +14750,10 @@
       "compid": "20383",
       "compinputs": [
         {
-          "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+          "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
         },
         {
-          "ui_lang": "('en' @ 'd.data.settings.language')"
+          "ui_lang": "('en' @ 'd.settings.language')"
         },
         {
           "sc_portrait": "pH > pW"

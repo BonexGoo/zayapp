@@ -12433,10 +12433,10 @@
 	"oncreate":
 	[
 		{
-			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 		},
 		{
-			"ui_lang":"('en' @ 'd.data.settings.language')"
+			"ui_lang":"('en' @ 'd.settings.language')"
 		},
 		{
 			"page":"0"
@@ -12508,10 +12508,10 @@
 			"compinputs":
 			[
 				{
-					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 				},
 				{
-					"ui_lang":"('en' @ 'd.data.settings.language')"
+					"ui_lang":"('en' @ 'd.settings.language')"
 				},
 				{
 					"power_usage":"12.5"

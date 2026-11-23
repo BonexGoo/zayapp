@@ -59,6 +59,11 @@
 				"dom" : "kerp"
 			},
 			{
+				"title" : "TGame",
+				"script" : "tgame.zay",
+				"dom" : "tgame"
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"

@@ -32842,7 +32842,7 @@
 							"uiname":"mc_lang_0",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'ko')",
+								"setvalue('d.settings.language', 'ko')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -33065,7 +33065,7 @@
 							"uiname":"mc_lang_1",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'en')",
+								"setvalue('d.settings.language', 'en')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -33288,7 +33288,7 @@
 							"uiname":"mc_lang_2",
 							"onclick":
 							[
-								"setvalue('d.data.settings.language', 'ja')",
+								"setvalue('d.settings.language', 'ja')",
 								{
 									"mc_page_anim":"0 ~ 1 : d.mcare.data.motion.normal"
 								},
@@ -57407,7 +57407,7 @@
 	"oncreate":
 	[
 		{
-			"mc_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+			"mc_lang":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 		},
 		{
 			"mc_page":"0"
@@ -61509,7 +61509,7 @@
 			"compinputs":
 			[
 				{
-					"mc_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+					"mc_lang":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 				},
 				{
 					"mc_scale":"((pW / 1600) [min] (pH / 900)) [max] 0.01"

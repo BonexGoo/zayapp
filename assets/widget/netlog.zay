@@ -5,10 +5,10 @@
 	"oncreate":
 	[
 		{
-			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 		},
 		{
-			"ui_lang":"('en' @ 'd.data.settings.language')"
+			"ui_lang":"('en' @ 'd.settings.language')"
 		},
 		{
 			"LogIndex":"0"
@@ -47,10 +47,10 @@
 			"compinputs":
 			[
 				{
-					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 				},
 				{
-					"ui_lang":"('en' @ 'd.data.settings.language')"
+					"ui_lang":"('en' @ 'd.settings.language')"
 				},
 				"if(Highlight0 !=''@'d.packlog.highlight_0.text')",
 				{

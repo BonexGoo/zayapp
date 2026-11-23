@@ -222,7 +222,7 @@
 											"compvalues":
 											[
 												[
-													"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.data.settings.language')))",
+													"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -335,7 +335,7 @@
 											"compvalues":
 											[
 												[
-													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.data.settings.language')))",
+													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -448,7 +448,7 @@
 											"compvalues":
 											[
 												[
-													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -561,7 +561,7 @@
 											"compvalues":
 											[
 												[
-													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -674,7 +674,7 @@
 											"compvalues":
 											[
 												[
-													"('Car' @ ('d.hcar.data.shared_text.t004.' + ('en' @ 'd.data.settings.language')))",
+													"('Car' @ ('d.hcar.data.shared_text.t004.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -787,7 +787,7 @@
 											"compvalues":
 											[
 												[
-													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -6385,7 +6385,7 @@
 											"compvalues":
 											[
 												[
-													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.data.settings.language')))",
+													"('Navi' @ ('d.hcar.data.shared_text.t001.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -6613,7 +6613,7 @@
 											"compvalues":
 											[
 												[
-													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -6841,7 +6841,7 @@
 											"compvalues":
 											[
 												[
-													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -7069,7 +7069,7 @@
 											"compvalues":
 											[
 												[
-													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -7279,7 +7279,7 @@
 											"compvalues":
 											[
 												[
-													"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.data.settings.language')))",
+													"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -7501,7 +7501,7 @@
 											"compvalues":
 											[
 												[
-													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.data.settings.language')))",
+													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.settings.language')))",
 													"centermiddle",
 													"right"
 												]
@@ -9381,7 +9381,7 @@
 					"compinputs":
 					[
 						{
-							"local_id":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+							"local_id":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 						},
 						"if((hc_toast_visible == 1) [and] ((zc_toast_anim <= 0.001) [or] (zc_notifications != 1) [or] (zc_toast == '')))",
 						{
@@ -9530,7 +9530,7 @@
 									[
 										[
 											"3.0",
-											"'NanumSquare Bold'"
+											"hc_text_font"
 										]
 									],
 									"expanded":"1",
@@ -9546,7 +9546,7 @@
 											"compvalues":
 											[
 												[
-													"'Navigation'",
+													"('Navigation' @ ('d.hcar.data.shared_text.t009.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle"
 												]
 											],
@@ -9754,7 +9754,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -9770,7 +9770,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -12430,7 +12430,7 @@
 											"compvalues":
 											[
 												[
-													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+													"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle",
 													"right"
 												]
@@ -12639,7 +12639,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -12655,7 +12655,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -17042,7 +17042,7 @@
 											"compvalues":
 											[
 												[
-													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+													"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle",
 													"right"
 												]
@@ -17251,7 +17251,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -17267,7 +17267,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -21235,7 +21235,7 @@
 											"compvalues":
 											[
 												[
-													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+													"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle",
 													"right"
 												]
@@ -21444,7 +21444,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -21460,7 +21460,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -25958,7 +25958,7 @@
 											"compvalues":
 											[
 												[
-													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+													"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle",
 													"right"
 												]
@@ -26167,7 +26167,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -26183,7 +26183,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -29098,7 +29098,7 @@
 											"compvalues":
 											[
 												[
-													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.data.settings.language')))",
+													"('Apps' @ ('d.hcar.data.shared_text.t008.' + ('en' @ 'd.settings.language')))",
 													"leftmiddle",
 													"right"
 												]
@@ -29307,7 +29307,7 @@
 											[
 												[
 													"1.85",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -29323,7 +29323,7 @@
 													"compvalues":
 													[
 														[
-															"'HOME'",
+															"('HOME' @ ('d.hcar.data.shared_text.t011.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -29514,7 +29514,7 @@
 													"compvalues":
 													[
 														[
-															"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.data.settings.language')))",
+															"('Home' @ ('d.hcar.data.shared_text.t000.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -29690,7 +29690,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -29706,7 +29706,7 @@
 													"compvalues":
 													[
 														[
-															"'Navigation'",
+															"('Navigation' @ ('d.hcar.data.shared_text.t009.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -29897,7 +29897,7 @@
 													"compvalues":
 													[
 														[
-															"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.data.settings.language')))",
+															"('Media' @ ('d.hcar.data.shared_text.t002.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -30089,7 +30089,7 @@
 													"compvalues":
 													[
 														[
-															"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.data.settings.language')))",
+															"('Phone' @ ('d.hcar.data.shared_text.t003.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -30281,7 +30281,7 @@
 													"compvalues":
 													[
 														[
-															"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.data.settings.language')))",
+															"('Vehicle' @ ('d.hcar.data.shared_text.t006.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -30464,7 +30464,7 @@
 													"compvalues":
 													[
 														[
-															"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.data.settings.language')))",
+															"('Climate' @ ('d.hcar.data.shared_text.t007.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -30650,7 +30650,7 @@
 											[
 												[
 													"2.6",
-													"'NanumSquare Bold'"
+													"hc_text_font"
 												]
 											],
 											"expanded":"1",
@@ -30666,7 +30666,7 @@
 													"compvalues":
 													[
 														[
-															"'Charging'",
+															"('Charging' @ ('d.hcar.data.shared_text.t010.' + ('en' @ 'd.settings.language')))",
 															"centermiddle"
 														]
 													],
@@ -30857,7 +30857,7 @@
 													"compvalues":
 													[
 														[
-															"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.data.settings.language')))",
+															"('Setup' @ ('d.hcar.data.shared_text.t005.' + ('en' @ 'd.settings.language')))",
 															"centermiddle",
 															"right"
 														]
@@ -47069,7 +47069,7 @@
 						{
 							"local_id":"0"
 						},
-						"setvalue('d.data.settings.language', 'ko')",
+						"setvalue('d.settings.language', 'ko')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
@@ -47190,7 +47190,7 @@
 						{
 							"local_id":"1"
 						},
-						"setvalue('d.data.settings.language', 'en')",
+						"setvalue('d.settings.language', 'en')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
@@ -47311,7 +47311,7 @@
 						{
 							"local_id":"2"
 						},
-						"setvalue('d.data.settings.language', 'ja')",
+						"setvalue('d.settings.language', 'ja')",
 						"update(0.1)",
 						"if(zc_sound == 1)",
 						"playsound('sound/hcar_tap.mp3', (1.0) * (((100 @ 'd.data.settings.sound_volume') [max] 0 [min] 100) / 100.0))",
@@ -47501,11 +47501,11 @@
 						"endif",
 						"if(local_id == 2)",
 						{
-							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 						},
 						"else",
 						{
-							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+							"hc_text_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 						},
 						"endif"
 					]
@@ -48426,7 +48426,7 @@
 			"zc_ambient":"0"
 		},
 		{
-			"local_id":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+			"local_id":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 		},
 		{
 			"hc_jp_font":"'Noto Sans CJK JP'"

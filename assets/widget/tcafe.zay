@@ -13387,10 +13387,10 @@
 			"cart_last_id":"-1"
 		},
 		{
-			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+			"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 		},
 		{
-			"ui_lang":"('en' @ 'd.data.settings.language')"
+			"ui_lang":"('en' @ 'd.settings.language')"
 		},
 		{
 			"category":"0"
@@ -13462,10 +13462,10 @@
 			"compinputs":
 			[
 				{
-					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+					"ui_font":"('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
 				},
 				{
-					"ui_lang":"('en' @ 'd.data.settings.language')"
+					"ui_lang":"('en' @ 'd.settings.language')"
 				},
 				{
 					"order_unit":"selected_price + selected_size * 500 + selected_shot * 500"

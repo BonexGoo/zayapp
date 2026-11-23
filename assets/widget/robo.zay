@@ -4664,7 +4664,7 @@
 						{
 							"rb_lang":"0"
 						},
-						"setvalue('d.data.settings.language', 'ko')",
+						"setvalue('d.settings.language', 'ko')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -4811,7 +4811,7 @@
 						{
 							"rb_lang":"1"
 						},
-						"setvalue('d.data.settings.language', 'en')",
+						"setvalue('d.settings.language', 'en')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -4958,7 +4958,7 @@
 						{
 							"rb_lang":"2"
 						},
-						"setvalue('d.data.settings.language', 'ja')",
+						"setvalue('d.settings.language', 'ja')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -19796,7 +19796,7 @@
 						{
 							"rb_lang":"0"
 						},
-						"setvalue('d.data.settings.language', 'ko')",
+						"setvalue('d.settings.language', 'ko')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -19943,7 +19943,7 @@
 						{
 							"rb_lang":"1"
 						},
-						"setvalue('d.data.settings.language', 'en')",
+						"setvalue('d.settings.language', 'en')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -20090,7 +20090,7 @@
 						{
 							"rb_lang":"2"
 						},
-						"setvalue('d.data.settings.language', 'ja')",
+						"setvalue('d.settings.language', 'ja')",
 						"if((rb_sound == 1) [and] (rb_audio == 1))",
 						"playsound('sound/robo_click.mp3', (d.data.settings.sound_volume / 100) * d.robo.data.sound_gain.click)",
 						{
@@ -23576,7 +23576,7 @@
 			"rb_page":"0"
 		},
 		{
-			"rb_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+			"rb_lang":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 		},
 		{
 			"rb_status":"0"
@@ -23777,7 +23777,7 @@
 			"stable":"0",
 			"compinputs":[
 				{
-					"rb_lang":"((('en' @ 'd.data.settings.language') == 'ko') * 0 + (('en' @ 'd.data.settings.language') == 'en') + (('en' @ 'd.data.settings.language') == 'ja') * 2)"
+					"rb_lang":"((('en' @ 'd.settings.language') == 'ko') * 0 + (('en' @ 'd.settings.language') == 'en') + (('en' @ 'd.settings.language') == 'ja') * 2)"
 				},
 				{
 					"rb_scale":"((pW / 1600) [min] (pH / 900)) [max] 0.01"

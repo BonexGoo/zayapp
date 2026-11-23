@@ -2944,7 +2944,7 @@
                       "posy": "64740",
                       "compvalues": [
                         [
-                          "'렌더링 비교 시작'",
+                          "('렌더링 비교 시작' @ ('d.scube.data.shared_text.t060.' + ui_lang))",
                           "centermiddle",
                           "right"
                         ]
@@ -3062,7 +3062,7 @@
                           "posy": "64880",
                           "compvalues": [
                             [
-                              "'출력 방식  ·  일반'",
+                              "('출력 방식  ·  일반' @ ('d.scube.data.shared_text.t061.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -3112,7 +3112,7 @@
                           "posy": "65340",
                           "compvalues": [
                             [
-                              "'출력 방식  ·  DepthScene'",
+                              "('출력 방식  ·  DepthScene' @ ('d.scube.data.shared_text.t062.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -3216,7 +3216,7 @@
                       "posy": "64740",
                       "compvalues": [
                         [
-                          "'측정 ' + (sc_bslot + 1) + '/6   ·   ' + sc_bzoom + '%   ·   ' + sc_bmode_label + '   ·   ' + sc_bn + '회'",
+                          "('측정 ' @ ('d.scube.data.shared_text.t063.' + ui_lang)) + (sc_bslot + 1) + '/6   ·   ' + sc_bzoom + '%   ·   ' + (sc_bmode_label @ ('d.scube.data.shared_text.' + sc_bmode_label + '.' + ui_lang)) + '   ·   ' + sc_bn + ('회' @ ('d.scube.data.shared_text.t064.' + ui_lang))",
                           "centermiddle",
                           "right"
                         ]
@@ -12215,7 +12215,7 @@
                           "posy": "64880",
                           "compvalues": [
                             [
-                              "'송도큐브 렌더링  ·  ' + ('' @ 'd.program.osname') + ' / ' + ('CPU' @ 'd.settings.rendering_type')",
+                              "('송도큐브 렌더링  ·  ' @ ('d.scube.data.shared_text.t065.' + ui_lang)) + ('' @ 'd.program.osname') + ' / ' + ('CPU' @ 'd.settings.rendering_type')",
                               "leftmiddle",
                               "right"
                             ]
@@ -12283,7 +12283,7 @@
                           "posy": "65480",
                           "compvalues": [
                             [
-                              "'장면 렌더 호출 평균 (ms)  ·  낮을수록 빠름'",
+                              "('장면 렌더 호출 평균 (ms)  ·  낮을수록 빠름' @ ('d.scube.data.shared_text.t066.' + ui_lang))",
                               "leftmiddle",
                               "right"
                             ]
@@ -12395,7 +12395,7 @@
                           "posy": "66540",
                           "compvalues": [
                             [
-                              "'배율'",
+                              "('배율' @ ('d.scube.data.shared_text.t067.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -12463,7 +12463,7 @@
                           "posy": "67140",
                           "compvalues": [
                             [
-                              "'일반 (ms)'",
+                              "('일반 (ms)' @ ('d.scube.data.shared_text.t068.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -12599,7 +12599,7 @@
                           "posy": "68340",
                           "compvalues": [
                             [
-                              "'최초 구축 (ms)'",
+                              "('최초 구축 (ms)' @ ('d.scube.data.shared_text.t069.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -12667,7 +12667,7 @@
                           "posy": "68940",
                           "compvalues": [
                             [
-                              "'표본 일반/Depth'",
+                              "('표본 일반/Depth' @ ('d.scube.data.shared_text.t070.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -13858,7 +13858,7 @@
                               "posy": "79600",
                               "compvalues": [
                                 [
-                                  "'중단  ·  ' + sc_bfailed",
+                                  "('중단  ·  ' @ ('d.scube.data.shared_text.t071.' + ui_lang)) + (sc_bfailed @ ('d.scube.data.shared_text.' + sc_bfailed + '.' + ui_lang))",
                                   "leftmiddle",
                                   "right"
                                 ]
@@ -13908,7 +13908,7 @@
                               "posy": "80060",
                               "compvalues": [
                                 [
-                                  "'같은 카메라·캐릭터 자세  ·  초기 구축과 준비 프레임은 평균에서 제외'",
+                                  "('같은 카메라·캐릭터 자세  ·  초기 구축과 준비 프레임은 평균에서 제외' @ ('d.scube.data.shared_text.t072.' + ui_lang))",
                                   "leftmiddle",
                                   "right"
                                 ]
@@ -14004,7 +14004,7 @@
                           "posy": "80980",
                           "compvalues": [
                             [
-                              "'다시 측정'",
+                              "('다시 측정' @ ('d.scube.data.shared_text.t073.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -14107,7 +14107,7 @@
                           "posy": "81900",
                           "compvalues": [
                             [
-                              "'닫기'",
+                              "('닫기' @ ('d.scube.data.shared_text.t074.' + ui_lang))",
                               "centermiddle",
                               "right"
                             ]
@@ -15181,7 +15181,7 @@
                       "sc_render_mode": "0"
                     },
                     {
-                      "sc_toast": "'DepthScene을 준비할 수 없어 일반 출력으로 전환합니다.'"
+                      "sc_toast": "('DepthScene을 준비할 수 없어 일반 출력으로 전환합니다.' @ ('d.scube.data.shared_text.t075.' + ui_lang))"
                     },
                     {
                       "sc_toast_t": "0 ~ 1 : 5"
@@ -15468,7 +15468,7 @@
             },
             "else",
             {
-              "sc_bmode_label": "'일반'"
+              "sc_bmode_label": "'t076'"
             },
             "endif"
           ]
@@ -15560,11 +15560,11 @@
           "compinputs": [
             "if((pW != sc_bvieww) [or] (pH != sc_bviewh))",
             {
-              "sc_bfailed": "'창 크기가 바뀌었습니다.'"
+              "sc_bfailed": "'t077'"
             },
             "elif((sc_bpending == 0) [and] ((sc_bnow - sc_bslotclock) > d.scube.data.depth_benchmark.timeout_ms * 1000))",
             {
-              "sc_bfailed": "'제한 시간 내에 이미지와 렌더링 표본을 준비하지 못했습니다.'"
+              "sc_bfailed": "'t078'"
             },
             "endif"
           ]
@@ -15924,7 +15924,7 @@
           "posy": "10510",
           "compinputs": [
             {
-              "sc_bfailed": "'DepthScene을 준비하거나 그릴 수 없습니다.'"
+              "sc_bfailed": "'t079'"
             }
           ]
         }
@@ -15933,10 +15933,10 @@
   ],
   "oncreate": [
     {
-      "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+      "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
     },
     {
-      "ui_lang": "('en' @ 'd.data.settings.language')"
+      "ui_lang": "('en' @ 'd.settings.language')"
     },
     {
       "sc_static_count": "d.scube.data.buildings.count"
@@ -16677,7 +16677,7 @@
       "sc_bpeerprefix": "'d.scube.net.peers.'"
     },
     {
-      "sc_bmode_label": "'일반'"
+      "sc_bmode_label": "'t076'"
     }
   ],
   "posx": "2",
@@ -16771,10 +16771,10 @@
       "compid": "20383",
       "compinputs": [
         {
-          "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.data.settings.language') + '.font'))"
+          "ui_font": "('Roboto' @ ('d.data.i18n.' + ('en' @ 'd.settings.language') + '.font'))"
         },
         {
-          "ui_lang": "('en' @ 'd.data.settings.language')"
+          "ui_lang": "('en' @ 'd.settings.language')"
         },
         {
           "sc_portrait": "pH > pW"
