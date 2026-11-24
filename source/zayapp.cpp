@@ -1464,7 +1464,7 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
     static String CurWidgetName;
     static String CurProjCode;
     static bool CurForced;
-    auto DomFinder = [](chars itemname, payload data)->void
+    auto DomFinder = [](chars filepath, chars itemname, payload data)->void
     {
         auto Self = (ZayAppData*) data;
         const String FileName = itemname;
@@ -1492,8 +1492,10 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
     CurWidgetName = widgetname;
     CurProjCode = projcode;
     CurForced = forced;
-    Platform::File::Search(Platform::File::RootForAssets() + "widget", DomFinder, this, false);
-    Platform::File::Search(Platform::File::RootForAssetsRem() + "widget", DomFinder, this, false);
+    id_assetpath SearchPath = AssetPath::Create();
+    AssetPath::AddPath(SearchPath, "widget");
+    AssetPath::Search(SearchPath, DomFinder, this);
+    AssetPath::Release(SearchPath);
 }
 
 bool ZayAppData::UpdateModifiedDoms()

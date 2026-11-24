@@ -59,6 +59,8 @@ ASSETS_SCRIPT.files += ../assets/script
 ASSETS_SCRIPT.path = /assets
 ASSETS_WIDGET.files += ../assets/widget
 ASSETS_WIDGET.path = /assets
+ASSETS_INDEX.files += ../assets/assetsindex.json
+ASSETS_INDEX.path = /assets
 
 win32{
     RC_ICONS += ../common/windows/main.ico
@@ -69,6 +71,7 @@ macx{
     QMAKE_BUNDLE_DATA += ASSETS_IMAGE
     QMAKE_BUNDLE_DATA += ASSETS_SCRIPT
     QMAKE_BUNDLE_DATA += ASSETS_WIDGET
+    QMAKE_BUNDLE_DATA += ASSETS_INDEX
     QMAKE_INFO_PLIST = $$PWD/../common/macx/Info.plist
     QMAKE_ASSET_CATALOGS += $$PWD/../common/macx/Assets.xcassets
     QMAKE_ASSET_CATALOGS_APP_ICON = AppIcon
@@ -79,6 +82,7 @@ ios{
     QMAKE_BUNDLE_DATA += ASSETS_IMAGE
     QMAKE_BUNDLE_DATA += ASSETS_SCRIPT
     QMAKE_BUNDLE_DATA += ASSETS_WIDGET
+    QMAKE_BUNDLE_DATA += ASSETS_INDEX
     QMAKE_INFO_PLIST = $$PWD/../common/ios/Info.plist
     QMAKE_ASSET_CATALOGS += $$PWD/../common/ios/Assets.xcassets
     QMAKE_ASSET_CATALOGS_APP_ICON = AppIcon
@@ -89,5 +93,6 @@ android{
     INSTALLS += ASSETS_IMAGE
     INSTALLS += ASSETS_SCRIPT
     INSTALLS += ASSETS_WIDGET
+    INSTALLS += ASSETS_INDEX
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/../common/android
 }

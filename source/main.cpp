@@ -10,8 +10,8 @@ extern sint32 gMinWindowHeight;
 
 bool PlatformInit()
 {
-    #if BOSS_WINDOWS & !BOSS_NDEBUG
-        if(Asset::RebuildForEmbedded())
+    #if BOSS_GENERATE_ASSET
+        if(Asset::RebuildForEmbedded() || Asset::RebuildForAssetsIndex())
             return false;
     #endif
 
