@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "K-ERP",
   "version": "1.0.0",
   "app_id": "kerp",
@@ -866,7 +866,11 @@
       "t479": "No ERP, GPS or database is connected. All operations affect this session only.",
       "t497": "Close",
       "t499": "Evaluating scenario…",
-      "t500": "Comparing cost, deadlines and stock readiness."
+      "t500": "Comparing cost, deadlines and stock readiness.",
+      "port_000": "Available from supplier",
+      "port_001": "Active",
+      "port_002": "Paused",
+      "port_003": "All screens"
     },
     "ko": {
       "w01": "인천 W01",
@@ -1341,7 +1345,11 @@
       "t479": "ERP·GPS·데이터베이스에 연결되지 않았습니다. 모든 업무는 현재 세션에만 적용됩니다.",
       "t497": "닫기",
       "t499": "시나리오 계산 중…",
-      "t500": "비용·납기·재고 준비도를 비교합니다."
+      "t500": "비용·납기·재고 준비도를 비교합니다.",
+      "port_000": "공급 가능",
+      "port_001": "운영 중",
+      "port_002": "일시중지",
+      "port_003": "전체 화면"
     },
     "ja": {
       "w01": "仁川 W01",
@@ -1816,7 +1824,11 @@
       "t479": "ERP・GPS・データベースには未接続です。すべての操作はこのセッションにのみ適用します。",
       "t497": "閉じる",
       "t499": "シナリオを計算中…",
-      "t500": "費用・納期・在庫準備を比較しています。"
+      "t500": "費用・納期・在庫準備を比較しています。",
+      "port_000": "供給可能",
+      "port_001": "稼働中",
+      "port_002": "一時停止",
+      "port_003": "すべての画面"
     }
   },
   "meta": {

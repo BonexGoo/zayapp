@@ -21,12 +21,14 @@
 			{
 				"title" : "TCafe",
 				"script" : "tcafe.zay",
-				"dom" : "tcafe"
+				"dom" : "tcafe",
+				"is_new" : 1
 			},
 			{
 				"title" : "QHome",
 				"script" : "qhome.zay",
-				"dom" : "qhome"
+				"dom" : "qhome",
+				"is_new" : 1
 			},
 			{
 				"title" : "HCar",
@@ -56,7 +58,8 @@
 			{
 				"title" : "KErp",
 				"script" : "kerp.zay",
-				"dom" : "kerp"
+				"dom" : "kerp",
+				"is_new" : 1
 			},
 			{
 				"title" : "TGame",

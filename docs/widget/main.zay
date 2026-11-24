@@ -13402,7 +13402,7 @@
 												[
 													"r.main_settings_choice_h"
 												],
-												"elif((1 @ 'd.settings.app_columns') == mscolsV + 1)",
+												"elif((2 @ 'd.settings.app_columns') == mscolsV + 1)",
 												[
 													"r.main_settings_choice_s"
 												],
@@ -13990,22 +13990,22 @@
 			"MainGlueRequestedName":"''"
 		},
 		{
-			"MainLanguage":"'en'"
+			"MainLanguage":"'ko'"
 		},
 		{
 			"MainLastLanguage":"''"
 		},
 		{
-			"MainUIFont":"'Roboto'"
+			"MainUIFont":"'NanumSquare Bold'"
 		},
 		{
-			"MainUI":"'d.data.i18n.en.ui'"
+			"MainUI":"'d.data.i18n.ko.ui'"
 		},
 		{
-			"MainGuide":"'d.data.i18n.en.guide'"
+			"MainGuide":"'d.data.i18n.ko.guide'"
 		},
 		{
-			"MainSettings":"'d.data.i18n.en.settings'"
+			"MainSettings":"'d.data.i18n.ko.settings'"
 		},
 		{
 			"MainGlueLastLanguage":"''"
@@ -14029,7 +14029,7 @@
 			"compinputs":
 			[
 				{
-					"MainLanguage":"'en' @ 'd.settings.language'"
+					"MainLanguage":"'ko' @ 'd.settings.language'"
 				},
 				"if((MainLastLanguage != '') [and] (MainLastLanguage != MainLanguage))",
 				"jumpcall('save_setting', 0)",
@@ -14116,7 +14116,7 @@
 									"compinputs":
 									[
 										{
-											"main_requested_cols":"(((1 @ 'd.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
+											"main_requested_cols":"(((2 @ 'd.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
 										},
 										{
 											"main_available_dock":"(pW - 420) [max] 138"
@@ -16157,6 +16157,44 @@
 																																			]
 																																		}
 																																	]
+																																}
+																															]
+																														},
+																														{
+																															"addw":"160",
+																															"compid":"2403",
+																															"compname":"xywh",
+																															"compvalues":
+																															[
+																																"if(0 @ ('d.data.body.enum.' + pV + '.is_new'))",
+																																[
+																																	"pW-46",
+																																	"5",
+																																	"42",
+																																	"24"
+																																]
+																															],
+																															"expanded":"1",
+																															"posx":"8051",
+																															"posy":"9021",
+																															"stable":"0",
+																															"ui":
+																															[
+																																{
+																																	"addw":"70",
+																																	"compid":"2404",
+																																	"compname":"icon",
+																																	"compvalues":
+																																	[
+																																		[
+																																			"r.main_app_new_sticker",
+																																			"centermiddle"
+																																		]
+																																	],
+																																	"expanded":"1",
+																																	"posx":"8531",
+																																	"posy":"9021",
+																																	"stable":"0"
 																																}
 																															]
 																														}

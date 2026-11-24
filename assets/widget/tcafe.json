@@ -1,7 +1,8 @@
 ﻿{
 	"atlas" :
 	[
-		{"path" : "tcafe_atlas.png"}
+		{"path" : "tcafe_atlas.png"},
+		{"path" : "tcafe_refresh_atlas.png"}
 	],
 	"fonts" :
 	[
@@ -554,5 +555,101 @@
 			"en": "Cheesecake",
 			"ja": "チーズケーキ"
 		}
-	]
+	],
+	"refresh_text": {
+		"brand_caption": {
+			"ko": "커피 한 잔의 작은 행복",
+			"en": "COFFEE & A LITTLE JOY",
+			"ja": "一杯のコーヒー、小さな幸せ"
+		},
+		"language": {
+			"ko": "언어",
+			"en": "LANGUAGE",
+			"ja": "言語"
+		},
+		"hero_eyebrow": {
+			"ko": "오늘, 바리스타의 추천",
+			"en": "THE BARISTA EDIT",
+			"ja": "本日のバリスタおすすめ"
+		},
+		"hero_cta": {
+			"ko": "나만의 한 잔 만들기",
+			"en": "MAKE IT YOURS",
+			"ja": "自分好みの一杯に"
+		},
+		"menu_title": {
+			"ko": "오늘의 한 잔을 골라 보세요",
+			"en": "Find your favorite",
+			"ja": "お気に入りの一杯を"
+		},
+		"empty_hint": {
+			"ko": "마음에 드는 메뉴를 골라 주세요",
+			"en": "Choose a little happiness.",
+			"ja": "お好きなメニューをお選びください"
+		},
+		"cart_summary": {
+			"ko": "내 주문",
+			"en": "Your order",
+			"ja": "ご注文"
+		},
+		"view_cart": {
+			"ko": "주문 내역 보기",
+			"en": "View order",
+			"ja": "注文内容を見る"
+		},
+		"temperature": {
+			"ko": "온도",
+			"en": "Temperature",
+			"ja": "温度"
+		},
+		"checkout_cta": {
+			"ko": "결제하기",
+			"en": "Checkout",
+			"ja": "お支払い"
+		},
+		"added": {
+			"ko": "주문 내역에 담았습니다",
+			"en": "Added to your order",
+			"ja": "ご注文に追加しました"
+		}
+	},
+	"refresh": {
+		"layout": "auto",
+		"landscape": [
+			1600,
+			980
+		],
+		"portrait": [
+			1080,
+			1920
+		],
+		"motion": {
+			"intro": 0.45,
+			"category": 0.22,
+			"modal": 0.28,
+			"cart": 0.35
+		}
+	},
+	"idle_ad": {
+		"idle_seconds": 20,
+		"duration_seconds": 8,
+		"path": "apng/tcafe_spotlight.apng",
+		"copy": {
+			"eyebrow": {
+				"ko": "당신을 위한 작은 여유",
+				"en": "A LITTLE MOMENT FOR YOU",
+				"ja": "あなたに、ひと息のごほうび"
+			},
+			"title": {
+				"ko": "바닐라 크림 라떼",
+				"en": "Vanilla Cream Latte",
+				"ja": "バニラクリームラテ"
+			},
+			"subtitle": {
+				"ko": "깊은 커피, 부드러운 크림.",
+				"en": "Rich coffee. Silky cream.",
+				"ja": "深いコーヒー、なめらかなクリーム。"
+			}
+		}
+	}
 }
