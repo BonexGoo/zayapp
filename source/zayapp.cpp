@@ -726,8 +726,13 @@ ZAY_VIEW_API OnCommand(CommandType type, id_share in, id_cloned_share* out)
                     if(widget->TickOnce())
                         m->invalidate();
                 }, nullptr);
-            if(CurMsec <= m->mUpdateMsec)
+            // 갱신 미션: 만료 시에도 마지막 갱신을 한 번 요청하고 종료
+            if(0 < m->mUpdateMsec)
+            {
+                if(m->mUpdateMsec < CurMsec)
+                    m->mUpdateMsec = 0;
                 m->invalidate(2);
+            }
 
             // 바통진행
             const uint64 BatonBeginMsec = Platform::Utility::CurrentTimeMsec();
@@ -4167,7 +4172,21 @@ id_animate ZayAppData::GetAPng(chars assetname)
 {
     if(!mAPngs.Access(assetname))
     {
-        #if BOSS_ANDROID | BOSS_IPHONE
+        #if BOSS_WASM
+            // 웹어셋을 동기식으로 읽고 첫 프레임까지 준비한 뒤 핸들을 캐싱한다.
+            // 비동기 URL로딩은 그리기 시점에 빈 영역을 노출할 수 있다.
+            auto& NewAnimate = mAPngs(assetname);
+            NewAnimate = nullptr;
+            if(buffer NewAPngData = Asset::ToBuffer(assetname))
+            {
+                NewAnimate = Platform::Animate::OpenForAPngForData((bytes) NewAPngData,
+                    Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
+                Buffer::Free(NewAPngData);
+            }
+            // 실패한 어셋도 기록하여 매 프레임 동기식 다운로드가 반복되지 않게 한다.
+            if(!NewAnimate)
+                BOSS_TRACE("GetAPng(%s) failed - web asset load or decode", assetname);
+        #elif BOSS_ANDROID | BOSS_IPHONE
             buffer NewAPngData = Asset::ToBuffer(assetname);
             if(NewAPngData)
             {
@@ -4175,8 +4194,6 @@ id_animate ZayAppData::GetAPng(chars assetname)
                     Buffer::SizeOf(NewAPngData) * Buffer::CountOf(NewAPngData));
                 Buffer::Free(NewAPngData);
             }
-        #elif BOSS_WASM
-            mAPngs(assetname) = Platform::Animate::OpenForAPngForUrl(assetname);
         #else
             mAPngs(assetname) = Platform::Animate::OpenForAPngForFile(
                 Platform::File::RootForAssets() + assetname);
@@ -4190,11 +4207,16 @@ bool ZayAppData::RenderUC_APng(ZayPanel& panel, chars assetname, double sec)
 {
     if(auto animate = GetAPng(assetname))
     {
-        Platform::Animate::Seek(animate, sec, true);
-        auto Pos = panel.toview(0, 0);
-        Platform::Animate::Draw(animate, Pos.x, Pos.y, panel.w(), panel.h(), 0);
+        if(0 < Platform::Animate::GetFrameCount(animate))
+        {
+            Platform::Animate::Seek(animate, sec, true);
+            auto Pos = panel.toview(0, 0);
+            Platform::Animate::Draw(animate, Pos.x, Pos.y, panel.w(), panel.h(), 0);
+            return true;
+        }
     }
-    return true;
+    // 로딩/디코딩 실패시 user_content의 기존 오류표시를 사용한다.
+    return false;
 }
 
 bool ZayAppData::RenderUC_Graph(ZayPanel& panel, chars graphname)
