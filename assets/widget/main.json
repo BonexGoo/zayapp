@@ -71,6 +71,12 @@
 				"is_new" : 1
 			},
 			{
+				"title" : "Tank",
+				"script" : "tank.zay",
+				"dom" : "tank",
+				"is_new" : 1
+			},
+			{
 				"title" : "NetLog",
 				"script" : "netlog.zay",
 				"dom" : "netlog"
