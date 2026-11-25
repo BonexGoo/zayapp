@@ -99,15 +99,109 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
             }
         }
 
+        // Optional A/B test for the browser's editable Canvas behavior.
+        // Normal launches keep Qt's original contentEditable and event handling.
+        const touchTestParams = new URLSearchParams(location.search);
+        const touchTestNoEdit = touchTestParams.get('touchtest') === 'noedit';
+        const touchDiagEnabled = touchTestParams.get('touchdiag') === '1';
+        const touchTestRoots = new WeakSet();
+        const touchDiagLines = [];
+        let touchDiagPanel = null;
+
+        function describeTouchNode(node) {
+            if (!node || !node.tagName) return '-';
+            return node.tagName.toLowerCase() + (node.id ? '#' + node.id : '')
+                + (node.classList.length ? '.' + Array.from(node.classList).join('.') : '');
+        }
+
+        function installTouchFocusTest(screen) {
+            if (!touchTestNoEdit && !touchDiagEnabled) return;
+            for (const host of screen.querySelectorAll('#qt-shadow-container')) {
+                const root = host.shadowRoot;
+                if (!root || touchTestRoots.has(root)) continue;
+                touchTestRoots.add(root);
+                if (touchTestNoEdit) {
+                    const apply = () => {
+                        for (const canvas of root.querySelectorAll('canvas.qt-window-content')) {
+                            if (canvas.contentEditable !== 'false') {
+                                canvas.contentEditable = 'false';
+                                // Preserve keyboard focusability independently of editability.
+                                if (canvas.tabIndex < 0) canvas.tabIndex = 0;
+                            }
+                        }
+                    };
+                    new MutationObserver(apply).observe(root, {
+                        childList: true, subtree: true, attributes: true,
+                        attributeFilter: ['contenteditable']
+                    });
+                    apply();
+                }
+            }
+        }
+
+        function installTouchDiagnostics(screen) {
+            if (!touchDiagEnabled) return;
+            touchDiagPanel = document.createElement('pre');
+            touchDiagPanel.style.cssText = 'position:fixed;left:0;top:0;max-width:100%;'
+                + 'z-index:2147483647;pointer-events:none;margin:0;padding:4px;'
+                + 'background:rgba(0,0,0,.72);color:#fff;font:10px/1.2 monospace;'
+                + 'white-space:pre-wrap;overflow-wrap:anywhere;';
+            document.body.appendChild(touchDiagPanel);
+            touchDiagPanel.textContent = 'Touch test: ' + (touchTestNoEdit ? 'noedit' : 'original');
+            function activeNode() {
+                let el = document.activeElement;
+                while (el && el.shadowRoot && el.shadowRoot.activeElement) {
+                    el = el.shadowRoot.activeElement;
+                }
+                return el;
+            }
+            function record(e) {
+                const path = e.composedPath();
+                const target = path[0];
+                const inQt = path.includes(screen);
+                if (!inQt && !['focusin', 'focusout'].includes(e.type)) return;
+                const style = target instanceof Element ? getComputedStyle(target) : null;
+                const type = e.type;
+                const pointerId = e.pointerId;
+                const targetName = describeTouchNode(target);
+                const tap = style ? style.webkitTapHighlightColor : '-';
+                const editable = target instanceof HTMLElement ? target.isContentEditable : false;
+                // Read defaultPrevented after Qt's event listeners have run.
+                setTimeout(() => {
+                    const focus = activeNode();
+                    const selection = document.getSelection();
+                    const selected = selection && !selection.isCollapsed ? 'range' : 'none';
+                    const line = type + (pointerId === undefined ? '' : '#' + pointerId)
+                        + ' prevent=' + Number(e.defaultPrevented) + ' target=' + targetName
+                        + ' edit=' + Number(editable) + ' tap=' + tap;
+                    touchDiagLines.push(line);
+                    if (touchDiagLines.length > 5) touchDiagLines.shift();
+                    touchDiagPanel.textContent = 'Touch test: ' + (touchTestNoEdit ? 'noedit' : 'original')
+                        + '\nfocus=' + describeTouchNode(focus) + ' selection=' + selected
+                        + '\n' + touchDiagLines.join('\n');
+                    console.log('[ZayTouch]', line, 'focus=', describeTouchNode(focus), 'selection=', selected);
+                }, 0);
+            }
+            for (const type of ['pointerdown','pointerup','pointercancel','gotpointercapture',
+                                'lostpointercapture','focusin','focusout']) {
+                document.addEventListener(type, record, {capture: true, passive: true});
+            }
+        }
+
         async function init()
         {
             const spinner = document.querySelector('#qtspinner');
             const screen = document.querySelector('#screen');
             const status = document.querySelector('#qtstatus');
 
-            const touchStyleObserver = new MutationObserver(() => installQtTouchStyle(screen));
+            const touchStyleObserver = new MutationObserver(() => {
+                installQtTouchStyle(screen);
+                installTouchFocusTest(screen);
+            });
             touchStyleObserver.observe(screen, { childList: true, subtree: true });
             installQtTouchStyle(screen);
+            installTouchFocusTest(screen);
+            installTouchDiagnostics(screen);
 
             const showUi = (ui) => {
                 [spinner, screen].forEach(element => element.style.display = 'none');
@@ -123,6 +217,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
                     qt: {
                         onLoaded: () => {
                             installQtTouchStyle(screen);
+                            installTouchFocusTest(screen);
                             showUi(screen);
                         },
                         onExit: exitData =>
