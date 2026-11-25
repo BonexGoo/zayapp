@@ -18,6 +18,18 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
     <style>
             /* Make the html body cover the entire (visual) viewport with no scroll bars. */
       html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; background: #000; color: #fff; }
+      /* Keep browser touch gestures and tap feedback out of the Qt surface. */
+      html, body {
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior: none;
+      }
+      #screen {
+        touch-action: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
       /* Prefer dynamic viewport units when available; fallback to 100vh. */
       #screen {
         background: #000;
