@@ -23,6 +23,9 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         -webkit-tap-highlight-color: transparent;
         overscroll-behavior: none;
       }
+      #screen, #screen * {
+        -webkit-tap-highlight-color: transparent !important;
+      }
       #screen {
         touch-action: none;
         -webkit-tap-highlight-color: transparent;
@@ -66,11 +69,45 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
     <div id="screen"></div>
 
     <script type="text/javascript">
+        // Qt 6.8 creates its own open Shadow DOM below the screen container.
+        // Install the touch feedback rules there, before the surface is shown.
+        function installQtTouchStyle(screen)
+        {
+            for (const host of screen.querySelectorAll('#qt-shadow-container')) {
+                const root = host.shadowRoot;
+                if (!root || root.getElementById('zayapp-touch-style')) continue;
+
+                const style = document.createElement('style');
+                style.id = 'zayapp-touch-style';
+                style.textContent = `
+                    :host, .qt-screen, .qt-screen * {
+                        -webkit-tap-highlight-color: transparent !important;
+                    }
+                    .qt-screen, canvas.qt-window-content {
+                        touch-action: none;
+                    }
+                    canvas.qt-window-content {
+                        -webkit-touch-callout: none;
+                        -webkit-user-select: none !important;
+                        user-select: none !important;
+                    }
+                    canvas.qt-window-content::selection {
+                        background: transparent;
+                    }
+                `;
+                root.appendChild(style);
+            }
+        }
+
         async function init()
         {
             const spinner = document.querySelector('#qtspinner');
             const screen = document.querySelector('#screen');
             const status = document.querySelector('#qtstatus');
+
+            const touchStyleObserver = new MutationObserver(() => installQtTouchStyle(screen));
+            touchStyleObserver.observe(screen, { childList: true, subtree: true });
+            installQtTouchStyle(screen);
 
             const showUi = (ui) => {
                 [spinner, screen].forEach(element => element.style.display = 'none');
@@ -84,7 +121,10 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
 
                 const instance = await qtLoad({
                     qt: {
-                        onLoaded: () => showUi(screen),
+                        onLoaded: () => {
+                            installQtTouchStyle(screen);
+                            showUi(screen);
+                        },
                         onExit: exitData =>
                         {
                             status.innerHTML = 'Application exit';
