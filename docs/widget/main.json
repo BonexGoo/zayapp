@@ -21,14 +21,12 @@
 			{
 				"title" : "TCafe",
 				"script" : "tcafe.zay",
-				"dom" : "tcafe",
-				"is_new" : 1
+				"dom" : "tcafe"
 			},
 			{
 				"title" : "QHome",
 				"script" : "qhome.zay",
-				"dom" : "qhome",
-				"is_new" : 1
+				"dom" : "qhome"
 			},
 			{
 				"title" : "HCar",
@@ -58,13 +56,18 @@
 			{
 				"title" : "KErp",
 				"script" : "kerp.zay",
-				"dom" : "kerp",
-				"is_new" : 1
+				"dom" : "kerp"
 			},
 			{
 				"title" : "TGame",
 				"script" : "tgame.zay",
 				"dom" : "tgame"
+			},
+			{
+				"title" : "GRoom",
+				"script" : "groom.zay",
+				"dom" : "groom",
+				"is_new" : 1
 			},
 			{
 				"title" : "NetLog",
