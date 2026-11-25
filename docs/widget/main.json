@@ -61,7 +61,8 @@
 			{
 				"title" : "TGame",
 				"script" : "tgame.zay",
-				"dom" : "tgame"
+				"dom" : "tgame",
+				"is_new" : 1
 			},
 			{
 				"title" : "GRoom",

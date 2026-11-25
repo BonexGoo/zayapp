@@ -2,7 +2,7 @@
 	"name": "GRoom",
 	"title": "GRoom",
 	"app_id": "groom",
-	"version": "1.1.0",
+	"version": "1.1.2",
 	"atlas": [
 		{
 			"path": "groom_ui_v110.png"
@@ -3440,8 +3440,8 @@
 			"cancel": "Cancel",
 			"fit": "Fit room",
 			"help": "Quick guide",
-			"select_hint": "Tap an item to edit. Use Move to reposition.",
-			"place_hint": "Tap the plan to place this item.",
+			"select_hint": "Drag furniture to move it. Tap to edit.",
+			"place_hint": "Drag onto the plan or tap to place.",
 			"move_hint": "Tap a new position on the plan.",
 			"rotate_hint": "Use the arrows to rotate in 45° steps.",
 			"synced_hint": "Plan and 3D overview stay in sync.",
@@ -3484,15 +3484,15 @@
 			"room_area": "Room area",
 			"items_count": "Placed items",
 			"fit_auto": "Auto fit",
-			"tap_move": "Move, then tap the plan.",
+			"tap_move": "Drag furniture onto the plan.",
 			"model_limit": "32 items / space",
 			"on": "On",
 			"off": "Off",
-			"local_note": "GRoom 1.1.0 · ZayApp",
+			"local_note": "GRoom 1.1.1 · ZayApp",
 			"undo_short": "Undo",
 			"redo_short": "Redo",
 			"tutorial_title": "A room, your way.",
-			"tutorial_body": "1  Choose a floor plan.\n2  Pick furniture, then tap the plan.\n3  Tap an item to rotate or move it.\n4  Save your layout."
+			"tutorial_body": "1  Choose a floor plan.\n2  Drag furniture onto the plan.\n3  Drag to move; tap to rotate.\n4  Save your layout."
 		},
 		"ko": {
 			"brand": "GRoom",
@@ -3542,8 +3542,8 @@
 			"cancel": "취소",
 			"fit": "전체보기",
 			"help": "빠른 안내",
-			"select_hint": "가구를 선택한 뒤 이동 버튼으로 위치를 바꾸세요.",
-			"place_hint": "평면도를 눌러 아이템을 배치하세요.",
+			"select_hint": "가구를 드래그해 이동하거나 눌러 편집하세요.",
+			"place_hint": "평면도로 끌어 놓거나 눌러 배치하세요.",
 			"move_hint": "평면도에서 이동할 위치를 누르세요.",
 			"rotate_hint": "회전 아이콘으로 45°씩 돌릴 수 있습니다.",
 			"synced_hint": "평면도와 3D 미니맵이 함께 변경됩니다.",
@@ -3586,15 +3586,15 @@
 			"room_area": "공간 면적",
 			"items_count": "배치한 아이템",
 			"fit_auto": "화면에 맞춤",
-			"tap_move": "이동 버튼을 누른 뒤 위치 선택",
+			"tap_move": "가구를 평면도로 드래그해 배치",
 			"model_limit": "평면도당 최대 32개",
 			"on": "켜짐",
 			"off": "꺼짐",
-			"local_note": "GRoom 1.1.0 · ZayApp",
+			"local_note": "GRoom 1.1.1 · ZayApp",
 			"undo_short": "실행 취소",
 			"redo_short": "다시 실행",
 			"tutorial_title": "원하는 공간, 원하는 배치.",
-			"tutorial_body": "1  평면도를 선택하세요.\n2  가구를 고른 뒤 평면도를 누르세요.\n3  아이템을 눌러 회전하거나 이동하세요.\n4  완성한 배치를 저장하세요."
+			"tutorial_body": "1  평면도를 선택하세요.\n2  가구를 평면도로 끌어 배치하세요.\n3  끌어서 이동하고, 눌러 회전하세요.\n4  완성한 배치를 저장하세요."
 		},
 		"ja": {
 			"brand": "GRoom",
@@ -3644,8 +3644,8 @@
 			"cancel": "キャンセル",
 			"fit": "全体表示",
 			"help": "クイックガイド",
-			"select_hint": "家具を選択し、移動ボタンで位置を変更。",
-			"place_hint": "平面図をタップして配置してください。",
+			"select_hint": "家具をドラッグして移動、タップして編集。",
+			"place_hint": "平面図へドラッグ、またはタップで配置。",
 			"move_hint": "平面図で移動先をタップしてください。",
 			"rotate_hint": "矢印で45°ずつ回転できます。",
 			"synced_hint": "平面図と3Dビューは連動します。",
@@ -3688,15 +3688,15 @@
 			"room_area": "部屋の面積",
 			"items_count": "配置したアイテム",
 			"fit_auto": "画面にフィット",
-			"tap_move": "移動を選び、配置先をタップ",
+			"tap_move": "家具を平面図へドラッグ",
 			"model_limit": "各間取りに32点まで",
 			"on": "オン",
 			"off": "オフ",
-			"local_note": "GRoom 1.1.0 · ZayApp",
+			"local_note": "GRoom 1.1.1 · ZayApp",
 			"undo_short": "元に戻す",
 			"redo_short": "やり直す",
 			"tutorial_title": "思い描いた空間を。",
-			"tutorial_body": "1  間取りを選びます。\n2  家具を選び、平面図をタップ。\n3  アイテムを選んで回転・移動。\n4  完成した配置を保存。"
+			"tutorial_body": "1  間取りを選びます。\n2  家具を平面図へドラッグ。\n3  ドラッグで移動、タップで回転。\n4  完成した配置を保存。"
 		}
 	},
 	"media": {

@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "tgame",
   "version": "1.0.0",
   "app_id": "tgame",
@@ -196,7 +196,15 @@
       "animal_turtle": "Turtle",
       "animal_dog": "Dog",
       "animal_bear": "Bear",
-      "font": "Roboto"
+      "font": "Roboto",
+      "game_card_1": "Animal Race",
+      "game_card_2": "Ladder Draw",
+      "game_card_3": "Picture Quiz",
+      "game_card_4": "Picture Memory",
+      "game_card_5": "Word Riddles",
+      "game_card_6": "This or That",
+      "game_card_7": "Same Answer",
+      "game_card_8": "Picture Story"
     },
     "ko": {
       "app_name": "tgame",
@@ -363,7 +371,15 @@
       "animal_turtle": "거북이",
       "animal_dog": "강아지",
       "animal_bear": "곰",
-      "font": "NanumSquare Bold"
+      "font": "NanumSquare Bold",
+      "game_card_1": "동물 경주",
+      "game_card_2": "사다리타기",
+      "game_card_3": "그림 퀴즈",
+      "game_card_4": "그림 기억력",
+      "game_card_5": "초성 · 넌센스",
+      "game_card_6": "밸런스 카드",
+      "game_card_7": "같은 답 맞히기",
+      "game_card_8": "세 그림 이야기"
     },
     "ja": {
       "app_name": "tgame",
@@ -530,7 +546,15 @@
       "animal_turtle": "かめ",
       "animal_dog": "いぬ",
       "animal_bear": "くま",
-      "font": "Noto Sans CJK JP"
+      "font": "Noto Sans CJK JP",
+      "game_card_1": "どうぶつレース",
+      "game_card_2": "あみだくじ",
+      "game_card_3": "絵クイズ",
+      "game_card_4": "絵おぼえ",
+      "game_card_5": "ことばクイズ",
+      "game_card_6": "どっちを選ぶ？",
+      "game_card_7": "答え合わせ",
+      "game_card_8": "3枚のお話"
     }
   },
   "games": [

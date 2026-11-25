@@ -5735,17 +5735,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -5778,17 +5778,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -5818,12 +5818,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -5837,34 +5837,10 @@
 																	"posy": "13324",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_1'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_1'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61001",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "1200",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_1'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -5885,17 +5861,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -5925,7 +5901,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -6055,17 +6031,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6098,17 +6074,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6138,12 +6114,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -6157,34 +6133,10 @@
 																	"posy": "14776",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_2'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_2'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61002",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "1500",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_2'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -6205,17 +6157,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6245,7 +6197,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -6375,17 +6327,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6418,17 +6370,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6458,12 +6410,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -6477,34 +6429,10 @@
 																	"posy": "16228",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_3'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_3'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61003",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "1800",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_3'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -6525,17 +6453,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6565,7 +6493,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -6695,17 +6623,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6738,17 +6666,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6778,12 +6706,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -6797,34 +6725,10 @@
 																	"posy": "17680",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_4'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_4'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61004",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "2100",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_4'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -6845,17 +6749,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -6885,7 +6789,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -7015,17 +6919,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7058,17 +6962,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7098,12 +7002,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -7117,34 +7021,10 @@
 																	"posy": "19132",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_5'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_5'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61005",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "2400",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_5'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -7165,17 +7045,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7205,7 +7085,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -7335,17 +7215,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7378,17 +7258,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7418,12 +7298,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -7437,34 +7317,10 @@
 																	"posy": "20584",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_6'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_6'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61006",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "2700",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_6'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -7485,17 +7341,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7525,7 +7381,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -7655,17 +7511,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7698,17 +7554,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7738,12 +7594,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -7757,34 +7613,10 @@
 																	"posy": "22036",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_7'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_7'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61007",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "3000",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_7'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -7805,17 +7637,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -7845,7 +7677,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -7975,17 +7807,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 366) / 4) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 366) / 4)) - 234) / 2)) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((tg_ph - 366) / 4)) - ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2))) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8018,17 +7850,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 366) / 4)) < 250)) + ((((((tg_ph - 366) / 4)) - 62) / 2)) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 33 * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8058,12 +7890,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 17 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -8077,34 +7909,10 @@
 																	"posy": "23488",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_8'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_8'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61008",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "3300",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_8'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -8125,17 +7933,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 366) / 4) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 366) / 4) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (28 + ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 366) / 4)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 366) / 4)) < 250)) + (((((((tg_ph - 366) / 4)) - 62) / 2)) + 34) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 366) / 4)) < 250)) + (326 - ((190 [min] (((((tg_ph - 366) / 4)) - 28) * 2)))) * ((((tg_ph - 366) / 4)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8165,7 +7973,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 366) / 4)) < 250)) + 15 * ((((tg_ph - 366) / 4)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -8315,17 +8123,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 354) / 3) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 354) / 3)) - 234) / 2)) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((tg_ph - 354) / 3)) - ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8358,17 +8166,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((((tg_ph - 354) / 3)) - 62) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 33 * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8398,12 +8206,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 17 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -8417,34 +8225,10 @@
 																	"posy": "24990",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_1'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_1'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61009",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "3600",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_1'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -8465,17 +8249,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((((tg_ph - 354) / 3)) - 62) / 2)) + 34) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8505,7 +8289,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 15 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -8635,17 +8419,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 354) / 3) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 354) / 3)) - 234) / 2)) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((tg_ph - 354) / 3)) - ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8678,17 +8462,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((((tg_ph - 354) / 3)) - 62) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 33 * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8718,12 +8502,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 17 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -8737,34 +8521,10 @@
 																	"posy": "26442",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_3'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_3'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61010",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "3900",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_3'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -8785,17 +8545,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((((tg_ph - 354) / 3)) - 62) / 2)) + 34) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8825,7 +8585,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 15 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -8955,17 +8715,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 354) / 3) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 354) / 3)) - 234) / 2)) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((tg_ph - 354) / 3)) - ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -8998,17 +8758,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((((tg_ph - 354) / 3)) - 62) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 33 * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9038,12 +8798,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 17 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -9057,34 +8817,10 @@
 																	"posy": "27894",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_4'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_4'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61011",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "4200",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_4'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -9105,17 +8841,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((((tg_ph - 354) / 3)) - 62) / 2)) + 34) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9145,7 +8881,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 15 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -9275,17 +9011,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 354) / 3) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 354) / 3)) - 234) / 2)) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((tg_ph - 354) / 3)) - ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9318,17 +9054,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((((tg_ph - 354) / 3)) - 62) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 33 * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9358,12 +9094,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 17 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -9377,34 +9113,10 @@
 																	"posy": "29346",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_5'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_5'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61012",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "4500",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_5'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -9425,17 +9137,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((((tg_ph - 354) / 3)) - 62) / 2)) + 34) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9465,7 +9177,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 15 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
@@ -9595,17 +9307,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((12 - 4 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((10) * tg_scale) [divide] 1",
-													"((344 - 144 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((((tg_ph - 354) / 3) - 88 + 64 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((((((((tg_ph - 354) / 3)) - 234) / 2)) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((tg_ph - 354) / 3)) - ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2))) / 2) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((170 * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2))) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((10) * tg_scale) [divide] 1",
-													"((8) * tg_scale) [divide] 1",
-													"((276) * tg_scale) [divide] 1",
-													"((139) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((13) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((132) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9638,17 +9350,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 70) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((38 + 10 * (tg_ph < 1120)) * tg_scale) [divide] 1"
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 181) * (1 - ((((tg_ph - 354) / 3)) < 250)) + ((((((tg_ph - 354) / 3)) - 62) / 2)) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((30 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 33 * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
-													"((148) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((34) * tg_scale) [divide] 1"
+													"((14) * tg_scale) [divide] 1",
+													"((155) * tg_scale) [divide] 1",
+													"((264) * tg_scale) [divide] 1",
+													"((29) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9678,12 +9390,12 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(20 - 2 * (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(22 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 17 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",
 																[
-																	"(22) * 0.075 * tg_scale",
+																	"(21) * 0.075 * tg_scale",
 																	"tg_font"
 																]
 															],
@@ -9697,34 +9409,10 @@
 																	"posy": "30798",
 																	"stable": "0",
 																	"compvalues": [
-																		"if(tg_portrait == 1)",
 																		[
-																			"''",
+																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_card_8'))",
 																			"leftmiddle",
 																			"right"
-																		],
-																		"else",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_8'))",
-																			"leftmiddle",
-																			"right"
-																		]
-																	]
-																},
-																{
-																	"addw": "0",
-																	"compid": "61013",
-																	"compname": "text_box",
-																	"expanded": "1",
-																	"posx": "-1800",
-																	"posy": "4800",
-																	"stable": "0",
-																	"compvalues": [
-																		"if(tg_portrait == 1)",
-																		[
-																			"('' @ ('d.tgame.data.i18n.' + tg_lang + '.game_8'))",
-																			"((5) * tg_scale) [divide] 1",
-																			"leftmiddle"
 																		]
 																	]
 																}
@@ -9745,17 +9433,17 @@
 											"compvalues": [
 												"if(tg_portrait == 1)",
 												[
-													"((16 + 204 * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"(((((tg_ph - 354) / 3) - 31) * (1 - (tg_ph < 1120)) + ((((tg_ph - 354) / 3) - 74) / 2 + 53) * (tg_ph < 1120)) * tg_scale) [divide] 1",
-													"((336 - 200 * (tg_ph < 1120)) * tg_scale) [divide] 1",
+													"((14 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (28 + ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"(((((((((tg_ph - 354) / 3)) - 234) / 2)) + 212) * (1 - ((((tg_ph - 354) / 3)) < 250)) + (((((((tg_ph - 354) / 3)) - 62) / 2)) + 34) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
+													"((340 * (1 - ((((tg_ph - 354) / 3)) < 250)) + (326 - ((190 [min] (((((tg_ph - 354) / 3)) - 28) * 2)))) * ((((tg_ph - 354) / 3)) < 250)) * tg_scale) [divide] 1",
 													"((23) * tg_scale) [divide] 1"
 												],
 												"else",
 												[
-													"((18) * tg_scale) [divide] 1",
+													"((14) * tg_scale) [divide] 1",
 													"((186) * tg_scale) [divide] 1",
-													"((260) * tg_scale) [divide] 1",
-													"((28) * tg_scale) [divide] 1"
+													"((264) * tg_scale) [divide] 1",
+													"((23) * tg_scale) [divide] 1"
 												]
 											],
 											"ui": [
@@ -9785,7 +9473,7 @@
 															"compvalues": [
 																"if(tg_portrait == 1)",
 																[
-																	"(15 - (tg_ph < 1120)) * 0.075 * tg_scale",
+																	"(16 * (1 - ((((tg_ph - 354) / 3)) < 250)) + 15 * ((((tg_ph - 354) / 3)) < 250)) * 0.075 * tg_scale",
 																	"tg_font"
 																],
 																"else",

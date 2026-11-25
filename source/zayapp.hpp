@@ -111,6 +111,7 @@ public:
     bool RenderUC_Picker(ZayPanel& panel, chars domname, sint32 min, sint32 max, sint32 step, sint32 def, sint32 trunc, chars unit, sint32 side, chars imagename);
     bool RenderUC_TouchCircle(ZayPanel& panel, sint32 x, sint32 y, sint32 width, sint32 height, chars domname, bool show, const Points& dots);
     bool RenderUC_ZoomArea(ZayPanel& panel, chars domname);
+    bool RenderUC_DragArea(ZayPanel& panel, chars domname);
 
 private:
     void RegisterRenderingGlues(ZaySon& NewZayson);

@@ -1866,6 +1866,15 @@ void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
                     HasRender = RenderUC_ZoomArea(panel, DomNameD.Offset(2));
             }
         }
+        jump(!Type.Compare("dragarea"))
+        {
+            if(params.ParamCount() == 2)
+            {
+                const String DomNameD = params.Param(1).ToText();
+                if(DomNameD.Left(2) == "d.")
+                    HasRender = RenderUC_DragArea(panel, DomNameD.Offset(2));
+            }
+        }
 
         // 그외 처리
         if(!HasRender)
@@ -4688,6 +4697,49 @@ bool ZayAppData::RenderUC_ZoomArea(ZayPanel& panel, chars domname)
                 ZayWidgetDOM::SetValue(DomName + ".w", String::FromInteger(NewZoomW));
                 ZayWidgetDOM::SetValue(DomName + ".v", String::FromFloat(NewZoomV));
                 v->invalidate();
+            }
+        });
+    return true;
+}
+
+bool ZayAppData::RenderUC_DragArea(ZayPanel& panel, chars domname)
+{
+    const String DomName = domname;
+    ZAY_INNER_UI(panel, 0, "ui_dragarea_" + DomName,
+        ZAY_GESTURE_VNTXY(v, n, t, x, y, this, DomName)
+        {
+            static bool HasDrag;
+            static sint32 PressX, PressY;
+            if(t == GT_Pressed)
+            {
+                HasDrag = false;
+                PressX = x;
+                PressY = y;
+                ZayWidgetDOM::SetValue(DomName + ".state", "'clicked'");
+                ZayWidgetDOM::SetValue(DomName + ".click.x", String::FromInteger(x));
+                ZayWidgetDOM::SetValue(DomName + ".click.y", String::FromInteger(y));
+                v->clearCapture();
+            }
+            else if(t == GT_InDragging || t == GT_OutDragging)
+            {
+                if(HasDrag || 20 < Math::Distance(PressX, PressY, x, y))
+                {
+                    HasDrag = true;
+                    ZayWidgetDOM::SetValue(DomName + ".state", "'dragging'");
+                    ZayWidgetDOM::SetValue(DomName + ".drag.x", String::FromInteger(x));
+                    ZayWidgetDOM::SetValue(DomName + ".drag.y", String::FromInteger(y));
+                    v->invalidate();
+                }
+            }
+            else if(t == GT_InReleased || t == GT_OutReleased || t == GT_CancelReleased)
+            {
+                if(HasDrag)
+                {
+                    HasDrag = false;
+                    if(t == GT_OutReleased)
+                        ZayWidgetDOM::SetValue(DomName + ".state", "'dropped'");
+                    else ZayWidgetDOM::SetValue(DomName + ".state", "'dropcanceled'");
+                }
             }
         });
     return true;
