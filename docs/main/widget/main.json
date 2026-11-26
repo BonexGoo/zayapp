@@ -6,83 +6,16 @@
 	],
 	"fonts" :
 	[
-		{"path" : "font/NanumSquareB.ttf"},
+		{"path" : "main/font/NanumSquareB.ttf"},
 		{
-			"path": "font/Roboto-Regular.ttf"
+			"path": "main/font/Roboto-Regular.ttf"
 		},
 		{
-			"path": "font/NotoSansCJKjp-Regular.otf"
+			"path": "main/font/NotoSansCJKjp-Regular.otf"
 		}
 	],
 	"body" :
 	{
-		"enum" :
-		[
-			{
-				"title" : "TCafe",
-				"script" : "tcafe.zay",
-				"dom" : "tcafe"
-			},
-			{
-				"title" : "QHome",
-				"script" : "qhome.zay",
-				"dom" : "qhome"
-			},
-			{
-				"title" : "HCar",
-				"script" : "hcar.zay",
-				"dom" : "hcar"
-			},
-			{
-				"title" : "MCare",
-				"script" : "mcare.zay",
-				"dom" : "mcare"
-			},
-			{
-				"title" : "Volt",
-				"script" : "volt.zay",
-				"dom" : "volt"
-			},
-			{
-				"title" : "SCube",
-				"script" : "scube.zay",
-				"dom" : "scube"
-			},
-			{
-				"title" : "Robo",
-				"script" : "robo.zay",
-				"dom" : "robo"
-			},
-			{
-				"title" : "KErp",
-				"script" : "kerp.zay",
-				"dom" : "kerp"
-			},
-			{
-				"title" : "TGame",
-				"script" : "tgame.zay",
-				"dom" : "tgame",
-				"is_new" : 1
-			},
-			{
-				"title" : "GRoom",
-				"script" : "groom.zay",
-				"dom" : "groom",
-				"is_new" : 1
-			},
-			{
-				"title" : "Tank",
-				"script" : "tank.zay",
-				"dom" : "tank",
-				"is_new" : 1
-			},
-			{
-				"title" : "NetLog",
-				"script" : "netlog.zay",
-				"dom" : "netlog"
-			}
-		],
-		"focus" : -1,
 		"ui": {
 			"guide_tab": "ZAYPRO",
 			"glue_tab": "GLUE",
@@ -6474,9 +6407,9 @@
 				{
 					"name": "AppId",
 					"comment": {
-						"ko": "main.json의 body.enum에 등록된 dom 값",
-						"en": "A dom ID registered in main.json body.enum",
-						"ja": "main.json の body.enum に登録された dom 値"
+						"ko": "zayapp_deck.json의 list에 등록된 dom 값",
+						"en": "A dom ID registered in zayapp_deck.json list",
+						"ja": "zayapp_deck.json の list に登録された dom 値"
 					},
 					"optional": 0,
 					"enum": [],
@@ -6519,9 +6452,9 @@
 				{
 					"name": "AppId",
 					"comment": {
-						"ko": "main.json의 body.enum에 등록된 dom 값",
-						"en": "A dom ID registered in main.json body.enum",
-						"ja": "main.json の body.enum に登録された dom 値"
+						"ko": "zayapp_deck.json의 list에 등록된 dom 값",
+						"en": "A dom ID registered in zayapp_deck.json list",
+						"ja": "zayapp_deck.json の list に登録された dom 値"
 					},
 					"optional": 0,
 					"enum": [],

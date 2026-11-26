@@ -9,8 +9,8 @@
 			"compid":"2401",
 			"compname":"gate",
 			"expanded":"1",
-			"posx":"89",
-			"posy":"-1690",
+			"posx":"-2000",
+			"posy":"-2400",
 			"ui":
 			[
 				{
@@ -27,12 +27,13 @@
 						"setvalue('d.main_settings_save.sound_volume', d.settings.sound_volume)",
 						"setvalue('d.main_settings_save.app_columns', d.settings.app_columns)",
 						"setvalue('d.main_settings_save.sound_volume_saved', d.settings.sound_volume_saved)",
-						"savejson('widget/main_settings.json', 'd.main_settings_save')"
+						"setvalue('d.main_settings_save.app_url', 'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url')",
+						"savejson('main/widget/main_settings.json', 'd.main_settings_save')"
 					],
 					"compname":"code",
 					"expanded":"1",
-					"posx":"409",
-					"posy":"-1690",
+					"posx":"-1680",
+					"posy":"-2400",
 					"stable":"0"
 				}
 			],
@@ -127,7 +128,7 @@
 									"expanded":"1",
 									"onclick":
 									[
-										"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+										"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 										{
 											"PopupVK":"1"
 										}
@@ -426,7 +427,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"keypad(16777219, '')"
 													],
 													"posx":"-2921",
@@ -525,7 +526,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"keypad(16777220, '')"
 													],
 													"posx":"-2921",
@@ -624,7 +625,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"VKShift":"1 - VKShift"
 														}
@@ -736,7 +737,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"VKNum":"1 - VKNum"
 														},
@@ -847,7 +848,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"ascii(32)"
 													],
 													"posx":"-2921",
@@ -912,7 +913,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														"langturn()",
 														{
 															"VKNum":"0"
@@ -1023,7 +1024,7 @@
 													"expanded":"1",
 													"onclick":
 													[
-														"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+														"playsound('main/sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 														{
 															"PopupVK":"0"
 														},
@@ -1194,12 +1195,6 @@
 					"compid":"856",
 					"compinputs":
 					[
-						"if(MainHomeReady == 0)",
-						"setcomment('d.data.glue_filter', '')",
-						{
-							"MainHomeReady":"1"
-						},
-						"endif",
 						{
 							"mh_scale":"(((pW / 1400) [min] (pH / 900) [min] 1.0) [max] 0.72) [min] (pH / 540)"
 						}
@@ -1449,7 +1444,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+								"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								{
 									"MainHomeTab":"htV"
 								},
@@ -2497,7 +2492,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+								"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"setcomment('d.data.glue_filter', '')",
 								"update(0.15)"
 							],
@@ -3137,7 +3132,7 @@
 							"expanded":"1",
 							"onclick":
 							[
-								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+								"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"setvalue('d.data.glue_browser.focused_index', 0 @ ('d.data.finded_glues.' + pV + '.index'))",
 								{
 									"MainGlueRequestedName":"'' @ ('d.data.finded_glues.' + pV + '.name')"
@@ -10623,7 +10618,7 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"playsound('main/sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 						"setvalue('d.program.settings_popup_open', 0)",
 						"clearcapture()",
 						"update(0.1)"
@@ -10741,7 +10736,7 @@
 											"ms_compact":"pW < 560"
 										},
 										{
-											"ms_can_shortcut":"(((-1 @ 'd.data.body.focus') >= 0) [and] (d.data.body.focus < d.data.body.enum.count)) [and] ((d.program.osname == 'WINDOWS') [or] (d.program.osname == 'WASM'))"
+											"ms_can_shortcut":"(((-1 @ 'd.deck.focus') >= 0) [and] (d.deck.focus < d.deck.list.count)) [and] ((d.program.osname == 'WINDOWS') [or] (d.program.osname == 'WASM')) [and] ((0 @ 'd.program.remote_site') == 0)"
 										},
 										{
 											"ms_content_h":"600 + 32 * ms_compact"
@@ -10968,7 +10963,7 @@
 											"expanded":"1",
 											"onclick":
 											[
-												"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+												"playsound('main/sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 												"setvalue('d.program.settings_popup_open', 0)",
 												"clearcapture()",
 												"update(0.1)"
@@ -11239,7 +11234,7 @@
 											"expanded":"1",
 											"onclick":
 											[
-												"playsound('sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+												"playsound('main/sound/zay_close.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 												"setvalue('d.program.settings_popup_open', 0)",
 												"clearcapture()",
 												"update(0.1)"
@@ -11700,11 +11695,11 @@
 							"onclick":
 							[
 								"if(d.program.osname == 'WASM')",
-								"openstandaloneapp('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'), 'window')",
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+								"openstandaloneapp('' @ ('d.deck.list.' + d.deck.focus + '.dom'), 'window')",
+								"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"elif((0 @ 'd.program.shortcut_result') != 1)",
-								"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
-								"createappshortcut('' @ ('d.data.body.enum.' + d.data.body.focus + '.dom'))",
+								"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+								"createappshortcut('' @ ('d.deck.list.' + d.deck.focus + '.dom'))",
 								"update(0.1)",
 								"endif"
 							],
@@ -12121,7 +12116,7 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"playsound('main/sound/zay_toggle.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 						"setvalue('d.settings.virtual_keypad_disabled', 1 - (0 @ 'd.settings.virtual_keypad_disabled'))",
 						"jumpcall('save_setting', 0)",
 						{
@@ -12638,7 +12633,7 @@
 						"jumpcall('save_setting', 0)",
 						"mutesound(d.settings.sound_volume <= 0)",
 						"update(0.1)",
-						"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
+						"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
 					],
 					"posx":"37416",
 					"posy":"7254",
@@ -12952,7 +12947,7 @@
 						"jumpcall('save_setting', 0)",
 						"mutesound(d.settings.sound_volume <= 0)",
 						"update(0.1)",
-						"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
+						"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))"
 					],
 					"posx":"37416",
 					"posy":"8724",
@@ -13377,7 +13372,7 @@
 									"expanded":"1",
 									"onclick":
 									[
-										"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+										"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 										"setvalue('d.settings.app_columns', mscolsV + 1)",
 										"jumpcall('save_setting', 0)",
 										"movescrollv('main.main_apps', 0)",
@@ -13693,7 +13688,7 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 						"setvalue('d.settings.rendering_type', 'CPU')",
 						"jumpcall('save_setting', 0)",
 						"update(0.1)"
@@ -13825,7 +13820,7 @@
 					"expanded":"1",
 					"onclick":
 					[
-						"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 						"setvalue('d.settings.rendering_type', 'GPU')",
 						"jumpcall('save_setting', 0)",
 						"update(0.1)"
@@ -13943,10 +13938,466 @@
 				}
 			],
 			"uiname":"main_settings_rendering"
+		},
+		{
+			"addw":"0",
+			"compid":"2406",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"1000",
+			"posy":"-3400",
+			"ui":
+			[
+				{
+					"addw":"294",
+					"compid":"2405",
+					"compinputs":
+					[
+						"setvalue('d.program.appurl_ok', 0)",
+						"clearcapture()",
+						"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+						"setappurl()",
+						"update(0.1)"
+					],
+					"compname":"code",
+					"expanded":"1",
+					"posx":"1320",
+					"posy":"-3400",
+					"stable":"0"
+				}
+			],
+			"uiname":"main_browser_submit"
+		},
+		{
+			"addw":"0",
+			"compid":"2408",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"1000",
+			"posy":"-2400",
+			"ui":
+			[
+				{
+					"addw":"108",
+					"compid":"2407",
+					"compinputs":
+					[
+						"if((0 @ 'd.program.settings_popup_open') == 0)",
+						"jumpcall('main_browser_submit', 0)",
+						"endif"
+					],
+					"compname":"code",
+					"expanded":"1",
+					"posx":"1320",
+					"posy":"-2400",
+					"stable":"0"
+				}
+			],
+			"uiname":"editenter_main_browser.url"
+		},
+		{
+			"addw":"0",
+			"compid":"2428",
+			"compname":"gate",
+			"expanded":"1",
+			"posx":"1000",
+			"posy":"-8500",
+			"ui":
+			[
+				{
+					"addw":"0",
+					"comment":"PC browser: current app | URL | navigate",
+					"compid":"2427",
+					"compname":"ltrb",
+					"compvalues":
+					[
+						[
+							"18",
+							"94",
+							"pW-18",
+							"150"
+						]
+					],
+					"expanded":"1",
+					"posx":"1320",
+					"posy":"-8500",
+					"stable":"0",
+					"ui":
+					[
+						{
+							"addw":"0",
+							"compid":"2422",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"0",
+									"0",
+									"pW-70",
+									"56"
+								]
+							],
+							"expanded":"1",
+							"posx":"1640",
+							"posy":"-8500",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"6",
+									"compid":"2421",
+									"compname":"ninepatch",
+									"compvalues":
+									[
+										"ifpressed(main_browser_url)",
+										[
+											"r.main_browser_field_f"
+										],
+										"eliffocused(main_browser_url)",
+										[
+											"r.main_browser_field_h"
+										],
+										"else",
+										[
+											"r.main_browser_field_n"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-8500",
+									"stable":"0"
+								},
+								{
+									"addw":"0",
+									"compid":"2412",
+									"compname":"xywh",
+									"compvalues":
+									[
+										[
+											"10",
+											"9",
+											"38",
+											"38"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-8042",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compname":"if((-1 @ 'd.deck.focus') < 0)",
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-8042"
+										},
+										{
+											"addw":"0",
+											"compid":"2410",
+											"compname":"stretch",
+											"compvalues":
+											[
+												[
+													"r.icon_home",
+													"true",
+													"inner"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7872",
+											"stable":"0"
+										},
+										{
+											"addw":"0",
+											"compname":"else",
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7654"
+										},
+										{
+											"addw":"378",
+											"compid":"2411",
+											"compname":"stretch",
+											"compvalues":
+											[
+												[
+													"'r.icon.' + ('x' @ ('d.deck.list.' + d.deck.focus + '.dom'))",
+													"true",
+													"inner"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7484",
+											"stable":"0"
+										},
+										{
+											"addw":"0",
+											"compname":"endif",
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7266"
+										}
+									]
+								},
+								{
+									"addw":"0",
+									"compid":"2415",
+									"compname":"xywh",
+									"compvalues":
+									[
+										[
+											"58",
+											"11",
+											"1",
+											"34"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-7026",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2414",
+											"compname":"hexcolor",
+											"compvalues":
+											[
+												[
+													"#899DAA"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7026",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2413",
+													"compname":"fill",
+													"expanded":"1",
+													"posx":"2600",
+													"posy":"-7026",
+													"stable":"0"
+												}
+											]
+										}
+									]
+								},
+								{
+									"addw":"0",
+									"compid":"2420",
+									"compname":"xywh",
+									"compvalues":
+									[
+										[
+											"70",
+											"5",
+											"pW-82",
+											"46"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-6716",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"0",
+											"compid":"2419",
+											"compname":"hexcolor",
+											"compvalues":
+											[
+												[
+													"#132B3D"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-6716",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2418",
+													"compname":"font",
+													"compvalues":
+													[
+														[
+															"1.85",
+															"MainUIFont"
+														]
+													],
+													"expanded":"1",
+													"posx":"2600",
+													"posy":"-6716",
+													"stable":"0",
+													"ui":
+													[
+														{
+															"addw":"276",
+															"compid":"2416",
+															"compname":"edit_box",
+															"compvalues":
+															[
+																[
+																	"'main_browser_url'",
+																	"'main_browser.url'",
+																	"0",
+																	"true",
+																	"false",
+																	"true"
+																]
+															],
+															"expanded":"1",
+															"insiders":
+															[
+																{
+																	"ballposx":"74",
+																	"ballposy":"21",
+																	"name":"default",
+																	"ui":
+																	[
+																		{
+																			"addw":"6",
+																			"compid":"2417",
+																			"compname":"text",
+																			"compvalues":
+																			[
+																				[
+																					"''",
+																					"leftmiddle",
+																					"right"
+																				]
+																			],
+																			"expanded":"1",
+																			"posx":"3516",
+																			"posy":"-6716",
+																			"stable":"0"
+																		}
+																	]
+																}
+															],
+															"posx":"2920",
+															"posy":"-6716",
+															"stable":"0"
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"addw":"0",
+							"compid":"2426",
+							"compname":"xywh",
+							"compvalues":
+							[
+								[
+									"pW-62",
+									"0",
+									"62",
+									"56"
+								]
+							],
+							"expanded":"1",
+							"onclick":
+							[
+								"jumpcall('main_browser_submit', 0)"
+							],
+							"posx":"1640",
+							"posy":"-6148",
+							"stable":"0",
+							"ui":
+							[
+								{
+									"addw":"0",
+									"compid":"2423",
+									"compname":"ninepatch",
+									"compvalues":
+									[
+										"ifpressed(main_browser_go)",
+										[
+											"r.main_browser_go_p"
+										],
+										"eliffocused(main_browser_go)",
+										[
+											"r.main_browser_go_h"
+										],
+										"else",
+										[
+											"r.main_browser_go_n"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-6148",
+									"stable":"0"
+								},
+								{
+									"addw":"0",
+									"compid":"2425",
+									"compname":"xywh",
+									"compvalues":
+									[
+										[
+											"12",
+											"11",
+											"38",
+											"34"
+										]
+									],
+									"expanded":"1",
+									"posx":"1960",
+									"posy":"-5690",
+									"stable":"0",
+									"ui":
+									[
+										{
+											"addw":"78",
+											"compid":"2424",
+											"compname":"stretch",
+											"compvalues":
+											[
+												[
+													"r.main_browser_arrow",
+													"true",
+													"inner"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-5690",
+											"stable":"0"
+										}
+									]
+								}
+							],
+							"uiname":"main_browser_go"
+						}
+					]
+				}
+			],
+			"uiname":"main_browser_bar"
 		}
 	],
 	"oncreate":
 	[
+		"initappdeck()",
+		"setcomment('d.main_browser.url', 'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url')",
+		"setcomment('d.data.glue_filter', '')",
 		{
 			"MainRenderingType":"''"
 		},
@@ -13981,7 +14432,7 @@
 			"MainHomeTab":"0"
 		},
 		{
-			"MainHomeReady":"0"
+			"MainHomeReady":"1"
 		},
 		{
 			"MainGlueLastFilter":"'__initial__'"
@@ -14019,8 +14470,8 @@
 	],
 	"posx":"-832",
 	"posy":"-591",
-	"savecount":"236",
-	"savetime":"2026-11-18/00:16:25",
+	"savecount":"244",
+	"savetime":"2026-11-26/12:10:56",
 	"ui":
 	[
 		{
@@ -14116,6 +14567,15 @@
 									"compinputs":
 									[
 										{
+											"main_is_wasm":"('' @ 'd.program.osname') == 'WASM'"
+										},
+										{
+											"main_show_wordmark":"pW >= 720"
+										},
+										{
+											"main_header_h":"110 + 50 * (main_is_wasm == 0)"
+										},
+										{
 											"main_requested_cols":"(((2 @ 'd.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
 										},
 										{
@@ -14140,7 +14600,7 @@
 									[
 										{
 											"addw":"107",
-											"compname":"if((-1 @ 'd.data.body.focus') == -1)",
+											"compname":"if((-1 @ 'd.deck.focus') == -1)",
 											"expanded":"1",
 											"posx":"2159",
 											"posy":"-591"
@@ -14182,7 +14642,7 @@
 											[
 												[
 													"main_dock_w",
-													"110",
+													"main_header_h",
 													"pW - 4",
 													"pH - 4"
 												]
@@ -14219,8 +14679,8 @@
 											[
 												[
 													"'subwidget'",
-													"'x'@'d.data.body.enum.'+ d.data.body.focus +'.script'",
-													"'x'@'d.data.body.enum.'+ d.data.body.focus +'.dom'"
+													"'x'@'d.deck.list.'+ d.deck.focus +'.script'",
+													"'x'@'d.deck.list.'+ d.deck.focus +'.dom'"
 												]
 											],
 											"expanded":"1",
@@ -14271,7 +14731,7 @@
 											"compname":"inner",
 											"compvalues":
 											[
-												"if((-1 @'d.data.body.focus') != -1)",
+												"if((-1 @'d.deck.focus') != -1)",
 												[
 													"0"
 												]
@@ -14329,15 +14789,6 @@
 											[
 												{
 													"lefttop":"1 - PopupDockAni [pow] 2.5"
-												},
-												{
-													"osscale":"100 @'d.program.osscale'"
-												},
-												{
-													"framesec":"1000 [divide] (1000 @'d.program.time.render')"
-												},
-												{
-													"main_is_wasm":"('' @'d.program.osname') == 'WASM'"
 												}
 											],
 											"compname":"code",
@@ -14355,7 +14806,7 @@
 													[
 														[
 															"(lefttop * (0-main_dock_w-2) + 0.5) [divide] 1",
-															"(lefttop * -110 + 0.5) [divide] 1",
+															"(lefttop * (0-main_header_h) + 0.5) [divide] 1",
 															"pW",
 															"pH"
 														]
@@ -14376,7 +14827,7 @@
 																	"0",
 																	"0",
 																	"main_dock_w",
-																	"110"
+																	"main_header_h"
 																]
 															],
 															"expanded":"1",
@@ -14408,9 +14859,9 @@
 																	[
 																		[
 																			"5",
-																			"5",
+																			"3",
 																			"123",
-																			"115"
+																			"94"
 																		]
 																	],
 																	"expanded":"1",
@@ -14426,7 +14877,7 @@
 																			"compvalues":
 																			[
 																				[
-																					"0.5"
+																					"0.42"
 																				]
 																			],
 																			"expanded":"1",
@@ -14467,7 +14918,7 @@
 																	"118 + 32",
 																	"0",
 																	"pW",
-																	"109"
+																	"main_header_h - 1"
 																]
 															],
 															"expanded":"1",
@@ -14518,7 +14969,19 @@
 																	"compinputs":
 																	[
 																		{
-																			"mini_title_mode":"pW < 1150"
+																			"mini_title_mode":"pW < 900"
+																		},
+																		{
+																			"main_title_lang_right":"pW - (16 + (main_is_wasm == 0) * (155 + 83 * (mini_title_mode == 0)))"
+																		},
+																		{
+																			"main_title_lang_width":"(312 - 96 * mini_title_mode) [min] ((main_title_lang_right - 4) [max] 0)"
+																		},
+																		{
+																			"main_title_lang_left":"main_title_lang_right - main_title_lang_width"
+																		},
+																		{
+																			"main_title_lang_step":"main_title_lang_width / 3"
 																		}
 																	],
 																	"compname":"code",
@@ -14534,15 +14997,10 @@
 																			"compname":"move",
 																			"compvalues":
 																			[
-																				"if(main_is_wasm == 0 [and] mini_title_mode)",
+																				"if(main_is_wasm == 0)",
 																				[
 																					"0",
 																					"-10"
-																				],
-																				"elif(main_is_wasm == 0)",
-																				[
-																					"0",
-																					"0"
 																				]
 																			],
 																			"expanded":"1",
@@ -14552,62 +15010,19 @@
 																			"ui":
 																			[
 																				{
-																					"addw":"0",
-																					"compid":"732",
-																					"compname":"ltrb",
-																					"compvalues":
-																					[
-																						[
-																							"pW-255",
-																							"31",
-																							"pW-254",
-																							"80"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4768",
-																					"posy":"1701",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"733",
-																							"compname":"color",
-																							"compvalues":
-																							[
-																								[
-																									"99",
-																									"115",
-																									"132",
-																									"190"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"5088",
-																							"posy":"1701",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"734",
-																									"compname":"fill",
-																									"expanded":"1",
-																									"posx":"5408",
-																									"posy":"1701",
-																									"stable":"0"
-																								}
-																							]
-																						}
-																					]
-																				},
-																				{
 																					"addw":"39",
 																					"compid":"711",
 																					"compname":"ltrb",
 																					"compvalues":
 																					[
+																						"if(mini_title_mode)",
+																						[
+																							"pW-155",
+																							"19",
+																							"pW-108",
+																							"87"
+																						],
+																						"else",
 																						[
 																							"pW-258+20",
 																							"19",
@@ -14621,7 +15036,7 @@
 																						"minimize()"
 																					],
 																					"posx":"4768",
-																					"posy":"1917",
+																					"posy":"1701",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -14637,7 +15052,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5127",
-																							"posy":"1917",
+																							"posy":"1701",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -14665,7 +15080,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"5447",
-																									"posy":"1917",
+																									"posy":"1701",
 																									"stable":"0"
 																								}
 																							]
@@ -14679,6 +15094,14 @@
 																					"compname":"ltrb",
 																					"compvalues":
 																					[
+																						"if(mini_title_mode)",
+																						[
+																							"pW-105",
+																							"19",
+																							"pW-58",
+																							"87"
+																						],
+																						"else",
 																						[
 																							"pW-190+20",
 																							"19",
@@ -14692,7 +15115,7 @@
 																						"maximize()"
 																					],
 																					"posx":"4768",
-																					"posy":"2220",
+																					"posy":"2013",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -14708,7 +15131,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5124",
-																							"posy":"2220",
+																							"posy":"2013",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -14736,7 +15159,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"5444",
-																									"posy":"2220",
+																									"posy":"2013",
 																									"stable":"0"
 																								}
 																							]
@@ -14750,6 +15173,14 @@
 																					"compname":"ltrb",
 																					"compvalues":
 																					[
+																						"if(mini_title_mode)",
+																						[
+																							"pW-55",
+																							"19",
+																							"pW-8",
+																							"87"
+																						],
+																						"else",
 																						[
 																							"pW-123+20",
 																							"19",
@@ -14763,7 +15194,7 @@
 																						"exit()"
 																					],
 																					"posx":"4768",
-																					"posy":"2523",
+																					"posy":"2325",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -14779,7 +15210,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5119",
-																							"posy":"2523",
+																							"posy":"2325",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -14807,7 +15238,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"5439",
-																									"posy":"2523",
+																									"posy":"2325",
 																									"stable":"0"
 																								}
 																							]
@@ -14819,188 +15250,28 @@
 																		},
 																		{
 																			"addw":"0",
-																			"compid":"720",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				[
-																					"34",
-																					"16",
-																					"330",
-																					"64"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"4324",
-																			"posy":"2826",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"721",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						[
-																							"240",
-																							"244",
-																							"250",
-																							"255"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4644",
-																					"posy":"2826",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"722",
-																							"compname":"font",
-																							"compvalues":
-																							[
-																								[
-																									"3.00",
-																									"MainUIFont"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4964",
-																							"posy":"2826",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"0",
-																									"compid":"723",
-																									"compname":"text",
-																									"compvalues":
-																									[
-																										[
-																											"'ZAYAPP'",
-																											"leftmiddle"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"5284",
-																									"posy":"2826",
-																									"stable":"0"
-																								}
-																							]
-																						}
-																					]
-																				}
-																			]
-																		},
-																		{
-																			"addw":"0",
-																			"compid":"724",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				[
-																					"34",
-																					"65",
-																					"350",
-																					"91"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"4324",
-																			"posy":"3042",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"725",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						[
-																							"177",
-																							"193",
-																							"210",
-																							"255"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4644",
-																					"posy":"3042",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"726",
-																							"compname":"font",
-																							"compvalues":
-																							[
-																								[
-																									"1.45",
-																									"MainUIFont"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"4964",
-																							"posy":"3042",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"325",
-																									"compid":"727",
-																									"compname":"text",
-																									"compvalues":
-																									[
-																										"if((-1 @'d.data.body.focus') != -1)",
-																										[
-																											"'['+ ('-'@'d.data.body.enum.'+ d.data.body.focus +'.script') +']'",
-																											"leftmiddle"
-																										],
-																										"else",
-																										[
-																											"'[' + ('' @ (MainUI + '.home')) + ']'",
-																											"leftmiddle"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"5284",
-																									"posy":"3042",
-																									"stable":"0"
-																								}
-																							]
-																						}
-																					]
-																				}
-																			]
-																		},
-																		{
-																			"addw":"0",
 																			"compid":"2361",
 																			"compname":"ltrb",
 																			"compvalues":
 																			[
 																				"if(mini_title_mode)",
 																				[
-																					"(pW - 220) [divide] 1",
-																					"75",
-																					"(pW - 8) [divide] 1",
-																					"102"
+																					"main_title_lang_left",
+																					"20",
+																					"main_title_lang_right",
+																					"55"
 																				],
 																				"else",
 																				[
-																					"320",
+																					"main_title_lang_left",
 																					"20",
-																					"632",
+																					"main_title_lang_right",
 																					"64"
 																				]
 																			],
 																			"expanded":"1",
-																			"posx":"7800",
-																			"posy":"3190",
+																			"posx":"4324",
+																			"posy":"2637",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15015,8 +15286,8 @@
 																						]
 																					],
 																					"expanded":"1",
-																					"posx":"8700",
-																					"posy":"3190",
+																					"posx":"4644",
+																					"posy":"2637",
 																					"stable":"0"
 																				}
 																			]
@@ -15027,7 +15298,7 @@
 																			"compname":"loop",
 																			"expanded":"1",
 																			"posx":"4324",
-																			"posy":"3297",
+																			"posy":"2925",
 																			"ui":
 																			[
 																				{
@@ -15042,7 +15313,7 @@
 																					"compname":"code",
 																					"expanded":"1",
 																					"posx":"4644",
-																					"posy":"3297",
+																					"posy":"2925",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15054,23 +15325,23 @@
 																							[
 																								"if(mini_title_mode)",
 																								[
-																									"(pW - 390 + 170 + 72 * mslangV) [divide] 1",
-																									"78 - 3",
-																									"(pW - 322 + 170 + 72 * mslangV) [divide] 1",
-																									"105 - 3"
+																									"(main_title_lang_left + main_title_lang_step * mslangV + 2) [divide] 1",
+																									"20",
+																									"(main_title_lang_left + main_title_lang_step * (mslangV + 1) - 2) [divide] 1",
+																									"55"
 																								],
 																								"else",
 																								[
-																									"(320 + 106 * mslangV) [divide] 1",
+																									"(main_title_lang_left + main_title_lang_step * mslangV + 3) [divide] 1",
 																									"20",
-																									"(420 + 106 * mslangV) [divide] 1",
+																									"(main_title_lang_left + main_title_lang_step * (mslangV + 1) - 3) [divide] 1",
 																									"64"
 																								]
 																							],
 																							"expanded":"1",
 																							"onclick":
 																							[
-																								"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+																								"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																								"setvalue('d.settings.language', ms_lang_code)",
 																								{
 																									"MainLastLanguage":"ms_lang_code"
@@ -15079,7 +15350,7 @@
 																								"update(0.1)"
 																							],
 																							"posx":"5438",
-																							"posy":"3297",
+																							"posy":"2925",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -15108,7 +15379,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"6324",
-																									"posy":"3297",
+																									"posy":"2925",
 																									"stable":"0"
 																								},
 																								{
@@ -15132,7 +15403,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"6324",
-																									"posy":"3648",
+																									"posy":"3276",
 																									"stable":"0",
 																									"ui":
 																									[
@@ -15165,7 +15436,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6644",
-																											"posy":"3648",
+																											"posy":"3276",
 																											"stable":"0"
 																										}
 																									]
@@ -15178,107 +15449,85 @@
 																			],
 																			"uiloop":"0 @ (MainSettings + '.language_choices.count')",
 																			"uiname":"mslang"
-																		},
-																		{
-																			"addw":"323",
-																			"compid":"728",
-																			"compname":"ltrb",
-																			"compvalues":
-																			[
-																				"if(mini_title_mode)",
-																				[
-																					"(pW - 270 - 220) [divide] 1",
-																					"78 - 3",
-																					"(pW - 18 - 220) [divide] 1",
-																					"104 - 3"
-																				],
-																				"else",
-																				[
-																					"(pW - 550) [divide] 1",
-																					"29",
-																					"(pW - 284) [divide] 1",
-																					"83"
-																				]
-																			],
-																			"expanded":"1",
-																			"posx":"4324",
-																			"posy":"3864",
-																			"stable":"0",
-																			"ui":
-																			[
-																				{
-																					"addw":"0",
-																					"compid":"729",
-																					"compname":"color",
-																					"compvalues":
-																					[
-																						[
-																							"38",
-																							"223",
-																							"244",
-																							"255"
-																						]
-																					],
-																					"expanded":"1",
-																					"posx":"4967",
-																					"posy":"3864",
-																					"stable":"0",
-																					"ui":
-																					[
-																						{
-																							"addw":"0",
-																							"compid":"730",
-																							"compname":"font",
-																							"compvalues":
-																							[
-																								"if(pW < 1150)",
-																								[
-																									"1.45",
-																									"MainUIFont"
-																								],
-																								"else",
-																								[
-																									"1.75",
-																									"MainUIFont"
-																								]
-																							],
-																							"expanded":"1",
-																							"posx":"5287",
-																							"posy":"3864",
-																							"stable":"0",
-																							"ui":
-																							[
-																								{
-																									"addw":"216",
-																									"compid":"731",
-																									"compname":"text",
-																									"compvalues":
-																									[
-																										"if(osscale < 200)",
-																										[
-																											"framesec +'F / '+ osscale +'%'",
-																											"rightmiddle"
-																										],
-																										"else",
-																										[
-																											"framesec +'F / '+ osscale +'% (Zoom_50%)'",
-																											"rightmiddle"
-																										]
-																									],
-																									"expanded":"1",
-																									"posx":"5607",
-																									"posy":"3864",
-																									"stable":"0"
-																								}
-																							]
-																						}
-																					]
-																				}
-																			]
 																		}
 																	]
 																}
 															]
+														},
+														{
+															"addw":"0",
+															"compid":"720",
+															"compname":"ltrb",
+															"compvalues":
+															[
+																[
+																	"110",
+																	"18",
+																	"335",
+																	"79"
+																]
+															],
+															"expanded":"1",
+															"posx":"3562",
+															"posy":"3627",
+															"stable":"0",
+															"ui":
+															[
+																{
+																	"addw":"0",
+																	"compname":"if(main_show_wordmark)",
+																	"expanded":"1",
+																	"posx":"3882",
+																	"posy":"3627"
+																},
+																{
+																	"addw":"96",
+																	"compid":"2409",
+																	"compname":"stretch",
+																	"compvalues":
+																	[
+																		[
+																			"r.main_browser_wordmark",
+																			"true",
+																			"inner"
+																		]
+																	],
+																	"expanded":"1",
+																	"posx":"3882",
+																	"posy":"3753",
+																	"stable":"0"
+																},
+																{
+																	"addw":"0",
+																	"compname":"endif",
+																	"expanded":"1",
+																	"posx":"3882",
+																	"posy":"3936"
+																}
+															]
+														},
+														{
+															"addw":"0",
+															"compname":"if(main_is_wasm == 0)",
+															"expanded":"1",
+															"posx":"3562",
+															"posy":"4026"
+														},
+														{
+															"addw":"0",
+															"compid":"2429",
+															"compname":"jump",
+															"expanded":"1",
+															"posx":"3562",
+															"posy":"4152",
+															"uiname":"main_browser_bar"
+														},
+														{
+															"addw":"0",
+															"compname":"endif",
+															"expanded":"1",
+															"posx":"3562",
+															"posy":"4278"
 														},
 														{
 															"addw":"43",
@@ -15288,14 +15537,14 @@
 															[
 																[
 																	"0",
-																	"110 + 28",
+																	"main_header_h + 28",
 																	"main_dock_w-3",
 																	"pH"
 																]
 															],
 															"expanded":"1",
 															"posx":"3562",
-															"posy":"4152",
+															"posy":"4368",
 															"stable":"0",
 															"ui":
 															[
@@ -15311,7 +15560,7 @@
 																	],
 																	"expanded":"1",
 																	"posx":"3925",
-																	"posy":"4152",
+																	"posy":"4368",
 																	"stable":"0"
 																},
 																{
@@ -15330,20 +15579,20 @@
 																	"expanded":"1",
 																	"onclick":
 																	[
-																		"playsound('sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
-																		"setvalue('d.data.body.focus', -1)"
+																		"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+																		"setvalue('d.deck.focus', -1)"
 																	],
 																	"posx":"3925",
-																	"posy":"4335",
+																	"posy":"4551",
 																	"stable":"0",
 																	"ui":
 																	[
 																		{
 																			"addw":"159",
-																			"compname":"if((-1 @ 'd.data.body.focus') == -1)",
+																			"compname":"if((-1 @ 'd.deck.focus') == -1)",
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"4335"
+																			"posy":"4551"
 																		},
 																		{
 																			"addw":"0",
@@ -15366,7 +15615,7 @@
 																			],
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"4461",
+																			"posy":"4677",
 																			"stable":"0"
 																		},
 																		{
@@ -15374,7 +15623,7 @@
 																			"compname":"else",
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"4764"
+																			"posy":"4980"
 																		},
 																		{
 																			"addw":"94",
@@ -15397,7 +15646,7 @@
 																			],
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"4854",
+																			"posy":"5070",
 																			"stable":"0"
 																		},
 																		{
@@ -15405,7 +15654,7 @@
 																			"compname":"endif",
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"5157"
+																			"posy":"5373"
 																		},
 																		{
 																			"addw":"0",
@@ -15422,7 +15671,7 @@
 																			],
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"5247",
+																			"posy":"5463",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15438,7 +15687,7 @@
 																					],
 																					"expanded":"1",
 																					"posx":"5120",
-																					"posy":"5247",
+																					"posy":"5463",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15455,7 +15704,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5440",
-																							"posy":"5247",
+																							"posy":"5463",
 																							"stable":"0"
 																						}
 																					]
@@ -15477,7 +15726,7 @@
 																			],
 																			"expanded":"1",
 																			"posx":"4800",
-																			"posy":"5463",
+																			"posy":"5679",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15494,7 +15743,7 @@
 																							"245",
 																							"255"
 																						],
-																						"elif((-1 @ 'd.data.body.focus') == -1)",
+																						"elif((-1 @ 'd.deck.focus') == -1)",
 																						[
 																							"229",
 																							"250",
@@ -15518,7 +15767,7 @@
 																					],
 																					"expanded":"1",
 																					"posx":"5120",
-																					"posy":"5463",
+																					"posy":"5679",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15535,7 +15784,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5440",
-																							"posy":"5463",
+																							"posy":"5679",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -15553,7 +15802,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"5760",
-																									"posy":"5463",
+																									"posy":"5679",
 																									"stable":"0"
 																								}
 																							]
@@ -15572,7 +15821,7 @@
 																	"compinputs":
 																	[
 																		{
-																			"main_apps_count":"(0 @ 'd.data.body.enum.count') [max] 0"
+																			"main_apps_count":"(0 @ 'd.deck.list.count') [max] 0"
 																		},
 																		{
 																			"main_apps_rows":"(main_apps_count + main_dock_cols - 1 - ((main_apps_count + main_dock_cols - 1) % main_dock_cols)) / main_dock_cols"
@@ -15593,7 +15842,7 @@
 																	"compname":"code",
 																	"expanded":"1",
 																	"posx":"3925",
-																	"posy":"5814",
+																	"posy":"6030",
 																	"stable":"0",
 																	"ui":
 																	[
@@ -15612,7 +15861,7 @@
 																			],
 																			"expanded":"1",
 																			"posx":"5017",
-																			"posy":"5814",
+																			"posy":"6030",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -15637,7 +15886,7 @@
 																					],
 																					"expanded":"1",
 																					"posx":"5613",
-																					"posy":"5814",
+																					"posy":"6030",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15656,7 +15905,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5933",
-																							"posy":"5814",
+																							"posy":"6030",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -15666,7 +15915,7 @@
 																									"compname":"fill",
 																									"expanded":"1",
 																									"posx":"6253",
-																									"posy":"5814",
+																									"posy":"6030",
 																									"stable":"0"
 																								}
 																							]
@@ -15686,7 +15935,7 @@
 																					],
 																					"expanded":"1",
 																					"posx":"5613",
-																					"posy":"6054",
+																					"posy":"6270",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -15724,7 +15973,7 @@
 																											"compname":"if(main_apps_view_height < main_apps_height)",
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6054"
+																											"posy":"6270"
 																										},
 																										{
 																											"addw":"0",
@@ -15738,7 +15987,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6180",
+																											"posy":"6396",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -15754,7 +16003,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"6907",
-																													"posy":"6180",
+																													"posy":"6396",
 																													"stable":"0"
 																												}
 																											]
@@ -15764,7 +16013,7 @@
 																											"compname":"endif",
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6396"
+																											"posy":"6612"
 																										}
 																									]
 																								},
@@ -15779,7 +16028,7 @@
 																											"compname":"if(main_apps_view_height < main_apps_height)",
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6486"
+																											"posy":"6702"
 																										},
 																										{
 																											"addw":"0",
@@ -15793,7 +16042,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6612",
+																											"posy":"6828",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -15818,7 +16067,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"6907",
-																													"posy":"6612",
+																													"posy":"6828",
 																													"stable":"0"
 																												}
 																											]
@@ -15828,7 +16077,7 @@
 																											"compname":"endif",
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"6915"
+																											"posy":"7131"
 																										}
 																									]
 																								},
@@ -15853,7 +16102,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6587",
-																											"posy":"7005",
+																											"posy":"7221",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -15872,7 +16121,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"6907",
-																													"posy":"7005",
+																													"posy":"7221",
 																													"stable":"0",
 																													"ui":
 																													[
@@ -15882,7 +16131,7 @@
 																															"compname":"fill",
 																															"expanded":"1",
 																															"posx":"7227",
-																															"posy":"7005",
+																															"posy":"7221",
 																															"stable":"0"
 																														}
 																													]
@@ -15906,24 +16155,24 @@
 																											"expanded":"1",
 																											"onclick":
 																											[
-																												"playsound('sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
-																												"setvalue('d.data.body.focus', pV)",
+																												"playsound('main/sound/zay_select.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+																												"setvalue('d.deck.focus', pV)",
 																												{
 																													"PopupDockAni":"PopupDockAni ~ 0 : 0.3"
 																												},
 																												"update(0.3)"
 																											],
 																											"posx":"6587",
-																											"posy":"7221",
+																											"posy":"7437",
 																											"stable":"0",
 																											"ui":
 																											[
 																												{
 																													"addw":"166",
-																													"compname":"if((-1 @ 'd.data.body.focus') == pV)",
+																													"compname":"if((-1 @ 'd.deck.focus') == pV)",
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"7221"
+																													"posy":"7437"
 																												},
 																												{
 																													"addw":"98",
@@ -15946,7 +16195,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"7347",
+																													"posy":"7563",
 																													"stable":"0"
 																												},
 																												{
@@ -15954,7 +16203,7 @@
 																													"compname":"else",
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"7650"
+																													"posy":"7866"
 																												},
 																												{
 																													"addw":"107",
@@ -15977,7 +16226,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"7740",
+																													"posy":"7956",
 																													"stable":"0"
 																												},
 																												{
@@ -15985,7 +16234,7 @@
 																													"compname":"endif",
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"8043"
+																													"posy":"8259"
 																												},
 																												{
 																													"addw":"256",
@@ -15993,16 +16242,16 @@
 																													"compinputs":
 																													[
 																														{
-																															"domname":"'x'@'d.data.body.enum.'+ pV +'.dom'"
+																															"domname":"'x'@'d.deck.list.'+ pV +'.dom'"
 																														},
 																														{
-																															"titlename":"'-'@'d.data.body.enum.'+ pV +'.title'"
+																															"titlename":"'-'@'d.deck.list.'+ pV +'.title'"
 																														}
 																													],
 																													"compname":"code",
 																													"expanded":"1",
 																													"posx":"7475",
-																													"posy":"8133",
+																													"posy":"8349",
 																													"stable":"0",
 																													"ui":
 																													[
@@ -16021,7 +16270,7 @@
 																															],
 																															"expanded":"1",
 																															"posx":"8051",
-																															"posy":"8133",
+																															"posy":"8349",
 																															"stable":"0",
 																															"ui":
 																															[
@@ -16037,7 +16286,7 @@
 																																	],
 																																	"expanded":"1",
 																																	"posx":"8371",
-																																	"posy":"8133",
+																																	"posy":"8349",
 																																	"stable":"0",
 																																	"ui":
 																																	[
@@ -16054,7 +16303,7 @@
 																																			],
 																																			"expanded":"1",
 																																			"posx":"8691",
-																																			"posy":"8133",
+																																			"posy":"8349",
 																																			"stable":"0"
 																																		}
 																																	]
@@ -16076,7 +16325,7 @@
 																															],
 																															"expanded":"1",
 																															"posx":"8051",
-																															"posy":"8349",
+																															"posy":"8565",
 																															"stable":"0",
 																															"ui":
 																															[
@@ -16093,7 +16342,7 @@
 																																			"245",
 																																			"255"
 																																		],
-																																		"elif((-1 @'d.data.body.focus') == pV)",
+																																		"elif((-1 @'d.deck.focus') == pV)",
 																																		[
 																																			"229",
 																																			"250",
@@ -16117,7 +16366,7 @@
 																																	],
 																																	"expanded":"1",
 																																	"posx":"8371",
-																																	"posy":"8349",
+																																	"posy":"8565",
 																																	"stable":"0",
 																																	"ui":
 																																	[
@@ -16134,7 +16383,7 @@
 																																			],
 																																			"expanded":"1",
 																																			"posx":"8866",
-																																			"posy":"8349",
+																																			"posy":"8565",
 																																			"stable":"0",
 																																			"ui":
 																																			[
@@ -16151,7 +16400,7 @@
 																																					],
 																																					"expanded":"1",
 																																					"posx":"9186",
-																																					"posy":"8349",
+																																					"posy":"8565",
 																																					"stable":"0"
 																																				}
 																																			]
@@ -16166,7 +16415,7 @@
 																															"compname":"xywh",
 																															"compvalues":
 																															[
-																																"if(0 @ ('d.data.body.enum.' + pV + '.is_new'))",
+																																"if(0 @ ('d.deck.list.' + pV + '.is_new'))",
 																																[
 																																	"pW-46",
 																																	"5",
@@ -16176,7 +16425,7 @@
 																															],
 																															"expanded":"1",
 																															"posx":"8051",
-																															"posy":"9021",
+																															"posy":"8916",
 																															"stable":"0",
 																															"ui":
 																															[
@@ -16193,7 +16442,7 @@
 																																	],
 																																	"expanded":"1",
 																																	"posx":"8531",
-																																	"posy":"9021",
+																																	"posy":"8916",
 																																	"stable":"0"
 																																}
 																															]
@@ -16207,7 +16456,7 @@
 																								}
 																							],
 																							"posx":"5933",
-																							"posy":"6054",
+																							"posy":"6270",
 																							"stable":"0"
 																						}
 																					]
@@ -16227,7 +16476,7 @@
 																			"compname":"code",
 																			"expanded":"1",
 																			"posx":"5017",
-																			"posy":"8700",
+																			"posy":"9156",
 																			"stable":"0",
 																			"ui":
 																			[
@@ -16247,7 +16496,7 @@
 																					"expanded":"1",
 																					"onclick":
 																					[
-																						"playsound('sound/zay_open.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
+																						"playsound('main/sound/zay_open.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 																						"clearcapture()",
 																						{
 																							"PopupVK":"0"
@@ -16257,7 +16506,7 @@
 																						"update(0.1)"
 																					],
 																					"posx":"5460",
-																					"posy":"8700",
+																					"posy":"9156",
 																					"stable":"0",
 																					"ui":
 																					[
@@ -16282,7 +16531,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5819",
-																							"posy":"8700",
+																							"posy":"9156",
 																							"stable":"0"
 																						},
 																						{
@@ -16300,7 +16549,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5819",
-																							"posy":"9003",
+																							"posy":"9459",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -16316,7 +16565,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"6139",
-																									"posy":"9003",
+																									"posy":"9459",
 																									"stable":"0",
 																									"ui":
 																									[
@@ -16333,7 +16582,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6459",
-																											"posy":"9003",
+																											"posy":"9459",
 																											"stable":"0"
 																										}
 																									]
@@ -16355,7 +16604,7 @@
 																							],
 																							"expanded":"1",
 																							"posx":"5819",
-																							"posy":"9219",
+																							"posy":"9675",
 																							"stable":"0",
 																							"ui":
 																							[
@@ -16389,7 +16638,7 @@
 																									],
 																									"expanded":"1",
 																									"posx":"6139",
-																									"posy":"9219",
+																									"posy":"9675",
 																									"stable":"0",
 																									"ui":
 																									[
@@ -16406,7 +16655,7 @@
 																											],
 																											"expanded":"1",
 																											"posx":"6459",
-																											"posy":"9219",
+																											"posy":"9675",
 																											"stable":"0",
 																											"ui":
 																											[
@@ -16424,7 +16673,7 @@
 																													],
 																													"expanded":"1",
 																													"posx":"6779",
-																													"posy":"9219",
+																													"posy":"9675",
 																													"stable":"0"
 																												}
 																											]
@@ -16451,14 +16700,14 @@
 											"compname":"endif",
 											"expanded":"1",
 											"posx":"2159",
-											"posy":"9522"
+											"posy":"9978"
 										},
 										{
 											"addw":"100",
 											"compname":"if(0 @ 'd.program.settings_popup_open')",
 											"expanded":"1",
 											"posx":"2159",
-											"posy":"9612"
+											"posy":"10068"
 										},
 										{
 											"addw":"0",
@@ -16466,7 +16715,7 @@
 											"compname":"jump",
 											"expanded":"1",
 											"posx":"2159",
-											"posy":"9738",
+											"posy":"10194",
 											"uiname":"main_settings_popup"
 										},
 										{
@@ -16474,7 +16723,7 @@
 											"compname":"endif",
 											"expanded":"1",
 											"posx":"2159",
-											"posy":"9864"
+											"posy":"10320"
 										}
 									]
 								}

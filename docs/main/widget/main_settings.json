@@ -4,5 +4,6 @@
 	"language": "ko",
 	"sound_volume": 100,
 	"app_columns": 2,
-	"sound_volume_saved": 100
+	"sound_volume_saved": 100,
+	"app_url": "https://bonexgoo.github.io/zayapp/"
 }

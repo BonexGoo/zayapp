@@ -1,0 +1,70 @@
+{
+	"list" :
+	[
+		{
+			"title" : "TCafe",
+			"script" : "tcafe.zay",
+			"dom" : "tcafe"
+		},
+		{
+			"title" : "QHome",
+			"script" : "qhome.zay",
+			"dom" : "qhome"
+		},
+		{
+			"title" : "HCar",
+			"script" : "hcar.zay",
+			"dom" : "hcar"
+		},
+		{
+			"title" : "MCare",
+			"script" : "mcare.zay",
+			"dom" : "mcare"
+		},
+		{
+			"title" : "Volt",
+			"script" : "volt.zay",
+			"dom" : "volt"
+		},
+		{
+			"title" : "SCube",
+			"script" : "scube.zay",
+			"dom" : "scube"
+		},
+		{
+			"title" : "Robo",
+			"script" : "robo.zay",
+			"dom" : "robo"
+		},
+		{
+			"title" : "KErp",
+			"script" : "kerp.zay",
+			"dom" : "kerp"
+		},
+		{
+			"title" : "TGame",
+			"script" : "tgame.zay",
+			"dom" : "tgame",
+			"is_new" : 1
+		},
+		{
+			"title" : "GRoom",
+			"script" : "groom.zay",
+			"dom" : "groom",
+			"is_new" : 1
+		},
+		{
+			"title" : "Tank",
+			"script" : "tank.zay",
+			"dom" : "tank",
+			"is_new" : 1
+		},
+		{
+			"title" : "NetLog",
+			"script" : "netlog.zay",
+			"dom" : "netlog"
+		}
+	],
+	"focus" : -1,
+	"version" : "zayapp_deck_v1"
+}
