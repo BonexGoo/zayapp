@@ -14396,8 +14396,10 @@
 	"oncreate":
 	[
 		"initappdeck()",
-		"setcomment('d.main_browser.url', 'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url')",
-		"setcomment('d.data.glue_filter', '')",
+		"calcvalue('d.main_browser.url', '?' + ('https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'))",
+		"calcvalue('d.main_browser.url.text', \"'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'\")",
+		"calcvalue('d.data.glue_filter', '?')",
+		"setvalue('d.data.glue_filter.text', '')",
 		{
 			"MainRenderingType":"''"
 		},
