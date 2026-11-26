@@ -10,13 +10,36 @@ extern sint32 gMinWindowHeight;
 
 bool PlatformInit()
 {
+    Asset::SetWebFilesIndex("zayapp_index.json", "zayapp_index_v1", "zayapp_deck.json");
     #if BOSS_GENERATE_ASSET
-        if(Asset::RebuildForEmbedded() || Asset::RebuildForAssetsIndex())
+        const String DocsPath = Platform::File::RootForAssets() + "../docs/";
+        if(Asset::RebuildForEmbedded() || Asset::RebuildForAssetsIndex("zayapp_index.json", "zayapp_index_v1", DocsPath))
             return false;
     #endif
 
+    // 기존 assets-rem의 메인 설정을 새 경로로 한 번만 이관 (기존 파일은 보존)
+    const String OldSettings = Platform::File::RootForAssetsRem() + "widget/main_settings.json";
+    const String NewSettings = Platform::File::RootForAssetsRem() + "main/widget/main_settings.json";
+    if(!Platform::File::Exist(NewSettings) && Platform::File::Exist(OldSettings))
+    {
+        const String SettingsJson = String::FromFile(OldSettings);
+        if(0 < SettingsJson.Length())
+            SettingsJson.ToAsset("main/widget/main_settings.json", true);
+    }
+
+    // 이전 사용자 캐시는 main/ 아래로 이관하고 원본 파일은 보존한다.
+    const chars RuntimeFiles[] = {"windowinfo.json", "atlasinfo.json"};
+    for(const auto RuntimeFile : RuntimeFiles)
+    {
+        const String OldPath = Platform::File::RootForAssetsRem() + RuntimeFile;
+        const String NewAsset = String("main/") + RuntimeFile;
+        const String NewPath = Platform::File::RootForAssetsRem() + NewAsset;
+        if(!Platform::File::Exist(NewPath) && Platform::File::Exist(OldPath))
+            String::FromFile(OldPath).ToAsset(NewAsset, true);
+    }
+
     // 윈도우 불러오기
-    String WindowInfoString = String::FromAsset("windowinfo.json");
+    String WindowInfoString = String::FromAsset("main/windowinfo.json");
     Context WindowInfo(ST_Json, SO_OnlyReference, WindowInfoString, WindowInfoString.Length());
     gLastLocale = WindowInfo("locale").GetText(Platform::Utility::GetLocaleBCP47());
     const sint32 ScreenID = WindowInfo("screen").GetInt(0);
@@ -40,7 +63,7 @@ bool PlatformInit()
                 R::RebuildAll();
                 Context AtlasInfo;
                 R::SaveAtlas(AtlasInfo);
-                AtlasInfo.SaveJson().ToAsset("atlasinfo.json", true);
+                AtlasInfo.SaveJson().ToAsset("main/atlasinfo.json", true);
                 Platform::UpdateAllViews();
             }
         });
@@ -68,7 +91,7 @@ void PlatformQuit()
     WindowInfo.At("y").Set(String::FromInteger(WindowRect.t - ScreenRect.t));
     WindowInfo.At("w").Set(String::FromInteger(WindowRect.r - WindowRect.l));
     WindowInfo.At("h").Set(String::FromInteger(WindowRect.b - WindowRect.t));
-    WindowInfo.SaveJson().ToAsset("windowinfo.json", true);
+    WindowInfo.SaveJson().ToAsset("main/windowinfo.json", true);
 }
 
 void PlatformFree()

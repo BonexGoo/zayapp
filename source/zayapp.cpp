@@ -661,15 +661,15 @@ namespace
 static sint32 FindAppIndex(const String& id)
 {
     if(!id.Length()) return -1;
-    const sint32 count = ZayWidgetDOM::GetValue("data.body.enum.count").ToInteger();
+    const sint32 count = ZayWidgetDOM::GetValue("deck.list.count").ToInteger();
     for(sint32 i = 0; i < count; ++i)
-        if(id == ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.dom", i)).ToText()) return i;
+        if(id == ZayWidgetDOM::GetValue(String::Format("deck.list.%d.dom", i)).ToText()) return i;
     return -1;
 }
 
 static String AppShortcutTitle(sint32 index, const String& id)
 {
-    const String title = ZayWidgetDOM::GetValue(String::Format("data.body.enum.%d.title", index)).ToText();
+    const String title = ZayWidgetDOM::GetValue(String::Format("deck.list.%d.title", index)).ToText();
     return title.Length()? title : id;
 }
 
@@ -682,6 +682,9 @@ static sint32 CreateAppShortcut(const String& id)
 {
     const sint32 index = FindAppIndex(id);
     if(index < 0) return -1;
+    #if !BOSS_WASM
+        if(*Asset::GetWebFilesUrl()) return -1; // Existing shortcut stores only AppId, not site URL.
+    #endif
     const String title = AppShortcutTitle(index, id);
     #if BOSS_WASM
         const String language = ZayWidgetDOM::GetValue("settings.language").ToText();
@@ -892,6 +895,13 @@ ZAY_VIEW_API OnCommand(CommandType type, id_share in, id_cloned_share* out)
     }
     else if(type == CT_Create)
     {
+        // 메인위젯 구성: 뷰 콜백이 연결된 이후 OnCreate를 실행한다.
+        ZayWidgetDOM::SetValue("program.standalone", "0");
+        m->CollectModifiedDoms("main", "");
+        m->UpdateModifiedDoms();
+        m->InitWidget(&m->mMainWidget, "main");
+        m->mMainWidget.Reload("main/widget/main.zay");
+        m->mMainWidget.UpdateAtlas(R::PrintUpdatedAtlas(true));
         Platform::File::EnumStorage();
         m->UpdateChannelList();
         m->UpdateSoundDeviceList();
@@ -986,7 +996,12 @@ ZAY_VIEW_API OnNotify(NotifyType type, chars topic, id_share in, id_cloned_share
         else if(!String::Compare(topic, "EnterPressing"))
         {
             auto DomName = String(in);
-            if(auto CurWidgetName = m->mLastWidgetName.Access(m->mLastProjCode))
+            if(DomName == "main_browser.url" || DomName == "data.glue_filter")
+            {
+                m->mMainWidget.JumpCall("editenter_" + DomName, String::Format("EditEnter:%s", (chars) DomName));
+                m->invalidate();
+            }
+            else if(auto CurWidgetName = m->mLastWidgetName.Access(m->mLastProjCode))
             if(auto CurSubWidget = m->mSubWidgets.Access(*CurWidgetName))
                 CurSubWidget->JumpCall("editenter_" + DomName, String::Format("EditEnter:%s", (chars) DomName));
         }
@@ -1229,14 +1244,6 @@ ZayAppData::ZayAppData()
         return true;
     });
 
-    // 메인위젯 구성
-    ZayWidgetDOM::SetValue("program.standalone", "0");
-    CollectModifiedDoms("main", "");
-    UpdateModifiedDoms();
-    InitWidget(&mMainWidget, "main");
-    mMainWidget.Reload("widget/main.zay");
-    mMainWidget.UpdateAtlas(R::PrintUpdatedAtlas(true));
-
     // 채널 셋팅
     mChannel.SetGetter([this](chars ch, chars key)->const SolverValue
         {
@@ -1450,13 +1457,15 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
 {
     // 위젯의 기본DOM
     uint64 DataModifyMsec = 0;
+    const String WidgetDir = (!String::Compare(widgetname, "main"))? "main/widget" : "widget";
     const String WidgetFile = String::Format("%s.json", widgetname);
-    if(Asset::Exist("widget/" + WidgetFile, nullptr, nullptr, nullptr, nullptr, &DataModifyMsec))
-    if(forced || !mDomJsons.Access(WidgetFile) || mDomJsons(WidgetFile).mModifiedMsec < DataModifyMsec)
+    const String AssetName = WidgetDir + '/' + WidgetFile;
+    if(Asset::Exist(AssetName, nullptr, nullptr, nullptr, nullptr, &DataModifyMsec))
+    if(forced || !mDomJsons.Access(AssetName) || mDomJsons(AssetName).mModifiedMsec < DataModifyMsec)
     {
-        hook(mDomJsons(WidgetFile))
+        hook(mDomJsons(AssetName))
         {
-            fish.mAssetName = WidgetFile;
+            fish.mAssetName = AssetName;
             if(!String::Compare(widgetname, "main"))
                 fish.mHeaderName = "data.";
             else fish.mHeaderName = String::Format("%s.data.", projcode);
@@ -1467,6 +1476,7 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
 
     // 위젯의 확장DOM들
     static String CurWidgetName;
+    static String CurWidgetDir;
     static String CurProjCode;
     static bool CurForced;
     auto DomFinder = [](chars filepath, chars itemname, payload data)->void
@@ -1477,14 +1487,15 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
         if(!FileName.Left(HeadLength).CompareNoCase(CurWidgetName + "_"))
         if(!FileName.Right(5).CompareNoCase(".json"))
         {
+            const String AssetName = CurWidgetDir + '/' + FileName;
             uint64 DataModifyMsec = 0;
-            if(Asset::Exist("widget/" + FileName, nullptr, nullptr, nullptr, nullptr, &DataModifyMsec))
-            if(CurForced || !Self->mDomJsons.Access(FileName) || Self->mDomJsons(FileName).mModifiedMsec < DataModifyMsec)
+            if(Asset::Exist(AssetName, nullptr, nullptr, nullptr, nullptr, &DataModifyMsec))
+            if(CurForced || !Self->mDomJsons.Access(AssetName) || Self->mDomJsons(AssetName).mModifiedMsec < DataModifyMsec)
             {
-                hook(Self->mDomJsons(FileName))
+                hook(Self->mDomJsons(AssetName))
                 {
                     const String DomPath = FileName.Middle(HeadLength, FileName.Length() - (HeadLength + 5));
-                    fish.mAssetName = FileName;
+                    fish.mAssetName = AssetName;
                     if(!CurWidgetName.CompareNoCase("main"))
                         fish.mHeaderName = DomPath + ".";
                     else fish.mHeaderName = CurProjCode + "." + DomPath + ".";
@@ -1495,10 +1506,11 @@ void ZayAppData::CollectModifiedDoms(chars widgetname, chars projcode, bool forc
         }
     };
     CurWidgetName = widgetname;
+    CurWidgetDir = WidgetDir;
     CurProjCode = projcode;
     CurForced = forced;
     id_assetpath SearchPath = AssetPath::Create();
-    AssetPath::AddPath(SearchPath, "widget");
+    AssetPath::AddPath(SearchPath, WidgetDir);
     AssetPath::Search(SearchPath, DomFinder, this);
     AssetPath::Release(SearchPath);
 }
@@ -1511,24 +1523,11 @@ bool ZayAppData::UpdateModifiedDoms()
         if(auto CurDomJson = mDomJsons.AccessByOrder(i))
         {
             if(!CurDomJson->mUpdated) continue;
-            const String DataJson = String::FromAsset("widget/" + CurDomJson->mAssetName);
+            const String DataJson = String::FromAsset(CurDomJson->mAssetName);
+            const bool IsMain = (CurDomJson->mAssetName == "main/widget/main.json");
             Context Data(ST_Json, SO_OnlyReference, DataJson, DataJson.Length());
             ZayWidgetDOM::RemoveVariables(CurDomJson->mHeaderName);
             ZayWidgetDOM::SetJson(Data, CurDomJson->mHeaderName);
-            if(CurDomJson->mAssetName == "main.json")
-            {
-                // Match against the new registry, including after an editor reload.
-                const String id = Platform::Utility::GetLaunchParameter("app");
-                const sint32 Index = FindAppIndex(id);
-                if(Index >= 0)
-                {
-                    ZayWidgetDOM::SetValue("data.body.focus", String::FromInteger(Index));
-                    #if BOSS_WASM
-                        Platform::Utility::SetWebAppIdentity(AppShortcutTitle(Index, id), AppShortcutIcon(id));
-                    #endif
-                }
-                ZayWidgetDOM::SetValue("program.standalone", (Index >= 0)? "1" : "0");
-            }
             CurDomJson->mUpdated = false;
             NeedRedraw = true;
 
@@ -1537,51 +1536,58 @@ bool ZayAppData::UpdateModifiedDoms()
                 if(mNativeState) ++mNativeState->sceneRevision;
                 if(auto AtlasCount = ZayWidgetDOM::GetValue(CurDomJson->mHeaderName + "atlas.count").ToInteger())
                 {
-                    const String AtlasInfoJson = String::FromAsset("atlasinfo.json");
+                    const String AtlasInfoJson = String::FromAsset("main/atlasinfo.json");
                     Context AtlasInfo(ST_Json, SO_OnlyReference, AtlasInfoJson, AtlasInfoJson.Length());
                     for(sint32 j = 0; j < AtlasCount; ++j)
                     {
                         const String CurHeader = String::Format(CurDomJson->mHeaderName + "atlas.%d.", j);
                         const String CurPath = ZayWidgetDOM::GetValue(CurHeader + "path").ToText();
-                        R::AddAtlas("ui_atlaskey2.png", CurPath, AtlasInfo, 2);
+                        R::AddAtlas("ui_atlaskey2.png", CurPath, AtlasInfo, 2, IsMain);
                     }
                     if(R::IsAtlasUpdated())
                     {
                         R::RebuildAll();
                         R::SaveAtlas(AtlasInfo);
-                        AtlasInfo.SaveJson().ToAsset("atlasinfo.json", true);
+                        AtlasInfo.SaveJson().ToAsset("main/atlasinfo.json", true);
                     }
                 }
-                if(auto FontsCount = ZayWidgetDOM::GetValue(CurDomJson->mHeaderName + "fonts.count").ToInteger())
-                {
-                    Strings Collector;
-                    for(sint32 j = 0; j < FontsCount; ++j)
-                    {
-                        const String CurHeader = String::Format(CurDomJson->mHeaderName + "fonts.%d.", j);
-                        const String CurPath = ZayWidgetDOM::GetValue(CurHeader + "path").ToText();
-                        if(0 < CurPath.Length())
-                        {
-                            buffer NewFontData = Asset::ToBuffer(CurPath);
-                            auto FontFamilies = Platform::Utility::CreateSystemFont((bytes) NewFontData, Buffer::CountOf(NewFontData));
-                            for(sint32 k = 0, kend = FontFamilies.Count(); k < kend; ++k)
-                                Collector.AtAdding() = FontFamilies[k];
-                            Buffer::Free(NewFontData);
-                        }
-                    }
-                    for(sint32 j = 0, jend = Collector.Count(); j < jend; ++j)
-                    {
-                        auto FontStyles = Platform::Utility::EnumSystemFontStyles(Collector[j]);
-                        const String KeyName = Collector[j].Lower().Replace(" ", "_");
-                        if(FontStyles.Count() < 2)
-                            ZayWidgetDOM::SetValue(String::Format("program.fonts.%s", (chars) KeyName), '\'' + Collector[j] + '\'');
-                        else for(sint32 k = 0, kend = FontStyles.Count(); k < kend; ++k)
-                            ZayWidgetDOM::SetValue(String::Format("program.fonts.%s.%d", (chars) KeyName, k), '\'' + Collector[j] + '.' + FontStyles[k] + '\'');
-                    }
-                }
+                LoadWidgetFonts(CurDomJson->mHeaderName);
             }
         }
     }
     return NeedRedraw;
+}
+
+void ZayAppData::LoadWidgetFonts(chars domheader)
+{
+    const String DomHeader = domheader;
+    if(auto FontsCount = ZayWidgetDOM::GetValue(DomHeader + "fonts.count").ToInteger())
+    {
+        Strings Collector;
+        for(sint32 j = 0; j < FontsCount; ++j)
+        {
+            const String CurHeader = String::Format(DomHeader + "fonts.%d.", j);
+            const String CurPath = ZayWidgetDOM::GetValue(CurHeader + "path").ToText();
+            if(0 < CurPath.Length())
+            {
+                buffer NewFontData = Asset::ToBuffer(CurPath);
+                if(!NewFontData) continue;
+                auto FontFamilies = Platform::Utility::CreateSystemFont((bytes) NewFontData, Buffer::CountOf(NewFontData));
+                for(sint32 k = 0, kend = FontFamilies.Count(); k < kend; ++k)
+                    Collector.AtAdding() = FontFamilies[k];
+                Buffer::Free(NewFontData);
+            }
+        }
+        for(sint32 j = 0, jend = Collector.Count(); j < jend; ++j)
+        {
+            auto FontStyles = Platform::Utility::EnumSystemFontStyles(Collector[j]);
+            const String KeyName = Collector[j].Lower().Replace(" ", "_");
+            if(FontStyles.Count() < 2)
+                ZayWidgetDOM::SetValue(String::Format("program.fonts.%s", (chars) KeyName), '\'' + Collector[j] + '\'');
+            else for(sint32 k = 0, kend = FontStyles.Count(); k < kend; ++k)
+                ZayWidgetDOM::SetValue(String::Format("program.fonts.%s.%d", (chars) KeyName, k), '\'' + Collector[j] + '.' + FontStyles[k] + '\'');
+        }
+    }
 }
 
 bool ZayAppData::UpdateModifiedVds()
@@ -1614,13 +1620,18 @@ bool ZayAppData::UpdateModifiedVds()
 
 void ZayAppData::InitWidget(ZayWidget* widget, const String viewname)
 {
-    auto& NewZayson = widget->Init(viewname, nullptr, [](chars name)->const Image* {return &((const Image&) R(name));});
+    auto MainResource = [](chars name)->const Image* {
+        const bool SiteIcon = String(name).Left(5) == "icon.";
+        return &((const Image&) R(name,!SiteIcon));
+    };
+    auto AppResource = [](chars name)->const Image* {return &((const Image&) R(name));};
+    auto& NewZayson = widget->Init(viewname, nullptr, (viewname == "main")? +MainResource : +AppResource);
 
     RegisterRenderingGlues(NewZayson);
     RegisterDepthSceneGlues(NewZayson, widget);
     RegisterRuntimeGlues(NewZayson);
     RegisterInputGlues(NewZayson, viewname);
-    RegisterAppNavigationGlues(NewZayson);
+    RegisterAppNavigationGlues(NewZayson, viewname);
     RegisterTableGlues(NewZayson);
     RegisterMediaGlues(NewZayson);
     RegisterDomGlues(NewZayson);
@@ -2366,8 +2377,161 @@ void ZayAppData::RegisterInputGlues(ZaySon& NewZayson, const String& viewname)
     }, "[DomNameD:'d.value'][Min:10][Max:100][Step:5][IsRight:0]", "픽커를 한번 이동");
 }
 
-void ZayAppData::RegisterAppNavigationGlues(ZaySon& NewZayson)
+// The main widget owns the site selection. Do not destroy the executing subwidget.
+void ZayAppData::ClearSiteState()
 {
+    clearCapture();
+    mSubWidgets.Reset();
+    // Disconnect script references before destroying project state.
+    for(sint32 i=0;i<mProjects.Count();++i)
+    {
+        chararray ProjCode;
+        if(auto Project=mProjects.AccessByOrder(i, &ProjCode))
+        {
+            mChannel.ClearBatonAll(&Project->mScript);
+            ZayWidgetDOM::RemoveVariables(String::Format("vds.%s.widget", &ProjCode[0]));
+        }
+    }
+    mProjects.Reset(); mLastVdsModifyMsec.Reset(); mLastWidgetName.Reset();
+    mLastProjCode.Empty(); mLastVdsProjCode.Empty();
+    for(sint32 i=mDomJsons.Count()-1;0<=i;--i)
+        if(auto Dom=mDomJsons.AccessByOrder(i))
+            if(Dom->mAssetName.Left(5)!="main/")
+            {
+                const String AssetName=Dom->mAssetName;
+                ZayWidgetDOM::RemoveVariables(Dom->mHeaderName);
+                mDomJsons.Remove(AssetName);
+            }
+    // Clear entire old app DOM namespaces, not just their JSON defaults.
+    const sint32 Count=ZayWidgetDOM::GetValue("deck.list.count").ToInteger();
+    for(sint32 i=0;i<Count;++i)
+    {
+        const String Id=ZayWidgetDOM::GetValue(String::Format("deck.list.%d.dom",i)).ToText();
+        if(Id.Length() && Id!="main" && Id!="data" && Id!="settings" && Id!="program" && Id!="deck")
+            ZayWidgetDOM::RemoveVariables(Id+".");
+    }
+    ZayWidgetDOM::RemoveVariables("program.buildcodes.");
+    ZayWidgetDOM::RemoveVariables("vds.projcode");
+    for(sint32 i=0;i<mSounds.Count();++i) if(auto H=mSounds.AccessByOrder(i)) if(*H) Platform::Sound::Close(*H);
+    mSounds.Reset();
+    for(sint32 i=0;i<mUrlImages.Count();++i)
+        if(auto Image=mUrlImages.AccessByOrder(i)) if(Image->mTasking) Tasking::Release(Image->mTasking, true);
+    mUrlImages.Reset();
+    for(auto M : {&mLotties,&mMovies,&mAPngs})
+    {
+        for(sint32 i=0;i<M->Count();++i) if(auto H=M->AccessByOrder(i)) if(*H) Platform::Animate::Close(*H);
+        M->Reset();
+    }
+    mFocusedTable=nullptr; mLoadedTableFiles.Reset();
+    mDependencyTable=DependencyTable();
+    mGraphs.Reset(); mLogHighlights.Reset();
+    if(mNativeState)
+    {
+        mNativeState->routes.clear(); mNativeState->worlds.clear(); mNativeState->depths.clear();
+        mNativeState->scenes.clear(); mNativeState->zooms.clear(); mNativeState->paintKey={};
+        ++mNativeState->sceneRevision;
+    }
+    // 메인 DOM과 설정, 아틀라스는 유지하고 이전 사이트의 캐시와 폰트는 해제한다.
+    R::ClearAll(false, true);
+    Platform::Utility::RemoveSystemFontAll();
+    ZayWidgetDOM::RemoveVariables("program.fonts.");
+    LoadWidgetFonts("data.");
+}
+
+bool ZayAppData::SetAppUrl(const String& url)
+{
+    ZayWidgetDOM::SetValue("program.appurl_ok","0");
+    // 작업중인 이미지가 이전 사이트의 캐시에 기록을 마친 뒤 기준 URL을 변경한다.
+    for(sint32 i=0;i<mUrlImages.Count();++i)
+        if(auto Image=mUrlImages.AccessByOrder(i))
+            if(Image->mTasking)
+            {
+                Tasking::Release(Image->mTasking, true);
+                Image->mTasking=nullptr;
+                if(!Image->mImage.HasBitmap()) Image->mFileTitle.Empty();
+            }
+    const chars DeckJson=Asset::TrySetWebFilesUrl(url);
+    if(!DeckJson)
+    {
+        ZayWidgetDOM::SetValue("program.appurl_error","'index_or_deck_failed'");
+        BOSS_TRACE("[setappurl] Cannot open site: %s", (chars)url);
+        invalidate(2);
+        return false;
+    }
+    const String DeckText=DeckJson;
+    ClearSiteState();
+    const Context Deck(ST_Json, SO_NeedCopy, DeckText);
+    ZayWidgetDOM::RemoveVariables("deck."); ZayWidgetDOM::SetJson(Deck,"deck.");
+    ZayWidgetDOM::SetValue("deck.focus","-1");
+    ZayWidgetDOM::SetValue("program.standalone","0");
+    ZayWidgetDOM::SetValue("program.remote_site","1");
+    const String Url=Asset::GetWebFilesUrl();
+    String Literal=Url; Literal.Replace("\\","\\\\"); Literal.Replace("'","\\'");
+    ZayWidgetDOM::SetValue("settings.app_url", '\''+Literal+'\'');
+    // Persist only after a validated site transition; the normal settings Gate can still save other options.
+    Context Settings;
+    ZayWidgetDOM::GetJson(Settings,"settings.");
+    Settings.SaveJson().ToAsset("main/widget/main_settings.json",true);
+    ZayWidgetDOM::SetComment("main_browser.url",Url);
+    ZayWidgetDOM::SetValue("main_browser.url.text", '\''+Literal+'\'');
+    ZayWidgetDOM::SetValue("program.appurl_error","''"); ZayWidgetDOM::SetValue("program.appurl_ok","1");
+    invalidate(2); return true;
+}
+
+void ZayAppData::InitAppDeck()
+{
+    // 이전 버전의 로컬/원격 선택값은 더 이상 사용하거나 저장하지 않는다.
+    ZayWidgetDOM::RemoveVariables("settings.app_url_remote");
+    #if BOSS_WASM
+        ZayWidgetDOM::RemoveVariables("deck.");
+        ZayWidgetDOM::SetValue("deck.list.count","0");
+        ZayWidgetDOM::SetValue("deck.focus","-1");
+        const String DeckText=String::FromAsset("zayapp_deck.json");
+        const Context Deck(ST_Json, SO_NeedCopy, DeckText);
+        ZayWidgetDOM::SetJson(Deck,"deck.");
+        ZayWidgetDOM::SetValue("program.remote_site","0");
+    #else
+        if(!*Asset::GetWebFilesUrl())
+        {
+            ZayWidgetDOM::RemoveVariables("deck.");
+            ZayWidgetDOM::SetValue("deck.list.count","0");
+            ZayWidgetDOM::SetValue("deck.focus","-1");
+        }
+        String Url=ZayWidgetDOM::ExistVariable("settings.app_url")?
+            ZayWidgetDOM::GetValue("settings.app_url").ToText().Trim() : String();
+        if(!Url.Length()) Url="https://bonexgoo.github.io/zayapp/";
+        ZayWidgetDOM::SetValue("program.remote_site","1");
+        SetAppUrl(Url);
+    #endif
+    const String Id=Platform::Utility::GetLaunchParameter("app");
+    const sint32 Index=FindAppIndex(Id);
+    ZayWidgetDOM::SetValue("deck.focus",String::FromInteger(Index));
+    ZayWidgetDOM::SetValue("program.standalone",Index>=0?"1":"0");
+    #if BOSS_WASM
+        if(Index>=0) Platform::Utility::SetWebAppIdentity(AppShortcutTitle(Index,Id),AppShortcutIcon(Id));
+    #endif
+}
+
+void ZayAppData::RegisterAppNavigationGlues(ZaySon& NewZayson, const String& viewname)
+{
+    if(viewname == "main")
+    {
+        NewZayson.AddGlue("initappdeck", ZAY_DECLARE_GLUE(params, this)
+        {if(params.ParamCount()==0) InitAppDeck();}, nullptr, "OnCreate에서 웹사이트 Deck 로딩 및 실행 상태 초기화");
+        NewZayson.AddGlue("setappurl", ZAY_DECLARE_GLUE(params, this)
+        {
+            const String Url=(params.ParamCount()==0)? ZayWidgetDOM::GetComment("main_browser.url").Trim() :
+                (params.ParamCount()==1)? params.Param(0).ToText() : String();
+            if(params.ParamCount()==0 && !Url.Length())
+            {
+                ZayWidgetDOM::SetValue("program.appurl_ok","0");
+                if(params.CanReturn()) params.Return("0");
+                return;
+            }
+            const bool ok=params.ParamCount()<=1 && SetAppUrl(Url);
+            if(params.CanReturn()) params.Return(ok?"1":"0");
+        }, "#[Url:'https://bonexgoo.github.io/zayapp/']", "웹사이트 Deck/Index 전환(인수 생략시 주소창 원문 사용)");
+    }
     ////////////////////////////////////////////////////////////////////////////////
     // createappshortcut
     NewZayson.AddGlue("createappshortcut", ZAY_DECLARE_GLUE(params, this)
@@ -2620,7 +2784,7 @@ void ZayAppData::RegisterMediaGlues(ZaySon& NewZayson)
     {
         if(1 <= params.ParamCount())
         {
-            auto SoundAssetName = params.Param(0).ToText();
+            const String SoundAssetName = params.Param(0).ToText();
             auto Volume = (1 < params.ParamCount())? params.Param(1).ToFloat() : 1.0;
             if(!mSoundMuted)
             {
@@ -2634,13 +2798,14 @@ void ZayAppData::RegisterMediaGlues(ZaySon& NewZayson)
                     #elif BOSS_WASM
                         mSounds(SoundAssetName) = Platform::Sound::OpenForUrl(SoundAssetName, false);
                     #else
-                        mSounds(SoundAssetName) = Platform::Sound::OpenForFile(
-                            Platform::File::RootForAssets() + SoundAssetName, false);
+                        const String Path = Asset::GetFilePath(SoundAssetName);
+                        if(Path.Length()) mSounds(SoundAssetName) = Platform::Sound::OpenForFile(Path, false);
                     #endif
-                    if(mSoundDeviceFocus != -1)
+                    if(mSoundDeviceFocus != -1 && mSounds.Access(SoundAssetName) && mSounds(SoundAssetName))
                         Platform::Sound::SetDevice(mSounds(SoundAssetName), mSoundDeviceFocus);
                 }
                 auto CurSoundID = mSounds(SoundAssetName);
+                if(!CurSoundID) return;
                 if(Platform::Sound::NowPlaying(CurSoundID))
                     Platform::Sound::Stop(CurSoundID);
                 Platform::Sound::SetVolume(CurSoundID, Volume);
@@ -2655,7 +2820,7 @@ void ZayAppData::RegisterMediaGlues(ZaySon& NewZayson)
     {
         if(params.ParamCount() == 1)
         {
-            auto SoundAssetName = params.Param(0).ToText();
+            const String SoundAssetName = params.Param(0).ToText();
             if(auto CurSoundID = mSounds.Access(SoundAssetName))
             if(Platform::Sound::NowPlaying(*CurSoundID))
                 Platform::Sound::Stop(*CurSoundID);
@@ -2769,7 +2934,7 @@ void ZayAppData::RegisterDomGlues(ZaySon& NewZayson)
                 }
                 else if(2 < params.ParamCount())
                 {
-                    auto AssetPath = params.Param(2).ToText();
+                    const String AssetPath = params.Param(2).ToText();
                     const Context Json(ST_Json, SO_NeedCopy, String::FromAsset(AssetPath));
                     ZayWidgetDOM::SetJson(Json, DomHeader);
                 }
@@ -2928,7 +3093,7 @@ void ZayAppData::RegisterFileGlues(ZaySon& NewZayson)
                 Json.SaveJson().ToAsset(AssetName, true);
             }
         }
-    }, "[AssetName:'widget/main_settings.json'][DomNameD:'d.settings']", "DOM을 JSON 에셋으로 저장");
+    }, "[AssetName:'main/widget/main_settings.json'][DomNameD:'d.settings']", "DOM을 JSON 에셋으로 저장");
 
     ////////////////////////////////////////////////////////////////////////////////
     // loadjson
@@ -4107,12 +4272,17 @@ bool ZayAppData::RenderUC_UrlImage(ZayPanel& panel, double fadesec, chars url)
                 {
                     sint32 FileSize = 0;
                     bytes FileData = AddOn::Curl::GetBytes(NewCurl, Url, &FileSize);
-                    if(FileData[0] == 0x89 && FileData[1] == 0x50 && FileData[2] == 0x4E && FileData[3] == 0x47)
+                    if(FileData && 4 <= FileSize && FileData[0] == 0x89 && FileData[1] == 0x50 && FileData[2] == 0x4E && FileData[3] == 0x47)
                         FileName += ".png";
-                    else if(FileData[0] == 0xFF && FileData[1] == 0xD8 && FileData[2] == 0xFF)
+                    else if(FileData && 3 <= FileSize && FileData[0] == 0xFF && FileData[1] == 0xD8 && FileData[2] == 0xFF)
                         FileName += ".jpg";
-                    else if(FileData[0] == 0x42 && FileData[1] == 0x4D)
+                    else if(FileData && 2 <= FileSize && FileData[0] == 0x42 && FileData[1] == 0x4D)
                         FileName += ".bmp";
+                    else
+                    {
+                        AddOn::Curl::Release(NewCurl);
+                        return -1;
+                    }
                     if(auto NewAsset = Asset::OpenForWrite(FileName, true))
                     {
                         Asset::Write(NewAsset, FileData, FileSize);
@@ -4147,6 +4317,7 @@ bool ZayAppData::RenderUC_Lottie(ZayPanel& panel, chars assetname, double sec)
     if(!mLotties.Access(assetname))
         mLotties(assetname) = Platform::Animate::OpenForLottieJson(String::FromAsset(assetname), assetname);
     if(auto CurLottie = mLotties.Access(assetname))
+    if(*CurLottie)
     {
         Platform::Animate::Seek(*CurLottie, sec, true);
         auto Pos = panel.toview(0, 0);
@@ -4158,8 +4329,17 @@ bool ZayAppData::RenderUC_Lottie(ZayPanel& panel, chars assetname, double sec)
 bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
 {
     if(!mMovies.Access(assetname))
-        mMovies(assetname) = Platform::Animate::OpenForMovieFile(Platform::File::RootForAssets() + assetname);
+    {
+        mMovies(assetname) = nullptr;
+        #if BOSS_WASM
+            mMovies(assetname) = Platform::Animate::OpenForMovieFile(Platform::File::RootForAssets() + assetname);
+        #else
+            const String Path=Asset::GetFilePath(assetname);
+            if(Path.Length()) mMovies(assetname)=Platform::Animate::OpenForMovieFile(Path);
+        #endif
+    }
     if(auto CurMovie = mMovies.Access(assetname))
+    if(*CurMovie)
     {
         Platform::Animate::Next(*CurMovie, true);
         auto Pos = panel.toview(0, 0);
@@ -4195,8 +4375,11 @@ id_animate ZayAppData::GetAPng(chars assetname)
                 Buffer::Free(NewAPngData);
             }
         #else
-            mAPngs(assetname) = Platform::Animate::OpenForAPngForFile(
-                Platform::File::RootForAssets() + assetname);
+            // 실패도 기록하여 매 프레임 같은 파일의 다운로드를 반복하지 않는다.
+            auto& NewAnimate = mAPngs(assetname);
+            NewAnimate = nullptr;
+            const String Path=Asset::GetFilePath(assetname);
+            if(Path.Length()) NewAnimate=Platform::Animate::OpenForAPngForFile(Path);
         #endif
     }
     const auto handle = mAPngs.Access(assetname);

@@ -96,6 +96,9 @@ public:
     sint32 MoveNcBottom(const rect128& rect, sint32 addy);
     void CollectModifiedDoms(chars widgetname, chars projcode, bool forced = false);
     bool UpdateModifiedDoms();
+    /// @brief 지정한 DOM의 폰트목록을 등록하고 program.fonts에 반영
+    /// @param domheader : fonts 배열을 가진 기본DOM의 헤더(data. 또는 앱의 data. 헤더)
+    void LoadWidgetFonts(chars domheader);
     bool UpdateModifiedVds();
     void InitWidget(ZayWidget* widget, const String viewname);
     void RenderWindowOutline(ZayPanel& panel);
@@ -120,7 +123,18 @@ private:
     id_animate GetAPng(chars assetname);
     void RegisterRuntimeGlues(ZaySon& NewZayson);
     void RegisterInputGlues(ZaySon& NewZayson, const String& viewname);
-    void RegisterAppNavigationGlues(ZaySon& NewZayson);
+    /// @brief 앱 탐색용 GLUE등록(사이트 전환은 메인위젯에서만 허용)
+    /// @param NewZayson : GLUE를 등록할 ZaySon
+    /// @param viewname : 위젯의 뷰이름
+    void RegisterAppNavigationGlues(ZaySon& NewZayson, const String& viewname);
+    /// @brief 웹사이트의 Deck/Index를 확인하고 앱 리소스와 저장된 URL을 전환
+    /// @param url : zayapp_deck.json과 zayapp_index.json을 제공하는 기준 URL
+    /// @return 전환 성공여부(실패하면 현재 사이트를 유지)
+    bool SetAppUrl(const String& url);
+    /// @brief OnCreate에서 저장된 URL 또는 기본 URL의 Deck을 로딩하고 실행 상태 초기화
+    void InitAppDeck();
+    /// @brief 메인위젯을 유지하며 이전 사이트의 앱, DOM, 미디어 및 테이블을 해제
+    void ClearSiteState();
     void RegisterTableGlues(ZaySon& NewZayson);
     void RegisterMediaGlues(ZaySon& NewZayson);
     void RegisterDomGlues(ZaySon& NewZayson);

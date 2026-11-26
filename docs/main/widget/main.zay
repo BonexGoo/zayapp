@@ -14140,6 +14140,59 @@
 											"expanded":"1",
 											"posx":"2280",
 											"posy":"-7266"
+										},
+										{
+											"addw":"0",
+											"compname":"if(('' @ 'd.program.appurl_error') != '')",
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-7096"
+										},
+										{
+											"addw":"0",
+											"compid":"2430",
+											"compname":"hexcolor",
+											"compvalues":
+											[
+												"ifpressed(main_browser_url)",
+												[
+													"#FFFFFF",
+													"0.6"
+												],
+												"eliffocused(main_browser_url)",
+												[
+													"#FFFFFF",
+													"0.6"
+												],
+												"else",
+												[
+													"#F4F8FB",
+													"0.6"
+												]
+											],
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-6926",
+											"stable":"0",
+											"ui":
+											[
+												{
+													"addw":"0",
+													"compid":"2431",
+													"compname":"fill",
+													"expanded":"1",
+													"posx":"2600",
+													"posy":"-6926",
+													"stable":"0"
+												}
+											]
+										},
+										{
+											"addw":"0",
+											"compname":"endif",
+											"expanded":"1",
+											"posx":"2280",
+											"posy":"-6708"
 										}
 									]
 								},
@@ -14201,7 +14254,8 @@
 											"70",
 											"5",
 											"pW-82",
-											"46"
+											"46",
+											"true"
 										]
 									],
 									"expanded":"1",
@@ -14396,8 +14450,11 @@
 	"oncreate":
 	[
 		"initappdeck()",
-		"calcvalue('d.main_browser.url', '?' + ('https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'))",
-		"calcvalue('d.main_browser.url.text', \"'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'\")",
+		{
+			"MainBrowserInitialUrl":"'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'"
+		},
+		"calcvalue('d.main_browser.url', '?' + MainBrowserInitialUrl)",
+		"calcvalue('d.main_browser.url.text', 'main.MainBrowserInitialUrl')",
 		"calcvalue('d.data.glue_filter', '?')",
 		"setvalue('d.data.glue_filter.text', '')",
 		{
