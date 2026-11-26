@@ -2453,6 +2453,12 @@ bool ZayAppData::SetAppUrl(const String& url)
     const chars DeckJson=Asset::TrySetWebFilesUrl(url);
     if(!DeckJson)
     {
+        ClearSiteState();
+        Asset::SetWebFilesUrl();
+        ZayWidgetDOM::RemoveVariables("deck.");
+        ZayWidgetDOM::SetValue("deck.list.count","0");
+        ZayWidgetDOM::SetValue("deck.focus","-1");
+        ZayWidgetDOM::SetValue("program.standalone","0");
         ZayWidgetDOM::SetValue("program.appurl_error","'index_or_deck_failed'");
         BOSS_TRACE("[setappurl] Cannot open site: %s", (chars)url);
         invalidate(2);
