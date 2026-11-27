@@ -41,6 +41,24 @@
     <ClInclude Include="..\source\vdscript\vds_comment.hpp" />
     <ClInclude Include="..\source\vdscript\vds_loop.hpp" />
     <ClInclude Include="..\source\zayapp.hpp" />
+    <ClInclude Include="..\source\glue\zayglue.hpp" />
+    <ClInclude Include="..\source\glue\glue_app_navigation.hpp" />
+    <ClInclude Include="..\source\glue\glue_depth_scene.hpp" />
+    <ClInclude Include="..\source\glue\glue_device_channel.hpp" />
+    <ClInclude Include="..\source\glue\glue_dom.hpp" />
+    <ClInclude Include="..\source\glue\glue_file.hpp" />
+    <ClInclude Include="..\source\glue\glue_graph_and_log.hpp" />
+    <ClInclude Include="..\source\glue\glue_input.hpp" />
+    <ClInclude Include="..\source\glue\glue_installation.hpp" />
+    <ClInclude Include="..\source\glue\glue_instrumentation.hpp" />
+    <ClInclude Include="..\source\glue\glue_media.hpp" />
+    <ClInclude Include="..\source\glue\glue_native_state.hpp" />
+    <ClInclude Include="..\source\glue\glue_navigation_and_depth.hpp" />
+    <ClInclude Include="..\source\glue\glue_network.hpp" />
+    <ClInclude Include="..\source\glue\glue_rendering.hpp" />
+    <ClInclude Include="..\source\glue\glue_runtime.hpp" />
+    <ClInclude Include="..\source\glue\glue_table.hpp" />
+    <ClInclude Include="..\source\glue\glue_vds.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\dependencytable.cpp" />
@@ -54,6 +72,23 @@
     <ClCompile Include="..\source\vdscript\vds_comment.cpp" />
     <ClCompile Include="..\source\vdscript\vds_loop.cpp" />
     <ClCompile Include="..\source\zayapp.cpp" />
+    <ClCompile Include="..\source\glue\zayglue.cpp" />
+    <ClCompile Include="..\source\glue\glue_app_navigation.cpp" />
+    <ClCompile Include="..\source\glue\glue_depth_scene.cpp" />
+    <ClCompile Include="..\source\glue\glue_device_channel.cpp" />
+    <ClCompile Include="..\source\glue\glue_dom.cpp" />
+    <ClCompile Include="..\source\glue\glue_file.cpp" />
+    <ClCompile Include="..\source\glue\glue_graph_and_log.cpp" />
+    <ClCompile Include="..\source\glue\glue_input.cpp" />
+    <ClCompile Include="..\source\glue\glue_installation.cpp" />
+    <ClCompile Include="..\source\glue\glue_instrumentation.cpp" />
+    <ClCompile Include="..\source\glue\glue_media.cpp" />
+    <ClCompile Include="..\source\glue\glue_navigation_and_depth.cpp" />
+    <ClCompile Include="..\source\glue\glue_network.cpp" />
+    <ClCompile Include="..\source\glue\glue_rendering.cpp" />
+    <ClCompile Include="..\source\glue\glue_runtime.cpp" />
+    <ClCompile Include="..\source\glue\glue_table.cpp" />
+    <ClCompile Include="..\source\glue\glue_vds.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C8332454-4D7E-40CB-A0A3-8FA930D8BF7F}</ProjectGuid>

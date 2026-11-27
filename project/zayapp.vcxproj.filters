@@ -16,6 +16,9 @@
     <Filter Include="source\usb">
       <UniqueIdentifier>{32cf8823-ea89-40b8-bb2c-04852a1078f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\glue">
+      <UniqueIdentifier>{3915b678-5030-5e82-9894-366735ea3575}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\common\windows\main.aps">
@@ -47,6 +50,60 @@
     </ClInclude>
     <ClInclude Include="..\source\zayapp.hpp">
       <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\zayglue.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_app_navigation.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_depth_scene.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_device_channel.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_dom.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_file.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_graph_and_log.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_input.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_installation.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_instrumentation.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_media.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_native_state.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_navigation_and_depth.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_network.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_rendering.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_runtime.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_table.hpp">
+      <Filter>source\glue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\glue\glue_vds.hpp">
+      <Filter>source\glue</Filter>
     </ClInclude>
     <ClInclude Include="..\source\vdscript\vds_object.hpp">
       <Filter>source\vdscript</Filter>
@@ -82,6 +139,57 @@
     </ClCompile>
     <ClCompile Include="..\source\zayapp.cpp">
       <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\zayglue.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_app_navigation.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_depth_scene.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_device_channel.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_dom.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_file.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_graph_and_log.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_input.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_installation.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_instrumentation.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_media.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_navigation_and_depth.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_network.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_rendering.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_runtime.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_table.cpp">
+      <Filter>source\glue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\glue\glue_vds.cpp">
+      <Filter>source\glue</Filter>
     </ClCompile>
     <ClCompile Include="..\source\vdscript\vds_object.cpp">
       <Filter>source\vdscript</Filter>

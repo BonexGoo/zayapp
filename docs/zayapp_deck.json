@@ -5,6 +5,11 @@
 			"title" : "GRoom",
 			"script" : "groom.zay",
 			"dom" : "groom"
+		},
+		{
+			"title" : "Wood",
+			"script" : "filescope.zay",
+			"dom" : "filescope"
 		}
 	],
 	"focus" : -1,

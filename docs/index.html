@@ -15,7 +15,14 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover, user-scalable=0"/>
 
     <title>ZAYAPP</title>
+    <meta name="description" content="ZayApp 런타임 앱사이트 — 웹에서 앱을 실행하고 PC용 ZayApp과 ZayPro를 다운로드하세요.">
     <style>
+      :root {
+        --runtime-bar-height: 60px;
+        --pc-download-width: 300px;
+        --runtime-bottom-inset: env(safe-area-inset-bottom, 0px);
+        --runtime-bar-total: calc(var(--runtime-bar-height) + var(--runtime-bottom-inset));
+      }
             /* Make the html body cover the entire (visual) viewport with no scroll bars. */
       html, body { padding: 0; margin: 0; overflow: hidden; height: 100%; background: #000; color: #fff; }
       /* Keep browser touch gestures and tap feedback out of the Qt surface. */
@@ -37,23 +44,170 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
       #screen {
         background: #000;
         width: 100%;
-        height: 100vh;
-        height: 100dvh;
+        height: calc(100vh - var(--runtime-bar-total));
+        height: calc(100dvh - var(--runtime-bar-total));
         position: fixed;
-        inset: 0;
-        padding-bottom: env(safe-area-inset-bottom);
+        top: 0;
+        left: 0;
         box-sizing: border-box;
       }
       #qtspinner {
         background: #000;
         width: 100%;
-        height: 100vh;
-        height: 100dvh;
+        height: calc(100vh - var(--runtime-bar-total));
+        height: calc(100dvh - var(--runtime-bar-total));
         position: fixed;
-        inset: 0;
-        padding-bottom: env(safe-area-inset-bottom);
+        top: 0;
+        left: 0;
         box-sizing: border-box;
         overflow: hidden;
+      }
+
+      /* Runtime app site: app + WASM. Reserve the bar before Qt measures #screen. */
+      #runtime-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        display: flex;
+        align-items: stretch;
+        height: var(--runtime-bar-total);
+        padding: 0 env(safe-area-inset-right, 0px) var(--runtime-bottom-inset) env(safe-area-inset-left, 0px);
+        box-sizing: border-box;
+        background: #f7f9fd;
+        box-shadow: 0 -1px 0 #dfe5ee;
+        color: #182334;
+        font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-synthesis: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-user-select: auto;
+        user-select: auto;
+        touch-action: manipulation;
+      }
+      #runtime-banner {
+        position: relative;
+        flex: 1 1 0%;
+        min-width: 0;
+        height: var(--runtime-bar-height);
+        overflow: hidden;
+        background-color: #061726;
+      }
+      /* A single GIF scales to the bar height; its own right edge fades out. */
+      .runtime-banner-image {
+        display: block;
+        width: auto;
+        height: 100%;
+        max-width: none;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 180px), transparent 100%);
+        mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 180px), transparent 100%);
+      }
+      /* Also soften the clipped edge when the available width is narrower. */
+      #runtime-banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(180px, 28%);
+        background: linear-gradient(to right, rgba(6, 23, 38, 0), #061726);
+        pointer-events: none;
+      }
+      /* Match the Solutions app site's quiet surface, type, and blue accent. */
+      #pc-downloads {
+        flex: 0 0 var(--pc-download-width);
+        width: var(--pc-download-width);
+        height: var(--runtime-bar-height);
+        box-sizing: border-box;
+        border-left: 1px solid #dfe5ee;
+        padding: 5px 10px;
+        background: #f7f9fd;
+      }
+      #pc-download-title {
+        margin: 0 0 4px;
+        color: #5d6879;
+        font-size: .8125rem;
+        font-weight: 650;
+        line-height: 16px;
+        letter-spacing: -.015em;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .pc-download-buttons {
+        display: flex;
+        align-items: stretch;
+        gap: 8px;
+        height: 30px;
+      }
+      .pc-download-button {
+        flex: 1 1 0%;
+        min-width: 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: #365bce;
+        box-shadow: 0 2px 6px #25459a18;
+        color: #fff;
+        font-size: .875rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -.02em;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      }
+      .pc-download-button.zaypro {
+        background: #eef3ff;
+        border-color: #d6e0f6;
+        box-shadow: none;
+        color: #365bce;
+      }
+      .pc-download-button:hover {
+        background: #2447ae;
+        box-shadow: 0 3px 9px #25459a28;
+      }
+      .pc-download-button.zaypro:hover {
+        background: #e2eaff;
+        border-color: #b5c6ef;
+        box-shadow: none;
+      }
+      .pc-download-button:active { background: #1e3e9c; }
+      .pc-download-button.zaypro:active { background: #d7e2fc; }
+      .pc-download-button:focus-visible { outline: 2px solid #365bce; outline-offset: 2px; }
+      .pc-download-version {
+        color: #e5ecff;
+        font-size: .75rem;
+        font-weight: 550;
+        letter-spacing: 0;
+        font-variant-numeric: tabular-nums;
+      }
+      .zaypro .pc-download-version { color: #5e75b2; }
+
+      /* Keep the group usable in embedded views narrower than the download area. */
+      @media (max-width: 300px) {
+        :root { --pc-download-width: 100%; }
+        #runtime-banner { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .runtime-banner-image { display: none; }
+        #runtime-banner::before {
+          content: "인천아트쇼 2026 · 송도컨벤시아";
+          display: block;
+          padding-left: 12px;
+          line-height: var(--runtime-bar-height);
+          color: #d9f1ff;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .pc-download-button { transition: none; }
       }
     </style>
   </head>
@@ -67,6 +221,36 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
       </center>
     </figure>
     <div id="screen"></div>
+
+    <!-- Banner visual references: official Incheon Art Show 2026, Contact Heritage.
+         https://www.iartshow.co.kr/242
+         Artwork photography: Sohn Dae-Hyun (najeon lacquer jars),
+         Huh Myoungwook (Between), Kim Sanggon (red-glazed jar).
+         Event schedule follows the supplied INAS 2026 poster. -->
+    <footer id="runtime-bar" aria-label="런타임 앱사이트 배너 및 PC 다운로드" lang="ko">
+      <div id="runtime-banner" role="img" aria-label="인천아트쇼 2026 · 11.19–22 · 송도컨벤시아">
+        <img class="runtime-banner-image" src="banner.gif?v=incheon-artshow-2026-motion" width="2400" height="120" alt="" aria-hidden="true" draggable="false">
+      </div>
+      <section id="pc-downloads" aria-labelledby="pc-download-title">
+        <h2 id="pc-download-title">PC버전 Download</h2>
+        <div class="pc-download-buttons">
+          <a class="pc-download-button zayapp"
+             href="https://github.com/BonexGoo/zayapp/releases/download/2.0.0/zayapp_2.0.0.zip"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="ZayApp 최신 PC 버전 2.0.0 ZIP 다운로드, 새 탭에서 열림"
+             title="ZayApp 2.0.0 · Windows ZIP 다운로드">
+            <span>ZayApp</span><span class="pc-download-version">2.0.0</span>
+          </a>
+          <a class="pc-download-button zaypro"
+             href="https://github.com/BonexGoo/zaypro/releases/download/1.0.0/zaypro_1.0.0.zip"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="ZayPro 최신 PC 버전 1.0.0 ZIP 다운로드, 새 탭에서 열림"
+             title="ZayPro 1.0.0 · Windows ZIP 다운로드">
+            <span>ZayPro</span><span class="pc-download-version">1.0.0</span>
+          </a>
+        </div>
+      </section>
+    </footer>
 
     <script type="text/javascript">
         // Qt 6.8 creates its own open Shadow DOM below the screen container.

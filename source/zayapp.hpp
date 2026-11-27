@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <service/boss_zaywidget.hpp>
+#include "glue/glue_native_state.hpp"
 #include "dependencytable.hpp"
 #include "vdscript/vdchannel.hpp"
 #include "vdscript/vdscript.hpp"
@@ -74,8 +75,6 @@ public:
 };
 typedef Map<Project> Projects;
 
-class ZayAppNativeState; // Native TryWorld paths and Y-depth ordering
-
 class ZayAppData : public ZayObject
 {
 public:
@@ -117,16 +116,10 @@ public:
     bool RenderUC_DragArea(ZayPanel& panel, chars domname);
 
 private:
-    void RegisterRenderingGlues(ZaySon& NewZayson);
-    void RegisterDepthSceneGlues(ZaySon& zayson, const ZayWidget* widget);
-    bool RenderDepthResource(const ZayWidget* widget, const ZayExtend::Payload& params, bool sprite);
+    void PrepareGlueHost();
+    ZayGlue::Host mGlueHost;
+    bool mGluePrepared {false};
     id_animate GetAPng(chars assetname);
-    void RegisterRuntimeGlues(ZaySon& NewZayson);
-    void RegisterInputGlues(ZaySon& NewZayson, const String& viewname);
-    /// @brief 앱 탐색용 GLUE등록(사이트 전환은 메인위젯에서만 허용)
-    /// @param NewZayson : GLUE를 등록할 ZaySon
-    /// @param viewname : 위젯의 뷰이름
-    void RegisterAppNavigationGlues(ZaySon& NewZayson, const String& viewname);
     /// @brief 웹사이트의 Deck/Index를 확인하고 앱 리소스와 저장된 URL을 전환
     /// @param url : zayapp_deck.json과 zayapp_index.json을 제공하는 기준 URL
     /// @return 전환 성공여부(실패하면 현재 사이트를 유지)
@@ -135,17 +128,6 @@ private:
     void InitAppDeck();
     /// @brief 메인위젯을 유지하며 이전 사이트의 앱, DOM, 미디어 및 테이블을 해제
     void ClearSiteState();
-    void RegisterTableGlues(ZaySon& NewZayson);
-    void RegisterMediaGlues(ZaySon& NewZayson);
-    void RegisterDomGlues(ZaySon& NewZayson);
-    void RegisterFileGlues(ZaySon& NewZayson);
-    void RegisterNetworkGlues(ZaySon& NewZayson);
-    void RegisterNavigationAndDepthGlues(ZaySon& NewZayson, const String& viewname);
-    void RegisterGraphAndLogGlues(ZaySon& NewZayson);
-    void RegisterDeviceChannelGlues(ZaySon& NewZayson);
-    void RegisterInstrumentationGlues(ZaySon& NewZayson);
-    void RegisterInstallationGlues(ZaySon& NewZayson);
-    void RegisterVdsGlues(ZaySon& NewZayson);
 
 public:
     void UpdateChannelList();
@@ -164,7 +146,7 @@ public:
     void SendWidgetLog(chars projcode, chars text);
 
 public:
-    ZayAppNativeState* mNativeState {nullptr};
+    std::shared_ptr<ZayGlueNativeState> mNativeState;
     ZayWidget mMainWidget;
     Map<ZayWidget> mSubWidgets; // [widgetname]
     uint64 mUpdateMsec {0};

@@ -12,8 +12,7 @@ bool PlatformInit()
 {
     Asset::SetWebFilesIndex("zayapp_index.json", "zayapp_index_v1", "zayapp_deck.json");
     #if BOSS_GENERATE_ASSET
-        const String DocsPath = Platform::File::RootForAssets() + "../docs/";
-        if(Asset::RebuildForEmbedded() || Asset::RebuildForAssetsIndex("zayapp_index.json", "zayapp_index_v1", DocsPath))
+        if(Asset::RebuildForEmbedded())
             return false;
     #endif
 
