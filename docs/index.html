@@ -234,23 +234,77 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
       <section id="pc-downloads" aria-labelledby="pc-download-title">
         <h2 id="pc-download-title">PC버전 Download</h2>
         <div class="pc-download-buttons">
-          <a class="pc-download-button zayapp"
-             href="https://github.com/BonexGoo/zayapp/releases/download/2.0.0/zayapp_2.0.0.zip"
+          <a class="pc-download-button zayapp" id="download-zayapp"
+             href="https://github.com/BonexGoo/zayapp/releases/latest"
              target="_blank" rel="noopener noreferrer"
-             aria-label="ZayApp 최신 PC 버전 2.0.0 ZIP 다운로드, 새 탭에서 열림"
-             title="ZayApp 2.0.0 · Windows ZIP 다운로드">
-            <span>ZayApp</span><span class="pc-download-version">2.0.0</span>
+             aria-label="ZayApp 최신 PC 버전 확인" title="ZayApp 최신 릴리즈 페이지">
+            <span>ZayApp</span><span class="pc-download-version">…</span>
           </a>
-          <a class="pc-download-button zaypro"
-             href="https://github.com/BonexGoo/zaypro/releases/download/1.0.0/zaypro_1.0.0.zip"
+          <a class="pc-download-button zaypro" id="download-zaypro"
+             href="https://github.com/BonexGoo/zaypro/releases/latest"
              target="_blank" rel="noopener noreferrer"
-             aria-label="ZayPro 최신 PC 버전 1.0.0 ZIP 다운로드, 새 탭에서 열림"
-             title="ZayPro 1.0.0 · Windows ZIP 다운로드">
-            <span>ZayPro</span><span class="pc-download-version">1.0.0</span>
+             aria-label="ZayPro 최신 PC 버전 확인" title="ZayPro 최신 릴리즈 페이지">
+            <span>ZayPro</span><span class="pc-download-version">…</span>
           </a>
         </div>
       </section>
     </footer>
+
+    <script>
+      // Runtime AppSite: resolve the newest *published stable* GitHub Release.
+      // The release asset URL comes from GitHub itself, so changing ZIP filenames
+      // or version numbers never requires changing this HTML.
+      async function updateLatestDownload(repo, elementId, appName) {
+        const button = document.getElementById(elementId);
+        if (!button) return;
+        const version = button.querySelector('.pc-download-version');
+        const releasesUrl = `https://github.com/BonexGoo/${repo}/releases/latest`;
+        button.href = releasesUrl; // safe fallback if the API is unavailable
+        try {
+          const response = await fetch(`https://api.github.com/repos/BonexGoo/${repo}/releases/latest`, {
+            headers: { Accept: 'application/vnd.github+json' },
+            cache: 'no-store'
+          });
+          if (!response.ok) throw new Error(`GitHub API HTTP ${response.status}`);
+          const release = await response.json();
+          if (!release || release.draft || release.prerelease || !release.tag_name) {
+            throw new Error('No stable release');
+          }
+          const v = String(release.tag_name).replace(/^v(?=\d)/i, '');
+          // Only choose a release attachment matching the intended Windows ZIP.
+          // Ignore automatic GitHub source-code ZIPs and unrelated assets.
+          const assets = Array.isArray(release.assets) ? release.assets : [];
+          const zips = assets.filter(a =>
+            a && typeof a.name === 'string' &&
+            typeof a.browser_download_url === 'string' &&
+            /^https:\/\/github\.com\/BonexGoo\//i.test(a.browser_download_url) &&
+            /\.zip$/i.test(a.name) &&
+            a.name.toLowerCase().startsWith(repo.toLowerCase() + '_') &&
+            !/(source|src|symbols|debug)/i.test(a.name)
+          );
+          const asset = zips.find(a => /(win|windows|x64|amd64)/i.test(a.name)) || zips[0];
+          version.textContent = v;
+          if (asset) {
+            button.href = asset.browser_download_url;
+            button.title = `${appName} ${v} · Windows ZIP 다운로드`;
+            button.setAttribute('aria-label', `${appName} ${v} 최신 PC 버전 ZIP 다운로드`);
+          } else {
+            button.href = release.html_url || releasesUrl;
+            button.title = `${appName} ${v} · 다운로드 파일 확인`;
+            button.setAttribute('aria-label', `${appName} ${v} 릴리즈 페이지 열기`);
+          }
+        } catch (error) {
+          // The browser may be offline, rate-limited, or temporarily blocked.
+          // Never display a stale fixed version or link to an obsolete ZIP.
+          console.warn(`${appName} release check failed:`, error);
+          version.textContent = '—';
+          button.title = `${appName} 최신 릴리즈 페이지`;
+          button.setAttribute('aria-label', `${appName} 최신 릴리즈 페이지 열기`);
+        }
+      }
+      updateLatestDownload('zayapp', 'download-zayapp', 'ZayApp');
+      updateLatestDownload('zaypro', 'download-zaypro', 'ZayPro');
+    </script>
 
     <script type="text/javascript">
         // Qt 6.8 creates its own open Shadow DOM below the screen container.
