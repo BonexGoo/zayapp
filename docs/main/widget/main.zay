@@ -10736,7 +10736,7 @@
 											"ms_compact":"pW < 560"
 										},
 										{
-											"ms_can_shortcut":"(((-1 @ 'd.deck.focus') >= 0) [and] (d.deck.focus < d.deck.list.count)) [and] ((d.program.osname == 'WINDOWS') [or] (d.program.osname == 'WASM')) [and] ((0 @ 'd.program.remote_site') == 0)"
+											"ms_can_shortcut":"(((-1 @ 'd.deck.focus') >= 0) [and] ((-1 @ 'd.deck.focus') < (0 @ 'd.deck.list.count'))) [and] ((('' @ 'd.program.osname') == 'WINDOWS') [or] (('' @ 'd.program.osname') == 'WASM'))"
 										},
 										{
 											"ms_content_h":"600 + 32 * ms_compact"
@@ -11695,11 +11695,11 @@
 							"onclick":
 							[
 								"if(d.program.osname == 'WASM')",
-								"openstandaloneapp('' @ ('d.deck.list.' + d.deck.focus + '.dom'), 'window')",
+								"openstandaloneapp('' @ ('d.deck.list.' + d.deck.focus + '.dom'), 'window', '' @ 'd.program.app_url')",
 								"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
 								"elif((0 @ 'd.program.shortcut_result') != 1)",
 								"playsound('main/sound/zay_click.mp3', ((100 @ 'd.settings.sound_volume') / 100.0))",
-								"createappshortcut('' @ ('d.deck.list.' + d.deck.focus + '.dom'))",
+								"createappshortcut('' @ ('d.deck.list.' + d.deck.focus + '.dom'), '' @ 'd.program.app_url')",
 								"update(0.1)",
 								"endif"
 							],
@@ -14006,7 +14006,7 @@
 			[
 				{
 					"addw":"0",
-					"comment":"PC browser: current app | URL | navigate",
+					"comment":"Browser: current app | URL | navigate",
 					"compid":"2427",
 					"compname":"ltrb",
 					"compvalues":
@@ -14451,10 +14451,10 @@
 	[
 		"initappdeck()",
 		{
-			"MainBrowserInitialUrl":"'https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url'"
+			"MainBrowserInitialUrl":"('https://bonexgoo.github.io/zayapp/' @ 'd.settings.app_url') @ 'd.main_browser.url.text'"
 		},
 		"calcvalue('d.main_browser.url', '?' + MainBrowserInitialUrl)",
-		"calcvalue('d.main_browser.url.text', 'main.MainBrowserInitialUrl')",
+		"setvalue('d.main_browser.url.text', MainBrowserInitialUrl)",
 		"calcvalue('d.data.glue_filter', '?')",
 		"setvalue('d.data.glue_filter.text', '')",
 		{
@@ -14632,7 +14632,7 @@
 											"main_show_wordmark":"pW >= 720"
 										},
 										{
-											"main_header_h":"110 + 50 * (main_is_wasm == 0)"
+											"main_header_h":"160"
 										},
 										{
 											"main_requested_cols":"(((2 @ 'd.settings.app_columns') [max] 1) [min] 5) [multiply] 1"
@@ -15567,7 +15567,7 @@
 														},
 														{
 															"addw":"0",
-															"compname":"if(main_is_wasm == 0)",
+															"compname":"if((0 @ 'd.program.standalone') == 0)",
 															"expanded":"1",
 															"posx":"3562",
 															"posy":"4026"

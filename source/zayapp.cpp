@@ -945,13 +945,20 @@ static String AppShortcutIcon(const String& id)
     return "image/icon/" + id + ".png";
 }
 
-static sint32 CreateAppShortcut(const String& id)
+static String CompleteAppSiteAddress(const String& address)
+{
+    String Url=address.Trim();
+    if(Url.Left(2)=="//") Url="https:"+Url;
+    else if(Url.Length() && Url.Find(0,"://")<0) Url="https://"+Url;
+    return Url;
+}
+
+static sint32 CreateAppShortcut(const String& id, const String& url)
 {
     const sint32 index = FindAppIndex(id);
     if(index < 0) return -1;
-    #if !BOSS_WASM
-        if(*Asset::GetWebFilesUrl()) return -1; // Existing shortcut stores only AppId, not site URL.
-    #endif
+    const String siteUrl = CompleteAppSiteAddress(url.Trim().Length()? url : String(Asset::GetWebFilesUrl()));
+    if(!siteUrl.Length()) return -1;
     const String title = AppShortcutTitle(index, id);
     #if BOSS_WASM
         const String language = ZayWidgetDOM::GetValue("settings.language").ToText();
@@ -959,41 +966,34 @@ static sint32 CreateAppShortcut(const String& id)
         return Platform::Utility::ShowWebShortcutDialog("app", id, title,
             ZayWidgetDOM::GetValue(prefix + "shortcut_web_help").ToText(),
             ZayWidgetDOM::GetValue(prefix + "shortcut_open").ToText(),
-            ZayWidgetDOM::GetValue(prefix + "close").ToText())? 2 : -1;
+            ZayWidgetDOM::GetValue(prefix + "close").ToText(), "url", siteUrl)? 2 : -1;
     #else
-        return Platform::Utility::CreateDesktopShortcut(title, "app", id, AppShortcutIcon(id))? 1 : -1;
+        return Platform::Utility::CreateDesktopShortcut(title, "app", id, AppShortcutIcon(id), "url", siteUrl)? 1 : -1;
     #endif
 }
 
 void ZayAppData::InitAppDeck()
 {
-    // 이전 버전의 로컬/원격 선택값은 더 이상 사용하거나 저장하지 않는다.
+    // 실행 인자의 사이트를 먼저 열고 그 Deck에서만 앱을 선택한다.
     ZayWidgetDOM::RemoveVariables("settings.app_url_remote");
-    #if BOSS_WASM
-        ZayWidgetDOM::RemoveVariables("deck.");
-        ZayWidgetDOM::SetValue("deck.list.count","0");
-        ZayWidgetDOM::SetValue("deck.focus","-1");
-        const String DeckText=String::FromAsset("zayapp_deck.json");
-        const Context Deck(ST_Json, SO_NeedCopy, DeckText);
-        ZayWidgetDOM::SetJson(Deck,"deck.");
-        ZayWidgetDOM::SetValue("program.remote_site","0");
-    #else
-        if(!*Asset::GetWebFilesUrl())
-        {
-            ZayWidgetDOM::RemoveVariables("deck.");
-            ZayWidgetDOM::SetValue("deck.list.count","0");
-            ZayWidgetDOM::SetValue("deck.focus","-1");
-        }
-        String Url=ZayWidgetDOM::ExistVariable("settings.app_url")?
-            ZayWidgetDOM::GetValue("settings.app_url").ToText().Trim() : String();
-        if(!Url.Length()) Url="https://bonexgoo.github.io/zayapp/";
-        ZayWidgetDOM::SetValue("program.remote_site","1");
-        SetAppUrl(Url);
-    #endif
+    String Url=Platform::Utility::GetLaunchParameter("url").Trim();
+    if(!Url.Length())
+    {
+        #if BOSS_WASM
+            Url=Asset::GetWebFilesUrl();
+        #else
+            Url=ZayWidgetDOM::ExistVariable("settings.app_url")?
+                ZayWidgetDOM::GetValue("settings.app_url").ToText().Trim() : String();
+            if(!Url.Length()) Url="https://bonexgoo.github.io/zayapp/";
+        #endif
+    }
+    const bool Opened=SetAppUrl(Url);
     const String Id=Platform::Utility::GetLaunchParameter("app");
-    const sint32 Index=FindAppIndex(Id);
+    const sint32 Index=Opened? FindAppIndex(Id) : -1;
     ZayWidgetDOM::SetValue("deck.focus",String::FromInteger(Index));
     ZayWidgetDOM::SetValue("program.standalone",Index>=0?"1":"0");
+    if(Opened && Id.Length() && Index<0)
+        ZayWidgetDOM::SetValue("program.appurl_error","'app_not_found'");
     #if BOSS_WASM
         if(Index>=0) Platform::Utility::SetWebAppIdentity(AppShortcutTitle(Index,Id),AppShortcutIcon(Id));
     #endif
@@ -1077,22 +1077,25 @@ void ZayAppData::PrepareGlueHost()
     mGlueHost.Bind<bool(const String&)>("app.set_url",
         [this](const String& url)->bool { return SetAppUrl(url); });
 
-    mGlueHost.Bind<sint32(const String&)>("app.create_shortcut",
-        [](const String& appId)->sint32 { return CreateAppShortcut(appId); });
+    mGlueHost.Bind<sint32(const String&, const String&)>("app.create_shortcut",
+        [](const String& appId, const String& url)->sint32 { return CreateAppShortcut(appId, url); });
 
-    mGlueHost.Bind<bool(const String&, const String&)>("app.open_standalone",
-        [](const String& appId, const String& target)->bool
+    mGlueHost.Bind<bool(const String&, const String&, const String&)>("app.open_standalone",
+        [](const String& appId, const String& target, const String& url)->bool
         {
             #if BOSS_WASM
                 if(FindAppIndex(appId) >= 0)
                 {
                     const String page = Platform::Utility::GetThisWebPageUrl();
-                    if(page.Length())
-                        return Platform::Utility::OpenWebPageWithQuery(page + "?app=" + appId.ToUrlString(), target);
+                    const String siteUrl = CompleteAppSiteAddress(url.Trim().Length()? url : String(Asset::GetWebFilesUrl()));
+                    if(page.Length() && siteUrl.Length())
+                        return Platform::Utility::OpenWebPageWithQuery(page + "?app=" + appId.ToUrlString() +
+                            "&url=" + siteUrl.ToUrlString(), target);
                 }
             #else
                 (void) appId;
                 (void) target;
+                (void) url;
             #endif
             return false;
         });
@@ -1667,6 +1670,11 @@ void ZayAppData::ClearSiteState()
 bool ZayAppData::SetAppUrl(const String& url)
 {
     ZayWidgetDOM::SetValue("program.appurl_ok","0");
+    ZayWidgetDOM::SetValue("program.shortcut_result","0");
+    const String RequestedUrl=CompleteAppSiteAddress(url);
+    String RequestedLiteral=RequestedUrl; RequestedLiteral.Replace("\\","\\\\"); RequestedLiteral.Replace("'","\\'");
+    ZayWidgetDOM::SetComment("main_browser.url",RequestedUrl);
+    ZayWidgetDOM::SetValue("main_browser.url.text", '\''+RequestedLiteral+'\'');
     // 작업중인 이미지가 이전 사이트의 캐시에 기록을 마친 뒤 기준 URL을 변경한다.
     for(sint32 i=0;i<mUrlImages.Count();++i)
         if(auto Image=mUrlImages.AccessByOrder(i))
@@ -1676,7 +1684,7 @@ bool ZayAppData::SetAppUrl(const String& url)
                 Image->mTasking=nullptr;
                 if(!Image->mImage.HasBitmap()) Image->mFileTitle.Empty();
             }
-    const chars DeckJson=Asset::TrySetWebFilesUrl(url);
+    const chars DeckJson=Asset::TrySetWebFilesUrl(RequestedUrl);
     if(!DeckJson)
     {
         ClearSiteState();
@@ -1685,6 +1693,7 @@ bool ZayAppData::SetAppUrl(const String& url)
         ZayWidgetDOM::SetValue("deck.list.count","0");
         ZayWidgetDOM::SetValue("deck.focus","-1");
         ZayWidgetDOM::SetValue("program.standalone","0");
+        ZayWidgetDOM::SetValue("program.app_url","''");
         ZayWidgetDOM::SetValue("program.appurl_error","'index_or_deck_failed'");
         BOSS_TRACE("[setappurl] Cannot open site: %s", (chars)url);
         invalidate(2);
@@ -1700,6 +1709,7 @@ bool ZayAppData::SetAppUrl(const String& url)
     const String Url=Asset::GetWebFilesUrl();
     String Literal=Url; Literal.Replace("\\","\\\\"); Literal.Replace("'","\\'");
     ZayWidgetDOM::SetValue("settings.app_url", '\''+Literal+'\'');
+    ZayWidgetDOM::SetValue("program.app_url", '\''+Literal+'\'');
     // Persist only after a validated site transition; the normal settings Gate can still save other options.
     Context Settings;
     ZayWidgetDOM::GetJson(Settings,"settings.");
@@ -1965,7 +1975,8 @@ bool ZayAppData::RenderUC_Movie(ZayPanel& panel, chars assetname, double sec)
     {
         mMovies(assetname) = nullptr;
         #if BOSS_WASM
-            mMovies(assetname) = Platform::Animate::OpenForMovieFile(Platform::File::RootForAssets() + assetname);
+            const String Url=Asset::GetWebFileUrl(assetname);
+            if(Url.Length()) mMovies(assetname)=Platform::Animate::OpenForMovieFile(Url);
         #else
             const String Path=Asset::GetFilePath(assetname);
             if(Path.Length()) mMovies(assetname)=Platform::Animate::OpenForMovieFile(Path);

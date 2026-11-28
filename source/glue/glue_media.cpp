@@ -63,7 +63,8 @@ bool GlueMedia::Register(ZaySon& NewZayson, const ZayGlue::Bindings& context)
                             Buffer::SizeOf(NewSoundData) * Buffer::CountOf(NewSoundData));
                         Buffer::Free(NewSoundData);
                     #elif BOSS_WASM
-                        (*Sounds)()(SoundAssetName) = Platform::Sound::OpenForUrl(SoundAssetName, false);
+                        const String Url = Asset::GetWebFileUrl(SoundAssetName);
+                        if(Url.Length()) (*Sounds)()(SoundAssetName) = Platform::Sound::OpenForUrl(Url, false);
                     #else
                         const String Path = Asset::GetFilePath(SoundAssetName);
                         if(Path.Length()) (*Sounds)()(SoundAssetName) = Platform::Sound::OpenForFile(Path, false);

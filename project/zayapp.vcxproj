@@ -47,6 +47,7 @@
     <ClInclude Include="..\source\glue\glue_device_channel.hpp" />
     <ClInclude Include="..\source\glue\glue_dom.hpp" />
     <ClInclude Include="..\source\glue\glue_file.hpp" />
+    <ClInclude Include="..\source\glue\file_system_engine.hpp" />
     <ClInclude Include="..\source\glue\glue_graph_and_log.hpp" />
     <ClInclude Include="..\source\glue\glue_input.hpp" />
     <ClInclude Include="..\source\glue\glue_installation.hpp" />
@@ -78,6 +79,7 @@
     <ClCompile Include="..\source\glue\glue_device_channel.cpp" />
     <ClCompile Include="..\source\glue\glue_dom.cpp" />
     <ClCompile Include="..\source\glue\glue_file.cpp" />
+    <ClCompile Include="..\source\glue\file_system_engine.cpp" />
     <ClCompile Include="..\source\glue\glue_graph_and_log.cpp" />
     <ClCompile Include="..\source\glue\glue_input.cpp" />
     <ClCompile Include="..\source\glue\glue_installation.cpp" />
@@ -202,6 +204,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -280,6 +283,7 @@ if errorlevel 1 exit /b 1
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

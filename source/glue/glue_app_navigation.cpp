@@ -10,8 +10,8 @@ bool GlueAppNavigation::Register(ZaySon& NewZayson, const ZayGlue::Bindings& bin
     const auto AddressInput = bindings.host.Find<String()>("app.address");
     const auto InitDeck = bindings.host.Find<void()>("app.init_deck");
     const auto SetAppUrl = bindings.host.Find<bool(const String&)>("app.set_url");
-    const auto CreateShortcut = bindings.host.Find<sint32(const String&)>("app.create_shortcut");
-    const auto OpenStandalone = bindings.host.Find<bool(const String&, const String&)>("app.open_standalone");
+    const auto CreateShortcut = bindings.host.Find<sint32(const String&, const String&)>("app.create_shortcut");
+    const auto OpenStandalone = bindings.host.Find<bool(const String&, const String&, const String&)>("app.open_standalone");
     auto* view = bindings.view;
     if(!CanChangeSite || !AddressInput || !InitDeck || !SetAppUrl ||
         !CreateShortcut || !OpenStandalone || !view)
@@ -42,25 +42,31 @@ bool GlueAppNavigation::Register(ZaySon& NewZayson, const ZayGlue::Bindings& bin
     // createappshortcut
     NewZayson.AddGlue("createappshortcut", ZAY_DECLARE_GLUE(params, CreateShortcut, view)
     {
-        const sint32 result = (params.ParamCount() == 1)? (*CreateShortcut)(params.Param(0).ToText()) : -1;
+        sint32 result = -1;
+        if(params.ParamCount() == 1 || params.ParamCount() == 2)
+        {
+            const String url = (params.ParamCount() == 2)? params.Param(1).ToText() : String();
+            result = (*CreateShortcut)(params.Param(0).ToText(), url);
+        }
         ZayWidgetDOM::SetValue("program.shortcut_result", String::FromInteger(result));
         view->invalidate();
-    }, "[AppId:'robo']", "앱 단독 모드 바로가기 만들기");
+    }, "[AppId:'robo']#[Url:'']", "앱과 앱사이트 URL을 보존하는 단독 모드 바로가기(Url 생략시 현재 사이트)");
 
     ////////////////////////////////////////////////////////////////////////////////
     // openstandaloneapp
     NewZayson.AddGlue("openstandaloneapp", ZAY_DECLARE_GLUE(params, OpenStandalone, view)
     {
         bool opened = false;
-        if(params.ParamCount() == 1 || params.ParamCount() == 2)
+        if(1 <= params.ParamCount() && params.ParamCount() <= 3)
         {
             const String id = params.Param(0).ToText();
-            const String target = (params.ParamCount() == 2)? params.Param(1).ToText() : String("self");
-            opened = (*OpenStandalone)(id, target);
+            const String target = (2 <= params.ParamCount())? params.Param(1).ToText() : String("self");
+            const String url = (params.ParamCount() == 3)? params.Param(2).ToText() : String();
+            opened = (*OpenStandalone)(id, target, url);
         }
         ZayWidgetDOM::SetValue("program.shortcut_result", opened? "3" : "-1");
         view->invalidate();
-    }, "[AppId:'robo']#[Target:'self']", "웹에서 앱을 단독 모드로 열기");
+    }, "[AppId:'robo']#[Target:'self']#[Url:'']", "현재 런타임에서 앱과 앱사이트 URL로 단독 모드 실행(Url 생략시 현재 사이트)");
 
     ////////////////////////////////////////////////////////////////////////////////
     // openwebpage

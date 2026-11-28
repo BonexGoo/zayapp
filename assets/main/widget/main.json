@@ -498,12 +498,12 @@
 		{
 			"index": 77,
 			"name": "createappshortcut",
-			"comment": "지정한 앱의 단독 모드 바로가기 만들기"
+			"comment": "앱사이트 URL과 앱 ID로 바탕화면 빠른링크 만들기"
 		},
 		{
 			"index": 78,
 			"name": "openstandaloneapp",
-			"comment": "웹에서 앱을 단독 모드로 열기"
+			"comment": "앱사이트 URL과 앱 ID로 웹 단독 모드 열기"
 		},
 		{
 			"index": 79,
@@ -783,11 +783,11 @@
 				"keypad_short_title": "가상키패드 끄기",
 				"keypad_short_desc": "입력할 때 키패드 버튼을 숨깁니다.",
 				"standalone_title": "단독 모드",
-				"standalone_desc": "이 앱을 새 창에서 엽니다.",
+				"standalone_desc": "현재 앱사이트의 이 앱을 새 창에서 엽니다.",
 				"standalone_popup_help": "팝업을 허용한 뒤 다시 눌러 주세요.",
 				"standalone_open": "단독 모드로 열기",
-				"shortcut_title": "단독 모드 바로가기",
-				"shortcut_desc": "이 앱을 단독 모드로 실행합니다.",
+				"shortcut_title": "바탕화면 빠른링크",
+				"shortcut_desc": "현재 앱사이트의 이 앱을 단독 모드로 실행합니다.",
 				"shortcut_action": "바로가기 만들기",
 				"shortcut_done_short": "바로가기 생성 완료",
 				"shortcut_retry_short": "다시 시도"
@@ -943,11 +943,11 @@
 				"keypad_short_title": "Disable keypad",
 				"keypad_short_desc": "Hide the keypad button when editing.",
 				"standalone_title": "Standalone mode",
-				"standalone_desc": "Open this app in a new window.",
+				"standalone_desc": "Open this app from its current site in a new window.",
 				"standalone_popup_help": "Allow pop-ups, then try again.",
 				"standalone_open": "Open in standalone mode",
-				"shortcut_title": "App shortcut",
-				"shortcut_desc": "Launch this app in standalone mode.",
+				"shortcut_title": "Desktop shortcut",
+				"shortcut_desc": "Launch this app from its current app site.",
 				"shortcut_action": "Create shortcut",
 				"shortcut_done_short": "Shortcut created",
 				"shortcut_retry_short": "Retry"
@@ -1103,11 +1103,11 @@
 				"keypad_short_title": "キーパッド無効",
 				"keypad_short_desc": "入力時にキーパッドボタンを隠します。",
 				"standalone_title": "単独モード",
-				"standalone_desc": "このアプリを新しいウィンドウで開きます。",
+				"standalone_desc": "現在のサイトのアプリを新しいウィンドウで開きます。",
 				"standalone_popup_help": "ポップアップを許可して再試行してください。",
 				"standalone_open": "単独モードで開く",
 				"shortcut_title": "ショートカット",
-				"shortcut_desc": "このアプリを単独モードで開きます。",
+				"shortcut_desc": "現在のサイトのアプリを単独モードで開きます。",
 				"shortcut_action": "作成する",
 				"shortcut_done_short": "作成しました",
 				"shortcut_retry_short": "再試行"
@@ -6399,9 +6399,9 @@
 		{
 			"name": "createappshortcut",
 			"comment": {
-				"ko": "지정한 앱의 단독 모드 바로가기 만들기",
-				"en": "Create a standalone shortcut for an app",
-				"ja": "指定したアプリの単独モード用ショートカットを作成"
+				"ko": "앱사이트 URL과 앱 ID로 바탕화면 빠른링크 만들기",
+				"en": "Create a desktop shortcut for an app and its app site",
+				"ja": "アプリサイトの URL とアプリ ID でショートカットを作成"
 			},
 			"param": [
 				{
@@ -6420,14 +6420,31 @@
 					},
 					"offset": 0,
 					"height": 144
+				},
+				{
+					"name": "Url",
+					"comment": {
+						"ko": "앱사이트 기준 URL. 생략하면 현재 불러온 앱사이트를 사용합니다.",
+						"en": "App-site base URL. Defaults to the currently loaded app site.",
+						"ja": "アプリサイトの基準 URL。省略時は現在読み込んでいるサイトを使用します。"
+					},
+					"optional": 1,
+					"enum": [],
+					"hint": {
+						"ko": "https://aaa.com/",
+						"en": "https://aaa.com/",
+						"ja": "https://aaa.com/"
+					},
+					"offset": 144,
+					"height": 144
 				}
 			],
 			"notes": {
-				"ko": "Windows는 바탕 화면에 zayapp.exe -app AppId 바로가기를 만듭니다. 웹에서는 ?app=AppId 링크를 열어 브라우저 메뉴로 등록합니다. d.program.shortcut_result 값은 1(생성), 2(웹 등록 안내 열림), -1(실패)입니다.",
-				"en": "Windows creates a desktop shortcut to zayapp.exe -app AppId. On the web, open the ?app=AppId link and use the browser shortcut menu. d.program.shortcut_result is 1 for created, 2 for web instructions shown, or -1 for failure.",
-				"ja": "Windows はデスクトップに zayapp.exe -app AppId のショートカットを作成します。Web は ?app=AppId を開き、ブラウザーのメニューで登録します。d.program.shortcut_result は 1 が作成、2 が Web の案内表示、-1 が失敗です。"
+				"ko": "Windows는 바탕화면에 zayapp.exe -app AppId -url Url 바로가기를 만듭니다. 앱사이트를 불러온 뒤 해당 앱을 실행합니다. 웹 링크는 런타임 주소에 app과 url을 인코딩해 담습니다. d.program.shortcut_result는 1(생성), 2(웹 등록 안내), -1(실패)입니다.",
+				"en": "Windows creates a desktop shortcut to zayapp.exe -app AppId -url Url. The app site loads before the app is selected. Web links keep the runtime URL and encode app and url query values. d.program.shortcut_result is 1 for created, 2 for web instructions, or -1 for failure.",
+				"ja": "Windows は zayapp.exe -app AppId -url Url のデスクトップショートカットを作成します。サイトを読み込んでからアプリを選択します。Web はランタイムの URL に app と url をエンコードして追加します。d.program.shortcut_result は 1 が作成、2 が Web の案内、-1 が失敗です。"
 			},
-			"source": "zayapp.cpp / InitWidget / AddGlue",
+			"source": "glue/glue_app_navigation.cpp",
 			"examples": [
 				{
 					"title": {
@@ -6437,16 +6454,25 @@
 					},
 					"code": "createappshortcut('robo')",
 					"width": 640
+				},
+				{
+					"title": {
+						"ko": "다른 앱사이트의 앱 바로가기",
+						"en": "Shortcut to an app on another site",
+						"ja": "別のサイトのアプリへのショートカット"
+					},
+					"code": "createappshortcut('bbb', 'https://aaa.com/')",
+					"width": 720
 				}
 			],
-			"param_height": 144
+			"param_height": 288
 		},
 		{
 			"name": "openstandaloneapp",
 			"comment": {
-				"ko": "웹에서 앱을 단독 모드로 열기",
-				"en": "Open an app in standalone mode on the web",
-				"ja": "Web でアプリを単独モードで開く"
+				"ko": "앱사이트 URL과 앱 ID로 웹 단독 모드 열기",
+				"en": "Open a web app in standalone mode with its app site",
+				"ja": "アプリサイトの URL とアプリ ID で Web 単独モードを開く"
 			},
 			"param": [
 				{
@@ -6486,14 +6512,31 @@
 					},
 					"offset": 144,
 					"height": 196
+				},
+				{
+					"name": "Url",
+					"comment": {
+						"ko": "앱사이트 기준 URL. 생략하면 현재 불러온 앱사이트를 사용합니다.",
+						"en": "App-site base URL. Defaults to the currently loaded app site.",
+						"ja": "アプリサイトの基準 URL。省略時は現在読み込んでいるサイトを使用します。"
+					},
+					"optional": 1,
+					"enum": [],
+					"hint": {
+						"ko": "https://aaa.com/",
+						"en": "https://aaa.com/",
+						"ja": "https://aaa.com/"
+					},
+					"offset": 340,
+					"height": 144
 				}
 			],
 			"notes": {
-				"ko": "window는 새 창, tab은 새 탭, self는 현재 페이지에 ?app=AppId를 엽니다. 새 창과 새 탭은 사용자 클릭 시 요청합니다. d.program.shortcut_result는 성공 시 3, 팝업 차단 등 실패 시 -1입니다.",
-				"en": "Opens ?app=AppId in a new window (window), a new tab (tab), or the current page (self). Request windows and tabs on a user click. d.program.shortcut_result is 3 for success or -1 for failure, including blocked pop-ups.",
-				"ja": "window は新しいウィンドウ、tab は新しいタブ、self は現在のページで ?app=AppId を開きます。新しいウィンドウやタブはクリック時に要求します。d.program.shortcut_result は成功時に 3、ポップアップのブロックなどの失敗時に -1 です。"
+				"ko": "인자 순서는 AppId, Target, Url입니다. 런타임 주소를 유지하고 app과 url을 인코딩해 전달합니다. window는 새 창, tab은 새 탭, self는 현재 페이지입니다. 새 창/탭은 클릭 이벤트에서 요청합니다. d.program.shortcut_result는 3(성공), -1(실패)입니다.",
+				"en": "Arguments are AppId, Target, Url. Keeps the runtime URL and encodes app and url query values. window opens a window, tab a tab, and self the current page. Request new windows or tabs on a user click. d.program.shortcut_result is 3 for success or -1 for failure.",
+				"ja": "引数の順序は AppId、Target、Url です。ランタイムの URL を保持し、app と url をエンコードして渡します。window は新しいウィンドウ、tab は新しいタブ、self は現在のページです。新規ウィンドウやタブはクリック時に要求します。d.program.shortcut_result は成功時 3、失敗時 -1 です。"
 			},
-			"source": "zayapp.cpp / InitWidget / AddGlue",
+			"source": "glue/glue_app_navigation.cpp",
 			"examples": [
 				{
 					"title": {
@@ -6503,9 +6546,18 @@
 					},
 					"code": "openstandaloneapp('robo', 'window')",
 					"width": 640
+				},
+				{
+					"title": {
+						"ko": "다른 앱사이트의 앱 단독 실행",
+						"en": "Standalone app from another site",
+						"ja": "別のサイトのアプリを単独実行"
+					},
+					"code": "openstandaloneapp('bbb', 'window', 'https://aaa.com/')",
+					"width": 720
 				}
 			],
-			"param_height": 340
+			"param_height": 484
 		},
 		{
 			"name": "openwebpage",

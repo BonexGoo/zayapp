@@ -9,6 +9,7 @@ QT_PACKAGE_RPATH = no #ok #no
     error("Couldn't find the boss2d.pri file...")
 }
 
+CONFIG += c++17
 QT -= bluetooth
 wasm{
     QT_WASM_INITIAL_MEMORY = 128MB
@@ -46,6 +47,8 @@ SOURCES += ../source/glue/glue_dom.cpp
 HEADERS += ../source/glue/glue_dom.hpp
 SOURCES += ../source/glue/glue_file.cpp
 HEADERS += ../source/glue/glue_file.hpp
+SOURCES += ../source/glue/file_system_engine.cpp
+HEADERS += ../source/glue/file_system_engine.hpp
 SOURCES += ../source/glue/glue_graph_and_log.cpp
 HEADERS += ../source/glue/glue_graph_and_log.hpp
 SOURCES += ../source/glue/glue_input.cpp

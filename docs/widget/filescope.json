@@ -109,7 +109,7 @@
       "review_results": "결과 살펴보기",
       "drive_title": "검사할 드라이브를 선택하세요.",
       "drive_note": "선택한 드라이브의 접근 가능한 항목을 조사합니다.",
-      "sample_note": "현재는 샘플 데이터입니다. 네이티브 파일 엔진을 연결하면 실제 드라이브를 검사합니다.",
+      "sample_note": "현재는 샘플 데이터입니다. 실제 드라이브 검사는 파일 기능이 활성화된 PC용 ZayApp에서 실행해 주세요. 브라우저에서는 실제 검사를 실행하지 않습니다.",
       "preview_note": "선택한 항목의 내용과 변경 기록을 확인합니다.",
       "preview_unsupported": "이 형식은 프리뷰를 지원하지 않습니다. 파일 위치와 속성은 확인할 수 있습니다.",
       "noitems": "아직 표시할 항목이 없습니다.",
@@ -130,11 +130,15 @@
       "task_note": "저장 위치와 완료 결과를 확인해 주세요.",
       "choosefolder": "폴더 직접 선택",
       "working": "처리 중",
-      "issues_sample": "D:\\System Volume Information\nD:\\Shared\\Private\nD:\\Recovery",
+      "issues_sample": "D:/System Volume Information\nD:/Shared/Private\nD:/Recovery",
       "clearbasket": "검토 목록 비우기",
       "preview_failed": "프리뷰를 불러오지 못했습니다. 파일의 위치와 접근 권한을 확인해 주세요.",
       "pausing": "현재 항목을 마친 뒤 멈춥니다.",
-      "cancelling": "현재 항목을 정리하고 중지합니다."
+      "cancelling": "현재 항목을 정리하고 중지합니다.",
+      "reconnect": "다시 연결",
+      "session_error_badge": "연결 오류 · 샘플",
+      "session_error_title": "파일 검사에 연결하지 못했습니다.",
+      "session_error_body": "다시 연결한 뒤 검사를 시작해 주세요. 현재 화면의 샘플은 실제 드라이브 검사 결과가 아닙니다."
     },
     "en": {
       "tagline": "A little craft for your digital space.",
@@ -232,7 +236,7 @@
       "review_results": "Explore results",
       "drive_title": "Choose a drive to inspect.",
       "drive_note": "The scanner reads accessible items on the selected drive.",
-      "sample_note": "Sample data is shown. Connect the native file engine to inspect real drives.",
+      "sample_note": "Sample data is shown. Run ZayApp on your PC with file features enabled to inspect real drives. Browser mode does not scan your drive.",
       "preview_note": "Inspect the selected item and its modification details.",
       "preview_unsupported": "Preview is not supported for this format. Its location and properties remain available.",
       "noitems": "No items to show yet.",
@@ -253,11 +257,15 @@
       "task_note": "Check the output location and final result.",
       "choosefolder": "Choose a folder",
       "working": "Working",
-      "issues_sample": "D:\\System Volume Information\nD:\\Shared\\Private\nD:\\Recovery",
+      "issues_sample": "D:/System Volume Information\nD:/Shared/Private\nD:/Recovery",
       "clearbasket": "Clear review list",
       "preview_failed": "The preview could not be loaded. Check the file location and access permissions.",
       "pausing": "Pausing after the current item.",
-      "cancelling": "Finishing the current item before stopping."
+      "cancelling": "Finishing the current item before stopping.",
+      "reconnect": "Reconnect",
+      "session_error_badge": "Error · sample",
+      "session_error_title": "Scanner connection failed.",
+      "session_error_body": "Reconnect before starting a scan. The sample shown is not a result from your drive."
     },
     "ja": {
       "tagline": "PCの空間を、ていねいに。",
@@ -355,7 +363,7 @@
       "review_results": "結果を確認",
       "drive_title": "スキャンするドライブを選択してください。",
       "drive_note": "選択したドライブのアクセス可能な項目を調査します。",
-      "sample_note": "現在はサンプルデータです。ネイティブエンジン接続後に実ドライブを検査します。",
+      "sample_note": "現在はサンプルデータです。実ドライブの検査はファイル機能が有効なPC版ZayAppで実行してください。ブラウザーでは実際の検査を行いません。",
       "preview_note": "選択した項目の内容と更新情報を確認します。",
       "preview_unsupported": "この形式のプレビューには対応していません。場所と属性は確認できます。",
       "noitems": "表示できる項目はまだありません。",
@@ -376,11 +384,15 @@
       "task_note": "保存先と完了結果を確認してください。",
       "choosefolder": "フォルダーを指定",
       "working": "処理中",
-      "issues_sample": "D:\\System Volume Information\nD:\\Shared\\Private\nD:\\Recovery",
+      "issues_sample": "D:/System Volume Information\nD:/Shared/Private\nD:/Recovery",
       "clearbasket": "確認リストを空にする",
       "preview_failed": "プレビューを読み込めませんでした。場所とアクセス権限を確認してください。",
       "pausing": "現在の項目を処理後に一時停止します。",
-      "cancelling": "現在の項目を整理して停止します。"
+      "cancelling": "現在の項目を整理して停止します。",
+      "reconnect": "再接続",
+      "session_error_badge": "接続エラー・サンプル",
+      "session_error_title": "スキャナーに接続できません。",
+      "session_error_body": "再接続してからスキャンを開始してください。表示中のサンプルは実ドライブの結果ではありません。"
     }
   },
   "sample": {
@@ -394,7 +406,7 @@
       "candidates_count": 4,
       "issue_count": 17,
       "elapsed_text": "02:18",
-      "root_path": "D:\\",
+      "root_path": "D:/",
       "type_stats": [
         {
           "key": "video",
@@ -432,7 +444,7 @@
       {
         "id": "sample-legacy",
         "name": "Legacy_Project",
-        "path": "D:\\Projects\\Legacy_Project",
+        "path": "D:/Projects/Legacy_Project",
         "gib": "42.6",
         "files": "8,240",
         "mtime_text": "2024.05.12",
@@ -443,7 +455,7 @@
       {
         "id": "sample-footage",
         "name": "Footage_2024",
-        "path": "D:\\Archive\\Footage_2024",
+        "path": "D:/Archive/Footage_2024",
         "gib": "24.1",
         "files": "346",
         "mtime_text": "2024.10.02",
@@ -454,7 +466,7 @@
       {
         "id": "sample-archive",
         "name": "Archive_2023",
-        "path": "D:\\Backups\\Archive_2023",
+        "path": "D:/Backups/Archive_2023",
         "gib": "18.4",
         "files": "12,048",
         "mtime_text": "2023.12.17",
@@ -465,7 +477,7 @@
       {
         "id": "sample-install",
         "name": "Installers",
-        "path": "D:\\Downloads\\Installers",
+        "path": "D:/Downloads/Installers",
         "gib": "9.7",
         "files": "124",
         "mtime_text": "2025.08.01",
@@ -479,7 +491,7 @@
         {
           "id": "sample-video-0",
           "name": "scene_master_01.mov",
-          "path": "D:\\Samples\\scene_master_01.mov",
+          "path": "D:/Samples/scene_master_01.mov",
           "gib": "12.4",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -490,7 +502,7 @@
         {
           "id": "sample-video-1",
           "name": "interview_2024.mp4",
-          "path": "D:\\Samples\\interview_2024.mp4",
+          "path": "D:/Samples/interview_2024.mp4",
           "gib": "8.6",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -501,7 +513,7 @@
         {
           "id": "sample-video-2",
           "name": "render_final.mkv",
-          "path": "D:\\Samples\\render_final.mkv",
+          "path": "D:/Samples/render_final.mkv",
           "gib": "6.2",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -514,7 +526,7 @@
         {
           "id": "sample-archive-0",
           "name": "release_2024.zip",
-          "path": "D:\\Samples\\release_2024.zip",
+          "path": "D:/Samples/release_2024.zip",
           "gib": "2.6",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -525,7 +537,7 @@
         {
           "id": "sample-archive-1",
           "name": "project_backup.7z",
-          "path": "D:\\Samples\\project_backup.7z",
+          "path": "D:/Samples/project_backup.7z",
           "gib": "1.8",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -536,7 +548,7 @@
         {
           "id": "sample-archive-2",
           "name": "archive_2023.zip",
-          "path": "D:\\Samples\\archive_2023.zip",
+          "path": "D:/Samples/archive_2023.zip",
           "gib": "1.2",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -549,7 +561,7 @@
         {
           "id": "sample-code-0",
           "name": "build_cache.bin",
-          "path": "D:\\Samples\\build_cache.bin",
+          "path": "D:/Samples/build_cache.bin",
           "gib": "3.2",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -560,7 +572,7 @@
         {
           "id": "sample-code-1",
           "name": "debug_symbols.pdb",
-          "path": "D:\\Samples\\debug_symbols.pdb",
+          "path": "D:/Samples/debug_symbols.pdb",
           "gib": "1.1",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -571,7 +583,7 @@
         {
           "id": "sample-code-2",
           "name": "README.md",
-          "path": "D:\\Samples\\README.md",
+          "path": "D:/Samples/README.md",
           "gib": "0.0",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -584,7 +596,7 @@
         {
           "id": "sample-image-0",
           "name": "floorplan_v03.png",
-          "path": "D:\\Samples\\floorplan_v03.png",
+          "path": "D:/Samples/floorplan_v03.png",
           "gib": "0.018",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -595,7 +607,7 @@
         {
           "id": "sample-image-1",
           "name": "panorama_001.jpg",
-          "path": "D:\\Samples\\panorama_001.jpg",
+          "path": "D:/Samples/panorama_001.jpg",
           "gib": "0.012",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -606,7 +618,7 @@
         {
           "id": "sample-image-2",
           "name": "materials.tif",
-          "path": "D:\\Samples\\materials.tif",
+          "path": "D:/Samples/materials.tif",
           "gib": "0.008",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -619,7 +631,7 @@
         {
           "id": "sample-other-0",
           "name": "project_notes.pdf",
-          "path": "D:\\Samples\\project_notes.pdf",
+          "path": "D:/Samples/project_notes.pdf",
           "gib": "0.006",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -630,7 +642,7 @@
         {
           "id": "sample-other-1",
           "name": "budget_2024.xlsx",
-          "path": "D:\\Samples\\budget_2024.xlsx",
+          "path": "D:/Samples/budget_2024.xlsx",
           "gib": "0.002",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -641,7 +653,7 @@
         {
           "id": "sample-other-2",
           "name": "meeting_notes.txt",
-          "path": "D:\\Samples\\meeting_notes.txt",
+          "path": "D:/Samples/meeting_notes.txt",
           "gib": "0.001",
           "files": "1",
           "mtime_text": "2024.05.12",
@@ -655,23 +667,28 @@
       {
         "name": "Raw_Footage",
         "gib": "87.2",
-        "path": "D:\\Media\\Raw_Footage"
+        "path": "D:/Media/Raw_Footage"
       },
       {
         "name": "Legacy_Project",
         "gib": "42.6",
-        "path": "D:\\Projects\\Legacy_Project"
+        "path": "D:/Projects/Legacy_Project"
       },
       {
         "name": "Archives",
         "gib": "38.4",
-        "path": "D:\\Backups\\Archives"
+        "path": "D:/Backups/Archives"
       }
     ]
   },
   "integration": {
     "native_glue_required": true,
-    "native_probe": "file_capabilities",
+    "native_probe": "d.program.file_api_version",
+    "minimum_file_api_version": 2,
+    "capabilities_api": "file_capabilities",
+    "session_api": "file_session_open",
+    "cache_namespace": "filescope",
+    "preview_component": "file_preview",
     "read_only_scan": true,
     "drag_action": "add_to_review",
     "sample_mode_is_labeled": true
