@@ -19,7 +19,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
     <style>
       :root {
         --runtime-bar-height: 60px;
-        --pc-download-width: 300px;
+        --pc-download-width: clamp(230px, 27vw, 300px);
         --runtime-bottom-inset: env(safe-area-inset-bottom, 0px);
         --runtime-bar-total: calc(var(--runtime-bar-height) + var(--runtime-bottom-inset));
       }
@@ -76,7 +76,7 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
         padding: 0 env(safe-area-inset-right, 0px) var(--runtime-bottom-inset) env(safe-area-inset-left, 0px);
         box-sizing: border-box;
         background: #f7f9fd;
-        box-shadow: 0 -1px 0 #dfe5ee;
+        box-shadow: none;
         color: #182334;
         font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-synthesis: none;
@@ -191,10 +191,51 @@ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only
       }
       .zaypro .pc-download-version { color: #5e75b2; }
 
+      /* Adapt download controls to viewport width, without clipping version labels. */
+      @media (orientation: landscape) and (max-width: 760px) {
+        :root { --pc-download-width: clamp(180px, 42vw, 280px); }
+        #pc-downloads { padding-inline: 6px; }
+        .pc-download-buttons { gap: 4px; }
+        .pc-download-button { gap: 3px; font-size: clamp(10px, 1.75vw, 14px); }
+        .pc-download-version { font-size: clamp(9px, 1.5vw, 12px); }
+      }
+
+      /* Portrait phones: full-width advertising above full-width PC downloads. */
+      @media (orientation: portrait) and (max-width: 900px) {
+        :root { --runtime-bar-height: 120px; --pc-download-width: 100%; }
+        #runtime-bar { flex-direction: column; }
+        #runtime-banner {
+          flex: 0 0 60px;
+          width: 100%;
+          height: 60px;
+        }
+        .runtime-banner-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: left center;
+          -webkit-mask-image: none;
+          mask-image: none;
+        }
+        #runtime-banner::after { width: min(90px, 14%); }
+        #pc-downloads {
+          flex: 0 0 60px;
+          width: 100%;
+          height: 60px;
+          border-left: 0;
+          border-top: 1px solid #dfe5ee;
+          padding: 4px 12px 5px;
+        }
+        #pc-download-title { margin-bottom: 3px; line-height: 16px; }
+        .pc-download-buttons { height: 31px; }
+      }
+
       /* Keep the group usable in embedded views narrower than the download area. */
-      @media (max-width: 300px) {
-        :root { --pc-download-width: 100%; }
-        #runtime-banner { display: none; }
+      @media (max-width: 420px) and (orientation: landscape) {
+        :root { --pc-download-width: 52vw; }
+        .pc-download-buttons { gap: 2px; }
+        .pc-download-button { flex-direction: column; gap: 1px; font-size: 10px; }
+        .pc-download-version { font-size: 9px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .runtime-banner-image { display: none; }
